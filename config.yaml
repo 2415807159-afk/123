@@ -25,3 +25,40 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: TiMD-ML
+      description: 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析
+      enabled: true
+      keywords:
+        - keyword: structure property relationship
+          keyword_cn: 结构性质关系
+          query: structure property relationship
+        - keyword: property prediction
+          keyword_cn: 机器学习材料性质预测
+          query: property prediction
+        - keyword: titanium graphene interface
+          keyword_cn: 钛-石墨烯界面
+          query: titanium graphene interface
+        - keyword: titanium alloys molecular dynamics
+          keyword_cn: 钛合金分子动力学
+          query: titanium alloys
+        - keyword: molecular dynamics
+          keyword_cn: 分子动力学
+          query: molecular dynamics
+      intent_queries:
+        - query: machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials
+          query_cn: 机器学习预测钛基材料力学 热学与扩散性质
+          enabled: true
+          source: manual
+          note: ''
+        - query: molecular dynamics studies of titanium graphene composites and interfaces
+          query_cn: 钛 石墨烯复合材料及界面分子动力学研究
+          enabled: true
+          source: manual
+          note: ''
+        - query: molecular dynamics simulation of titanium alloys and Ti based materials
+          query_cn: 钛合金与钛基材料分子动力学模拟
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-03-19T15:12:45.825Z'
