@@ -1,0 +1,340 @@
+Title: Deep learning statistical defect models on magnetic material dynamic and static properties
+
+URL Source: https://arxiv.org/pdf/2603.10182v1
+
+Published Time: Thu, 12 Mar 2026 00:14:45 GMT
+
+Number of Pages: 25
+
+Markdown Content:
+# Deep learning statistical defect models on magnetic material dynamic and static properties 
+
+C. Eagan, 1 M. Copus, 1 and E. Iacocca 1, ∗
+
+> 1
+
+Center for Magnetism and Magnetic Nanostructures, University of Colorado Colorado Springs, Colorado Springs, CO, USA 
+
+# Abstract 
+
+The modeling of realistic magnetic materials requires the inclusion of defects. Based on the pseudospectral Landau-Lifshitz description of magnetisation dynamics, we propose a statistical model that takes into account defects, specifically vacancies. This statistical model can be integrated with deep learning techniques that correlate defect thresholds with relevant physical observables. We develop a convolutional neural network and a physics-informed neural network combined with theory of functional connections to predict the dispersion relation given defect parameters and physical constraints. A two-branch convolutional neural network is developed to predict domain-wall widths depending on defects threshold, taking into account the spatial profile and domain-wall width separately to achieve a prediction. The proposed physics-informed approaches leverage deep-learning and achieve statistical predictions measured in physical units. This is a stepping stone towards the discovery of new materials and the determination of minimal defect thresholds required for desired dynamics, states, or topological textures.  
+
+> ∗
+
+eiacocca@uccs.edu 
+
+1
+
+> arXiv:2603.10182v1 [cond-mat.mes-hall] 10 Mar 2026
+
+Deep learning is ubiquitous in perhaps every aspect of daily life, and is an increasingly common tool in the sciences; fields from biology to physics are increasingly exploring its usefulness to expand on computational techniques [1]. Machine learning techniques have stepped beyond simple predictions and have now endeavored to harness the power of arti-ficial intelligence for predicting states and desired outcomes [2]. Applications range from predicting new chemical compounds [3], biological population growth [4], and material sci-ences [5]. While neural networks are inspired by mammalian brain neural networks, the idea of deep learning is not limited to neural networks, but can rather describe a layered learning process. Within physics, an alluring concept is the use of physics-informed neural networks [6, 7], which can predict individual states in well-behaved systems governed by partial differential equations (PDE). Alternatively, the physics described by the PDE can be learned in an abstracted Fourier space using the Fourier neural operator (FNO) [8, 9] which has been shown to predict the dynamics of two-dimensional flows. However, for non-linear systems governed by more complex PDEs, it can be challenging to predict states or outcomes with a high threshold of certainty with these methods. So far, the field of material science has been quite successful in using machine learning techniques as well as championing explainability to “open the black box”, e.g. see Ref. [5, 10] and references therein. In the field of magnetism, machine learning techniques have been used rather sporadically, e.g., to determine their electronic structure [11, 12], electron-induced torques [13, 14], nucleation fields [15, 16], as well as accelerating magnetisation dynamic simulations [17–20]. Magnetic materials have also been used as integral part of potential devices relying on machine learning, including spin-wave based logic gates [21, 22] and reservoir computing [23–26]. Another avenue where machine learning has been used is to discover new magnetic materials. Examples of these efforts include the prediction of materials with high coercivity [27, 28] and magnetic ordering via neural networks [29]. However, the impact of defects in realistic materials has remained virtually unexplored. This issue is essential to understand whether the predicted materials are feasible to produce and if their predicted properties are robust to fluctuations. To tackle this problem, we leverage a statistical approach of magnetisation dynamics that takes into account material defects. In this work, we show how a statistical interpretation of the magnetic nonlocal interactions can be used to consider material defects and to build a dataset aimed at predicting defect 2thresholds in which topological textures can be stabilized. Our approach is based on the pseudospectral Landau-Lifshitz (PS-LL) equation [30–33] in which atomic-scale exchange interactions are modeled as a convolution kernel. The model is modified to consider a statistical defect representation, a statistic pseudospectral Landau-Lifshitz (SPS-LL) model, to ensure compatibility with a deep learning methodology. While the approach is completely general, we demonstrate here its applicability within a one-dimensional (1D) spin chain. The defects are considered statistically as random telegraph noise characterized by pa-rameters associated to defect size and density. Therefore, machine learning approaches can link such quantities to magnetic physical quantities such as the magnon dispersion relation and domain-wall width. To achieve this connection, we develop deep learning approaches targeted at magnetic materials and extendable to material science in general. On the one hand, the magnon dispersion relation is learned by a combination of convolutional neural networks and physics-informed neural networks using theory of functional connections that allow us to constrain the learned parameters to the underlying physical form of the dis-persion relation. On the other hand, a convolutional neural network is used to learn the correlation between the magnetisation’s domain-wall profile and domain-wall width to the defect parameters. The approaches presented here can be extended to higher spatial dimensions to stabilize and predict unique topological features in magnetic materials. Recent advances in fabrication and imaging techniques [34–41] as well as the recent observation of magnetic hopfions [13, 37, 42–46] suggest future progress aided by machine learning approaches and suitable underlying physical models. Our proposed approach to predict defect thresholds can be used for current materials and could be extended to discover new materials based on desired features, for example, specific dynamics or topological textures. 
+
+> RESULTS Physical model of material defects
+
+We begin our description with the Landau-Lifshitz equation for magnetisation dynamics, given by 
+
+∂∂t m = −γμ 0 [m × Heff + αm × (m × Heff )] , (1) 3where m denotes the magnetisation vector normalised by the saturation magnetisation, Ms,
+
+γ is the gyromagnetic ratio, μ0 is the vacuum permeability, α is the Gilbert damping constant used in the Landau-Lifshitz form, valid if α ≪ 1, and the effective field Heff is given by 
+
+Heff = Hl − F −1{κ(k) ˆ m}, (2) where Hl represent local fields, such as anisotropy and an external field, and the nonlocal terms are captured by the term F−1{κ(k) ˆ m}, where κ(k) is a convolution kernel in units of A m −1.So far, the convolution kernel has been typically chosen to be the magnon dispersion relation [30, 33], augmented with Dzyaloshinskii-Moriya interaction [31], or modified to describe magnetostatic waves [32]. Here, we consider a 1D chain of atoms where defects are simply vacancies. This is illustrated in Fig. 1 a, top panel, where the atomic sites are black circles and the vacancies are red circles. The presence of defects can be represented by the digital signal shown in the bottom panel, where 1 indicates an atom and 0 a defect. Because the defect location is random, this digital signal is simply random telegraph noise (RTN) where σ is the mean distance in the 1 state, or the average size of the ideal material, and 
+
+τ is the mean distance in the 0 state, or the mean defect size. Thus, τ = 0 represents a perfect material. In a direct simulation, the RTN can be multiplied directly to the magnetisation vector, so that a vacancy describes a numerical cell without magnetisation [32]. In 1D, this would correspond to a small chain of atoms in which wave scattering would be precluded, as otherwise expected physically in 2D and 3D. Therefore, we interpret the RTN spectrally. The power spectral density of RTN was derived in Ref. [47] as 
+
+S(k) = 1
+
+πστ 
+
+(σ + τ )2
+
+T
+
+1 + ( kT )2 +
+
+ σσ + τ
+
+2
+
+δ(k) (3) where T = ( σ−1 + τ −1)−1, is the mean defect spatial density. As mentioned before, a perfect material corresponds to τ = 0 in which case, Eq (3) reduces to a delta function. As τ increases relative to σ, the delta function is reduced in magnitude and a Lorentzian lineshape appears. This transition is illustrated in Fig. 1 b as a surface plot of S(k) as a function of τ and assuming σ = 10 nm. In this extreme example, the Lorentzian associated with defects begins as a low-amplitude and wide lineshape. As τ increases, the magnitude of the Lorentzian follows suit and its width is reduced. We note that in the limit of large τ ,4S(k) = 0 as also expected from the definition of the RTN signal. More details on the RTN and its relation to Eq. (3) is provided in the Supplementary Material SI 1. Because the RTN is in real space, its Fourier representation applies as a convolution in Fourier space. The statistical representation of the magnetisation due to defects can be written as 
+
+W (k) = pS(k) ∗ ˆm(k), (4) where ∗ represents convolution and we take the square root of S(k) to consider its Fourier transform rather than power spectral density. For the case of a perfect material, S(k) = δ(k),and Eq. 4 reduces to ˆm(k), as expected. Finally, the nonlocal kernel takes the form 
+
+κ(k) ˆ m = Msω(k)W (k) = Msω(k)
+
+hp S(k) ∗ ˆm(k)
+
+i
+
+, (5) where the dimensionless 1D magnon dispersion relation is given by 
+
+ω(k) = 2 
+
+λex 
+
+a
+
+2
+
+[1 − cos ( ak )] , (6) 
+
+λex is the exchange length, and a is the lattice constant. Equations (1) with Eqs. (5) and (6) compose the statistical pseudospectral Landau-Lifshitz (SPS-LL) model. Because this representation includes both a multiplication and convolution, there is no numerically preferred method to compute it, i.e., Fourier space or real space. However, the approach is based on the fact that the defects can be represented in Fourier space, eliminating the need of large simulations domains and several simulations to obtain statistics. In addition, the representation is grid-independent, meaning that the impact of defects are considered up to the maximally resolved wavenumber and limited by the first Brillouin zone given a lattice constant a. A consequence of this statistical interpretation of defects is that the model cannot describe a single object. For example, a domain wall represented with our statistical approach would exhibit a profile analogous to that of an ensemble of domain walls in a material with a given defect size and density. The function S(k) can be interpreted as a low-pass filter in Fourier space. For example, if one considers a uniform magnetisation state, ˆm = δ(k), the kernel would be simply 
+
+κ(k) = ω(k)pS(k). This means that small features are arrested or scattered by defects while large features are largely unaffected. The filter characteristic can be clearly seen by comparing the small-amplitude dispersion relation obtained from ideal and defective materials, shown in Fig. 1 c and d. In panel c, we show the ideal ( τ = 0 ) dispersion 5computed numerically for a material with strong perpendicular magnetic anisotropy (PMA) such as FePt. The material parameters and computation method of the dispersion relation are detailed in the Methods. The magnon dispersion relation of Eq. (6) scaled by γμ 0M s 
+
+is shown by a red dashed curve, reflecting that the calculation reproduces the dispersion relation almost exactly. In panel d we use σ = 10 nm and τ = 5 nm, which is a rather extreme set of conditions. The numerically calculated dispersion exhibits a reduced frequency as the wavenumber approaches the FBZ, confirming that S(k) acts similar to a low-pass filter. 
+
+> Domain-walls within the SPS-LL
+
+Changes in the dispersion relation indicate energy variations of the exchange interaction. Based on the interpretation of S(k) as a low-pass filter, the exchange energy due to defects is lower for small magnetic features. This has direct consequences for solitons, whose profile depends on the balance between anisotropy and exchange, i.e., between nonlinearity and dispersion [49]. For the 1D PMA ferromagnetic chain considered here, a soliton takes the form of a kink, which is a domain wall [50]. The decreasing exchange energy for small features suggests that as the defect density increases, the domain walls become narrower as the anisotropy energy becomes dominant. To verify the above statement, we stabilize domain walls in our 1D ferromagnetic chain with varying σ and τ parameters. Because the model is 1D, there is no clear preference between a Bloch or Néel wall [51]. However, Bloch walls are favored in PMA nanowires, so we will assume this profile as the initial condition. In Fig. 1 e, we show a comparison between domain walls in an ideal (blue curve) and defective (red curve) material. The domain-wall in the defective material in this case is narrower. This solution should be interpreted as an average domain wall profile. Indeed, in regions where the defect is not present, the material is effectively ideal. From the stabilized domain walls, their domain-wall width, w, can be numerically ex-tracted as specified in the Methods. The width dependence as a function of σ and τ is shown in Fig. 1 f. The equilibrium domain-wall width is 4.08 ± 0.12 nm, equivalent to 12 atomic sites, in good agreement with the analytical domain-wall width of πpA/K u = 3 .73 nm. For low values of τ , the domain-wall width is quickly reduced in all cases. After τ ≈ 13 nm, the domain-wall width tends to decrease for τ > σ and increase for τ < σ . These trends agree 6FIG. 1. Modeling of a defective material. a A 1D-chain of atoms can have vacancies at random locations, illustrated by red circles. This chain is represented by a digital signal where 1 indicates atoms and 0 represents vacancies. σ represents the average length of defect-free atomic chain and τ represents the average length of vacancies. b The Fourier transform of the RTN signal, Eq. (3), shown as a function of k
+
+and τ for σ = 10 nm. When τ = 0 , S(k) = δ(k). As τ increases, the broadband Lorentzian spectrum grows in amplitude. c Dispersion relation calculated for an ideal material and d a material in which σ = 10 nm and τ = 5 nm. In both panels, the ideal magnon dispersion relation of Eq. (6) scaled by γμ 0Ms is shown by a red dashed curve. The color scheme is found in Ref. [48]. e Domain wall profile for an ideal material, blue curve τ = 0 , and a defective material, red curve σ = 10 nm and τ = 5 nm. f Surface plot of the the domain-wall width as a function of σ and τ , calculated from numerically relaxed domain walls. 
+
+7with the general expectation that as τ → ∞ , S(k) → 0 so that exchange interactions are disabled, while σ → ∞ leads to S(k) → δ(k) leading to the ideal domain-wall width. The physically relevant case is only when τ < σ , meaning that most of the material is present. 
+
+> Learning defect thresholds
+
+The overall rationale of our approach is to learn physical features of the material as a function of σ and τ pairs. The features of interest are the dispersion relation as it captures the non-local exchange interactions in the material, and the domain-wall width as an example of a physical observable. For example, given a certain domain-wall width, the neural network will predict the σ and τ pairs with good accuracy, which in turn can be used to compute the dispersion relation. Ultimately, the proposed approach aims to learn quantities that can be measured and controlled experimentally rather than predicting specific states. 
+
+> Prediction of dispersion relations
+
+The computed dispersion relations are essentially 2D matrices where each wavenumber and frequency pair has information on amplitude, c.f. Fig. 1 b and c. In other words, the data can be assumed to be an image. This suggests the use of convolutional neural networks (CNNs) for the initial recovery of σ and τ from specific defective dispersions. The CNN works by specifically using “pooled”, or convolutional layers, which reduce the dimensionality of information in each layer for learning by transforming matrices to tensors [52]. This type of neural network detects patterns and edges in the data, making it ideal for learning and predicting visual patterns [52]; we designed it to solve the inverse problem. In other words, given a dispersion relation, our network predicts the associated σ
+
+and τ pairs. First, we randomly generate σ and τ pairs and use the SPS-LL model to compute the associated dispersion relations, as detailed in the Methods. The data is passed through a fully connected CNN optimized for feature extraction. We used sixteen layers as well as final output block. Details on the implementation are found in the Methods. Predicting the specific dispersion curve from the defect parameter pairs is a more chal-lenging task due to the combination of a learned function required to obey known physical 8constraints of the system. It is tempting to use a physics-informed neural network (PINN), a network that leverages loss minimization to converge on a system solution whose boundary and limit conditions are set by physical constraints [53]. However, while this method may converge on a solution for a single state, we are actively seeking to predict a function from a given set of parameters within a profile. The theory of functional connections (TFC) is a way to implement a learning constraint based on the underlying physics [54]. By constraining the learning of the PINN, the TFC approximated form can always analytically satisfy the physical constraints of the system, while maintaining a neural network with unconstrained parameters necessary for learning [6, 54]. Because, in general, neural networks can learn any function, including one that is non-physical for the physical system’s characteristics it is learning, it is necessary to employ techniques to enforce the physical constraints within the learning. This was not problematic when learning defect parameters from the dispersion curve, because we learned only those parameters, and not the function itself. To learn the dispersion function, we combined the prior CNN with a PINN-TFC, for a novel three-block learning approach whose architecture is visualized in Fig. 2. The CNN block retains the adaptive pooling and extracts features based on the given defect input parameters, then passes these outputs to the second and third PINN-TFC blocks, which learn the appropriate coefficients within given constraints and combine this with learning and predicting the required unchanging functional form of the dispersion [52, 54]. Within the TFC solution, we approach the dispersion prediction as a constrained function optimization learning task. The learning of the specific function ω(k) is set up to minimize a loss, where the loss is expressed as L(ω). Utilizing the TFC approach, we can express 
+
+ω(k) = ϕ(k, θ ) + ψ(k, θ ), where ϕ(k, θ ) satisfies the constraints and contains no learned parameters and ψ(k, θ ) is a trainable term, parametrized during the learning process [6, 54]. Therefore, the network does not truly “know” physical bounds, but learns the output coefficients, and produces dispersion curves according to defect parameters in accordance with loss minimization. The constraints are imposed by the initial transformation with the TFC. Thus we predict coefficients that must yield a correct dispersion, bound by statistical material thresholds. We set ϕ(k, θ ) = X(θ)[1 − cos( kα )] , where X is a learn coefficient, 
+
+Xlearned ∝ Learned Exchange ∈ [X]material max material min , (7) 9Input: [dispersion profile, σ
+
+, τ
+
+] 
+
+> Feature Extractor (CNN)
+
+Conv1d(1 →64, k=5) + BN + ReLU         
+
+> MaxPool1d(2)
+> Conv1d(64 →128, k=5) +BN +ReLU
+> MaxPool1d(2)
+> Conv1d(128 →256, k=3) +BN +ReLU
+> AdaptiveAvgPool1d(1)
+
+(256 features) + [ σ
+
+, τ
+
+]
+
+(258 total)         
+
+> Coefficient Predictor (MLP)
+> Linear(258 →128) +ReLU +Dropout
+> Linear(128 →64) +ReLU
+> Linear(64 →4) [X, c ₁, c ₂, c ₃]
+> TFC Dispersion Builder
+
+𝜔 (𝑘 ) = 𝑋 (1 − cos (𝑘𝛼 )) + Σ 𝑐ₙ · 𝑘 (𝑛 +1)
+
+Output: ω
+
+(k) for k -points FIG. 2. Neural network architecture for TFC dispersion prediction. The dispersion relation and σ
+
+and τ pairs are given as inputs to a CNN for feature extraction and efficient pooling, with normalization in between each layer. The output is passed to the coefficient predictor that learns based on specific physical parameter constraints and finally a new dispersion is constructed preserving the original structure by the TFC. 
+
+and ψ(k, ω ) = P cn(θ)kn+1 . Therefore, the TFC-learned dispersion decomposes as follows 
+
+ω(k) = X(θ)
+
+| {z } 
+
+> constrained
+
+[1 − cos( kα )] + γμ 0Hk
+
+| {z }
+
+> fixed physics
+
++
+
+> 5
+
+X
+
+> n=1
+
+cn(θ)kn+1 
+
+| {z }
+
+> learned corrections
+
+. (8) Thus, for any given input, we can predict the amplitude and subsequent coefficients according to predicting (X, c ) where X ∈ [0 , 5.1] , constraining the sigmoid functions for each correction with learned c coefficients, which ensures learning within the constraint for X based on the material-specific ideal dispersion. We constrain the coefficient on the torch.sigmoid function 10 FIG. 3. Dispersion relation predictions from the TCF-PINN learned function. Dispersion relations computed by the SPS-LL for a σ = 22 .9 nm, τ = 3 .0 nm, and X = 3 .65 THz and b σ = 15 .1 nm, 
+
+τ = 12 .4 nm, and X = 2 .45 THz. The predicted dispersion relation from the given σ and τ are plotted by dashed magenta curves, in good agreement with the numerical solution. The ideal dispersion relation is shown by dotted red curves for reference. The color scheme is found in Ref. [48]. c Training loss trend for the TCF-PINN learned function. This training loss plot shows an optimal learning trend. 
+
+in this manner. 
+
+Xlearned = 5 .1 × torch.sigmoid (coeffs [0 , 5.1]) , (9a) 
+
+X = 5 .1 × sigmoid (Xlearned ) (9b) A mean absolute error (MAE) consistently between 0.29 and 0.36 across k-values shows an excellent fit on the lower end of a target baseline of MAE between 0.2 and 0.5. As an example, the learned dispersion relations are shown by dashed magenta curves in Fig. 3 a and 
+
+b. We find a good agreement with the dispersion relation computed by the SPS-LL, shown as a colormap. The error in the prediction stems mostly from the large k components, demonstrating that the numerical dispersion is not exactly a cosine function. This also 11 implies that the polynomial correction is insufficient to fully describe the dispersion. The error could be further reduced by using other correction functions or a combination of functions. Despite this systematic error, the learned dispersion is remarkably close to the numerical dispersion relation. For reference, the ideal dispersion relation is shown by dotted red curves. The evolution of the loss as a function of epochs in shown in Fig. 3 c for the train and test data. The good agreement between both train and test data demonstrates an appropriate learning trend. The proposed architecture is thus able to learn the dispersion relation and correlate its functional form to the σ and τ pairs. 
+
+> Prediction of domain-wall widths
+
+A regime of interest is to identify the features of magnetic textures due to material defects. In our current 1D SPS-LL implementation, a natural configuration to investigate is a domain wall. To demonstrate the feasibility of leveraging these deep learning techniques for such an application, we use the initial CNN model that learned the σ, τ pairs from the dispersion relation to predict a domain wall widths. To build the database, we stabilize 12,000 Bloch-type domain walls with random σ and τ
+
+pairs and estimate their widths, as discussed above and detailed in the Methods. As shown in Fig. 1 e, the domain-wall width is multivalued when considering a wide range of σ and 
+
+τ pairs. For this reason, we constrained our database to physically relevant cases in which the defects are relatively small. This is important for FePt since the expected domain-wall width is comparable to only a few atoms. Therefore, we used 0 ≤ σ ≤ 100 and 0 ≤ τ ≤ 20 .Each domain-wall width is associated to a specific σ and τ pair that is used by a simple CNN to learn their relationship. The input is the mz profile and the associated domain-wall width, with the output being the predicted σ and τ . The CNN architecture is illustrated in Fig. 4. Our model uses a dual-branch architecture that processes spatial features separately from the geometric width feature, then fuses them for final prediction. The first layer is a convolutional feature extractor, which processes the mz profile through 4 convolutional blocks to capture multi-scale spatial patterns. Due to the calculated width from the spectral profile including the defect parameters, overfitting was a challenge. For this reason, we include overfitting detection. Despite these challenges, our model performed reasonably well. In Fig. 5 a, we show the actual and pre-12 𝒎 𝒛  
+
+> Profile
+> Width
+> Conv Layers
+> (1024 features)
+> FC Layers
+> (64 features)
+> Concatenate
+> FC Layers
+> στ
+
+FIG. 4. Architecture to predict domain-wall widths. The CNN takes the magnetization profile and associated domain wall width calculated with the defect noise parameters and returns the defect parameters for that width. 
+
+dicted domain-wall widths as a function of defect density T . Because the same T can be achieved by several combinations of σ and τ , there is a significant scatter in the domain-wall widths computed from the SPS-LL-generated profiles, shown in blue circles. The predicted domain-wall width is shown in red circles and closely follows the expected trend. To gain more insights into the performance of our architecture, Fig. 5 b shows the distri-bution of domain-wall widths errors, computed as the difference between the calculated and learned domain-wall widths. The peak of the distribution is at 0.065 nm which is under the lattice constant. While there are outliers as expected in statistical learning, the standard deviation of the domain-wall prediction is 0.835 nm. The training-loss curve using large batch processing is shown in Fig. 5 c.
+
+I. DISCUSSION 
+
+We have demonstrated an approach that leverages a statistical physical model for mag-netic materials and deep learning to correlate physical features with material defects. Such a 13 FIG. 5. Learned domain-wall widths as a function of σ and τ . a Actual (blue symbols) and predicted (red symbols) widths as a function of defect density T (nm). The learned domain-wall widths closely follow the trend expected from numerical calculations. b Histogram of the domain-wall width errors. The mean of the distribution is 0.077 nm and the standard deviation is 0.835 nm. c Training loss trend for the CNN learned width. For the training we used large batch training in increments of 25 epochs. 
+
+blended technique provides two levels of computational efficiency. First, a statistical model of magnetisation dynamics alleviates the requirement of using large-scale and repeated sim-ulations to accumulate statistics. Second, the use of deep learning and training models enables an accurate and computationally efficient determination of physical observables. In the 1D structure investigated here, these statement are admittedly difficult to quantify because exchange-dominated scattering from defects reduces to simple reflections. Further investigations in 2D or 3D are needed to fully assert the accuracy of the SPS-LL. Extensions into 2D and 3D are certainly feasible. The PS-LL model has been already 14 demonstrated in 2D in good agreement with other simulation tools [31], known magneto-static regimes [32], and ultrafast experiments [33]. A 3D implementation will be presented elsewhere. Utilizing this approach at higher dimensions has the potential to reduce the computational cost even further once a model is trained. In addition, 2D and 3D systems are interesting from a technological point of view because they can host magnetic solitons such as skyrmions and hopfions. In particular, hopfions are receiving significant attention as objects available in materials with bulk Dzyaloshinskii-Moriya interaction or biquadradic exchange interaction. For practical applications, it is important to understand the effect of defects in these textures as well as determining the parameter range in which their exis-tence is guaranteed. Our statistical approach could be useful from these perspectives. For example, a fully trained model could aid in the prediction of material parameters and novel materials hosting and sustaining hopfions as well as providing insights into the minimum material quality. Finally, our presented model can be also used inversely to predict defect size and densities based on observed data. For example, the dispersion relation can be computed by several methods or even experimentally determined, e.g., by neutron scattering. With this data, the trained model would return the defect size and densities, based on the expectations of the SPS-LL model. Similarly, average domain-wall widths measured by MFM or x-ray scattering could be used as inputs to predict the defect properties. Such an approach would require careful comparison with experiments to assess its accuracy and validity. In summary, this paper proposes a novel approach to investigate material defects and statistical properties in magnetic materials by taking advantage of deep learning techniques while being firmly rooted in the underlying physics of the problem. As such, we expect our results to be valuable in material science, both in analyzing data and predicting new materials. 
+
+> METHODS Computation of dispersion relation for FePt
+
+We consider magnetic parameters consistent with FePt in the L1 0 phase [55]: Ms =950 kA m −1, A = 5 .1 pJ/m leading to λex ≈ 3.1 nm, Hk = 7 MA/m, lattice constant 15 a = 3 .39 Å. To compute the dispersion relation, we use a single and narrow Gaussian initial condition, as done previously [30–32]. The Gaussian is defined in the mx magnetisation component for the PMA material implying that the equilibrium direction is zero and the Gaussian is a deviation. We set my = 0 so mz = p1 − m2
+
+> x
+
+. The standard deviation of the Gaussian function is set equal to the lattice constant so that the initial state resembles a delta function. To excite waves with sufficient amplitude, we set a low Gilbert damping constant of α =0.001 . In other words, this low damping allow us to obtain a larger amplitude in Fourier space and thus clearly identify the eigenfrequencies. The simulation domain is set to 500 cells discretized at the lattice constant while the simulation runs for 10 ps and is sampled at 10 fs. The space and time evolution of the mz component is recorded. Therefore, the dispersion relation is obtained with a two-dimensional fast Fourier transform. Given the above spatiotemporal parameters, we obtain a spatial wavenumber resolution of 37 rad μm−1
+
+and for the FBZ of 9.26 rad nm and a frequency resolution of 100 GHz with a maximum frequency of 50 THz. 
+
+> Domain-wall simulation and determination of their width
+
+Domain walls are simulated by initializing the magnetisation with the anzats mz =tanh ( pKU /A ex x), my = 0 and mx = p1 − m2 
+
+> z
+
+, where KU = μ0Ms(Hk − Ms)/2. To accelerate convergence, we set α = 1 and run the simulation for 100 ps. Once the domain-wall is stabilised, we compute the domain-wall width by fitting its shape with a sum of basis functions. First, we duplicate and flip the mz magnetisation component to define a domain. In this way, the function is even and we can use a cosine series as a basis function. Then, we compute the polar angle as θ = arccos ( mz ) and compute the coefficients for each harmonic in order to obtain an approximation for the domain, f (x). We then take the first-order Taylor approximation of our basis to obtain the linear limit at the position of one domain wall, for example L/ 4 where L = 1000 is the duplicated length of the simulation. This means that the linear approximation of the domain wall is 
+
+f (x) = π
+
+4 +
+
+> ∞
+
+X
+
+> n=1
+
+an cos 
+
+nπ 
+
+4
+
+
+
+− nπ L sin 
+
+nπ 
+
+4
+
+ 
+
+x − L
+
+4
+
+
+
+(10) Finally, we define the domain-wall width from the bounds of the linear limit between 0 and 16 π. Because the bounds must be obtained from the sum, we truncate the approximation at 
+
+n = 700 and then fit the linear approximation with a line so that the domain-wall width can be obtained exactly. This approach corresponds to the definition of domain-wall width as 
+
+πpAex /K U . The error in the determination of the domain-wall comes from the truncation of the sum. In this spirit, the error is estimated as the standard deviation from the last 100 harmonics. 
+
+> CNN for dispersion relation feature extraction
+
+The input for the CNN takes the dispersion relation, estimated as the maximum of each k-dependent spectrum. This results in 1D dispersion relations that are represented as arrays of length 500 and then used as the CNN’s channel input. We then leveraged sixteen total fully connected convolutional layers for feature extraction, organized into three dense blocks and the final output block. Layer 1 has 512 neurons, layer 2 goes from 512 to 256 neurons, layer 3 goes from 256 neurons to 64, and the final output layer goes from 64 back down to our 2 desired outputs ( σ and τ ). The initial layers detect local patterns in the dispersion relation, and the deeper layers learn how these patterns relate to the statistical defect parameters. The convolutional layers learn which spatial characteristics of the dispersion (width, amplitude, gradients) correlate with specific σ, τ combinations. The dense layers perform the final mapping from spatial features to the two defect parameters to be predicted. The first group of convolutional layers (or first block) is for 1 to 64 channels, with a 
+
+1 × 5 kernel, which extracts the basic local features from the dispersion pattern. We use MaxPool which reduces the spatial dimension by a factor 2 (with each block) in the first three blocks. The second block, channels 64 to 128, kernel =5 captures any complex spatial relationships. The third convolutional block channels 128 to 256, kernel =3 learns the higher level abstraction features, from 256 to 128, with kernel=3. We use a database of 1000 simulations. The design features batch normalization with a 30 % dropout rate to avoid overfitting for a relatively small sample size. We use standard ReLU activation function for non-linearity, standard MSE loss function, an Adam Optimizer, and learning rate stopping to save the best model based on validation performance. 17 Implementation of TFC 
+
+By using a sigmoid activation function ( torch.sigmoid ) for A, we can ensure to always recover the correct amplitude bounded by the constraints of the perfect dispersion for the specified material. The constraints vary according to the material-specific dispersion. We use a tanh activation function for learned coefficients ( torch.tanh ). Therefore, by construction, 1. Xlearned ∈ [0 , 5.1] : Xlearned = 5 .1σ(z), where σ(z) ∈ [0 , 1] 
+
+2. cn ∈ [−0.1, 0.1] : cn = 0 .1 tanh( z)where tanh( z) ∈ [−1, 1] 
+
+3. Combining the learned and unchanging form = Xlearned (1 − cos( kα )) 
+
+4. Any corrections are small and bounded by the given physical system constraints. This means that every network output satisfies the following based on both learned and fixed parameters ω(k) = Xlearned (1 − cos( kα )) + ϵ(k), where |ϵ(k)| is bounded and small. Additionally, for small k, we still recover the appropriate k2 solution with this method.   
+
+> Loss function to predict σ, τ from domain walls
+
+The MSE function is represented to accommodate for the individual defect parameter ranges, as Total Loss = MSE( σ) + 5.0 x MSE( τ ), with τ weighted higher in the loss func-tion to compensate for its lower value. The training and evaluation process of the model is structured in the typical epoch progression. Early epochs, 1-50 shows high initial loss due to random weighting. This is followed by mid and late epoch training stages 51-200, with steady loss reduction, and occasional plateaus. Fine-tuning phase with potential learning rate reductions occurred when the ReduceLROnPlateau scheduler activated due to plateaus. These were minimized by a validation loss process, and typical dropout and batch normal-ization prevent early overfitting. 
+
+> ACKNOWLEDGMENTS
+
+This work was supported by the U.S. Department of Energy, Office of Basic Energy Sciences under Award No. DE-SC0024339. 18 AUTHOR CONTRIBUTIONS 
+
+C.E. developed the deep learning algorithms. C.E. and E.I. developed the PS-LL model incorporating random telegraph noise. All authors contributed with performing validation simulations, analyzing the data, and writing the paper. 
+
+COMPETING INTERESTS STATEMENT 
+
+The authors declare no competing interests. 
+
+CORRESPONDING AUTHORS 
+
+Correspondence to eiacocca@uccs.edu 
+
+[1] Y. LeCun, Y. Bengio, and G. Hinton, Nature 521 , 436 (2015). [2] I. Goodfellow, Y. Bengio, and A. Courville, Deep Learning (MIT Press, 2016) http://www. deeplearningbook.org .[3] D. C. Elton, Z. Boukouvalas, M. D. Fuge, and P. W. Chung, Molecular Systems Design & Engineering 4, 828–849 (2019). [4] J. G. Greener, S. M. Kandathil, L. Moffat, and D. T. Jones, Nature Reviews Molecular Cell Biology 23 , 40–55 (2021). [5] X. Zhong, B. Gallagher, S. Liu, B. Kailkhura, A. Hiszpanski, and T. Y.-J. Han, npj Compu-tational Materials 8, 10.1038/s41524-022-00884-7 (2022). [6] M. Raissi, P. Perdikaris, and G. E. Karniadakis, Journal of Computational Physics 378 , 686 (2019). [7] G. E. Karniadaki, I. G. Kevrekidis, L. Lu, P. Perdikaris, S. Wang, and L. Yang, Nature Review Physics 3, 422 (2021). [8] Z. Li, N. Kovachki, K. Azizzadenesheli, B. Liu, K. Bhattacharya, A. Stuart, and A. Anandku-mar, arXiv:2010.08895 (). 
+
+19 [9] Z. Li, H. Zheng, N. Kovachki, D. Jin, H. Chen, B. Liu, K. Azizzadenesheli, and A. Anandkumar, arXiv:2011.03794 (). [10] K. Choudhary, B. DeCost, C. Chen, et al., npj Computational Materials 8, 10.1038/s41524-022-00734-6 (2022). [11] J. Nelson and S. Sanvito, Phys. Rev. Mater. 3, 104405 (2019). [12] M. Domina, M. Cobelli, and S. Sanvito, Phys. Rev. B 105 , 214439 (2022). [13] Z. Zhang, K. Lin, Y. Zhang, A. Bournel, K. Xia, M. Kläui, and W. Zhao, Science Advances 9,eade7439 (2023). [14] A. Tyberg, Y. Fan, and G.-W. Chern, Phys. Rev. B 111 , 235132 (2025). [15] M. Gusenbauer, H. Oezelt, J. Fischbacher, A. Kovacs, P. Zhao, T. G. Woodcock, and T. Schrefl, npj Computational Materials 6, 89 (2020). [16] C. Bhandari, G. N. Nop, J. D. Smith, and D. Paudyal, Phys. Rev. Appl. 22 , 024046 (2024). [17] S. Schaffer, N. J. Mauser, T. Schrefl, D. Suess, and L. Exl, IEEE Transactions on Magnetics 
+
+58 , 7100506 (2022). [18] L. Exl, N. J. Mauser, T. Schrefl, and D. Suess, Communications in Nonlinear Science and Numerical Simulation 84 , 105205 (2020). [19] L. Exl, N. J. Mauser, S. Schaffer, T. Schrefl, and D. Suess, Journal of Computational Physics 
+
+444 , 110586 (2021). [20] Y. Cai, J. Li, and D. Wang, arXiv:2410.14986. [21] A. Papp, W. Porod, and G. Csaba, Nature Communications 12 , 6422 (2021). [22] Q. Wang, A. V. Chumak, and P. Pirro, Nature Communications 12 , 2326 (2021). [23] J. C. Gartside, K. D. Stenning, A. Vanstone, H. H. Holder, D. M. Arroo, T. Dion, F. Caravelli, H. Kurebayashi, and W. R. Branford, Nature Nanotechnology 17 , 460 (2022). [24] K. D. Stenning, J. C. Gartside, L. Manneschi, C. T. S. Cheung, T. Chen, A. Vanstone, J. Love, H. Holder, F. Caravelli, H. Kurebayashi, K. Everschor-Sitte, E. Vasilaki, and W. R. Branford, Nature Communications 15 , 7377 (2024). [25] O. Lee, T. Wei, K. D. Stenning, J. C. Gartside, D. Perstwood, S. Seki, A. Ageel, K. Karube, N. Kanazawa, Y. Taguchi, C. Back, Y. Tokura, W. R. Branford, and H. Kurebayashi, Nature Materials 23 , 79 (2024). [26] C. B. Abbott, M. Elo, and D. A. Bozhko, arXiv:2506.04523. 
+
+20 [27] A. Kovacs, J. Fischbacher, H. Oezelt, A. Kornell, Q. Ali, M. Gusenbauer, M. Yano, N. Sakuma, A. Kinoshita, T. Shoji, A. Kato, Y. Hong, S. Grenier, T. Devillers, N. M. Dempsey, T. Fukushima, H. Akai, N. Kawashima, T. Miyake, and T. Schrefl, Frontiers in Materials 
+
+9, 10.3389/fmats.2022.1094055 (2023). [28] A. Halder, D. Paudyal, S. Sanvito, M. Takáč, and H. Ucar, Acta Materialia 297 , 121347 (2025). [29] W. Xu, R. Y. Sanspeur, A. Kolluru, B. Deng, P. Harrington, S. Farrell, K. Reuter, and J. R. Kitchin, Proceedings of the National Academy of Sciences 122 , 10.1073/pnas.2422973122 (2025). [30] K. Rockwell, J. Hirst, T. A. Ostler, and E. Iacocca, Phys. Rev. B 109 , L180404 (2024). [31] M. Copus and E. Iacocca, arXiv:2507.14365. [32] A. Roxburgh, M. Copus, and E. Iacocca, npj Computational Materials 11 , 369 (2025). [33] L. Foglia, B. Wehinger, G. Perosa, R. Mincigrucci, E. Allaria, F. Armillotta, A. Brynes, M. Co-pus, R. Cucini, D. De Angelis, G. De Ninno, W. D. Engel, D. Fainozzi, L. Giannessi, E. Iacocca, N. N. Khatu, S. Laterza, E. Paltanin, J. S. Pelli-Cresi, G. Penco, D. Puntel, P. Rebernik Ribič, F. Sottocorona, M. Trovó, C. von Korff Schmising, K. Yao, C. Masciovecchio, S. Bonetti, and F. Bencivenga, Nature Communications 15 , 10742 (2024). [34] C. Donnelly, M. Guizar-Sicairos, V. Scagnoli, M. Holler, T. Huthwelker, A. Menzel, I. Varti-ainen, E. Müller, E. Kirk, S. Gliga, J. Raabe, and L. J. Heyderman, Phys. Rev. Lett. 114 ,115501 (2015). [35] C. Donnelly, M. Guizar-Sicairos, V. Scagnoli, S. Gliga, M. Holler, J. Raabe, and L. J. Heyder-man, Nature 547 , 328 (2017). [36] C. Donnelly, K. L. Metlov, V. Scagnoli, M. Guizar-Sicairos, M. Holler, S. Bingham, Nicholas, J. Raabe, L. J. Heyderman, N. R. Cooper, and S. Gliga, Nature Physics 17 , 316 (2021). [37] N. Kent, N. Reynolds, D. Raftrey, I. T. G. Campbell, S. Virasawmy, S. Dhuey, V. Chopdekar, Rajesh, A. Hierro-Rodriguez, A. Sorrentino, E. Pereiro, S. Ferrer, F. Hellman, P. Sutcliffe, and P. Fischer, Nature Communications 12 , 1562 (2021). [38] A. Rana, C.-T. Liao, E. Iacocca, J. Zou, M. Pham, X. Lu, E.-E. Cating Subramanian, Y. H. Lo, S. Ryan, C. S. Bevis, R. M. Karl Jr, A. J. Glaid, J. Rable, P. Mahale, J. Hist, T. Ostler, W. Liu, C. M. O’Leary, Y.-S. Yu, K. Bustillo, H. Ohldag, D. A. Shapiro, S. Yazdi, T. E. Mallouk, S. J. Osher, H. C. Kapteyn, V. H. Crespi, J. V. Badding, Y. Tserkovnyak, M. M. Murnane, and J. Miao, Nature Nanotechnology 18 , 227 (2023). 
+
+21 [39] M. Di Pietro Martínez, A. Wartelle, C. Herrero Martínez, F. Fettar, F. Blondelle, J.-F. m. c. Motte, C. Donnelly, L. Turnbull, F. Ogrin, G. van der Laan, H. Popescu, N. Jaouen, F. Yakhou-Harris, and G. Beutier, Phys. Rev. B 107 , 094425 (2023). [40] D. Girardi, S. Finizio, C. Donnelly, G. Rubini, S. Mayr, V. Levati, S. Cuccurullo, F. Maspero, J. Raabe, D. Petti, and E. Albisetti, Nature Communications 15 , 10.1038/s41467-024-47339-9 (2024). [41] D. Raftrey, S. Finizio, R. V. Chopdekar, S. Dhuey, T. Bayaraa, P. Ashby, J. Raabe, T. Santos, S. Griffin, and P. Fischer, Science Advances 10 , 10.1126/sciadv.adp8615 (2024). [42] X. S. Wang, A. Qaiumzadeh, and A. Brataas, Phys. Rev. Lett. 123 , 147203 (2019). [43] Y. Liu, W. Hou, X. Han, and J. Zang, Phys. Rev. Lett. 124 , 127204 (2020). [44] D. Raftrey and P. Fischer, Phys. Rev. Lett. 127 , 257201 (2021). [45] R. Balakrishnan, R. Dandoloff, and A. Saxena, Physics Letters A 480 , 128975 (2023). [46] F. Zheng, N. S. Kiselev, F. N. Rybakov, L. Yang, W. Shi, S. Blügel, and R. E. Dunin-Borkowski, Nature 623 , 718 (2023). [47] S. Machlup, Journal of Applied Physics 25 , 341–343 (1954). [48] Z. Liu, MATLAB Central File Exchange (2022). [49] A. Kosevich, B. Ivanov, and A. Kovalev, Physics Reports 194 , 117 (1990). [50] H.-B. Braun, Advances in Physics 61 , 1 (2012). [51] A. Hubert and R. Schäfer, Magnetic domains: the analysis of magnetic microstructures (Springer, 2009). [52] Z. Li, F. Liu, W. Yang, S. Peng, and J. Zhou, IEEE Transactions on Neural Networks and Learning Systems 33 , 6999 (2022). [53] S. Cuomo, V. S. Di Cola, F. Giampaolo, et al., Journal of Scientific Computing 92 ,10.1007/s10915-022-01939-z (2022). [54] E. Schiassi, R. Furfaro, C. Leake, M. De Florio, H. Johnston, and D. Mortari, Neurocomputing 
+
+457 , 334 (2021). [55] J. Becker, O. Mosendz, D. Weller, A. Kirilyuk, J. C. Maan, P. C. M. Christianen, T. Rasing, and A. Kimel, Applied Physics Letters 104 , 152412 (2014). 
+
+22 Supplementary material: Deep learning statistical defect thresh-olds effects on magnetic materials dynamic and static properties  
+
+> C. Eagan, M. Copus, and E. Iacocca 23 SI 1. POWER SPECTRAL DENSITY VERIFICATION
+
+The function S(k) is a power spectral density and thus has units of m/rad, i.e., inverse wavenumber. However, the definition of the PSD is normalised in amplitude so that the spectral component is aptly scaled to the DC component to 1. This is critical for our approach since the function S(k) must be order one to take its square root and compute the convolution with the magnetisation. The magnetisation is not normalised by the length of the dataset, which eventually leads to a correct inverse fast Fourier transform. Here, we demonstrate that S(k) indeed corresponds to the normalized PSD of random telegraph noise (RTN). Because the signal is noisy, a direct fast Fourier transform method is not appropriate. Instead, we use the Weiner-Khinchin theorem, which indicates that the Fourier transform of a noisy signal is equal to the Fourier transform of its autocorrelation. DC terms are not noisy, so this component should be treated separately. First, we generate a RTN by specifying σ and τ and computing the rates per unit length, 
+
+rσ = σ/dx and rτ = τ /dx , where dx is the cell size of the x axis. With these normalized rates, we generate exponential random lengths with the exprnd function in MATLAB. These lengths are appended to the array depending on the current value of the RTN. In other words, if the current state is 1, we use rσ and flip the state to 0. If the current state is 0, we use rτ
+
+and flip the state to 1. Examples of RTNs generated with this method are shown in Fig. SI 1a for σ = 100 nm and τ = 5 nm, displayed to 1000 nm, and in b for σ = 10 nm and 
+
+τ = 5 nm, displayed to 100 nm. Note that the full RTN signal is computed to 3000 nm with a cell-size of dx = 0 .3 nm. The spectrum is computed as follows 
+
+PSD( k) = |F{ Rxx (dx )}| 2
+
+L + ( ⟨RTN ⟩)2 δ(k), (SI 1) where F{·} is a fast Fourier transform, Rxx (dx ) is the autocorrelation of the RTN, L is the length of the RTN, and ⟨RTN ⟩ is the mean of the RTN. The computed PSD are shown in Fig. SI 1 c and d corresponding to the RTN shown in a
+
+and b, respectively. In both panels, the function S(k) is shown in red curves, demonstrating good agreement with the computed PSDs. Because the PSDs are already normalized to length (in amplitude), we see that both representations agree. The advantage of using 
+
+S(k) is that the function considers an infinite signal and so the noise is minimized to a 24 a b
+
+c dFIG. SI 1. Computation of RTN spectra. RTN traces for a σ = 100 nm and τ = 5 nm, and b
+
+for σ = 10 nm and τ = 5 nm. The corresponding PSD computed via Weiner-Khinchin theorem are shown in c and d. The functions S(k) for each case are shown by red curves. 
+
+deterministic function. More importantly, the mean is normalized to 1 for an ideal material and tends to zero for no material. 25

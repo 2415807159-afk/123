@@ -1,0 +1,481 @@
+Title: Infrared spectroscopy of protonated water clusters via the quantum thermal bath method and highly accurate machine-learned potentials
+
+URL Source: https://arxiv.org/pdf/2603.09410v1
+
+Published Time: Wed, 11 Mar 2026 00:55:08 GMT
+
+Number of Pages: 14
+
+Markdown Content:
+# Infrared spectroscopy of protonated water clusters via the quantum thermal bath method and highly accurate machine-learned potentials 
+
+T. Baird, 1 R. Vuilleumier, 2 and S. Bonella 1, a) 
+
+> 1)
+
+Centre Europ´ een de Calcul Atomique et Mol´ eculaire (CECAM), Ecole Polytechnique F´ ed´ erale de Lausanne, 1015 Lausanne, Switzerland 
+
+> 2)
+
+PASTEUR, D´ epartement de chimie, ´Ecole normale sup´ erieure, PSL University, Sorbonne Universit´ e. CNRS, 75005 Paris, France 
+
+(Dated: 11 March 2026) 
+
+The spectral features of water clusters provide important information on their structure and dynamics and can assist in deciphering the nature of the local environment of aqueous solutions in a variety of different conditions. Accurately capturing these features via numerical simulations is a non-trivial task that typically requires a sophisticated combination of high-level electronic structure methods and costly quantum dynamics techniques. We present results of molecular dynamics simulations of the IR spectra of protonated water clusters, ranging from the monomer to the tetramer, obtained via the combination of highly accurate machine-learned potential energy surfaces (PES) and dipole moment surfaces (DMS), and the quantum thermal bath (QTB) methodology which facilitates cost-effective inclusion of NQEs in molecular dynamics simulations. We compare our results with previous theoretical and experimental studies and show that this combination provides a significantly cheaper, yet still suitably accurate, alternative to more traditional computational approaches. 
+
+I. INTRODUCTION 
+
+The investigation of water clusters holds significant theoretical and practical importance due to the ubiqui-tous presence of water in nature and its crucial role in many chemical and biological processes. The spectral properties of water clusters offer insights not only into the structure and dynamics of these clusters but carry also signatures that help in understanding the behav-ior of bulk water across different environments. Further-more, systematic studies of small water clusters also pro-vide information about proton transfer, a process of key importance in chemistry and physics. Finally, the in-frared (IR) spectra of water clusters are highly sensitive to their internal hydrogen bonding network, making IR spectroscopy a valuable tool for probing intermolecular interactions amongst the water molecules which consti-tute these clusters 1,2 .Accurately modelling these intermolecular interactions is essential for capturing the various molecular motions that give rise to spectral features. As a result, in compu-tational studies, high-precision potential energy surfaces and force fields are required for reliable spectral calcu-lations. Similarly, the accuracy of dipole moment esti-mates is critical for faithfully reproducing the spectral peak positions and relative intensities. This necessity, in turn, demands sophisticated and computationally expen-sive electronic structure methods to accurately determine the system’s charge density and dipole moments. The high computational cost associated with first principles 
+
+calculations has led to considerable efforts to develop so-phisticated analytical models for the potential and dipole 
+
+> a) Electronic mail: sara.bonella@epfl.ch
+
+moment surfaces for different systems 3–8 . More recently, machine learning techniques have emerged as a powerful alternative to design many body potentials from accurate electronic structure calculations, in particular for water from clusters to bulk 9–18 .Incorporating nuclear quantum effects (NQEs) is also essential for accurately reproducing key infrared spec-tral features of water clusters 19 . These include the char-acteristic red shift of peaks relative to classical predic-tions and the presence of combination bands. Different numerical strategies have been adopted to account for NQEs. Notably, spectra have been computed using the multi-configurational time-dependent Hartree (MCTDH) method to solve the nuclear Schr¨ odinger equation 20–22 .These simulations, however, do not account for temper-ature effects and alternative approaches based either on semiclassical methods 23,24 or path integral molecular dy-namics (PIMD) 25,26 have been proposed. While these ap-proaches do provide interesting insights, they are known to face limitations due the combination of classical dy-namics and quantum probability distribution sampling (semiclassical) or may become quite expensive in deep quantum regimes and fail to reproduce, for example, the correct trends for peaks’ intensities at low temperature without bespoke corrections 24 .In this paper, we revisit the spectroscopy of protonated water clusters at finite temperature combining a state-of-the-art ML representation of the interactions and the dipole moment surface recently developed in the group of D. Marx 27,28 with the quantum thermal bath (QTB) 29 
+
+approach. We compare the resulting spectra with those obtained from classical MD simulations and with previ-ous numerical and experimental studies to evaluate the accuracy of this approach and assess the influence of NQEs on the spectral properties of water clusters. 
+
+> arXiv:2603.09410v1 [physics.comp-ph] 10 Mar 2026
+
+2  
+
+> II. METHODS A. Quantum thermal bath dynamics
+
+QTB models quantum effects by coupling nuclear clas-sical dynamics to a thermal reservoir endowed with a noise power spectral density that emulates quantum fluc-tuations. In practice, this involves solving numerically the generalized Langevin dynamics : 
+
+mI
+
+d2RI
+
+dt2 = −∇ RI E(RI ) − mI γ dRI
+
+dt + FI (t) (1) In the equation above, RI are the Cartesian coordinates of ion I, and mI is the mass of the ion. γ is the friction coefficient of the thermostat, and FI = [ F xI F yI F zI ] rep-resents a three-dimensional random force acting on ion 
+
+I, with the associated colored noise spectrum: 
+
+CF αJ F βK
+
+(ω) = 2 mK γθ (ω, T )δJK δαβ α, β ∈ x, y, z 
+
+(2) where CF αJ F βK
+
+(ω) denotes the autocorrelation function between the α-component of the force on ion J and the 
+
+β-component on ion K. The function 
+
+θ(ω, T ) = ℏω
+
+2 tanh 
+
+ ℏω 
+
+> 2kBT
+
+ (3) is the quantum mechanical power spectral density of a harmonic oscillator at temperature T . The QTB evolu-tion, which is exact only for harmonic systems, can be justified based on an approximation to the path integral representation of the density matrix of a generic quantum system linearly coupled to a bath of quantum harmonic oscillators 30 . Within the limits of this justification, QTB has proven accurate in a number of applications 29,31,32 .Most notably, the approach performs well for the simu-lation of vibrational spectroscopy 33 . A well-documented limitation of the Quantum Thermal Bath (QTB), also shared by other semiclassical approaches, is its suscep-tibility to zero-point energy leakage (ZPEL) 34 . This is-sue arises when the energy residing in high-frequency vi-brational modes—initially distributed according to the quantum thermal statistics encoded by QTB— cascades into lower-frequency modes due to the classical time evo-lution that drives towards equipartition. An effective ap-proach proposed to alleviate ZPEL is the adaptive quan-tum thermal bath (adQTB) 35 . adQTB monitors ZPEL on the fly via the diagnostic function proposed in 35 :∆FDT ,i (ω) = Re[ CvF,i (ω)] − miγi(ω)Cvv,i (ω) (4) where CvF,i (ω) and Cvv,i (ω) denote the cross-correlation between velocity and random force, and the velocity au-tocorrelation, respectively, for the i-th Cartesian coor-dinate. Deviations from zero of the function above in-dicate violations of the quantum fluctuation dissipation theorem induced by ZPEL. These can then be mitigated by dynamically adjusting the friction coefficient γ in a frequency-dependent fashion, i.e., γ = γ(ω), with the goal of minimizing the magnitude of ∆ FDT ,i (ω) across all modes and degrees of freedom 35 .Details on the QTB numerical implementation adopted in this work are presented in Appendix A. Notably, cal-culations presented in the next section did not show ap-preciable ZPEL, with the fluctuation-dissipation relation (Eq. (4)) proving to be well-satisfied, and the IR spec-tra obtained using QTB and adQTB being in very good agreement for all systems considered. Consequently, in the following we report only the results obtained with standard QTB.  
+
+> B. NN-PES/DMS and computation of IR spectra
+
+To ensure a fast and accurate representation of the in-teractions and of the dipole surface for the water clusters, we adopted specifically designed machine-learned force fields and dipoles. We incorporated the Neural Network Potential (NNP) library 27,28 (built on RubNNet4MD 36 )into the Tinker-HP molecular dynamics package 37 . The Tinker-HP engine had a pre-existing extensive suite of functionality for both classical and quantum MD sim-ulations, in particular providing support for QTB and adaptive QTB (adQTB), limiting our task to interfacing the NNP library. The NNP library is based on the neural network ar-chitecture introduced by Behler and Parrinello 38 and has been trained on a comprehensive dataset of water clus-ter configurations (ranging from H 2O to H 9O4+) gen-erated using ab initio molecular dynamics (AIMD) and path integral AIMD. The energies of these clusters were computed at a level of accuracy comparable to coupled-cluster CCSD(T) theory. The NNP library yields accu-rate and transferable energies and forces for these sys-tems, and it has been employed in multiple studies to successfully predict the static and dynamical properties of water clusters 27 . Additionally, the library includes a dipole moment surface (DMS) trained on a dataset of molecular configurations, with dipole moments computed at coupled-cluster accuracy. Use of the neural network drastically reduces the substantial computational cost as-sociated with directly performing these high-level quan-tum chemistry calculations . The NNP-DMS approach thus enables an efficient yet accurate determination of charge distributions and dipole moments, which are es-sential for infrared (IR) spectral calculations 28,39 .In all calculations reported in the following, the IR spectrum is obtained from the (Kubo-transformed) dipole derivative autocorrelation function. Specifically, during each simulation step, the total dipole moment of the system is predicted by passing the ionic geome-try through the DMS. The dipole time derivative is then computed using finite differences and the Fourier trans-form of the dipole derivative autocorrelation function, 
+
+C ˙μ ˙μ(ω), is subsequently determined. For QTB simula-3tions, this autocorrelation function is Kubo-transformed using: ˜C ˙μ ˙μ(ω) = tanh( βℏω/ 2) 
+
+ℏω C ˙μ ˙μ(ω) (5) and the IR spectrum is then computed using the Beer-Lambert law: 
+
+n(ω)α(ω) = πβ 
+
+3cV ε 0
+
+˜C ˙μ ˙μ(ω) (6) where n(ω) is the refractive index, α(ω) is the absorption coefficient, c is the speed of light, V is the simulation box volume, and ε0 is the vacuum permittivity. In this work, the final IR spectra are obtained by averaging the spectra derived from trajectory segments covering a frequency range of 0-15,000 cm −1 (spanning far-infrared to near-infrared regions, including overtone ranges). Each segment is smoothed using a Hann window function of width 750 cm −1 in order to mitigate ring-ing artefacts, and the initial trajectory segments (cor-responding to approximately 25 ps of simulation time) are discarded to account for equilibration. Lastly, unless otherwise stated, the final calculated spectrum is itself smoothed via a sliding window procedure, with the win-dow size set to 50 cm −1. This window size was chosen such that it is sufficiently small to avoid loss of resolu-tion of any fine spectral features whilst simultaneously reducing the noisiness of the spectra. Since theoretical IR spectra in the literature are of-ten computed with the center-of-mass (COM) motion re-moved, we implemented functionality to eliminate COM motion in our simulations for direct comparison with ex-isting studies. In our classical MD simulations, this was done conventionally by subtracting translational and ro-tational contributions of the COM motion from atomic velocities at each timestep. For QTB, however, this pro-cedure is more delicate due to the need to preserve the quantum fluctuation-dissipation relation, which relies on all degrees of freedom. Details on our algorithm are pro-vided in Appendix B.  
+
+> III. RESULTS
+
+We have performed simulations of several systems of increasing size, namely: H2O, H3O+, H(H 2O) 2+,H(H 2O) 3+, H(H 2O) 4+ (Eigen), H(H 2O) 4+ (ring, cis-,and trans -Zundel). Computed IR spectra of a selec-tion of these systems (H 2O, H(H 2O) 2+, H(H 2O) 3+ and H(H 2O) 4+ (Eigen)) are presented in the following sec-tions, together with analysis of the main spectral fea-tures observed. The remaining clusters are analyzed in Appendix C. We also report the compute time required for the calculation of IR spectra for the full set of 8 clus-ters in Appendix D. In all cases, simulations were performed in the gas phase and within the NVT ensemble, with different tem-peratures considered to allow comparison with existing experimental and theoretical results. The simulations were performed for a total of 1 ns (discarding the first 25 ps as equilibration), the timestep was set to dt=0.1 fs, and properties recorded every 10 fs. The small value of the timestep was found to improve the resolution of the spectral features in the higher frequency ranges consid-ered. The ability to affordably obtain such long trajec-tory lengths facilitates significant improvements in spec-tral resolution and statistics. In the classical simulations, the temperature was controlled via Langevin dynamics, integrated using the BAOAB thermostat 40 , with a fric-tion coefficient of 2 ps −1. This choice of friction allowed for a good balance between enhancing ergodicity whilst minimizing the damping effect on the system’s dynam-ics, thus maintaining resolution of the IR spectrum. In all plots, the spectra are normalized so that the highest peak of the figure takes on the value 1.  
+
+> A. Water monomer (H 2O)
+
+To verify that we have correctly coupled the NNP li-brary with the engine for performing quantum and classi-cal MD simulations, and to carry out a preliminary evalu-ation the accuracy of this combination of methodologies, we first performed simulations of a single neutral water molecule in the gas phase. We take as reference results the reported theoretical IR spectra of Benson et al. 41 
+
+and Ple et al. 33 , both of whom computed the infrared spectrum of a single gas phase water molecule at 300K using a diversity of approximate and exact methodologies for quantum dynamics and sampling. In particular, they report spectra calculated via: classical MD, thermostat-ted ring polymer MD (TRPMD) 26 , centroid molecular dynamics (CMD) 42 , quasi-centroid molecular dynamics (QCMD) 25 , various linearized semiclassical initial value representation (LSC-IVR) approaches 23 , and the discrete variable representation (DVR) 43 . They take the latter as the exact reference result. Moreover, Ple et al. also report the spectra calculated via the use of QTB and adQTB simulations of the water monomer, which we will use as a check for our own results, although we note that the dipole moment surface and forcefield used in our sim-ulations are different to those employed in their study. In order to affect a comparison with the reference re-sults, we do not remove the motion of the center-of-mass of the system (neither translational nor rotational). As a consequence, we observe that all peaks within the cal-culated spectra gain an additional sub-peak which origi-nates from the combination with global rotations. The results of the classical and QTB simulations are presented in Fig.1. From this figure, we observe that our QTB results are for the most part in very good agreement with the exact reference and previous theoretical results of Ref. 41 (see Fig.1 in reference) and Ref. 33 (see Fig.4 4of reference), with the positions and relative intensities of the peaks in the IR spectrum being accurately predicted. Firstly, considering the frequency range 0-4000 cm −1,we observe that QTB correctly captures the red-shift of the peak at ∼3700 cm −1 (corresponding to water stretches) with respect to the classical prediction. This is a well-known consequence of incorporating NQEs into calculations of IR spectra. Moreover, the position of the peak is found to be in good agreement with the exact (DVR) reference. This peak is somewhat broadened in the QTB approaches and the symmetric and antisym-metric contributions are not perfectly resolved, much like what is observed in the TRPMD and LSC-IVR results of Ref. 41. We also note the presence of the bend-libration com-bination band around 2000 cm −1 in the QTB spectrum, which is a result of the coupling of the low frequency li-brational modes with the OH bending mode, located at approximately 1600 cm −1. This band is not present in the classical spectrum, and its presence in the QTB spec-trum is a result of the inclusion of NQEs in the calcu-lations together with the accuracy of the dipole moment surface used, highlighting the importance of these factors in the accurate prediction of the IR spectrum of water. Furthermore, we observe that the relative magnitudes of the various peaks in the region ω < 4500 cm −1 are also in good agreement with the DVR results. Turning to the near-infrared region ( ω > 4700 cm −1), there are two combination bands at ∼5300 cm −1 and 
+
+∼7300 cm −1 which we again observe are correctly down-shifted in frequency in the QTB spectra compared to the classical spectra. Benson et al. had previously remarked that the intensities of these peaks are severely underesti-mated by ring polymer methods, with their intensities no more accurate than the classical results, which they find to drastically undershoot the relative intensities seen in the exact spectrum. Moreover, the authors found that the results obtained via the LSC-IVR method gave con-siderably better agreement of the relative intensities with the exact results. Based on these observations, they con-cluded that the failure of ring polymer methods in the near infrared region should not be due to a lack of real-time coherences, as LSC-IVR also neglects these. In the case of QTB, we in fact find that our pre-dicted relative intensities are in very close agreement with the exact reference, overestimating only very slightly both the 5300 cm −1 and 7300 cm −1 peaks, compared to the bending and stretching bands. This observation is aligned with that made in a separate study which em-ployed (ad-)QTB to compute the IR spectrum of gas phase water 33 . In this work, the authors proposed that the explanation for the greater accordance of the (ad-)QTB results with the exact reference in the near-infrared region is due to the fact that QTB provides a more faithful sampling of the underlying Wigner distribution than ring polymer methods, highlighting the importance of appropriately accounting for correlations in the nu-clear phase space distribution as well as coherences in the quantum dynamics. Note that, although still underestimated, our classical predictions of the relative intensities are noticeably closer to the exact results in this region than those reported in 41 . A possible explanation for this disparity is the dif-ferent dipole moment surfaces and/or potential energy surfaces used in the two studies. Overall, the agreement of our QTB results with the ex-act reference spectra for H 2O across the entirety of the frequency range considered is very good, with both peak locations and widths being accurately predicted.  
+
+> B. Protonated water dimer/Zundel cation (H(H 2O) 2+)
+
+As the next step-up in complexity, simulations of the gas-phase protonated water dimer H(H 2O) 2+ were per-formed at a temperature of 300K. To assess the accuracy of our simulations, we compare with the results of Ref. 44 by Huang et al . In this work, the authors performed a series of simulations of the Zundel cation using MCTDH, classical MD, RPMD, normal mode analysis (NMA), and the MULTIMODE (MM) method 45 . At variance with the simulations of the monomer, we have removed the rotational and translational motion of the center-of-mass (COM) of the system in order to match as closely as possible the conditions of this reference work. To assess the effectiveness of our approach, we con-sider each of the main spectral features in the frequency range 0-4000 cm −1 as shown in the left-hand side panel of Fig. 2, before briefly turning our attention to the over-tone region 5000-8000 cm −1 illustrated in the right-most panel of Fig. 2. The first observation that can be made is with regard to the peak at around 1100-1200 cm −1, which, as re-marked by Huang et al. , has previously been attributed to an asymmetric proton stretch mode. This mode is found to be considerably blue-shifted in reference quan-tum results with respect to harmonic results. Our clas-sical MD result for this mode is in good agreement with that of Huang et al. , with a peak around 1100 cm −1,and the QTB spectra shows a blue-shift similar to the RPMD result in this reference work, yielding a peak at around 1200 cm −1. Similarly to the RPMD result of Huang et al. , the QTB spectrum lacks the doublet-like structure observed in the MCTDH spectra at around 900-1000 cm −1 (see lower panel of Fig.2 in Ref. 44). Notably, zero-temperature MCTDH results 21 show no intensity in the region around 1200 cm −1, with a doublet around 1000 cm −1 and peaks around 1400 cm −1 and 1900 cm −1.The blue shift of the proton-transfer peak can be ex-plained by the nearly quartic form of the potential energy along the asymmetric proton stretch 46 . The classical dy-namics probes only the bottom of the well where the har-monic frequency is low, while the quantum dynamics also probes the repulsive walls. As for the comparison with MCTDH results, it is interesting to note that averaging the MCTDH peaks’ positions with the spectral weights 5
+
+FIG. 1: IR spectrum of a single water molecule in the gas phase at 300K. Classical results are shown in green while the spectrum obtained via QTB is shown in blue. Scaling of the y-axis is the same as in 41 .
+
+FIG. 2: IR spectrum of the protonated water dimer in the gas phase at 300K. Our results are scaled with respect to the maximum peak in our computed spectra so that the y-axis is in arbitrary units and has a maximum value of 1.Classical results are shown in green while the spectrum obtained via QTB is shown in blue. reported in 21 , we find that the resulting weighted aver-age peak position is in good agreement with that which we observe in our QTB spectrum, and which was pre-visouly also observed in RPMD spectra 44 . The broad QTB feature could then originate from thermal effects which lead to a coalescing of the distinct peaks observed in the MCTDH spectrum. We moreover observe that the relative intensities of the peaks (both in relation to one another and between methodologies) are in fairly good accordance with those reported by Huang et al. The lowest lying peak, slightly below 500 cm −1, (correspond-ing to wagging, rocking and twisting modes) is slightly more intense in the QTB spectrum relative to the classi-cal compared to the relative intensities observed between the classical and RPMD reference results, whereas the opposite is true for the peak at around 1100-1200 cm −1.The peaks observed at ∼1700 cm −1 (attributable to water bending 47 ) in our classical and QTB results are in good agreement with the classical MD and RPMD re-sults of Huang et al. respectively. The peak in the QTB spectrum is very slightly red-shifted with respect to the classical MD result, in accordance with the RPMD ref-erence. Moreover, the MCTDH spectrum of H(H 2O) 2+,reported in a separate work by Vendrell et al. 47 , indi-cates a doublet structure at this frequency which again is not observed in the QTB results, nor the classical or RPMD results of Huang et al. Again this may be at-tributable to broadening induced by thermal effects and NQEs. Indeed, if we lower the temperature to 20K, we observe the emergence of this doublet feature in our clas-sical spectra (together with a number of less prominent, yet distinct, peaks - see Fig. 3). The broadening of the peaks in the QTB spectra persists even to these low tem-peratures, however, and is a consequence the zero-point motion, captured by QTB, and which endows the system with a significant “effective temperature” even at the low physical temperature of 20K. Finally, turning our attention to the frequency region 6corresponding to O-H stretches (approximately 3000-4000 cm −1), we observe that the peak in the QTB spec-trum at around 3700 cm −1 is red-shifted with respect to the classical (and harmonic) prediction which assumes a doublet structure with peaks located at ∼3730 cm −1
+
+and ∼3825 cm −1. This is in accordance with the be-haviour of the RPMD result in the reference work, which exhibits a similar red-shift. However, at variance with the RPMD and classical results (alongside the MCTDH and harmonic calculations), which exhibit a doublet-like structure in this region, the QTB result shows a single broad peak. This is again likely due to the broadening effect that the QTB thermostat has on the spectrum. 
+
+FIG. 3: IR spectrum of the protonated water dimer in the gas phase at 20K. This lower temperature was considered in order to investigate whether the doublet structure ob-served in the MCTDH spectrum of H(H 2O) 2+ at around 1700 cm −1 would emerge in the classical and QTB spec-tra when thermal effects are reduced. Classical results are shown in green while the spectrum obtained via QTB is shown in blue. Before concluding our analysis of the spectrum of the protonated water dimer, we turn our attention to the overtone region of the IR spectrum, which is presented in the right-hand side panel of Fig. 2. Firstly, we observe that both our classical MD and QTB results correctly capture the overtone peaks at around 7500 cm −1 (7200 cm −1) and 5500 cm −1 (5300 cm −1) which have been pre-viously reported in an experimental work by McDonald 
+
+et al. 48 , and whose locations can also be predicted on theoretical grounds based on the positions of lower-lying fundamentals. The first of these overtones is attributed to twice the frequency of the O-H stretch mode, whilst the second is attributed to the combination of the O-H stretch and water bending modes. The combination of the O-H stretch and asymmetric proton stretch modes are less clear (being only vaguely discernible in the clas-sical spectrum and less so in the QTB spectrum), likely due to the fact this overtone is somewhat subsumed into the broad combination band of the O-H stretch and water bending modes. We see that the doublet structure of the classical MD result for the O-H stretch is preserved in its overtone. Moreover, QTB correctly predicts the red-shift of these overtone peaks with respect to the classical MD results. To summarise, QTB is able to accurately predict the main spectral features of the Zundel cation. Peak loca-tions and relative intensities are in good accordance with reference RPMD results within the frequency range con-sidered. QTB fails to capture the doublet structure in the O-H stretch region which is ostensibly a consequence of the broadening effect of the thermostat causing these sub-peaks to coalesce, but otherwise we find that even the higher frequency spectral features found in the over-tone region of the spectrum are in good agreement with their predicted locations.  
+
+> C. Protonated water trimer (H(H 2O) 3+)
+
+For this cluster, we primarily report results for the lower temperature of 100K in order to compare with the thorough spectroscopic analysis of the protonated wa-ter trimer performed by Yu et al. 19 . In this study, the authors performed a series of RPMD, classical MD, dou-ble harmonic, and quantum VSCF/VCI 49 calculations with the goal of comparing the observed spectral fea-tures of H(H 2O) 3+ with previous experimental results. For the sake of completeness, afterwards we also present the results of our simulations at 300K in Fig.5. In or-der to achieve satisfactory temperature control a friction value of 20 ps −1 was used in the classical MD simulations and to counteract the broadening effect this has on the spectra, the deconvolution procedure first introduced by Rossi et al. was employed 50,51 .
+
+FIG. 4: IR spectrum of the protonated water trimer in the gas phase. All simulations were performed at 100K. Classical results are shown in green while the spectrum obtained via QTB is shown in blue. Despite considering a lower temperature of 20K via classical MD, the reference work only reports RPMD for the higher temperature of 100K. This is due to the con-7siderable computational cost associated with the neces-sity of employing a larger number of nuclear replicas in the RPMD simulations at lower temperatures to reach convergence. Here we therefore have a nice example of the utility of QTB, in that it facilitates the inclusion of NQEs even at very low temperatures, where the cost of RPMD proves to be a deterrent to its use. Indeed, we were able to perform QTB simulations of the trimer at the reduced temperature of 20K without issue. However, given the negligible differences in the resulting spectrum compared to that obtained at 100K, we opt to show only the latter. Let us first consider the main (double) peak at around 2600 cm −1 in the classical MD spectrum presented in Fig.4. This band is known to result from stretching modes associated with the proton attached to the hy-drated hydronium core of the cluster, with the lower frequency peak corresponding to the asymmetric stretch and the higher frequency peak corresponding to the sym-metric stretch mode 52 . Our classical results at 100K are in good agreement with the reference classical IR spec-trum at the same temperature, with the location of the peaks corresponding closely to the double harmonic re-sults owing to the low temperature. Our classical MD results, however, present considerably more pronounced peaks in comparison with the reference. This is likely due to our use of deconvolution for the QTB results that, for the sake of consistency, was applied also to our clas-sical results. QTB also reproduces this peak, which is again considerably broadened. The peak is red-shifted with respect to the classical MD and harmonic predic-tions, in agreement with the RPMD results of Yu et al. 19 . This down-shift is in fact closer to that observed in the VSCF/VCI and experimental reference results (see Fig.2(e-f) in 19 ), moving the peak closer to the experi-mental value of ∼1900 cm −1. This is a notable success of combining QTB with this highly-accurate NN-PES and NN-DMS. Given that the classical MD results we obtain are in good accordance with those of Yu et al. this would suggest that it is the use of QTB which is more likely to be responsible for this superior agreement than it is the particulars of the PES and DMS. We note that, as is also the case with TRPMD 19 ,the QTB spectrum is significantly broadened in the fre-quency range 1500-2500 cm −1 and therefore does not reproduce the fine-grained spectral features present in the experimental results and which are well-captured by VSCF/VCI. Neither use of deconvolution nor reduction of the friction coefficient in concert with adQTB (results not shown) was sufficient to resolve these fine-grained features. Lastly, we note that the two features observed at 240 cm −1 and 350 cm −1 in the reference work appear to have merged in the QTB results, most probably due to broadening induced by the thermostat. Spectra of H(H 2O) 3+ calculated at the elevated tem-perature of 300K are presented in Fig.5. These are es-sentially broadened versions of the spectra at 100K, with the broadening most prominent in the classical case. The right-hand side panel of Fig.5 presents a zoom-in on the overtone region of the IR spectrum of the protonated wa-ter trimer. We observe overtones at approximately 5300 cm −1 and 7300 cm −1 in the QTB spectra and 5500 cm −1
+
+and 7600 cm −1 in the classical MD spectrum. The po-sitions of these bands are as expected, being the sum of the hydronium stretch band ( ∼1900 cm −1) and the water stretch band ( ∼3700 cm −1) and twice the frequency of the water stretch mode respectively, with the typical red-shift of the quantum results being correctly reproduced by QTB. To consolidate these observations, we find that QTB does a good job of reproducing the major spectral fea-tures of the protonated water trimer. The peak locations predicted by QTB for the most prominent bands in this cluster’s IR spectrum are in generally good agreement with the experimental reference and prior theoretical re-sults using highly sophisticated and computationally ex-pensive methodologies. For one of the principal bands, namely the doublet at ∼2600 cm −1 arising from proton stretching modes, we even find that QTB apparently pro-vides a better estimate of the red-shift of this band rel-ative to the classical reference than has previously been found with RPMD. Similarly to observations made for the dimer system, we once more find that many of the less intense and more fine-grained features which are present in reference VSCF/VCI results are missing in the QTB spectrum due to thermal broadening and amalgamation of these bands in the latter.  
+
+> D. Protonated water tetramer (H(H 2O) 4+) in the Eigen conformation.
+
+To further test the capabilities of our calculations, we simulated of the gas phase protonated water tetramer in the Eigen conformation at three different temperatures: 20K, 100K, and 300K. The lower temperature simula-tions were carried out in order to enable comparison with reference experimental and theoretical works. The theo-retical results are again taken from a series of papers by Yu et al. 6,19 which employed RPMD, classical MD, dou-ble harmonic, and VSCF/VCI methods to compute the IR spectra of the protonated Eigen isomer of H(H 2O) 4+,whilst the experimental results (which are also used by Yu et al. as a reference) were taken from the works of Esser et al. 53 and Wolke et al. 54 . As in the case of the protonated water trimer, the reference TRPMD results were limited to the higher temperature of 100K due to the issue of high computational expense incurred by RPMD at lower temperatures. On the other hand, the reference experimental results were obtained at T ≈ 20 K. As we are primarily interested in the comparison of the QTB re-sults with the reference TRPMD results, we present only the results of our QTB and classical MD simulations at 100K. The calculated spectra are shown in Fig. 6. As in the case of the water trimer, we find that the spectra at 20K are not appreciably different from those at 100K, 8
+
+FIG. 5: IR spectrum of the protonated water trimer in the gas phase at 300K.Classical results are shown in green while the spectrum obtained via QTB is shown in blue. and so we do not present them here. 
+
+FIG. 6: IR spectrum of the protonated water tetramer in the gas phase at 100K. Classical results are shown in green while the spectrum obtained via QTB is shown in blue. The spectrum of the protonated water tetramer is very reminiscent of that of the protonated water trimer which has just been discussed. The most prominent feature in the IR spectrum of the tetramer is the peak at around 2650 cm −1 (in the experimental spectrum), which has been attributed to the asymmetric stretch of the hydro-nium core 19 . As in the TRPMD results reported by Yu 
+
+et al. 19 , although the QTB results do demonstrate a red-shift of this peak with respect to the classical MD and double harmonic results, this shift is not sufficiently large to match the experimental location of the peak at around 2650 cm −1. Rather, QTB predicts a peak at approx-imately 2880 cm −1, a non-negligible overestimation of this mode’s frequency. On the other hand, we note that the band correspond-ing to water stretches at around 3750 cm −1 is in good agreement with the TRPMD results of Yu et al. , ex-hibiting a red-shift with respect to the classical MD and double harmonic results by approximately 200 cm −1. At variance with the experimental result, this band is not split into two distinct peaks in the QTB result, and is in-stead broadened considerably. This is similar to what the authors of the cited work observe in the case of TRPMD. Similarly, all the lower intensity peaks lying between 1500-2500 cm −1, which are present in the experimental spectrum, and which are picked up by VSCF/VCI, are not discernible in the QTB spectrum due to broadening and merging of these bands, again like the behaviour ob-served in the case of TRPMD. Likewise, the far-infrared region of the spectrum is not well-resolved by QTB, nor classical MD, with only a single broad peak being ob-served between 0-500 cm −1. This is in contrast to the reference experimental and QCMD results (see Fig 7.(e) and Fig.7 (g-h) in 19 ), which exhibit a number of distinct peaks in this region. These peaks have been attributed to the torsional and stretching motion of the lateral water molecules present in H(H 2O) 4+53 .Finally, for the sake of completeness, we present the IR spectra of the tetramer at 300K in Fig. 7 with the overtone region shown in the rightmost panel. As in the case of the protonated water trimer, these are essen-tially broadened versions of the spectra at 100K, with the broadening most prominent in the classical case given the aforementioned presence of zero-point motion offsetting the reduction in temperature when nuclear quantum ef-fects are included. The overtones are found to be located at their expected frequencies, with QTB again correctly predicting the red-shift of these peaks with respect to the classical MD results. To summarize our analysis of the Eigen cation, we find that QTB also performs well in capturing the main spectral characteristics of this larger water cluster. The predicted positions of the major bands in the IR spec-trum show good overall agreement with both experimen-tal data and previous high-level theoretical studies. As in the previous case of the trimer, the QTB spectrum 9
+
+FIG. 7: IR spectrum of the protonated water tetramer in the gas phase at 300K. Classical results are shown in green while the spectrum obtained via QTB is shown in blue. lacks many of the finer, low-intensity features seen in VSCF/VCI reference results, with these features instead seeming to contribute to broad bands in the frequency ranges in which they are observed in the reference spec-tra. Regardless, comparison with the classical reference once again indicates the success of QTB in reproduc-ing the characteristic red-shifts of the main vibrational modes when accounting for nuclear quantum effects, with these shifts also clearly visible in the overtone region of the spectrum. 
+
+IV. CONCLUSIONS 
+
+In this work, we have combined cost-effective QTB dy-namics with accurate and efficient machine-learned force fields and dipole moment surfaces to compute the in-frared spectra of protonated water clusters. The spec-tral features of clusters of increasing size and complexity were obtained and compared with available theoretical and experimental results. Our IR spectra were found to be in generally good agreement with references. The lo-cations and relative intensities of the main spectral fea-tures of the clusters were accurately computed for all clusters considered. The inclusion of NQEs by means of QTB was shown to be essential in order to capture typ-ical red-shifts of the peaks with respect to the classical prediction. Incorporation of NQEs with QTB also allows one to obtain a good description of various combination bands and overtones, both in position and intensities. The main limitation of QTB is that it misses some of the fine structure of the spectra due to broadening induced by coupling to the bath. This can be mitigated with deconvolution, but not always to a sufficient extent to enable complete resolution of the fine spectral structure. Crucially, the computational cost of QTB calculations is essentially identical to that of a classical simulation and considerably less than the computational cost of tradi-tional ring polymer MD and alternative methods. The results presented in this paper demonstrate the potential of combining QTB with a high accuracy machine-learned force field and dipole moment surface and pave the way for future calculations with similar set-ups. 
+
+ACKNOWLEDGMENTS 
+
+We are grateful to Christoph Schran and Dominik Marx for help with the potential energy surface (PES) and the dipole moment surface (DMS) at CCSD(T) ac-curacy used in this work, which are both represented in the framework of high-dimensional neural networks. The authors also thank Simon Huppert and Thomas Pl´ e for useful discussions on the use of QTB for IR spectroscopy and assistance with the Tinker HP code. This research was supported by the NCCR MARVEL, a National Cen-tre for Competence in Research, funded by the Swiss Na-tional Science Foundation (grant number 205602).                                                    
+
+> 1Li, G.; Zhang, Y.-Y.; Li, Q.; Wang, C.; Yu, Y.; Zhang, B.; Hu, H.-S.; Zhang, W.; Dai, D.; Wu, G.; others Nature Communications
+> 2020 ,11 , 5449.
+> 2Ohno, K.; Okimura, M.; Akai, N.; Katsumoto, Y. Physical Chem-istry Chemical Physics 2005 ,7, 3005–3014.
+> 3Wang, Y.; Huang, X.; Shepler, B. C.; Braams, B. J.; Bow-man, J. M. The Journal of Chemical Physics 2011 ,134 .
+> 4Cisneros, G. A.; Wikfeldt, K. T.; Ojam¨ ae, L.; Lu, J.; Xu, Y.; Torabifard, H.; Bart´ ok, A. P.; Cs´ anyi, G.; Molinero, V.; Pae-sani, F. Chemical Reviews 2016 ,116 , 7501–7528.
+> 5Reddy, S. K.; Moberg, D. R.; Straight, S. C.; Paesani, F. The Journal of Chemical Physics 2017 ,147 .
+> 6Yu, Q.; Bowman, J. M. Journal of the American Chemical Soci-ety 2017 ,139 , 10984–10987.
+> 7Yu, Q.; Bowman, J. M. The Journal of Chemical Physics 2017 ,
+> 146 .
+> 8Schwan, R.; Qu, C.; Mani, D.; Pal, N.; van der Meer, L.; Redlich, B.; Leforestier, C.; Bowman, J. M.; Schwaab, G.; Havenith, M. Angewandte Chemie International Edition 2019 ,
+> 58 , 13119–13126.
+> 9Morawietz, T.; Sharma, V.; Behler, J. The Journal of Chemical Physics 2012 ,136 .
+
+10 
+
+> 10
+
+Morawietz, T.; Behler, J. The Journal of Physical Chemistry A 
+
+2013 , 117 , 7356–7366. 
+
+> 11
+
+Natarajan, S. K.; Morawietz, T.; Behler, J. Physical Chemistry Chemical Physics 2015 , 17 , 8356–8371. 
+
+> 12
+
+Jindal, A.; Schienbein, P.; Das, B.; Marx, D. Journal of Chemical Theory and Computation 2025 , 21 , 5382–5388. 
+
+> 13
+
+Morawietz, T.; Singraber, A.; Dellago, C.; Behler, J. Proceedings of the National Academy of Sciences 2016 , 113 , 8368–8373. 
+
+> 14
+
+Zhang, L.; Wang, H.; Car, R.; E, W. Physical Review Letters 
+
+2021 , 126 , 236001. 
+
+> 15
+
+Maxson, T.; Szilv´ asi, T. The Journal of Physical Chemistry Let-ters 2024 , 15 , 3740–3747. 
+
+> 16
+
+Montero de Hijes, P.; Dellago, C.; Jinnouchi, R.; Schmied-mayer, B.; Kresse, G. The Journal of Chemical Physics 2024 ,
+
+160 .
+
+> 17
+
+Omranpour, A.; Montero de Hijes, P.; Behler, J.; Dellago, C. The Journal of Chemical Physics 2024 , 160 .
+
+> 18
+
+Bore, S.; Paesani, F. Nature Communications 2023 , 14 , 3349. 
+
+> 19
+
+Yu, Q.; Bowman, J. M. The Journal of Physical Chemistry A 
+
+2019 , 123 , 1399–1409. 
+
+> 20
+
+Schr¨ oder, M.; Gatti, F.; Lauvergnat, D.; Meyer, H.-D.; Ven-drell, O. Nature Communications 2022 , 13 , 6170. 
+
+> 21
+
+Vendrell, O.; Gatti, F.; Meyer, H.-D. The Journal of Chemical Physics 2007 , 127 .
+
+> 22
+
+Pel´ aez, D.; Meyer, H.-D. Chemical Physics 2017 , 482 , 100–105. 
+
+> 23
+
+Liu, J.; Miller, W. H.; Paesani, F.; Zhang, W.; Case, D. A. The Journal of Chemical Physics 2009 , 131 .
+
+> 24
+
+Benson, R. L.; Althorpe, S. C. The Journal of Chemical Physics 
+
+2021 , 155 .
+
+> 25
+
+Trenins, G.; Willatt, M. J.; Althorpe, S. C. The Journal of Chem-ical Physics 2019 , 151 .
+
+> 26
+
+Rossi, M.; Ceriotti, M.; Manolopoulos, D. E. The Journal of Chemical Physics 2014 , 140 .
+
+> 27
+
+Schran, C.; Behler, J.; Marx, D. Journal of Chemical Theory and Computation 2019 , 16 , 88–99. 
+
+> 28
+
+Beckmann, R.; Brieuc, F.; Schran, C.; Marx, D. Journal of Chemical Theory and Computation 2022 , 18 , 5492–5501. 
+
+> 29
+
+Dammak, H.; Chalopin, Y.; Laroche, M.; Hayoun, M.; Greffet, J.-J. Physical Review Letters 2009 , 103 , 190601. 
+
+> 30
+
+Schmid, A. Journal of Low Temperature Physics 1982 , 49 , 609– 626. 
+
+> 31
+
+Bronstein, Y.; Depondt, P.; Finocchi, F.; Saitta, A. M. Physical Review B 2014 , 89 , 214101. 
+
+> 32
+
+Mauger, N.; Pl´ e, T.; Lagard` ere, L.; Bonella, S.; Mangaud, E.; Piquemal, J.-P.; Huppert, S. The Journal of Physical Chemistry Letters 2021 , 12 , 8285–8291. 
+
+> 33
+
+Pl´ e, T.; Huppert, S.; Finocchi, F.; Depondt, P.; Bonella, S. The Journal of Chemical Physics 2021 , 155 .
+
+> 34
+
+Brieuc, F.; Bronstein, Y.; Dammak, H.; Depondt, P.; Finoc-chi, F.; Hayoun, M. Journal of Chemical Theory and Compu-tation 2016 , 12 , 5688–5697. 
+
+> 35
+
+Mangaud, E.; Huppert, S.; Pl´ e, T.; Depondt, P.; Bonella, S.; Finocchi, F. Journal of Chemical Theory and Computation 
+
+2019 , 15 , 2863–2880. 
+
+> 36
+
+Brieuc, F.; Schran, C.; Forbert, H.; Marx, D. RubNNet4MD: The RUB neural network for molecular dynamics software pack-age (Version 1). https://www.theochem.rub.de/go/rubnnet4md. html , 2020. 
+
+> 37
+
+Lagard` ere, L.; Jolly, L.-H.; Lipparini, F.; Aviat, F.; Stamm, B.; Jing, Z. F.; Harger, M.; Torabifard, H.; Cisneros, G. A.; Schnieders, M. J.; others Chemical Science 2018 , 9, 956–972. 
+
+> 38
+
+Behler, J.; Parrinello, M. Physical Review Letters 2007 , 98 ,146401. 
+
+> 39
+
+Larsson, H. R.; Schr¨ oder, M.; Beckmann, R.; Brieuc, F.; Schran, C.; Marx, D.; Vendrell, O. Chemical Science 2022 , 13 ,11119–11125. 
+
+> 40
+
+Leimkuhler, B.; Matthews, C. Interdisciplinary Applied Mathe-matics 2015 , 39 .
+
+> 41
+
+Benson, R. L.; Trenins, G.; Althorpe, S. C. Faraday Discussions 
+
+2020 , 221 , 350–366. 
+
+> 42
+
+Witt, A.; Ivanov, S. D.; Shiga, M.; Forbert, H.; Marx, D. The Journal of Chemical Physics 2009 , 130 .
+
+> 43
+
+Tennyson, J.; Kostin, M. A.; Barletta, P.; Harris, G. J.; Polyan-sky, O. L.; Ramanlal, J.; Zobov, N. F. Computer Physics Com-munications 2004 , 163 , 85–116. 
+
+> 44
+
+Huang, X.; Habershon, S.; Bowman, J. M. Chemical Physics Letters 2008 , 450 , 253–257. 
+
+> 45
+
+Carter, S.; Handy, N. C. The Journal of Chemical Physics 2000 ,
+
+112 , 987–993. 
+
+> 46
+
+Mouhat, F.; Peria, M.; Morresi, T.; Vuilleumier, R.; Saitta, A. M.; Casula, M. Nature Communications 2023 , 14 ,6930. 
+
+> 47
+
+Vendrell, O.; Gatti, F.; Meyer, H.-D. arXiv 2007 ,
+
+> 48
+
+McDonald, D. C.; Wagner, J. P.; McCoy, A. B.; Duncan, M. A. 
+
+The Journal of Physical Chemistry Letters 2018 , 9, 5664–5671. 
+
+> 49
+
+Roy, T. K.; Gerber, R. B. Physical Chemistry Chemical Physics 
+
+2013 , 15 , 9468–9492. 
+
+> 50
+
+Rossi, M.; Kapil, V.; Ceriotti, M. The Journal of Chemical Physics 2018 , 148 .
+
+> 51
+
+Mauger, N.; Pl´ e, T.; Lagard` ere, L.; Bonella, S.; Mangaud, E.; Piquemal, J.-P.; Huppert, S. The Journal of Physical Chemistry Letters 2021 , 12 , 8285–8291. 
+
+> 52
+
+Duong, C. H.; Gorlova, O.; Yang, N.; Kelleher, P. J.; John-son, M. A.; McCoy, A. B.; Yu, Q.; Bowman, J. M. The Journal of Physical Chemistry Letters 2017 , 8, 3782–3789. 
+
+> 53
+
+Esser, T. K.; Knorke, H.; Asmis, K. R.; Sch¨ ollkopf, W.; Yu, Q.; Qu, C.; Bowman, J. M.; Kaledin, M. The Journal of Physical Chemistry Letters 2018 , 9, 798–803. 
+
+> 54
+
+Wolke, C. T.; Fournier, J. A.; Dzugan, L. C.; Fagiani, M. R.; Odbadrakh, T. T.; Knorke, H.; Jordan, K. D.; McCoy, A. B.; Asmis, K. R.; Johnson, M. A. Science 2016 , 354 , 1131–1135. 
+
+> 55
+
+Barrat, J.-L.; Rodney, D. Journal of Statistical Physics 2011 ,
+
+144 , 679–689. 
+
+> 56
+
+Kulig, W.; Agmon, N. The Journal of Physical Chemistry B 
+
+2014 , 118 , 278–286. 
+
+> 57
+
+Liu, D.-J.; Oka, T.; Sears, T. J. The Journal of Chemical Physics 
+
+1986 , 84 , 1312–1316. 
+
+Appendix A: Implementing QTB dynamics 
+
+Eq. (1), Eq. (2), and Eq. (3) define a generalized Langevin dynamics framework, effectively modeling the interaction with an Ohmic bath — i.e., a bath charac-terized by a spectral density that scales linearly with frequency. In practical implementations, the stochas-tic force must be prepared in advance of integrating the equation of motion (1). The noise is typically generated on-the-fly (OTF), following the method introduced in Ref. 55 . In summary, a white noise signal is first produced for a window of Nseg timesteps by sampling from a nor-mal distribution with zero mean and unit variance. This signal is then convolved with a kernel derived from the square root of the power spectral density defined in (3), yielding a colored noise with the correct frequency char-acteristics (see Ref. 35 for detailed methodology). Once computed, the random force is applied throughout the segment before a new noise sample is generated for the next interval. The forces are incorporated into the dy-namics using a standard thermostatting approach. In our work, we employed the BAOAB integrator 40 to im-plement QTB, owing to its robust theoretical foundation, ease of implementation, and demonstrated compatibility with quantum thermal fluctuations. 11 As mentioned in the main text, ZPEL was monitored via the deviation from zero of Eq. 4. No appreciable vio-lation of this condition and/or change in the observables was observed in auxiliary ad-QTB calculations. Those results were therefore not reported. 
+
+> Appendix B: Removing center-of-mass motion in classical and QTB simulations of molecules
+
+If one removes center-of-mass translations and rota-tions when using QTB, it is important to appropriately adjust the computation of the spectra entering into the quantum fluctuation-dissipation relation. To better un-derstand why this is, consider the following. In a scenario where the translational component of the center-of-mass velocity is removed, the velocities of the individual N
+
+atoms are modified at each timestep according to the fol-lowing equation: ˜vi(t) = vi(t) − mi
+
+M
+
+> N
+
+X
+
+> j=1
+
+vj (t) (B1) where M = PNi=1 mi is the total mass of the system. The two sides of the FDR computed during a QTB simulation are 
+
+CvF,i (ω) (B2) 
+
+miγi(ω)Cvv,i (ω) (B3) where CvF,i is the velocity-random force correlation, and 
+
+Cvv,i the velocity autocorrelation for atom i. If the center-of-mass translational component is removed, then the velocity autocorrelation function Cvv,i (ω) is com-puted using the modified velocities ˜ vi(t). In order to be consistent in the computation of the FDR, it is neces-sary to also augment the random forces in an analogous fashion. This is achieved via the following modification: ˜Fi(t) = Fi(t) − mi
+
+M
+
+> N
+
+X
+
+> j=1
+
+Fj (t) (B4) If, instead, one wishes to remove global rotations, then the angular velocities of the individual atoms are modi-fied at each timestep according to the following equation: ˜vi(t) = vi(t) − ωCOM (t) × ri(t) (B5) where ωCOM (t) is the angular velocity of the center-of-mass of the system at time t. ωCOM can be computed simply as 
+
+ωCOM (t) = I−1(t)
+
+ NX
+
+> i=1
+
+mi ri(t) × vi(t)
+
+−  rCOM (t) × PCOM (t) (B6) where I (Ikl = PNi=1 mi(|ri|2δkl − ri,k ri,l ) with k, l =
+
+x, y, z , the Cartesian components of the atomic positions) is the moment of inertia tensor of the system, rCOM is the position of the center-of-mass, and PCOM is the to-tal linear momentum of the system. The term which is subtracted from the sum in the square brackets is the contribution to the angular momentum of the total sys-tem arising purely from the translational motion of the center-of-mass. This must be removed in order to isolate the purely rotational part of the total system’s motion. In the BAOAB scheme, both the B and A step conserve the angular momentum (provided the computed physical forces are accurate enough). The removal of overall an-gular momentum is thus performed after the update of the velocities in the O step. In order to be consistent in the computation of the FDR, it is necessary to also augment the random forces in an analogous fashion. This is achieved via the following modification: ˜Fi(t) = Fi(t) − mi(ri(t) × ˙ωCOM (t)) (B7) where ˙ ωCOM (t) is the angular acceleration of the center-of-mass of the system at time t. ˙ωCOM (t) is computed from the torque, τ acting on the system as a result of the random forces: ˙ωCOM (t) = I−1(t)τ (t) (B8) = I−1(t)
+
+> N
+
+X
+
+> i=1
+
+
+
+ri(t) × Fi(t)
+
+− rCOM (t) × FCOM (t)
+
+
+
+(B9) where again the term which is subtracted from the sum in the square brackets is the contribution to the torque on the system arising purely from the translational motion of the center-of-mass. This must be removed in order to isolate the torque arising purely from the random forces acting on the system. This modification of the random force is fully con-sistent with that of the velocities, setting ωCOM (t) = ˙ωCOM (t) × dt . In practice, since the QTB random forces are generated in segments of length Nseg , these modifica-tions are performed at the end of each segment, just be-fore computing the correlation functions that enter into the FDR. 
+
+> Appendix C: Infrared spectra of a selection of additional water clusters
+
+In this section, we present the infrared spectra of the water clusters H 3O+ , H(H 2O) 4+ (trans -zundel), H(H 2O) 4+ (cis -zundel), H(H 2O) 4+ (ring), which were omitted from the main text for the sake of brevity. The infrared spectra were computed using the same method-ology as described in Sec. II. All spectra are shown at a temperature of 20K to facilitate comparison with avail-able zero temperature VSCF/VCI and double harmonic 12 theoretical results and low temperature experimental and AIMD data.  
+
+> 1. Hydronium ion/protonated water monomer (H 3O+)
+
+The infrared spectrum of the hydronium ion is shown in Fig. 8. We compare this with the work of Kulig et al. 56 
+
+who report both experimental and theoretical infrared spectra of H 3O+. Their (classical) theoretical spectra were computed at T = 50K using AIMD with the BLYP functional, a double-ζ valence polarization (DZVP) basis set and Goedecker-Teter-Hutter pseudopotential. 
+
+FIG. 8: Infrared spectrum of the hydronium ion. Clas-sical results are shown in green while the spectrum ob-tained via QTB is shown in blue. Looking first at the far-infrared region, we note the two vibration-inversion bands (( ν2(1 − ← 0+) and ν2(1 + ←
+
+0+)) are clearly visible in the QTB results in Fig. 8 at around 820 cm −1and 450 cm −1respectively. The exper-imental results reported by Kulig et al. and previous experimental and theoretical results (see Ref. 57 ) place the centers of these bands at around 925 cm −1 and 525 cm −1. On the other hand, the AIMD results of Kulig et al. fail to predict two distinct bands in this region, in-stead showing a single band at 813 cm −1 (see Figure S3 in the supporting information of Ref. 56 ). This is likely due to their neglect of nuclear quantum effects. Indeed, given that the ν2(1 − ← 0+) and ν2(1 + ← 0+)) modes arise from umbrella inversion motion of the hydronium ion, it is expected that these modes will be significantly affected by nuclear quantum effects which facilitate tun-nelling even at low temperatures. Contrariwise, for these modes to show up in classical simulations, it is necessary to have a sufficiently high temperature to overcome the energy barrier associated with the inversion motion. In-deed, these IR modes do in fact appear in the classical MD spectrum when the temperature is raised to 300 K. The next prominent band appearing in the spectrum of the hydronium ion is predicted by experiment to be located at around 1622 cm −1. Our QTB results predict a band at ∼1640 cm −1 which is in good agreement with this experimental value. Contrariwise, we find our classi-cal results predict the center of this band to be located at closer to ∼1700 cm −1 indicating that NQEs act to notice-ably red-shift this band. A similar observation is made for the band located at ∼3510 cm −1 in the experimental results (corresponding to stretching modes). Our QTB results predict this peak to be located at ∼3580 cm −1,although this peak is very broad and extends from ∼3000 cm −1 to ∼3800 cm −1 which we attribute to the broad-ening effects of the thermostat. The classical results, on the other hand, predict a main peak in this region at 
+
+∼3700 cm −1 which again indicates the importance of in-corporating NQEs to accurately predict the position of this band.   
+
+> 2. H(H 2O) 4+in the cis-zundel and trans-zundel conformations
+
+FIG. 9: Infrared spectrum of the cis -Zundel conforma-tion of H(H 2O) 4+ at a temperature of 20K.Classical re-sults are shown in green while the spectrum obtained via QTB is shown in blue. 13 
+
+FIG. 10: Infrared spectrum of the trans -Zundel confor-mation of H(H 2O) 4+ at a temperature of 20K. Classical results are shown in green while the spectrum obtained via QTB is shown in blue. IR spectra of the cis - and trans -Zundel conformations of H(H 2O) 4+ are not frequently reported in the litera-ture. This is ostensibly due to the fact that these con-formations of H(H 2O) 4+ are less energetically favourable than the Eigen conformation discussed in the main text (see Sec. III D). However, the investigation of these con-formations (along with the ring conformation discussed next) is important in disentangling the contributions of these conformers to the overall spectrum of H(H 2O) 4+.As noted by Kulig et al. , many of the spectral features in the low frequency region of H(H 2O) 4+ are not possible to explain without considering the contributions of these conformers. We therefore present the calculated spectra of the cis - and trans -Zundel conformations of H(H 2O) 4+
+
+in Fig. 9 and Fig. 10 respectively. The spectra of both the cis -Zundel and trans -Zundel conformations unsurprisingly exhibit many of the same features found in the spectrum of the H 5O2+ (Zundel) ion discussed in Sec. III B. Indeed, as noted by Yu et al. 
+
+in Ref. 6, the dominant band in the spectra of the Zundel isomers is located at 1000 cm −1 and is due to stretching motion of the shared proton within the isomers. We find that our classical results also predict a band located at 
+
+∼1000 cm −1. However, our QTB spectra show this peak to be noticeably blue-shifted to ∼1250 cm −1. This is consistent with our previous observations for the Zundel ion (see Sec. III B).   
+
+> 3. H(H 2O) 4+(ring conformation)
+
+FIG. 11: Infrared spectrum of the ring conformation of H(H 2O) 4+ at a temperature of 20K.Classical results are shown in green while the spectrum obtained via QTB is shown in blue. We present our calculated IR spectra for the ring con-formation of H(H 2O) 4+ in Fig. 11. As noted by Yu 
+
+et al. , the ring conformation can be thought of as a water molecule hydrogen bonded to an H 7O3+ cluster, which results in the ring-like structure. Consequently, one expects to observe many of the features of these two species within the spectrum of the ring isomer. This is indeed the case, and the spectrum of the ring confor-mation of H(H 2O) 4+ exhibits bands at approximately 1450, 1750, 2000, and 3660 cm −1 which coincide with those of H 7O3+. These bands have been attributed to a water bending mode, hydronium bending mode, hy-dronium stretching mode, and the OH stretching mode of hydronium respectively. In addition to these bands, the VSCF/VCI calculations performed by these authors also predict the presence of several less intense features in the frequency ranges bridging the aforementioned bands. Looking at the QTB spectra (blue curve in Fig. 11) it would appear that these features are responsible for the broad bands present in the resulting spectrum, whose peaks are centered at around 1150 cm −1, 1750 cm −1,3000 cm −1 and 3750 cm −1. Due to the spectral broad-ening of the QTB thermostat, these features tend to co-alesce into these broad bands. 
+
+> Appendix D: Timings
+
+As an illustration of the computational efficiency of the QTB and adQTB methods, we present in Table.I the average timings per MD step for each of the 8 different water clusters considered, and each of the three different methods (classical MD, QTB, and adQTB) as well as an estimation of the total MD trajectory length that can be attained on standard HPC hardware in 24 hours of wall 14 time. The data for adQTB is provided for completeness, even though - as previously explained - the use of this method was not necessary for the spectra presented in the paper. The simulations were performed on a sin-gle core of an Intel(R) Xeon(R) Platinum 8360Y CPU @ 2.40GHz. The timings were averaged over the entire trajectory length of 1ns, and the number of steps taken was 10 7. The scaling with system size is approximately linear, with QTB and adQTB generally taking around the same wall time per MD step as classical MD. As a consequence, QTB constitutes a viable method for the in-clusion of NQEs in larger molecular systems, facilitating access to the long simulation times necessary to accu-mulate sufficient statistics for accurate resolution of IR spectra. TABLE I: Average timings per MD step for each of the eight different water clusters considered, using three dif-ferent methods (Classical MD, QTB, and adQTB). The last column indicates the duration (in nanoseconds) of the MD trajectory that can be simulated per day on a single core of an Intel(R) Xeon(R) Platinum 8360Y CPU @ 2.40GHz. 
+
+Molecule Name Method Avg Time per Step (s) ns per Day 
+
+H2O Classical 0.000116 86.207 H2O QTB 0.000115 86.957 H2O adQTB 0.000107 93.458 H3O+ Classical 0.000142 70.423 H3O+ QTB 0.000146 68.493 H3O+ adQTB 0.000143 69.930 H(H 2O) 2+ Classical 0.000317 31.549 H(H 2O) 2+ QTB 0.000322 31.055 H(H 2O) 2+ adQTB 0.000316 31.646 H(H 2O) 3+ Classical 0.000546 18.315 H(H 2O) 3+ QTB 0.000568 17.609 H(H 2O) 3+ adQTB 0.000549 18.221 H(H 2O) 4+ (Eigen) Classical 0.000962 10.398 H(H 2O) 4+ (Eigen) QTB 0.000776 12.890 H(H 2O) 4+ (Eigen) adQTB 0.000852 11.737 H(H 2O) 4+ (trans -zundel) Classical 0.000807 12.384 H(H 2O) 4+ (trans -zundel) QTB 0.000848 11.789 H(H 2O) 4+ (trans -zundel) adQTB 0.000850 11.765 H(H 2O) 4+ (cis -zundel) Classical 0.002526 3.956 H(H 2O) 4+ (cis -zundel) QTB 0.002931 3.409 H(H 2O) 4+ (cis -zundel) adQTB 0.002941 3.400 H(H 2O) 4+ (ring) Classical 0.000587 17.012 H(H 2O) 4+ (ring) QTB 0.000852 11.737 H(H 2O) 4+ (ring) adQTB 0.002258 4.428

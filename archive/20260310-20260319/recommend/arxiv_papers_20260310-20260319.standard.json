@@ -1,56 +1,201 @@
 {
   "mode": "standard",
-  "generated_at": "2026-03-19T15:17:45.163196+00:00",
+  "generated_at": "2026-03-19T15:23:52.386977+00:00",
   "stats": {
     "mode": "standard",
     "tag_count": 1,
-    "deep_divecandidates": 12,
+    "deep_divecandidates": 11,
     "deep_cap": 6,
     "deep_selected": 6,
-    "quick_candidates": 49,
+    "quick_candidates": 52,
     "quick_skim_target": 11,
     "quick_selected": 11
   },
   "deep_dive": [
     {
-      "id": "2603.09202v1",
-      "title": "Material-Property-Field-based Deep Neural Network in Hopfield Framework",
-      "abstract": "The current Deep Neural Networks (DNNs) lack the necessary physical priors and a clear formulation specifically designed for material systems. making them non-analytical and non-interpretable 'black boxes'. In this work, we integrate Material Property Fields (MPF) with the Hopfield network architecture and propose an analytical DNN framework named mPFDNN. MPF provides a unified framework that represents physical properties of materials as an analytical field built upon pairwise interactions, rigorously respecting fundamental symmetries, while also enabling a physically legitimate decomposition of property distributions at the atomic level. Although the Hopfield model was initially developed for Ising-like systems, we prove that its dynamical evolution strategy for DNN design is equally well suited to MPF. By mathematically reformatting interatomic nonlinear interactions as 'hidden neurons', the MPF can be naturally evolved into a deep yet analytically tractable DNN architecture that approximates a fully connected interaction landscape. This framework also unifies nonlinear DNNs and linear approaches within a single cohesive model. Extensive validation across diverse systems (inorganic crystals, organic molecules, and aqueous solutions) and multiple properties (diffusion coefficients, adsorption energy, etc.) confirm that mPFDNN not only achieves accurate predictions but also provides a principled and universal framework for structure-property mapping for physical, chemical and materials science.",
+      "id": "2603.12017v2",
+      "title": "Thermodynamic Descriptors from Molecular Dynamics as Machine Learning Features for Extrapolable Property Prediction",
+      "abstract": "The limited extrapolative power of structure-based machine learning (ML) models is a critical bottleneck in chemical discovery, particularly for industrial R&D, where navigating uncharted chemical space to find next-generation materials or drugs is paramount. These models, reliant on structural descriptors or graph neural networks (GNNs), often fail when predicting properties for molecules with novel chemotypes. Here, we introduce a physics-augmented ML framework that overcomes this limitation. Our approach replaces conventional structural inputs with thermodynamic properties such as cohesive energy, heat of vaporization, and density, derived directly from molecular dynamics (MD) simulations. While performing comparably to structure-based models on known organic compounds, our method uniquely maintains low error when extrapolating to dissimilar chemical spaces. Crucially, it accurately predicts boiling points for entire chemical classes absent from the training set, including inorganic compounds, salts, and molecules with elements such as Si, B, and Te. By learning from the intermolecular forces that govern phase transitions, our framework provides a more fundamental and generalizable strategy for molecular property prediction, enabling chemical exploration beyond established structural domains.",
       "authors": [
-        "Yanxiao Hu",
-        "Ye Sheng",
-        "Caichao Ye",
-        "Wenxing Qian",
-        "Xiaoxin Xu",
-        "Yabei Wu",
-        "Jiong Yang",
-        "William A. Goddard",
-        "Wenqing Zhang"
+        "Nuria H. Espejo",
+        "Pablo Llombart",
+        "Andrés González de Castilla",
+        "Jorge Ramirez",
+        "Jorge R. Espinosa",
+        "Adiran Garaizar"
       ],
-      "primary_category": "cond-mat.mtrl-sci",
+      "primary_category": "physics.chem-ph",
       "categories": [
-        "cond-mat.mtrl-sci"
+        "physics.chem-ph"
       ],
-      "published": "2026-03-10T05:22:39+00:00",
-      "link": "https://arxiv.org/pdf/2603.09202v1",
+      "published": "2026-03-12T14:59:42+00:00",
+      "link": "https://arxiv.org/pdf/2603.12017v2",
       "tags": [
         "keyword:TiMD-ML",
         "query:TiMD-ML"
       ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "Analytical framework for material structure-property relationships",
-      "llm_evidence_cn": "材料结构-性质关系的分析框架",
-      "llm_evidence": "材料结构-性质关系的分析框架",
-      "canonical_evidence": "材料结构-性质关系的分析框架",
-      "llm_tldr_en": "Integrates Material Property Fields with Hopfield networks for interpretable structure-property modeling.",
-      "llm_tldr_cn": "将材料性质场与Hopfield网络结合，构建可解释的结构-性质建模框架。",
-      "llm_tldr": "将材料性质场与Hopfield网络结合，构建可解释的结构-性质建模框架。",
+      "llm_score": 9.0,
+      "llm_evidence_en": "MD-derived features for ML property prediction",
+      "llm_evidence_cn": "分子动力学特征用于机器学习性质预测",
+      "llm_evidence": "分子动力学特征用于机器学习性质预测",
+      "canonical_evidence": "分子动力学特征用于机器学习性质预测",
+      "llm_tldr_en": "Combines MD simulations with ML to improve property prediction, matching the core theme of the user request.",
+      "llm_tldr_cn": "结合分子动力学模拟与机器学习以改进性质预测，符合用户核心研究主题。",
+      "llm_tldr": "结合分子动力学模拟与机器学习以改进性质预测，符合用户核心研究主题。",
+      "llm_tags": [
+        "query:timd-ml:composite"
+      ],
+      "matched_query_tag": "query:timd-ml:composite",
+      "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
+      "matched_requirement_id": "req-composite-timd-ml",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.17028v1",
+      "title": "Accelerating Structure-Property Relationship Discovery with Multimodal Machine Learning and Self-Driving Microscopy",
+      "abstract": "Microscopy combined with local spectroscopy is widely used to correlate nanoscale structure with functional properties in materials, but conventional measurements rely heavily on human-selected sampling locations and predefined targets, limiting dataset diversity and the potential for discovery. Here, we present a framework that integrates autonomous microscopy with a dual-novelty deep kernel learning (DN-DKL) for adaptive data acquisition and a dual variational autoencoder (VAE) for representation learning. DN-DKL actively guides the microscopy toward structurally and spectroscopically novel regions, enabling efficient collection of large spectral datasets. Dual-VAE embeds local structure and spectroscopic responses into a shared latent manifold that serves as a structure-property relationship map. We applied this framework for the investigation of halide perovskite films using conductive atomic force microscopy. The results reveal distinct hysteresis behaviors that are linked to specific nanoscale structural motifs, including grain boundary junction points that show hysteresis under different bias conditions and asymmetric grain boundaries that suppress charge transport. This framework establishes a general strategy that leverages the complementary strengths of self-driving microscopy, machine learning, and human expertise to accelerate scientific discovery in functional materials.",
+      "authors": [
+        "Jiawei Gong",
+        "Danqing Ma",
+        "Ralph Bulanadi",
+        "Robert Moore",
+        "Rama Vasudevan",
+        "Lianfeng Zhao",
+        "Yongtao Liu"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "physics.ins-det"
+      ],
+      "published": "2026-03-17T18:08:57+00:00",
+      "link": "https://arxiv.org/pdf/2603.17028v1",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal machine learning for structure-property relationship discovery",
+      "llm_evidence_cn": "用于结构-性质关系发现的多模态机器学习",
+      "llm_evidence": "用于结构-性质关系发现的多模态机器学习",
+      "canonical_evidence": "用于结构-性质关系发现的多模态机器学习",
+      "llm_tldr_en": "A framework using multimodal ML and autonomous microscopy to accelerate structure-property relationship discovery.",
+      "llm_tldr_cn": "该框架利用多模态机器学习和自主显微镜技术，加速材料结构与性质关系的发现。",
+      "llm_tldr": "该框架利用多模态机器学习和自主显微镜技术，加速材料结构与性质关系的发现。",
       "llm_tags": [
         "query:timd-ml"
       ],
       "matched_query_tag": "query:timd-ml",
       "matched_query_text": "structure property relationship",
       "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.13445v1",
+      "title": "Diffusion-based Generative Machine Learning Model for Predicting Crack Propagation in Aluminum Nitride at the Atomic Scale",
+      "abstract": "Predicting atomic-scale crack propagation in aluminum nitride (AlN) is critical for semiconductor reliability but remains prohibitively expensive via molecular dynamics (MD). We develop a diffusion-based generative machine learning model to predict atomic-scale crack propagation in AlN, a critical semiconductor material, by conditioning solely on initial microstructure embeddings. Trained on MD simulations of single-crack systems, the model achieves a significant speedup while accurately forecasting dynamic fracture processes, including stress-driven crack initiation, crack branching, and atomic-scale bridging ligaments. Crucially, it demonstrates inherent physical fidelity by reproducing material-intrinsic mechanisms while disregarding periodic boundary artifacts, and generalizes to unseen multi-crack configurations. Validation against MD ground truth confirms the capability of the model to capture complex fracture physics without auxiliary stress or energy data, enabling rapid exploration of crack-mediated failure for semiconductor reliability optimization.",
+      "authors": [
+        "Jiali Lu",
+        "Shengfeng Yang"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cs.LG"
+      ],
+      "published": "2026-03-13T13:20:37+00:00",
+      "link": "https://arxiv.org/pdf/2603.13445v1",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "ML model for predicting mechanical properties trained on MD",
+      "llm_evidence_cn": "基于MD训练的机器学习模型预测力学性质",
+      "llm_evidence": "基于MD训练的机器学习模型预测力学性质",
+      "canonical_evidence": "基于MD训练的机器学习模型预测力学性质",
+      "llm_tldr_en": "Develops a generative ML model to predict atomic-scale crack propagation, offering a speedup over MD.",
+      "llm_tldr_cn": "开发了一种生成式机器学习模型来预测原子尺度的裂纹扩展，比MD模拟显著提速。",
+      "llm_tldr": "开发了一种生成式机器学习模型来预测原子尺度的裂纹扩展，比MD模拟显著提速。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.09744v1",
+      "title": "AI-driven Inverse Design of Complex Oxide Thin Films for Semiconductor Devices",
+      "abstract": "Bridging generative foundation models with non-equilibrium thin-film synthesis remains a central challenge, limiting the practical impact of AI-driven materials discovery on semiconductor dielectrics. Here, we introduce IDEAL (Inverse Design for Experimental Atomic Layers), an inverse-design platform that links generative diffusion models, machine learning interatomic potentials, and graph neural network property predictors with atomic layer deposition (ALD). We demonstrate IDEAL using the Hf-Zr-O system as a stringent benchmark for semiconductor-relevant complex oxides. The platform statistically enumerates thermodynamically plausible structures and constructs a composition-structure-property map. Crucially, it identifies a narrow composition window where low-energy tetragonal and orthorhombic phases cluster, revealing trade-offs between band gap and dielectric response. Experimental validation using atomic layer modulation (ALM) corroborates these predictions, demonstrating predictive guidance under realistic, non-equilibrium thin-film growth. By experimentally closing the loop, IDEAL provides a transferable and generalizable route to the precision synthesis of next-generation semiconductor dielectrics.",
+      "authors": [
+        "Bonwook Gu",
+        "Trinh Ngoc Le",
+        "Wonjoong Kim",
+        "Zunair Masroor",
+        "Han-Bo-Ram Lee"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-03-10T14:48:35+00:00",
+      "link": "https://arxiv.org/pdf/2603.09744v1",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "ML potentials and property predictors for materials",
+      "llm_evidence_cn": "材料的机器学习势与性质预测器",
+      "llm_evidence": "材料的机器学习势与性质预测器",
+      "canonical_evidence": "材料的机器学习势与性质预测器",
+      "llm_tldr_en": "Integrates ML potentials and GNN property predictors for inverse design of complex oxide thin films.",
+      "llm_tldr_cn": "集成机器学习势和GNN性质预测器，用于复杂氧化物薄膜的逆向设计。",
+      "llm_tldr": "集成机器学习势和GNN性质预测器，用于复杂氧化物薄膜的逆向设计。",
+      "llm_tags": [
+        "query:timd-ml:composite"
+      ],
+      "matched_query_tag": "query:timd-ml:composite",
+      "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
+      "matched_requirement_id": "req-composite-timd-ml",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.14466v1",
+      "title": "Explicit, Machine-Learned Two-Body Potentials for Molecular Simulations",
+      "abstract": "A new pairwise hybrid machine-learning/molecular mechanics (ML/MM) potential is introduced that is conceived for application to large, heterogeneous condensed-phase systems. The PhysNet ML method describes monomers and short-range dimer interactions, while a classical MM force field describes pairwise interactions beyond a defined switching distance. Models are fitted to MP2 dimer and pairwise cluster energies, and the quality of each model is assessed at different switching distances and using MM approaches with and without detailed distributed charge electrostatics. The applicability of the approach to molecular dynamics simulations is demonstrated for a basic implementation applied to a small model system. Dichloromethane and acetone are used as test systems to demonstrate the accuracy of the approach in describing pairwise reference data, and also to highlight the limitations of the pairwise approach for systems that exhibit significant many-body effects in condensed phase, paving the way for the addition of a general many-body correction in future work.",
+      "authors": [
+        "Kham Lek Chaton",
+        "Eric D. Boittier",
+        "Mike Devereux",
+        "Markus Meuwly"
+      ],
+      "primary_category": "physics.chem-ph",
+      "categories": [
+        "physics.chem-ph"
+      ],
+      "published": "2026-03-15T16:15:04+00:00",
+      "link": "https://arxiv.org/pdf/2603.14466v1",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "machine-learned potentials for molecular dynamics",
+      "llm_evidence_cn": "用于分子动力学的机器学习势函数",
+      "llm_evidence": "用于分子动力学的机器学习势函数",
+      "canonical_evidence": "用于分子动力学的机器学习势函数",
+      "llm_tldr_en": "Introduces a hybrid ML/MM potential for large-scale molecular dynamics simulations of condensed-phase systems.",
+      "llm_tldr_cn": "引入了一种混合机器学习/分子力学势，用于凝聚态系统的大规模分子动力学模拟。",
+      "llm_tldr": "引入了一种混合机器学习/分子力学势，用于凝聚态系统的大规模分子动力学模拟。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "molecular dynamics",
+      "matched_requirement_id": "req-5",
       "selection_source": "fresh_fetch"
     },
     {
@@ -76,272 +221,133 @@
         "query:TiMD-ML"
       ],
       "llm_score": 8.0,
-      "llm_evidence_en": "MD features for ML property prediction",
-      "llm_evidence_cn": "分子动力学特征用于机器学习性质预测",
-      "llm_evidence": "分子动力学特征用于机器学习性质预测",
-      "canonical_evidence": "分子动力学特征用于机器学习性质预测",
-      "llm_tldr_en": "Demonstrates MD-based thermodynamic descriptors to enhance ML model extrapolation in chemical discovery.",
-      "llm_tldr_cn": "展示了基于分子动力学的热力学描述符，以增强化学发现中机器学习模型的外推性。",
-      "llm_tldr": "展示了基于分子动力学的热力学描述符，以增强化学发现中机器学习模型的外推性。",
+      "llm_evidence_en": "molecular dynamics descriptors for machine learning property prediction",
+      "llm_evidence_cn": "分子动力学描述符用于机器学习性质预测",
+      "llm_evidence": "分子动力学描述符用于机器学习性质预测",
+      "canonical_evidence": "分子动力学描述符用于机器学习性质预测",
+      "llm_tldr_en": "Uses molecular dynamics to generate thermodynamic descriptors for extrapolable ML property prediction.",
+      "llm_tldr_cn": "利用分子动力学生成热力学描述符，以实现可外推的机器学习性质预测。",
+      "llm_tldr": "利用分子动力学生成热力学描述符，以实现可外推的机器学习性质预测。",
       "llm_tags": [
         "query:timd-ml:composite"
       ],
       "matched_query_tag": "query:timd-ml:composite",
       "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
       "matched_requirement_id": "req-composite-timd-ml",
-      "selection_source": "fresh_fetch"
-    },
-    {
-      "id": "2603.11695v1",
-      "title": "PolyCrysDiff: Controllable Generation of Three-Dimensional Computable Polycrystalline Material Structures",
-      "abstract": "The three-dimensional (3D) microstructures of polycrystalline materials exert a critical influence on their mechanical and physical properties. Realistic, controllable construction of these microstructures is a key step toward elucidating structure-property relationships, yet remains a formidable challenge. Herein, we propose PolyCrysDiff, a framework based on conditional latent diffusion that enables the end-to-end generation of computable 3D polycrystalline microstructures. Comprehensive qualitative and quantitative evaluations demonstrate that PolyCrysDiff faithfully reproduces target grain morphologies, orientation distributions, and 3D spatial correlations, while achieving an $R^2$ over 0.972 on grain attributes (e.g., size and sphericity) control, thereby outperforming mainstream approaches such as Markov random field (MRF)- and convolutional neural network (CNN)-based methods. The computability and physical validity of the generated microstructures are verified through a series of crystal plasticity finite element method (CPFEM) simulations. Leveraging PolyCrysDiff's controllable generative capability, we systematically elucidate how grain-level microstructural characteristics affect the mechanical properties of polycrystalline materials. This development is expected to pave a key step toward accelerated, data-driven optimization and design of polycrystalline materials.",
-      "authors": [
-        "Chi Chen",
-        "Tianle Jiang",
-        "Xiaodong Wei",
-        "Yanming Wang"
-      ],
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV",
-        "cond-mat.mtrl-sci"
-      ],
-      "published": "2026-03-12T09:04:57+00:00",
-      "link": "https://arxiv.org/pdf/2603.11695v1",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "elucidating structure-property relationships in polycrystalline materials",
-      "llm_evidence_cn": "阐明多晶材料的结构-性能关系",
-      "llm_evidence": "阐明多晶材料的结构-性能关系",
-      "canonical_evidence": "阐明多晶材料的结构-性能关系",
-      "llm_tldr_en": "A diffusion-based framework for generating 3D polycrystalline structures to study structure-property relationships.",
-      "llm_tldr_cn": "一种基于扩散的模型，用于生成三维多晶结构以研究结构与性能的关系。",
-      "llm_tldr": "一种基于扩散的模型，用于生成三维多晶结构以研究结构与性能的关系。",
-      "llm_tags": [
-        "query:timd-ml"
-      ],
-      "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "structure property relationship",
-      "matched_requirement_id": "req-1",
-      "selection_source": "fresh_fetch"
-    },
-    {
-      "id": "2603.11722v1",
-      "title": "Melting of thin silicon films: a molecular dynamics study with two machine learning potentials",
-      "abstract": "Thermal stability of silicene and thin silicon films is studied by molecular dynamics using two machine-learning potentials, SNAP and GAP. For SNAP potential, systems ranging from a single silicene layer to films of 36 layers are considered. Silicene is found to lose its structure at 500 K. The decomposition temperature increases with film thikness and reaches saturation at about 28 layers, corresponding to the bulk melting point of the SNAP model (1380 K). Thin films up to 8 layers exibit two-phase coexistence upon decomposition, while thicker films undergo surface melting followed by complete collapse into the liquid state. The GAP potential, although more accurate for bulk silicon, fails to describe the gas phase: silicene modelled with GAP decomposes into a set of small clusters. The results are compared with earlier data for the Stillinger-Weber potential.",
-      "authors": [
-        "Yu. D. Fomin",
-        "E. N. Tsiok",
-        "V. N. Ryzhov"
-      ],
-      "primary_category": "cond-mat.mtrl-sci",
-      "categories": [
-        "cond-mat.mtrl-sci",
-        "cond-mat.soft"
-      ],
-      "published": "2026-03-12T09:28:42+00:00",
-      "link": "https://arxiv.org/pdf/2603.11722v1",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "Molecular dynamics study with machine learning potentials",
-      "llm_evidence_cn": "结合机器学习势函数的分子动力学研究",
-      "llm_evidence": "结合机器学习势函数的分子动力学研究",
-      "canonical_evidence": "结合机器学习势函数的分子动力学研究",
-      "llm_tldr_en": "Studies thermal stability of silicon films using molecular dynamics and machine learning potentials.",
-      "llm_tldr_cn": "利用分子动力学和机器学习势函数研究硅薄膜的热稳定性。",
-      "llm_tldr": "利用分子动力学和机器学习势函数研究硅薄膜的热稳定性。",
-      "llm_tags": [
-        "query:timd-ml"
-      ],
-      "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "molecular dynamics",
-      "matched_requirement_id": "req-5",
-      "selection_source": "fresh_fetch"
-    },
-    {
-      "id": "2603.12017v2",
-      "title": "Thermodynamic Descriptors from Molecular Dynamics as Machine Learning Features for Extrapolable Property Prediction",
-      "abstract": "The limited extrapolative power of structure-based machine learning (ML) models is a critical bottleneck in chemical discovery, particularly for industrial R&D, where navigating uncharted chemical space to find next-generation materials or drugs is paramount. These models, reliant on structural descriptors or graph neural networks (GNNs), often fail when predicting properties for molecules with novel chemotypes. Here, we introduce a physics-augmented ML framework that overcomes this limitation. Our approach replaces conventional structural inputs with thermodynamic properties such as cohesive energy, heat of vaporization, and density, derived directly from molecular dynamics (MD) simulations. While performing comparably to structure-based models on known organic compounds, our method uniquely maintains low error when extrapolating to dissimilar chemical spaces. Crucially, it accurately predicts boiling points for entire chemical classes absent from the training set, including inorganic compounds, salts, and molecules with elements such as Si, B, and Te. By learning from the intermolecular forces that govern phase transitions, our framework provides a more fundamental and generalizable strategy for molecular property prediction, enabling chemical exploration beyond established structural domains.",
-      "authors": [
-        "Nuria H. Espejo",
-        "Pablo Llombart",
-        "Andrés González de Castilla",
-        "Jorge Ramirez",
-        "Jorge R. Espinosa",
-        "Adiran Garaizar"
-      ],
-      "primary_category": "physics.chem-ph",
-      "categories": [
-        "physics.chem-ph"
-      ],
-      "published": "2026-03-12T14:59:42+00:00",
-      "link": "https://arxiv.org/pdf/2603.12017v2",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "MD-derived thermodynamic descriptors for ML property prediction",
-      "llm_evidence_cn": "分子动力学热力学描述符用于机器学习性质预测",
-      "llm_evidence": "分子动力学热力学描述符用于机器学习性质预测",
-      "canonical_evidence": "分子动力学热力学描述符用于机器学习性质预测",
-      "llm_tldr_en": "Uses MD-derived thermodynamic features to improve extrapolative power of ML property prediction models.",
-      "llm_tldr_cn": "利用分子动力学衍生的热力学特征，提高机器学习性质预测模型的外推能力。",
-      "llm_tldr": "利用分子动力学衍生的热力学特征，提高机器学习性质预测模型的外推能力。",
-      "llm_tags": [
-        "query:timd-ml:composite"
-      ],
-      "matched_query_tag": "query:timd-ml:composite",
-      "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
-      "matched_requirement_id": "req-composite-timd-ml",
-      "selection_source": "fresh_fetch"
-    },
-    {
-      "id": "2603.13445v1",
-      "title": "Diffusion-based Generative Machine Learning Model for Predicting Crack Propagation in Aluminum Nitride at the Atomic Scale",
-      "abstract": "Predicting atomic-scale crack propagation in aluminum nitride (AlN) is critical for semiconductor reliability but remains prohibitively expensive via molecular dynamics (MD). We develop a diffusion-based generative machine learning model to predict atomic-scale crack propagation in AlN, a critical semiconductor material, by conditioning solely on initial microstructure embeddings. Trained on MD simulations of single-crack systems, the model achieves a significant speedup while accurately forecasting dynamic fracture processes, including stress-driven crack initiation, crack branching, and atomic-scale bridging ligaments. Crucially, it demonstrates inherent physical fidelity by reproducing material-intrinsic mechanisms while disregarding periodic boundary artifacts, and generalizes to unseen multi-crack configurations. Validation against MD ground truth confirms the capability of the model to capture complex fracture physics without auxiliary stress or energy data, enabling rapid exploration of crack-mediated failure for semiconductor reliability optimization.",
-      "authors": [
-        "Jiali Lu",
-        "Shengfeng Yang"
-      ],
-      "primary_category": "cond-mat.mtrl-sci",
-      "categories": [
-        "cond-mat.mtrl-sci",
-        "cs.LG"
-      ],
-      "published": "2026-03-13T13:20:37+00:00",
-      "link": "https://arxiv.org/pdf/2603.13445v1",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "ML model for predicting mechanical crack propagation trained on MD",
-      "llm_evidence_cn": "基于分子动力学训练的预测机械裂纹扩展的机器学习模型",
-      "llm_evidence": "基于分子动力学训练的预测机械裂纹扩展的机器学习模型",
-      "canonical_evidence": "基于分子动力学训练的预测机械裂纹扩展的机器学习模型",
-      "llm_tldr_en": "A diffusion-based ML model predicts atomic-scale crack propagation as a fast alternative to MD.",
-      "llm_tldr_cn": "一种基于扩散的机器学习模型可预测原子级裂纹扩展，作为分子动力学的快速替代方案。",
-      "llm_tldr": "一种基于扩散的机器学习模型可预测原子级裂纹扩展，作为分子动力学的快速替代方案。",
-      "llm_tags": [
-        "query:timd-ml"
-      ],
-      "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials",
-      "matched_requirement_id": "req-6",
       "selection_source": "fresh_fetch"
     }
   ],
   "quick_skim": [
     {
-      "id": "2603.14466v1",
-      "title": "Explicit, Machine-Learned Two-Body Potentials for Molecular Simulations",
-      "abstract": "A new pairwise hybrid machine-learning/molecular mechanics (ML/MM) potential is introduced that is conceived for application to large, heterogeneous condensed-phase systems. The PhysNet ML method describes monomers and short-range dimer interactions, while a classical MM force field describes pairwise interactions beyond a defined switching distance. Models are fitted to MP2 dimer and pairwise cluster energies, and the quality of each model is assessed at different switching distances and using MM approaches with and without detailed distributed charge electrostatics. The applicability of the approach to molecular dynamics simulations is demonstrated for a basic implementation applied to a small model system. Dichloromethane and acetone are used as test systems to demonstrate the accuracy of the approach in describing pairwise reference data, and also to highlight the limitations of the pairwise approach for systems that exhibit significant many-body effects in condensed phase, paving the way for the addition of a general many-body correction in future work.",
+      "id": "2603.14883v1",
+      "title": "Ductility and Brittle Fracture of Tungsten by Disconnection Pile-up on Twin Boundaries",
+      "abstract": "Refractory body-centered cubic (BCC) metals and alloys are of extraordinary importance in modern technological and structural applications. However, their wider adoption in science and technology is severely restricted by low-temperature brittleness, quantified by an unacceptably high value of the brittle-to ductile transition temperature (DBTT). The DBTT of these alloys is known to depend strongly on the particular microstructure of the material following mechanisms that are not well understood. Here we apply cross-scale molecular dynamics (MD), a simulation approach that preserves full atomic resolution while capturing the collective evolution of dislocations, twins, and cracks in near-micron-scale volumes, to investigate ductility and fracture in single-crystal tungsten pillars as a function of initial defect microstructure, deformation conditions, and temperature. The simulations reveal a sequence of microscopic processes conducive to failure: dislocation starvation, nucleation and growth of twins, pinning of the twin boundaries at surface asperities, resulting in disconnection pile-ups that trigger crack nucleation and propagation at low macroscopic stresses along incoherent boundary segments. By resolving these processes within a single atomistic framework, our simulations connect defect-level dynamics to macroscopic fracture behavior and identify microstructural pathways capable of shifting the DBTT through targeted promotion or suppression of the underlying deformation mechanisms.",
       "authors": [
-        "Kham Lek Chaton",
-        "Eric D. Boittier",
-        "Mike Devereux",
-        "Markus Meuwly"
+        "Omar Hussein",
+        "Nicolas Bertin",
+        "Jakub Veverka",
+        "Tomas Oppelstrup",
+        "Jaime Marian",
+        "Fadi Abdeljawad",
+        "Shen J. Dillon",
+        "Timofey Frolov"
       ],
-      "primary_category": "physics.chem-ph",
+      "primary_category": "cond-mat.mtrl-sci",
       "categories": [
-        "physics.chem-ph"
+        "cond-mat.mtrl-sci"
       ],
-      "published": "2026-03-15T16:15:04+00:00",
-      "link": "https://arxiv.org/pdf/2603.14466v1",
+      "published": "2026-03-16T06:29:51+00:00",
+      "link": "https://arxiv.org/pdf/2603.14883v1",
       "tags": [
         "keyword:TiMD-ML",
         "query:TiMD-ML"
       ],
       "llm_score": 8.0,
-      "llm_evidence_en": "Machine-learned potentials for molecular dynamics simulations",
-      "llm_evidence_cn": "用于分子动力学模拟的机器学习势能",
-      "llm_evidence": "用于分子动力学模拟的机器学习势能",
-      "canonical_evidence": "用于分子动力学模拟的机器学习势能",
-      "llm_tldr_en": "Introduces a hybrid ML/MM potential for large-scale molecular dynamics simulations of heterogeneous systems.",
-      "llm_tldr_cn": "引入一种混合机器学习/分子力学势能，适用于大规模异质体系的分子动力学模拟。",
-      "llm_tldr": "引入一种混合机器学习/分子力学势能，适用于大规模异质体系的分子动力学模拟。",
+      "llm_evidence_en": "cross-scale molecular dynamics of refractory BCC metals and alloys",
+      "llm_evidence_cn": "难熔体心立方金属与合金的跨尺度分子动力学",
+      "llm_evidence": "难熔体心立方金属与合金的跨尺度分子动力学",
+      "canonical_evidence": "难熔体心立方金属与合金的跨尺度分子动力学",
+      "llm_tldr_en": "Uses cross-scale MD to investigate ductility and brittle fracture in refractory BCC metals like tungsten.",
+      "llm_tldr_cn": "利用跨尺度分子动力学研究钨等难熔体心立方金属的延展性与脆性断裂。",
+      "llm_tldr": "利用跨尺度分子动力学研究钨等难熔体心立方金属的延展性与脆性断裂。",
       "llm_tags": [
         "query:timd-ml"
       ],
       "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "molecular dynamics",
-      "matched_requirement_id": "req-5",
+      "matched_query_text": "molecular dynamics simulation of titanium alloys and Ti based materials",
+      "matched_requirement_id": "req-8",
       "selection_source": "fresh_fetch",
       "quick_tier": "8plus"
     },
     {
-      "id": "2603.09744v1",
-      "title": "AI-driven Inverse Design of Complex Oxide Thin Films for Semiconductor Devices",
-      "abstract": "Bridging generative foundation models with non-equilibrium thin-film synthesis remains a central challenge, limiting the practical impact of AI-driven materials discovery on semiconductor dielectrics. Here, we introduce IDEAL (Inverse Design for Experimental Atomic Layers), an inverse-design platform that links generative diffusion models, machine learning interatomic potentials, and graph neural network property predictors with atomic layer deposition (ALD). We demonstrate IDEAL using the Hf-Zr-O system as a stringent benchmark for semiconductor-relevant complex oxides. The platform statistically enumerates thermodynamically plausible structures and constructs a composition-structure-property map. Crucially, it identifies a narrow composition window where low-energy tetragonal and orthorhombic phases cluster, revealing trade-offs between band gap and dielectric response. Experimental validation using atomic layer modulation (ALM) corroborates these predictions, demonstrating predictive guidance under realistic, non-equilibrium thin-film growth. By experimentally closing the loop, IDEAL provides a transferable and generalizable route to the precision synthesis of next-generation semiconductor dielectrics.",
+      "id": "2603.09202v1",
+      "title": "Material-Property-Field-based Deep Neural Network in Hopfield Framework",
+      "abstract": "The current Deep Neural Networks (DNNs) lack the necessary physical priors and a clear formulation specifically designed for material systems. making them non-analytical and non-interpretable 'black boxes'. In this work, we integrate Material Property Fields (MPF) with the Hopfield network architecture and propose an analytical DNN framework named mPFDNN. MPF provides a unified framework that represents physical properties of materials as an analytical field built upon pairwise interactions, rigorously respecting fundamental symmetries, while also enabling a physically legitimate decomposition of property distributions at the atomic level. Although the Hopfield model was initially developed for Ising-like systems, we prove that its dynamical evolution strategy for DNN design is equally well suited to MPF. By mathematically reformatting interatomic nonlinear interactions as 'hidden neurons', the MPF can be naturally evolved into a deep yet analytically tractable DNN architecture that approximates a fully connected interaction landscape. This framework also unifies nonlinear DNNs and linear approaches within a single cohesive model. Extensive validation across diverse systems (inorganic crystals, organic molecules, and aqueous solutions) and multiple properties (diffusion coefficients, adsorption energy, etc.) confirm that mPFDNN not only achieves accurate predictions but also provides a principled and universal framework for structure-property mapping for physical, chemical and materials science.",
       "authors": [
-        "Bonwook Gu",
-        "Trinh Ngoc Le",
-        "Wonjoong Kim",
-        "Zunair Masroor",
-        "Han-Bo-Ram Lee"
+        "Yanxiao Hu",
+        "Ye Sheng",
+        "Caichao Ye",
+        "Wenxing Qian",
+        "Xiaoxin Xu",
+        "Yabei Wu",
+        "Jiong Yang",
+        "William A. Goddard",
+        "Wenqing Zhang"
       ],
       "primary_category": "cond-mat.mtrl-sci",
       "categories": [
         "cond-mat.mtrl-sci"
       ],
-      "published": "2026-03-10T14:48:35+00:00",
-      "link": "https://arxiv.org/pdf/2603.09744v1",
+      "published": "2026-03-10T05:22:39+00:00",
+      "link": "https://arxiv.org/pdf/2603.09202v1",
       "tags": [
         "keyword:TiMD-ML",
         "query:TiMD-ML"
       ],
       "llm_score": 7.0,
-      "llm_evidence_en": "machine learning interatomic potentials and structure-property mapping",
-      "llm_evidence_cn": "机器学习原子间势与结构-性质映射",
-      "llm_evidence": "机器学习原子间势与结构-性质映射",
-      "canonical_evidence": "机器学习原子间势与结构-性质映射",
-      "llm_tldr_en": "An AI platform using ML potentials and GNNs for inverse design and structure-property mapping of complex oxides.",
-      "llm_tldr_cn": "一个利用机器学习势和图神经网络进行复杂氧化物逆向设计和结构-性质映射的AI平台。",
-      "llm_tldr": "一个利用机器学习势和图神经网络进行复杂氧化物逆向设计和结构-性质映射的AI平台。",
+      "llm_evidence_en": "Material-Property-Field-based Deep Neural Network",
+      "llm_evidence_cn": "基于材料性质场的深度神经网络",
+      "llm_evidence": "基于材料性质场的深度神经网络",
+      "canonical_evidence": "基于材料性质场的深度神经网络",
+      "llm_tldr_en": "Integrates physical priors into a Hopfield framework for interpretable material property prediction.",
+      "llm_tldr_cn": "将物理先验集成到Hopfield框架中，用于可解释的材料性质预测。",
+      "llm_tldr": "将物理先验集成到Hopfield框架中，用于可解释的材料性质预测。",
       "llm_tags": [
         "query:timd-ml"
       ],
       "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "structure property relationship",
-      "matched_requirement_id": "req-1",
+      "matched_query_text": "property prediction",
+      "matched_requirement_id": "req-2",
       "selection_source": "fresh_fetch",
       "quick_tier": "7"
     },
     {
-      "id": "2603.10631v1",
-      "title": "High-Throughput-Screening Workflow for Predicting Volume Changes by Ion Intercalation in Battery Materials",
-      "abstract": "Mechanical stresses and strains developing locally within the microstructure of active ion-battery-electrode materials during charge-discharge cycles can compromise their long-term stability. In this context, crystalline compounds exhibiting low volume changes are of particular interest. Atomistic simulations can be employed to quantify the volume change of the crystal structure upon intercalation and deintercalation of ions and to elucidate the local mechanisms underlying the global structural response. While density functional theory (DFT) offers a robust and accurate framework for such calculations, its computational cost limits its applicability for large-scale screening of diverse intercalation structures and sites. In this work, we present a workflow designed to prioritize candidate materials for subsequent detailed characterization. The workflow calculates the volume change upon intercalation using atomic-level features and a machine-learning model for bond-length prediction. The bond-length predictions are based on the assumption that bonds between the same ionic species in similar local coordination environments exhibit comparable lengths across different crystallographic structures. The model was trained on a DFT-generated dataset, which inherently defines the chemical space in which reliable predictions can be expected. We demonstrate the workflow's utility by screening approximately 1,175,000 transition-metal oxides and fluorides, followed by DFT validation of the most promising candidates. The proposed workflow enables filtering of large candidate sets and accelerates the potential discovery of low volume change intercalation materials for batteries.",
+      "id": "2603.09410v1",
+      "title": "Infrared spectroscopy of protonated water clusters via the quantum thermal bath method and highly accurate machine-learned potentials",
+      "abstract": "The spectral features of water clusters provide important information on their structure and dynamics and can assist in deciphering the nature of the local environment of aqueous solutions in a variety of different conditions. Accurately capturing these features via numerical simulations is a non-trivial task that typically requires a sophisticated combination of high-level electronic structure methods and costly quantum dynamics techniques. We present results of molecular dynamics simulations of the IR spectra of protonated water clusters, ranging from the monomer to the tetramer, obtained via the combination of highly accurate machine-learned potential energy surfaces (PES) and dipole moment surfaces (DMS), and the quantum thermal bath (QTB) methodology which facilitates cost-effective inclusion of NQEs in molecular dynamics simulations. We compare our results with previous theoretical and experimental studies and show that this combination provides a significantly cheaper, yet still suitably accurate, alternative to more traditional computational approaches.",
       "authors": [
-        "Aljoscha Felix Baumann",
-        "Daniel Mutter",
-        "Daniel F. Urban",
-        "Christian Elsässer"
+        "T. Baird",
+        "R. Vuilleumier",
+        "S. Bonella"
       ],
-      "primary_category": "cond-mat.mtrl-sci",
+      "primary_category": "physics.comp-ph",
       "categories": [
-        "cond-mat.mtrl-sci"
+        "physics.comp-ph"
       ],
-      "published": "2026-03-11T10:45:04+00:00",
-      "link": "https://arxiv.org/pdf/2603.10631v1",
+      "published": "2026-03-10T09:25:16+00:00",
+      "link": "https://arxiv.org/pdf/2603.09410v1",
       "tags": [
         "keyword:TiMD-ML",
         "query:TiMD-ML"
       ],
       "llm_score": 6.0,
-      "llm_evidence_en": "atomistic simulations for predicting structural response and volume changes",
-      "llm_evidence_cn": "用于预测结构响应和体积变化的原子模拟",
-      "llm_evidence": "用于预测结构响应和体积变化的原子模拟",
-      "canonical_evidence": "用于预测结构响应和体积变化的原子模拟",
-      "llm_tldr_en": "A high-throughput workflow uses atomistic simulations to predict volume changes in battery materials.",
-      "llm_tldr_cn": "一种高通量工作流利用原子模拟预测电池材料的体积变化。",
-      "llm_tldr": "一种高通量工作流利用原子模拟预测电池材料的体积变化。",
+      "llm_evidence_en": "molecular dynamics simulations with machine-learned potentials",
+      "llm_evidence_cn": "使用机器学习势函数的分子动力学模拟",
+      "llm_evidence": "使用机器学习势函数的分子动力学模拟",
+      "canonical_evidence": "使用机器学习势函数的分子动力学模拟",
+      "llm_tldr_en": "Combines MD and ML potentials to simulate the infrared spectra and dynamics of water clusters.",
+      "llm_tldr_cn": "结合分子动力学和机器学习势函数模拟了水团簇的红外光谱和动力学。",
+      "llm_tldr": "结合分子动力学和机器学习势函数模拟了水团簇的红外光谱和动力学。",
       "llm_tags": [
         "query:timd-ml"
       ],
@@ -374,13 +380,13 @@
         "query:TiMD-ML"
       ],
       "llm_score": 8.0,
-      "llm_evidence_en": "automation framework for materials simulation using machine learning potentials",
-      "llm_evidence_cn": "使用机器学习势函数的材料模拟自动化框架",
-      "llm_evidence": "使用机器学习势函数的材料模拟自动化框架",
-      "canonical_evidence": "使用机器学习势函数的材料模拟自动化框架",
-      "llm_tldr_en": "UniMatSim automates high-throughput material simulations using universal machine learning potentials.",
-      "llm_tldr_cn": "UniMatSim 利用通用机器学习势函数实现了高通量材料模拟的自动化。",
-      "llm_tldr": "UniMatSim 利用通用机器学习势函数实现了高通量材料模拟的自动化。",
+      "llm_evidence_en": "automation framework for machine learning potentials and MD",
+      "llm_evidence_cn": "机器学习势与分子动力学自动化框架",
+      "llm_evidence": "机器学习势与分子动力学自动化框架",
+      "canonical_evidence": "机器学习势与分子动力学自动化框架",
+      "llm_tldr_en": "A framework integrating universal machine learning potentials for high-throughput material simulations.",
+      "llm_tldr_cn": "一个集成通用机器学习势的框架，用于实现高通量材料模拟自动化。",
+      "llm_tldr": "一个集成通用机器学习势的框架，用于实现高通量材料模拟自动化。",
       "llm_tags": [
         "query:timd-ml:composite"
       ],
@@ -391,75 +397,80 @@
       "quick_tier": "8plus"
     },
     {
-      "id": "2603.11068v1",
-      "title": "From Phase Prediction to Phase Design: A ReAct Agent Framework for High-Entropy Alloy Discovery",
-      "abstract": "Discovering high-entropy alloy (HEA) compositions that reliably form a target crystal phase is a high-dimensional inverse design problem that conventional trial-and-error experimentation and forward-only machine learning models cannot efficiently solve. Here we present a ReAct (Reasoning + Acting) LLM agent that autonomously proposes, validates, and iteratively refines HEA compositions by querying a calibrated XGBoost surrogate trained on 4,753 experimental records across four phases (FCC, BCC, BCC+FCC, BCC+IM), achieving 94.66\\% accuracy (F1 macro = 0.896). Against Bayesian optimisation (BO) and random search baselines, the full-prompt agent achieves descriptor-space rediscovery rates of 38\\%, 18\\%, and 38\\% for FCC, BCC, and BCC+FCC (Mann--Whitney $p \\leq 0.039$), with proposals lying 2.4--22.8$\\times$ closer to the experimental phase manifold than random search. An ablation reveals that domain priors shift the agent from landmark-alloy recall toward compositionally diverse exploration -- an uninformed agent scores higher rediscovery by concentrating on literature-dense families, while the full-prompt agent explores underrepresented space (unique ratio 1.0 vs.\\ 0.39 for BCC+FCC). These regimes represent distinct criteria: proximity to known literature versus genuine discovery. Spearman analysis confirms agent reasoning is statistically aligned with empirical phase distributions ($ρ= 0.736$, $p = 0.004$ for BCC). This work establishes LLM-guided agentic reasoning as a principled, transparent, and manifold-aware complement to gradient-free optimisation for inverse alloy design.",
+      "id": "2603.10968v1",
+      "title": "Island Sliding Barriers: A first-principles metric for determining remote epitaxy viability",
+      "abstract": "Remote epitaxy, where a 2D van der Waals material (usually graphene) is inserted on top of the substrate before film epitaxy, has emerged as a promising path for growing electronics with lower defect rates and less stringent lattice matching requirements. The exact mechanism behind remote epitaxy has not been definitively shown, however, and it is not obvious when examining a new substrate-film pair whether they would be compatible with the remote epitaxy process. In this paper, we use first principles calculations to test several different mechanisms for determining whether a given substrate-film pair will successfully be grown with remote epitaxy. We find that previously calculated metrics such as electrostatic potential do not hold sufficient explanatory power. We find that the sliding barrier of small islands on the surface when the atomic positions are allowed to optimize provides the most rigorous criteria for whether a given substrate-film pair is remote epitaxy active. This indicates that remote epitaxy is likely a phenomenon related to the kinetics and ease of island migration on the graphene surface.",
       "authors": [
-        "Iman Peivaste",
-        "Salim Belouettar"
+        "Quinn T. Campbell",
+        "Manny Xavier de Jesus Lopez",
+        "Anthony Rice",
+        "Timothy J. Ruggles",
+        "Taisuke Ohta",
+        "Caitlin McCowan",
+        "Sadhvikas Addamane",
+        "Scott W. Schmucker",
+        "Justine Koepke"
       ],
       "primary_category": "cond-mat.mtrl-sci",
       "categories": [
-        "cond-mat.mtrl-sci",
-        "cs.AI"
+        "cond-mat.mtrl-sci"
       ],
-      "published": "2026-03-10T14:20:53+00:00",
-      "link": "https://arxiv.org/pdf/2603.11068v1",
+      "published": "2026-03-11T16:53:18+00:00",
+      "link": "https://arxiv.org/pdf/2603.10968v1",
       "tags": [
         "keyword:TiMD-ML",
         "query:TiMD-ML"
       ],
       "llm_score": 7.0,
-      "llm_evidence_en": "LLM agent for high-entropy alloy discovery and phase prediction",
-      "llm_evidence_cn": "用于高熵合金发现和相预测的大语言模型智能体",
-      "llm_evidence": "用于高熵合金发现和相预测的大语言模型智能体",
-      "canonical_evidence": "用于高熵合金发现和相预测的大语言模型智能体",
-      "llm_tldr_en": "Introduces a ReAct LLM agent for autonomous discovery and phase design of high-entropy alloys.",
-      "llm_tldr_cn": "引入了一种 ReAct LLM 智能体，用于高熵合金的自主发现和相设计。",
-      "llm_tldr": "引入了一种 ReAct LLM 智能体，用于高熵合金的自主发现和相设计。",
+      "llm_evidence_en": "remote epitaxy with graphene interface",
+      "llm_evidence_cn": "石墨烯界面的远程外延",
+      "llm_evidence": "石墨烯界面的远程外延",
+      "canonical_evidence": "石墨烯界面的远程外延",
+      "llm_tldr_en": "Uses first-principles to determine the viability of remote epitaxy using graphene as an interface.",
+      "llm_tldr_cn": "利用第一性原理计算确定以石墨烯为界面的远程外延可行性。",
+      "llm_tldr": "利用第一性原理计算确定以石墨烯为界面的远程外延可行性。",
       "llm_tags": [
-        "query:timd-ml:composite"
+        "query:timd-ml"
       ],
-      "matched_query_tag": "query:timd-ml:composite",
-      "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
-      "matched_requirement_id": "req-composite-timd-ml",
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium graphene interface",
+      "matched_requirement_id": "req-3",
       "selection_source": "fresh_fetch",
       "quick_tier": "7"
     },
     {
-      "id": "2603.11960v1",
-      "title": "Bayesian Model Calibration with Integrated Discrepancy: Addressing Inexact Dislocation Dynamics Models",
-      "abstract": "In this work, a novel approach to Bayesian model calibration routines is developed which reinterprets the traditional definition of model discrepancy as defined by Kennedy and O'Hagan (KOH). The novelty lies in the integration of $δ_θ(x_i)$ GPs within the simulator, which is approximated as a GP surrogate model to ensure computational tractability. This approach assumes that the utilized simulator sufficiently predicts observed trends when calibrated with respect to the application domain, and that all model-form errors can be attributed to uncertainty in the input parameters. In contrast, the KOH method assumes discrepancy to be inherently decoupled from the simulator, acting as a 'catch-all' for various sources of model error. The new method is applied to Molecular Dynamics observations of the critical stress to drive dislocation dipoles, and equivalent predictions using a Discrete Dislocation Dynamics simulator whose coarse-grained physical interpretation of the underlying physical mechanisms requires calibration against MD observations. We present an overview of similar state-aware calibration routines; differentiate the provided approach through redefining the commonly used discrepancy Gaussian process and benchmark against KOH. A philosophical argument as to when application of the proposed method is appropriate is provided, and future directions for expanding upon this methodology are proposed.",
+      "id": "2603.10182v1",
+      "title": "Deep learning statistical defect models on magnetic material dynamic and static properties",
+      "abstract": "The modeling of realistic magnetic materials requires the inclusion of defects. Based on the pseudospectral Landau-Lifshitz description of magnetisation dynamics, we propose a statistical model that takes into account defects, specifically vacancies. This statistical model can be integrated with deep learning techniques that correlate defect thresholds with relevant physical observables. We develop a convolutional neural network and a physics-informed neural network combined with theory of functional connections to predict the dispersion relation given defect parameters and physical constraints. A two-branch convolutional neural network is developed to predict domain-wall widths depending on defects threshold, taking into account the spatial profile and domain-wall width separately to achieve a prediction. The proposed physics-informed approaches leverage deep-learning and achieve statistical predictions measured in physical units. This is a stepping stone towards the discovery of new materials and the determination of minimal defect thresholds required for desired dynamics, states, or topological textures.",
       "authors": [
-        "Liam Myhill",
-        "Enrique Martinez Saez",
-        "Sez Russcher"
+        "C. Eagan",
+        "M. Copus",
+        "E. Iacocca"
       ],
-      "primary_category": "stat.ME",
+      "primary_category": "cond-mat.mes-hall",
       "categories": [
-        "stat.ME",
-        "cond-mat.mtrl-sci"
+        "cond-mat.mes-hall"
       ],
-      "published": "2026-03-12T14:06:58+00:00",
-      "link": "https://arxiv.org/pdf/2603.11960v1",
+      "published": "2026-03-10T19:22:53+00:00",
+      "link": "https://arxiv.org/pdf/2603.10182v1",
       "tags": [
         "keyword:TiMD-ML",
         "query:TiMD-ML"
       ],
       "llm_score": 6.0,
-      "llm_evidence_en": "Bayesian calibration for dislocation dynamics models",
-      "llm_evidence_cn": "位错动力学模型的贝叶斯校准",
-      "llm_evidence": "位错动力学模型的贝叶斯校准",
-      "canonical_evidence": "位错动力学模型的贝叶斯校准",
-      "llm_tldr_en": "Proposes a Bayesian calibration method for inexact dislocation dynamics simulators using GP surrogates.",
-      "llm_tldr_cn": "提出了一种针对不精确位错动力学模拟器的贝叶斯校准方法。",
-      "llm_tldr": "提出了一种针对不精确位错动力学模拟器的贝叶斯校准方法。",
+      "llm_evidence_en": "deep learning for material property prediction",
+      "llm_evidence_cn": "深度学习预测材料性质",
+      "llm_evidence": "深度学习预测材料性质",
+      "canonical_evidence": "深度学习预测材料性质",
+      "llm_tldr_en": "Integrates deep learning with statistical models to predict dynamic and static properties of magnetic materials.",
+      "llm_tldr_cn": "结合深度学习与统计模型，预测磁性材料的动态和静态性质。",
+      "llm_tldr": "结合深度学习与统计模型，预测磁性材料的动态和静态性质。",
       "llm_tags": [
         "query:timd-ml"
       ],
       "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "molecular dynamics",
-      "matched_requirement_id": "req-5",
+      "matched_query_text": "property prediction",
+      "matched_requirement_id": "req-2",
       "selection_source": "fresh_fetch",
       "quick_tier": "6"
     },
@@ -488,136 +499,19 @@
         "query:TiMD-ML"
       ],
       "llm_score": 8.0,
-      "llm_evidence_en": "machine-learning interatomic potential for metal/carbon interface thermal conductance",
-      "llm_evidence_cn": "用于金属/碳界面热导率的机器学习原子间势",
-      "llm_evidence": "用于金属/碳界面热导率的机器学习原子间势",
-      "canonical_evidence": "用于金属/碳界面热导率的机器学习原子间势",
-      "llm_tldr_en": "Uses machine-learning potentials to study and tune thermal conductance at metal/carbon interfaces.",
-      "llm_tldr_cn": "利用机器学习势研究并调节金属/碳界面的热导率。",
-      "llm_tldr": "利用机器学习势研究并调节金属/碳界面的热导率。",
+      "llm_evidence_en": "interfacial thermal conductance and ML potentials",
+      "llm_evidence_cn": "界面热导与机器学习势",
+      "llm_evidence": "界面热导与机器学习势",
+      "canonical_evidence": "界面热导与机器学习势",
+      "llm_tldr_en": "Uses ML potentials and lattice dynamics to study metal/carbon interfaces, highly relevant to Ti/graphene studies.",
+      "llm_tldr_cn": "利用机器学习势和晶格动力学研究金属/碳界面，对钛/石墨烯研究具有高度参考价值。",
+      "llm_tldr": "利用机器学习势和晶格动力学研究金属/碳界面，对钛/石墨烯研究具有高度参考价值。",
       "llm_tags": [
         "query:timd-ml:composite"
       ],
       "matched_query_tag": "query:timd-ml:composite",
       "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
       "matched_requirement_id": "req-composite-timd-ml",
-      "selection_source": "fresh_fetch",
-      "quick_tier": "8plus"
-    },
-    {
-      "id": "2603.11247v1",
-      "title": "Reliable Viscosity Calculation from High-Pressure Equilibrium Molecular Dynamics: Case Study of 2,2,4-Trimethylhexane",
-      "abstract": "Viscosity is a fundamental property of liquid lubricants, yet it is challenging to determine accurately, especially at high pressures. Although equilibrium molecular dynamics (EMD) simulations are a promising alternative to resource-intensive experiments, practical challenges remain in assessing the sufficiency of simulation time and in controlling uncertainties in the Green-Kubo formalism due to the finite amount of trajectory data. In this work, we extend the STable AutoCorrelation Integral Estimator (STACIE), a recently developed algorithm for estimating transport properties. First, we introduce the Lorentz model to estimate the viscosity and the exponential correlation time from the low-frequency power spectrum of anisotropic pressure fluctuations. Second, we show how to supplement the three conventional off-diagonal elements of the pressure tensor ($P_{xy}$, $P_{yz}$ and $P_{zx}$) with two additional independent time series for shear viscosity calculations. Using these improvements, we apply STACIE to calculate the shear viscosity of 2,2,4-trimethylhexane from EMD simulations. We demonstrate STACIE's capability to reliably calculate viscosity under high-pressure conditions, offering a robust and automated solution with validated uncertainty quantification. Our results, when compared to the outcomes of the 10th International Fluid Properties Simulation Challenge (IFPSC), underscore the need for long EMD simulations. Large deviations from experimental viscosities in previous works were primarily due to insufficient simulation times and ad hoc post-processing choices, rather than the limitations of the force fields used. Unlike previous studies, our viscosity estimates agree well with experimental results (relative error < 6%) up to the highest pressure of 1 GPa, highlighting the improved reliability and accuracy of STACIE's systematic approach to viscosity predictions.",
-      "authors": [
-        "Gözdenur Toraman",
-        "Dieter Fauconnier",
-        "Toon Verstraelen"
-      ],
-      "primary_category": "physics.comp-ph",
-      "categories": [
-        "physics.comp-ph"
-      ],
-      "published": "2026-03-11T19:13:27+00:00",
-      "link": "https://arxiv.org/pdf/2603.11247v1",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 7.0,
-      "llm_evidence_en": "calculating transport properties from equilibrium molecular dynamics",
-      "llm_evidence_cn": "从平衡分子动力学计算输运性质",
-      "llm_evidence": "从平衡分子动力学计算输运性质",
-      "canonical_evidence": "从平衡分子动力学计算输运性质",
-      "llm_tldr_en": "Improves viscosity calculation accuracy from equilibrium molecular dynamics using a new estimator.",
-      "llm_tldr_cn": "使用一种新的估计器提高了平衡分子动力学计算粘度的准确性。",
-      "llm_tldr": "使用一种新的估计器提高了平衡分子动力学计算粘度的准确性。",
-      "llm_tags": [
-        "query:timd-ml"
-      ],
-      "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "molecular dynamics",
-      "matched_requirement_id": "req-5",
-      "selection_source": "fresh_fetch",
-      "quick_tier": "7"
-    },
-    {
-      "id": "2603.12567v2",
-      "title": "Foundation-Model Surrogates Enable Data-Efficient Active Learning for Materials Discovery",
-      "abstract": "Active learning (AL) has emerged as a powerful paradigm for accelerating materials discovery by iteratively steering experiments toward promising candidates, reducing the number of costly synthesis-and-characterization cycles needed to identify optimal materials. However, current AL relies predominantly on Gaussian Process (GP) and Random Forest (RF) surrogates, which suffer from complementary limitations: GP underfits complex composition-property landscapes due to rigid kernel assumptions, while RF produces unreliable heuristic uncertainty estimates in small-data regimes. This small-data challenge is pervasive in materials science, making reliable surrogate modeling extremely difficult with models trained from scratch on each new dataset. Here we propose In-Context Active Learning (ICAL), which addresses this bottleneck by replacing conventional surrogates with TabPFN, a transformer-based foundation model (FM) pre-trained on millions of synthetic regression tasks to meta-learn a universal prior over tabular data, upon which TabPFN performs principled Bayesian inference in a single forward pass without dataset-specific retraining, delivering strong small-data regression performance and well-calibrated predictive uncertainty (required for effective AL). We benchmark ICAL against GP and RF across 10 materials datasets and TabPFN wins on 8 out of 10 datasets, achieving a mean saving of 52% in extra evaluations relative to GP and 29.77% relative to RF. Cross-validation analysis confirms that TabPFN's advantage stems from superior uncertainty calibration, achieving the lowest Negative Log-Likelihood and Area Under the Sparsification Error curve among all surrogates. These results demonstrate that pre-trained FMs can serve as effective surrogates for active learning, enabling data-efficient discovery across diverse materials systems and small-data experimental sciences.",
-      "authors": [
-        "Jeffrey Hu",
-        "Rongzhi Dong",
-        "Ying Feng",
-        "Ming Hu",
-        "Jianjun Hu"
-      ],
-      "primary_category": "cond-mat.mtrl-sci",
-      "categories": [
-        "cond-mat.mtrl-sci",
-        "cs.LG"
-      ],
-      "published": "2026-03-13T01:57:09+00:00",
-      "link": "https://arxiv.org/pdf/2603.12567v2",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 6.0,
-      "llm_evidence_en": "foundation-model surrogates for property prediction in materials discovery",
-      "llm_evidence_cn": "用于材料发现中性质预测的基础模型代理",
-      "llm_evidence": "用于材料发现中性质预测的基础模型代理",
-      "canonical_evidence": "用于材料发现中性质预测的基础模型代理",
-      "llm_tldr_en": "Uses foundation-model surrogates to enable data-efficient active learning for materials property prediction.",
-      "llm_tldr_cn": "利用基础模型代理实现材料性质预测的高效主动学习。",
-      "llm_tldr": "利用基础模型代理实现材料性质预测的高效主动学习。",
-      "llm_tags": [
-        "query:timd-ml"
-      ],
-      "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "property prediction",
-      "matched_requirement_id": "req-2",
-      "selection_source": "fresh_fetch",
-      "quick_tier": "6"
-    },
-    {
-      "id": "2603.16457v1",
-      "title": "Tritium as an Unambiguous Isotopic Tracer for Nanoscale Hydrogen Analysis by Atom Probe Tomography",
-      "abstract": "Accurate nanoscale detection of hydrogen is essential for understanding hydrogen-related phenomena in materials, yet conventional deuterium tracing is often complicated by residual background hydrogen. This study evaluates tritium as an unambiguous isotopic marker for nanoscale hydrogen analysis in metals using atom probe tomography (APT). Titanium was selected for its ability to incorporate hydrogen isotopes, providing a suitable platform for tritium detection. Time-of-flight secondary ion mass spectrometry (ToF-SIMS) and electron backscatter diffraction (EBSD) were performed prior to tritium charging to characterize the initial composition and microstructure. APT analysis in laser-mode before and after tritium charging, at three post-charging intervals, enables tracking of tritium incorporation over time. Thermal desorption analysis (TDA) confirmed the presence of tritium and complemented the SIMS measurements, highlighting the role of the surface oxide layer in modulating tritium release. This work serves as a fundamental benchmarking study for leveraging tritium and APT as a combined tool for understanding the nanoscale location of hydrogen in materials, being relevant for interpreting local processes related to e.g., hydrogen embrittlement.",
-      "authors": [
-        "Maria Vrellou",
-        "Alexander Welle",
-        "Stefan Wagner",
-        "Marco Weber",
-        "Rolf Rolli",
-        "Hans-Christian Schneider",
-        "Astrid Pundt",
-        "Xufei Fang",
-        "Christoph Kirchlechner"
-      ],
-      "primary_category": "cond-mat.mtrl-sci",
-      "categories": [
-        "cond-mat.mtrl-sci"
-      ],
-      "published": "2026-03-17T12:38:35+00:00",
-      "link": "https://arxiv.org/pdf/2603.16457v1",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "nanoscale analysis of hydrogen in titanium metals",
-      "llm_evidence_cn": "钛金属中氢的纳米级分析",
-      "llm_evidence": "钛金属中氢的纳米级分析",
-      "canonical_evidence": "钛金属中氢的纳米级分析",
-      "llm_tldr_en": "Uses tritium as a tracer in atom probe tomography to analyze hydrogen incorporation in titanium.",
-      "llm_tldr_cn": "在原子探针断层扫描中使用氚作为示踪剂，分析钛中的氢掺入情况。",
-      "llm_tldr": "在原子探针断层扫描中使用氚作为示踪剂，分析钛中的氢掺入情况。",
-      "llm_tags": [
-        "query:timd-ml"
-      ],
-      "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "titanium alloys",
-      "matched_requirement_id": "req-4",
       "selection_source": "fresh_fetch",
       "quick_tier": "8plus"
     },
@@ -646,19 +540,133 @@
         "query:TiMD-ML"
       ],
       "llm_score": 7.0,
-      "llm_evidence_en": "molecular dynamics with a machine-learning interatomic potential",
-      "llm_evidence_cn": "结合机器学习原子间势能的分子动力学",
-      "llm_evidence": "结合机器学习原子间势能的分子动力学",
-      "canonical_evidence": "结合机器学习原子间势能的分子动力学",
-      "llm_tldr_en": "Reveals atomic-scale growth mechanisms using molecular dynamics driven by machine-learning potentials.",
-      "llm_tldr_cn": "利用机器学习势驱动的分子动力学模拟，揭示了原子尺度的生长机制。",
-      "llm_tldr": "利用机器学习势驱动的分子动力学模拟，揭示了原子尺度的生长机制。",
+      "llm_evidence_en": "molecular dynamics with machine-learning interatomic potential",
+      "llm_evidence_cn": "基于机器学习势函数的分子动力学模拟",
+      "llm_evidence": "基于机器学习势函数的分子动力学模拟",
+      "canonical_evidence": "基于机器学习势函数的分子动力学模拟",
+      "llm_tldr_en": "Investigates SiO2 growth mechanisms using MD driven by machine-learning interatomic potentials.",
+      "llm_tldr_cn": "利用机器学习势驱动的分子动力学模拟研究了二氧化硅的原子尺度生长机制。",
+      "llm_tldr": "利用机器学习势驱动的分子动力学模拟研究了二氧化硅的原子尺度生长机制。",
       "llm_tags": [
         "query:timd-ml"
       ],
       "matched_query_tag": "query:timd-ml",
       "matched_query_text": "molecular dynamics",
       "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2603.10631v2",
+      "title": "High-Throughput-Screening Workflow for Predicting Volume Changes by Ion Intercalation in Battery Materials",
+      "abstract": "Mechanical stresses and strains developing locally within the microstructure of active ion-battery-electrode materials during charge-discharge cycles can compromise their long-term stability. In this context, crystalline compounds exhibiting low volume changes are of particular interest. Atomistic simulations can be employed to quantify the volume change of the crystal structure upon intercalation and deintercalation of ions and to elucidate the local mechanisms underlying the global structural response. While density functional theory (DFT) offers a robust and accurate framework for such calculations, its computational cost limits its applicability for large-scale screening of diverse intercalation structures and sites. In this work, we present a workflow designed to prioritize candidate materials for subsequent detailed characterization. The workflow calculates the volume change upon intercalation using atomic-level features and a machine-learning model for bond-length prediction. The bond-length predictions are based on the assumption that bonds between the same ionic species in similar local coordination environments exhibit comparable lengths across different crystallographic structures. The model was trained on a DFT-generated dataset, which inherently defines the chemical space in which reliable predictions can be expected. We demonstrate the workflow's utility by screening approximately 1,175,000 transition-metal oxides and fluorides, followed by DFT validation of the most promising candidates. The proposed workflow enables filtering of large candidate sets and accelerates the potential discovery of low volume change intercalation materials for batteries.",
+      "authors": [
+        "Aljoscha Felix Baumann",
+        "Daniel Mutter",
+        "Daniel F. Urban",
+        "Christian Elsässer"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-03-11T10:45:04+00:00",
+      "link": "https://arxiv.org/pdf/2603.10631v2",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "atomistic simulations for predicting structural response and volume changes",
+      "llm_evidence_cn": "用于预测结构响应和体积变化的原子模拟",
+      "llm_evidence": "用于预测结构响应和体积变化的原子模拟",
+      "canonical_evidence": "用于预测结构响应和体积变化的原子模拟",
+      "llm_tldr_en": "A high-throughput workflow using atomistic simulations to predict volume changes in battery materials.",
+      "llm_tldr_cn": "一种利用原子模拟预测电池材料体积变化的高通量筛选工作流。",
+      "llm_tldr": "一种利用原子模拟预测电池材料体积变化的高通量筛选工作流。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "molecular dynamics",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2603.17318v1",
+      "title": "Analysis of molecular dynamics simulation data via statistical distances between covariance matrices",
+      "abstract": "Molecular dynamics (MD) simulations are powerful tools for elucidating the macroscopic physical properties of materials from microscopic atomic behaviors. However, the massive, high-dimensional datasets generated by MD simulations pose a significant challenge for analysis, necessitating efficient dimensionality reduction and feature extraction techniques. While existing methods such as principal component analysis and unsupervised learning have been utilized, issues regarding data efficiency and computational cost remain. In this study, we propose a statistical analysis framework focusing on the analysis of the particle data distributions through their covariance matrices, corresponding to the second-order moments of MD trajectory data. Discrepancies between system states are quantified using statistical distances between these covariance matrices. By applying dimensionality reduction to the resulting distance matrix, we extract lower-dimensional features that characterize the systems' dynamics. We validate the proposed method using Lennard-Jones (LJ) particle systems under different temperature conditions, as well as separate bulk systems of ice and liquid water. The results of LJ particles demonstrate an approximately linear correlation between the first principal component obtained through dimensionality reduction of the distance matrix and the diffusion coefficient. This suggests that global physical properties can be effectively inferred from local statistical information, such as covariance matrices, offering a data-efficient alternative for analyzing complex molecular systems. Furthermore, in the case of separate bulk systems of ice and liquid water, the method successfully distinguishes between the two phases, highlighting its potential for characterizing phase transitions and structural differences in molecular systems.",
+      "authors": [
+        "Yusuke Ono",
+        "Takumi Sato",
+        "Kenji Yasuoka",
+        "Linyu Peng"
+      ],
+      "primary_category": "stat.AP",
+      "categories": [
+        "stat.AP",
+        "physics.chem-ph",
+        "physics.comp-ph"
+      ],
+      "published": "2026-03-18T03:23:18+00:00",
+      "link": "https://arxiv.org/pdf/2603.17318v1",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "statistical analysis framework for molecular dynamics simulation data",
+      "llm_evidence_cn": "分子动力学模拟数据的统计分析框架",
+      "llm_evidence": "分子动力学模拟数据的统计分析框架",
+      "canonical_evidence": "分子动力学模拟数据的统计分析框架",
+      "llm_tldr_en": "Proposes a statistical framework using covariance matrices to analyze high-dimensional MD simulation data.",
+      "llm_tldr_cn": "提出一种利用协方差矩阵分析高维分子动力学模拟数据的统计框架。",
+      "llm_tldr": "提出一种利用协方差矩阵分析高维分子动力学模拟数据的统计框架。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "molecular dynamics",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2603.11695v1",
+      "title": "PolyCrysDiff: Controllable Generation of Three-Dimensional Computable Polycrystalline Material Structures",
+      "abstract": "The three-dimensional (3D) microstructures of polycrystalline materials exert a critical influence on their mechanical and physical properties. Realistic, controllable construction of these microstructures is a key step toward elucidating structure-property relationships, yet remains a formidable challenge. Herein, we propose PolyCrysDiff, a framework based on conditional latent diffusion that enables the end-to-end generation of computable 3D polycrystalline microstructures. Comprehensive qualitative and quantitative evaluations demonstrate that PolyCrysDiff faithfully reproduces target grain morphologies, orientation distributions, and 3D spatial correlations, while achieving an $R^2$ over 0.972 on grain attributes (e.g., size and sphericity) control, thereby outperforming mainstream approaches such as Markov random field (MRF)- and convolutional neural network (CNN)-based methods. The computability and physical validity of the generated microstructures are verified through a series of crystal plasticity finite element method (CPFEM) simulations. Leveraging PolyCrysDiff's controllable generative capability, we systematically elucidate how grain-level microstructural characteristics affect the mechanical properties of polycrystalline materials. This development is expected to pave a key step toward accelerated, data-driven optimization and design of polycrystalline materials.",
+      "authors": [
+        "Chi Chen",
+        "Tianle Jiang",
+        "Xiaodong Wei",
+        "Yanming Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-03-12T09:04:57+00:00",
+      "link": "https://arxiv.org/pdf/2603.11695v1",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "elucidating structure-property relationships in polycrystalline materials",
+      "llm_evidence_cn": "阐明多晶材料的结构-性质关系",
+      "llm_evidence": "阐明多晶材料的结构-性质关系",
+      "canonical_evidence": "阐明多晶材料的结构-性质关系",
+      "llm_tldr_en": "Proposes a generative framework for 3D polycrystalline microstructures to study structure-property links.",
+      "llm_tldr_cn": "提出了一种生成三维多晶微观结构的框架，用于研究结构与性质的联系。",
+      "llm_tldr": "提出了一种生成三维多晶微观结构的框架，用于研究结构与性质的联系。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "structure property relationship",
+      "matched_requirement_id": "req-1",
       "selection_source": "fresh_fetch",
       "quick_tier": "7"
     }

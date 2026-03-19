@@ -1,50 +1,8 @@
 {
-  "generated_at": "2026-03-19T15:17:45.164375+00:00",
+  "generated_at": "2026-03-19T15:23:52.388290+00:00",
   "updated_date": "20260310-20260319",
   "carryover_days": 9,
   "items": [
-    {
-      "id": "2603.17028v1",
-      "title": "Accelerating Structure-Property Relationship Discovery with Multimodal Machine Learning and Self-Driving Microscopy",
-      "abstract": "Microscopy combined with local spectroscopy is widely used to correlate nanoscale structure with functional properties in materials, but conventional measurements rely heavily on human-selected sampling locations and predefined targets, limiting dataset diversity and the potential for discovery. Here, we present a framework that integrates autonomous microscopy with a dual-novelty deep kernel learning (DN-DKL) for adaptive data acquisition and a dual variational autoencoder (VAE) for representation learning. DN-DKL actively guides the microscopy toward structurally and spectroscopically novel regions, enabling efficient collection of large spectral datasets. Dual-VAE embeds local structure and spectroscopic responses into a shared latent manifold that serves as a structure-property relationship map. We applied this framework for the investigation of halide perovskite films using conductive atomic force microscopy. The results reveal distinct hysteresis behaviors that are linked to specific nanoscale structural motifs, including grain boundary junction points that show hysteresis under different bias conditions and asymmetric grain boundaries that suppress charge transport. This framework establishes a general strategy that leverages the complementary strengths of self-driving microscopy, machine learning, and human expertise to accelerate scientific discovery in functional materials.",
-      "authors": [
-        "Jiawei Gong",
-        "Danqing Ma",
-        "Ralph Bulanadi",
-        "Robert Moore",
-        "Rama Vasudevan",
-        "Lianfeng Zhao",
-        "Yongtao Liu"
-      ],
-      "primary_category": "cond-mat.mtrl-sci",
-      "categories": [
-        "cond-mat.mtrl-sci",
-        "physics.ins-det"
-      ],
-      "published": "2026-03-17T18:08:57+00:00",
-      "link": "https://arxiv.org/pdf/2603.17028v1",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "Multimodal machine learning for structure-property relationship discovery",
-      "llm_evidence_cn": "多模态机器学习用于结构-性能关系发现",
-      "llm_evidence": "多模态机器学习用于结构-性能关系发现",
-      "canonical_evidence": "多模态机器学习用于结构-性能关系发现",
-      "llm_tldr_en": "Integrates autonomous microscopy with machine learning to accelerate structure-property discovery.",
-      "llm_tldr_cn": "将自主显微镜与机器学习结合，加速材料结构与性能关系的发现。",
-      "llm_tldr": "将自主显微镜与机器学习结合，加速材料结构与性能关系的发现。",
-      "llm_tags": [
-        "query:timd-ml"
-      ],
-      "matched_query_tag": "query:timd-ml",
-      "matched_query_text": "structure property relationship",
-      "matched_requirement_id": "req-1",
-      "selection_source": "carryover_cache",
-      "paper_id": "2603.17028v1",
-      "carry_days": 1
-    },
     {
       "id": "2603.17367v1",
       "title": "GPUMDkit: A User-Friendly Toolkit for GPUMD and NEP",
@@ -85,13 +43,13 @@
         "query:TiMD-ML"
       ],
       "llm_score": 8.0,
-      "llm_evidence_en": "toolkit for machine-learned interatomic potentials and molecular dynamics",
-      "llm_evidence_cn": "机器学习原子间势和分子动力学工具包",
-      "llm_evidence": "机器学习原子间势和分子动力学工具包",
-      "canonical_evidence": "机器学习原子间势和分子动力学工具包",
-      "llm_tldr_en": "Presents GPUMDkit, a toolkit streamlining machine-learned potential development and MD simulations.",
-      "llm_tldr_cn": "推出了GPUMDkit工具包，简化了机器学习势开发和分子动力学模拟流程。",
-      "llm_tldr": "推出了GPUMDkit工具包，简化了机器学习势开发和分子动力学模拟流程。",
+      "llm_evidence_en": "Toolkit for GPUMD and Neuroevolution Potential (NEP) for MD simulations",
+      "llm_evidence_cn": "用于GPUMD和神经演化势(NEP)分子动力学模拟的工具包",
+      "llm_evidence": "用于GPUMD和神经演化势(NEP)分子动力学模拟的工具包",
+      "canonical_evidence": "用于GPUMD和神经演化势(NEP)分子动力学模拟的工具包",
+      "llm_tldr_en": "Presents GPUMDkit to streamline machine-learned interatomic potential development and MD workflows.",
+      "llm_tldr_cn": "推出GPUMDkit工具包，简化机器学习原子间势开发和分子动力学模拟工作流。",
+      "llm_tldr": "推出GPUMDkit工具包，简化机器学习原子间势开发和分子动力学模拟工作流。",
       "llm_tags": [
         "query:timd-ml:composite"
       ],
