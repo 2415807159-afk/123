@@ -482,8 +482,18 @@ window.$docsify = {
             }
           });
 
+          const journalTitle =
+            String(frontmatterPaperMeta.journal || frontmatterPaperMeta.source || 'arxiv').trim() || 'arxiv';
+          const frontmatterLink = String(frontmatterPaperMeta.link || '').trim();
+          if (!pdfUrl) {
+            pdfUrl = String(frontmatterPaperMeta.pdf || '').trim();
+          }
+          if (!pdfUrl && frontmatterLink) {
+            pdfUrl = frontmatterLink;
+          }
+
           updateMetaTag('citation_title', title);
-          updateMetaTag('citation_journal_title', 'arxiv');
+          updateMetaTag('citation_journal_title', journalTitle);
           updateMetaTag('citation_pdf_url', pdfUrl, {
             useFallback: false,
           });
@@ -1295,6 +1305,11 @@ window.$docsify = {
             section: normalizeSection(section) || 'quick',
             title_en,
             selection_source: String(meta.selection_source || '').trim(),
+            source: String(meta.source || '').trim(),
+            journal: String(meta.journal || '').trim(),
+            publisher: String(meta.publisher || '').trim(),
+            doi: String(meta.doi || '').trim(),
+            link: String(meta.link || '').trim(),
             authors,
             date: normalizeDateField(meta.date || ''),
             pdf: String(meta.pdf || meta.PDF || '').trim(),
@@ -3609,6 +3624,22 @@ window.$docsify = {
         lines.push('<div class="paper-meta-right">');
         lines.push(`<p><strong>Authors</strong>: ${escapeHtml(meta.authors || 'Unknown')}</p>`);
         lines.push(`<p><strong>Date</strong>: ${escapeHtml(meta.date || 'Unknown')}</p>`);
+        if (meta.source) {
+          lines.push(`<p><strong>Source</strong>: ${escapeHtml(meta.source)}</p>`);
+        }
+        if (meta.journal) {
+          lines.push(`<p><strong>Journal</strong>: ${escapeHtml(meta.journal)}</p>`);
+        }
+        if (meta.publisher) {
+          lines.push(`<p><strong>Publisher</strong>: ${escapeHtml(meta.publisher)}</p>`);
+        }
+        if (meta.doi) {
+          const doiHref = `https://doi.org/${String(meta.doi).trim()}`;
+          lines.push(`<p><strong>DOI</strong>: <a href="${doiHref}" target="_blank">${escapeHtml(meta.doi)}</a></p>`);
+        }
+        if (meta.link) {
+          lines.push(`<p><strong>Link</strong>: <a href="${escapeHtml(meta.link)}" target="_blank">${escapeHtml(meta.link)}</a></p>`);
+        }
         if (meta.pdf) {
           lines.push(`<p><strong>PDF</strong>: <a href="${escapeHtml(meta.pdf)}" target="_blank">${escapeHtml(meta.pdf)}</a></p>`);
         }

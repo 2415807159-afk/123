@@ -123,6 +123,23 @@ class ShouldSkipFetchTest(unittest.TestCase):
         with patch("main._load_full_config", return_value={}):
             self.assertFalse(should_skip_fetch())
 
+    def test_no_skip_when_journal_watch_enabled(self):
+        cfg = {
+            "journal_watch": {
+                "enabled": True,
+                "journals": [{"title": "Acta Materialia"}],
+            },
+            "arxiv_paper_setting": {"prefer_supabase_read": True},
+            "supabase": {
+                "enabled": True,
+                "url": "https://example.supabase.co",
+                "anon_key": "test-key",
+                "use_bm25_rpc": True,
+                "use_vector_rpc": True,
+            },
+        }
+        self.assertFalse(should_skip_fetch(cfg))
+
 
 if __name__ == "__main__":
     unittest.main()

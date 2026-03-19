@@ -19,6 +19,7 @@ import re
 import numpy as np
 
 from filter import E5_QUERY_PREFIX, EmbeddingCoarseFilter, encode_queries
+from journal_watch import journal_watch_enabled
 from subscription_plan import build_pipeline_inputs
 from supabase_source import (
   count_papers_by_date_range,
@@ -101,7 +102,11 @@ class Paper:
   categories: List[str] = field(default_factory=list)
   published: str | None = None
   link: str | None = None
+  pdf_url: str | None = None
   source: str = "arxiv"
+  journal: str | None = None
+  doi: str | None = None
+  publisher: str | None = None
   embedding: Optional[np.ndarray] = None
   embedding_model: str = ""
   tags: Set[str] = field(default_factory=set)
@@ -130,6 +135,11 @@ class Paper:
       "categories": self.categories,
       "published": self.published,
       "link": self.link,
+      "pdf_url": self.pdf_url,
+      "source": self.source,
+      "journal": self.journal,
+      "doi": self.doi,
+      "publisher": self.publisher,
       # tags 输出为去重后的列表
       "tags": sorted(self.tags),
     }
@@ -414,6 +424,10 @@ def load_paper_pool(path: str) -> List[Paper]:
         categories=[str(c) for c in (item.get("categories") or [])],
         published=str(item.get("published") or "") or None,
         link=str(item.get("link") or "") or None,
+        pdf_url=str(item.get("pdf_url") or "") or None,
+        journal=str(item.get("journal") or "") or None,
+        doi=str(item.get("doi") or "") or None,
+        publisher=str(item.get("publisher") or "") or None,
         embedding=emb,
         embedding_model=str(item.get("embedding_model") or "").strip(),
       )
@@ -1011,6 +1025,10 @@ def rank_papers_for_queries_via_supabase(
           categories=[str(c) for c in (row.get("categories") or [])],
           published=str(row.get("published") or "") or None,
           link=str(row.get("link") or "") or None,
+          pdf_url=str(row.get("pdf_url") or "") or None,
+          journal=str(row.get("journal") or "") or None,
+          doi=str(row.get("doi") or "") or None,
+          publisher=str(row.get("publisher") or "") or None,
         )
       if paper_tag:
         id_to_paper[pid].tags.add(paper_tag)
@@ -1167,6 +1185,7 @@ def main() -> None:
     bool(supabase_conf.get("enabled"))
     and bool(supabase_conf.get("use_vector_rpc"))
     and not bool(args.disable_supabase_vector)
+    and not journal_watch_enabled(config)
   )
   supabase_window_count: int | None = None
   if supabase_enabled and (args.top_k is None or args.top_k <= 0):
@@ -1427,6 +1446,7 @@ def main() -> None:
       bool(supabase_conf.get("enabled"))
       and bool(supabase_conf.get("use_vector_rpc"))
       and not bool(args.disable_supabase_vector)
+      and not journal_watch_enabled(config)
     )
     if os.path.isdir(RAW_DIR):
       raw_files = sorted(f for f in os.listdir(RAW_DIR) if f.lower().endswith(".json"))

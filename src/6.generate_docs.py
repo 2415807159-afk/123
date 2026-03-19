@@ -17,6 +17,7 @@ from typing import Any, Dict, List, Tuple
 
 import fitz  # PyMuPDF
 import requests
+from journal_watch import normalize_storage_id
 from llm import BltClient
 
 SCRIPT_DIR = os.path.dirname(__file__)
@@ -243,6 +244,28 @@ def normalize_arxiv_id(value: str) -> str:
     return raw.strip().lower()
 
 
+def resolve_paper_pdf_url(paper: Dict[str, Any]) -> str:
+    return str(paper.get("pdf_url") or "").strip()
+
+
+def resolve_paper_external_link(paper: Dict[str, Any]) -> str:
+    source = str(paper.get("source") or "").strip().lower()
+    paper_id = str(paper.get("id") or paper.get("paper_id") or "").strip()
+    direct_link = str(paper.get("link") or "").strip()
+    pdf_url = resolve_paper_pdf_url(paper)
+    doi = str(paper.get("doi") or "").strip()
+
+    if source == "arxiv" and paper_id:
+        return f"https://arxiv.org/abs/{paper_id}"
+    if direct_link:
+        return direct_link
+    if pdf_url:
+        return pdf_url
+    if doi:
+        return f"https://doi.org/{doi}"
+    return ""
+
+
 def parse_arxiv_xml_feed(xml_text: str) -> Dict[str, Any]:
     """
     从 arXiv API XML feed 中解析第一条 paper 元数据，返回内部统一字典。
@@ -288,12 +311,14 @@ def parse_arxiv_xml_feed(xml_text: str) -> Dict[str, Any]:
 
     return {
         "id": arxiv_id,
+        "source": "arxiv",
         "title": title,
         "abstract": abstract,
         "published": published_date,
         "authors": authors,
         "link": pdf_url,
         "pdf_url": pdf_url,
+        "journal": "arXiv",
         "llm_tags": ["query:transformer", "query:attention"],
     }
 
@@ -855,9 +880,10 @@ def format_date_str(date_str: str) -> str:
     return date_str
 
 
-def prepare_paper_paths(docs_dir: str, date_str: str, title: str, arxiv_id: str) -> Tuple[str, str, str]:
+def prepare_paper_paths(docs_dir: str, date_str: str, title: str, paper_ref: str) -> Tuple[str, str, str]:
     slug = slugify(title)
-    basename = f"{arxiv_id}-{slug}" if arxiv_id else slug
+    safe_ref = normalize_storage_id(paper_ref)
+    basename = f"{safe_ref}-{slug}" if safe_ref else slug
     if RANGE_DATE_RE.match(date_str):
         target_dir = os.path.join(docs_dir, date_str)
         paper_id = f"{date_str}/{basename}"
@@ -1233,18 +1259,26 @@ def extract_sidebar_tags(paper: Dict[str, Any], max_tags: int = 6) -> List[Tuple
     return score_tag + tags
 
 
-def ensure_text_content(pdf_url: str, txt_path: str) -> str:
+def ensure_text_content(source_url: str, txt_path: str, fallback_text: str = "") -> str:
     if os.path.exists(txt_path):
         with open(txt_path, "r", encoding="utf-8") as f:
             return f.read()
-    text_content = fetch_paper_markdown_via_jina(pdf_url)
-    if text_content is None and pdf_url:
-        resp = requests.get(pdf_url, timeout=60)
-        resp.raise_for_status()
-        with tempfile.NamedTemporaryFile(suffix=".pdf", delete=True) as tmp_pdf:
-            tmp_pdf.write(resp.content)
-            tmp_pdf.flush()
-            text_content = extract_pdf_text(tmp_pdf.name)
+    text_content = fetch_paper_markdown_via_jina(source_url)
+    if text_content is None and source_url:
+        try:
+            resp = requests.get(source_url, timeout=60)
+            resp.raise_for_status()
+            content_type = str(resp.headers.get("content-type") or "").lower()
+            final_url = str(resp.url or source_url).lower()
+            if "application/pdf" in content_type or final_url.endswith(".pdf"):
+                with tempfile.NamedTemporaryFile(suffix=".pdf", delete=True) as tmp_pdf:
+                    tmp_pdf.write(resp.content)
+                    tmp_pdf.flush()
+                    text_content = extract_pdf_text(tmp_pdf.name)
+        except Exception:
+            text_content = None
+    if not text_content:
+        text_content = (fallback_text or "").strip()
     os.makedirs(os.path.dirname(txt_path), exist_ok=True)
     with open(txt_path, "w", encoding="utf-8") as f:
         f.write(text_content or "")
@@ -1267,7 +1301,12 @@ def build_markdown_content(
     published = str(paper.get("published") or "").strip()
     if published:
         published = published[:10]
-    pdf_url = str(paper.get("link") or paper.get("pdf_url") or "").strip()
+    pdf_url = resolve_paper_pdf_url(paper)
+    external_url = resolve_paper_external_link(paper)
+    journal = str(paper.get("journal") or "").strip()
+    doi = str(paper.get("doi") or "").strip()
+    source_name = str(paper.get("source") or "").strip()
+    publisher = str(paper.get("publisher") or "").strip()
     score = paper.get("llm_score")
     evidence = str(paper.get("canonical_evidence") or "").strip()
     tldr = (
@@ -1278,7 +1317,8 @@ def build_markdown_content(
     ).strip()
     abstract_en = (paper.get("abstract") or "").strip()
     if not abstract_en:
-        abstract_en = "arXiv did not provide an abstract for this paper."
+        source_label = journal or source_name or "The source"
+        abstract_en = f"{source_label} did not provide an abstract for this paper."
     selection_source = str(paper.get("selection_source") or "").strip()
 
     # 解析速览内容
@@ -1322,6 +1362,16 @@ def build_markdown_content(
         lines.append(f"title_zh: {yaml_escape(zh_title)}")
     lines.append(f"authors: {yaml_escape(', '.join(authors) if authors else 'Unknown')}")
     lines.append(f"date: {yaml_escape(published or 'Unknown')}")
+    if source_name:
+        lines.append(f"source: {yaml_escape(source_name)}")
+    if journal:
+        lines.append(f"journal: {yaml_escape(journal)}")
+    if publisher:
+        lines.append(f"publisher: {yaml_escape(publisher)}")
+    if doi:
+        lines.append(f"doi: {yaml_escape(doi)}")
+    if external_url:
+        lines.append(f"link: {yaml_escape(external_url)}")
     if pdf_url:
         lines.append(f"pdf: {yaml_escape(pdf_url)}")
     if tags_list:
@@ -1394,18 +1444,18 @@ def process_paper(
     force_glance: bool = False,
 ) -> Tuple[str, str]:
     title = (paper.get("title") or "").strip()
-    arxiv_id = str(paper.get("id") or paper.get("paper_id") or "").strip()
-    md_path, txt_path, paper_id = prepare_paper_paths(docs_dir, date_str, title, arxiv_id)
+    raw_paper_id = str(paper.get("id") or paper.get("paper_id") or "").strip()
+    md_path, txt_path, paper_id = prepare_paper_paths(docs_dir, date_str, title, raw_paper_id)
     abstract_en = (paper.get("abstract") or "").strip()
-    pdf_url = str(paper.get("link") or paper.get("pdf_url") or "").strip()
+    source_url = resolve_paper_external_link(paper) or resolve_paper_pdf_url(paper)
 
     glance = ""
 
     if os.path.exists(md_path):
         # 即使是 glance-only，也要确保生成/补齐 .txt（用于前端聊天上下文等）
-        if glance_only and pdf_url:
+        if glance_only and source_url:
             try:
-                ensure_text_content(pdf_url, txt_path)
+                ensure_text_content(source_url, txt_path, fallback_text=abstract_en)
             except Exception:
                 # 不阻塞文档生成流程：txt 拉取失败时继续（避免因为网络/源站问题导致整批中断）
                 pass
@@ -1539,8 +1589,7 @@ def process_paper(
                 return paper_id, title
 
             # 生成详细总结
-            pdf_url = str(paper.get("link") or paper.get("pdf_url") or "").strip()
-            ensure_text_content(pdf_url, txt_path)
+            ensure_text_content(source_url, txt_path, fallback_text=abstract_en)
             summary = generate_deep_summary(md_path, txt_path)
             if summary:
                 upsert_auto_block(md_path, "论文详细总结（自动生成）", summary)
@@ -1552,9 +1601,9 @@ def process_paper(
     # 新文件：如果只需要速览，则不拉取 PDF/Jina 文本，直接用元数据生成页面
     if glance_only:
         # 速览模式也需要生成/补齐全文 txt（优先 jina，失败则 pymupdf 兜底）
-        if pdf_url:
+        if source_url:
             try:
-                ensure_text_content(pdf_url, txt_path)
+                ensure_text_content(source_url, txt_path, fallback_text=abstract_en)
             except Exception:
                 pass
         glance = generate_glance_overview(title, abstract_en) or build_glance_fallback(paper)
@@ -1568,8 +1617,7 @@ def process_paper(
         return paper_id, title
 
     # 新文件：生成完整内容
-    pdf_url = str(paper.get("link") or paper.get("pdf_url") or "").strip()
-    ensure_text_content(pdf_url, txt_path)
+    ensure_text_content(source_url, txt_path, fallback_text=abstract_en)
 
     zh_title, zh_abstract = translate_title_and_abstract_to_zh(title, abstract_en)
     tags_list = build_tags_list(section, paper.get("llm_tags") or [])
@@ -1598,6 +1646,7 @@ def update_sidebar(
     deep_entries: List[Tuple[str, str, List[Tuple[str, str]]]],
     quick_entries: List[Tuple[str, str, List[Tuple[str, str]]]],
     paper_evidence_by_id: Dict[str, str],
+    paper_link_by_id: Dict[str, str] | None = None,
     date_label: str | None = None,
 ) -> None:
     def build_sidebar_item_payload(
@@ -1622,8 +1671,11 @@ def update_sidebar(
                 continue
             clean_tags.append({"kind": safe_kind, "label": safe_label})
 
-        arxiv_id = str(paper_id or "").strip().split("/")[-1]
-        paper_link = f"https://arxiv.org/abs/{arxiv_id}" if arxiv_id else route_href
+        paper_link = ""
+        if isinstance(paper_link_by_id, dict):
+            paper_link = str(paper_link_by_id.get(str(paper_id or "").strip()) or "").strip()
+        if not paper_link:
+            paper_link = route_href
         payload = {
             "title": (title or "").strip() or paper_id,
             "link": paper_link,
@@ -2490,6 +2542,7 @@ def main() -> None:
     deep_entries: List[Tuple[str, str, List[Tuple[str, str]]]] = []
     quick_entries: List[Tuple[str, str, List[Tuple[str, str]]]] = []
     docs_concurrency = max(1, int(args.docs_concurrency))
+    sidebar_link_by_id: Dict[str, str] = {}
 
     def _process_section(
         section: str,
@@ -2522,6 +2575,7 @@ def main() -> None:
                     log(f"[WARN] 生成{section}论文失败：{e}")
                     continue
                 paper_evidence_by_id[str((pid or "").strip())] = get_paper_sidebar_evidence(paper)
+                sidebar_link_by_id[str((pid or "").strip())] = resolve_paper_external_link(paper)
                 section_tags = extract_sidebar_tags(paper)
                 results.append((index, (pid, title, section_tags)))
 
@@ -2534,16 +2588,18 @@ def main() -> None:
         log_substep("6.2", "跳过生成文章（仅更新侧边栏）", "SKIP")
         for paper in deep_list:
             title = (paper.get("title") or "").strip()
-            arxiv_id = str(paper.get("id") or paper.get("paper_id") or "").strip()
-            _, _, pid = prepare_paper_paths(docs_dir, date_str, title, arxiv_id)
+            paper_ref = str(paper.get("id") or paper.get("paper_id") or "").strip()
+            _, _, pid = prepare_paper_paths(docs_dir, date_str, title, paper_ref)
             sidebar_evidence_by_id[str(pid).strip()] = get_paper_sidebar_evidence(paper)
+            sidebar_link_by_id[str(pid).strip()] = resolve_paper_external_link(paper)
             deep_entries.append((pid, title, extract_sidebar_tags(paper)))
 
         for paper in quick_list:
             title = (paper.get("title") or "").strip()
-            arxiv_id = str(paper.get("id") or paper.get("paper_id") or "").strip()
-            _, _, pid = prepare_paper_paths(docs_dir, date_str, title, arxiv_id)
+            paper_ref = str(paper.get("id") or paper.get("paper_id") or "").strip()
+            _, _, pid = prepare_paper_paths(docs_dir, date_str, title, paper_ref)
             sidebar_evidence_by_id[str(pid).strip()] = get_paper_sidebar_evidence(paper)
+            sidebar_link_by_id[str(pid).strip()] = resolve_paper_external_link(paper)
             quick_entries.append((pid, title, extract_sidebar_tags(paper)))
         log_substep("6.3", "跳过生成文章（仅更新侧边栏）", "SKIP")
     else:
@@ -2588,6 +2644,7 @@ def main() -> None:
             deep_entries,
             quick_entries,
             sidebar_evidence_by_id,
+            sidebar_link_by_id,
             date_label=args.sidebar_date_label,
         )
         log_substep("6.5", "更新侧边栏", "END")

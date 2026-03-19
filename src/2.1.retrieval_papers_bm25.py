@@ -23,6 +23,7 @@ from query_boolean import (
   clean_expr_for_embedding,
   match_term,
 )
+from journal_watch import journal_watch_enabled
 from subscription_plan import build_pipeline_inputs
 from supabase_source import (
   count_papers_by_date_range,
@@ -117,7 +118,11 @@ class Paper:
   categories: List[str] = field(default_factory=list)
   published: str | None = None
   link: str | None = None
+  pdf_url: str | None = None
   source: str = "arxiv"
+  journal: str | None = None
+  doi: str | None = None
+  publisher: str | None = None
   tags: Set[str] = field(default_factory=set)
 
   @property
@@ -144,6 +149,11 @@ class Paper:
       "categories": self.categories,
       "published": self.published,
       "link": self.link,
+      "pdf_url": self.pdf_url,
+      "source": self.source,
+      "journal": self.journal,
+      "doi": self.doi,
+      "publisher": self.publisher,
       "tags": sorted(self.tags),
     }
 
@@ -557,6 +567,10 @@ def load_paper_pool(path: str) -> List[Paper]:
         categories=[str(c) for c in (item.get("categories") or [])],
         published=str(item.get("published") or "") or None,
         link=str(item.get("link") or "") or None,
+        pdf_url=str(item.get("pdf_url") or "") or None,
+        journal=str(item.get("journal") or "") or None,
+        doi=str(item.get("doi") or "") or None,
+        publisher=str(item.get("publisher") or "") or None,
       )
       if p.id:
         papers.append(p)
@@ -660,6 +674,10 @@ def rank_papers_for_queries_via_supabase(
           categories=[str(c) for c in (row.get("categories") or [])],
           published=str(row.get("published") or "") or None,
           link=str(row.get("link") or "") or None,
+          pdf_url=str(row.get("pdf_url") or "") or None,
+          journal=str(row.get("journal") or "") or None,
+          doi=str(row.get("doi") or "") or None,
+          publisher=str(row.get("publisher") or "") or None,
         )
       if paper_tag:
         id_to_paper[pid].tags.add(paper_tag)
@@ -968,6 +986,7 @@ def main() -> None:
     bool(supabase_conf.get("enabled"))
     and bool(supabase_conf.get("use_bm25_rpc"))
     and not bool(args.disable_supabase_bm25)
+    and not journal_watch_enabled(config)
   )
 
   supabase_window_count: int | None = None

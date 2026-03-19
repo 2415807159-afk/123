@@ -13,6 +13,8 @@ try:
 except Exception:  # pragma: no cover
     yaml = None
 
+from journal_watch import journal_watch_enabled
+
 
 SRC_DIR = os.path.dirname(__file__)
 ROOT_DIR = os.path.abspath(os.path.join(SRC_DIR, ".."))
@@ -52,6 +54,8 @@ def should_skip_fetch(config: dict | None = None) -> bool:
     """
     if config is None:
         config = _load_full_config()
+    if journal_watch_enabled(config):
+        return False
     sb = config.get("supabase") or {}
     if not sb.get("enabled", False):
         return False
@@ -512,6 +516,16 @@ def main() -> None:
                 *(["--ignore-seen"] if args.fetch_ignore_seen else []),
             ],
         )
+        if journal_watch_enabled():
+            run_step(
+                "Step 1.4 - fetch journals",
+                [
+                    python,
+                    os.path.join(SRC_DIR, "1.4.fetch_paper_journals.py"),
+                    *(["--days", str(args.fetch_days)] if args.fetch_days is not None else []),
+                    *(["--ignore-seen"] if args.fetch_ignore_seen else []),
+                ],
+            )
     if trace_ids:
         print_trace_retrieval("RAW", raw_path, trace_ids)
     run_step(
