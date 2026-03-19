@@ -29,40 +29,58 @@ journal_watch:
         - spotlight
   journals:
     - title: Acta Materialia
+      aliases: []
       tier: core
     - title: Scripta Materialia
+      aliases: []
       tier: core
     - title: Computational Materials Science
+      aliases: []
       tier: core
     - title: Materials & Design
+      aliases: []
       tier: core
     - title: npj Computational Materials
+      aliases: []
       tier: core
     - title: Journal of Materials Science & Technology
+      aliases: []
       tier: core
     - title: Metallurgical and Materials Transactions A
+      aliases: []
       tier: core
     - title: Journal of Alloys and Compounds
+      aliases: []
       tier: core
     - title: Intermetallics
+      aliases: []
       tier: core
     - title: International Journal of Plasticity
+      aliases: []
       tier: core
     - title: Advanced Functional Materials
+      aliases: []
       tier: secondary
     - title: Advanced Science
+      aliases: []
       tier: secondary
     - title: Advanced Materials
+      aliases: []
       tier: secondary
     - title: Materials Today
+      aliases: []
       tier: secondary
     - title: Materials Today Advances
+      aliases: []
       tier: secondary
     - title: Nature Materials
+      aliases: []
       tier: spotlight
     - title: Nature
+      aliases: []
       tier: spotlight
     - title: Science
+      aliases: []
       tier: spotlight
 supabase:
   enabled: true
