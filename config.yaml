@@ -18,6 +18,17 @@ journal_watch:
     - title: Advanced Materials
     - title: Nature Materials
     - title: npj Computational Materials
+    - title: Advanced Science
+    - title: Advanced Functional Materials
+    - title: Materials Today
+    - title: Materials Today Advances
+    - title: Journal of Materials Science & Technology
+    - title: Journal of Alloys and Compounds
+    - title: Intermetallics
+    - title: Metallurgical and Materials Transactions A
+    - title: International Journal of Plasticity
+    - title: Nature
+    - title: Science
 supabase:
   enabled: true
   url: https://lyucdwgefyfbmaiopjbk.supabase.co
