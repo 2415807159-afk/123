@@ -560,8 +560,14 @@ def main() -> None:
     if trace_ids:
         print_trace_retrieval("RERANK", rerank_path, trace_ids)
     run_step(
-        "Step 4 - LLM refine",
-        [python, os.path.join(SRC_DIR, "4.llm_refine_papers.py")],
+        "Step 4 - Fast refine" if use_skims_mode else "Step 4 - LLM refine",
+        [
+            python,
+            os.path.join(
+                SRC_DIR,
+                "3.5.fast_refine.py" if use_skims_mode else "4.llm_refine_papers.py",
+            ),
+        ],
     )
     if trace_ids:
         print_trace_llm("LLM", llm_path, trace_ids)
