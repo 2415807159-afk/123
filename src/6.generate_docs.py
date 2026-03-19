@@ -1263,10 +1263,20 @@ def ensure_text_content(source_url: str, txt_path: str, fallback_text: str = "")
     if os.path.exists(txt_path):
         with open(txt_path, "r", encoding="utf-8") as f:
             return f.read()
+    normalized_url = str(source_url or "").strip().lower()
+    fallback = (fallback_text or "").strip()
+    is_arxiv_like = "arxiv.org/" in normalized_url
+    is_direct_pdf = normalized_url.endswith(".pdf")
+    # 期刊落地页通常抓取慢且拿不到稳定全文；有摘要时优先直接落地，避免 Step 6 卡住。
+    if fallback and normalized_url and not is_arxiv_like and not is_direct_pdf:
+        os.makedirs(os.path.dirname(txt_path), exist_ok=True)
+        with open(txt_path, "w", encoding="utf-8") as f:
+            f.write(fallback)
+        return fallback
     text_content = fetch_paper_markdown_via_jina(source_url)
     if text_content is None and source_url:
         try:
-            resp = requests.get(source_url, timeout=60)
+            resp = requests.get(source_url, timeout=30)
             resp.raise_for_status()
             content_type = str(resp.headers.get("content-type") or "").lower()
             final_url = str(resp.url or source_url).lower()
