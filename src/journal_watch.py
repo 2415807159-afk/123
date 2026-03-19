@@ -21,6 +21,12 @@ DEFAULT_MAX_RECORDS_PER_JOURNAL = 120
 DEFAULT_ROWS_PER_PAGE = 100
 DEFAULT_SOURCE_NAME = "journal-crossref"
 DEFAULT_REQUEST_RETRIES = 3
+DEFAULT_ACTIVE_SCOPE = "all"
+DEFAULT_SCOPE_DEFINITIONS = [
+    {"key": "core", "label": "核心必看", "tiers": ["core"]},
+    {"key": "core_plus", "label": "核心 + 补充", "tiers": ["core", "secondary"]},
+    {"key": "all", "label": "全部期刊", "tiers": ["core", "secondary", "spotlight"]},
+]
 
 
 def log(message: str) -> None:
@@ -117,6 +123,19 @@ def normalize_storage_id(value: str) -> str:
     return text
 
 
+def normalize_journal_tier(value: Any) -> str:
+    text = str(value or "").strip().lower()
+    if text in {"secondary", "spotlight"}:
+        return text
+    return "core"
+
+
+def normalize_scope_key(value: Any) -> str:
+    text = str(value or "").strip().lower()
+    text = re.sub(r"[^a-z0-9_+-]+", "_", text)
+    return text or DEFAULT_ACTIVE_SCOPE
+
+
 def strip_jats(value: str) -> str:
     text = str(value or "").strip()
     if not text:
@@ -197,15 +216,113 @@ def normalize_journal_entries(config: dict[str, Any]) -> list[dict[str, Any]]:
         if isinstance(item, str):
             title = item.strip()
             aliases: list[str] = []
+            tier = "core"
         elif isinstance(item, dict):
             title = str(item.get("title") or "").strip()
             aliases = [str(v).strip() for v in (item.get("aliases") or []) if str(v).strip()]
+            tier = normalize_journal_tier(item.get("tier"))
         else:
             continue
         if not title:
             continue
-        normalized.append({"title": title, "aliases": aliases})
+        normalized.append({"title": title, "aliases": aliases, "tier": tier})
     return normalized
+
+
+def normalize_scope_definitions(config: dict[str, Any]) -> list[dict[str, Any]]:
+    raw_items = config.get("scopes") or []
+    normalized: list[dict[str, Any]] = []
+    seen_keys: set[str] = set()
+    for item in raw_items:
+        if not isinstance(item, dict):
+            continue
+        key = normalize_scope_key(item.get("key"))
+        if not key or key in seen_keys:
+            continue
+        tiers = [
+            normalize_journal_tier(v)
+            for v in (item.get("tiers") or [])
+            if str(v or "").strip()
+        ]
+        if not tiers:
+            continue
+        label = str(item.get("label") or key).strip() or key
+        normalized.append({"key": key, "label": label, "tiers": tiers})
+        seen_keys.add(key)
+
+    if normalized:
+        return normalized
+    return [dict(item) for item in DEFAULT_SCOPE_DEFINITIONS]
+
+
+def resolve_active_scope_key(config: dict[str, Any]) -> str:
+    scopes = normalize_scope_definitions(config)
+    valid_keys = {str(item.get("key") or "").strip() for item in scopes}
+    requested = normalize_scope_key(config.get("active_scope"))
+    if requested in valid_keys:
+        return requested
+    if DEFAULT_ACTIVE_SCOPE in valid_keys:
+        return DEFAULT_ACTIVE_SCOPE
+    return str(scopes[0].get("key") or DEFAULT_ACTIVE_SCOPE).strip()
+
+
+def resolve_active_scope_tiers(config: dict[str, Any]) -> set[str]:
+    scopes = normalize_scope_definitions(config)
+    active_key = resolve_active_scope_key(config)
+    for item in scopes:
+        if str(item.get("key") or "").strip() != active_key:
+            continue
+        tiers = {
+            normalize_journal_tier(v)
+            for v in (item.get("tiers") or [])
+            if str(v or "").strip()
+        }
+        if tiers:
+            return tiers
+    return {
+        normalize_journal_tier(v)
+        for v in DEFAULT_SCOPE_DEFINITIONS[-1].get("tiers", [])
+    }
+
+
+def get_active_journal_entries(
+    config: dict[str, Any] | None = None,
+    *,
+    journal_cfg: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    root = config if isinstance(config, dict) else load_config()
+    cfg = journal_cfg if isinstance(journal_cfg, dict) else load_journal_watch_config(root)
+    allowed_tiers = resolve_active_scope_tiers(cfg)
+    journals = normalize_journal_entries(cfg)
+    return [item for item in journals if normalize_journal_tier(item.get("tier")) in allowed_tiers]
+
+
+def paper_matches_active_scope(
+    item: dict[str, Any],
+    config: dict[str, Any] | None = None,
+    *,
+    journal_cfg: dict[str, Any] | None = None,
+) -> bool:
+    if not isinstance(item, dict):
+        return False
+    source = str(item.get("source") or "").strip()
+    if source != DEFAULT_SOURCE_NAME:
+        return True
+    active_journals = get_active_journal_entries(config, journal_cfg=journal_cfg)
+    if not active_journals:
+        return False
+    container_titles = [
+        str(item.get("journal") or "").strip(),
+        str(item.get("primary_category") or "").strip(),
+    ]
+    for journal in active_journals:
+        if journal_matches(
+            str(journal.get("title") or "").strip(),
+            [str(v).strip() for v in (journal.get("aliases") or []) if str(v).strip()],
+            container_titles,
+        ):
+            return True
+    return False
 
 
 def journal_matches(target_title: str, aliases: list[str], container_titles: list[str]) -> bool:
@@ -425,7 +542,8 @@ def run_journal_fetch(days: int | None = None, ignore_seen: bool = False, output
     if not journal_cfg.get("enabled"):
         return {"enabled": False, "fetched": 0, "added": 0, "total": 0, "output_path": output_path or ""}
 
-    journals = normalize_journal_entries(journal_cfg)
+    active_scope = resolve_active_scope_key(journal_cfg)
+    journals = get_active_journal_entries(config, journal_cfg=journal_cfg)
     if not journals:
         log("[WARN] journal_watch 已启用，但 journals 列表为空。")
         return {"enabled": True, "fetched": 0, "added": 0, "total": 0, "output_path": output_path or ""}
@@ -449,7 +567,7 @@ def run_journal_fetch(days: int | None = None, ignore_seen: bool = False, output
     incoming: list[dict[str, Any]] = []
 
     log(
-        f"[INFO] 期刊追踪启动：journals={len(journals)} days_window={days_window} "
+        f"[INFO] 期刊追踪启动：scope={active_scope} journals={len(journals)} days_window={days_window} "
         f"window={window_desc} raw_path={raw_path}"
     )
 
@@ -492,7 +610,11 @@ def run_journal_fetch(days: int | None = None, ignore_seen: bool = False, output
             with open(raw_path, "r", encoding="utf-8") as f:
                 loaded = json.load(f) or []
                 if isinstance(loaded, list):
-                    existing = loaded
+                    existing = [
+                        item
+                        for item in loaded
+                        if isinstance(item, dict) and paper_matches_active_scope(item, config, journal_cfg=journal_cfg)
+                    ]
         except Exception as exc:
             log(f"[WARN] 读取已有 raw 文件失败，将仅写入期刊数据：{exc}")
 

@@ -6,7 +6,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from journal_watch import normalize_storage_id, parse_crossref_work, strip_jats  # noqa: E402
+from journal_watch import (  # noqa: E402
+    get_active_journal_entries,
+    normalize_storage_id,
+    paper_matches_active_scope,
+    parse_crossref_work,
+    strip_jats,
+)
 
 
 class JournalWatchTest(unittest.TestCase):
@@ -44,6 +50,58 @@ class JournalWatchTest(unittest.TestCase):
         self.assertEqual(paper["doi"], "10.1016/j.actamat.2026.01.001")
         self.assertEqual(paper["pdf_url"], "https://example.com/paper.pdf")
         self.assertEqual(paper["published"], "2026-03-10")
+
+    def test_active_scope_filters_journals_by_tier(self):
+        cfg = {
+            "journal_watch": {
+                "active_scope": "core_plus",
+                "scopes": [
+                    {"key": "core", "tiers": ["core"]},
+                    {"key": "core_plus", "tiers": ["core", "secondary"]},
+                    {"key": "all", "tiers": ["core", "secondary", "spotlight"]},
+                ],
+                "journals": [
+                    {"title": "Acta Materialia", "tier": "core"},
+                    {"title": "Advanced Materials", "tier": "secondary"},
+                    {"title": "Nature", "tier": "spotlight"},
+                ],
+            }
+        }
+        titles = [item["title"] for item in get_active_journal_entries(cfg)]
+        self.assertEqual(titles, ["Acta Materialia", "Advanced Materials"])
+
+    def test_paper_matches_active_scope_rejects_out_of_scope_journal(self):
+        cfg = {
+            "journal_watch": {
+                "active_scope": "core",
+                "scopes": [
+                    {"key": "core", "tiers": ["core"]},
+                    {"key": "all", "tiers": ["core", "secondary", "spotlight"]},
+                ],
+                "journals": [
+                    {"title": "Acta Materialia", "tier": "core"},
+                    {"title": "Nature", "tier": "spotlight"},
+                ],
+            }
+        }
+        self.assertFalse(
+            paper_matches_active_scope(
+                {
+                    "source": "journal-crossref",
+                    "journal": "Nature",
+                },
+                cfg,
+            )
+        )
+        self.assertTrue(
+            paper_matches_active_scope(
+                {
+                    "source": "journal-crossref",
+                    "journal": "Acta Materialia",
+                },
+                cfg,
+            )
+        )
 
 
 if __name__ == "__main__":

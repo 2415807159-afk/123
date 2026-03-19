@@ -23,7 +23,7 @@ from query_boolean import (
   clean_expr_for_embedding,
   match_term,
 )
-from journal_watch import journal_watch_enabled
+from journal_watch import journal_watch_enabled, paper_matches_active_scope
 from subscription_plan import build_pipeline_inputs
 from supabase_source import (
   count_papers_by_date_range,
@@ -554,8 +554,13 @@ def load_paper_pool(path: str) -> List[Paper]:
   with open(path, "r", encoding="utf-8") as f:
     raw = json.load(f)
 
+  config = load_config()
   papers: List[Paper] = []
   for item in raw:
+    if not isinstance(item, dict):
+      continue
+    if not paper_matches_active_scope(item, config):
+      continue
     try:
       p = Paper(
         id=str(item.get("id") or "").strip(),

@@ -10,25 +10,60 @@ journal_watch:
   enabled: true
   days_window: 30
   max_records_per_journal: 120
+  active_scope: all
+  scopes:
+    - key: core
+      label: 核心必看
+      tiers:
+        - core
+    - key: core_plus
+      label: 核心 + 补充
+      tiers:
+        - core
+        - secondary
+    - key: all
+      label: 全部期刊
+      tiers:
+        - core
+        - secondary
+        - spotlight
   journals:
     - title: Acta Materialia
+      tier: core
     - title: Scripta Materialia
+      tier: core
     - title: Computational Materials Science
+      tier: core
     - title: Materials & Design
-    - title: Advanced Materials
-    - title: Nature Materials
+      tier: core
     - title: npj Computational Materials
-    - title: Advanced Science
-    - title: Advanced Functional Materials
-    - title: Materials Today
-    - title: Materials Today Advances
+      tier: core
     - title: Journal of Materials Science & Technology
-    - title: Journal of Alloys and Compounds
-    - title: Intermetallics
+      tier: core
     - title: Metallurgical and Materials Transactions A
+      tier: core
+    - title: Journal of Alloys and Compounds
+      tier: core
+    - title: Intermetallics
+      tier: core
     - title: International Journal of Plasticity
+      tier: core
+    - title: Advanced Functional Materials
+      tier: secondary
+    - title: Advanced Science
+      tier: secondary
+    - title: Advanced Materials
+      tier: secondary
+    - title: Materials Today
+      tier: secondary
+    - title: Materials Today Advances
+      tier: secondary
+    - title: Nature Materials
+      tier: spotlight
     - title: Nature
+      tier: spotlight
     - title: Science
+      tier: spotlight
 supabase:
   enabled: true
   url: https://lyucdwgefyfbmaiopjbk.supabase.co

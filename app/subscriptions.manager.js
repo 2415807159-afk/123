@@ -22,6 +22,7 @@ window.SubscriptionsManager = (function () {
   let quickRunMsgEl = null;
   let resetContentBtn = null;
   let resetContentMsgEl = null;
+  let journalScopeContainer = null;
 
   let draftConfig = null;
   let hasUnsavedChanges = false;
@@ -81,8 +82,21 @@ window.SubscriptionsManager = (function () {
     'NeurIPS',
     'SIGIR',
   ];
+  const DEFAULT_JOURNAL_SCOPE = 'all';
+  const DEFAULT_JOURNAL_SCOPES = [
+    { key: 'core', label: '核心必看', tiers: ['core'] },
+    { key: 'core_plus', label: '核心 + 补充', tiers: ['core', 'secondary'] },
+    { key: 'all', label: '全部期刊', tiers: ['core', 'secondary', 'spotlight'] },
+  ];
 
   const normalizeText = (v) => String(v || '').trim();
+  const escapeHtml = (value) =>
+    String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   const toStableId = (value) => {
     const text = normalizeText(value).toLowerCase();
     const slug = text
@@ -99,6 +113,152 @@ window.SubscriptionsManager = (function () {
     } catch {
       return obj || {};
     }
+  };
+
+  const normalizeJournalTier = (value) => {
+    const text = normalizeText(value).toLowerCase();
+    if (text === 'secondary' || text === 'spotlight') {
+      return text;
+    }
+    return 'core';
+  };
+
+  const normalizeJournalScopeKey = (value) => {
+    const text = normalizeText(value)
+      .toLowerCase()
+      .replace(/[^a-z0-9_+-]+/g, '_');
+    return text || DEFAULT_JOURNAL_SCOPE;
+  };
+
+  const normalizeJournalWatch = (journalWatch) => {
+    const next =
+      journalWatch && typeof journalWatch === 'object' ? cloneDeep(journalWatch) : {};
+    const rawScopes = Array.isArray(next.scopes) ? next.scopes : [];
+    const normalizedScopes = [];
+    const seenScopeKeys = new Set();
+    rawScopes.forEach((item) => {
+      if (!item || typeof item !== 'object') return;
+      const key = normalizeJournalScopeKey(item.key);
+      if (!key || seenScopeKeys.has(key)) return;
+      const tiers = Array.isArray(item.tiers)
+        ? item.tiers.map((tier) => normalizeJournalTier(tier)).filter(Boolean)
+        : [];
+      if (!tiers.length) return;
+      normalizedScopes.push({
+        key,
+        label: normalizeText(item.label) || key,
+        tiers,
+      });
+      seenScopeKeys.add(key);
+    });
+    next.scopes = normalizedScopes.length
+      ? normalizedScopes
+      : DEFAULT_JOURNAL_SCOPES.map((item) => ({ ...item }));
+
+    const validScopeKeys = new Set(next.scopes.map((item) => item.key));
+    next.active_scope = normalizeJournalScopeKey(next.active_scope);
+    if (!validScopeKeys.has(next.active_scope)) {
+      next.active_scope = validScopeKeys.has(DEFAULT_JOURNAL_SCOPE)
+        ? DEFAULT_JOURNAL_SCOPE
+        : next.scopes[0].key;
+    }
+
+    const rawJournals = Array.isArray(next.journals) ? next.journals : [];
+    next.journals = rawJournals
+      .map((item) => {
+        if (typeof item === 'string') {
+          const title = normalizeText(item);
+          if (!title) return null;
+          return { title, aliases: [], tier: 'core' };
+        }
+        if (!item || typeof item !== 'object') return null;
+        const title = normalizeText(item.title);
+        if (!title) return null;
+        const aliases = Array.isArray(item.aliases)
+          ? item.aliases.map((alias) => normalizeText(alias)).filter(Boolean)
+          : [];
+        return {
+          title,
+          aliases,
+          tier: normalizeJournalTier(item.tier),
+        };
+      })
+      .filter(Boolean);
+    return next;
+  };
+
+  const getJournalScopeViewModel = (cfg) => {
+    const journalWatch = normalizeJournalWatch((cfg && cfg.journal_watch) || {});
+    const scopes = Array.isArray(journalWatch.scopes) ? journalWatch.scopes : [];
+    const journals = Array.isArray(journalWatch.journals) ? journalWatch.journals : [];
+    const activeScope =
+      scopes.find((item) => item.key === journalWatch.active_scope) || scopes[0] || null;
+    const activeTiers = new Set(activeScope && Array.isArray(activeScope.tiers) ? activeScope.tiers : []);
+    const getCountForScope = (scope) =>
+      journals.filter((item) => scope.tiers.includes(normalizeJournalTier(item.tier))).length;
+    const activeJournals = journals.filter((item) =>
+      activeTiers.has(normalizeJournalTier(item.tier)),
+    );
+    return {
+      journalWatch,
+      scopes,
+      journals,
+      activeScope,
+      activeJournals,
+      getCountForScope,
+    };
+  };
+
+  const renderJournalScopeSettings = () => {
+    if (!journalScopeContainer) return;
+    const cfg = draftConfig || {};
+    const { scopes, activeScope, activeJournals, getCountForScope } = getJournalScopeViewModel(cfg);
+    if (!scopes.length) {
+      journalScopeContainer.innerHTML = '';
+      return;
+    }
+    const radios = scopes
+      .map((scope) => {
+        const checked = activeScope && scope.key === activeScope.key ? 'checked' : '';
+        return `
+          <label style="display:flex; align-items:center; gap:6px; padding:8px 10px; border:1px solid #d9dee7; border-radius:10px; background:#fff;">
+            <input type="radio" name="dpr-journal-scope-radio" value="${escapeHtml(scope.key)}" ${checked} />
+            <span style="font-size:13px; color:#1f2937;">${escapeHtml(scope.label)} (${getCountForScope(scope)})</span>
+          </label>
+        `;
+      })
+      .join('');
+    const journalChips = activeJournals.length
+      ? activeJournals
+          .map(
+            (item) => `
+              <span style="display:inline-flex; align-items:center; padding:4px 8px; border-radius:999px; background:#eef5ff; color:#1f4f8f; font-size:12px;">
+                ${escapeHtml(item.title)}
+              </span>
+            `,
+          )
+          .join('')
+      : '<span style="font-size:12px; color:#999;">当前层级下暂无期刊。</span>';
+
+    journalScopeContainer.innerHTML = `
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:8px;">
+        <div>
+          <div style="font-weight:600; color:#1f2937;">期刊池层级</div>
+          <div style="font-size:12px; color:#6b7280; margin-top:4px;">
+            切换后只影响期刊文章抓取范围，不影响你的智能检索词条。
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+        ${radios}
+      </div>
+      <div style="font-size:12px; color:#6b7280; margin-bottom:8px;">
+        当前选择：${escapeHtml((activeScope && activeScope.label) || '全部期刊')}，共 ${activeJournals.length} 本期刊。切换后记得点击上方“保存”，再点右侧“快速抓取”。
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:6px;">
+        ${journalChips}
+      </div>
+    `;
   };
 
   const normalizeKeywordItem = (item) => {
@@ -425,6 +585,7 @@ window.SubscriptionsManager = (function () {
   const normalizeSubscriptions = (config) => {
     const next = cloneDeep(config || {});
     if (!next.subscriptions) next.subscriptions = {};
+    next.journal_watch = normalizeJournalWatch(next.journal_watch);
     const subs = next.subscriptions;
 
     migrateLegacyToProfilesIfNeeded(subs);
@@ -481,6 +642,8 @@ window.SubscriptionsManager = (function () {
               <div class="dpr-display-card">
                 <div id="dpr-sq-display" class="dpr-sq-display"></div>
               </div>
+
+              <div id="dpr-journal-scope-section" class="dpr-display-card" style="margin-top:12px;"></div>
 
               <div class="dpr-input-card">
                 <div class="dpr-inline-row">
@@ -548,6 +711,7 @@ window.SubscriptionsManager = (function () {
     saveBtn = document.getElementById('arxiv-config-save-btn');
     closeBtn = document.getElementById('arxiv-search-close-btn');
     msgEl = document.getElementById('dpr-smart-msg');
+    journalScopeContainer = document.getElementById('dpr-journal-scope-section');
 
     const reloadAll = () => {
       renderFromDraft();
@@ -569,6 +733,7 @@ window.SubscriptionsManager = (function () {
     const cfg = draftConfig || {};
     const subs = (cfg && cfg.subscriptions) || {};
     const profiles = Array.isArray(subs.intent_profiles) ? subs.intent_profiles : [];
+    renderJournalScopeSettings();
     if (window.SubscriptionsSmartQuery && window.SubscriptionsSmartQuery.render) {
       window.SubscriptionsSmartQuery.render(profiles);
     }
@@ -694,6 +859,32 @@ window.SubscriptionsManager = (function () {
       overlay._boundClick = true;
       overlay.addEventListener('mousedown', (e) => {
         if (e.target === overlay) closeOverlay();
+      });
+    }
+    if (overlay && !overlay._boundJournalScopeChange) {
+      overlay._boundJournalScopeChange = true;
+      overlay.addEventListener('change', (e) => {
+        const target = e.target;
+        if (!target || target.name !== 'dpr-journal-scope-radio') return;
+        const nextScope = normalizeJournalScopeKey(target.value);
+        const currentScope = normalizeJournalScopeKey(
+          ((draftConfig || {}).journal_watch || {}).active_scope,
+        );
+        if (nextScope === currentScope) return;
+        const nextConfig = cloneDeep(draftConfig || {});
+        if (!nextConfig.journal_watch || typeof nextConfig.journal_watch !== 'object') {
+          nextConfig.journal_watch = {};
+        }
+        nextConfig.journal_watch.active_scope = nextScope;
+        draftConfig = normalizeSubscriptions(nextConfig);
+        hasUnsavedChanges = true;
+        refreshQuickRunButtons();
+        renderFromDraft();
+        const { activeScope } = getJournalScopeViewModel(draftConfig);
+        setMessage(
+          `期刊层级已切换为「${(activeScope && activeScope.label) || nextScope}」，请点击「保存」后重新抓取。`,
+          '#666',
+        );
       });
     }
 
