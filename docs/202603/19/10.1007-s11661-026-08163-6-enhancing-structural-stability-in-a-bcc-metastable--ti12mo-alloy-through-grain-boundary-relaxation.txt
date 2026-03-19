@@ -1,0 +1,172 @@
+Title: Enhancing Structural Stability in a BCC Metastable β Ti–12Mo Alloy Through Grain Boundary Relaxation
+
+URL Source: https://link.springer.com/10.1007/s11661-026-08163-6
+
+Markdown Content:
+## References
+
+1.   F. Sun, J.Y. Zhang, M. Marteleur, T. Gloriant, P. Vermaut, D. Laillé, P. Castany, C. Curfs, P.J. Jacques, and F. Prima: _Acta Mater._, 2013, vol. 61, pp. 6406–17. [https://doi.org/10.1016/j.actamat.2013.07.019](https://doi.org/10.1016/j.actamat.2013.07.019).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2013.07.019)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXht1Wnt7jK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2013.07.019&volume=61&pages=6406-6417&publication_year=2013&author=Sun%2CF&author=Zhang%2CJY&author=Marteleur%2CM&author=Gloriant%2CT&author=Vermaut%2CP&author=Laill%C3%A9%2CD&author=Castany%2CP&author=Curfs%2CC&author=Jacques%2CPJ&author=Prima%2CF)
+
+2.   Y. Wang, F. Yan, M. Lai, and X. Li: _Acta Mater._, 2024, vol. 276, p. 120078. [https://doi.org/10.1016/j.actamat.2024.120078](https://doi.org/10.1016/j.actamat.2024.120078).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2024.120078)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXht1Oqs7%2FP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2024.120078&volume=276&publication_year=2024&author=Wang%2CY&author=Yan%2CF&author=Lai%2CM&author=Li%2CX)
+
+3.   J. Gao, Y. Huang, D. Guan, A.J. Knowles, L. Ma, D. Dye, and W.M. Rainforth: _Acta Mater._, 2018, vol. 152, pp. 301–14. [https://doi.org/10.1016/j.actamat.2018.04.035](https://doi.org/10.1016/j.actamat.2018.04.035).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2018.04.035)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXosFWqsbY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2018.04.035&volume=152&pages=301-314&publication_year=2018&author=Gao%2CJ&author=Huang%2CY&author=Guan%2CD&author=Knowles%2CAJ&author=Ma%2CL&author=Dye%2CD&author=Rainforth%2CWM)
+
+4.   S. Nag, R. Banerjee, R. Srinivasan, J.Y. Hwang, M. Harper, and H.L. Fraser: _Acta Mater._, 2009, [https://doi.org/10.1016/j.actamat.2009.01.007](https://doi.org/10.1016/j.actamat.2009.01.007).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2009.01.007)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2009.01.007&publication_year=2009&author=Nag%2CS&author=Banerjee%2CR&author=Srinivasan%2CR&author=Hwang%2CJY&author=Harper%2CM&author=Fraser%2CHL)
+
+5.   W. Xu, X. Wu, M. Stoica, M. Calin, U. Kühn, J. Eckert, and K. Xia: _Acta Mater._, 2012, vol. 60, pp. 5067–78. [https://doi.org/10.1016/j.actamat.2012.05.042](https://doi.org/10.1016/j.actamat.2012.05.042).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2012.05.042)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC38XhtFaktbnP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2012.05.042&volume=60&pages=5067-5078&publication_year=2012&author=Xu%2CW&author=Wu%2CX&author=Stoica%2CM&author=Calin%2CM&author=K%C3%BChn%2CU&author=Eckert%2CJ&author=Xia%2CK)
+
+6.   A. Zafari and K. Xia: _Scr. Mater._, 2016, vol. 124, pp. 151–54. [https://doi.org/10.1016/j.scriptamat.2016.07.012](https://doi.org/10.1016/j.scriptamat.2016.07.012).
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2016.07.012)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28Xht1SgsbfI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2016.07.012&volume=124&pages=151-154&publication_year=2016&author=Zafari%2CA&author=Xia%2CK)
+
+7.   T. Li, D. Kent, G. Sha, L.T. Stephenson, A.V. Ceguerra, S.P. Ringer, M.S. Dargusch, and J.M. Cairney: _Acta Mater._, 2016, vol. 106, pp. 353–66. [https://doi.org/10.1016/j.actamat.2015.12.046](https://doi.org/10.1016/j.actamat.2015.12.046).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2015.12.046)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XhsFKktL0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2015.12.046&volume=106&pages=353-366&publication_year=2016&author=Li%2CT&author=Kent%2CD&author=Sha%2CG&author=Stephenson%2CLT&author=Ceguerra%2CAV&author=Ringer%2CSP&author=Dargusch%2CMS&author=Cairney%2CJM)
+
+8.   D. Banerjee and J.C. Williams: _Acta Mater._, 2013, vol. 61, pp. 844–79. [https://doi.org/10.1016/j.actamat.2012.10.043](https://doi.org/10.1016/j.actamat.2012.10.043).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2012.10.043)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhtFagsLk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2012.10.043&volume=61&pages=844-879&publication_year=2013&author=Banerjee%2CD&author=Williams%2CJC)
+
+9.   Z. Du, S. Xiao, L. Xu, J. Tian, F. Kong, and Y. Chen: _Mater. Des._, 2014, vol. 55, pp. 183–90. [https://doi.org/10.1016/j.matdes.2013.09.070](https://doi.org/10.1016/j.matdes.2013.09.070).
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2013.09.070)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXksVyhtA%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2013.09.070&volume=55&pages=183-190&publication_year=2014&author=Du%2CZ&author=Xiao%2CS&author=Xu%2CL&author=Tian%2CJ&author=Kong%2CF&author=Chen%2CY)
+
+10.   X. Zhou, X.Y. Li, and K. Lu: _Scr. Mater._, 2020, vol. 187, pp. 345–49. [https://doi.org/10.1016/j.scriptamat.2020.06.047](https://doi.org/10.1016/j.scriptamat.2020.06.047).
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2020.06.047)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXht1Kiu73I)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2020.06.047&volume=187&pages=345-349&publication_year=2020&author=Zhou%2CX&author=Li%2CXY&author=Lu%2CK)
+
+11.   X. Zhou, X.Y. Li, and K. Lu: _Science_, 2018, vol. 360, pp. 526–30. [https://doi.org/10.1126/science.aar6941](https://doi.org/10.1126/science.aar6941).
+
+[Article](https://doi.org/10.1126%2Fscience.aar6941)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXos1Kiu7s%3D)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29724953)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Science&doi=10.1126%2Fscience.aar6941&volume=360&pages=526-530&publication_year=2018&author=Zhou%2CX&author=Li%2CXY&author=Lu%2CK)
+
+12.   Y.A. Sun, Z.P. Luo, X.Y. Li, and K. Lu: _Acta Mater._, 2022, vol. 239, p. 118256. [https://doi.org/10.1016/j.actamat.2022.118256](https://doi.org/10.1016/j.actamat.2022.118256).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2022.118256)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XitFajsr7J)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2022.118256&volume=239&publication_year=2022&author=Sun%2CYA&author=Luo%2CZP&author=Li%2CXY&author=Lu%2CK)
+
+13.   W. Xu, B. Zhang, K. Du, X.Y. Li, and K. Lu: _Acta Mater._, 2022, vol. 226, p. 117640. [https://doi.org/10.1016/j.actamat.2022.117640](https://doi.org/10.1016/j.actamat.2022.117640).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2022.117640)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhtlOqs7k%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2022.117640&volume=226&publication_year=2022&author=Xu%2CW&author=Zhang%2CB&author=Du%2CK&author=Li%2CXY&author=Lu%2CK)
+
+14.   W. Xu, B. Zhang, X.Y. Li, and K. Lu: _Science_, 2021, vol. 373, pp. 683–87. [https://doi.org/10.1126/science.abh0700](https://doi.org/10.1126/science.abh0700).
+
+[Article](https://doi.org/10.1126%2Fscience.abh0700)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhslOisLjE)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=34353952)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Science&doi=10.1126%2Fscience.abh0700&volume=373&pages=683-687&publication_year=2021&author=Xu%2CW&author=Zhang%2CB&author=Li%2CXY&author=Lu%2CK)
+
+15.   D. Zeng, J. Li, Y. Shi, X. Li, and K. Lu: _Nano Res._, 2023, vol. 16, pp. 12800–08. [https://doi.org/10.1007/s12274-023-6186-9](https://doi.org/10.1007/s12274-023-6186-9).
+
+[Article](https://link.springer.com/doi/10.1007/s12274-023-6186-9)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXitFKjt7nL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Nano%20Res.&doi=10.1007%2Fs12274-023-6186-9&volume=16&pages=12800-12808&publication_year=2023&author=Zeng%2CD&author=Li%2CJ&author=Shi%2CY&author=Li%2CX&author=Lu%2CK)
+
+16.   B.B. Zhang, Y.G. Tang, Q.S. Mei, X.Y. Li, and K. Lu: _Science_, 2022, vol. 378, pp. 659–63. [https://doi.org/10.1126/science.abq7739](https://doi.org/10.1126/science.abq7739).
+
+[Article](https://doi.org/10.1126%2Fscience.abq7739)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XivFensbnO)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=36356141)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Science&doi=10.1126%2Fscience.abq7739&volume=378&pages=659-663&publication_year=2022&author=Zhang%2CBB&author=Tang%2CYG&author=Mei%2CQS&author=Li%2CXY&author=Lu%2CK)
+
+17.   J.D. Rittner, D.N. Seidman, and K.L. Merkle: _Phys. Rev. B_, 1996, vol. 54, pp. 5179–80. [https://doi.org/10.1103/PhysRevB.54.5179.2](https://doi.org/10.1103/PhysRevB.54.5179.2).
+
+[Article](https://doi.org/10.1103%2FPhysRevB.54.5179.2)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK28Xlt1ahu7k%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Phys.%20Rev.%20B&doi=10.1103%2FPhysRevB.54.5179.2&volume=54&pages=5179-5180&publication_year=1996&author=Rittner%2CJD&author=Seidman%2CDN&author=Merkle%2CKL)
+
+18.   X.Y. Li, Z.H. Jin, X. Zhou, and K. Lu: _Science_, 2020, vol. 370, pp. 831–36. [https://doi.org/10.1126/science.abe1267](https://doi.org/10.1126/science.abe1267).
+
+[Article](https://doi.org/10.1126%2Fscience.abe1267)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXitlCmt7nJ)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33184210)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Science&doi=10.1126%2Fscience.abe1267&volume=370&pages=831-836&publication_year=2020&author=Li%2CXY&author=Jin%2CZH&author=Zhou%2CX&author=Lu%2CK)
+
+19.   B. Zhang, Z.P. Luo, and X.Y. Li: _Acta Mater._, 2024, vol. 274, p. 119984. [https://doi.org/10.1016/j.actamat.2024.119984](https://doi.org/10.1016/j.actamat.2024.119984).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2024.119984)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhtFaiu7rK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2024.119984&volume=274&publication_year=2024&author=Zhang%2CB&author=Luo%2CZP&author=Li%2CXY)
+
+20.   A. Zafari, X.S. Wei, W. Xu, and K. Xia: _Acta Mater._, 2015, vol. 97, pp. 146–55. [https://doi.org/10.1016/j.actamat.2015.06.042](https://doi.org/10.1016/j.actamat.2015.06.042).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2015.06.042)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2MXhtFKisLvE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2015.06.042&volume=97&pages=146-155&publication_year=2015&author=Zafari%2CA&author=Wei%2CXS&author=Xu%2CW&author=Xia%2CK)
+
+21.   F.K. Yan, Y. Wang, W.J. Lu, and X.Y. Li: _Acta Mater._, 2025, vol. 288, p. 120844. [https://doi.org/10.1016/j.actamat.2025.120844](https://doi.org/10.1016/j.actamat.2025.120844).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2025.120844)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXks1eksro%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2025.120844&volume=288&publication_year=2025&author=Yan%2CFK&author=Wang%2CY&author=Lu%2CWJ&author=Li%2CXY)
+
+22.   L. Fang, Y. Zhong, B. Wang, W. Xu, X. Li, and K. Lu: _Mater. Res. Lett._, 2023, vol. 11, pp. 662–69. [https://doi.org/10.1080/21663831.2023.2213729](https://doi.org/10.1080/21663831.2023.2213729).
+
+[Article](https://doi.org/10.1080%2F21663831.2023.2213729)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhtVKlsr3P)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Res.%20Lett.&doi=10.1080%2F21663831.2023.2213729&volume=11&pages=662-669&publication_year=2023&author=Fang%2CL&author=Zhong%2CY&author=Wang%2CB&author=Xu%2CW&author=Li%2CX&author=Lu%2CK)
+
+23.   H.L. Fu, X. Zhou, Z.P. Gao, Z.H. Jin, X.Y. Li, and K. Lu: _Acta Mater._, 2024, vol. 276, 120007[https://doi.org/10.1016/j.actamat.2024.120007](https://doi.org/10.1016/j.actamat.2024.120007).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2024.120007)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhtleltrvN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2024.120007&volume=276&publication_year=2024&author=Fu%2CHL&author=Zhou%2CX&author=Gao%2CZP&author=Jin%2CZH&author=Li%2CXY&author=Lu%2CK)
+
+24.   Y. Jiang, X. Zhou, X.Y. Li, and K. Lu: _Acta Mater._, 2023, vol. 256, p. 119134. [https://doi.org/10.1016/j.actamat.2023.119134](https://doi.org/10.1016/j.actamat.2023.119134).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2023.119134)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhsVentLvO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2023.119134&volume=256&publication_year=2023&author=Jiang%2CY&author=Zhou%2CX&author=Li%2CXY&author=Lu%2CK)
+
+25.   R.A. Vandermeer and D.J. Jensen: _Interface Sci._, 1998, vol. 6, pp. 95–104. [https://doi.org/10.1023/A:1008668604733](https://doi.org/10.1023/A:1008668604733).
+
+[Article](https://doi.org/10.1023%2FA%3A1008668604733)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK1cXisVWgsb8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Interface%20Sci.&doi=10.1023%2FA%3A1008668604733&volume=6&pages=95-104&publication_year=1998&author=Vandermeer%2CRA&author=Jensen%2CDJ)
+
+26.   T.J. Rupert, J.R. Trelewicz, and C.A. Schuh: _J. Mater. Res._, 2012, vol. 27, pp. 1285–94. [https://doi.org/10.1557/jmr.2012.55](https://doi.org/10.1557/jmr.2012.55).
+
+[Article](https://doi.org/10.1557%2Fjmr.2012.55)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC38Xms1aksbk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Res.&doi=10.1557%2Fjmr.2012.55&volume=27&pages=1285-1294&publication_year=2012&author=Rupert%2CTJ&author=Trelewicz%2CJR&author=Schuh%2CCA)
+
+27.   T.J. Rupert and C.A. Schuh: _Philos. Mag. Lett._, 2012, vol. 92, pp. 20–28. [https://doi.org/10.1080/09500839.2011.619507](https://doi.org/10.1080/09500839.2011.619507).
+
+[Article](https://doi.org/10.1080%2F09500839.2011.619507)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC38XhtFWrur8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Philos.%20Mag.%20Lett.&doi=10.1080%2F09500839.2011.619507&volume=92&pages=20-28&publication_year=2012&author=Rupert%2CTJ&author=Schuh%2CCA)
+
+28.   R.T. Murzaev, D.V. Bachurin, and A.A. Nazarov: _Phys. Met. Metallogr._, 2017, vol. 118, pp. 621–29. [https://doi.org/10.1134/S0031918X17070079](https://doi.org/10.1134/S0031918X17070079).
+
+[Article](https://doi.org/10.1134%2FS0031918X17070079)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXht1Wltb%2FK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Phys.%20Met.%20Metallogr.&doi=10.1134%2FS0031918X17070079&volume=118&pages=621-629&publication_year=2017&author=Murzaev%2CRT&author=Bachurin%2CDV&author=Nazarov%2CAA)
+
+29.   H. Fu, X. Zhou, H. Xue, X. Li, and K. Lu: _Mater. Today_, 2022, vol. 55, pp. 66–73. [https://doi.org/10.1016/j.mattod.2022.03.002](https://doi.org/10.1016/j.mattod.2022.03.002).
+
+[Article](https://doi.org/10.1016%2Fj.mattod.2022.03.002)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XnvFOltb0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Today&doi=10.1016%2Fj.mattod.2022.03.002&volume=55&pages=66-73&publication_year=2022&author=Fu%2CH&author=Zhou%2CX&author=Xue%2CH&author=Li%2CX&author=Lu%2CK)
+
+30.   P. Castany, M. Besse, and T. Gloriant: _Phys. Rev. B_, 2011, vol. 84, p. 020201. [https://doi.org/10.1103/PhysRevB.84.020201](https://doi.org/10.1103/PhysRevB.84.020201).
+
+[Article](https://doi.org/10.1103%2FPhysRevB.84.020201)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3MXpslOisrc%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Phys.%20Rev.%20B&doi=10.1103%2FPhysRevB.84.020201&volume=84&publication_year=2011&author=Castany%2CP&author=Besse%2CM&author=Gloriant%2CT)
+
+31.   P. Castany, F. Pettinari-Sturmel, J. Crestou, J. Douin, and A. Coujou: _Acta Mater._, 2007, vol. 55, pp. 6284–91. [https://doi.org/10.1016/j.actamat.2007.07.032](https://doi.org/10.1016/j.actamat.2007.07.032).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2007.07.032)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2sXhtFGktL%2FJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2007.07.032&volume=55&pages=6284-6291&publication_year=2007&author=Castany%2CP&author=Pettinari-Sturmel%2CF&author=Crestou%2CJ&author=Douin%2CJ&author=Coujou%2CA)
+
+32.   M.J. Hÿtch, E. Snoeck, and R. Kilaas: _Ultramicroscopy_, 1998, vol. 74, pp. 131–46. [https://doi.org/10.1016/S0304-3991(98)00035-7](https://doi.org/10.1016/S0304-3991(98)00035-7).
+
+[Article](https://doi.org/10.1016%2FS0304-3991%2898%2900035-7)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Ultramicroscopy&doi=10.1016%2FS0304-3991%2898%2900035-7&volume=74&pages=131-146&publication_year=1998&author=H%C3%BFtch%2CMJ&author=Snoeck%2CE&author=Kilaas%2CR)
+
+33.   M.J. Hÿtch, J.-L. Putaux, and J.-M. Pénisson: _Nature_, 2003, vol. 423, pp. 270–73. [https://doi.org/10.1038/nature01638](https://doi.org/10.1038/nature01638).
+
+[Article](https://doi.org/10.1038%2Fnature01638)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3sXjs1ynu74%3D)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=12748637)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Nature&doi=10.1038%2Fnature01638&volume=423&pages=270-273&publication_year=2003&author=H%C3%BFtch%2CMJ&author=Putaux%2CJ-L&author=P%C3%A9nisson%2CJ-M)
+
+34.   J.P. Hirth and J. Lothe: _Theory of Dislocations_, McGraw-Hill, New York, 1968.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Theory%20of%20Dislocations&publication_year=1968&author=Hirth%2CJP&author=Lothe%2CJ)
+
+35.   M. Chen, E. Ma, K.J. Hemker, H. Sheng, Y. Wang, and X. Cheng: _Science_, 2003, vol. 300, pp. 1275–77. [https://doi.org/10.1126/science.1083727](https://doi.org/10.1126/science.1083727).
+
+[Article](https://doi.org/10.1126%2Fscience.1083727)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3sXktFGktrY%3D)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=12714676)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Science&doi=10.1126%2Fscience.1083727&volume=300&pages=1275-1277&publication_year=2003&author=Chen%2CM&author=Ma%2CE&author=Hemker%2CKJ&author=Sheng%2CH&author=Wang%2CY&author=Cheng%2CX)
+
+36.   L. Huang, Q.-J. Li, Z.-W. Shan, J. Li, J. Sun, and E. Ma: _Nat. Commun._, 2011, vol. 2, p. 547. [https://doi.org/10.1038/ncomms1557](https://doi.org/10.1038/ncomms1557).
+
+[Article](https://doi.org/10.1038%2Fncomms1557)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC38XptFShsA%3D%3D)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=22109521)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Nat.%20Commun.&doi=10.1038%2Fncomms1557&volume=2&publication_year=2011&author=Huang%2CL&author=Li%2CQ-J&author=Shan%2CZ-W&author=Li%2CJ&author=Sun%2CJ&author=Ma%2CE)
+
+37.   S. Ratanaphan, D.L. Olmsted, V.V. Bulatov, E.A. Holm, A.D. Rollett, and G.S. Rohrer: _Acta Mater._, 2015, vol. 88, pp. 346–54. [https://doi.org/10.1016/j.actamat.2015.01.069](https://doi.org/10.1016/j.actamat.2015.01.069).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2015.01.069)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2MXjtVeisr8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2015.01.069&volume=88&pages=346-354&publication_year=2015&author=Ratanaphan%2CS&author=Olmsted%2CDL&author=Bulatov%2CVV&author=Holm%2CEA&author=Rollett%2CAD&author=Rohrer%2CGS)
+
+38.   L.M. Wang, Z.B. Wang, and K. Lu: _Acta Mater._, 2011, vol. 59, pp. 3710–19. [https://doi.org/10.1016/j.actamat.2011.03.006](https://doi.org/10.1016/j.actamat.2011.03.006).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2011.03.006)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3MXkslCjsLc%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2011.03.006&volume=59&pages=3710-3719&publication_year=2011&author=Wang%2CLM&author=Wang%2CZB&author=Lu%2CK)
+
+39.   M. Legros, G. Dehm, E. Arzt, and T.J. Balk: _Science_, 2008, vol. 319, pp. 1646–49. [https://doi.org/10.1126/science.1151771](https://doi.org/10.1126/science.1151771).
+
+[Article](https://doi.org/10.1126%2Fscience.1151771)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXjsVamtLg%3D)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=18356520)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Science&doi=10.1126%2Fscience.1151771&volume=319&pages=1646-1649&publication_year=2008&author=Legros%2CM&author=Dehm%2CG&author=Arzt%2CE&author=Balk%2CTJ)
+
+40.   H. Umashankar, D. Scheiber, V.I. Razumovskiy, and M. Militzer: _Comput. Mater. Sci._, 2023, vol. 229, p. 112393. [https://doi.org/10.1016/j.commatsci.2023.112393](https://doi.org/10.1016/j.commatsci.2023.112393).
+
+[Article](https://doi.org/10.1016%2Fj.commatsci.2023.112393)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhs1Ggu7zE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Comput.%20Mater.%20Sci.&doi=10.1016%2Fj.commatsci.2023.112393&volume=229&publication_year=2023&author=Umashankar%2CH&author=Scheiber%2CD&author=Razumovskiy%2CVI&author=Militzer%2CM)
+
+41.   K. Lu: _Nat. Rev. Mater._, 2016, vol. 1, p. 16019. [https://doi.org/10.1038/natrevmats.2016.19](https://doi.org/10.1038/natrevmats.2016.19).
+
+[Article](https://doi.org/10.1038%2Fnatrevmats.2016.19)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXhtVert7g%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Nat.%20Rev.%20Mater.&doi=10.1038%2Fnatrevmats.2016.19&volume=1&publication_year=2016&author=Lu%2CK)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08163-6?format=refman&flavour=references)
