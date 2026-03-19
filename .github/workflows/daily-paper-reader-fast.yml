@@ -1,0 +1,91 @@
+name: daily-paper-reader-fast
+
+on:
+  workflow_dispatch:
+    inputs:
+      fetch_days:
+        description: "回溯抓取天数（快速版，默认 7）"
+        required: false
+        default: "7"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-paper-reader-fast
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Cache Python deps
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-dpr-fast-deps-v1
+
+      - name: Install fast deps
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install openai requests pymupdf arxiv pyyaml
+
+      - name: Run Fast Journal Monitor
+        run: |
+          FETCH_DAYS="${{ github.event.inputs.fetch_days }}"
+          if [ -z "$FETCH_DAYS" ]; then
+            FETCH_DAYS="7"
+          fi
+          python src/main_fast.py --fetch-days "$FETCH_DAYS"
+          cp -f config.yaml docs/config.yaml
+
+      - name: Cleanup non-recommend archives
+        run: |
+          find archive -mindepth 2 -maxdepth 2 -type d \( -name raw -o -name filtered -o -name rank \) -exec rm -rf {} +
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          branch="${GITHUB_REF_NAME:-main}"
+
+          shopt -s nullglob
+          paths=(docs config.yaml)
+          if [ -f archive/arxiv_seen.json ]; then
+            paths+=(archive/arxiv_seen.json)
+          fi
+          if [ -f archive/journal_seen.json ]; then
+            paths+=(archive/journal_seen.json)
+          fi
+          if [ -f archive/carryover.json ]; then
+            paths+=(archive/carryover.json)
+          fi
+          for d in archive/*/recommend; do
+            paths+=("$d")
+          done
+
+          git add "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "[chore] fast daily pipeline"
+          git fetch origin "$branch"
+          git rebase -X theirs "origin/$branch"
+          git push origin HEAD:"$branch"

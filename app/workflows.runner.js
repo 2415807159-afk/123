@@ -5,13 +5,11 @@ window.DPRWorkflowRunner = (function () {
   const WORKFLOWS = [
     {
       key: 'daily-now',
-      id: 'daily-paper-reader.yml',
+      id: 'daily-paper-reader-fast.yml',
       name: '立即爬取并处理论文',
-      desc: '触发快速工作流（默认 7 天 + skims，加速抓取与生成 docs）。',
+      desc: '触发轻量快速工作流（BM25 + 快速打分 + 生成 docs）。',
       dispatchInputs: {
-        run_enrich: 'false',
         fetch_days: '7',
-        fetch_mode: 'skims',
       },
     },
     {
