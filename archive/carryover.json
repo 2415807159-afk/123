@@ -1,64 +1,6 @@
 {
-  "generated_at": "2026-03-19T15:23:52.388290+00:00",
+  "generated_at": "2026-03-19T17:29:20.071579+00:00",
   "updated_date": "20260310-20260319",
   "carryover_days": 9,
-  "items": [
-    {
-      "id": "2603.17367v1",
-      "title": "GPUMDkit: A User-Friendly Toolkit for GPUMD and NEP",
-      "abstract": "Machine-learned interatomic potentials have revolutionized molecular dynamics simulations by providing quantum-mechanical accuracy at empirical-potential speeds. The graphics processing unit molecular dynamics (GPUMD) package, featuring the highly efficient neuroevolution potential (NEP) framework, has emerged as a powerful tool in this domain. However, the complexity of force field development, active learning, and trajectory post-processing often requires extensive manual scripting, imposing a steep learning curve on new users. To address this, we present GPUMDkit, a comprehensive and user-friendly toolkit that streamlines the entire simulation workflow for GPUMD and NEP. GPUMDkit integrates a suite of essential functionalities, including format conversion, structure sampling, property calculation, and data visualization, accessible through both interactive and command-line interfaces. Its modular, extensible architecture ensures accessibility for users of all experience levels while allowing seamless integration of new features. By automating complex tasks and enhancing productivity, GPUMDkit substantially lowers the barrier to using GPUMD and NEP programs. This article describes the program architecture and demonstrates its capabilities through practical applications.",
-      "authors": [
-        "Zihan Yan",
-        "Denan Li",
-        "Xin Wu",
-        "Zhoulin Liu",
-        "Chen Hua",
-        "Boyi Situ",
-        "Hao Yang",
-        "Shengjie Tang",
-        "Benrui Tang",
-        "Ziyang Wang",
-        "Shangzhao Yi",
-        "Huan Wang",
-        "Dian Huang",
-        "Ke Li",
-        "Qilin Guo",
-        "Zherui Chen",
-        "Ke Xu",
-        "Yanzhou Wang",
-        "Ziliang Wang",
-        "Gang Tang",
-        "Shi Liu",
-        "Zheyong Fan",
-        "Yizhou Zhu"
-      ],
-      "primary_category": "cond-mat.mtrl-sci",
-      "categories": [
-        "cond-mat.mtrl-sci"
-      ],
-      "published": "2026-03-18T05:19:17+00:00",
-      "link": "https://arxiv.org/pdf/2603.17367v1",
-      "tags": [
-        "keyword:TiMD-ML",
-        "query:TiMD-ML"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "Toolkit for GPUMD and Neuroevolution Potential (NEP) for MD simulations",
-      "llm_evidence_cn": "用于GPUMD和神经演化势(NEP)分子动力学模拟的工具包",
-      "llm_evidence": "用于GPUMD和神经演化势(NEP)分子动力学模拟的工具包",
-      "canonical_evidence": "用于GPUMD和神经演化势(NEP)分子动力学模拟的工具包",
-      "llm_tldr_en": "Presents GPUMDkit to streamline machine-learned interatomic potential development and MD workflows.",
-      "llm_tldr_cn": "推出GPUMDkit工具包，简化机器学习原子间势开发和分子动力学模拟工作流。",
-      "llm_tldr": "推出GPUMDkit工具包，简化机器学习原子间势开发和分子动力学模拟工作流。",
-      "llm_tags": [
-        "query:timd-ml:composite"
-      ],
-      "matched_query_tag": "query:timd-ml:composite",
-      "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
-      "matched_requirement_id": "req-composite-timd-ml",
-      "selection_source": "carryover_cache",
-      "paper_id": "2603.17367v1",
-      "carry_days": 1
-    }
-  ]
+  "items": []
 }

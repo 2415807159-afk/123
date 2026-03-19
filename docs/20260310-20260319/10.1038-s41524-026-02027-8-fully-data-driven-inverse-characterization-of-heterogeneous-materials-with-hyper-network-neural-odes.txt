@@ -1,0 +1,324 @@
+Title: Fully data-driven inverse characterization of heterogeneous materials with hyper-network neural ODEs
+
+URL Source: https://www.nature.com/articles/s41524-026-02027-8
+
+Markdown Content:
+## References
+
+1.   Sharma, A., Mukhopadhyay, T., Rangappa, S. M., Siengchin, S. & Kushvaha, V. Advances in computational intelligence of polymer composite materials: machine learning assisted modeling, analysis and design. _Arch. Comput. Methods Eng._**29**, 3341–3385 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Advances%20in%20computational%20intelligence%20of%20polymer%20composite%20materials%3A%20machine%20learning%20assisted%20modeling%2C%20analysis%20and%20design&journal=Arch.%20Comput.%20Methods%20Eng.&volume=29&pages=3341-3385&publication_year=2022&author=Sharma%2CA&author=Mukhopadhyay%2CT&author=Rangappa%2CSM&author=Siengchin%2CS&author=Kushvaha%2CV)
+
+2.   Lin, C.-Y., Mathur, M., Malinowski, M., Timek, T. A. & Rausch, M. K. The impact of thickness heterogeneity on soft tissue biomechanics: a novel measurement technique and a demonstration on heart valve tissue. _Biomech. Model. Mechanobiol._**22**, 1487–1498 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20impact%20of%20thickness%20heterogeneity%20on%20soft%20tissue%20biomechanics%3A%20a%20novel%20measurement%20technique%20and%20a%20demonstration%20on%20heart%20valve%20tissue&journal=Biomech.%20Model.%20Mechanobiol.&volume=22&pages=1487-1498&publication_year=2023&author=Lin%2CC-Y&author=Mathur%2CM&author=Malinowski%2CM&author=Timek%2CTA&author=Rausch%2CMK)
+
+3.   Sack, I. Magnetic resonance elastography from fundamental soft-tissue mechanics to diagnostic imaging. _Nat. Rev. Phys._**5**, 25–42 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Magnetic%20resonance%20elastography%20from%20fundamental%20soft-tissue%20mechanics%20to%20diagnostic%20imaging&journal=Nat.%20Rev.%20Phys.&volume=5&pages=25-42&publication_year=2023&author=Sack%2CI)
+
+4.   Moreno-Flores, O., Rausch, M. K. & Tepole, A. B. The role of interface geometry and appendages on the mesoscale mechanics of the skin. _Biomech. Model. Mechanobiol._**23**, 553–568 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20role%20of%20interface%20geometry%20and%20appendages%20on%20the%20mesoscale%20mechanics%20of%20the%20skin&journal=Biomech.%20Model.%20Mechanobiol.&volume=23&pages=553-568&publication_year=2024&author=Moreno-Flores%2CO&author=Rausch%2CMK&author=Tepole%2CAB)
+
+5.   Koorman, T. et al. Spatial collagen stiffening promotes collective breast cancer cell invasion by reinforcing extracellular matrix alignment. _Oncogene_**41**, 2458–2469 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Spatial%20collagen%20stiffening%20promotes%20collective%20breast%20cancer%20cell%20invasion%20by%20reinforcing%20extracellular%20matrix%20alignment&journal=Oncogene&volume=41&pages=2458-2469&publication_year=2022&author=Koorman%2CT)
+
+6.   Olson, L. G. et al. An inverse problem approach to stiffness mapping for early detection of breast cancer: tissue phantom experiments. _Inverse Probl. Sci. Eng._**27**, 1006–1037 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=An%20inverse%20problem%20approach%20to%20stiffness%20mapping%20for%20early%20detection%20of%20breast%20cancer%3A%20tissue%20phantom%20experiments&journal=Inverse%20Probl.%20Sci.%20Eng.&volume=27&pages=1006-1037&publication_year=2019&author=Olson%2CLG)
+
+7.   Chai, C.-K. et al. Local anisotropic mechanical properties of human carotid atherosclerotic plaques–characterisation by micro-indentation and inverse finite element analysis. _J. Mech. Behav. Biomed. Mater._**43**, 59–68 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Local%20anisotropic%20mechanical%20properties%20of%20human%20carotid%20atherosclerotic%20plaques%E2%80%93characterisation%20by%20micro-indentation%20and%20inverse%20finite%20element%20analysis&journal=J.%20Mech.%20Behav.%20Biomed.%20Mater.&volume=43&pages=59-68&publication_year=2015&author=Chai%2CC-K)
+
+8.   Zhang, Y. et al. Finite-element based optimization of left ventricular passive stiffness in normal volunteers and patients after myocardial infarction: utility of an inverse deformation gradient calculation of regional diastolic strain. _J. Mech. Behav. Biomed. Mater._**119**, 104431 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Finite-element%20based%20optimization%20of%20left%20ventricular%20passive%20stiffness%20in%20normal%20volunteers%20and%20patients%20after%20myocardial%20infarction%3A%20utility%20of%20an%20inverse%20deformation%20gradient%20calculation%20of%20regional%20diastolic%20strain&journal=J.%20Mech.%20Behav.%20Biomed.%20Mater.&volume=119&publication_year=2021&author=Zhang%2CY)
+
+9.   Qian, L. & Zhao, H. Nanoindentation of soft biological materials. _Micromachines_**9**, 654 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Nanoindentation%20of%20soft%20biological%20materials&journal=Micromachines&volume=9&publication_year=2018&author=Qian%2CL&author=Zhao%2CH)
+
+10.   Azeloglu, E. U., Costa, K. D., Atomic force microscopy in mechanobiology: measuring microelastic heterogeneity of living cells, Atomic force microscopy in biomedical research: methods and protocols 303–329 (2011).
+
+11.   Pailler-Mattei, C., Bec, S. & Zahouani, H. In vivo measurements of the elastic mechanical properties of human skin by indentation tests. _Med. Eng. Phys._**30**, 599–606 (2008).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=In%20vivo%20measurements%20of%20the%20elastic%20mechanical%20properties%20of%20human%20skin%20by%20indentation%20tests&journal=Med.%20Eng.%20Phys.&volume=30&pages=599-606&publication_year=2008&author=Pailler-Mattei%2CC&author=Bec%2CS&author=Zahouani%2CH)
+
+12.   Moghaddam, A. O., Wei, J., Kim, J., Dunn, A. C. & Johnson, A. J. W. An indentation-based approach to determine the elastic constants of soft anisotropic tissues. _J. Mech. Behav. Biomed. Mater._**103**, 103539 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=An%20indentation-based%20approach%20to%20determine%20the%20elastic%20constants%20of%20soft%20anisotropic%20tissues&journal=J.%20Mech.%20Behav.%20Biomed.%20Mater.&volume=103&publication_year=2020&author=Moghaddam%2CAO&author=Wei%2CJ&author=Kim%2CJ&author=Dunn%2CAC&author=Johnson%2CAJW)
+
+13.   Cox, M. A., Driessen, N. J., Bouten, C. V. & Baaijens, F. P. Mechanical characterization of anisotropic planar biological soft tissues using large indentation: a computational feasibility study. _J. Biomech. Eng._**128**, 428–436 (2006).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Mechanical%20characterization%20of%20anisotropic%20planar%20biological%20soft%20tissues%20using%20large%20indentation%3A%20a%20computational%20feasibility%20study&journal=J.%20Biomech.%20Eng.&volume=128&pages=428-436&publication_year=2006&author=Cox%2CMA&author=Driessen%2CNJ&author=Bouten%2CCV&author=Baaijens%2CFP)
+
+14.   Greer, J. R. & Deshpande, V. S. Three-dimensional architected materials and structures: Design, fabrication, and mechanical behavior. _MRS Bull._**44**, 750–757 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Three-dimensional%20architected%20materials%20and%20structures%3A%20Design%2C%20fabrication%2C%20and%20mechanical%20behavior&journal=MRS%20Bull.&volume=44&pages=750-757&publication_year=2019&author=Greer%2CJR&author=Deshpande%2CVS)
+
+15.   Reda, H., Karathanasopoulos, N., Elnady, K., Ganghoffer, J., Lakiss, H., Mechanics of metamaterials: an overview of recent developments. _Adv. Mech. Microstruct. Media Struct._ 273–296 (2018).
+
+16.   Kingsley, D. M. et al. Multi-modal characterization of polymeric gels to determine the influence of testing method on observed elastic modulus. _J. Mech. Behav. Biomed. Mater._**92**, 152–161 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Multi-modal%20characterization%20of%20polymeric%20gels%20to%20determine%20the%20influence%20of%20testing%20method%20on%20observed%20elastic%20modulus&journal=J.%20Mech.%20Behav.%20Biomed.%20Mater.&volume=92&pages=152-161&publication_year=2019&author=Kingsley%2CDM)
+
+17.   Luetkemeyer, C. M., Scheven, U., Estrada, J. B. & Arruda, E. M. Constitutive modeling of the anterior cruciate ligament bundles and patellar tendon with full-field methods. _J. Mech. Phys. Solids_**156**, 104577 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Constitutive%20modeling%20of%20the%20anterior%20cruciate%20ligament%20bundles%20and%20patellar%20tendon%20with%20full-field%20methods&journal=J.%20Mech.%20Phys.%20Solids&volume=156&publication_year=2021&author=Luetkemeyer%2CCM&author=Scheven%2CU&author=Estrada%2CJB&author=Arruda%2CEM)
+
+18.   Rastogi, P. K., Photomechanics, Vol. 77, Springer Science & Business Media, (2003).
+
+19.   Claire, D., Hild, F. & Roux, S. A finite element formulation to identify damage fields: the equilibrium gap method. _Int. J. Numer. Methods Eng._**61**, 189–208 (2004).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20finite%20element%20formulation%20to%20identify%20damage%20fields%3A%20the%20equilibrium%20gap%20method&journal=Int.%20J.%20Numer.%20Methods%20Eng.&volume=61&pages=189-208&publication_year=2004&author=Claire%2CD&author=Hild%2CF&author=Roux%2CS)
+
+20.   Avril, S. et al. Overview of identification methods of mechanical parameters based on full-field measurements. _Exp. Mech._**48**, 381–402 (2008).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Overview%20of%20identification%20methods%20of%20mechanical%20parameters%20based%20on%20full-field%20measurements&journal=Exp.%20Mech.&volume=48&pages=381-402&publication_year=2008&author=Avril%2CS)
+
+21.   Genovese, K. et al. Multi-view digital image correlation systems for in vitro testing of arteries from mice to humans. _Exp. Mech._**61**, 1455–1472 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Multi-view%20digital%20image%20correlation%20systems%20for%20in%20vitro%20testing%20of%20arteries%20from%20mice%20to%20humans&journal=Exp.%20Mech.&volume=61&pages=1455-1472&publication_year=2021&author=Genovese%2CK)
+
+22.   Estrada, J. B., Luetkemeyer, C. M., Scheven, U. M. & Arruda, E. M. Mr-u: material characterization using 3d displacement-encoded magnetic resonance and the virtual fields method. _Exp. Mech._**60**, 907–924 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Mr-u%3A%20material%20characterization%20using%203d%20displacement-encoded%20magnetic%20resonance%20and%20the%20virtual%20fields%20method&journal=Exp.%20Mech.&volume=60&pages=907-924&publication_year=2020&author=Estrada%2CJB&author=Luetkemeyer%2CCM&author=Scheven%2CUM&author=Arruda%2CEM)
+
+23.   Toussaint, E., Grédiac, M. & Pierron, F. The virtual fields method with piecewise virtual fields. _Int. J. Mech. Sci._**48**, 256–264 (2006).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20virtual%20fields%20method%20with%20piecewise%20virtual%20fields&journal=Int.%20J.%20Mech.%20Sci.&volume=48&pages=256-264&publication_year=2006&author=Toussaint%2CE&author=Gr%C3%A9diac%2CM&author=Pierron%2CF)
+
+24.   Grédiac, M. & Pierron, F. Applying the virtual fields method to the identification of elasto-plastic constitutive parameters. _Int. J. Plast._**22**, 602–627 (2006).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Applying%20the%20virtual%20fields%20method%20to%20the%20identification%20of%20elasto-plastic%20constitutive%20parameters&journal=Int.%20J.%20Plast.&volume=22&pages=602-627&publication_year=2006&author=Gr%C3%A9diac%2CM&author=Pierron%2CF)
+
+25.   Pierron, F., Grédiac, M., The virtual fields method: extracting constitutive mechanical parameters from full-field deformation measurements, Springer Science & Business Media, 2012.
+
+26.   Kavanagh, K. T. & Clough, R. W. Finite element applications in the characterization of elastic solids. _Int. J. Solids Struct._**7**, 11–23 (1971).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Finite%20element%20applications%20in%20the%20characterization%20of%20elastic%20solids&journal=Int.%20J.%20Solids%20Struct.&volume=7&pages=11-23&publication_year=1971&author=Kavanagh%2CKT&author=Clough%2CRW)
+
+27.   Pottier, T., Toussaint, F. & Vacher, P. Contribution of heterogeneous strain field measurements and boundary conditions modelling in inverse identification of material parameters. _Eur. J. Mech.-A/Solids_**30**, 373–382 (2011).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Contribution%20of%20heterogeneous%20strain%20field%20measurements%20and%20boundary%20conditions%20modelling%20in%20inverse%20identification%20of%20material%20parameters&journal=Eur.%20J.%20Mech.-A%2FSolids&volume=30&pages=373-382&publication_year=2011&author=Pottier%2CT&author=Toussaint%2CF&author=Vacher%2CP)
+
+28.   Geymonat, G., Hild, F. & Pagano, S. Identification of elastic parameters by displacement field measurement. _Comptes Rendus Mecanique_**330**, 403–408 (2002).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Identification%20of%20elastic%20parameters%20by%20displacement%20field%20measurement&journal=Comptes%20Rendus%20Mecanique&volume=330&pages=403-408&publication_year=2002&author=Geymonat%2CG&author=Hild%2CF&author=Pagano%2CS)
+
+29.   Florentin, E. & Lubineau, G. Identification of the parameters of an elastic material model using the constitutive equation gap method. _Comput. Mech._**46**, 521–531 (2010).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Identification%20of%20the%20parameters%20of%20an%20elastic%20material%20model%20using%20the%20constitutive%20equation%20gap%20method&journal=Comput.%20Mech.&volume=46&pages=521-531&publication_year=2010&author=Florentin%2CE&author=Lubineau%2CG)
+
+30.   Ikehata, M. Inversion formulas for the linearized problem for an inverse boundary value problem in elastic prospection. _SIAM J. Appl. Math._**50**, 1635–1644 (1990).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Inversion%20formulas%20for%20the%20linearized%20problem%20for%20an%20inverse%20boundary%20value%20problem%20in%20elastic%20prospection&journal=SIAM%20J.%20Appl.%20Math.&volume=50&pages=1635-1644&publication_year=1990&author=Ikehata%2CM)
+
+31.   Claire, D., Hild, F. & Roux, S. Identification of a damage law by using full-field displacement measurements. _Int. J. Damage Mech._**16**, 179–197 (2007).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Identification%20of%20a%20damage%20law%20by%20using%20full-field%20displacement%20measurements&journal=Int.%20J.%20Damage%20Mech.&volume=16&pages=179-197&publication_year=2007&author=Claire%2CD&author=Hild%2CF&author=Roux%2CS)
+
+32.   Karniadakis, G. E. et al. Physics-informed machine learning. _Nat. Rev. Phys._**3**, 422–440 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Physics-informed%20machine%20learning&journal=Nat.%20Rev.%20Phys.&volume=3&pages=422-440&publication_year=2021&author=Karniadakis%2CGE)
+
+33.   Bastek, J.-H. & Kochmann, D. M. Physics-informed neural networks for shell structures. _Eur. J. Mech.-A/Solids_**97**, 104849 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Physics-informed%20neural%20networks%20for%20shell%20structures&journal=Eur.%20J.%20Mech.-A%2FSolids&volume=97&publication_year=2023&author=Bastek%2CJ-H&author=Kochmann%2CDM)
+
+34.   Kharazmi, E., Zhang, Z., Karniadakis, G. E., Variational physics-informed neural networks for solving partial differential equations, arXiv preprint arXiv:1912.00873 (2019).
+
+35.   Hamel, C. M., Long, K. N. & Kramer, S. L. Calibrating constitutive models with full-field data via physics informed neural networks. _Strain_**59**, e12431 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Calibrating%20constitutive%20models%20with%20full-field%20data%20via%20physics%20informed%20neural%20networks&journal=Strain&volume=59&publication_year=2023&author=Hamel%2CCM&author=Long%2CKN&author=Kramer%2CSL)
+
+36.   Ghaboussi, J., Garrett Jr, J. & Wu, X. Knowledge-based modeling of material behavior with neural networks. _J. Eng. Mech._**117**, 132–153 (1991).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Knowledge-based%20modeling%20of%20material%20behavior%20with%20neural%20networks&journal=J.%20Eng.%20Mech.&volume=117&pages=132-153&publication_year=1991&author=Ghaboussi%2CJ&author=Garrett%20Jr%2CJ&author=Wu%2CX)
+
+37.   As’ ad, F., Avery, P. & Farhat, C. A mechanics-informed artificial neural network approach in data-driven constitutive modeling. _Int. J. Numer. Methods Eng._**123**, 2738–2759 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20mechanics-informed%20artificial%20neural%20network%20approach%20in%20data-driven%20constitutive%20modeling&journal=Int.%20J.%20Numer.%20Methods%20Eng.&volume=123&pages=2738-2759&publication_year=2022&author=As%E2%80%99%20ad%2CF&author=Avery%2CP&author=Farhat%2CC)
+
+38.   Fuhg, J. N. & Bouklas, N. On physics-informed data-driven isotropic and anisotropic constitutive models through probabilistic machine learning and space-filling sampling. _Comput. Methods Appl. Mech. Eng._**394**, 114915 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=On%20physics-informed%20data-driven%20isotropic%20and%20anisotropic%20constitutive%20models%20through%20probabilistic%20machine%20learning%20and%20space-filling%20sampling&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=394&publication_year=2022&author=Fuhg%2CJN&author=Bouklas%2CN)
+
+39.   Linden, L. et al. Neural networks meet hyperelasticity: A guide to enforcing physics. _J. Mech. Phys. Solids_**179**, 105363 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Neural%20networks%20meet%20hyperelasticity%3A%20A%20guide%20to%20enforcing%20physics&journal=J.%20Mech.%20Phys.%20Solids&volume=179&publication_year=2023&author=Linden%2CL)
+
+40.   Taç, V., Linka, K., Sahli-Costabal, F., Kuhl, E., Tepole, A. B., Benchmarking physics-informed frameworks for data-driven hyperelasticity, Comput. Mech. [https://doi.org/10.1007/s00466-023-02355-2](https://doi.org/10.1007/s00466-023-02355-2) (2023).
+
+41.   Tac, V., Sahli Costabal, F. & Tepole, A. B. Data-driven tissue mechanics with polyconvex neural ordinary differential equations. _Comput. Methods Appl. Mech. Eng._**398**, 115248 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Data-driven%20tissue%20mechanics%20with%20polyconvex%20neural%20ordinary%20differential%20equations&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=398&publication_year=2022&author=Tac%2CV&author=Sahli%20Costabal%2CF&author=Tepole%2CAB)
+
+42.   Flaschel, M., Kumar, S. & De Lorenzis, L. Automated discovery of generalized standard material models with euclid. _Comput. Methods Appl. Mech. Eng._**405**, 115867 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Automated%20discovery%20of%20generalized%20standard%20material%20models%20with%20euclid&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=405&publication_year=2023&author=Flaschel%2CM&author=Kumar%2CS&author=Lorenzis%2CL)
+
+43.   Wang, Z., Estrada, J. B., Arruda, E. M. & Garikipati, K. Inference of deformation mechanisms and constitutive response of soft material surrogates of biological tissue by full-field characterization and data-driven variational system identification. _J. Mech. Phys. Solids_**153**, 104474 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Inference%20of%20deformation%20mechanisms%20and%20constitutive%20response%20of%20soft%20material%20surrogates%20of%20biological%20tissue%20by%20full-field%20characterization%20and%20data-driven%20variational%20system%20identification&journal=J.%20Mech.%20Phys.%20Solids&volume=153&publication_year=2021&author=Wang%2CZ&author=Estrada%2CJB&author=Arruda%2CEM&author=Garikipati%2CK)
+
+44.   Zheng, L., Kochmann, D. M. & Kumar, S. Hypercan: Hypernetwork-driven deep parameterized constitutive models for metamaterials. _Extrem. Mech. Lett._**72**, 102243 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Hypercan%3A%20Hypernetwork-driven%20deep%20parameterized%20constitutive%20models%20for%20metamaterials&journal=Extrem.%20Mech.%20Lett.&volume=72&publication_year=2024&author=Zheng%2CL&author=Kochmann%2CDM&author=Kumar%2CS)
+
+45.   Klein, D. K., Roth, F. J., Valizadeh, I. & Weeger, O. Parametrized polyconvex hyperelasticity with physics-augmented neural networks. _Data-Centric Eng._**4**, e25 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Parametrized%20polyconvex%20hyperelasticity%20with%20physics-augmented%20neural%20networks&journal=Data-Centric%20Eng.&volume=4&publication_year=2023&author=Klein%2CDK&author=Roth%2CFJ&author=Valizadeh%2CI&author=Weeger%2CO)
+
+46.   Thakolkaran, P. et al. Nn-euclid: Deep-learning hyperelasticity without stress data. _J. Mech. Phys. Solids_**169**, 105076 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Nn-euclid%3A%20Deep-learning%20hyperelasticity%20without%20stress%20data&journal=J.%20Mech.%20Phys.%20Solids&volume=169&publication_year=2022&author=Thakolkaran%2CP)
+
+47.   Amos, B., Xu, L., Kolter, J. Z., Input convex neural networks, in: _International Conference on Machine Learning, PMLR_, pp. 146–155. (2017).
+
+48.   Amores, V. J., Montáns, F. J., Cueto, E. & Chinesta, F. Crossing scales: Data-driven determination of the micro-scale behavior of polymers from non-homogeneous tests at the continuum-scale. _Front. Mater._**9**, 879614 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Crossing%20scales%3A%20Data-driven%20determination%20of%20the%20micro-scale%20behavior%20of%20polymers%20from%20non-homogeneous%20tests%20at%20the%20continuum-scale&journal=Front.%20Mater.&volume=9&publication_year=2022&author=Amores%2CVJ&author=Mont%C3%A1ns%2CFJ&author=Cueto%2CE&author=Chinesta%2CF)
+
+49.   Benady, A., Baranger, E. & Chamoin, L. Unsupervised learning of history-dependent constitutive material laws with thermodynamically-consistent neural networks in the modified constitutive relation error framework. _Comput. Methods Appl. Mech. Eng._**425**, 116967 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Unsupervised%20learning%20of%20history-dependent%20constitutive%20material%20laws%20with%20thermodynamically-consistent%20neural%20networks%20in%20the%20modified%20constitutive%20relation%20error%20framework&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=425&publication_year=2024&author=Benady%2CA&author=Baranger%2CE&author=Chamoin%2CL)
+
+50.   Xu, K., Tartakovsky, A. M., Burghardt, J. & Darve, E. Learning viscoelasticity models from indirect data using deep neural networks. _Comput. Methods Appl. Mech. Eng._**387**, 114124 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Learning%20viscoelasticity%20models%20from%20indirect%20data%20using%20deep%20neural%20networks&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=387&publication_year=2021&author=Xu%2CK&author=Tartakovsky%2CAM&author=Burghardt%2CJ&author=Darve%2CE)
+
+51.   Zhang, Y., Li, Q.-J., Zhu, T. & Li, J. Learning constitutive relations of plasticity using neural networks and full-field data. _Extrem. Mech. Lett._**52**, 101645 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Learning%20constitutive%20relations%20of%20plasticity%20using%20neural%20networks%20and%20full-field%20data&journal=Extrem.%20Mech.%20Lett.&volume=52&publication_year=2022&author=Zhang%2CY&author=Li%2CQ-J&author=Zhu%2CT&author=Li%2CJ)
+
+52.   Avril, S., Huntley, J. M., Pierron, F. & Steele, D. D. 3d heterogeneous stiffness reconstruction using MRI and the virtual fields method. _Exp. Mech._**48**, 479–494 (2008).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=3d%20heterogeneous%20stiffness%20reconstruction%20using%20MRI%20and%20the%20virtual%20fields%20method&journal=Exp.%20Mech.&volume=48&pages=479-494&publication_year=2008&author=Avril%2CS&author=Huntley%2CJM&author=Pierron%2CF&author=Steele%2CDD)
+
+53.   Nguyen, T., Huntley, J. M., Ashcroft, I. A., Ruiz, P. D. & Pierron, F. A fourier-series-based virtual fields method for the identification of three-dimensional stiffness distributions and its application to incompressible materials. _Strain_**53**, e12229 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20fourier-series-based%20virtual%20fields%20method%20for%20the%20identification%20of%20three-dimensional%20stiffness%20distributions%20and%20its%20application%20to%20incompressible%20materials&journal=Strain&volume=53&publication_year=2017&author=Nguyen%2CT&author=Huntley%2CJM&author=Ashcroft%2CIA&author=Ruiz%2CPD&author=Pierron%2CF)
+
+54.   Mei, Y., Deng, J., Guo, X., Goenezen, S. & Avril, S. Introducing regularization into the virtual fields method (vfm) to identify nonhomogeneous elastic property distributions. _Comput. Mech._**67**, 1581–1599 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Introducing%20regularization%20into%20the%20virtual%20fields%20method%20%28vfm%29%20to%20identify%20nonhomogeneous%20elastic%20property%20distributions&journal=Comput.%20Mech.&volume=67&pages=1581-1599&publication_year=2021&author=Mei%2CY&author=Deng%2CJ&author=Guo%2CX&author=Goenezen%2CS&author=Avril%2CS)
+
+55.   Kirchhoff, J., Luo, D., O’Leary-Roseberry, T., Ghattas, O., Inference of heterogeneous material properties via infinite-dimensional integrated dic, arXiv preprint arXiv:2408.10217 (2024).
+
+56.   Chen, C.-T. & Gu, G. X. Learning hidden elasticity with deep neural networks. _Proc. Natl. Acad. Sci._**118**, e2102721118 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Learning%20hidden%20elasticity%20with%20deep%20neural%20networks&journal=Proc.%20Natl.%20Acad.%20Sci.&volume=118&publication_year=2021&author=Chen%2CC-T&author=Gu%2CGX)
+
+57.   Xue, T. et al. JAX-FEM: A differentiable GPU-accelerated 3D finite element solver for automatic inverse design and mechanistic data science.
+
+58.   Linka, K. & Kuhl, E. A new family of constitutive artificial neural networks towards automated model discovery. _Comput. Methods Appl. Mech. Eng._**403**, 115731 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20new%20family%20of%20constitutive%20artificial%20neural%20networks%20towards%20automated%20model%20discovery&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=403&publication_year=2023&author=Linka%2CK&author=Kuhl%2CE)
+
+59.   Gasser, T. C., Ogden, R. W. & Holzapfel, G. A. Hyperelastic modelling of arterial layers with distributed collagen fibre orientations. _J. R. Soc. interface_**3**, 15–35 (2005).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Hyperelastic%20modelling%20of%20arterial%20layers%20with%20distributed%20collagen%20fibre%20orientations&journal=J.%20R.%20Soc.%20interface&volume=3&pages=15-35&publication_year=2005&author=Gasser%2CTC&author=Ogden%2CRW&author=Holzapfel%2CGA)
+
+60.   Tac, V., Rausch, M. K., Bilionis, I., Sahli Costabal, F. & Tepole, A. B. Generative hyperelasticity with physics-informed probabilistic diffusion fields. _Eng. Comput._**41**, 51–69 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Generative%20hyperelasticity%20with%20physics-informed%20probabilistic%20diffusion%20fields&journal=Eng.%20Comput.&volume=41&pages=51-69&publication_year=2025&author=Tac%2CV&author=Rausch%2CMK&author=Bilionis%2CI&author=Sahli%20Costabal%2CF&author=Tepole%2CAB)
+
+61.   Crichton, M. L. et al. The viscoelastic, hyperelastic and scale dependent behaviour of freshly excised individual skin layers. _Biomaterials_**32**, 4670–4681 (2011).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20viscoelastic%2C%20hyperelastic%20and%20scale%20dependent%20behaviour%20of%20freshly%20excised%20individual%20skin%20layers&journal=Biomaterials&volume=32&pages=4670-4681&publication_year=2011&author=Crichton%2CML)
+
+62.   Kakaletsis, S. et al. Right ventricular myocardial mechanics: Multi-modal deformation, microstructure, modeling, and comparison to the left ventricle. _Acta Biomater._**123**, 154–166 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Right%20ventricular%20myocardial%20mechanics%3A%20Multi-modal%20deformation%2C%20microstructure%2C%20modeling%2C%20and%20comparison%20to%20the%20left%20ventricle&journal=Acta%20Biomater.&volume=123&pages=154-166&publication_year=2021&author=Kakaletsis%2CS)
+
+63.   Su, Y. & Zhang, Q. Glare: A free and open-source software for generation and assessment of digital speckle pattern. _Opt. Lasers Eng._**148**, 106766 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Glare%3A%20A%20free%20and%20open-source%20software%20for%20generation%20and%20assessment%20of%20digital%20speckle%20pattern&journal=Opt.%20Lasers%20Eng.&volume=148&publication_year=2022&author=Su%2CY&author=Zhang%2CQ)
+
+64.   Bornert, M. et al. Assessment of digital image correlation measurement errors: methodology and results. _Exp. Mech._**49**, 353–370 (2009).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Assessment%20of%20digital%20image%20correlation%20measurement%20errors%3A%20methodology%20and%20results&journal=Exp.%20Mech.&volume=49&pages=353-370&publication_year=2009&author=Bornert%2CM)
+
+65.   Estrada, J. B. & Franck, C. Intuitive interface for the quantitative evaluation of speckle patterns for use in digital image and volume correlation techniques. _J. Appl. Mech._**82**, 095001 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Intuitive%20interface%20for%20the%20quantitative%20evaluation%20of%20speckle%20patterns%20for%20use%20in%20digital%20image%20and%20volume%20correlation%20techniques&journal=J.%20Appl.%20Mech.&volume=82&publication_year=2015&author=Estrada%2CJB&author=Franck%2CC)
+
+66.   Grediac, M., Pierron, F., Avril, S. & Toussaint, E. The virtual fields method for extracting constitutive parameters from full-field measurements: a review. _Strain_**42**, 233–253 (2006).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20virtual%20fields%20method%20for%20extracting%20constitutive%20parameters%20from%20full-field%20measurements%3A%20a%20review&journal=Strain&volume=42&pages=233-253&publication_year=2006&author=Grediac%2CM&author=Pierron%2CF&author=Avril%2CS&author=Toussaint%2CE)
+
+67.   Sutton, M. A., Yan, J., Avril, S., Pierron, F. & Adeeb, S. M. Identification of heterogeneous constitutive parameters in a welded specimen: uniform stress and virtual fields methods for material property estimation. _Exp. Mech._**48**, 451–464 (2008).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Identification%20of%20heterogeneous%20constitutive%20parameters%20in%20a%20welded%20specimen%3A%20uniform%20stress%20and%20virtual%20fields%20methods%20for%20material%20property%20estimation&journal=Exp.%20Mech.&volume=48&pages=451-464&publication_year=2008&author=Sutton%2CMA&author=Yan%2CJ&author=Avril%2CS&author=Pierron%2CF&author=Adeeb%2CSM)
+
+68.   Ereiz, S., Duvnjak, I., Jiménez-Alonso, J. F., Review of finite element model updating methods for structural applications, in: Structures, Vol. 41, Elsevier, 2022, pp. 684–723.
+
+69.   Valdés-Alonzo, G., Binetruy, C., Eck, B., García-González, A. & Leygue, A. Phase distribution and properties identification of heterogeneous materials: A data-driven approach. _Comput. Methods Appl. Mech. Eng._**390**, 114354 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Phase%20distribution%20and%20properties%20identification%20of%20heterogeneous%20materials%3A%20A%20data-driven%20approach&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=390&publication_year=2022&author=Vald%C3%A9s-Alonzo%2CG&author=Binetruy%2CC&author=Eck%2CB&author=Garc%C3%ADa-Gonz%C3%A1lez%2CA&author=Leygue%2CA)
+
+70.   Wu, W., Daneker, M., Turner, K. T., Jolley, M. A., Lu, L., Identifying heterogeneous micromechanical properties of biological tissues via physics-informed neural networks, _Small Methods_ (2025) 2400620.
+
+71.   Liu, Y., Chen, Y. & Ding, B. Deep learning in frequency domain for inverse identification of nonhomogeneous material properties. _J. Mech. Phys. Solids_**168**, 105043 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Deep%20learning%20in%20frequency%20domain%20for%20inverse%20identification%20of%20nonhomogeneous%20material%20properties&journal=J.%20Mech.%20Phys.%20Solids&volume=168&publication_year=2022&author=Liu%2CY&author=Chen%2CY&author=Ding%2CB)
+
+72.   Shi, R. et al. Deep learning without stress data on the discovery of multi-regional hyperelastic properties. _Comput. Mech._ 1–30 (2025).
+
+73.   Padmanabha, G. A., Fuhg, J. N., Safta, C., Jones, R. E. & Bouklas, N. Improving the performance of stein variational inference through extreme sparsification of physically-constrained neural network models. _Comput. Methods Appl. Mech. Eng._**432**, 117359 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Improving%20the%20performance%20of%20stein%20variational%20inference%20through%20extreme%20sparsification%20of%20physically-constrained%20neural%20network%20models&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=432&publication_year=2024&author=Padmanabha%2CGA&author=Fuhg%2CJN&author=Safta%2CC&author=Jones%2CRE&author=Bouklas%2CN)
+
+74.   Taç, V., Rausch, M. K., Costabal, F. S., Tepole, B., Data-driven anisotropic finite viscoelasticity using neural ordinary differential equations. _Comput. Methods Appl. Mech. Eng._**411** (2023).
+
+75.   Tac, V., Kuhl, E. & Tepole, A. B. Data-driven continuum damage mechanics with built-in physics. _Extrem. Mech. Lett._**71**, 102220 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Data-driven%20continuum%20damage%20mechanics%20with%20built-in%20physics&journal=Extrem.%20Mech.%20Lett.&volume=71&publication_year=2024&author=Tac%2CV&author=Kuhl%2CE&author=Tepole%2CAB)
+
+76.   Patel, D. V., Ray, D. & Oberai, A. A. Solution of physics-based Bayesian inverse problems with deep generative priors. _Comput. Methods Appl. Mech. Eng._**400**, 115428 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Solution%20of%20physics-based%20Bayesian%20inverse%20problems%20with%20deep%20generative%20priors&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=400&publication_year=2022&author=Patel%2CDV&author=Ray%2CD&author=Oberai%2CAA)
+
+77.   Mattei, P.-A., Frellsen, J., Miwae: Deep generative modelling and imputation of incomplete data sets, in: International conference on machine learning, PMLR, pp. 4413–4423. (2019).
+
+78.   Li, S. C.-X., Jiang, B., Marlin, B., Misgan: Learning from incomplete data with generative adversarial networks, arXiv preprint arXiv:1902.09599 (2019).
+
+79.   Lejeune, E. Mechanical mnist: A benchmark dataset for mechanical metamodels. _Extrem. Mech. Lett._**36**, 100659 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Mechanical%20mnist%3A%20A%20benchmark%20dataset%20for%20mechanical%20metamodels&journal=Extrem.%20Mech.%20Lett.&volume=36&publication_year=2020&author=Lejeune%2CE)
+
+80.   Siebert, T., Becker, T., Spiltthof, K., Neumann, I. & Krupka, R. Error estimations in digital image correlation technique. _Appl. Mech. Mater._**7**, 265–270 (2007).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Error%20estimations%20in%20digital%20image%20correlation%20technique&journal=Appl.%20Mech.%20Mater.&volume=7&pages=265-270&publication_year=2007&author=Siebert%2CT&author=Becker%2CT&author=Spiltthof%2CK&author=Neumann%2CI&author=Krupka%2CR)
+
+81.   Kiyani, E., Shukla, K., Urbán, J. F., Darbon, J. & Karniadakis, G. E. Optimizing the optimizer for physics-informed neural networks and Kolmogorov-Arnold networks. _Comput. Methods Appl. Mech. Eng._**446**, 118308 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Optimizing%20the%20optimizer%20for%20physics-informed%20neural%20networks%20and%20Kolmogorov-Arnold%20networks&journal=Comput.%20Methods%20Appl.%20Mech.%20Eng.&volume=446&publication_year=2025&author=Kiyani%2CE&author=Shukla%2CK&author=Urb%C3%A1n%2CJF&author=Darbon%2CJ&author=Karniadakis%2CGE)
+
+82.   Itskov, M. et al. Tensor algebra and tensor analysis for engineers, Springer, (2007).
+
+83.   Zhang, J. M. & Rychlewski, J. Structural tensors for anisotropic solids. _Arch. Mech._**42**, 267–277 (1990).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Structural%20tensors%20for%20anisotropic%20solids&journal=Arch.%20Mech.&volume=42&pages=267-277&publication_year=1990&author=Zhang%2CJM&author=Rychlewski%2CJ)
+
+84.   Ball, J. M. Convexity conditions and existence theorems in nonlinear elasticity. _Arch. Ration. Mech. Anal._**63**, 337–403 (1976).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Convexity%20conditions%20and%20existence%20theorems%20in%20nonlinear%20elasticity&journal=Arch.%20Ration.%20Mech.%20Anal.&volume=63&pages=337-403&publication_year=1976&author=Ball%2CJM)
+
+85.   Hartmann, S. & Neff, P. Polyconvexity of generalized polynomial-type hyperelastic strain energy functions for near-incompressibility. _Int. J. Solids Struct._**40**, 2767–2791 (2003).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Polyconvexity%20of%20generalized%20polynomial-type%20hyperelastic%20strain%20energy%20functions%20for%20near-incompressibility&journal=Int.%20J.%20Solids%20Struct.&volume=40&pages=2767-2791&publication_year=2003&author=Hartmann%2CS&author=Neff%2CP)
+
+86.   Schröder, J. & Neff, P. Invariant formulation of hyperelastic transverse isotropy based on polyconvex free energy functions. _Int. J. Solids Struct._**40**, 401–445 (2003).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Invariant%20formulation%20of%20hyperelastic%20transverse%20isotropy%20based%20on%20polyconvex%20free%20energy%20functions&journal=Int.%20J.%20Solids%20Struct.&volume=40&pages=401-445&publication_year=2003&author=Schr%C3%B6der%2CJ&author=Neff%2CP)
+
+87.   Chen, R. T., Rubanova, Y., Bettencourt, J., Duvenaud, D. K. Neural ordinary differential equations, _Adv. Neural Inf. Process. Syst._**31** (2018).
+
+88.   Ferreira, B. P. & Bessa, M. A. Automatically Differentiable Model Updating (ADiMU): conventional, hybrid, and neural network material model discovery including history-dependency. _J Mech. Phys. Sol._**24**, 106408 (2025).
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1038/s41524-026-02027-8?format=refman&flavour=references)

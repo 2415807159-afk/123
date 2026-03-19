@@ -1,0 +1,24 @@
+Title: GPUMDkit: A User-Friendly Toolkit for GPUMD and NEP
+
+URL Source: https://arxiv.org/abs/2603.17367v1
+
+Markdown Content:
+Authors:[Zihan Yan](https://arxiv.org/search/cond-mat?searchtype=author&query=Yan,+Z), [Denan Li](https://arxiv.org/search/cond-mat?searchtype=author&query=Li,+D), [Xin Wu](https://arxiv.org/search/cond-mat?searchtype=author&query=Wu,+X), [Zhoulin Liu](https://arxiv.org/search/cond-mat?searchtype=author&query=Liu,+Z), [Chen Hua](https://arxiv.org/search/cond-mat?searchtype=author&query=Hua,+C), [Boyi Situ](https://arxiv.org/search/cond-mat?searchtype=author&query=Situ,+B), [Hao Yang](https://arxiv.org/search/cond-mat?searchtype=author&query=Yang,+H), [Shengjie Tang](https://arxiv.org/search/cond-mat?searchtype=author&query=Tang,+S), [Benrui Tang](https://arxiv.org/search/cond-mat?searchtype=author&query=Tang,+B), [Ziyang Wang](https://arxiv.org/search/cond-mat?searchtype=author&query=Wang,+Z), [Shangzhao Yi](https://arxiv.org/search/cond-mat?searchtype=author&query=Yi,+S), [Huan Wang](https://arxiv.org/search/cond-mat?searchtype=author&query=Wang,+H), [Dian Huang](https://arxiv.org/search/cond-mat?searchtype=author&query=Huang,+D), [Ke Li](https://arxiv.org/search/cond-mat?searchtype=author&query=Li,+K), [Qilin Guo](https://arxiv.org/search/cond-mat?searchtype=author&query=Guo,+Q), [Zherui Chen](https://arxiv.org/search/cond-mat?searchtype=author&query=Chen,+Z), [Ke Xu](https://arxiv.org/search/cond-mat?searchtype=author&query=Xu,+K), [Yanzhou Wang](https://arxiv.org/search/cond-mat?searchtype=author&query=Wang,+Y), [Ziliang Wang](https://arxiv.org/search/cond-mat?searchtype=author&query=Wang,+Z), [Gang Tang](https://arxiv.org/search/cond-mat?searchtype=author&query=Tang,+G), [Shi Liu](https://arxiv.org/search/cond-mat?searchtype=author&query=Liu,+S), [Zheyong Fan](https://arxiv.org/search/cond-mat?searchtype=author&query=Fan,+Z), [Yizhou Zhu](https://arxiv.org/search/cond-mat?searchtype=author&query=Zhu,+Y)
+
+[View PDF](https://arxiv.org/pdf/2603.17367v1)
+
+> Abstract:Machine-learned interatomic potentials have revolutionized molecular dynamics simulations by providing quantum-mechanical accuracy at empirical-potential speeds. The graphics processing unit molecular dynamics (GPUMD) package, featuring the highly efficient neuroevolution potential (NEP) framework, has emerged as a powerful tool in this domain. However, the complexity of force field development, active learning, and trajectory post-processing often requires extensive manual scripting, imposing a steep learning curve on new users. To address this, we present GPUMDkit, a comprehensive and user-friendly toolkit that streamlines the entire simulation workflow for GPUMD and NEP. GPUMDkit integrates a suite of essential functionalities, including format conversion, structure sampling, property calculation, and data visualization, accessible through both interactive and command-line interfaces. Its modular, extensible architecture ensures accessibility for users of all experience levels while allowing seamless integration of new features. By automating complex tasks and enhancing productivity, GPUMDkit substantially lowers the barrier to using GPUMD and NEP programs. This article describes the program architecture and demonstrates its capabilities through practical applications.
+
+Comments:17 pages, 7 figures
+Subjects:Materials Science (cond-mat.mtrl-sci)
+Cite as:[arXiv:2603.17367](https://arxiv.org/abs/2603.17367) [cond-mat.mtrl-sci]
+(or [arXiv:2603.17367v1](https://arxiv.org/abs/2603.17367v1) [cond-mat.mtrl-sci] for this version)
+[https://doi.org/10.48550/arXiv.2603.17367](https://doi.org/10.48550/arXiv.2603.17367)
+
+arXiv-issued DOI via DataCite (pending registration)
+
+## Submission history
+
+From: Zihan Yan [[view email](https://arxiv.org/show-email/42d5ffc4/2603.17367)] 
+
+**[v1]** Wed, 18 Mar 2026 05:19:17 UTC (9,803 KB)

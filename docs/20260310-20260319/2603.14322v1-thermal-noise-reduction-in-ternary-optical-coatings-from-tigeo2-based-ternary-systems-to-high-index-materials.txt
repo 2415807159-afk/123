@@ -1,0 +1,29 @@
+Title: Thermal Noise Reduction in Ternary Optical Coatings: From Ti::GeO$_2$-Based Ternary Systems to High Index Materials
+
+URL Source: https://arxiv.org/abs/2603.14322v1
+
+Markdown Content:
+Authors:[Vincenzo Pierro](https://arxiv.org/search/physics?searchtype=author&query=Pierro,+V), [Guerino Avallone](https://arxiv.org/search/physics?searchtype=author&query=Avallone,+G), [Jessica Steinlechner](https://arxiv.org/search/physics?searchtype=author&query=Steinlechner,+J), [Marco Bazzan](https://arxiv.org/search/physics?searchtype=author&query=Bazzan,+M), [Francesco Chiadini](https://arxiv.org/search/physics?searchtype=author&query=Chiadini,+F), [Roberta De Simone](https://arxiv.org/search/physics?searchtype=author&query=De+Simone,+R), [Marianna Fazio](https://arxiv.org/search/physics?searchtype=author&query=Fazio,+M), [Massimo Granata](https://arxiv.org/search/physics?searchtype=author&query=Granata,+M), [Veronica Granata](https://arxiv.org/search/physics?searchtype=author&query=Granata,+V), [Gerardo Iannone](https://arxiv.org/search/physics?searchtype=author&query=Iannone,+G), [Graeme McGhee](https://arxiv.org/search/physics?searchtype=author&query=McGhee,+G), [Carmen S Menoni](https://arxiv.org/search/physics?searchtype=author&query=Menoni,+C+S), [Christophe Michel](https://arxiv.org/search/physics?searchtype=author&query=Michel,+C), [Vincenzo Fiumara](https://arxiv.org/search/physics?searchtype=author&query=Fiumara,+V)
+
+[View PDF](https://arxiv.org/pdf/2603.14322v1)[HTML (experimental)](https://arxiv.org/html/2603.14322v1)
+
+> Abstract:Minimizing coating thermal noise is crucial for enhancing gravitational wave detector sensitivity, with a target Amplitude Spectral Density Reduction Factor (ASD RF) of $0.5$ relative to standard coatings. This study investigates the design of low-noise dielectric stacks using the 'Double Stack of Doublet' strategy, explored via ad-hoc optimization heuristics specifically developed for efficient parametric analysis of coating performance. We analyze the performance limits of ternary coatings based on SiO$_2$, Ti::SiO$_2$, and Ti::GeO$_2$, considering material property uncertainties and absorption constraints. Optimization results show that this system, even with relaxed absorbance constraint (1 ppm), falls short of the target, achieving a best ASD RF of $\sim 0.69$. Consequently, we explore alternative ternary 'Double Stack of Doublet' designs incorporating higher-refractive-index materials. 
+> 
+> Simulations demonstrate that incorporating alternative high-index materials offers a promising pathway, potentially enabling the achievement of the project target. We discuss the optimization strategies, performance trade-offs, design robustness, and implications of using high-index, potentially higher-loss materials for next-generation optical coatings.
+
+Subjects:Optics (physics.optics)
+Cite as:[arXiv:2603.14322](https://arxiv.org/abs/2603.14322) [physics.optics]
+(or [arXiv:2603.14322v1](https://arxiv.org/abs/2603.14322v1) [physics.optics] for this version)
+[https://doi.org/10.48550/arXiv.2603.14322](https://doi.org/10.48550/arXiv.2603.14322)
+
+arXiv-issued DOI via DataCite
+Journal reference:PRD Vol. 112, 102006; Published 19 November, 2025
+Related DOI:[https://doi.org/10.1103/76xz-q8k1](https://doi.org/10.1103/76xz-q8k1)
+
+DOI(s) linking to related resources
+
+## Submission history
+
+From: Vincenzo Pierro Prof. [[view email](https://arxiv.org/show-email/7a8fda80/2603.14322)] 
+
+**[v1]** Sun, 15 Mar 2026 10:41:11 UTC (8,941 KB)

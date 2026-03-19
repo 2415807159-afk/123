@@ -1,0 +1,780 @@
+Title: Strength-Ductility Mechanisms and Creep Properties of the Thin/Thick Full Lamellar Structure in a Novel β–γ TiAl Alloy
+
+URL Source: https://link.springer.com/10.1007/s11661-026-08192-1
+
+Markdown Content:
+# Strength-Ductility Mechanisms and Creep Properties of the Thin/Thick Full Lamellar Structure in a Novel β–γ TiAl Alloy | Metallurgical and Materials Transactions A | Springer Nature Link
+
+## Your privacy, your choice
+
+We use essential cookies to make sure the site can function. We also use optional cookies for advertising, personalisation of content, usage analysis, and social media, as well as to allow video information to be shared for both marketing, analytics and editorial purposes.
+
+By accepting optional cookies, you consent to the processing of your personal data - including transfers to third parties. Some third parties are outside of the European Economic Area, with varying standards of data protection.
+
+See our [privacy policy](https://link.springer.com/privacystatement) for more information on the use of your personal data.
+
+Manage preferences for further information and to change your choices.
+
+Accept all cookies Reject optional cookies
+
+[Skip to main content](https://link.springer.com/10.1007/s11661-026-08192-1#main)
+
+Advertisement
+
+[![Image 1: Springer Nature Link](https://link.springer.com/oscar-static/images/darwin/header/img/logo-springer-nature-link-05805fde18.svg)](https://link.springer.com/)
+
+[Log in](https://idp.springer.com/auth/personal/springernature?redirect_uri=https://link.springer.com/article/10.1007/s11661-026-08192-1)
+
+[Menu](javascript:;)
+
+[Find a journal](https://link.springer.com/journals/)[Publish with us](https://www.springernature.com/gp/authors)[Track your research](https://link.springernature.com/home/)
+
+[Search](javascript:;)
+
+[Saved research](https://link.springer.com/saved-research)
+
+[Cart](https://order.springer.com/public/cart)
+
+## Search
+
+Search by keyword or author 
+
+Search
+
+## Navigation
+
+*   [Find a journal](https://link.springer.com/journals/)
+*   [Publish with us](https://www.springernature.com/gp/authors)
+*   [Track your research](https://link.springernature.com/home/)
+
+1.   [Home](https://link.springer.com/)
+2.   [Metallurgical and Materials Transactions A](https://link.springer.com/journal/11661)
+3.   Article
+
+# Strength-Ductility Mechanisms and Creep Properties of the Thin/Thick Full Lamellar Structure in a Novel _β_–_γ_ TiAl Alloy
+
+*   Original Research Article
+*    Published: 17 March 2026
+
+*    (2026) 
+*   [Cite this article](https://link.springer.com/10.1007/s11661-026-08192-1#citeas)
+
+[Save article](https://link.springer.com/article/10.1007/s11661-026-08192-1/save-research?_csrf=o_EwWRXqEHeIv8noQ3suHW2Xsqa54l2o)
+
+[View saved research](https://link.springer.com/saved-research)
+
+[![Image 2](https://media.springernature.com/w72/springer-static/cover-hires/journal/11661?as=webp)Metallurgical and Materials Transactions A](https://link.springer.com/journal/11661)[Aims and scope](https://link.springer.com/journal/11661/aims-and-scope)[Submit manuscript](https://mmta.msubmit.net/)
+
+*   [Zhixin Zhang](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Zhixin-Zhang-Aff1-Aff3)[1](https://link.springer.com/10.1007/s11661-026-08192-1#Aff1),[3](https://link.springer.com/10.1007/s11661-026-08192-1#Aff3), 
+*   [Junjie Hao](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Junjie-Hao-Aff2)[2](https://link.springer.com/10.1007/s11661-026-08192-1#Aff2), 
+*   [Songtao Chang](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Songtao-Chang-Aff1-Aff3)[1](https://link.springer.com/10.1007/s11661-026-08192-1#Aff1),[3](https://link.springer.com/10.1007/s11661-026-08192-1#Aff3), 
+*   [Guodong Li](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Guodong-Li-Aff4)[4](https://link.springer.com/10.1007/s11661-026-08192-1#Aff4), 
+*   [Hailong Zhang](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Hailong-Zhang-Aff1)[1](https://link.springer.com/10.1007/s11661-026-08192-1#Aff1), 
+*   [Lei Wang](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Lei-Wang-Aff1-Aff3)[1](https://link.springer.com/10.1007/s11661-026-08192-1#Aff1),[3](https://link.springer.com/10.1007/s11661-026-08192-1#Aff3), 
+*   [Xin Wang](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Xin-Wang-Aff1-Aff3)[1](https://link.springer.com/10.1007/s11661-026-08192-1#Aff1),[3](https://link.springer.com/10.1007/s11661-026-08192-1#Aff3), 
+*   [Qiang Wang](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Qiang-Wang-Aff2)[2](https://link.springer.com/10.1007/s11661-026-08192-1#Aff2), 
+*   [Yanwei Li](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Yanwei-Li-Aff2)[2](https://link.springer.com/10.1007/s11661-026-08192-1#Aff2), 
+*   [Xiaobing Li](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Xiaobing-Li-Aff2)[2](https://link.springer.com/10.1007/s11661-026-08192-1#Aff2), 
+*   [Kui Liu](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Kui-Liu-Aff2)[2](https://link.springer.com/10.1007/s11661-026-08192-1#Aff2)&
+*   …
+*   [Jian Wang](https://link.springer.com/10.1007/s11661-026-08192-1#auth-Jian-Wang-Aff1)[1](https://link.springer.com/10.1007/s11661-026-08192-1#Aff1)
+
+Show authors
+
+## Abstract
+
+This study investigates the effects of two-step heat treatment—solution treatment followed by aging—on the microstructural evolution and mechanical properties of a novel _β_–_γ_ TiAl alloy with coexisting _β_ and _α_ single-phase regions. The results indicate that solution treatment within the _α_ + _γ_ two-phase region, followed by aging, leads to the formation of a fully lamellar microstructure with two distinct lamellar spacings—coarse and fine—within colony sizes of approximately 70 _μ_ m. The coarse and fine spacings measure about 50 and 500 nm, respectively. When solution treatment is conducted in the _α_ single-phase region, a fully lamellar structure with only fine spacing is obtained after aging, exhibiting larger colony sizes of around 120 _μ_ m. The microstructure featuring a single lamellar spacing demonstrates the poorest tensile and creep properties due to its coarse colony size. In contrast, the dual-scale lamellar structure significantly enhances both tensile and creep performance. This improvement is attributed to the refined colony size, the ability of coarse lamellae to accommodate more dislocations and twins, and the strengthening effect provided by the fine lamellae. When the heat treatment process is set to 1240°C/30 min/AC (air cooling) + 850°C/3 h/FC (furnace cooling), the alloy exhibits a 22.8 pct increase in room-temperature tensile strength, a 30.6 pct improvement at 800°C, and a 25.7 pct enhancement at 850°C compared to the as-forged condition. Furthermore, the creep life increases by 91.7 pct under 800°C/300 MPa and by 83.8 pct under 800°C/200 MPa.
+
+This is a preview of subscription content, [log in via an institution](https://wayf.springernature.com/?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11661-026-08192-1) to check access.
+
+## Access this article
+
+[Log in via an institution](https://wayf.springernature.com/?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11661-026-08192-1)
+
+## Subscribe and save
+
+Springer+
+
+from $39.99 /Month
+
+*   Starting from 10 chapters or articles per month
+*   Access and download chapters and articles from more than 300k books and 2,500 journals
+*   Cancel anytime
+
+[View plans](https://link.springer.com/product/springer-plus)
+
+## Buy Now
+
+Buy article PDF USD 39.95
+
+Price excludes VAT (USA) 
+
+ Tax calculation will be finalised during checkout.
+
+Instant access to the full article PDF.
+
+[Institutional subscriptions](https://www.springernature.com/gp/librarians/licensing/agc/journals)
+
+**Fig. 1**
+
+![Image 3: extended data figure 1](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig1_HTML.jpg)
+
+**Fig. 2**
+
+![Image 4: extended data figure 2](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig2_HTML.png)
+
+**Fig. 3**
+
+![Image 5: extended data figure 3](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig3_HTML.png)
+
+**Fig. 4**
+
+![Image 6: extended data figure 4](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig4_HTML.jpg)
+
+**Fig. 5**
+
+![Image 7: extended data figure 5](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig5_HTML.jpg)
+
+**Fig. 6**
+
+![Image 8: extended data figure 6](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig6_HTML.png)
+
+**Fig. 7**
+
+![Image 9: extended data figure 7](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig7_HTML.jpg)
+
+**Fig. 8**
+
+![Image 10: extended data figure 8](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig8_HTML.png)
+
+**Fig. 9**
+
+![Image 11: extended data figure 9](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig9_HTML.jpg)
+
+**Fig. 10**
+
+![Image 12: extended data figure 10](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig10_HTML.jpg)
+
+**Fig. 11**
+
+![Image 13: extended data figure 11](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig11_HTML.png)
+
+**Fig. 12**
+
+![Image 14: extended data figure 12](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig12_HTML.jpg)
+
+**Fig. 13**
+
+![Image 15: extended data figure 13](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig13_HTML.jpg)
+
+**Fig. 14**
+
+![Image 16: extended data figure 14](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig14_HTML.jpg)
+
+**Fig. 15**
+
+![Image 17: extended data figure 15](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig15_HTML.jpg)
+
+### Similar content being viewed by others
+
+![Image 18](https://media.springernature.com/w215h120/springer-static/image/art%3A10.1007%2Fs40843-025-3927-9/MediaObjects/40843_2025_3927_Fig1_HTML.jpg)
+
+### [Grain refinement and improved properties of an as-cast Ti-47Al-2Cr-2Nb alloy by pre-deformation heat treatment](https://link.springer.com/10.1007/s40843-025-3927-9?fromPaywallRec=true)
+
+Article 27 February 2026
+
+![Image 19](https://media.springernature.com/w215h120/springer-static/image/art%3Aplaceholder%2Fimages/placeholder-figure-springernature.png)
+
+### [Impact toughness, crack initiation and propagation mechanism of Ti6422 alloy with multi-level lamellar microstructure](https://link.springer.com/10.1007/s12613-025-3162-2?fromPaywallRec=true)
+
+Article 03 February 2026
+
+![Image 20](https://media.springernature.com/w215h120/springer-static/image/art%3A10.1007%2Fs11661-019-05491-8/MediaObjects/11661_2019_5491_Fig1_HTML.png)
+
+### [A Newly Generated Nearly Lamellar Microstructure in Cast Ti-48Al-2Nb-2Cr Alloy for High-Temperature Strengthening](https://link.springer.com/10.1007/s11661-019-05491-8?fromPaywallRec=true)
+
+Article 11 October 2019
+
+### Explore related subjects
+
+Discover the latest articles, books and news in related subjects, suggested using machine learning.
+*   [Lamella](https://link.springer.com/subjects/lamella)
+*   [Materials Mechanics](https://link.springer.com/subjects/materials-mechanics)
+*   [Metals and Alloys](https://link.springer.com/subjects/metals-and-alloys)
+*   [Scanning Transmission Electron Microscopy](https://link.springer.com/subjects/scanning-transmission-electron-microscopy)
+*   [Transmission Electron Microscopy](https://link.springer.com/subjects/transmission-electron-microscopy)
+*   [Materials Engineering](https://link.springer.com/subjects/materials-engineering)
+
+## References
+
+1.   H. Clemens and S. Mayer: _Adv. Eng. Mater._, 2013, vol. 15(4), pp. 191–215.
+
+[Article](https://doi.org/10.1002%2Fadem.201200231)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXlsVCmur8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Adv.%20Eng.%20Mater.&doi=10.1002%2Fadem.201200231&volume=15&issue=4&pages=191-215&publication_year=2013&author=Clemens%2CH&author=Mayer%2CS)
+
+2.   B. Bewlay, M. Weimer, T. Kelly, A. Suzuki, and P. Subramanian: _MRS Online Proc. Library (OPL)_, 2013, vol. 1516, pp. 49–58.
+
+[Article](https://doi.org/10.1557%2Fopl.2013.44)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=MRS%20Online%20Proc.%20Library%20%28OPL%29&doi=10.1557%2Fopl.2013.44&volume=1516&pages=49-58&publication_year=2013&author=Bewlay%2CB&author=Weimer%2CM&author=Kelly%2CT&author=Suzuki%2CA&author=Subramanian%2CP)
+
+3.   G. Das, H. Kestler, H. Clemens, and P. Bartolotta: _JOM_, 2004, vol. 56(11), pp. 42–45.
+
+[Article](https://link.springer.com/doi/10.1007/s11837-004-0251-y)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2cXhtVKnt7zI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-004-0251-y&volume=56&issue=11&pages=42-45&publication_year=2004&author=Das%2CG&author=Kestler%2CH&author=Clemens%2CH&author=Bartolotta%2CP)
+
+4.   H. Zhu, D. Seo, K. Maruyama, and P. Au: _Scripta Mater._, 2006, vol. 54(12), pp. 1979–84.
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2006.03.023)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD28XjsFentLk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scripta%20Mater.&doi=10.1016%2Fj.scriptamat.2006.03.023&volume=54&issue=12&pages=1979-1984&publication_year=2006&author=Zhu%2CH&author=Seo%2CD&author=Maruyama%2CK&author=Au%2CP)
+
+5.   S. Naka, M. Thomas, C. Sanchez, and T. Khan: Development of third generation castable gamma titanium aluminides-Role of solidification paths, ISSII, 2nd, Seven Springs, PA, Sept. 21–26, 1997, ONERA, TP (1997-158), 1997.
+
+6.   Y.-W. Kim and S.-L. Kim: _JOM_, 2018, vol. 70(4), pp. 553–60.
+
+[Article](https://link.springer.com/doi/10.1007/s11837-018-2747-x)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-018-2747-x&volume=70&issue=4&pages=553-560&publication_year=2018&author=Kim%2CY-W&author=Kim%2CS-L)
+
+7.   S. Mayer, P. Erdely, F.D. Fischer, D. Holec, M. Kastenhuber, T. Klein, and H. Clemens: _Adv. Eng. Mater._, 2017, vol. 19(4), p. 1600735.
+
+[Article](https://doi.org/10.1002%2Fadem.201600735)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Adv.%20Eng.%20Mater.&doi=10.1002%2Fadem.201600735&volume=19&issue=4&publication_year=2017&author=Mayer%2CS&author=Erdely%2CP&author=Fischer%2CFD&author=Holec%2CD&author=Kastenhuber%2CM&author=Klein%2CT&author=Clemens%2CH)
+
+8.   J. Yang: _Foundary Technol._, 2022, vol. 43(4), pp. 237–44.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Foundary%20Technol.&volume=43&issue=4&pages=237-244&publication_year=2022&author=Yang%2CJ)
+
+9.   F. Sun, C. Cao, M. Yan, and S. Kim: _Metall. Mater. Trans. A_, 2001, vol. 32A, pp. 1573–89.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-001-0136-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3MXltVGqsrs%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-001-0136-4&volume=32A&pages=1573-1589&publication_year=2001&author=Sun%2CF&author=Cao%2CC&author=Yan%2CM&author=Kim%2CS)
+
+10.   M. Schloffer, B. Rashkova, T. Schöberl, E. Schwaighofer, Z. Zhang, H. Clemens, and S. Mayer: _Acta Mater._, 2014, vol. 64, pp. 241–52.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2013.10.036)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhvVSgtrbO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2013.10.036&volume=64&pages=241-252&publication_year=2014&author=Schloffer%2CM&author=Rashkova%2CB&author=Sch%C3%B6berl%2CT&author=Schwaighofer%2CE&author=Zhang%2CZ&author=Clemens%2CH&author=Mayer%2CS)
+
+11.   M. Kastenhuber, T. Klein, H. Clemens, and S. Mayer: _Intermetallics_, 2018, vol. 97, pp. 27–33.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2018.03.011)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXmvVCjtbg%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2018.03.011&volume=97&pages=27-33&publication_year=2018&author=Kastenhuber%2CM&author=Klein%2CT&author=Clemens%2CH&author=Mayer%2CS)
+
+12.   Z. Huang: _Acta Mater._, 2008, vol. 56(8), pp. 1689–1700.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2007.12.013)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXksFKltLY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2007.12.013&volume=56&issue=8&pages=1689-1700&publication_year=2008&author=Huang%2CZ)
+
+13.   X. Li, H. Xu, W. Xing, B. Chen, L. Shu, M. Zhang, and K. Liu: _Trans. Nonferrous Metals Soc. China_, 2022, vol. 32(7), pp. 2229–42.
+
+[Article](https://doi.org/10.1016%2FS1003-6326%2822%2965943-0)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisVKgt7fE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Trans.%20Nonferrous%20Metals%20Soc.%20China&doi=10.1016%2FS1003-6326%2822%2965943-0&volume=32&issue=7&pages=2229-2242&publication_year=2022&author=Li%2CX&author=Xu%2CH&author=Xing%2CW&author=Chen%2CB&author=Shu%2CL&author=Zhang%2CM&author=Liu%2CK)
+
+14.   J. Hao, K. Qian, X. Li, P. Xue, L. Shu, B. Chen, and K. Liu: _J. Market. Res._, 2023, vol. 26, pp. 7722–39.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhvFKqsL3O)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Market.%20Res.&volume=26&pages=7722-7739&publication_year=2023&author=Hao%2CJ&author=Qian%2CK&author=Li%2CX&author=Xue%2CP&author=Shu%2CL&author=Chen%2CB&author=Liu%2CK)
+
+15.   H. Clemens, W. Wallgram, S. Kremmer, V. Güther, A. Otto, and A. Bartels: _Adv. Eng. Mater._, 2008, vol. 10(8), pp. 707–13.
+
+[Article](https://doi.org/10.1002%2Fadem.200800164)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXhtFOnurfM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Adv.%20Eng.%20Mater.&doi=10.1002%2Fadem.200800164&volume=10&issue=8&pages=707-713&publication_year=2008&author=Clemens%2CH&author=Wallgram%2CW&author=Kremmer%2CS&author=G%C3%BCther%2CV&author=Otto%2CA&author=Bartels%2CA)
+
+16.   F. Kong, N. Cui, Y. Chen, X. Wang, and N. Xiong: _Intermetallics_, 2014, vol. 55, pp. 66–72.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2014.07.010)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXht1KgsLzI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2014.07.010&volume=55&pages=66-72&publication_year=2014&author=Kong%2CF&author=Cui%2CN&author=Chen%2CY&author=Wang%2CX&author=Xiong%2CN)
+
+17.   H. Xu, X. Li, W. Xing, L. Shu, Y. Ma, and K. Liu: _J. Mater. Sci. Technol._, 2019, vol. 35(11), pp. 2652–57.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2019.05.061)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhtFGiur%2FJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2019.05.061&volume=35&issue=11&pages=2652-2657&publication_year=2019&author=Xu%2CH&author=Li%2CX&author=Xing%2CW&author=Shu%2CL&author=Ma%2CY&author=Liu%2CK)
+
+18.   X. Yang, J. Hao, P. Xue, L. Shu, B. Chen, Q. Lu, M. Zhang, S. Xu, H. Niu, and X. Li: _Mater. Sci. Eng. A_, 2024, vol. 916, p. 147291.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2024.147291)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXitVyksr%2FI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2024.147291&volume=916&publication_year=2024&author=Yang%2CX&author=Hao%2CJ&author=Xue%2CP&author=Shu%2CL&author=Chen%2CB&author=Lu%2CQ&author=Zhang%2CM&author=Xu%2CS&author=Niu%2CH&author=Li%2CX)
+
+19.   L. Quan, X. Li, P. Xue, J. Hao, K. Qian, B. Chen, J. Li, and K. Liu: _J. Iron. Steel Res. Int._, 2025, vol. 32(1), pp. 239–48.
+
+[Article](https://link.springer.com/doi/10.1007/s42243-024-01202-9)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXns1OrtbY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Iron.%20Steel%20Res.%20Int.&doi=10.1007%2Fs42243-024-01202-9&volume=32&issue=1&pages=239-248&publication_year=2025&author=Quan%2CL&author=Li%2CX&author=Xue%2CP&author=Hao%2CJ&author=Qian%2CK&author=Chen%2CB&author=Li%2CJ&author=Liu%2CK)
+
+20.   D. Hu: _Rare Met._, 2016, vol. 35(1), pp. 1–14.
+
+[Article](https://link.springer.com/doi/10.1007/s12598-015-0615-1)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Rare%20Met.&doi=10.1007%2Fs12598-015-0615-1&volume=35&issue=1&pages=1-14&publication_year=2016&author=Hu%2CD)
+
+21.   Q. Wang, X. Li, J. Hao, B. Chen, B. Zhang, E. Zhang, and K. Liu: _Acta Metall. Sin._, 2025, vol. 61(7), pp. 1060–70.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXhslGjsb7J)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.%20Sin.&volume=61&issue=7&pages=1060-1070&publication_year=2025&author=Wang%2CQ&author=Li%2CX&author=Hao%2CJ&author=Chen%2CB&author=Zhang%2CB&author=Zhang%2CE&author=Liu%2CK)
+
+22.   D. Seo, L. Zhao, and J. Beddoes: _Mater. Sci. Eng. A_, 2002, vol. 329, pp. 130–40.
+
+[Article](https://doi.org/10.1016%2FS0921-5093%2801%2901546-5)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2FS0921-5093%2801%2901546-5&volume=329&pages=130-140&publication_year=2002&author=Seo%2CD&author=Zhao%2CL&author=Beddoes%2CJ)
+
+23.   H. Zhu, D. Seo, K. Maruyama, and P. Au: _Mater. Sci. Eng. A_, 2008, vol. 483, pp. 533–36.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2006.09.137)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2006.09.137&volume=483&pages=533-536&publication_year=2008&author=Zhu%2CH&author=Seo%2CD&author=Maruyama%2CK&author=Au%2CP)
+
+24.   R. Cao, R. Liu, C. Yang, Z. Zhu, Y. Wang, Y. Cui, and R. Yang: _Mater. Sci. Eng. A_, 2023, vol. 888, p. 145807.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2023.145807)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXitFGmsbrK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2023.145807&volume=888&publication_year=2023&author=Cao%2CR&author=Liu%2CR&author=Yang%2CC&author=Zhu%2CZ&author=Wang%2CY&author=Cui%2CY&author=Yang%2CR)
+
+25.   X. Li, K. Qian, L. Shu, M. Zhang, B. Chen, and K. Liu: _JOM_, 2022, vol. 74(8), pp. 2985–95.
+
+[Article](https://link.springer.com/doi/10.1007/s11837-022-05262-8)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhsV2rsrjK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-022-05262-8&volume=74&issue=8&pages=2985-2995&publication_year=2022&author=Li%2CX&author=Qian%2CK&author=Shu%2CL&author=Zhang%2CM&author=Chen%2CB&author=Liu%2CK)
+
+26.   Q. Wang, X. Li, J. Hao, B. Chen, B. Zhang, E. Zhang, and K. Liu: _Acta Metall. Sin._, 2024, vol. 61(7), pp. 1060–70.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.%20Sin.&volume=61&issue=7&pages=1060-1070&publication_year=2024&author=Wang%2CQ&author=Li%2CX&author=Hao%2CJ&author=Chen%2CB&author=Zhang%2CB&author=Zhang%2CE&author=Liu%2CK)
+
+27.   E. Schwaighofer, H. Clemens, S. Mayer, J. Lindemann, J. Klose, W. Smarsly, and V. Güther: _Intermetallics_, 2014, vol. 44, pp. 128–40.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2013.09.010)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhs1Cgur%2FI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2013.09.010&volume=44&pages=128-140&publication_year=2014&author=Schwaighofer%2CE&author=Clemens%2CH&author=Mayer%2CS&author=Lindemann%2CJ&author=Klose%2CJ&author=Smarsly%2CW&author=G%C3%BCther%2CV)
+
+28.   X. Li, H. Tang, W. Xing, P. Zhao, B. Chen, Y. Ma, and K. Liu: _Intermetallics_, 2021, vol. 136, p. 107230.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2021.107230)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXht1Kns7bN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2021.107230&volume=136&publication_year=2021&author=Li%2CX&author=Tang%2CH&author=Xing%2CW&author=Zhao%2CP&author=Chen%2CB&author=Ma%2CY&author=Liu%2CK)
+
+29.   Q. Xia, J. Wang, Y. Wang, and J. Yang: _Mater. Sci. Eng. A_, 2001, vol. 300(1–2), pp. 309–11.
+
+[Article](https://doi.org/10.1016%2FS0921-5093%2800%2901774-3)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2FS0921-5093%2800%2901774-3&volume=300&issue=1%E2%80%932&pages=309-311&publication_year=2001&author=Xia%2CQ&author=Wang%2CJ&author=Wang%2CY&author=Yang%2CJ)
+
+30.   J. Beddoes, W. Wallace, and L. Zhao: _Int. Mater. Rev._, 1995, vol. 40(5), pp. 197–217.
+
+[Article](https://doi.org/10.1179%2Fimr.1995.40.5.197)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK28XhvVWitLc%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20Mater.%20Rev.&doi=10.1179%2Fimr.1995.40.5.197&volume=40&issue=5&pages=197-217&publication_year=1995&author=Beddoes%2CJ&author=Wallace%2CW&author=Zhao%2CL)
+
+31.   A. Godfrey and M. Loretto: _Intermetallics_, 1996, vol. 4(1), pp. 47–53.
+
+[Article](https://doi.org/10.1016%2F0966-9795%2895%2900017-S)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK2MXps1yns7w%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2F0966-9795%2895%2900017-S&volume=4&issue=1&pages=47-53&publication_year=1996&author=Godfrey%2CA&author=Loretto%2CM)
+
+32.   P. Wang, J. Hao, P. Xue, C. Liang, B. Peng, B. Chen, X. Li, and K. Liu: _J. Market. Res._, 2025, vol. 36, pp. 823–37.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXmvVKrtLY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Market.%20Res.&volume=36&pages=823-837&publication_year=2025&author=Wang%2CP&author=Hao%2CJ&author=Xue%2CP&author=Liang%2CC&author=Peng%2CB&author=Chen%2CB&author=Li%2CX&author=Liu%2CK)
+
+33.   G. Zheng, B. Tang, S. Zhao, W.Y. Wang, X. Chen, L. Zhu, and J. Li: _Acta Mater._, 2022, vol. 225, p. 117585.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2021.117585)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisFSmsw%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2021.117585&volume=225&publication_year=2022&author=Zheng%2CG&author=Tang%2CB&author=Zhao%2CS&author=Wang%2CWY&author=Chen%2CX&author=Zhu%2CL&author=Li%2CJ)
+
+34.   G. Zheng, B. Tang, S. Zhao, J. Wang, Y. Xie, X. Chen, W.Y. Wang, D. Liu, R. Yang, and J. Li: _Int. J. Plast._, 2023, vol. 170, p. 103756.
+
+[Article](https://doi.org/10.1016%2Fj.ijplas.2023.103756)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhvFKitLvM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Plast.&doi=10.1016%2Fj.ijplas.2023.103756&volume=170&publication_year=2023&author=Zheng%2CG&author=Tang%2CB&author=Zhao%2CS&author=Wang%2CJ&author=Xie%2CY&author=Chen%2CX&author=Wang%2CWY&author=Liu%2CD&author=Yang%2CR&author=Li%2CJ)
+
+35.   G. Cao, L. Fu, J. Lin, Y. Zhang, and C. Chen: _Intermetallics_, 2000, vol. 8(5–6), pp. 647–53.
+
+[Article](https://doi.org/10.1016%2FS0966-9795%2899%2900128-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3cXjvFGlsr0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2FS0966-9795%2899%2900128-4&volume=8&issue=5%E2%80%936&pages=647-653&publication_year=2000&author=Cao%2CG&author=Fu%2CL&author=Lin%2CJ&author=Zhang%2CY&author=Chen%2CC)
+
+36.   T. Parthasarathy, M. Mendiratta, and D. Dimiduk: _Acta Mater._, 1998, vol. 46(11), pp. 4005–16.
+
+[Article](https://doi.org/10.1016%2FS1359-6454%2898%2900067-6)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK1cXkvF2ks7w%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2FS1359-6454%2898%2900067-6&volume=46&issue=11&pages=4005-4016&publication_year=1998&author=Parthasarathy%2CT&author=Mendiratta%2CM&author=Dimiduk%2CD)
+
+37.   K. Maruyama, M. Yamaguchi, G. Suzuki, H. Zhu, H.Y. Kim, and M. Yoo: _Acta Mater._, 2004, vol. 52(17), pp. 5185–94.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2004.07.029)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2cXnt1Gqsr4%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2004.07.029&volume=52&issue=17&pages=5185-5194&publication_year=2004&author=Maruyama%2CK&author=Yamaguchi%2CM&author=Suzuki%2CG&author=Zhu%2CH&author=Kim%2CHY&author=Yoo%2CM)
+
+38.   D.O. Panov, V. Sokolovsky, N. Stepanov, S. Zherebtsov, P. Panin, E. Volokitina, N. Nochovnaya, and G. Salishchev: _Mater. Sci. Eng. A_, 2023, vol. 862, p. 144458.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2022.144458)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XjtV2ksrbE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2022.144458&volume=862&publication_year=2023&author=Panov%2CDO&author=Sokolovsky%2CV&author=Stepanov%2CN&author=Zherebtsov%2CS&author=Panin%2CP&author=Volokitina%2CE&author=Nochovnaya%2CN&author=Salishchev%2CG)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08192-1?format=refman&flavour=references)
+
+## Acknowledgments
+
+The work was financially supported by the Guangdong Basic and Applied Basic Research Foundation under Grant No. 2023A1515140056 and 2024A1515030091. The authors gratefully acknowledge the Shaanxi Provincial Natural Science Foundation Funds Research Projects (No. 2025JC-YBMS-494), the Chongqing Technology Innovation and Application Development Project (No. CSTB2022TIAD-KPX0032).
+
+### Conflict of interest
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+## Author information
+
+### Authors and Affiliations
+
+1.   Institute of Baoji Titanium Industry Group Co., Ltd., Baoji, 721014, P.R. China
+
+Zhixin Zhang,Songtao Chang,Hailong Zhang,Lei Wang,Xin Wang&Jian Wang
+
+2.   Ji Hua Laboratory, Foshan, 528200, P.R. China
+
+Junjie Hao,Qiang Wang,Yanwei Li,Xiaobing Li&Kui Liu
+
+3.   Shaanxi Titanium Nickel Material Innovation Center, Xi’an, 710072, P.R. China
+
+Zhixin Zhang,Songtao Chang,Lei Wang&Xin Wang
+
+4.   Aerospace Logistics Co., Ltd., Beijing, 100080, P.R. China
+
+Guodong Li
+
+Authors
+1.   Zhixin Zhang[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Zhixin%20Zhang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Zhixin%20Zhang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Zhixin%20Zhang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+2.   Junjie Hao[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Junjie%20Hao) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Junjie%20Hao)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Junjie%20Hao%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+3.   Songtao Chang[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Songtao%20Chang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Songtao%20Chang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Songtao%20Chang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+4.   Guodong Li[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Guodong%20Li) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Guodong%20Li)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Guodong%20Li%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+5.   Hailong Zhang[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Hailong%20Zhang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Hailong%20Zhang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Hailong%20Zhang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+6.   Lei Wang[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Lei%20Wang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Lei%20Wang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Lei%20Wang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+7.   Xin Wang[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Xin%20Wang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Xin%20Wang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Xin%20Wang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+8.   Qiang Wang[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Qiang%20Wang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Qiang%20Wang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Qiang%20Wang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+9.   Yanwei Li[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Yanwei%20Li) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Yanwei%20Li)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Yanwei%20Li%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+10.   Xiaobing Li[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Xiaobing%20Li) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Xiaobing%20Li)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Xiaobing%20Li%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+11.   Kui Liu[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Kui%20Liu) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Kui%20Liu)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Kui%20Liu%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+12.   Jian Wang[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Jian%20Wang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Jian%20Wang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Jian%20Wang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+
+### Corresponding authors
+
+Correspondence to [Yanwei Li](mailto:yanwei201314@163.com) or [Xiaobing Li](mailto:lixb@jihualab.ac.cn).
+
+## Additional information
+
+### Publisher's Note
+
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+## Rights and permissions
+
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is solely governed by the terms of such publishing agreement and applicable law.
+
+[Reprints and permissions](https://s100.copyright.com/AppDispatchServlet?title=Strength-Ductility%20Mechanisms%20and%20Creep%20Properties%20of%20the%20Thin%2FThick%20Full%20Lamellar%20Structure%20in%20a%20Novel%20%CE%B2%E2%80%93%CE%B3%20TiAl%20Alloy&author=Zhixin%20Zhang%20et%20al&contentID=10.1007%2Fs11661-026-08192-1&copyright=The%20Minerals%2C%20Metals%20%26%20Materials%20Society%20and%20ASM%20International&publication=1073-5623&publicationDate=2026-03-17&publisherName=SpringerNature&orderBeanReset=true)
+
+## About this article
+
+[![Image 21: Check for updates. Verify currency and authenticity via CrossMark](blob:http://localhost/df43c82f6cb6dcd2a87db38f317bf9f2)](https://crossmark.crossref.org/dialog/?doi=10.1007/s11661-026-08192-1)
+
+### Cite this article
+
+Zhang, Z., Hao, J., Chang, S. _et al._ Strength-Ductility Mechanisms and Creep Properties of the Thin/Thick Full Lamellar Structure in a Novel _β_–_γ_ TiAl Alloy. _Metall Mater Trans A_ (2026). https://doi.org/10.1007/s11661-026-08192-1
+
+[Download citation](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08192-1?format=refman&flavour=citation)
+
+*   Received: 12 December 2025
+
+*   Accepted: 27 February 2026
+
+*   Published: 17 March 2026
+
+*   Version of record: 17 March 2026
+
+*   DOI: https://doi.org/10.1007/s11661-026-08192-1
+
+### Share this article
+
+Anyone you share the following link with will be able to read this content:
+
+Get shareable link
+
+Sorry, a shareable link is not currently available for this article.
+
+Copy shareable link to clipboard
+
+Provided by the Springer Nature SharedIt content-sharing initiative
+
+### Profiles
+
+1.   Yanwei Li[View author profile](https://link.springer.com/researchers/74129734SN)
+
+## Access this article
+
+[Log in via an institution](https://wayf.springernature.com/?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11661-026-08192-1)
+
+## Subscribe and save
+
+Springer+
+
+from $39.99 /Month
+
+*   Starting from 10 chapters or articles per month
+*   Access and download chapters and articles from more than 300k books and 2,500 journals
+*   Cancel anytime
+
+[View plans](https://link.springer.com/product/springer-plus)
+
+## Buy Now
+
+Buy article PDF USD 39.95
+
+Price excludes VAT (USA) 
+
+ Tax calculation will be finalised during checkout.
+
+Instant access to the full article PDF.
+
+[Institutional subscriptions](https://www.springernature.com/gp/librarians/licensing/agc/journals)
+
+*   Sections
+*   Figures
+*   References
+
+*   [Abstract](https://link.springer.com/10.1007/s11661-026-08192-1#Abs1)
+*   [References](https://link.springer.com/10.1007/s11661-026-08192-1#Bib1)
+*   [Acknowledgments](https://link.springer.com/10.1007/s11661-026-08192-1#Ack1)
+*   [Author information](https://link.springer.com/10.1007/s11661-026-08192-1#author-information)
+*   [Additional information](https://link.springer.com/10.1007/s11661-026-08192-1#additional-information)
+*   [Rights and permissions](https://link.springer.com/10.1007/s11661-026-08192-1#rightslink)
+*   [About this article](https://link.springer.com/10.1007/s11661-026-08192-1#article-info)
+
+Advertisement
+
+*   
+**Fig. 1**
+
+![Image 22: extended data figure 1](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig1_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig1)
+
+*   
+**Fig. 2**
+
+![Image 23: extended data figure 2](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig2_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig2)
+
+*   
+**Fig. 3**
+
+![Image 24: extended data figure 3](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig3_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig3)
+
+*   
+**Fig. 4**
+
+![Image 25: extended data figure 4](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig4_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig4)
+
+*   
+**Fig. 5**
+
+![Image 26: extended data figure 5](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig5_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig5)
+
+*   
+**Fig. 6**
+
+![Image 27: extended data figure 6](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig6_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig6)
+
+*   
+**Fig. 7**
+
+![Image 28: extended data figure 7](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig7_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig7)
+
+*   
+**Fig. 8**
+
+![Image 29: extended data figure 8](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig8_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig8)
+
+*   
+**Fig. 9**
+
+![Image 30: extended data figure 9](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig9_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig9)
+
+*   
+**Fig. 10**
+
+![Image 31: extended data figure 10](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig10_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig10)
+
+*   
+**Fig. 11**
+
+![Image 32: extended data figure 11](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig11_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig11)
+
+*   
+**Fig. 12**
+
+![Image 33: extended data figure 12](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig12_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig12)
+
+*   
+**Fig. 13**
+
+![Image 34: extended data figure 13](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig13_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig13)
+
+*   
+**Fig. 14**
+
+![Image 35: extended data figure 14](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig14_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig14)
+
+*   
+**Fig. 15**
+
+![Image 36: extended data figure 15](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08192-1/MediaObjects/11661_2026_8192_Fig15_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08192-1#Fig15)
+
+1.   H. Clemens and S. Mayer: _Adv. Eng. Mater._, 2013, vol. 15(4), pp. 191–215.
+
+[Article](https://doi.org/10.1002%2Fadem.201200231)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXlsVCmur8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Adv.%20Eng.%20Mater.&doi=10.1002%2Fadem.201200231&volume=15&issue=4&pages=191-215&publication_year=2013&author=Clemens%2CH&author=Mayer%2CS)
+
+2.   B. Bewlay, M. Weimer, T. Kelly, A. Suzuki, and P. Subramanian: _MRS Online Proc. Library (OPL)_, 2013, vol. 1516, pp. 49–58.
+
+[Article](https://doi.org/10.1557%2Fopl.2013.44)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=MRS%20Online%20Proc.%20Library%20%28OPL%29&doi=10.1557%2Fopl.2013.44&volume=1516&pages=49-58&publication_year=2013&author=Bewlay%2CB&author=Weimer%2CM&author=Kelly%2CT&author=Suzuki%2CA&author=Subramanian%2CP)
+
+3.   G. Das, H. Kestler, H. Clemens, and P. Bartolotta: _JOM_, 2004, vol. 56(11), pp. 42–45.
+
+[Article](https://link.springer.com/doi/10.1007/s11837-004-0251-y)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2cXhtVKnt7zI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-004-0251-y&volume=56&issue=11&pages=42-45&publication_year=2004&author=Das%2CG&author=Kestler%2CH&author=Clemens%2CH&author=Bartolotta%2CP)
+
+4.   H. Zhu, D. Seo, K. Maruyama, and P. Au: _Scripta Mater._, 2006, vol. 54(12), pp. 1979–84.
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2006.03.023)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD28XjsFentLk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scripta%20Mater.&doi=10.1016%2Fj.scriptamat.2006.03.023&volume=54&issue=12&pages=1979-1984&publication_year=2006&author=Zhu%2CH&author=Seo%2CD&author=Maruyama%2CK&author=Au%2CP)
+
+5.   S. Naka, M. Thomas, C. Sanchez, and T. Khan: Development of third generation castable gamma titanium aluminides-Role of solidification paths, ISSII, 2nd, Seven Springs, PA, Sept. 21–26, 1997, ONERA, TP (1997-158), 1997.
+
+6.   Y.-W. Kim and S.-L. Kim: _JOM_, 2018, vol. 70(4), pp. 553–60.
+
+[Article](https://link.springer.com/doi/10.1007/s11837-018-2747-x)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-018-2747-x&volume=70&issue=4&pages=553-560&publication_year=2018&author=Kim%2CY-W&author=Kim%2CS-L)
+
+7.   S. Mayer, P. Erdely, F.D. Fischer, D. Holec, M. Kastenhuber, T. Klein, and H. Clemens: _Adv. Eng. Mater._, 2017, vol. 19(4), p. 1600735.
+
+[Article](https://doi.org/10.1002%2Fadem.201600735)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Adv.%20Eng.%20Mater.&doi=10.1002%2Fadem.201600735&volume=19&issue=4&publication_year=2017&author=Mayer%2CS&author=Erdely%2CP&author=Fischer%2CFD&author=Holec%2CD&author=Kastenhuber%2CM&author=Klein%2CT&author=Clemens%2CH)
+
+8.   J. Yang: _Foundary Technol._, 2022, vol. 43(4), pp. 237–44.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Foundary%20Technol.&volume=43&issue=4&pages=237-244&publication_year=2022&author=Yang%2CJ)
+
+9.   F. Sun, C. Cao, M. Yan, and S. Kim: _Metall. Mater. Trans. A_, 2001, vol. 32A, pp. 1573–89.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-001-0136-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3MXltVGqsrs%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-001-0136-4&volume=32A&pages=1573-1589&publication_year=2001&author=Sun%2CF&author=Cao%2CC&author=Yan%2CM&author=Kim%2CS)
+
+10.   M. Schloffer, B. Rashkova, T. Schöberl, E. Schwaighofer, Z. Zhang, H. Clemens, and S. Mayer: _Acta Mater._, 2014, vol. 64, pp. 241–52.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2013.10.036)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhvVSgtrbO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2013.10.036&volume=64&pages=241-252&publication_year=2014&author=Schloffer%2CM&author=Rashkova%2CB&author=Sch%C3%B6berl%2CT&author=Schwaighofer%2CE&author=Zhang%2CZ&author=Clemens%2CH&author=Mayer%2CS)
+
+11.   M. Kastenhuber, T. Klein, H. Clemens, and S. Mayer: _Intermetallics_, 2018, vol. 97, pp. 27–33.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2018.03.011)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXmvVCjtbg%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2018.03.011&volume=97&pages=27-33&publication_year=2018&author=Kastenhuber%2CM&author=Klein%2CT&author=Clemens%2CH&author=Mayer%2CS)
+
+12.   Z. Huang: _Acta Mater._, 2008, vol. 56(8), pp. 1689–1700.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2007.12.013)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXksFKltLY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2007.12.013&volume=56&issue=8&pages=1689-1700&publication_year=2008&author=Huang%2CZ)
+
+13.   X. Li, H. Xu, W. Xing, B. Chen, L. Shu, M. Zhang, and K. Liu: _Trans. Nonferrous Metals Soc. China_, 2022, vol. 32(7), pp. 2229–42.
+
+[Article](https://doi.org/10.1016%2FS1003-6326%2822%2965943-0)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisVKgt7fE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Trans.%20Nonferrous%20Metals%20Soc.%20China&doi=10.1016%2FS1003-6326%2822%2965943-0&volume=32&issue=7&pages=2229-2242&publication_year=2022&author=Li%2CX&author=Xu%2CH&author=Xing%2CW&author=Chen%2CB&author=Shu%2CL&author=Zhang%2CM&author=Liu%2CK)
+
+14.   J. Hao, K. Qian, X. Li, P. Xue, L. Shu, B. Chen, and K. Liu: _J. Market. Res._, 2023, vol. 26, pp. 7722–39.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhvFKqsL3O)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Market.%20Res.&volume=26&pages=7722-7739&publication_year=2023&author=Hao%2CJ&author=Qian%2CK&author=Li%2CX&author=Xue%2CP&author=Shu%2CL&author=Chen%2CB&author=Liu%2CK)
+
+15.   H. Clemens, W. Wallgram, S. Kremmer, V. Güther, A. Otto, and A. Bartels: _Adv. Eng. Mater._, 2008, vol. 10(8), pp. 707–13.
+
+[Article](https://doi.org/10.1002%2Fadem.200800164)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXhtFOnurfM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Adv.%20Eng.%20Mater.&doi=10.1002%2Fadem.200800164&volume=10&issue=8&pages=707-713&publication_year=2008&author=Clemens%2CH&author=Wallgram%2CW&author=Kremmer%2CS&author=G%C3%BCther%2CV&author=Otto%2CA&author=Bartels%2CA)
+
+16.   F. Kong, N. Cui, Y. Chen, X. Wang, and N. Xiong: _Intermetallics_, 2014, vol. 55, pp. 66–72.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2014.07.010)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXht1KgsLzI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2014.07.010&volume=55&pages=66-72&publication_year=2014&author=Kong%2CF&author=Cui%2CN&author=Chen%2CY&author=Wang%2CX&author=Xiong%2CN)
+
+17.   H. Xu, X. Li, W. Xing, L. Shu, Y. Ma, and K. Liu: _J. Mater. Sci. Technol._, 2019, vol. 35(11), pp. 2652–57.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2019.05.061)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhtFGiur%2FJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2019.05.061&volume=35&issue=11&pages=2652-2657&publication_year=2019&author=Xu%2CH&author=Li%2CX&author=Xing%2CW&author=Shu%2CL&author=Ma%2CY&author=Liu%2CK)
+
+18.   X. Yang, J. Hao, P. Xue, L. Shu, B. Chen, Q. Lu, M. Zhang, S. Xu, H. Niu, and X. Li: _Mater. Sci. Eng. A_, 2024, vol. 916, p. 147291.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2024.147291)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXitVyksr%2FI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2024.147291&volume=916&publication_year=2024&author=Yang%2CX&author=Hao%2CJ&author=Xue%2CP&author=Shu%2CL&author=Chen%2CB&author=Lu%2CQ&author=Zhang%2CM&author=Xu%2CS&author=Niu%2CH&author=Li%2CX)
+
+19.   L. Quan, X. Li, P. Xue, J. Hao, K. Qian, B. Chen, J. Li, and K. Liu: _J. Iron. Steel Res. Int._, 2025, vol. 32(1), pp. 239–48.
+
+[Article](https://link.springer.com/doi/10.1007/s42243-024-01202-9)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXns1OrtbY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Iron.%20Steel%20Res.%20Int.&doi=10.1007%2Fs42243-024-01202-9&volume=32&issue=1&pages=239-248&publication_year=2025&author=Quan%2CL&author=Li%2CX&author=Xue%2CP&author=Hao%2CJ&author=Qian%2CK&author=Chen%2CB&author=Li%2CJ&author=Liu%2CK)
+
+20.   D. Hu: _Rare Met._, 2016, vol. 35(1), pp. 1–14.
+
+[Article](https://link.springer.com/doi/10.1007/s12598-015-0615-1)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Rare%20Met.&doi=10.1007%2Fs12598-015-0615-1&volume=35&issue=1&pages=1-14&publication_year=2016&author=Hu%2CD)
+
+21.   Q. Wang, X. Li, J. Hao, B. Chen, B. Zhang, E. Zhang, and K. Liu: _Acta Metall. Sin._, 2025, vol. 61(7), pp. 1060–70.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXhslGjsb7J)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.%20Sin.&volume=61&issue=7&pages=1060-1070&publication_year=2025&author=Wang%2CQ&author=Li%2CX&author=Hao%2CJ&author=Chen%2CB&author=Zhang%2CB&author=Zhang%2CE&author=Liu%2CK)
+
+22.   D. Seo, L. Zhao, and J. Beddoes: _Mater. Sci. Eng. A_, 2002, vol. 329, pp. 130–40.
+
+[Article](https://doi.org/10.1016%2FS0921-5093%2801%2901546-5)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2FS0921-5093%2801%2901546-5&volume=329&pages=130-140&publication_year=2002&author=Seo%2CD&author=Zhao%2CL&author=Beddoes%2CJ)
+
+23.   H. Zhu, D. Seo, K. Maruyama, and P. Au: _Mater. Sci. Eng. A_, 2008, vol. 483, pp. 533–36.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2006.09.137)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2006.09.137&volume=483&pages=533-536&publication_year=2008&author=Zhu%2CH&author=Seo%2CD&author=Maruyama%2CK&author=Au%2CP)
+
+24.   R. Cao, R. Liu, C. Yang, Z. Zhu, Y. Wang, Y. Cui, and R. Yang: _Mater. Sci. Eng. A_, 2023, vol. 888, p. 145807.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2023.145807)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXitFGmsbrK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2023.145807&volume=888&publication_year=2023&author=Cao%2CR&author=Liu%2CR&author=Yang%2CC&author=Zhu%2CZ&author=Wang%2CY&author=Cui%2CY&author=Yang%2CR)
+
+25.   X. Li, K. Qian, L. Shu, M. Zhang, B. Chen, and K. Liu: _JOM_, 2022, vol. 74(8), pp. 2985–95.
+
+[Article](https://link.springer.com/doi/10.1007/s11837-022-05262-8)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhsV2rsrjK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-022-05262-8&volume=74&issue=8&pages=2985-2995&publication_year=2022&author=Li%2CX&author=Qian%2CK&author=Shu%2CL&author=Zhang%2CM&author=Chen%2CB&author=Liu%2CK)
+
+26.   Q. Wang, X. Li, J. Hao, B. Chen, B. Zhang, E. Zhang, and K. Liu: _Acta Metall. Sin._, 2024, vol. 61(7), pp. 1060–70.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.%20Sin.&volume=61&issue=7&pages=1060-1070&publication_year=2024&author=Wang%2CQ&author=Li%2CX&author=Hao%2CJ&author=Chen%2CB&author=Zhang%2CB&author=Zhang%2CE&author=Liu%2CK)
+
+27.   E. Schwaighofer, H. Clemens, S. Mayer, J. Lindemann, J. Klose, W. Smarsly, and V. Güther: _Intermetallics_, 2014, vol. 44, pp. 128–40.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2013.09.010)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhs1Cgur%2FI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2013.09.010&volume=44&pages=128-140&publication_year=2014&author=Schwaighofer%2CE&author=Clemens%2CH&author=Mayer%2CS&author=Lindemann%2CJ&author=Klose%2CJ&author=Smarsly%2CW&author=G%C3%BCther%2CV)
+
+28.   X. Li, H. Tang, W. Xing, P. Zhao, B. Chen, Y. Ma, and K. Liu: _Intermetallics_, 2021, vol. 136, p. 107230.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2021.107230)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXht1Kns7bN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2021.107230&volume=136&publication_year=2021&author=Li%2CX&author=Tang%2CH&author=Xing%2CW&author=Zhao%2CP&author=Chen%2CB&author=Ma%2CY&author=Liu%2CK)
+
+29.   Q. Xia, J. Wang, Y. Wang, and J. Yang: _Mater. Sci. Eng. A_, 2001, vol. 300(1–2), pp. 309–11.
+
+[Article](https://doi.org/10.1016%2FS0921-5093%2800%2901774-3)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2FS0921-5093%2800%2901774-3&volume=300&issue=1%E2%80%932&pages=309-311&publication_year=2001&author=Xia%2CQ&author=Wang%2CJ&author=Wang%2CY&author=Yang%2CJ)
+
+30.   J. Beddoes, W. Wallace, and L. Zhao: _Int. Mater. Rev._, 1995, vol. 40(5), pp. 197–217.
+
+[Article](https://doi.org/10.1179%2Fimr.1995.40.5.197)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK28XhvVWitLc%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20Mater.%20Rev.&doi=10.1179%2Fimr.1995.40.5.197&volume=40&issue=5&pages=197-217&publication_year=1995&author=Beddoes%2CJ&author=Wallace%2CW&author=Zhao%2CL)
+
+31.   A. Godfrey and M. Loretto: _Intermetallics_, 1996, vol. 4(1), pp. 47–53.
+
+[Article](https://doi.org/10.1016%2F0966-9795%2895%2900017-S)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK2MXps1yns7w%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2F0966-9795%2895%2900017-S&volume=4&issue=1&pages=47-53&publication_year=1996&author=Godfrey%2CA&author=Loretto%2CM)
+
+32.   P. Wang, J. Hao, P. Xue, C. Liang, B. Peng, B. Chen, X. Li, and K. Liu: _J. Market. Res._, 2025, vol. 36, pp. 823–37.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXmvVKrtLY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Market.%20Res.&volume=36&pages=823-837&publication_year=2025&author=Wang%2CP&author=Hao%2CJ&author=Xue%2CP&author=Liang%2CC&author=Peng%2CB&author=Chen%2CB&author=Li%2CX&author=Liu%2CK)
+
+33.   G. Zheng, B. Tang, S. Zhao, W.Y. Wang, X. Chen, L. Zhu, and J. Li: _Acta Mater._, 2022, vol. 225, p. 117585.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2021.117585)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisFSmsw%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2021.117585&volume=225&publication_year=2022&author=Zheng%2CG&author=Tang%2CB&author=Zhao%2CS&author=Wang%2CWY&author=Chen%2CX&author=Zhu%2CL&author=Li%2CJ)
+
+34.   G. Zheng, B. Tang, S. Zhao, J. Wang, Y. Xie, X. Chen, W.Y. Wang, D. Liu, R. Yang, and J. Li: _Int. J. Plast._, 2023, vol. 170, p. 103756.
+
+[Article](https://doi.org/10.1016%2Fj.ijplas.2023.103756)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhvFKitLvM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Plast.&doi=10.1016%2Fj.ijplas.2023.103756&volume=170&publication_year=2023&author=Zheng%2CG&author=Tang%2CB&author=Zhao%2CS&author=Wang%2CJ&author=Xie%2CY&author=Chen%2CX&author=Wang%2CWY&author=Liu%2CD&author=Yang%2CR&author=Li%2CJ)
+
+35.   G. Cao, L. Fu, J. Lin, Y. Zhang, and C. Chen: _Intermetallics_, 2000, vol. 8(5–6), pp. 647–53.
+
+[Article](https://doi.org/10.1016%2FS0966-9795%2899%2900128-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3cXjvFGlsr0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2FS0966-9795%2899%2900128-4&volume=8&issue=5%E2%80%936&pages=647-653&publication_year=2000&author=Cao%2CG&author=Fu%2CL&author=Lin%2CJ&author=Zhang%2CY&author=Chen%2CC)
+
+36.   T. Parthasarathy, M. Mendiratta, and D. Dimiduk: _Acta Mater._, 1998, vol. 46(11), pp. 4005–16.
+
+[Article](https://doi.org/10.1016%2FS1359-6454%2898%2900067-6)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK1cXkvF2ks7w%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2FS1359-6454%2898%2900067-6&volume=46&issue=11&pages=4005-4016&publication_year=1998&author=Parthasarathy%2CT&author=Mendiratta%2CM&author=Dimiduk%2CD)
+
+37.   K. Maruyama, M. Yamaguchi, G. Suzuki, H. Zhu, H.Y. Kim, and M. Yoo: _Acta Mater._, 2004, vol. 52(17), pp. 5185–94.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2004.07.029)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2cXnt1Gqsr4%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2004.07.029&volume=52&issue=17&pages=5185-5194&publication_year=2004&author=Maruyama%2CK&author=Yamaguchi%2CM&author=Suzuki%2CG&author=Zhu%2CH&author=Kim%2CHY&author=Yoo%2CM)
+
+38.   D.O. Panov, V. Sokolovsky, N. Stepanov, S. Zherebtsov, P. Panin, E. Volokitina, N. Nochovnaya, and G. Salishchev: _Mater. Sci. Eng. A_, 2023, vol. 862, p. 144458.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2022.144458)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XjtV2ksrbE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2022.144458&volume=862&publication_year=2023&author=Panov%2CDO&author=Sokolovsky%2CV&author=Stepanov%2CN&author=Zherebtsov%2CS&author=Panin%2CP&author=Volokitina%2CE&author=Nochovnaya%2CN&author=Salishchev%2CG)
+
+### Discover content
+
+*   [Journals A-Z](https://link.springer.com/journals/a/1)
+*   [Books A-Z](https://link.springer.com/books/a/1)
+
+### Publish with us
+
+*   [Journal finder](https://link.springer.com/journals)
+*   [Publish your research](https://www.springernature.com/gp/authors)
+*   [Language editing](https://authorservices.springernature.com/go/sn/?utm_source=SNLinkfooter&utm_medium=Web&utm_campaign=SNReferral)
+*   [Open access publishing](https://www.springernature.com/gp/open-science/about/the-fundamentals-of-open-access-and-open-research)
+
+### Products and services
+
+*   [Our products](https://www.springernature.com/gp/products)
+*   [Librarians](https://www.springernature.com/gp/librarians)
+*   [Societies](https://www.springernature.com/gp/societies)
+*   [Partners and advertisers](https://www.springernature.com/gp/partners)
+
+### Our brands
+
+*   [Springer](https://link.springer.com/brands/springer)
+*   [Nature Portfolio](https://www.nature.com/)
+*   [BMC](https://link.springer.com/brands/bmc)
+*   [Palgrave Macmillan](https://link.springer.com/brands/palgrave)
+*   [Apress](https://link.springer.com/brands/apress)
+*   [Discover](https://link.springer.com/brands/discover)
+
+*   Your privacy choices/Manage cookies
+*   [Your US state privacy rights](https://www.springernature.com/gp/legal/ccpa)
+*   [Accessibility statement](https://link.springer.com/accessibility)
+*   [Terms and conditions](https://link.springer.com/termsandconditions)
+*   [Privacy policy](https://link.springer.com/privacystatement)
+*   [Help and support](https://support.springernature.com/en/support/home)
+*   [Legal notice](https://link.springer.com/legal-notice)
+*   [Cancel contracts here](https://support.springernature.com/en/support/solutions/articles/6000255911-subscription-cancellations)
+
+34.96.44.142
+
+Not affiliated
+
+[![Image 37: Springer Nature](https://link.springer.com/oscar-static/images/logo-springernature-white-dbadd2cbd6.svg)](https://www.springernature.com/)
+© 2026 Springer Nature

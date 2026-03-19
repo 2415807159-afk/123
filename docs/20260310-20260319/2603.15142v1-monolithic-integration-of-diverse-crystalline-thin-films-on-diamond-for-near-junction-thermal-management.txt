@@ -1,0 +1,23 @@
+Title: Monolithic integration of diverse crystalline thin films on diamond for near-junction thermal management
+
+URL Source: https://arxiv.org/abs/2603.15142v1
+
+Markdown Content:
+Authors:[Tiancheng Zhao](https://arxiv.org/search/cond-mat?searchtype=author&query=Zhao,+T), [Tianqi Bai](https://arxiv.org/search/cond-mat?searchtype=author&query=Bai,+T), [Yang He](https://arxiv.org/search/cond-mat?searchtype=author&query=He,+Y), [Wenhui Xu](https://arxiv.org/search/cond-mat?searchtype=author&query=Xu,+W), [Xinxin Yu](https://arxiv.org/search/cond-mat?searchtype=author&query=Yu,+X), [Ruochen Shi](https://arxiv.org/search/cond-mat?searchtype=author&query=Shi,+R), [Zhenyu Qu](https://arxiv.org/search/cond-mat?searchtype=author&query=Qu,+Z), [Jiaxin Liu](https://arxiv.org/search/cond-mat?searchtype=author&query=Liu,+J), [Rui Shen](https://arxiv.org/search/cond-mat?searchtype=author&query=Shen,+R), [Haodong Jiang](https://arxiv.org/search/cond-mat?searchtype=author&query=Jiang,+H), [Yeliang Wang](https://arxiv.org/search/cond-mat?searchtype=author&query=Wang,+Y), [Jiaxin Ding](https://arxiv.org/search/cond-mat?searchtype=author&query=Ding,+J), [Dongchen Sui](https://arxiv.org/search/cond-mat?searchtype=author&query=Sui,+D), [Shibin Zhang](https://arxiv.org/search/cond-mat?searchtype=author&query=Zhang,+S), [Lei Zhu](https://arxiv.org/search/cond-mat?searchtype=author&query=Zhu,+L), [Ailun Yi](https://arxiv.org/search/cond-mat?searchtype=author&query=Yi,+A), [Kai Huang](https://arxiv.org/search/cond-mat?searchtype=author&query=Huang,+K), [Min Zhou](https://arxiv.org/search/cond-mat?searchtype=author&query=Zhou,+M), [Huarui Sun](https://arxiv.org/search/cond-mat?searchtype=author&query=Sun,+H), [Zhonghui Li](https://arxiv.org/search/cond-mat?searchtype=author&query=Li,+Z), [Peng Gao](https://arxiv.org/search/cond-mat?searchtype=author&query=Gao,+P), [Tiangui You](https://arxiv.org/search/cond-mat?searchtype=author&query=You,+T), [Xin Ou](https://arxiv.org/search/cond-mat?searchtype=author&query=Ou,+X)
+
+[View PDF](https://arxiv.org/pdf/2603.15142v1)
+
+> Abstract:The pursuit of extreme miniaturization and high power in 6G RF front-ends has cast thermal dissipation as the central challenge. Here, we have demonstrated the monolithic integration of functionally distinct single-crystal thin films, including \b{eta}-Ga2O3, Si, GaN, and LiTaO3, onto a single diamond substrate using a multi-step transfer printing technique. Focusing on the critical \b{eta}-Ga2O3/diamond interface, we achieve an exceptional interfacial thermal conductance (ITC) of 149 MW m-2 K-1 through ultra-high vacuum (UHV) annealing, creating an atomically sharp interface featuring covalent bonding. Vibrational electron energy-loss spectroscopy (EELS) analysis combining with molecular dynamics (MD) simulations reveal that distinctive interfacial phonon modes at the \b{eta}-Ga2O3/diamond heterointerface dominate ultrahigh ITC. We experimentally demonstrate that by improving the ITC, the thermal resistance (Rth) of a diamond-based \b{eta}-Ga2O3 MOSFET is driven to a record-low value of 1.58 K mm W-1, underscoring the critical role of interface engineering in near-junction thermal management for diamond-integrated devices. This work demonstrates a scalable, diamond-based monolithic integration platform designed to solve the near-junction thermal challenges in high-power RF front-ends.
+
+Subjects:Materials Science (cond-mat.mtrl-sci); Applied Physics (physics.app-ph)
+Cite as:[arXiv:2603.15142](https://arxiv.org/abs/2603.15142) [cond-mat.mtrl-sci]
+(or [arXiv:2603.15142v1](https://arxiv.org/abs/2603.15142v1) [cond-mat.mtrl-sci] for this version)
+[https://doi.org/10.48550/arXiv.2603.15142](https://doi.org/10.48550/arXiv.2603.15142)
+
+arXiv-issued DOI via DataCite
+
+## Submission history
+
+From: Wenhui Xu [[view email](https://arxiv.org/show-email/7259bf28/2603.15142)] 
+
+**[v1]** Mon, 16 Mar 2026 11:38:18 UTC (2,735 KB)

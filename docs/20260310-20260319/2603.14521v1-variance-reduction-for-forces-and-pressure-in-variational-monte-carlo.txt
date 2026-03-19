@@ -1,0 +1,222 @@
+Title: Variance reduction for forces and pressure in variational Monte Carlo
+
+URL Source: https://arxiv.org/abs/2603.14521v1
+
+Markdown Content:
+# [2603.14521v1] Variance reduction for forces and pressure in variational Monte Carlo
+
+[Skip to main content](https://arxiv.org/abs/2603.14521v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cond-mat](https://arxiv.org/list/cond-mat/recent)> arXiv:2603.14521v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Condensed Matter > Strongly Correlated Electrons
+
+**arXiv:2603.14521v1** (cond-mat) 
+
+ [Submitted on 15 Mar 2026]
+
+# Title:Variance reduction for forces and pressure in variational Monte Carlo
+
+Authors:[David Linteau](https://arxiv.org/search/cond-mat?searchtype=author&query=Linteau,+D), [Saverio Moroni](https://arxiv.org/search/cond-mat?searchtype=author&query=Moroni,+S), [Giuseppe Carleo](https://arxiv.org/search/cond-mat?searchtype=author&query=Carleo,+G), [Markus Holzmann](https://arxiv.org/search/cond-mat?searchtype=author&query=Holzmann,+M)
+
+View a PDF of the paper titled Variance reduction for forces and pressure in variational Monte Carlo, by David Linteau and 3 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.14521v1)[HTML (experimental)](https://arxiv.org/html/2603.14521v1)
+> Abstract:We present simple and practical strategies to reduce the variance of Monte Carlo estimators. Our focus is on variational Monte Carlo calculations of atomic forces and pressure in electronic systems, although we show that the underlying ideas apply more broadly to other observables, like pair-correlation and angular-distribution functions, and other methods, including molecular dynamics. For Pulay-type contributions, we show that a minor modification based on the Metropolis acceptance ratio softens the power-law divergence of the variance to a logarithmic one, and that inexpensive regularizations can further suppress outliers at the price of a controlled small bias. For Hellmann-Feynman forces, we derive compact variance-reduced estimators for periodic systems that are straightforward to implement in standard Monte Carlo codes. The approach is illustrated for high-pressure metallic hydrogen with more than a hundred atoms described by neural quantum states, including an application to molecular dynamics driven by the improved forces.
+
+Subjects:Strongly Correlated Electrons (cond-mat.str-el); Quantum Physics (quant-ph)
+Cite as:[arXiv:2603.14521](https://arxiv.org/abs/2603.14521) [cond-mat.str-el]
+(or [arXiv:2603.14521v1](https://arxiv.org/abs/2603.14521v1) [cond-mat.str-el] for this version)
+[https://doi.org/10.48550/arXiv.2603.14521](https://doi.org/10.48550/arXiv.2603.14521)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: David Linteau [[view email](https://arxiv.org/show-email/4c4ff9a5/2603.14521)] 
+
+**[v1]** Sun, 15 Mar 2026 17:58:19 UTC (1,861 KB)
+
+[](https://arxiv.org/abs/2603.14521v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Variance reduction for forces and pressure in variational Monte Carlo, by David Linteau and 3 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.14521v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.14521v1)
+*   [TeX Source](https://arxiv.org/src/2603.14521v1)
+
+[view license](http://arxiv.org/licenses/nonexclusive-distrib/1.0/ "Rights to this article")
+
+ Current browse context: 
+
+cond-mat.str-el
+
+[<prev](https://arxiv.org/prevnext?id=2603.14521&function=prev&context=cond-mat.str-el "previous in cond-mat.str-el (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.14521&function=next&context=cond-mat.str-el "next in cond-mat.str-el (accesskey n)")
+
+[new](https://arxiv.org/list/cond-mat.str-el/new) | [recent](https://arxiv.org/list/cond-mat.str-el/recent) | [2026-03](https://arxiv.org/list/cond-mat.str-el/2026-03)
+
+ Change to browse by: 
+
+[cond-mat](https://arxiv.org/abs/2603.14521?context=cond-mat)
+
+[quant-ph](https://arxiv.org/abs/2603.14521?context=quant-ph)
+
+### References & Citations
+
+*   [INSPIRE HEP](https://inspirehep.net/arxiv/2603.14521)
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.14521)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.14521)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.14521)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.14521v1)
+
+### Bookmark
+
+[![Image 5: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.14521&description=Variance%20reduction%20for%20forces%20and%20pressure%20in%20variational%20Monte%20Carlo "Bookmark on BibSonomy")[![Image 6: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.14521&title=Variance%20reduction%20for%20forces%20and%20pressure%20in%20variational%20Monte%20Carlo "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+- [x] IArxiv recommender toggle 
+
+IArxiv Recommender _([What is IArxiv?](https://iarxiv.org/about))_
+
+*   [Author](https://arxiv.org/abs/2603.14521v1)
+*   [Venue](https://arxiv.org/abs/2603.14521v1)
+*   [Institution](https://arxiv.org/abs/2603.14521v1)
+*   [Topic](https://arxiv.org/abs/2603.14521v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.14521) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

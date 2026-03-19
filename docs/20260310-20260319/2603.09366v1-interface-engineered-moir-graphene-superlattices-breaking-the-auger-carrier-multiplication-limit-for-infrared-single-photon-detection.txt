@@ -1,0 +1,26 @@
+Title: Interface Engineered Moiré Graphene Superlattices: Breaking the Auger Carrier Multiplication Limit for Infrared Single-Photon Detection
+
+URL Source: https://arxiv.org/abs/2603.09366v1
+
+Published Time: Wed, 11 Mar 2026 00:43:33 GMT
+
+Markdown Content:
+Authors:[Sichao Du](https://arxiv.org/search/physics?searchtype=author&query=Du,+S), [Ning Li](https://arxiv.org/search/physics?searchtype=author&query=Li,+N), [Zhufeng Pan](https://arxiv.org/search/physics?searchtype=author&query=Pan,+Z), [Munir Ali](https://arxiv.org/search/physics?searchtype=author&query=Ali,+M), [Hengrui Zhang](https://arxiv.org/search/physics?searchtype=author&query=Zhang,+H), [Duokai Chang](https://arxiv.org/search/physics?searchtype=author&query=Chang,+D), [Yuehang Zhang](https://arxiv.org/search/physics?searchtype=author&query=Zhang,+Y), [Qiang Wen](https://arxiv.org/search/physics?searchtype=author&query=Wen,+Q), [Shuo Zhang](https://arxiv.org/search/physics?searchtype=author&query=Zhang,+S), [Hao Wu](https://arxiv.org/search/physics?searchtype=author&query=Wu,+H), [Yunlei Sun](https://arxiv.org/search/physics?searchtype=author&query=Sun,+Y), [Qiuting Wang](https://arxiv.org/search/physics?searchtype=author&query=Wang,+Q), [Hao Xie](https://arxiv.org/search/physics?searchtype=author&query=Xie,+H), [Chaohao Chen](https://arxiv.org/search/physics?searchtype=author&query=Chen,+C), [Zhenyi Ni](https://arxiv.org/search/physics?searchtype=author&query=Ni,+Z), [Qiangbing Guo](https://arxiv.org/search/physics?searchtype=author&query=Guo,+Q), [Duo Xiao](https://arxiv.org/search/physics?searchtype=author&query=Xiao,+D), [Wen-Yan Yin](https://arxiv.org/search/physics?searchtype=author&query=Yin,+W)
+
+[View PDF](https://arxiv.org/pdf/2603.09366v1)
+
+> Abstract:Hot electrons undergo Auger scattering during their relaxation process has a multiplication effect,which can generate more electrons above the Fermi level, thus improving the efficiency of photoelectric signal [this http URL](http://conversion.however/),the photo-current gain brought by the Auger carrier multiplication is generally limited with a value less than 5,due to the rapid recombination of photo-generated charge-carriers and the inherently low light absorption of two-dimensional [this http URL](http://materials.herein/),by twisting graphene to an interlayer angle of 10<sub>o</sub>,we report a layer-dependent electronic correlations leading to an efficient carrier multiplication gain of 10<sup>3</sup>.This is primarily offered by the additional localized density-of-states at interface of the bi-layer 10<sub>o</sub>,moire graphene,and the enhanced interlayer coupling of electron waves in a five-layer moire graphene superlattice [this http URL](http://structure.therefore/),we can harvest the hot electrons during their energy relaxation through a thermalized optical phonon bottleneck [this http URL](http://effect.it/)is this effect that promotes the accumulated hot electrons to achieve a maximum Auger scattering rate ~ 10<sup>10</sup>*ps<sup>-1</sup>*cm<sup>-2</sup>.Furthermore,the ballistic transport of these hot electrons and Schottky barrier from a 90 nm thick silicon-on-insulator (SOI) silicon effectively block the thermal noise,thus leading to a highly sensitive near-infrared detection [this http URL](http://characteristic.at/)a low incident light power of ~ 10<sup>-13</sup>W/cm<sup>2</sup>,the resulting signal-to-noise ratio is more than 100 [this http URL](http://db.the/)strengthened electromagnetic interaction from highly thermalized optical phonon in stacked moire graphene is utilized in this [this http URL](http://work.the/)hot electron multiplication suggests the applicability of Van der Waals moire superlattice architecture for harvesting charge carriers,thus paving the pathway to design infrared single-photon avalanche detectors.
+
+Comments:15pages,4figures
+Subjects:Applied Physics (physics.app-ph)
+Cite as:[arXiv:2603.09366](https://arxiv.org/abs/2603.09366) [physics.app-ph]
+(or [arXiv:2603.09366v1](https://arxiv.org/abs/2603.09366v1) [physics.app-ph] for this version)
+[https://doi.org/10.48550/arXiv.2603.09366](https://doi.org/10.48550/arXiv.2603.09366)
+
+arXiv-issued DOI via DataCite
+
+## Submission history
+
+From: Sichao Du [[view email](https://arxiv.org/show-email/c554ec92/2603.09366)] 
+
+**[v1]** Tue, 10 Mar 2026 08:44:48 UTC (3,087 KB)

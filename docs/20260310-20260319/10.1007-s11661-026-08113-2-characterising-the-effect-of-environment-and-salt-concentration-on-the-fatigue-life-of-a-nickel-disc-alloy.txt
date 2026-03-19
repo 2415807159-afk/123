@@ -1,0 +1,606 @@
+Title: Characterising the Effect of Environment and Salt Concentration on the Fatigue Life of a Nickel Disc Alloy
+
+URL Source: https://link.springer.com/10.1007/s11661-026-08113-2
+
+Markdown Content:
+# Characterising the Effect of Environment and Salt Concentration on the Fatigue Life of a Nickel Disc Alloy | Metallurgical and Materials Transactions A | Springer Nature Link
+
+## Your privacy, your choice
+
+We use essential cookies to make sure the site can function. We also use optional cookies for advertising, personalisation of content, usage analysis, and social media, as well as to allow video information to be shared for both marketing, analytics and editorial purposes.
+
+By accepting optional cookies, you consent to the processing of your personal data - including transfers to third parties. Some third parties are outside of the European Economic Area, with varying standards of data protection.
+
+See our [privacy policy](https://link.springer.com/privacystatement) for more information on the use of your personal data.
+
+Manage preferences for further information and to change your choices.
+
+Accept all cookies Reject optional cookies
+
+[Skip to main content](https://link.springer.com/10.1007/s11661-026-08113-2#main)
+
+Advertisement
+
+[![Image 1: Springer Nature Link](https://link.springer.com/oscar-static/images/darwin/header/img/logo-springer-nature-link-05805fde18.svg)](https://link.springer.com/)
+
+[Log in](https://idp.springer.com/auth/personal/springernature?redirect_uri=https://link.springer.com/article/10.1007/s11661-026-08113-2)
+
+[Menu](javascript:;)
+
+[Find a journal](https://link.springer.com/journals/)[Publish with us](https://www.springernature.com/gp/authors)[Track your research](https://link.springernature.com/home/)
+
+[Search](javascript:;)
+
+[Saved research](https://link.springer.com/saved-research)
+
+[Cart](https://order.springer.com/public/cart)
+
+## Search
+
+Search by keyword or author 
+
+Search
+
+## Navigation
+
+*   [Find a journal](https://link.springer.com/journals/)
+*   [Publish with us](https://www.springernature.com/gp/authors)
+*   [Track your research](https://link.springernature.com/home/)
+
+1.   [Home](https://link.springer.com/)
+2.   [Metallurgical and Materials Transactions A](https://link.springer.com/journal/11661)
+3.   Article
+
+# Characterising the Effect of Environment and Salt Concentration on the Fatigue Life of a Nickel Disc Alloy
+
+*   Topical Collection: EuroSuperalloys 2026 
+*    Published: 14 March 2026
+
+*    (2026) 
+*   [Cite this article](https://link.springer.com/10.1007/s11661-026-08113-2#citeas)
+
+[Save article](https://link.springer.com/article/10.1007/s11661-026-08113-2/save-research?_csrf=3jeUXflu4vN7bSMx6_CGQmT66kcMILTs)
+
+[View saved research](https://link.springer.com/saved-research)
+
+[![Image 2](https://media.springernature.com/w72/springer-static/cover-hires/journal/11661?as=webp)Metallurgical and Materials Transactions A](https://link.springer.com/journal/11661)[Aims and scope](https://link.springer.com/journal/11661/aims-and-scope)[Submit manuscript](https://mmta.msubmit.net/)
+
+*   [M. C. Hardy](https://link.springer.com/10.1007/s11661-026-08113-2#auth-M__C_-Hardy-Aff1)[1](https://link.springer.com/10.1007/s11661-026-08113-2#Aff1), 
+*   [Y. Li](https://link.springer.com/10.1007/s11661-026-08113-2#auth-Y_-Li-Aff2)[2](https://link.springer.com/10.1007/s11661-026-08113-2#Aff2), 
+*   [C. Rodenkirchen](https://link.springer.com/10.1007/s11661-026-08113-2#auth-C_-Rodenkirchen-Aff3)[3](https://link.springer.com/10.1007/s11661-026-08113-2#Aff3), 
+*   [S. Gray](https://link.springer.com/10.1007/s11661-026-08113-2#auth-S_-Gray-Aff4)[4](https://link.springer.com/10.1007/s11661-026-08113-2#Aff4), 
+*   [C. Jackson](https://link.springer.com/10.1007/s11661-026-08113-2#auth-C_-Jackson-Aff1)[1](https://link.springer.com/10.1007/s11661-026-08113-2#Aff1), 
+*   [P. M. Mignanelli](https://link.springer.com/10.1007/s11661-026-08113-2#auth-P__M_-Mignanelli-Aff1)[1](https://link.springer.com/10.1007/s11661-026-08113-2#Aff1), 
+*   [H. Cockings](https://link.springer.com/10.1007/s11661-026-08113-2#auth-H_-Cockings-Aff5)[5](https://link.springer.com/10.1007/s11661-026-08113-2#Aff5), 
+*   [H. Davies](https://link.springer.com/10.1007/s11661-026-08113-2#auth-H_-Davies-Aff2)[2](https://link.springer.com/10.1007/s11661-026-08113-2#Aff2)&
+*   …
+*   [S. Pedrazzini](https://link.springer.com/10.1007/s11661-026-08113-2#auth-S_-Pedrazzini-Aff3)[3](https://link.springer.com/10.1007/s11661-026-08113-2#Aff3)
+
+Show authors
+
+*   16 Accesses
+
+*   [Explore all metrics](https://link.springer.com/article/10.1007/s11661-026-08113-2/metrics)
+
+## Abstract
+
+This paper characterises fatigue behaviour of alloy RR1073 at 700°C in air, and in air containing SO 2, with deposits of a Na 2 SO 4, or a NaCl-based salt. Such understanding is necessary as these compounds are ingested in aircraft engines and can be deposited onto disc rim surfaces. Fatigue tests were conducted on round bar test pieces using fully reversed, saw-tooth fatigue cycles. Preliminary tests found that a 3 seconds cycle ramp time from minimum to maximum load produced very similar corrosion-fatigue morphology to that observed for ex-service discs, from conditions of 300 ppm SO 2 in air with 0.13 mg/cm 2 of 98 pct Na 2 SO 4 and 2 pct NaCl salt. Subsequent fatigue tests were conducted with different corrosion conditions in terms of SO 2, salt composition and concentration. Fatigue lives that were approximately 30 pct of those in air were produced if a sufficient supply of SO 3 was present with a Na-based salt. This was achieved with (i) SO 2 and a Na 2 SO 4 or a NaCl-based salt, and (ii) without SO 2 but with high levels of a Na 2 SO 4-based salt. Electron microscopy showed subtle differences in surface damage from (i) to (ii). Damage evolution is reported from interrupting tests at fractions of the fatigue life.
+
+This is a preview of subscription content, [log in via an institution](https://wayf.springernature.com/?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11661-026-08113-2) to check access.
+
+## Access this article
+
+[Log in via an institution](https://wayf.springernature.com/?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11661-026-08113-2)
+
+## Subscribe and save
+
+Springer+
+
+from $39.99 /Month
+
+*   Starting from 10 chapters or articles per month
+*   Access and download chapters and articles from more than 300k books and 2,500 journals
+*   Cancel anytime
+
+[View plans](https://link.springer.com/product/springer-plus)
+
+## Buy Now
+
+Buy article PDF USD 39.95
+
+Price excludes VAT (USA) 
+
+ Tax calculation will be finalised during checkout.
+
+Instant access to the full article PDF.
+
+[Institutional subscriptions](https://www.springernature.com/gp/librarians/licensing/agc/journals)
+
+**Fig. 1**
+
+![Image 3: extended data figure 1](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig1_HTML.jpg)
+
+**Fig. 2**
+
+![Image 4: extended data figure 2](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig2_HTML.png)
+
+**Fig. 3**
+
+![Image 5: extended data figure 3](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig3_HTML.png)
+
+**Fig. 4**
+
+![Image 6: extended data figure 4](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig4_HTML.png)
+
+**Fig. 5**
+
+![Image 7: extended data figure 5](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig5_HTML.png)
+
+**Fig. 6**
+
+![Image 8: extended data figure 6](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig6_HTML.png)
+
+**Fig. 7**
+
+![Image 9: extended data figure 7](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig7_HTML.png)
+
+**Fig. 8**
+
+![Image 10: extended data figure 8](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig8_HTML.jpg)
+
+**Fig. 9**
+
+![Image 11: extended data figure 9](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig9_HTML.jpg)
+
+**Fig. 10**
+
+![Image 12: extended data figure 10](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig10_HTML.jpg)
+
+**Fig. 11**
+
+![Image 13: extended data figure 11](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig11_HTML.jpg)
+
+**Fig. 12**
+
+![Image 14: extended data figure 12](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig12_HTML.png)
+
+### Similar content being viewed by others
+
+![Image 15](https://media.springernature.com/w215h120/springer-static/image/art%3A10.1007%2Fs11837-024-06509-2/MediaObjects/11837_2024_6509_Fig1_HTML.png)
+
+### [Effect and Role of NaCl in Na 2 SO 4 Deposits on the 900°C Hot Corrosion of a 2nd-Generation Ni-based Superalloy](https://link.springer.com/10.1007/s11837-024-06509-2?fromPaywallRec=true)
+
+Article 15 April 2024
+
+![Image 16](https://media.springernature.com/w215h120/springer-static/image/art%3A10.1007%2Fs11223-022-00356-9/MediaObjects/11223_2022_356_Fig1_HTML.jpg)
+
+### [Efficiency of Protection Methods Against Corrosion-Fatigue Damage of D16T Aluminum Alloy](https://link.springer.com/10.1007/s11223-022-00356-9?fromPaywallRec=true)
+
+Article 01 November 2021
+
+![Image 17](https://media.springernature.com/w92h120/springer-static/cover-hires/book/978-3-030-51834-9?as=webp)
+
+### [The Influence of Hot Corrosion Damage on the Low Cycle Fatigue Fracture Modes of a Disk Superalloy](https://link.springer.com/10.1007/978-3-030-51834-9_82?fromPaywallRec=true)
+
+Chapter© 2020
+
+### Explore related subjects
+
+Discover the latest articles, books and news in related subjects, suggested using machine learning.
+*   [Corrosion](https://link.springer.com/subjects/corrosion)
+*   [Materials Fatigue](https://link.springer.com/subjects/materials-fatigue)
+*   [Metals and Alloys](https://link.springer.com/subjects/metals-and-alloys)
+*   [Metal Ions](https://link.springer.com/subjects/metal-ions)
+*   [Salt](https://link.springer.com/subjects/salt)
+*   [Tribology](https://link.springer.com/subjects/tribology)
+
+## References
+
+1.   M.C. Hardy, C. Argyrakis, H.S. Kitaguchi, A.S. Wilson, R.C. Buckingham, K. Severs, S. Yu, C. Jackson, E.J. Pickering, S.C.H. Llewelyn, C. Papadaki, K.A. Christofidou, P.M. Mignanelli, A. Evans, D.J. Child, H.Y. Li, N.G. Jones, C.M.F. Rae, P. Bowen, and H.J. Stone: _Superalloys 2020_, The Minerals, Metals & Materials Series, eds. S. Tin, M. Hardy, J. Clews, J. Cormier, Q. Feng, J. Marcin, C. O'Brien, and A. Suzuki, The Minerals, Metals & Materials Society, Warrendale, pp. 19–30. [https://doi.org/10.1007/978-3-030-51834-9_2](https://doi.org/10.1007/978-3-030-51834-9_2).
+
+2.   M.C. Hardy, R.C. Buckingham, K. Severs, B. Cockings, J. McCarley, K. Ho, C. Argyrakis, and S. Tin: _Metall. Mater. Trans. A_, 2023, vol. 54A(5), pp. 2112–26. [https://doi.org/10.1007/s11661-022-06943-4](https://doi.org/10.1007/s11661-022-06943-4).
+
+[Article](https://link.springer.com/doi/10.1007/s11661-022-06943-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhs1ymtrY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-022-06943-4&volume=54A&issue=5&pages=2112-2126&publication_year=2023&author=Hardy%2CMC&author=Buckingham%2CRC&author=Severs%2CK&author=Cockings%2CB&author=McCarley%2CJ&author=Ho%2CK&author=Argyrakis%2CC&author=Tin%2CS)
+
+3.   N. Birks, G.H. Meier, and F.S. Pettit: _Introduction to the High Temperature Oxidation of Metals_, 2nd ed. Cambridge University Press, Cambridge, 2006, p. 205. [https://doi.org/10.1017/CBO9781139163903](https://doi.org/10.1017/CBO9781139163903).
+
+[Book](https://doi.org/10.1017%2FCBO9781139163903)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Introduction%20to%20the%20High%20Temperature%20Oxidation%20of%20Metals&doi=10.1017%2FCBO9781139163903&publication_year=2006&author=Birks%2CN&author=Meier%2CGH&author=Pettit%2CFS)
+
+4.   K.L. Luthra and D.A. Shores: _J. Electrochem. Soc._, 1980, vol. 127, pp. 2202–10. [https://doi.org/10.1149/1.2129375](https://doi.org/10.1149/1.2129375).
+
+[Article](https://doi.org/10.1149%2F1.2129375)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaL3MXmvVKn)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Electrochem.%20Soc.&doi=10.1149%2F1.2129375&volume=127&pages=2202-2210&publication_year=1980&author=Luthra%2CKL&author=Shores%2CDA)
+
+5.   G.A. Whitlow, J.M. Allen, and E.A. Crombie: _15th International Congress on Combustion Engines_, Paris, France, CIMAC, France, 1983, pp. 559–78.
+
+6.   T.P. Gabb, J. Telesman, B. Hazel, and D.P. Mourer: _J. Mater. Eng. Perform._, 2010, vol. 19(1), pp. 77–89. [https://doi.org/10.1007/s11665-009-9399-5](https://doi.org/10.1007/s11665-009-9399-5).
+
+[Article](https://link.springer.com/doi/10.1007/s11665-009-9399-5)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3cXmt1ejsg%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Eng.%20Perform.&doi=10.1007%2Fs11665-009-9399-5&volume=19&issue=1&pages=77-89&publication_year=2010&author=Gabb%2CTP&author=Telesman%2CJ&author=Hazel%2CB&author=Mourer%2CDP)
+
+7.   H. Rosier, K. Perkins, A. Girling, J. Leggett, and G. Gibson: _MATEC Web Conf._, 2014, vol. 14, p. 03001. [https://doi.org/10.1051/matecconf/20141403001](https://doi.org/10.1051/matecconf/20141403001).
+
+[Article](https://doi.org/10.1051%2Fmatecconf%2F20141403001)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=MATEC%20Web%20Conf.&doi=10.1051%2Fmatecconf%2F20141403001&volume=14&publication_year=2014&author=Rosier%2CH&author=Perkins%2CK&author=Girling%2CA&author=Leggett%2CJ&author=Gibson%2CG)
+
+8.   G.J. Gibson, K.M. Perkins, S. Gray, and A.J. Leggett: _Mater. High Temp._, 2016, vol. 33(3), pp. 225–35. [https://doi.org/10.1080/09603409.2016.1161945](https://doi.org/10.1080/09603409.2016.1161945).
+
+[Article](https://doi.org/10.1080%2F09603409.2016.1161945)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XnvFKms7g%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20High%20Temp.&doi=10.1080%2F09603409.2016.1161945&volume=33&issue=3&pages=225-235&publication_year=2016&author=Gibson%2CGJ&author=Perkins%2CKM&author=Gray%2CS&author=Leggett%2CAJ)
+
+9.   J. Nesbitt and S. Draper: _Mater. High Temp._, 2016, vol. 33(4 & 5), pp. 501–16. [https://doi.org/10.1080/09603409.2016.1174476](https://doi.org/10.1080/09603409.2016.1174476).
+
+[Article](https://doi.org/10.1080%2F09603409.2016.1174476)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XnvFKgur0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20High%20Temp.&doi=10.1080%2F09603409.2016.1174476&volume=33&issue=4%20%26%205&pages=501-516&publication_year=2016&author=Nesbitt%2CJ&author=Draper%2CS)
+
+10.   D.J. Child, J. Meldrum, and P. Onwuarolu: _Mater. Sci. Technol._, 2017, vol. 33(9), pp. 1040–47. [https://doi.org/10.1080/02670836.2016.1242827](https://doi.org/10.1080/02670836.2016.1242827).
+
+[Article](https://doi.org/10.1080%2F02670836.2016.1242827)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XhslGitrnI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Technol.&doi=10.1080%2F02670836.2016.1242827&volume=33&issue=9&pages=1040-1047&publication_year=2017&author=Child%2CDJ&author=Meldrum%2CJ&author=Onwuarolu%2CP)
+
+11.   H.L. Cockings, K.M. Perkins, and M. Dowd: _Mater. Sci. Technol._, 2017, vol. 33(9), pp. 1048–55. [https://doi.org/10.1080/02670836.2017.1300419](https://doi.org/10.1080/02670836.2017.1300419).
+
+[Article](https://doi.org/10.1080%2F02670836.2017.1300419)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXkvVSmsL8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Technol.&doi=10.1080%2F02670836.2017.1300419&volume=33&issue=9&pages=1048-1055&publication_year=2017&author=Cockings%2CHL&author=Perkins%2CKM&author=Dowd%2CM)
+
+12.   H.L. Cockings, B.J. Cockings, W. Harrison, M. Dowd, K.M. Perkins, M.T. Whittaker, and G.J. Gibson: _J. Alloys Compd._, 2020, vol. 832, p. 154889. [https://doi.org/10.1016/j.jallcom.2020.154889](https://doi.org/10.1016/j.jallcom.2020.154889).
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2020.154889)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXntFGgsL8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2020.154889&volume=832&publication_year=2020&author=Cockings%2CHL&author=Cockings%2CBJ&author=Harrison%2CW&author=Dowd%2CM&author=Perkins%2CKM&author=Whittaker%2CMT&author=Gibson%2CGJ)
+
+13.   M.L. Hendery, M.T. Whittaker, B.J. Cockings, and P.M. Mignanelli: _Corros. Sci._, 2022, vol. 198, p. 110113. [https://doi.org/10.1016/j.corsci.2022.110113](https://doi.org/10.1016/j.corsci.2022.110113).
+
+[Article](https://doi.org/10.1016%2Fj.corsci.2022.110113)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisFOrt7o%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Corros.%20Sci.&doi=10.1016%2Fj.corsci.2022.110113&volume=198&publication_year=2022&author=Hendery%2CML&author=Whittaker%2CMT&author=Cockings%2CBJ&author=Mignanelli%2CPM)
+
+14.   Y. Li, H. Cockings, P.M. Mignanelli, M. Whittaker, B.J. Cockings, R. Buckingham, and M.R. Bache: _Corros. Sci._, 2022, vol. 207, p. 110577. [https://doi.org/10.1016/j.corsci.2022.110577](https://doi.org/10.1016/j.corsci.2022.110577).
+
+[Article](https://doi.org/10.1016%2Fj.corsci.2022.110577)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XitFGht7rF)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Corros.%20Sci.&doi=10.1016%2Fj.corsci.2022.110577&volume=207&publication_year=2022&author=Li%2CY&author=Cockings%2CH&author=Mignanelli%2CPM&author=Whittaker%2CM&author=Cockings%2CBJ&author=Buckingham%2CR&author=Bache%2CMR)
+
+15.   Y. Li, H. Davies, M. Hardy, C. Jackson, and M. Whittaker: _Materials_, 2025, vol. 18, p. 3819. [https://doi.org/10.3390/ma18163819](https://doi.org/10.3390/ma18163819).
+
+[Article](https://doi.org/10.3390%2Fma18163819)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXitFOhsr7F)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=40870138)[PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC12387134)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Materials&doi=10.3390%2Fma18163819&volume=18&publication_year=2025&author=Li%2CY&author=Davies%2CH&author=Hardy%2CM&author=Jackson%2CC&author=Whittaker%2CM)
+
+16.   Hardy, et al.: United States Patent US 10,266,919B2, 23 April, 2019.
+
+17.   British Standards Institution (BSI): _BS 3900-F4: 1968_, _Methods of Test for Paints, Part 4: Resistance to Continuous Sea Salt_. BSI, 1968. ISBN 978 0 580 73245 4.
+
+18.   K.J. Bockenstedt, C.M. O’Brien, R.S. Minisandram, G.J. Smith, and D.J Bryant: _Superalloys 2016_, eds. M. Hardy, E. Huron, U. Glatzel, B. Griffin, B. Lewis, C. Rae, V. Seetharaman, and S. Tin, The Minerals, Metals & Materials Society, Warrendale, pp. 479–86. [https://doi.org/10.1002/9781119075646](https://doi.org/10.1002/9781119075646).
+
+19.   H.S. Kitaguchi, L. Small, I.P. Jones, Y.L. Chiu, M.C. Hardy, and P. Bowen: _Mater. Charact._, 2024, vol. 209, p. 113721. [https://doi.org/10.1016/j.matchar.2024.113721](https://doi.org/10.1016/j.matchar.2024.113721).
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2024.113721)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXivFWhs70%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Charact.&doi=10.1016%2Fj.matchar.2024.113721&volume=209&publication_year=2024&author=Kitaguchi%2CHS&author=Small%2CL&author=Jones%2CIP&author=Chiu%2CYL&author=Hardy%2CMC&author=Bowen%2CP)
+
+20.   O.M.D.M. Messé, S. Stekovic, M.C. Hardy, and C.M.F. Rae: _JOM_, 2014, vol. 66(2), pp. 2502–15. [https://doi.org/10.1007/s11837-014-1184-8](https://doi.org/10.1007/s11837-014-1184-8).
+
+[Article](https://link.springer.com/doi/10.1007/s11837-014-1184-8)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXhvVyitrnN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-014-1184-8&volume=66&issue=2&pages=2502-2515&publication_year=2014&author=Mess%C3%A9%2COMDM&author=Stekovic%2CS&author=Hardy%2CMC&author=Rae%2CCMF)
+
+21.   D.J. Ashby: PhD Thesis, Cranfield University, 2016.
+
+22.   D.W. McKee, D.A. Shores, and K.L. Luthra: _J. Electrochem. Soc._, 1978, vol. 125, pp. 411–19.
+
+[Article](https://doi.org/10.1149%2F1.2131463)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaE1cXltFKhur0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Electrochem.%20Soc.&doi=10.1149%2F1.2131463&volume=125&pages=411-419&publication_year=1978&author=McKee%2CDW&author=Shores%2CDA&author=Luthra%2CKL)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08113-2?format=refman&flavour=references)
+
+## Acknowledgments
+
+This work was supported by Rolls-Royce plc and Innovate-UK (Aerospace Technology Institute) via the CRUISE Project, Grant #113258. The authors would like to thank Rolls-Royce for permission to publish this manuscript and their respective organisation for providing materials and facilities.
+
+### Conflict of interest
+
+On behalf of all authors, the corresponding author states that there is no conflict of interest.
+
+## Author information
+
+### Authors and Affiliations
+
+1.   Rolls-Royce plc, Derby, UK
+
+M. C. Hardy,C. Jackson&P. M. Mignanelli
+
+2.   Swansea University, Swansea, UK
+
+Y. Li&H. Davies
+
+3.   Imperial College London, London, UK
+
+C. Rodenkirchen&S. Pedrazzini
+
+4.   Cranfield University, Cranfield, Bedfordshire, UK
+
+S. Gray
+
+5.   Fraser-Nash Consultancy, Bristol, UK
+
+H. Cockings
+
+Authors
+1.   M. C. Hardy[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=M.%20C.%20Hardy) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=M.%20C.%20Hardy)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22M.%20C.%20Hardy%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+2.   Y. Li[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=Y.%20Li) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Y.%20Li)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Y.%20Li%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+3.   C. Rodenkirchen[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=C.%20Rodenkirchen) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=C.%20Rodenkirchen)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22C.%20Rodenkirchen%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+4.   S. Gray[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=S.%20Gray) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=S.%20Gray)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22S.%20Gray%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+5.   C. Jackson[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=C.%20Jackson) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=C.%20Jackson)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22C.%20Jackson%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+6.   P. M. Mignanelli[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=P.%20M.%20Mignanelli) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=P.%20M.%20Mignanelli)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22P.%20M.%20Mignanelli%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+7.   H. Cockings[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=H.%20Cockings) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=H.%20Cockings)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22H.%20Cockings%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+8.   H. Davies[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=H.%20Davies) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=H.%20Davies)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22H.%20Davies%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+9.   S. Pedrazzini[View author publications](https://link.springer.com/search?sortBy=newestFirst&contributor=S.%20Pedrazzini) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=S.%20Pedrazzini)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22S.%20Pedrazzini%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+
+### Corresponding author
+
+Correspondence to [M. C. Hardy](mailto:mark.hardy@rolls-royce.com).
+
+## Additional information
+
+### Publisher's Note
+
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+## Rights and permissions
+
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is solely governed by the terms of such publishing agreement and applicable law.
+
+[Reprints and permissions](https://s100.copyright.com/AppDispatchServlet?title=Characterising%20the%20Effect%20of%20Environment%20and%20Salt%20Concentration%20on%20the%20Fatigue%20Life%20of%20a%20Nickel%20Disc%20Alloy&author=M.%20C.%20Hardy%20et%20al&contentID=10.1007%2Fs11661-026-08113-2&copyright=Rolls-Royce%20plc&publication=1073-5623&publicationDate=2026-03-14&publisherName=SpringerNature&orderBeanReset=true)
+
+## About this article
+
+[![Image 18: Check for updates. Verify currency and authenticity via CrossMark](blob:http://localhost/df43c82f6cb6dcd2a87db38f317bf9f2)](https://crossmark.crossref.org/dialog/?doi=10.1007/s11661-026-08113-2)
+
+### Cite this article
+
+Hardy, M.C., Li, Y., Rodenkirchen, C. _et al._ Characterising the Effect of Environment and Salt Concentration on the Fatigue Life of a Nickel Disc Alloy. _Metall Mater Trans A_ (2026). https://doi.org/10.1007/s11661-026-08113-2
+
+[Download citation](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08113-2?format=refman&flavour=citation)
+
+*   Received: 30 September 2025
+
+*   Accepted: 30 December 2025
+
+*   Published: 14 March 2026
+
+*   Version of record: 14 March 2026
+
+*   DOI: https://doi.org/10.1007/s11661-026-08113-2
+
+### Share this article
+
+Anyone you share the following link with will be able to read this content:
+
+Get shareable link
+
+Sorry, a shareable link is not currently available for this article.
+
+Copy shareable link to clipboard
+
+Provided by the Springer Nature SharedIt content-sharing initiative
+
+## Associated Content
+
+Part of a collection:
+
+### [Fifth European Symposium on Superalloys and their Applications](https://link.springer.com/collections/fadehgajgf)
+
+## Access this article
+
+[Log in via an institution](https://wayf.springernature.com/?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11661-026-08113-2)
+
+## Subscribe and save
+
+Springer+
+
+from $39.99 /Month
+
+*   Starting from 10 chapters or articles per month
+*   Access and download chapters and articles from more than 300k books and 2,500 journals
+*   Cancel anytime
+
+[View plans](https://link.springer.com/product/springer-plus)
+
+## Buy Now
+
+Buy article PDF USD 39.95
+
+Price excludes VAT (USA) 
+
+ Tax calculation will be finalised during checkout.
+
+Instant access to the full article PDF.
+
+[Institutional subscriptions](https://www.springernature.com/gp/librarians/licensing/agc/journals)
+
+*   Sections
+*   Figures
+*   References
+
+*   [Abstract](https://link.springer.com/10.1007/s11661-026-08113-2#Abs1)
+*   [References](https://link.springer.com/10.1007/s11661-026-08113-2#Bib1)
+*   [Acknowledgments](https://link.springer.com/10.1007/s11661-026-08113-2#Ack1)
+*   [Author information](https://link.springer.com/10.1007/s11661-026-08113-2#author-information)
+*   [Additional information](https://link.springer.com/10.1007/s11661-026-08113-2#additional-information)
+*   [Rights and permissions](https://link.springer.com/10.1007/s11661-026-08113-2#rightslink)
+*   [About this article](https://link.springer.com/10.1007/s11661-026-08113-2#article-info)
+
+Advertisement
+
+*   
+**Fig. 1**
+
+![Image 19: extended data figure 1](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig1_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig1)
+
+*   
+**Fig. 2**
+
+![Image 20: extended data figure 2](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig2_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig2)
+
+*   
+**Fig. 3**
+
+![Image 21: extended data figure 3](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig3_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig3)
+
+*   
+**Fig. 4**
+
+![Image 22: extended data figure 4](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig4_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig4)
+
+*   
+**Fig. 5**
+
+![Image 23: extended data figure 5](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig5_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig5)
+
+*   
+**Fig. 6**
+
+![Image 24: extended data figure 6](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig6_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig6)
+
+*   
+**Fig. 7**
+
+![Image 25: extended data figure 7](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig7_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig7)
+
+*   
+**Fig. 8**
+
+![Image 26: extended data figure 8](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig8_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig8)
+
+*   
+**Fig. 9**
+
+![Image 27: extended data figure 9](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig9_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig9)
+
+*   
+**Fig. 10**
+
+![Image 28: extended data figure 10](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig10_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig10)
+
+*   
+**Fig. 11**
+
+![Image 29: extended data figure 11](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig11_HTML.jpg)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig11)
+
+*   
+**Fig. 12**
+
+![Image 30: extended data figure 12](https://media.springernature.com/m312/springer-static/image/art%3A10.1007%2Fs11661-026-08113-2/MediaObjects/11661_2026_8113_Fig12_HTML.png)
+[View in article](https://link.springer.com/10.1007/s11661-026-08113-2#Fig12)
+
+1.   M.C. Hardy, C. Argyrakis, H.S. Kitaguchi, A.S. Wilson, R.C. Buckingham, K. Severs, S. Yu, C. Jackson, E.J. Pickering, S.C.H. Llewelyn, C. Papadaki, K.A. Christofidou, P.M. Mignanelli, A. Evans, D.J. Child, H.Y. Li, N.G. Jones, C.M.F. Rae, P. Bowen, and H.J. Stone: _Superalloys 2020_, The Minerals, Metals & Materials Series, eds. S. Tin, M. Hardy, J. Clews, J. Cormier, Q. Feng, J. Marcin, C. O'Brien, and A. Suzuki, The Minerals, Metals & Materials Society, Warrendale, pp. 19–30. [https://doi.org/10.1007/978-3-030-51834-9_2](https://doi.org/10.1007/978-3-030-51834-9_2).
+
+2.   M.C. Hardy, R.C. Buckingham, K. Severs, B. Cockings, J. McCarley, K. Ho, C. Argyrakis, and S. Tin: _Metall. Mater. Trans. A_, 2023, vol. 54A(5), pp. 2112–26. [https://doi.org/10.1007/s11661-022-06943-4](https://doi.org/10.1007/s11661-022-06943-4).
+
+[Article](https://link.springer.com/doi/10.1007/s11661-022-06943-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhs1ymtrY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-022-06943-4&volume=54A&issue=5&pages=2112-2126&publication_year=2023&author=Hardy%2CMC&author=Buckingham%2CRC&author=Severs%2CK&author=Cockings%2CB&author=McCarley%2CJ&author=Ho%2CK&author=Argyrakis%2CC&author=Tin%2CS)
+
+3.   N. Birks, G.H. Meier, and F.S. Pettit: _Introduction to the High Temperature Oxidation of Metals_, 2nd ed. Cambridge University Press, Cambridge, 2006, p. 205. [https://doi.org/10.1017/CBO9781139163903](https://doi.org/10.1017/CBO9781139163903).
+
+[Book](https://doi.org/10.1017%2FCBO9781139163903)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Introduction%20to%20the%20High%20Temperature%20Oxidation%20of%20Metals&doi=10.1017%2FCBO9781139163903&publication_year=2006&author=Birks%2CN&author=Meier%2CGH&author=Pettit%2CFS)
+
+4.   K.L. Luthra and D.A. Shores: _J. Electrochem. Soc._, 1980, vol. 127, pp. 2202–10. [https://doi.org/10.1149/1.2129375](https://doi.org/10.1149/1.2129375).
+
+[Article](https://doi.org/10.1149%2F1.2129375)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaL3MXmvVKn)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Electrochem.%20Soc.&doi=10.1149%2F1.2129375&volume=127&pages=2202-2210&publication_year=1980&author=Luthra%2CKL&author=Shores%2CDA)
+
+5.   G.A. Whitlow, J.M. Allen, and E.A. Crombie: _15th International Congress on Combustion Engines_, Paris, France, CIMAC, France, 1983, pp. 559–78.
+
+6.   T.P. Gabb, J. Telesman, B. Hazel, and D.P. Mourer: _J. Mater. Eng. Perform._, 2010, vol. 19(1), pp. 77–89. [https://doi.org/10.1007/s11665-009-9399-5](https://doi.org/10.1007/s11665-009-9399-5).
+
+[Article](https://link.springer.com/doi/10.1007/s11665-009-9399-5)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3cXmt1ejsg%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Eng.%20Perform.&doi=10.1007%2Fs11665-009-9399-5&volume=19&issue=1&pages=77-89&publication_year=2010&author=Gabb%2CTP&author=Telesman%2CJ&author=Hazel%2CB&author=Mourer%2CDP)
+
+7.   H. Rosier, K. Perkins, A. Girling, J. Leggett, and G. Gibson: _MATEC Web Conf._, 2014, vol. 14, p. 03001. [https://doi.org/10.1051/matecconf/20141403001](https://doi.org/10.1051/matecconf/20141403001).
+
+[Article](https://doi.org/10.1051%2Fmatecconf%2F20141403001)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=MATEC%20Web%20Conf.&doi=10.1051%2Fmatecconf%2F20141403001&volume=14&publication_year=2014&author=Rosier%2CH&author=Perkins%2CK&author=Girling%2CA&author=Leggett%2CJ&author=Gibson%2CG)
+
+8.   G.J. Gibson, K.M. Perkins, S. Gray, and A.J. Leggett: _Mater. High Temp._, 2016, vol. 33(3), pp. 225–35. [https://doi.org/10.1080/09603409.2016.1161945](https://doi.org/10.1080/09603409.2016.1161945).
+
+[Article](https://doi.org/10.1080%2F09603409.2016.1161945)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XnvFKms7g%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20High%20Temp.&doi=10.1080%2F09603409.2016.1161945&volume=33&issue=3&pages=225-235&publication_year=2016&author=Gibson%2CGJ&author=Perkins%2CKM&author=Gray%2CS&author=Leggett%2CAJ)
+
+9.   J. Nesbitt and S. Draper: _Mater. High Temp._, 2016, vol. 33(4 & 5), pp. 501–16. [https://doi.org/10.1080/09603409.2016.1174476](https://doi.org/10.1080/09603409.2016.1174476).
+
+[Article](https://doi.org/10.1080%2F09603409.2016.1174476)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XnvFKgur0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20High%20Temp.&doi=10.1080%2F09603409.2016.1174476&volume=33&issue=4%20%26%205&pages=501-516&publication_year=2016&author=Nesbitt%2CJ&author=Draper%2CS)
+
+10.   D.J. Child, J. Meldrum, and P. Onwuarolu: _Mater. Sci. Technol._, 2017, vol. 33(9), pp. 1040–47. [https://doi.org/10.1080/02670836.2016.1242827](https://doi.org/10.1080/02670836.2016.1242827).
+
+[Article](https://doi.org/10.1080%2F02670836.2016.1242827)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XhslGitrnI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Technol.&doi=10.1080%2F02670836.2016.1242827&volume=33&issue=9&pages=1040-1047&publication_year=2017&author=Child%2CDJ&author=Meldrum%2CJ&author=Onwuarolu%2CP)
+
+11.   H.L. Cockings, K.M. Perkins, and M. Dowd: _Mater. Sci. Technol._, 2017, vol. 33(9), pp. 1048–55. [https://doi.org/10.1080/02670836.2017.1300419](https://doi.org/10.1080/02670836.2017.1300419).
+
+[Article](https://doi.org/10.1080%2F02670836.2017.1300419)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXkvVSmsL8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Technol.&doi=10.1080%2F02670836.2017.1300419&volume=33&issue=9&pages=1048-1055&publication_year=2017&author=Cockings%2CHL&author=Perkins%2CKM&author=Dowd%2CM)
+
+12.   H.L. Cockings, B.J. Cockings, W. Harrison, M. Dowd, K.M. Perkins, M.T. Whittaker, and G.J. Gibson: _J. Alloys Compd._, 2020, vol. 832, p. 154889. [https://doi.org/10.1016/j.jallcom.2020.154889](https://doi.org/10.1016/j.jallcom.2020.154889).
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2020.154889)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXntFGgsL8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2020.154889&volume=832&publication_year=2020&author=Cockings%2CHL&author=Cockings%2CBJ&author=Harrison%2CW&author=Dowd%2CM&author=Perkins%2CKM&author=Whittaker%2CMT&author=Gibson%2CGJ)
+
+13.   M.L. Hendery, M.T. Whittaker, B.J. Cockings, and P.M. Mignanelli: _Corros. Sci._, 2022, vol. 198, p. 110113. [https://doi.org/10.1016/j.corsci.2022.110113](https://doi.org/10.1016/j.corsci.2022.110113).
+
+[Article](https://doi.org/10.1016%2Fj.corsci.2022.110113)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisFOrt7o%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Corros.%20Sci.&doi=10.1016%2Fj.corsci.2022.110113&volume=198&publication_year=2022&author=Hendery%2CML&author=Whittaker%2CMT&author=Cockings%2CBJ&author=Mignanelli%2CPM)
+
+14.   Y. Li, H. Cockings, P.M. Mignanelli, M. Whittaker, B.J. Cockings, R. Buckingham, and M.R. Bache: _Corros. Sci._, 2022, vol. 207, p. 110577. [https://doi.org/10.1016/j.corsci.2022.110577](https://doi.org/10.1016/j.corsci.2022.110577).
+
+[Article](https://doi.org/10.1016%2Fj.corsci.2022.110577)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XitFGht7rF)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Corros.%20Sci.&doi=10.1016%2Fj.corsci.2022.110577&volume=207&publication_year=2022&author=Li%2CY&author=Cockings%2CH&author=Mignanelli%2CPM&author=Whittaker%2CM&author=Cockings%2CBJ&author=Buckingham%2CR&author=Bache%2CMR)
+
+15.   Y. Li, H. Davies, M. Hardy, C. Jackson, and M. Whittaker: _Materials_, 2025, vol. 18, p. 3819. [https://doi.org/10.3390/ma18163819](https://doi.org/10.3390/ma18163819).
+
+[Article](https://doi.org/10.3390%2Fma18163819)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXitFOhsr7F)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=40870138)[PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC12387134)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Materials&doi=10.3390%2Fma18163819&volume=18&publication_year=2025&author=Li%2CY&author=Davies%2CH&author=Hardy%2CM&author=Jackson%2CC&author=Whittaker%2CM)
+
+16.   Hardy, et al.: United States Patent US 10,266,919B2, 23 April, 2019.
+
+17.   British Standards Institution (BSI): _BS 3900-F4: 1968_, _Methods of Test for Paints, Part 4: Resistance to Continuous Sea Salt_. BSI, 1968. ISBN 978 0 580 73245 4.
+
+18.   K.J. Bockenstedt, C.M. O’Brien, R.S. Minisandram, G.J. Smith, and D.J Bryant: _Superalloys 2016_, eds. M. Hardy, E. Huron, U. Glatzel, B. Griffin, B. Lewis, C. Rae, V. Seetharaman, and S. Tin, The Minerals, Metals & Materials Society, Warrendale, pp. 479–86. [https://doi.org/10.1002/9781119075646](https://doi.org/10.1002/9781119075646).
+
+19.   H.S. Kitaguchi, L. Small, I.P. Jones, Y.L. Chiu, M.C. Hardy, and P. Bowen: _Mater. Charact._, 2024, vol. 209, p. 113721. [https://doi.org/10.1016/j.matchar.2024.113721](https://doi.org/10.1016/j.matchar.2024.113721).
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2024.113721)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXivFWhs70%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Charact.&doi=10.1016%2Fj.matchar.2024.113721&volume=209&publication_year=2024&author=Kitaguchi%2CHS&author=Small%2CL&author=Jones%2CIP&author=Chiu%2CYL&author=Hardy%2CMC&author=Bowen%2CP)
+
+20.   O.M.D.M. Messé, S. Stekovic, M.C. Hardy, and C.M.F. Rae: _JOM_, 2014, vol. 66(2), pp. 2502–15. [https://doi.org/10.1007/s11837-014-1184-8](https://doi.org/10.1007/s11837-014-1184-8).
+
+[Article](https://link.springer.com/doi/10.1007/s11837-014-1184-8)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXhvVyitrnN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=JOM&doi=10.1007%2Fs11837-014-1184-8&volume=66&issue=2&pages=2502-2515&publication_year=2014&author=Mess%C3%A9%2COMDM&author=Stekovic%2CS&author=Hardy%2CMC&author=Rae%2CCMF)
+
+21.   D.J. Ashby: PhD Thesis, Cranfield University, 2016.
+
+22.   D.W. McKee, D.A. Shores, and K.L. Luthra: _J. Electrochem. Soc._, 1978, vol. 125, pp. 411–19.
+
+[Article](https://doi.org/10.1149%2F1.2131463)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaE1cXltFKhur0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Electrochem.%20Soc.&doi=10.1149%2F1.2131463&volume=125&pages=411-419&publication_year=1978&author=McKee%2CDW&author=Shores%2CDA&author=Luthra%2CKL)
+
+### Discover content
+
+*   [Journals A-Z](https://link.springer.com/journals/a/1)
+*   [Books A-Z](https://link.springer.com/books/a/1)
+
+### Publish with us
+
+*   [Journal finder](https://link.springer.com/journals)
+*   [Publish your research](https://www.springernature.com/gp/authors)
+*   [Language editing](https://authorservices.springernature.com/go/sn/?utm_source=SNLinkfooter&utm_medium=Web&utm_campaign=SNReferral)
+*   [Open access publishing](https://www.springernature.com/gp/open-science/about/the-fundamentals-of-open-access-and-open-research)
+
+### Products and services
+
+*   [Our products](https://www.springernature.com/gp/products)
+*   [Librarians](https://www.springernature.com/gp/librarians)
+*   [Societies](https://www.springernature.com/gp/societies)
+*   [Partners and advertisers](https://www.springernature.com/gp/partners)
+
+### Our brands
+
+*   [Springer](https://link.springer.com/brands/springer)
+*   [Nature Portfolio](https://www.nature.com/)
+*   [BMC](https://link.springer.com/brands/bmc)
+*   [Palgrave Macmillan](https://link.springer.com/brands/palgrave)
+*   [Apress](https://link.springer.com/brands/apress)
+*   [Discover](https://link.springer.com/brands/discover)
+
+*   Your privacy choices/Manage cookies
+*   [Your US state privacy rights](https://www.springernature.com/gp/legal/ccpa)
+*   [Accessibility statement](https://link.springer.com/accessibility)
+*   [Terms and conditions](https://link.springer.com/termsandconditions)
+*   [Privacy policy](https://link.springer.com/privacystatement)
+*   [Help and support](https://support.springernature.com/en/support/home)
+*   [Legal notice](https://link.springer.com/legal-notice)
+*   [Cancel contracts here](https://support.springernature.com/en/support/solutions/articles/6000255911-subscription-cancellations)
+
+34.34.233.50
+
+Not affiliated
+
+[![Image 31: Springer Nature](https://link.springer.com/oscar-static/images/logo-springernature-white-dbadd2cbd6.svg)](https://www.springernature.com/)
+© 2026 Springer Nature

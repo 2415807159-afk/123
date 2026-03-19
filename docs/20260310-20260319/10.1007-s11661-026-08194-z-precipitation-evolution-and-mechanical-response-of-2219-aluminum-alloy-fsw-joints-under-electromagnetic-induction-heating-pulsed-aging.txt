@@ -1,0 +1,247 @@
+Title: Precipitation Evolution and Mechanical Response of 2219 Aluminum Alloy FSW Joints Under Electromagnetic Induction Heating Pulsed Aging
+
+URL Source: https://link.springer.com/10.1007/s11661-026-08194-z
+
+Markdown Content:
+## Abstract
+
+During friction stir welding (FSW) of 2219 aluminum alloy components for large rocket tanks, mechanical strength degradation occurs due to the dissolution of strengthening precipitates within the welding region; although aging treatment is commonly used to restore joint strength, conventional furnace aging cannot be applied to large-scale, integrally welded aerospace structures. Although previous studies have demonstrated that electromagnetic induction heating pulsed aging (EIHPA) technology offers a novel technical approach to address the aforementioned issues, its effectiveness in enhancing the strength of welded joints in 2219 aluminum alloy has yet to be validated. In this work, EIHPA was applied to 2219 aluminum alloy FSW joints, and its effects on precipitate evolution, microstructural stability, and mechanical performance are systematically investigated. The results demonstrate that EIHPA effectively restores joint strength and hardness by promoting controlled reprecipitation of strengthening _θ_′ phases, yielding a tensile strength of 366 MPa, equivalent to 83.2 pct of the base metal strength; compared with conventional aging (CA), EIHPA significantly suppresses excessive coarsening of secondary phases, resulting in a more refined and stable precipitation microstructure. Fractography analysis further confirms the enhanced load-bearing capability of the nugget zone after EIHPA treatment. Overall, EIHPA offers superior mechanical recovery, higher processing efficiency, and strong adaptability for large-scale aerospace structures, demonstrating its considerable potential as a practical, robust, and scalable post-weld aging strategy for high-performance aluminum alloy assemblies.
+
+## Access this article
+
+[Log in via an institution](https://wayf.springernature.com/?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs11661-026-08194-z)
+
+## Subscribe and save
+
+Springer+
+
+from $39.99 /Month
+
+*   Starting from 10 chapters or articles per month
+*   Access and download chapters and articles from more than 300k books and 2,500 journals
+*   Cancel anytime
+
+[View plans](https://link.springer.com/product/springer-plus)
+
+## Buy Now
+
+Price excludes VAT (USA) 
+
+ Tax calculation will be finalised during checkout.
+
+Instant access to the full article PDF.
+
+### Similar content being viewed by others
+
+![Image 1](https://media.springernature.com/w215h120/springer-static/image/art%3A10.1007%2Fs43452-025-01329-w/MediaObjects/43452_2025_1329_Fig1_HTML.png)
+
+![Image 2](https://media.springernature.com/w92h120/springer-static/cover-hires/book/978-981-13-0378-4?as=webp)
+
+![Image 3](https://media.springernature.com/w215h120/springer-static/image/art%3A10.1007%2Fs00170-021-07238-5/MediaObjects/170_2021_7238_Fig1_HTML.png)
+
+## References
+
+1.   Q. Wu, J. Wu, Y.-D. Zhang, H.-J. Gao, and D. Hui: _Int. J. Mech. Sci._, 2019, vol. 157, pp. 111–18. [https://doi.org/10.1016/j.ijmecsci.2019.04.040](https://doi.org/10.1016/j.ijmecsci.2019.04.040).
+
+[Article](https://doi.org/10.1016%2Fj.ijmecsci.2019.04.040)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Mech.%20Sci.&doi=10.1016%2Fj.ijmecsci.2019.04.040&volume=157&pages=111-118&publication_year=2019&author=Wu%2CQ&author=Wu%2CJ&author=Zhang%2CY-D&author=Gao%2CH-J&author=Hui%2CD)
+
+2.   R. Kaibyshev, I. Kazakulov, D. Gromov, F. Musin, D.R. Lesuer, and T.G. Nieh: _Scripta Mater._, 2001, vol. 44, pp. 2411–17. [https://doi.org/10.1016/S1359-6462(01)00930-7](https://doi.org/10.1016/S1359-6462(01)00930-7).
+
+[Article](https://doi.org/10.1016%2FS1359-6462%2801%2900930-7)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3MXks1WrsLw%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scripta%20Mater.&doi=10.1016%2FS1359-6462%2801%2900930-7&volume=44&pages=2411-2417&publication_year=2001&author=Kaibyshev%2CR&author=Kazakulov%2CI&author=Gromov%2CD&author=Musin%2CF&author=Lesuer%2CDR&author=Nieh%2CTG)
+
+3.   S.V.S.N. Murty, A. Sarkar, P.R. Narayanan, P.V. Venkitakrishnan, and J. Mukhopadhyay: _Mater. Sci. Eng. A_, 2016, vol. 677, pp. 41–49. [https://doi.org/10.1016/j.msea.2016.09.027](https://doi.org/10.1016/j.msea.2016.09.027).
+
+[Article](https://doi.org/10.1016%2Fj.msea.2016.09.027)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XhsFajs7vN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2016.09.027&volume=677&pages=41-49&publication_year=2016&author=Murty%2CSVSN&author=Sarkar%2CA&author=Narayanan%2CPR&author=Venkitakrishnan%2CPV&author=Mukhopadhyay%2CJ)
+
+4.   Y. Zu, H. Pang, and F. Wu: _Crystals_, 2024, vol. 14, p. 444. [https://doi.org/10.3390/cryst14050444](https://doi.org/10.3390/cryst14050444).
+
+[Article](https://doi.org/10.3390%2Fcryst14050444)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhtFyqtb7O)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Crystals&doi=10.3390%2Fcryst14050444&volume=14&publication_year=2024&author=Zu%2CY&author=Pang%2CH&author=Wu%2CF)
+
+5.   R. Rajan, P. Kah, B. Mvola, and J. Martikainen: _Rev. Adv. Mater. Sci._, 2016, vol. 44, pp. 383–97.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXovF2qtLg%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Rev.%20Adv.%20Mater.%20Sci.&volume=44&pages=383-397&publication_year=2016&author=Rajan%2CR&author=Kah%2CP&author=Mvola%2CB&author=Martikainen%2CJ)
+
+6.   Q. Wang, Y. Zhao, T. Zhao, D. Yan, G. Wang, and A. Wu: _J. Manuf. Process._, 2021, vol. 68, pp. 796–806. [https://doi.org/10.1016/j.jmapro.2021.05.065](https://doi.org/10.1016/j.jmapro.2021.05.065).
+
+[Article](https://doi.org/10.1016%2Fj.jmapro.2021.05.065)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Manuf.%20Process.&doi=10.1016%2Fj.jmapro.2021.05.065&volume=68&pages=796-806&publication_year=2021&author=Wang%2CQ&author=Zhao%2CY&author=Zhao%2CT&author=Yan%2CD&author=Wang%2CG&author=Wu%2CA)
+
+7.   M. A. Trishul and B. Panda: _Adv. Lightweight Mater. Struct._, 2020, pp. 663–71.
+
+8.   H. Li, J. Zou, J. Yao, and H. Peng: _J. Alloys Compd._, 2017, vol. 727, pp. 531–39. [https://doi.org/10.1016/j.jallcom.2017.08.157](https://doi.org/10.1016/j.jallcom.2017.08.157).
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2017.08.157)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXhtl2rsbnP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2017.08.157&volume=727&pages=531-539&publication_year=2017&author=Li%2CH&author=Zou%2CJ&author=Yao%2CJ&author=Peng%2CH)
+
+9.   R.S. Mishra and Z.Y. Ma: _Mater. Sci. Eng. R_, 2005, vol. 50, pp. 1–78. [https://doi.org/10.1016/j.mser.2005.07.001](https://doi.org/10.1016/j.mser.2005.07.001).
+
+[Article](https://doi.org/10.1016%2Fj.mser.2005.07.001)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2MXpvVWjs7g%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20R&doi=10.1016%2Fj.mser.2005.07.001&volume=50&pages=1-78&publication_year=2005&author=Mishra%2CRS&author=Ma%2CZY)
+
+10.   D. Lohwasser and Z. Chen: _Friction Stir Welding_, Elsevier, New York, 2009.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Friction%20Stir%20Welding&publication_year=2009&author=Lohwasser%2CD&author=Chen%2CZ)
+
+11.   Y. Chen, H. Liu, and J. Feng: _Mater. Sci. Eng. A_, 2006, vol. 420, pp. 21–25. [https://doi.org/10.1016/j.msea.2006.01.029](https://doi.org/10.1016/j.msea.2006.01.029).
+
+[Article](https://doi.org/10.1016%2Fj.msea.2006.01.029)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD28XjtFGns7s%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2006.01.029&volume=420&pages=21-25&publication_year=2006&author=Chen%2CY&author=Liu%2CH&author=Feng%2CJ)
+
+12.   H.J. Liu, H.J. Zhang, and L. Yu: _Mater. Des._, 2011, vol. 32, pp. 1548–53. [https://doi.org/10.1016/j.matdes.2010.09.032](https://doi.org/10.1016/j.matdes.2010.09.032).
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2010.09.032)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3cXhsFWjsL3E)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2010.09.032&volume=32&pages=1548-1553&publication_year=2011&author=Liu%2CHJ&author=Zhang%2CHJ&author=Yu%2CL)
+
+13.   K.S. Arora, S. Pandey, M. Schaper, and R. Kumar: _J. Mater. Sci. Technol._, 2010, vol. 26, pp. 747–53. [https://doi.org/10.1016/S1005-0302(10)60118-1](https://doi.org/10.1016/S1005-0302(10)60118-1).
+
+[Article](https://doi.org/10.1016%2FS1005-0302%2810%2960118-1)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3cXht1agt7bN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2FS1005-0302%2810%2960118-1&volume=26&pages=747-753&publication_year=2010&author=Arora%2CKS&author=Pandey%2CS&author=Schaper%2CM&author=Kumar%2CR)
+
+14.   L. Teng, X. Lu, C. Song, and Y. Zhao: _Int. J. Adv. Manuf. Technol._, 2025, vol. 139, pp. 4523–39. [https://doi.org/10.1007/s00170-025-16131-4](https://doi.org/10.1007/s00170-025-16131-4).
+
+[Article](https://link.springer.com/doi/10.1007/s00170-025-16131-4)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Adv.%20Manuf.%20Technol.&doi=10.1007%2Fs00170-025-16131-4&volume=139&pages=4523-4539&publication_year=2025&author=Teng%2CL&author=Lu%2CX&author=Song%2CC&author=Zhao%2CY)
+
+15.   Q. Qin, H. Wang, S. Liu, K. He, X. Wei, H. Zhang, and C. Tang: _Mater Charact_, 2025, [https://doi.org/10.1016/j.matchar.2025.115601](https://doi.org/10.1016/j.matchar.2025.115601).
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2025.115601)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater%20Charact&doi=10.1016%2Fj.matchar.2025.115601&publication_year=2025&author=Qin%2CQ&author=Wang%2CH&author=Liu%2CS&author=He%2CK&author=Wei%2CX&author=Zhang%2CH&author=Tang%2CC)
+
+16.   Z. Wang, W. Zhu, Z. Zhang, B. Wang, P. Xue, D. Ni, and F. Liu: _J. Mater. Sci._, 2023, vol. 58, pp. 9737–54. [https://doi.org/10.1007/s10853-023-08637-7](https://doi.org/10.1007/s10853-023-08637-7).
+
+[Article](https://link.springer.com/doi/10.1007/s10853-023-08637-7)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhtFOntL7E)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2Fs10853-023-08637-7&volume=58&pages=9737-9754&publication_year=2023&author=Wang%2CZ&author=Zhu%2CW&author=Zhang%2CZ&author=Wang%2CB&author=Xue%2CP&author=Ni%2CD&author=Liu%2CF)
+
+17.   Y. Chen, J. Feng, and H. Liu: _Mater Charact_, 2009, vol. 60, pp. 476–81. [https://doi.org/10.1016/j.matchar.2008.12.002](https://doi.org/10.1016/j.matchar.2008.12.002).
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2008.12.002)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1MXktVentrc%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater%20Charact&doi=10.1016%2Fj.matchar.2008.12.002&volume=60&pages=476-481&publication_year=2009&author=Chen%2CY&author=Feng%2CJ&author=Liu%2CH)
+
+18.   J. Kang, Z.-C. Feng, G.S. Frankel, I.W. Huang, G.-Q. Wang, and A.-P. Wu: _Metall. Mater. Trans. A_, 2016, vol. 47, pp. 4553–65. [https://doi.org/10.1007/s11661-016-3648-7](https://doi.org/10.1007/s11661-016-3648-7).
+
+[Article](https://link.springer.com/doi/10.1007/s11661-016-3648-7)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XhtFCru7bJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-016-3648-7&volume=47&pages=4553-4565&publication_year=2016&author=Kang%2CJ&author=Feng%2CZ-C&author=Frankel%2CGS&author=Huang%2CIW&author=Wang%2CG-Q&author=Wu%2CA-P)
+
+19.   B. Li and Y. Shen: _Mater. Des._, 2011, vol. 32, pp. 3796–3802. [https://doi.org/10.1016/j.matdes.2011.03.029](https://doi.org/10.1016/j.matdes.2011.03.029).
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2011.03.029)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3MXlt1ygtrc%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2011.03.029&volume=32&pages=3796-3802&publication_year=2011&author=Li%2CB&author=Shen%2CY)
+
+20.   B. Safarbali, M. Shamanian, and A. Eslami: _Trans. Nonferrous Met. Soc. China_, 2018, vol. 28, pp. 1287–97. [https://doi.org/10.1016/S1003-6326(18)64766-1](https://doi.org/10.1016/S1003-6326(18)64766-1).
+
+[Article](https://doi.org/10.1016%2FS1003-6326%2818%2964766-1)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXhsVejtrjP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Trans.%20Nonferrous%20Met.%20Soc.%20China&doi=10.1016%2FS1003-6326%2818%2964766-1&volume=28&pages=1287-1297&publication_year=2018&author=Safarbali%2CB&author=Shamanian%2CM&author=Eslami%2CA)
+
+21.   Z. Zhang, B.L. Xiao, and Z.Y. Ma: _Mater Charact_, 2015, vol. 106, pp. 255–65. [https://doi.org/10.1016/j.matchar.2015.06.003](https://doi.org/10.1016/j.matchar.2015.06.003).
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2015.06.003)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2MXhtVWjsbjK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater%20Charact&doi=10.1016%2Fj.matchar.2015.06.003&volume=106&pages=255-265&publication_year=2015&author=Zhang%2CZ&author=Xiao%2CBL&author=Ma%2CZY)
+
+22.   Y. Chen, H. Liu, and J. Feng: _J. Mater. Sci._, 2006, vol. 41, pp. 297–99. [https://doi.org/10.1007/s10853-005-0640-9](https://doi.org/10.1007/s10853-005-0640-9).
+
+[Article](https://link.springer.com/doi/10.1007/s10853-005-0640-9)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD28XhsFCktro%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2Fs10853-005-0640-9&volume=41&pages=297-299&publication_year=2006&author=Chen%2CY&author=Liu%2CH&author=Feng%2CJ)
+
+23.   R. Soto-Diaz, M. Vasquez-Carbonell, and J. Escorcia-Gutierrez: _Eng. Sci. Technol._, 2025, vol. 62, p. 101949. [https://doi.org/10.1016/j.jestch.2025.101949](https://doi.org/10.1016/j.jestch.2025.101949).
+
+[Article](https://doi.org/10.1016%2Fj.jestch.2025.101949)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Eng.%20Sci.%20Technol.&doi=10.1016%2Fj.jestch.2025.101949&volume=62&publication_year=2025&author=Soto-Diaz%2CR&author=Vasquez-Carbonell%2CM&author=Escorcia-Gutierrez%2CJ)
+
+24.   R.A. Siddiqui, H.A. Abdullah, and K.R. Al-Belushi: _J. Mater. Process. Technol._, 2000, vol. 102, pp. 234–40. [https://doi.org/10.1016/S0924-0136(99)00476-8](https://doi.org/10.1016/S0924-0136(99)00476-8).
+
+[Article](https://doi.org/10.1016%2FS0924-0136%2899%2900476-8)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Process.%20Technol.&doi=10.1016%2FS0924-0136%2899%2900476-8&volume=102&pages=234-240&publication_year=2000&author=Siddiqui%2CRA&author=Abdullah%2CHA&author=Al-Belushi%2CKR)
+
+25.   X. Lu, Y. Luan, X. Meng, Y. Zhou, N. Zhao, and S.Y. Liang: _Int. J. Adv. Manuf. Technol._, 2022, vol. 119, pp. 7229–41. [https://doi.org/10.1007/s00170-021-08505-1](https://doi.org/10.1007/s00170-021-08505-1).
+
+[Article](https://link.springer.com/doi/10.1007/s00170-021-08505-1)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Adv.%20Manuf.%20Technol.&doi=10.1007%2Fs00170-021-08505-1&volume=119&pages=7229-7241&publication_year=2022&author=Lu%2CX&author=Luan%2CY&author=Meng%2CX&author=Zhou%2CY&author=Zhao%2CN&author=Liang%2CSY)
+
+26.   A. Talebi-Anaraki, M. Chougan, M. Loh-Mousavi, and T. Maeno: _J. Manuf. Mater. Process._, 2020, vol. 4, p. 56. [https://doi.org/10.3390/jmmp4020056](https://doi.org/10.3390/jmmp4020056).
+
+[Article](https://doi.org/10.3390%2Fjmmp4020056)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhvVGgt74%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Manuf.%20Mater.%20Process.&doi=10.3390%2Fjmmp4020056&volume=4&publication_year=2020&author=Talebi-Anaraki%2CA&author=Chougan%2CM&author=Loh-Mousavi%2CM&author=Maeno%2CT)
+
+27.   B.N. Coelho, M.S.F. de Lima, S.M. de Carvalho, and A.R. da Costa: _J. Aerosp. Technol. Manag._, 2018, vol. 10, p. e2918. [https://doi.org/10.5028/jatm.v10.925](https://doi.org/10.5028/jatm.v10.925).
+
+[Article](https://doi.org/10.5028%2Fjatm.v10.925)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1MXhsFGksbvM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Aerosp.%20Technol.%20Manag.&doi=10.5028%2Fjatm.v10.925&volume=10&publication_year=2018&author=Coelho%2CBN&author=Lima%2CMSF&author=Carvalho%2CSM&author=Costa%2CAR)
+
+28.   S. Zhang, C. Liu, and X. Wang: _Ships Offshore Struct._, 2019, vol. 14, pp. 853–66. [https://doi.org/10.1080/17445302.2019.1570740](https://doi.org/10.1080/17445302.2019.1570740).
+
+[Article](https://doi.org/10.1080%2F17445302.2019.1570740)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Ships%20Offshore%20Struct.&doi=10.1080%2F17445302.2019.1570740&volume=14&pages=853-866&publication_year=2019&author=Zhang%2CS&author=Liu%2CC&author=Wang%2CX)
+
+29.   C. Wang, Y.-R. Kim, and J.-W. Kim: _J. Mech. Sci. Technol._, 2017, vol. 31, pp. 2535–41. [https://doi.org/10.1007/s12206-017-0451-3](https://doi.org/10.1007/s12206-017-0451-3).
+
+[Article](https://link.springer.com/doi/10.1007/s12206-017-0451-3)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mech.%20Sci.%20Technol.&doi=10.1007%2Fs12206-017-0451-3&volume=31&pages=2535-2541&publication_year=2017&author=Wang%2CC&author=Kim%2CY-R&author=Kim%2CJ-W)
+
+30.   Y. Wang, X. Hu, M. Jiang, J. Wang, M. Wei, and L. Zhang: _Case Stud. Therm. Eng._, 2021, vol. 28, p. 101609. [https://doi.org/10.1016/j.csite.2021.101609](https://doi.org/10.1016/j.csite.2021.101609).
+
+[Article](https://doi.org/10.1016%2Fj.csite.2021.101609)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Case%20Stud.%20Therm.%20Eng.&doi=10.1016%2Fj.csite.2021.101609&volume=28&publication_year=2021&author=Wang%2CY&author=Hu%2CX&author=Jiang%2CM&author=Wang%2CJ&author=Wei%2CM&author=Zhang%2CL)
+
+31.   T.-T. Nguyen, Y.-S. Yang, K.-Y. Bae, and S.-N. Choi: _J. Mech. Sci. Technol._, 2009, vol. 23, pp. 1211–21. [https://doi.org/10.1007/s12206-009-0101-5](https://doi.org/10.1007/s12206-009-0101-5).
+
+[Article](https://link.springer.com/doi/10.1007/s12206-009-0101-5)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mech.%20Sci.%20Technol.&doi=10.1007%2Fs12206-009-0101-5&volume=23&pages=1211-1221&publication_year=2009&author=Nguyen%2CT-T&author=Yang%2CY-S&author=Bae%2CK-Y&author=Choi%2CS-N)
+
+32.   D. He: _CN Patent_ CN115725914A.
+
+33.   F. Xue, D. He, H. Zhou, H. Zhou, and Y. Sun: _Case Stud. Therm. Eng._, 2024, vol. 63, p. 105372. [https://doi.org/10.1016/j.csite.2024.105372](https://doi.org/10.1016/j.csite.2024.105372).
+
+[Article](https://doi.org/10.1016%2Fj.csite.2024.105372)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Case%20Stud.%20Therm.%20Eng.&doi=10.1016%2Fj.csite.2024.105372&volume=63&publication_year=2024&author=Xue%2CF&author=He%2CD&author=Zhou%2CH&author=Zhou%2CH&author=Sun%2CY)
+
+34.   H. Wang, Y. Yi, and S. Huang: _J. Mater. Eng. Perform._, 2017, vol. 26, pp. 1475–82. [https://doi.org/10.1007/s11665-017-2621-y](https://doi.org/10.1007/s11665-017-2621-y).
+
+[Article](https://link.springer.com/doi/10.1007/s11665-017-2621-y)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXksF2qu7Y%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Eng.%20Perform.&doi=10.1007%2Fs11665-017-2621-y&volume=26&pages=1475-1482&publication_year=2017&author=Wang%2CH&author=Yi%2CY&author=Huang%2CS)
+
+35.   Y. Gao, S. Chen, X. Chen, X. Li, Z. Liu, J. Dong, and P. Zhao: _J. Manuf. Process._, 2025, vol. 150, pp. 714–25. [https://doi.org/10.1016/j.jmapro.2025.06.040](https://doi.org/10.1016/j.jmapro.2025.06.040).
+
+[Article](https://doi.org/10.1016%2Fj.jmapro.2025.06.040)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Manuf.%20Process.&doi=10.1016%2Fj.jmapro.2025.06.040&volume=150&pages=714-725&publication_year=2025&author=Gao%2CY&author=Chen%2CS&author=Chen%2CX&author=Li%2CX&author=Liu%2CZ&author=Dong%2CJ&author=Zhao%2CP)
+
+36.   H. Toda, H. Oogo, K. Horikawa, K. Uesugi, A. Takeuchi, Y. Suzuki, M. Nakazawa, Y. Aoki, and M. Kobayashi: _Metall. Mater. Trans. A_, 2014, vol. 45A, pp. 765–76. [https://doi.org/10.1007/s11661-013-2013-3](https://doi.org/10.1007/s11661-013-2013-3).
+
+[Article](https://link.springer.com/doi/10.1007/s11661-013-2013-3)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhsFCjurjM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-013-2013-3&volume=45A&pages=765-776&publication_year=2014&author=Toda%2CH&author=Oogo%2CH&author=Horikawa%2CK&author=Uesugi%2CK&author=Takeuchi%2CA&author=Suzuki%2CY&author=Nakazawa%2CM&author=Aoki%2CY&author=Kobayashi%2CM)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08194-z?format=refman&flavour=references)
+
+## Acknowledgments
+
+This work is supported by the National Natural Science Foundation of China (Grant Number: 52205434), the Natural Science Foundation of Hunan Province (Grant Number: 2024JJ6516), the Research Fund of the State Key Laboratory of Precision Manufacturing for Extreme Service Performance, Central South University (Grant Number: ZZYJKT2023-01)
+
+## Author information
+
+### Authors and Affiliations
+
+1.   State Key Laboratory of Precision Manufacturing for Extreme Service Performance, Light Alloy Research Institute, Central South University, Changsha, 410083, P.R. China
+
+Huilin Miao,Zhicheng Qiu,Diqiu He,Fei Xue,Liyang Xiao&Sheng Ding
+
+Authors
+
+1.   Huilin Miao
+2.   Zhicheng Qiu
+3.   Diqiu He
+4.   Fei Xue
+5.   Liyang Xiao
+6.   Sheng Ding
+
+### Corresponding author
+
+Correspondence to [Sheng Ding](mailto:sheng.ding@csu.edu.cn).
+
+## Ethics declarations
+
+### Conflict of interest
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+## Additional information
+
+### Publisher's Note
+
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+## Rights and permissions
+
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is solely governed by the terms of such publishing agreement and applicable law.
+
+[Reprints and permissions](https://s100.copyright.com/AppDispatchServlet?title=Precipitation%20Evolution%20and%20Mechanical%20Response%20of%202219%20Aluminum%20Alloy%20FSW%20Joints%20Under%20Electromagnetic%20Induction%20Heating%20Pulsed%20Aging&author=Huilin%20Miao%20et%20al&contentID=10.1007%2Fs11661-026-08194-z&copyright=The%20Minerals%2C%20Metals%20%26%20Materials%20Society%20and%20ASM%20International&publication=1073-5623&publicationDate=2026-03-14&publisherName=SpringerNature&orderBeanReset=true)
+
+## About this article
+
+[![Image 4: Check for updates. Verify currency and authenticity via CrossMark](blob:http://localhost/df43c82f6cb6dcd2a87db38f317bf9f2)](https://crossmark.crossref.org/dialog/?doi=10.1007/s11661-026-08194-z)
+
+### Cite this article
+
+Miao, H., Qiu, Z., He, D. _et al._ Precipitation Evolution and Mechanical Response of 2219 Aluminum Alloy FSW Joints Under Electromagnetic Induction Heating Pulsed Aging. _Metall Mater Trans A_ (2026). https://doi.org/10.1007/s11661-026-08194-z
+
+[Download citation](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08194-z?format=refman&flavour=citation)
+
+*   Received: 06 January 2026
+
+*   Accepted: 05 March 2026
+
+*   Published: 14 March 2026
+
+*   Version of record: 14 March 2026
+
+*   DOI: https://doi.org/10.1007/s11661-026-08194-z

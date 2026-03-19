@@ -1,0 +1,219 @@
+Title: AI assisted optimization of integrated waveguide polarizers containing 2D reduced graphene oxide
+
+URL Source: https://arxiv.org/abs/2603.13658v1
+
+Markdown Content:
+# [2603.13658v1] AI assisted optimization of integrated waveguide polarizers containing 2D reduced graphene oxide
+
+[Skip to main content](https://arxiv.org/abs/2603.13658v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[physics](https://arxiv.org/list/physics/recent)> arXiv:2603.13658v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Physics > Optics
+
+**arXiv:2603.13658v1** (physics) 
+
+ [Submitted on 13 Mar 2026]
+
+# Title:AI assisted optimization of integrated waveguide polarizers containing 2D reduced graphene oxide
+
+Authors:[Rong Wang](https://arxiv.org/search/physics?searchtype=author&query=Wang,+R), [Yijun Wang](https://arxiv.org/search/physics?searchtype=author&query=Wang,+Y), [Di Jin](https://arxiv.org/search/physics?searchtype=author&query=Jin,+D), [Junkai Hu](https://arxiv.org/search/physics?searchtype=author&query=Hu,+J), [Wenbo Liu](https://arxiv.org/search/physics?searchtype=author&query=Liu,+W), [Yuning Zhang](https://arxiv.org/search/physics?searchtype=author&query=Zhang,+Y), [Duan Huang](https://arxiv.org/search/physics?searchtype=author&query=Huang,+D), [Jiayang Wu](https://arxiv.org/search/physics?searchtype=author&query=Wu,+J), [Baohua Jia](https://arxiv.org/search/physics?searchtype=author&query=Jia,+B), [David J. Moss](https://arxiv.org/search/physics?searchtype=author&query=Moss,+D+J)
+
+View a PDF of the paper titled AI assisted optimization of integrated waveguide polarizers containing 2D reduced graphene oxide, by Rong Wang and 9 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.13658v1)
+> Abstract:Reduced graphene oxide (rGO) exhibits strong anisotropic light absorption and high compatibility with photonic integrated chips, making it a promising material for implementing high performance onchip polarization selective devices. The performance of rGO integrated waveguide polarizers is highly dependent on the waveguide geometry, and achieving optimal performance requires exploring a large parameter space, making conventional mode simulation methods computationally demanding. Here, we propose and demonstrate a machine learning framework based on fully connected neural networks (FCNNs) to map the dependence of the polarizer figure of merit (FOM) on the waveguide geometry. Once trained by using a small dataset of low resolution mode simulation results, the FCNN framework can rapidly and accurately predict FOM values across a large structural parameter space with high resolution. Results show that this method can reduce overall computing time by more than 4 orders of magnitude as compared to the mode simulation methods, and achieve high prediction accuracy with an average deviation (AD) below 0.05. These results highlight the FCNN based machine learning framework as an efficient tool for the design and optimization of rGO integrated waveguide polarizers.
+
+Comments:33 pages, 7 figures, 75 references
+Subjects:Optics (physics.optics)
+Cite as:[arXiv:2603.13658](https://arxiv.org/abs/2603.13658) [physics.optics]
+(or [arXiv:2603.13658v1](https://arxiv.org/abs/2603.13658v1) [physics.optics] for this version)
+[https://doi.org/10.48550/arXiv.2603.13658](https://doi.org/10.48550/arXiv.2603.13658)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+Journal reference:journal of the optical society of america B (JOSAB), volume 43 issue 3 (2026)
+Related DOI:[https://doi.org/10.1364/JOSAB.583661](https://doi.org/10.1364/JOSAB.583661)
+
+Focus to learn more
+
+ DOI(s) linking to related resources
+
+## Submission history
+
+ From: David Moss [[view email](https://arxiv.org/show-email/9b1589fb/2603.13658)] 
+
+**[v1]** Fri, 13 Mar 2026 23:56:27 UTC (1,509 KB)
+
+[](https://arxiv.org/abs/2603.13658v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled AI assisted optimization of integrated waveguide polarizers containing 2D reduced graphene oxide, by Rong Wang and 9 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.13658v1)
+
+[![Image 5: license icon](https://arxiv.org/icons/licenses/by-4.0.png)view license](http://creativecommons.org/licenses/by/4.0/ "Rights to this article")
+
+ Current browse context: 
+
+physics.optics
+
+[<prev](https://arxiv.org/prevnext?id=2603.13658&function=prev&context=physics.optics "previous in physics.optics (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.13658&function=next&context=physics.optics "next in physics.optics (accesskey n)")
+
+[new](https://arxiv.org/list/physics.optics/new) | [recent](https://arxiv.org/list/physics.optics/recent) | [2026-03](https://arxiv.org/list/physics.optics/2026-03)
+
+ Change to browse by: 
+
+[physics](https://arxiv.org/abs/2603.13658?context=physics)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.13658)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.13658)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.13658)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.13658v1)
+
+### Bookmark
+
+[![Image 6: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.13658&description=AI%20assisted%20optimization%20of%20integrated%20waveguide%20polarizers%20containing%202D%20reduced%20graphene%20oxide "Bookmark on BibSonomy")[![Image 7: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.13658&title=AI%20assisted%20optimization%20of%20integrated%20waveguide%20polarizers%20containing%202D%20reduced%20graphene%20oxide "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+*   [Author](https://arxiv.org/abs/2603.13658v1)
+*   [Venue](https://arxiv.org/abs/2603.13658v1)
+*   [Institution](https://arxiv.org/abs/2603.13658v1)
+*   [Topic](https://arxiv.org/abs/2603.13658v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.13658) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

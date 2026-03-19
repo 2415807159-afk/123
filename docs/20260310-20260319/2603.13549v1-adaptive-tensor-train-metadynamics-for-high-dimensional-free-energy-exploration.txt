@@ -1,0 +1,221 @@
+Title: Adaptive tensor train metadynamics for high-dimensional free energy exploration
+
+URL Source: https://arxiv.org/abs/2603.13549v1
+
+Markdown Content:
+# [2603.13549v1] Adaptive tensor train metadynamics for high-dimensional free energy exploration
+
+[Skip to main content](https://arxiv.org/abs/2603.13549v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[physics](https://arxiv.org/list/physics/recent)> arXiv:2603.13549v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Physics > Chemical Physics
+
+**arXiv:2603.13549v1** (physics) 
+
+ [Submitted on 13 Mar 2026]
+
+# Title:Adaptive tensor train metadynamics for high-dimensional free energy exploration
+
+Authors:[Nils E. Strand](https://arxiv.org/search/physics?searchtype=author&query=Strand,+N+E), [Siyao Yang](https://arxiv.org/search/physics?searchtype=author&query=Yang,+S), [Yuehaw Khoo](https://arxiv.org/search/physics?searchtype=author&query=Khoo,+Y), [Aaron R. Dinner](https://arxiv.org/search/physics?searchtype=author&query=Dinner,+A+R)
+
+View a PDF of the paper titled Adaptive tensor train metadynamics for high-dimensional free energy exploration, by Nils E. Strand and 3 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.13549v1)[HTML (experimental)](https://arxiv.org/html/2603.13549v1)
+> Abstract:A key challenge for molecular dynamics simulations is efficient exploration of free energy landscapes over relevant collective variables (CV). Common methods for enhancing sampling become prohibitively inefficient beyond only a few CVs; in the case of the widely-used metadynamics method, the computational cost of evaluating and storing the bias potential grows exponentially with the number of dimensions. Here, we introduce TT-Metadynamics, in which the accumulated sum of Gaussian functions in the original metadynamics method is periodically compressed into a low-rank tensor train (TT) representation. The TT enables efficient memory use and prevents the computational cost of evaluating the bias potential from increasing with simulation time. We present a "sketching" algorithm that allows us to construct the TT with linear scaling in the number of CVs. Applied to benchmark systems with up to 14 CVs, the accuracy of TT-Metadynamics matches or exceeds that of standard metadynamics in long simulations, particularly in systems with high barriers. These results establish TT-Metadynamics as a scalable and effective method for computing free energies that are functions of several CVs.
+
+Comments:39 pages, 15 figures
+Subjects:Chemical Physics (physics.chem-ph); Statistical Mechanics (cond-mat.stat-mech); Computational Physics (physics.comp-ph)
+Cite as:[arXiv:2603.13549](https://arxiv.org/abs/2603.13549) [physics.chem-ph]
+(or [arXiv:2603.13549v1](https://arxiv.org/abs/2603.13549v1) [physics.chem-ph] for this version)
+[https://doi.org/10.48550/arXiv.2603.13549](https://doi.org/10.48550/arXiv.2603.13549)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: Aaron Dinner [[view email](https://arxiv.org/show-email/0b710352/2603.13549)] 
+
+**[v1]** Fri, 13 Mar 2026 19:38:06 UTC (5,715 KB)
+
+[](https://arxiv.org/abs/2603.13549v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Adaptive tensor train metadynamics for high-dimensional free energy exploration, by Nils E. Strand and 3 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.13549v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.13549v1)
+*   [TeX Source](https://arxiv.org/src/2603.13549v1)
+
+[![Image 5: license icon](https://arxiv.org/icons/licenses/by-4.0.png)view license](http://creativecommons.org/licenses/by/4.0/ "Rights to this article")
+
+ Current browse context: 
+
+physics.chem-ph
+
+[<prev](https://arxiv.org/prevnext?id=2603.13549&function=prev&context=physics.chem-ph "previous in physics.chem-ph (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.13549&function=next&context=physics.chem-ph "next in physics.chem-ph (accesskey n)")
+
+[new](https://arxiv.org/list/physics.chem-ph/new) | [recent](https://arxiv.org/list/physics.chem-ph/recent) | [2026-03](https://arxiv.org/list/physics.chem-ph/2026-03)
+
+ Change to browse by: 
+
+[cond-mat](https://arxiv.org/abs/2603.13549?context=cond-mat)
+
+[cond-mat.stat-mech](https://arxiv.org/abs/2603.13549?context=cond-mat.stat-mech)
+
+[physics](https://arxiv.org/abs/2603.13549?context=physics)
+
+[physics.comp-ph](https://arxiv.org/abs/2603.13549?context=physics.comp-ph)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.13549)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.13549)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.13549)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.13549v1)
+
+### Bookmark
+
+[![Image 6: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.13549&description=Adaptive%20tensor%20train%20metadynamics%20for%20high-dimensional%20free%20energy%20exploration "Bookmark on BibSonomy")[![Image 7: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.13549&title=Adaptive%20tensor%20train%20metadynamics%20for%20high-dimensional%20free%20energy%20exploration "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+*   [Author](https://arxiv.org/abs/2603.13549v1)
+*   [Venue](https://arxiv.org/abs/2603.13549v1)
+*   [Institution](https://arxiv.org/abs/2603.13549v1)
+*   [Topic](https://arxiv.org/abs/2603.13549v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.13549) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

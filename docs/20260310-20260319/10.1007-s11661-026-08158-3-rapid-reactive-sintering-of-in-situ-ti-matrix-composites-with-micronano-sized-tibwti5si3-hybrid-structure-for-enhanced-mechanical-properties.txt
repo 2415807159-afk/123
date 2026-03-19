@@ -1,0 +1,250 @@
+Title: Rapid Reactive Sintering of In-Situ Ti Matrix Composites with Micro/Nano-Sized TiBw/Ti5Si3 Hybrid Structure for Enhanced Mechanical Properties
+
+URL Source: https://link.springer.com/10.1007/s11661-026-08158-3
+
+Markdown Content:
+## References
+
+1.   M. Gürbüz, T. Mutuk, and P. Uyan: _Met. Mater. Int._, 2021, vol. 27, pp. 744–52.
+
+[Article](https://link.springer.com/doi/10.1007/s12540-020-00673-1)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Met.%20Mater.%20Int.&doi=10.1007%2Fs12540-020-00673-1&volume=27&pages=744-752&publication_year=2021&author=G%C3%BCrb%C3%BCz%2CM&author=Mutuk%2CT&author=Uyan%2CP)
+
+2.   B. Zheng, F. Dong, X. Yuan, H. Huang, Y. Zhang, X. Zuo, L. Luo, L. Wang, Y. Su, W. Li, and P.K. Liaw: _Tribol. Int._, 2020, vol. 145, p. 106177.
+
+[Article](https://doi.org/10.1016%2Fj.triboint.2020.106177)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXhs1Kmtbs%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Tribol.%20Int.&doi=10.1016%2Fj.triboint.2020.106177&volume=145&publication_year=2020&author=Zheng%2CB&author=Dong%2CF&author=Yuan%2CX&author=Huang%2CH&author=Zhang%2CY&author=Zuo%2CX&author=Luo%2CL&author=Wang%2CL&author=Su%2CY&author=Li%2CW&author=Liaw%2CPK)
+
+3.   A.S. Namini, S.A.A. Dilawary, A. Motallebzadeh, and M.S. Asl: _Compos. Part B_, 2019, vol. 172, pp. 271–80.
+
+[Article](https://doi.org/10.1016%2Fj.compositesb.2019.05.073)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Compos.%20Part%20B&doi=10.1016%2Fj.compositesb.2019.05.073&volume=172&pages=271-280&publication_year=2019&author=Namini%2CAS&author=Dilawary%2CSAA&author=Motallebzadeh%2CA&author=Asl%2CMS)
+
+4.   X. Mao, L. Dong, Y. Zhang, S. Qin, G. Sun, L. Wang, and Y. Zhang: _Carbon_, 2024, vol. 219, p. 118805.
+
+[Article](https://doi.org/10.1016%2Fj.carbon.2024.118805)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhtFyisLk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Carbon&doi=10.1016%2Fj.carbon.2024.118805&volume=219&publication_year=2024&author=Mao%2CX&author=Dong%2CL&author=Zhang%2CY&author=Qin%2CS&author=Sun%2CG&author=Wang%2CL&author=Zhang%2CY)
+
+5.   J. Le, Y. Han, P. Qiu, S. Li, G. Huang, J. Mao, and W. Lu: _J. Mater. Sci. Technol._, 2022, vol. 110, pp. 1–13.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2021.08.033)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXht12ntbjF)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2021.08.033&volume=110&pages=1-13&publication_year=2022&author=Le%2CJ&author=Han%2CY&author=Qiu%2CP&author=Li%2CS&author=Huang%2CG&author=Mao%2CJ&author=Lu%2CW)
+
+6.   L. Dong, X. Li, G. Sun, J. Xu, M. Li, Y. Tang, and Y. Fu: _Compos. Commun._, 2024, vol. 45, p. 101787.
+
+[Article](https://doi.org/10.1016%2Fj.coco.2023.101787)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Compos.%20Commun.&doi=10.1016%2Fj.coco.2023.101787&volume=45&publication_year=2024&author=Dong%2CL&author=Li%2CX&author=Sun%2CG&author=Xu%2CJ&author=Li%2CM&author=Tang%2CY&author=Fu%2CY)
+
+7.   B. Liu, Y. Li, H. Matsumoto, Y. Liu, Y. Liu, H. Tang, and A. Chiba: _Mater. Sci. Eng. A_, 2010, vol. 527, pp. 4733–41.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2010.04.003)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2010.04.003&volume=527&pages=4733-4741&publication_year=2010&author=Liu%2CB&author=Li%2CY&author=Matsumoto%2CH&author=Liu%2CY&author=Liu%2CY&author=Tang%2CH&author=Chiba%2CA)
+
+8.   S. Sun, M. Wang, L. Wang, J. Qin, W. Lu, and D. Zhang: _Compos. Part B_, 2012, vol. 43, pp. 3334–37.
+
+[Article](https://doi.org/10.1016%2Fj.compositesb.2012.01.075)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC38XhsVSjs77L)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Compos.%20Part%20B&doi=10.1016%2Fj.compositesb.2012.01.075&volume=43&pages=3334-3337&publication_year=2012&author=Sun%2CS&author=Wang%2CM&author=Wang%2CL&author=Qin%2CJ&author=Lu%2CW&author=Zhang%2CD)
+
+9.   C.S. Goh, J. Wei, L.C. Lee, and M. Gupta: _Acta Mater._, 2007, vol. 55, pp. 5115–21.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2007.05.032)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2sXovFWisbk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2007.05.032&volume=55&pages=5115-5121&publication_year=2007&author=Goh%2CCS&author=Wei%2CJ&author=Lee%2CLC&author=Gupta%2CM)
+
+10.   L. Dong, J. Lu, Y. Fu, W. Huo, Y. Liu, D. Li, and Y. Zhang: _Carbon_, 2020, vol. 164, pp. 272–86.
+
+[Article](https://doi.org/10.1016%2Fj.carbon.2020.04.009)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXns1Wqt7w%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Carbon&doi=10.1016%2Fj.carbon.2020.04.009&volume=164&pages=272-286&publication_year=2020&author=Dong%2CL&author=Lu%2CJ&author=Fu%2CY&author=Huo%2CW&author=Liu%2CY&author=Li%2CD&author=Zhang%2CY)
+
+11.   X. Huang, Y. Gao, Y. Yi, P. Xiao, Y. Jian, Y. Wang, S. Zhao, Q. Liu, and Z. Ren: _Mater. Sci. Eng. A_, 2021, vol. 805, p. 140581.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2020.140581)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXisVequrjI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2020.140581&volume=805&publication_year=2021&author=Huang%2CX&author=Gao%2CY&author=Yi%2CY&author=Xiao%2CP&author=Jian%2CY&author=Wang%2CY&author=Zhao%2CS&author=Liu%2CQ&author=Ren%2CZ)
+
+12.   T.M.T. Godfrey, A. Wisbey, P.S. Goodwin, K. Bagnall, and C.M. Ward-Close: _Mater. Sci. Eng. A_, 2000, vol. 282, pp. 240–50.
+
+[Article](https://doi.org/10.1016%2FS0921-5093%2899%2900699-1)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2FS0921-5093%2899%2900699-1&volume=282&pages=240-250&publication_year=2000&author=Godfrey%2CTMT&author=Wisbey%2CA&author=Goodwin%2CPS&author=Bagnall%2CK&author=Ward-Close%2CCM)
+
+13.   S. Gorsse and D.B. Miracle: _Acta Mater._, 2003, vol. 51, pp. 24270–32444.
+
+[Article](https://doi.org/10.1016%2FS1359-6454%2802%2900510-4)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2FS1359-6454%2802%2900510-4&volume=51&pages=24270-32444&publication_year=2003&author=Gorsse%2CS&author=Miracle%2CDB)
+
+14.   M. Kobayashi, K. Funami, S. Suzuki, and C. Ouchi: _Mater. Sci. Eng. A_, 1998, vol. 243, pp. 279–83.
+
+[Article](https://doi.org/10.1016%2FS0921-5093%2897%2900814-9)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2FS0921-5093%2897%2900814-9&volume=243&pages=279-283&publication_year=1998&author=Kobayashi%2CM&author=Funami%2CK&author=Suzuki%2CS&author=Ouchi%2CC)
+
+15.   S. Ranganath: _J. Mater. Sci._, 1997, vol. 32, pp. 1–16.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK2sXmtFClug%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&volume=32&pages=1-16&publication_year=1997&author=Ranganath%2CS)
+
+16.   Z.Y. Ma, S.C. Tjong, and L. Gen: _Scr. Mater._, 2000, vol. 42, pp. 367–73.
+
+[Article](https://doi.org/10.1016%2FS1359-6462%2899%2900354-1)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2FS1359-6462%2899%2900354-1&volume=42&pages=367-373&publication_year=2000&author=Ma%2CZY&author=Tjong%2CSC&author=Gen%2CL)
+
+17.   Y. Li, Z. Wang, L. Sun, and X. Wang: _J. Mater. Res. Technol._, 2024, vol. 30, pp. 1962–77.
+
+[Article](https://doi.org/10.1016%2Fj.jmrt.2024.03.137)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXnsVehtr0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Res.%20Technol.&doi=10.1016%2Fj.jmrt.2024.03.137&volume=30&pages=1962-1977&publication_year=2024&author=Li%2CY&author=Wang%2CZ&author=Sun%2CL&author=Wang%2CX)
+
+18.   A. Nisar, C. Zhang, B. Boesl, and A. Agarwal: _Ceramics_, 2021, vol. 4, pp. 20–39.
+
+[Article](https://doi.org/10.3390%2Fceramics4010003)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXotFKqtL4%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Ceramics&doi=10.3390%2Fceramics4010003&volume=4&pages=20-39&publication_year=2021&author=Nisar%2CA&author=Zhang%2CC&author=Boesl%2CB&author=Agarwal%2CA)
+
+19.   M. Sumida and K. Kondoh: _Mater. Trans._, 2005, vol. 46, pp. 2135–41.
+
+[Article](https://doi.org/10.2320%2Fmatertrans.46.2135)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2MXhtlSnu7rF)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Trans.&doi=10.2320%2Fmatertrans.46.2135&volume=46&pages=2135-2141&publication_year=2005&author=Sumida%2CM&author=Kondoh%2CK)
+
+20.   S. Li, Y. Han, Z. Shi, G. Huang, N. Zong, J. Le, and P. Qiu: _Mater Charact_, 2020, vol. 168, 110527.
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2020.110527)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXhsFSgtrrP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater%20Charact&doi=10.1016%2Fj.matchar.2020.110527&volume=168&publication_year=2020&author=Li%2CS&author=Han%2CY&author=Shi%2CZ&author=Huang%2CG&author=Zong%2CN&author=Le%2CJ&author=Qiu%2CP)
+
+21.   K.B. Panda and K.S. Ravi Chandran: _Metall. Mater. Trans. A_, 2003, vol. 34A, pp. 1371–85.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-003-0249-z)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3sXks1Gqsbs%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-003-0249-z&volume=34A&pages=1371-1385&publication_year=2003&author=Panda%2CKB&author=Ravi%20Chandran%2CKS)
+
+22.   Y. Feng, K. Feng, C. Yao, Z. Li, and J. Sun: _Mater. Des._, 2018, vol. 157, pp. 258–72.
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2018.07.045)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXhsVahtbrE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2018.07.045&volume=157&pages=258-272&publication_year=2018&author=Feng%2CY&author=Feng%2CK&author=Yao%2CC&author=Li%2CZ&author=Sun%2CJ)
+
+23.   X. Meng, Z. Sun, X. Chu, Y. Guo, H. Chang, and Y. Wang: _Mater Charact_, 2023, vol. 205, p. 113192.
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2023.113192)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhvVWqsrzL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater%20Charact&doi=10.1016%2Fj.matchar.2023.113192&volume=205&publication_year=2023&author=Meng%2CX&author=Sun%2CZ&author=Chu%2CX&author=Guo%2CY&author=Chang%2CH&author=Wang%2CY)
+
+24.   C. Lei, Y. Pan, F. Kuang, W. Huo, M. Zhu, and X. Lu: _Mater. Sci. Eng. A_, 2024, vol. 892, p. 145961.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2023.145961)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhsVKhs70%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2023.145961&volume=892&publication_year=2024&author=Lei%2CC&author=Pan%2CY&author=Kuang%2CF&author=Huo%2CW&author=Zhu%2CM&author=Lu%2CX)
+
+25.   L. Jia, X. Li, K. Kondoh, B. Chen, S. Li, J. Umeda, and Z. Lu: _Mater Charact_, 2019, vol. 151, pp. 6–14.
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2019.02.026)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1MXjvVyqt78%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater%20Charact&doi=10.1016%2Fj.matchar.2019.02.026&volume=151&pages=6-14&publication_year=2019&author=Jia%2CL&author=Li%2CX&author=Kondoh%2CK&author=Chen%2CB&author=Li%2CS&author=Umeda%2CJ&author=Lu%2CZ)
+
+26.   S. Ghesmati Tabrizi, S.A. Sajjadi, A. Babakhani, and W. Lu: _Mater. Sci. Eng. A_, 2015, vol. 624, pp. 271–78.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2014.11.036)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXitVWrsL3N)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2014.11.036&volume=624&pages=271-278&publication_year=2015&author=Ghesmati%20Tabrizi%2CS&author=Sajjadi%2CSA&author=Babakhani%2CA&author=Lu%2CW)
+
+27.   Y. Yang, Y. Chang, and L. Tan: _Intermetallics_, 2005, vol. 13, pp. 1110–15.
+
+[Article](https://doi.org/10.1016%2Fj.intermet.2005.02.001)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2MXls1Oru7g%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Intermetallics&doi=10.1016%2Fj.intermet.2005.02.001&volume=13&pages=1110-1115&publication_year=2005&author=Yang%2CY&author=Chang%2CY&author=Tan%2CL)
+
+28.   X. Wang, H. Ma, X. Zhang, L. Chen, and H. Wu: _Phys. B: Condens. Matter_, 2024, vol. 683, p. 415928.
+
+[Article](https://doi.org/10.1016%2Fj.physb.2024.415928)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXotlGltrk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Phys.%20B%3A%20Condens.%20Matter&doi=10.1016%2Fj.physb.2024.415928&volume=683&publication_year=2024&author=Wang%2CX&author=Ma%2CH&author=Zhang%2CX&author=Chen%2CL&author=Wu%2CH)
+
+29.   B. de Oliveira, A. Fiorin, T. Holland, and L.M. Ferreira: _Mater. Today Commun._, 2020, vol. 22, p. 100767.
+
+[Article](https://doi.org/10.1016%2Fj.mtcomm.2019.100767)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Today%20Commun.&doi=10.1016%2Fj.mtcomm.2019.100767&volume=22&publication_year=2020&author=Oliveira%2CB&author=Fiorin%2CA&author=Holland%2CT&author=Ferreira%2CLM)
+
+30.   U.D. Wdowik and G. Jagło: _Mater. Res. Express_, 2017, vol. 4, p. 076508.
+
+[Article](https://doi.org/10.1088%2F2053-1591%2Faa7e00)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Res.%20Express&doi=10.1088%2F2053-1591%2Faa7e00&volume=4&publication_year=2017&author=Wdowik%2CUD&author=Jag%C5%82o%2CG)
+
+31.   Y. Jiao, L. Huang, Q. An, S. Jiang, Y. Gao, X. Cui, and L. Geng: _Mater. Sci. Eng. A_, 2016, vol. 673, pp. 595–605.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2016.07.112)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XhtlyisrzK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2016.07.112&volume=673&pages=595-605&publication_year=2016&author=Jiao%2CY&author=Huang%2CL&author=An%2CQ&author=Jiang%2CS&author=Gao%2CY&author=Cui%2CX&author=Geng%2CL)
+
+32.   L. Li, K. Wang, D. Wang, Q. An, and G. Liu: _Mater. Sci. Eng. A_, 2024, vol. 891, p. 145910.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2023.145910)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXisVaktb%2FK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2023.145910&volume=891&publication_year=2024&author=Li%2CL&author=Wang%2CK&author=Wang%2CD&author=An%2CQ&author=Liu%2CG)
+
+33.   O. Knacke, O. Kubascheswski and R. Hesselman: _Thermochemical Properties of Inorganic Substances_, 2nd ed., Springer, Berlin, 2003.
+
+34.   Y. Fu, Y. Xu, Y. Wang, Y. Bai, H. Hao, and X. Zhu: _J. Alloys Compd._, 2023, vol. 966, p. 171523.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2023.171523)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhs1amt77I)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2023.171523&volume=966&publication_year=2023&author=Fu%2CY&author=Xu%2CY&author=Wang%2CY&author=Bai%2CY&author=Hao%2CH&author=Zhu%2CX)
+
+35.   H.J. Lee, S.H. Kim, and J.C. Lee: _Scr. Mater._, 2016, vol. 115, pp. 33–37.
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2015.12.024)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28Xns1Oqug%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2015.12.024&volume=115&pages=33-37&publication_year=2016&author=Lee%2CHJ&author=Kim%2CSH&author=Lee%2CJC)
+
+36.   C. Han, R. Babicheva, and J.D.Q. Chua: _Addit. Manuf._, 2020, vol. 36, p. 101466.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhvFaqsg%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Addit.%20Manuf.&volume=36&publication_year=2020&author=Han%2CC&author=Babicheva%2CR&author=Chua%2CJDQ)
+
+37.   R. Chaudhari and R. Bauri: _Mater. Sci. Eng. A_, 2013, vol. 587, pp. 161–67.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2013.08.069)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhsFOkurnM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2013.08.069&volume=587&pages=161-167&publication_year=2013&author=Chaudhari%2CR&author=Bauri%2CR)
+
+38.   E. Fereiduni, A. Ghasemi, and M. Elbestawi: _J. Alloys Compd._, 2022, vol. 896, p. 163054.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2021.163054)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXis1OntrzL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2021.163054&volume=896&publication_year=2022&author=Fereiduni%2CE&author=Ghasemi%2CA&author=Elbestawi%2CM)
+
+39.   Z. Pu, Y. Zhang, X. Kang, Y. Liu, J. Wu, and C. Liu: _Ceram. Int._, 2024, vol. 50, pp. 16000–16.
+
+[Article](https://doi.org/10.1016%2Fj.ceramint.2024.02.079)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXjvVyjtr8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Ceram.%20Int.&doi=10.1016%2Fj.ceramint.2024.02.079&volume=50&pages=16000-16016&publication_year=2024&author=Pu%2CZ&author=Zhang%2CY&author=Kang%2CX&author=Liu%2CY&author=Wu%2CJ&author=Liu%2CC)
+
+40.   Q. Zhang, W. Sun, S. Xu, X. Zhang, J. Wang, and C. Si: _J. Alloys Compd._, 2022, vol. 922, p. 166171.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2022.166171)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhvVSlsb7E)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2022.166171&volume=922&publication_year=2022&author=Zhang%2CQ&author=Sun%2CW&author=Xu%2CS&author=Zhang%2CX&author=Wang%2CJ&author=Si%2CC)
+
+41.   W. Zhang, S. Zhou, W. Ren, Y. Yang, L. Shi, Q. Zhou, and M. Liu: _J. Alloys Compd._, 2021, vol. 888, p. 161527.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2021.161527)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhvFSrtbbE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2021.161527&volume=888&publication_year=2021&author=Zhang%2CW&author=Zhou%2CS&author=Ren%2CW&author=Yang%2CY&author=Shi%2CL&author=Zhou%2CQ&author=Liu%2CM)
+
+42.   Z. Zheng, Z. Zhang, L. Dong, G. Sun, J. Xu, M. Li, L. Li, and Y. Zhang: _J. Alloys Compd._, 2023, vol. 969, p. 172360.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2023.172360)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXitV2nsr7K)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2023.172360&volume=969&publication_year=2023&author=Zheng%2CZ&author=Zhang%2CZ&author=Dong%2CL&author=Sun%2CG&author=Xu%2CJ&author=Li%2CM&author=Li%2CL&author=Zhang%2CY)
+
+43.   S. Luo, Q. Li, J. Tian, C. Wang, M. Yan, G.B. Schaffer, and M. Qian: _Scr. Mater._, 2013, vol. 69, pp. 29–32.
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2013.03.017)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXmt1Slt7Y%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2013.03.017&volume=69&pages=29-32&publication_year=2013&author=Luo%2CS&author=Li%2CQ&author=Tian%2CJ&author=Wang%2CC&author=Yan%2CM&author=Schaffer%2CGB&author=Qian%2CM)
+
+44.   L. Huang, L. Geng, H. Xu, and H. Peng: _Mater. Sci. Eng. A_, 2011, vol. 528, pp. 2859–62.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2010.12.046)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2010.12.046&volume=528&pages=2859-2862&publication_year=2011&author=Huang%2CL&author=Geng%2CL&author=Xu%2CH&author=Peng%2CH)
+
+45.   Y. Hao, J. Liu, J. Li, S. Li, Q. Zou, and X. Chen: _Mater. Des._, 2015, vol. 65, pp. 94–97.
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2014.09.008)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2014.09.008&volume=65&pages=94-97&publication_year=2015&author=Hao%2CY&author=Liu%2CJ&author=Li%2CJ&author=Li%2CS&author=Zou%2CQ&author=Chen%2CX)
+
+46.   H. Attar, K.G. Prashanth, L.C. Zhang, M. Calin, I.V. Okulov, S. Scudino, C. Yang, and J. Eckert: _J. Mater. Sci. Technol._, 2015, vol. 31, pp. 1001–05.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2015.08.007)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1MXitlGksbjL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2015.08.007&volume=31&pages=1001-1005&publication_year=2015&author=Attar%2CH&author=Prashanth%2CKG&author=Zhang%2CLC&author=Calin%2CM&author=Okulov%2CIV&author=Scudino%2CS&author=Yang%2CC&author=Eckert%2CJ)
+
+47.   Y. Long, T. Wang, H. Zhang, and X. Huang: _Mater. Sci. Eng. A_, 2014, vol. 608, pp. 82–89.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2014.04.057)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXpvVags7s%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2014.04.057&volume=608&pages=82-89&publication_year=2014&author=Long%2CY&author=Wang%2CT&author=Zhang%2CH&author=Huang%2CX)
+
+48.   C. Li, Y. Zhan, Y. Mo, and J. She: _Int. J. Refract. Met. Hard Mater._, 2013, vol. 41, pp. 432–36.
+
+[Article](https://doi.org/10.1016%2Fj.ijrmhm.2013.05.019)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXpvFequ7g%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Refract.%20Met.%20Hard%20Mater.&doi=10.1016%2Fj.ijrmhm.2013.05.019&volume=41&pages=432-436&publication_year=2013&author=Li%2CC&author=Zhan%2CY&author=Mo%2CY&author=She%2CJ)
+
+49.   L. Xie, Y. Wu, Y. Yao, L. Hua, L. Wang, L.C. Zhang, and W. Lu: _Mater. Char._, 2021, vol. 180, p. 111395.
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2021.111395)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhvVKms7vK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Char.&doi=10.1016%2Fj.matchar.2021.111395&volume=180&publication_year=2021&author=Xie%2CL&author=Wu%2CY&author=Yao%2CY&author=Hua%2CL&author=Wang%2CL&author=Zhang%2CLC&author=Lu%2CW)
+
+50.   F. Sun, L. Huang, R. Zhang, S. Wang, S. Jiang, Y. Sun, Q. An, Y. Jiao, and L. Geng: _J. Alloys Compd._, 2020, vol. 834, p. 155248.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2020.155248)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXotVGju78%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2020.155248&volume=834&publication_year=2020&author=Sun%2CF&author=Huang%2CL&author=Zhang%2CR&author=Wang%2CS&author=Jiang%2CS&author=Sun%2CY&author=An%2CQ&author=Jiao%2CY&author=Geng%2CL)
+
+51.   K.S. Munir, Y. Zheng, D. Zhang, J. Lin, Y. Li, and C. Wen: _Mater. Sci. Eng. A_, 2017, vol. 688, pp. 505–23.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2017.02.019)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXislWhtLY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2017.02.019&volume=688&pages=505-523&publication_year=2017&author=Munir%2CKS&author=Zheng%2CY&author=Zhang%2CD&author=Lin%2CJ&author=Li%2CY&author=Wen%2CC)
+
+52.   P. Huo, Z. Zhao, W. Du, and P. Bai: _Ceram. Inter._, 2021, vol. 47, pp. 19546–55.
+
+[Article](https://doi.org/10.1016%2Fj.ceramint.2021.03.292)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXotVamurw%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Ceram.%20Inter.&doi=10.1016%2Fj.ceramint.2021.03.292&volume=47&pages=19546-19555&publication_year=2021&author=Huo%2CP&author=Zhao%2CZ&author=Du%2CW&author=Bai%2CP)
+
+53.   Q. Meng, H. Feng, D. Jia, and Y. Zhou: _Key Eng. Mater._, 2007, vol. 353, pp. 365–68.
+
+[Article](https://doi.org/10.4028%2Fwww.scientific.net%2FKEM.353-358.365)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Key%20Eng.%20Mater.&doi=10.4028%2Fwww.scientific.net%2FKEM.353-358.365&volume=353&pages=365-368&publication_year=2007&author=Meng%2CQ&author=Feng%2CH&author=Jia%2CD&author=Zhou%2CY)
+
+54.   Y. Chen, L. Li, M. Han, C. Sun, and J. Li: _Materials_, 2024, vol. 17, p. 4866.
+
+[Article](https://doi.org/10.3390%2Fma17194866)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXit1eisb7K)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=39410437)[PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC11477728)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Materials&doi=10.3390%2Fma17194866&volume=17&publication_year=2024&author=Chen%2CY&author=Li%2CL&author=Han%2CM&author=Sun%2CC&author=Li%2CJ)
+
+55.   I. Matuła, G. Dercz, M. Zubko, J. Maszybrocka, J. Jurek-Suliga, S. Golba, and I. Jendrzejewska: _Materials_, 2020, vol. 13, p. 4539.
+
+[Article](https://doi.org/10.3390%2Fma13204539)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33066125)[PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7601945)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Materials&doi=10.3390%2Fma13204539&volume=13&publication_year=2020&author=Matu%C5%82a%2CI&author=Dercz%2CG&author=Zubko%2CM&author=Maszybrocka%2CJ&author=Jurek-Suliga%2CJ&author=Golba%2CS&author=Jendrzejewska%2CI)
+
+56.   T. Wu, R. Fan, Y. Wu, D. Wu, J. Yang, and M. Chen: _J. Mater. Sci._, 2023, vol. 58, pp. 8359–78.
+
+[Article](https://link.springer.com/doi/10.1007/s10853-023-08540-1)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXpsVyltb0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2Fs10853-023-08540-1&volume=58&pages=8359-8378&publication_year=2023&author=Wu%2CT&author=Fan%2CR&author=Wu%2CY&author=Wu%2CD&author=Yang%2CJ&author=Chen%2CM)
+
+57.   X. Gao, M. Peng, X. Zhang, M. Qian, A. Li, L. Geng, H. Wang, and H. Peng: _J. Alloys Compd._, 2023, vol. 931, p. 167444.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2022.167444)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38Xis1Ohs7fK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2022.167444&volume=931&publication_year=2023&author=Gao%2CX&author=Peng%2CM&author=Zhang%2CX&author=Qian%2CM&author=Li%2CA&author=Geng%2CL&author=Wang%2CH&author=Peng%2CH)
+
+58.   Y. Jiao, L. Huang, L. Geng, X. Li, Y. Gao, M. Qian, and R. Zhang: _Mater. Sci. Eng. A_, 2017, vol. 701, pp. 359–69.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2017.06.067)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXhtFSqt73J)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2017.06.067&volume=701&pages=359-369&publication_year=2017&author=Jiao%2CY&author=Huang%2CL&author=Geng%2CL&author=Li%2CX&author=Gao%2CY&author=Qian%2CM&author=Zhang%2CR)
+
+59.   S. Wang, Q. An, R. Zhang, S. Jiang, L. Huang, R. Chen, B. Liu, Y. Jiao, and L. Geng: _Mater. Sci. Eng. A_, 2022, vol. 829, p. 142176.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2021.142176)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXit1Clu7%2FJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2021.142176&volume=829&publication_year=2022&author=Wang%2CS&author=An%2CQ&author=Zhang%2CR&author=Jiang%2CS&author=Huang%2CL&author=Chen%2CR&author=Liu%2CB&author=Jiao%2CY&author=Geng%2CL)
+
+60.   T.S.R.C. Murthy, C. Subramanian, and R.K. Fotedar: _Int. J. Refract. Metals Hard Mater._, 2009, vol. 27, pp. 629–36.
+
+[Article](https://doi.org/10.1016%2Fj.ijrmhm.2008.10.001)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1MXislGhurk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Refract.%20Metals%20Hard%20Mater.&doi=10.1016%2Fj.ijrmhm.2008.10.001&volume=27&pages=629-636&publication_year=2009&author=Murthy%2CTSRC&author=Subramanian%2CC&author=Fotedar%2CRK)
+
+61.   S. Gorsse, J.P. Chaminade, and Y. Le: _Compos. Part A Appl. Sci. Manuf._, 1998, vol. 29, pp. 1229–34.
+
+[Article](https://doi.org/10.1016%2FS1359-835X%2898%2900080-3)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Compos.%20Part%20A%20Appl.%20Sci.%20Manuf.&doi=10.1016%2FS1359-835X%2898%2900080-3&volume=29&pages=1229-1234&publication_year=1998&author=Gorsse%2CS&author=Chaminade%2CJP&author=Le%2CY)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08158-3?format=refman&flavour=references)

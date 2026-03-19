@@ -1,0 +1,222 @@
+Title: Benchmarking Machine Learning Approaches for Polarization Mapping in Ferroelectrics Using 4D-STEM
+
+URL Source: https://arxiv.org/abs/2603.15582v1
+
+Markdown Content:
+# [2603.15582v1] Benchmarking Machine Learning Approaches for Polarization Mapping in Ferroelectrics Using 4D-STEM
+
+[Skip to main content](https://arxiv.org/abs/2603.15582v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cond-mat](https://arxiv.org/list/cond-mat/recent)> arXiv:2603.15582v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Condensed Matter > Materials Science
+
+**arXiv:2603.15582v1** (cond-mat) 
+
+ [Submitted on 16 Mar 2026]
+
+# Title:Benchmarking Machine Learning Approaches for Polarization Mapping in Ferroelectrics Using 4D-STEM
+
+Authors:[Matej Martinc](https://arxiv.org/search/cond-mat?searchtype=author&query=Martinc,+M), [Goran Dražič](https://arxiv.org/search/cond-mat?searchtype=author&query=Dra%C5%BEi%C4%8D,+G), [Anton Kokalj](https://arxiv.org/search/cond-mat?searchtype=author&query=Kokalj,+A), [Katarina Žiberna](https://arxiv.org/search/cond-mat?searchtype=author&query=%C5%BDiberna,+K), [Janina Roknić](https://arxiv.org/search/cond-mat?searchtype=author&query=Rokni%C4%87,+J), [Matic Poberžnik](https://arxiv.org/search/cond-mat?searchtype=author&query=Pober%C5%BEnik,+M), [Sašo Džeroski](https://arxiv.org/search/cond-mat?searchtype=author&query=D%C5%BEeroski,+S), [Andreja Benčan Golob](https://arxiv.org/search/cond-mat?searchtype=author&query=Golob,+A+B)
+
+View a PDF of the paper titled Benchmarking Machine Learning Approaches for Polarization Mapping in Ferroelectrics Using 4D-STEM, by Matej Martinc and 7 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.15582v1)[HTML (experimental)](https://arxiv.org/html/2603.15582v1)
+> Abstract:Four-dimensional scanning transmission electron microscopy (4D-STEM) provides rich, atomic-scale insights into materials structures. However, extracting specific physical properties - such as polarization directions essential for understanding functional properties of ferroelectrics - remains a significant challenge. In this study, we systematically benchmark multiple machine learning models, namely ResNet, VGG, a custom convolutional neural network, and PCA-informed k-Nearest Neighbors, to automate the detection of polarization directions from 4D-STEM diffraction patterns in ferroelectric potassium sodium niobate. While models trained on synthetic data achieve high accuracy on idealized synthetic diffraction patterns of equivalent thickness, the domain gap between simulation and experiment remains a critical barrier to real-world deployment. In this context, a custom made prototype representation training regime and PCA-based methods, combined with data augmentation and filtering, can better bridge this gap. Error analysis reveals periodic missclassification patterns, indicating that not all diffraction patterns carry enough information for a successful classification. Additionally, our qualitative analysis demonstrates that irregularities in the model's prediction patterns correlate with defects in the crystal structure, suggesting that supervised models could be used for detecting structural defects. These findings guide the development of robust, transferable machine learning tools for electron microscopy analysis.
+
+Subjects:Materials Science (cond-mat.mtrl-sci); Computer Vision and Pattern Recognition (cs.CV)
+Cite as:[arXiv:2603.15582](https://arxiv.org/abs/2603.15582) [cond-mat.mtrl-sci]
+(or [arXiv:2603.15582v1](https://arxiv.org/abs/2603.15582v1) [cond-mat.mtrl-sci] for this version)
+[https://doi.org/10.48550/arXiv.2603.15582](https://doi.org/10.48550/arXiv.2603.15582)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: Matej Martinc [[view email](https://arxiv.org/show-email/211323ff/2603.15582)] 
+
+**[v1]** Mon, 16 Mar 2026 17:45:28 UTC (2,206 KB)
+
+[](https://arxiv.org/abs/2603.15582v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Benchmarking Machine Learning Approaches for Polarization Mapping in Ferroelectrics Using 4D-STEM, by Matej Martinc and 7 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.15582v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.15582v1)
+*   [TeX Source](https://arxiv.org/src/2603.15582v1)
+
+[![Image 5: license icon](https://arxiv.org/icons/licenses/by-4.0.png)view license](http://creativecommons.org/licenses/by/4.0/ "Rights to this article")
+
+ Current browse context: 
+
+cond-mat.mtrl-sci
+
+[<prev](https://arxiv.org/prevnext?id=2603.15582&function=prev&context=cond-mat.mtrl-sci "previous in cond-mat.mtrl-sci (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.15582&function=next&context=cond-mat.mtrl-sci "next in cond-mat.mtrl-sci (accesskey n)")
+
+[new](https://arxiv.org/list/cond-mat.mtrl-sci/new) | [recent](https://arxiv.org/list/cond-mat.mtrl-sci/recent) | [2026-03](https://arxiv.org/list/cond-mat.mtrl-sci/2026-03)
+
+ Change to browse by: 
+
+[cond-mat](https://arxiv.org/abs/2603.15582?context=cond-mat)
+
+[cs](https://arxiv.org/abs/2603.15582?context=cs)
+
+[cs.CV](https://arxiv.org/abs/2603.15582?context=cs.CV)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.15582)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.15582)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.15582)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.15582v1)
+
+### Bookmark
+
+[![Image 6: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.15582&description=Benchmarking%20Machine%20Learning%20Approaches%20for%20Polarization%20Mapping%20in%20Ferroelectrics%20Using%204D-STEM "Bookmark on BibSonomy")[![Image 7: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.15582&title=Benchmarking%20Machine%20Learning%20Approaches%20for%20Polarization%20Mapping%20in%20Ferroelectrics%20Using%204D-STEM "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+- [x] IArxiv recommender toggle 
+
+IArxiv Recommender _([What is IArxiv?](https://iarxiv.org/about))_
+
+*   [Author](https://arxiv.org/abs/2603.15582v1)
+*   [Venue](https://arxiv.org/abs/2603.15582v1)
+*   [Institution](https://arxiv.org/abs/2603.15582v1)
+*   [Topic](https://arxiv.org/abs/2603.15582v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.15582) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

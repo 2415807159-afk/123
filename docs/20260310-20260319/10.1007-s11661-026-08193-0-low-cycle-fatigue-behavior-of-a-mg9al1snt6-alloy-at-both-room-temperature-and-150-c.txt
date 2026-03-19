@@ -1,0 +1,322 @@
+Title: Low-Cycle Fatigue Behavior of a Mg–9Al–1Sn–T6 Alloy at Both Room Temperature and 150 °C
+
+URL Source: https://link.springer.com/10.1007/s11661-026-08193-0
+
+Markdown Content:
+## References
+
+1.   Y. Yang, X.M. Xiong, J. Chen, X.D. Peng, D.L. Chen, and F.S. Pan: _J. Magnes. alloys_, 2021, vol. 9, pp. 705–47.
+
+[Article](https://doi.org/10.1016%2Fj.jma.2021.04.001)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhtFSgsLvE)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Magnes.%20alloys&doi=10.1016%2Fj.jma.2021.04.001&volume=9&pages=705-747&publication_year=2021&author=Yang%2CY&author=Xiong%2CXM&author=Chen%2CJ&author=Peng%2CXD&author=Chen%2CDL&author=Pan%2CFS)
+
+2.   J. Wei, Q.D. Wang, D.D. Yin, L. Zhang, H. Zhou, B. Ye, H.Y. Jiang, and W.J. Ding: _Metall. Mater. Trans. A_, 2020, vol. 51A, pp. 1487–92.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-020-05656-w)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-020-05656-w&volume=51A&pages=1487-1492&publication_year=2020&author=Wei%2CJ&author=Wang%2CQD&author=Yin%2CDD&author=Zhang%2CL&author=Zhou%2CH&author=Ye%2CB&author=Jiang%2CHY&author=Ding%2CWJ)
+
+3.   Y. Chen, Q. Shuai, Y.J. Wu, L.M. Peng, X.H. Shao, F.L. Liu, C. He, L. Li, Y.J. Liu, Q.Y. Wang, S.X. Xie, and Q. Chen: _Int. J. Fatigue_, 2023, vol. 175, 107820.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2023.107820)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhsVOrtrrI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2023.107820&volume=175&publication_year=2023&author=Chen%2CY&author=Shuai%2CQ&author=Wu%2CYJ&author=Peng%2CLM&author=Shao%2CXH&author=Liu%2CFL&author=He%2CC&author=Li%2CL&author=Liu%2CYJ&author=Wang%2CQY&author=Xie%2CSX&author=Chen%2CQ)
+
+4.   Z.M. Li, A.A. Luo, Q.G. Wang, H. Zou, J.C. Dai, and L.M. Peng: _J. Magnes. Alloys_, 2017, vol. 5, pp. 1–12.
+
+[Article](https://doi.org/10.1016%2Fj.jma.2017.03.001)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Magnes.%20Alloys&doi=10.1016%2Fj.jma.2017.03.001&volume=5&pages=1-12&publication_year=2017&author=Li%2CZM&author=Luo%2CAA&author=Wang%2CQG&author=Zou%2CH&author=Dai%2CJC&author=Peng%2CLM)
+
+5.   Q.G. Wang and P.E. Jones: _Metall. Mater. Trans. B_, 2007, vol. 38B, pp. 615–21.
+
+[Article](https://link.springer.com/doi/10.1007/s11663-007-9051-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2sXhtFKjsL%2FI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20B&doi=10.1007%2Fs11663-007-9051-4&volume=38B&pages=615-621&publication_year=2007&author=Wang%2CQG&author=Jones%2CPE)
+
+6.   Z.M. Li, A.A. Luo, Q.G. Wang, L.M. Peng, and P. Zhang: _Metall. Mater. Trans. A_, 2016, vol. 47A, pp. 4239–57.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-016-3550-3)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-016-3550-3&volume=47A&pages=4239-4257&publication_year=2016&author=Li%2CZM&author=Luo%2CAA&author=Wang%2CQG&author=Peng%2CLM&author=Zhang%2CP)
+
+7.   Z.M. Li, Q.G. Wang, A.A. Luo, P. Zhang, and L.M. Peng: _Metall. Mater. Trans. A_, 2016, vol. 47A, pp. 2686–2704.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-016-3436-4)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-016-3436-4&volume=47A&pages=2686-2704&publication_year=2016&author=Li%2CZM&author=Wang%2CQG&author=Luo%2CAA&author=Zhang%2CP&author=Peng%2CLM)
+
+8.   D.K. Xu, L. Liu, Y.B. Xu, and E.H. Han: _Scr. Mater._, 2007, vol. 56, pp. 1–4.
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2006.09.006)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD28XhtFehsbbO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2006.09.006&volume=56&pages=1-4&publication_year=2007&author=Xu%2CDK&author=Liu%2CL&author=Xu%2CYB&author=Han%2CEH)
+
+9.   Z.M. Li, Q.G. Wang, A.A. Luo, P.H. Fu, and L.M. Peng: _Int. J. Fatigue_, 2015, vol. 80, pp. 468–76.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2015.07.001)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2MXhtFylsL3K)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2015.07.001&volume=80&pages=468-476&publication_year=2015&author=Li%2CZM&author=Wang%2CQG&author=Luo%2CAA&author=Fu%2CPH&author=Peng%2CLM)
+
+10.   H.Y. Yue, P.H. Fu, L.M. Peng, Z.M. Li, J.P. Pan, and W.J. Ding: _Mater. Charact._, 2016, vol. 111, pp. 93–105.
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2015.11.013)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2MXhvFWiurjN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Charact.&doi=10.1016%2Fj.matchar.2015.11.013&volume=111&pages=93-105&publication_year=2016&author=Yue%2CHY&author=Fu%2CPH&author=Peng%2CLM&author=Li%2CZM&author=Pan%2CJP&author=Ding%2CWJ)
+
+11.   J.P. Pan, P.H. Fu, L.M. Peng, B.H. Hu, H.M. Zhang, and A.A. Luo: _Int. J. Fatigue_, 2019, vol. 13, pp. 104–16.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2018.08.001)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2018.08.001&volume=13&pages=104-116&publication_year=2019&author=Pan%2CJP&author=Fu%2CPH&author=Peng%2CLM&author=Hu%2CBH&author=Zhang%2CHM&author=Luo%2CAA)
+
+12.   Y. Chen, Q. Shuai, Y.J. Wu, L.M. Peng, N. Su, F.L. Liu, C. He, L. Li, Y.J. Liu, Q. Chen, and Q.Y. Wang: _Mater. Sci. Eng. A_, 2024, vol. 906, 146563.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2024.146563)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXpvFanu7Y%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2024.146563&volume=906&publication_year=2024&author=Chen%2CY&author=Shuai%2CQ&author=Wu%2CYJ&author=Peng%2CLM&author=Su%2CN&author=Liu%2CFL&author=He%2CC&author=Li%2CL&author=Liu%2CYJ&author=Chen%2CQ&author=Wang%2CQY)
+
+13.   X. Peng, X.L. Liang, W.C. Liu, G.H. Wu, H. Ji, X. Tong, and L. Zhang: _J. Magnes. Alloys_, 2021, vol. 9, pp. 1609–18.
+
+[Article](https://doi.org/10.1016%2Fj.jma.2020.07.012)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXis1agur7O)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Magnes.%20Alloys&doi=10.1016%2Fj.jma.2020.07.012&volume=9&pages=1609-1618&publication_year=2021&author=Peng%2CX&author=Liang%2CXL&author=Liu%2CWC&author=Wu%2CGH&author=Ji%2CH&author=Tong%2CX&author=Zhang%2CL)
+
+14.   P.H. Fu, L.M. Peng, H.Y. Jiang, and J.W. Chang: _Mater. Sci. Eng. A_, 2008, vol. 486, pp. 183–92.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2007.08.064)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2007.08.064&volume=486&pages=183-192&publication_year=2008&author=Fu%2CPH&author=Peng%2CLM&author=Jiang%2CHY&author=Chang%2CJW)
+
+15.   Z.M. Li, Q.G. Wang, A.A. Luo, J.C. Dai, H. Zou, and L.M. Peng: _J. Mater. Sci. Technol._, 2018, vol. 34, pp. 2091–99.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2018.05.001)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XnvFCgt7c%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2018.05.001&volume=34&pages=2091-2099&publication_year=2018&author=Li%2CZM&author=Wang%2CQG&author=Luo%2CAA&author=Dai%2CJC&author=Zou%2CH&author=Peng%2CLM)
+
+16.   Z.M. Li, Q.G. Wang, and D. Gerard: _Mater. Sci. Eng. A_, 2022, vol. 854, 143801.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2022.143801)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38Xit1OjtL3O)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2022.143801&volume=854&publication_year=2022&author=Li%2CZM&author=Wang%2CQG&author=Gerard%2CD)
+
+17.   Z.M. Li, Q.G. Wang, L.M. Peng, A.A. Luo, and P.H. Fu: _Metall. Mater. Trans. A_, 2022, vol. 53A, pp. 754–61.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-021-06465-5)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-021-06465-5&volume=53A&pages=754-761&publication_year=2022&author=Li%2CZM&author=Wang%2CQG&author=Peng%2CLM&author=Luo%2CAA&author=Fu%2CPH)
+
+18.   F.H. Wang, M.L. Feng, Y.Y. Jiang, J. Dong, and Z.Y. Zhang: _J. Mater. Sci. Technol._, 2020, vol. 39, pp. 74–81.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2019.08.025)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2019.08.025&volume=39&pages=74-81&publication_year=2020&author=Wang%2CFH&author=Feng%2CML&author=Jiang%2CYY&author=Dong%2CJ&author=Zhang%2CZY)
+
+19.   Y. Chen, F.L. Liu, Y.J. Wu, L.M. Peng, L. Li, C. He, Q. Chen, Y.J. Liu, and Q.Y. Wang: _J. Magnes. Alloys_, 2025, vol. 13, pp. 90–100.
+
+[Article](https://doi.org/10.1016%2Fj.jma.2024.11.018)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXis1OgsLbL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Magnes.%20Alloys&doi=10.1016%2Fj.jma.2024.11.018&volume=13&pages=90-100&publication_year=2025&author=Chen%2CY&author=Liu%2CFL&author=Wu%2CYJ&author=Peng%2CLM&author=Li%2CL&author=He%2CC&author=Chen%2CQ&author=Liu%2CYJ&author=Wang%2CQY)
+
+20.   X.M. Chen, B.C. Xiao, Y.C. Lin, and X.J. Zhou: _Mater. Sci. Eng. A_, 2024, vol. 899, 146414.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2024.146414)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXns1ahtbw%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2024.146414&volume=899&publication_year=2024&author=Chen%2CXM&author=Xiao%2CBC&author=Lin%2CYC&author=Zhou%2CXJ)
+
+21.   M. Regev, A. Rosen, and M. Bamberger: _Metall. Mater. Trans. A_, 2001, vol. 32A, pp. 1335–45.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-001-0224-5)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3MXktlSlsr8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-001-0224-5&volume=32A&pages=1335-1345&publication_year=2001&author=Regev%2CM&author=Rosen%2CA&author=Bamberger%2CM)
+
+22.   M. Freund, Z.C. Xie, M. Kolb, P.L. Sun, M. Hnas, J.M. Wheeler, and S.K. Kerzel: _Mater. Des._, 2025, vol. 255, 114151.
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2025.114151)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXht1Omur3F)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2025.114151&volume=255&publication_year=2025&author=Freund%2CM&author=Xie%2CZC&author=Kolb%2CM&author=Sun%2CPL&author=Hnas%2CM&author=Wheeler%2CJM&author=Kerzel%2CSK)
+
+23.   A.A. Luo, P.H. Fu, L.M. Peng, X.Y. Kang, Z.Z. Li, and T.Y. Zhu: _Metall. Mater. Trans. A_, 2012, vol. 43A, pp. 360–68.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-011-0820-y)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-011-0820-y&volume=43A&pages=360-368&publication_year=2012&author=Luo%2CAA&author=Fu%2CPH&author=Peng%2CLM&author=Kang%2CXY&author=Li%2CZZ&author=Zhu%2CTY)
+
+24.   Y.P. Meng, H.L. Jia, M. Zha, S.C. Wang, Z.L. Li, and H.Y. Wang: _J. Mater. Sci. Technol._, 2026, vol. 242, pp. 15–27.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2025.02.094)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2025.02.094&volume=242&pages=15-27&publication_year=2026&author=Meng%2CYP&author=Jia%2CHL&author=Zha%2CM&author=Wang%2CSC&author=Li%2CZL&author=Wang%2CHY)
+
+25.   S.C. Wang, S.Y. Chen, Z.Z. Jin, X. Ma, H.L. Jia, J.N. Zhu, C.Y. Li, M. Zha, and H.Y. Wang: _J. Magnes. Alloys_, 2025, vol. 13, pp. 1630–45.
+
+[Article](https://doi.org/10.1016%2Fj.jma.2024.06.022)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhsFShurjL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Magnes.%20Alloys&doi=10.1016%2Fj.jma.2024.06.022&volume=13&pages=1630-1645&publication_year=2025&author=Wang%2CSC&author=Chen%2CSY&author=Jin%2CZZ&author=Ma%2CX&author=Jia%2CHL&author=Zhu%2CJN&author=Li%2CCY&author=Zha%2CM&author=Wang%2CHY)
+
+26.   Z.M. Li, Q.G. Wang, A.A. Luo, P.H. Fu, L.M. Peng, Y.X. Wang, and G.H. Wu: _Metall. Mater. Trans. A_, 2013, vol. 44A, pp. 5202–15.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-013-1843-3)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-013-1843-3&volume=44A&pages=5202-5215&publication_year=2013&author=Li%2CZM&author=Wang%2CQG&author=Luo%2CAA&author=Fu%2CPH&author=Peng%2CLM&author=Wang%2CYX&author=Wu%2CGH)
+
+27.   J.D. Yang, W.X. Wang, M. Zhang, J. Liu, and S.Y. Qin: _Mater. Sci. Eng. A_, 2022, vol. 858, 144191.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2022.144191)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38Xis1Ohs7bI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2022.144191&volume=858&publication_year=2022&author=Yang%2CJD&author=Wang%2CWX&author=Zhang%2CM&author=Liu%2CJ&author=Qin%2CSY)
+
+28.   K. Korgiopoulos, B. Langelier, and M. Pekguleryuz: _Mater. Sci. Eng. A_, 2021, vol. 812, 141075.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2021.141075)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXnsV2msrc%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2021.141075&volume=812&publication_year=2021&author=Korgiopoulos%2CK&author=Langelier%2CB&author=Pekguleryuz%2CM)
+
+29.   Y.C. Deng, G. Zeng, J.W. Xian, H.Y. Zhan, C.M. Liu, and C.M. Gourlay: _Mater. Charact._, 2022, vol. 186, 111807.
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2022.111807)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38Xls1OmtLw%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Charact.&doi=10.1016%2Fj.matchar.2022.111807&volume=186&publication_year=2022&author=Deng%2CYC&author=Zeng%2CG&author=Xian%2CJW&author=Zhan%2CHY&author=Liu%2CCM&author=Gourlay%2CCM)
+
+30.   C.Q. Liu, H.W. Chen, H. Liu, X.J. Zhao, and J.F. Nie: _Acta Mater._, 2018, vol. 144, pp. 590–600.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2017.10.023)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXhvVCmu7bK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2017.10.023&volume=144&pages=590-600&publication_year=2018&author=Liu%2CCQ&author=Chen%2CHW&author=Liu%2CH&author=Zhao%2CXJ&author=Nie%2CJF)
+
+31.   L. Tong, J. Jiang, G.L. Bi, Z.C. Xu, Y.D. Li, T.J. Chen, X.R. Zhang, W. Fu, and D.Q. Fang: _J. Mater. Res. Techno._, 2023, vol. 24, pp. 1442–53.
+
+[Article](https://doi.org/10.1016%2Fj.jmrt.2023.03.087)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXlvFaisr8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Res.%20Techno.&doi=10.1016%2Fj.jmrt.2023.03.087&volume=24&pages=1442-1453&publication_year=2023&author=Tong%2CL&author=Jiang%2CJ&author=Bi%2CGL&author=Xu%2CZC&author=Li%2CYD&author=Chen%2CTJ&author=Zhang%2CXR&author=Fu%2CW&author=Fang%2CDQ)
+
+32.   F. Wang, H. Kitaguchi, and Y.L. Chiu: _Mater. Charact._, 2022, vol. 194, 112345.
+
+[Article](https://doi.org/10.1016%2Fj.matchar.2022.112345)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisFyntrvO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Charact.&doi=10.1016%2Fj.matchar.2022.112345&volume=194&publication_year=2022&author=Wang%2CF&author=Kitaguchi%2CH&author=Chiu%2CYL)
+
+33.   H.J. Kim, S.C. Jin, J.G. Jung, and S.H. Park: _J. Mater. Sci. Technol._, 2021, vol. 71, pp. 87–97.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2020.08.056)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhtFehsbfK)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2020.08.056&volume=71&pages=87-97&publication_year=2021&author=Kim%2CHJ&author=Jin%2CSC&author=Jung%2CJG&author=Park%2CSH)
+
+34.   S. Begum, D.L. Chen, S. Xu, and A.A. Luo: _Metall. Mater. Trans. A_, 2008, vol. 39A, pp. 3014–26.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-008-9677-0)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXht1yrsLnI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-008-9677-0&volume=39A&pages=3014-3026&publication_year=2008&author=Begum%2CS&author=Chen%2CDL&author=Xu%2CS&author=Luo%2CAA)
+
+35.   X.Z. Lin and D.L. Chen: _Mater. Sci. Eng. A_, 2008, vol. 496, pp. 106–13.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2008.05.016)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2008.05.016&volume=496&pages=106-113&publication_year=2008&author=Lin%2CXZ&author=Chen%2CDL)
+
+36.   Y. Nakai, S. Kikuchi, K. Asayama, and H. Yoshida: _Mater. Sci. Eng. A_, 2021, vol. 826, 141941.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2021.141941)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhvVOku7%2FJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2021.141941&volume=826&publication_year=2021&author=Nakai%2CY&author=Kikuchi%2CS&author=Asayama%2CK&author=Yoshida%2CH)
+
+37.   L.Y. Wu, Z. Yang, W.J. Xia, Z.H. Chen, and L. Yang: _Mater. Des._, 2012, vol. 36, pp. 47–53.
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2011.10.056)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2011.10.056&volume=36&pages=47-53&publication_year=2012&author=Wu%2CLY&author=Yang%2CZ&author=Xia%2CWJ&author=Chen%2CZH&author=Yang%2CL)
+
+38.   A.H. Jabbari, M. Sedighi, H. Jahed, and C. Sommotsch: _Int. J. Fatigue_, 2020, vol. 139, 105803.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2020.105803)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXhtlWqu7jI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2020.105803&volume=139&publication_year=2020&author=Jabbari%2CAH&author=Sedighi%2CM&author=Jahed%2CH&author=Sommotsch%2CC)
+
+39.   Z.Y. Wang, Y. Lei, B.H. Hu, C. Yu, S.C. Wu, X.Q. Feng, and G.Z. Kang: _Int. J. Plasticity_, 2024, vol. 177, 103972.
+
+[Article](https://doi.org/10.1016%2Fj.ijplas.2024.103972)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhtVSgs7vM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Plasticity&doi=10.1016%2Fj.ijplas.2024.103972&volume=177&publication_year=2024&author=Wang%2CZY&author=Lei%2CY&author=Hu%2CBH&author=Yu%2CC&author=Wu%2CSC&author=Feng%2CXQ&author=Kang%2CGZ)
+
+40.   T.J. Li, W.C. Jing, J. Zheng, L.Y. He, L.H. Xia, M. Gupta, and B. Jiang: _Fatigue Fract. Eng. Mater. Struct._, 2024, vol. 47, pp. 3032–48.
+
+[Article](https://doi.org/10.1111%2Fffe.14358)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Fatigue%20Fract.%20Eng.%20Mater.%20Struct.&doi=10.1111%2Fffe.14358&volume=47&pages=3032-3048&publication_year=2024&author=Li%2CTJ&author=Jing%2CWC&author=Zheng%2CJ&author=He%2CLY&author=Xia%2CLH&author=Gupta%2CM&author=Jiang%2CB)
+
+41.   Z.Y. Wang, Z.Y. Xing, Y. Lei, B.H. Hu, J.C. Hu, H. Li, X.Q. Feng, and G.Z. Kang: _J. Mater. Sci. Technol._, 2025, vol. 234, pp. 246–83.
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2025.02.038)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXht1Wqu7rN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2025.02.038&volume=234&pages=246-283&publication_year=2025&author=Wang%2CZY&author=Xing%2CZY&author=Lei%2CY&author=Hu%2CBH&author=Hu%2CJC&author=Li%2CH&author=Feng%2CXQ&author=Kang%2CGZ)
+
+42.   A. Jeldi, A. Zarei-Hanzaki, A. Moshiri, H.R. Abedi, and J.H. Cho: _J. Mater. Res. Technol._, 2022, vol. 20, pp. 2819–25.
+
+[Article](https://doi.org/10.1016%2Fj.jmrt.2022.08.025)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XisVCktLzI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Res.%20Technol.&doi=10.1016%2Fj.jmrt.2022.08.025&volume=20&pages=2819-2825&publication_year=2022&author=Jeldi%2CA&author=Zarei-Hanzaki%2CA&author=Moshiri%2CA&author=Abedi%2CHR&author=Cho%2CJH)
+
+43.   N. Ansari, B. Tran, W.J. Poole, S.S. Singh, H. Krishnaswamy, and J. Jain: _Mater. Sci. Eng. A_, 2020, vol. 777, 139051.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2020.139051)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXivFKksLo%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2020.139051&volume=777&publication_year=2020&author=Ansari%2CN&author=Tran%2CB&author=Poole%2CWJ&author=Singh%2CSS&author=Krishnaswamy%2CH&author=Jain%2CJ)
+
+44.   Y.J. Kim, S.H. Kim, J.U. Lee, B.S. You, and S.H. Park: _Mater. Sci. Eng. A_, 2017, vol. 707, pp. 620–28.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2017.09.093)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXhsFyltLrL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2017.09.093&volume=707&pages=620-628&publication_year=2017&author=Kim%2CYJ&author=Kim%2CSH&author=Lee%2CJU&author=You%2CBS&author=Park%2CSH)
+
+45.   M.J. Zhang, H. Zhang, A.X. Ma, and J. LLorca: _Int. J. Plasticity_, 2021, vol. 139, p. 102885.
+
+[Article](https://doi.org/10.1016%2Fj.ijplas.2020.102885)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXisFOnsrbL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Plasticity&doi=10.1016%2Fj.ijplas.2020.102885&volume=139&publication_year=2021&author=Zhang%2CMJ&author=Zhang%2CH&author=Ma%2CAX&author=LLorca%2CJ)
+
+46.   F. Mokdad and D.L. Chen: _Mater. Des._, 2015, vol. 67, pp. 436–47.
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2014.11.058)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2cXitV2ms7vJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2014.11.058&volume=67&pages=436-447&publication_year=2015&author=Mokdad%2CF&author=Chen%2CDL)
+
+47.   F.A. Mirza, K. Wang, S.D. Bhole, J. Friedman, D.L. Chen, D.R. Ni, B.L. Xiao, and Z.Y. Ma: _Mater. Sci. Eng. A_, 2016, vol. 661, pp. 115–25.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2016.03.024)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XktVClu7s%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2016.03.024&volume=661&pages=115-125&publication_year=2016&author=Mirza%2CFA&author=Wang%2CK&author=Bhole%2CSD&author=Friedman%2CJ&author=Chen%2CDL&author=Ni%2CDR&author=Xiao%2CBL&author=Ma%2CZY)
+
+48.   T. Sumigawa, N. Kawakatsu, A. Tobise, K. Sugisaka, Y. Takahashi, S. Arai, M. Abe, H. Shima, and Y. Umeno: _Acta Mater._, 2024, vol. 277, 120208.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2024.120208)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2cXhs1aitrnP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2024.120208&volume=277&publication_year=2024&author=Sumigawa%2CT&author=Kawakatsu%2CN&author=Tobise%2CA&author=Sugisaka%2CK&author=Takahashi%2CY&author=Arai%2CS&author=Abe%2CM&author=Shima%2CH&author=Umeno%2CY)
+
+49.   S. Lavenstein, B. Crawford, G.D. Sim, P.A. Shade, C. Woodward, and J.A. El-Awady: _Acta Mater._, 2018, vol. 144, pp. 154–63.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2017.10.049)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2sXhslKqsbbN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2017.10.049&volume=144&pages=154-163&publication_year=2018&author=Lavenstein%2CS&author=Crawford%2CB&author=Sim%2CGD&author=Shade%2CPA&author=Woodward%2CC&author=El-Awady%2CJA)
+
+50.   J. Polák, D. Jadlovský, and T. Kruml: _Int. J. Fatigue_, 2024, vol. 179, 108063.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2023.108063)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2023.108063&volume=179&publication_year=2024&author=Pol%C3%A1k%2CJ&author=Jadlovsk%C3%BD%2CD&author=Kruml%2CT)
+
+51.   G.T. Li, P.C. Hu, G. Chen, M.J. Chen, and T.Y. Yu: _Int. J. Fatigue_, 2025, vol. 199, 109077.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2025.109077)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB2MXht1GhsLvL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2025.109077&volume=199&publication_year=2025&author=Li%2CGT&author=Hu%2CPC&author=Chen%2CG&author=Chen%2CMJ&author=Yu%2CTY)
+
+52.   D.K. Xu, L. Liu, Y.B. Xu, and E.H. Han: _Acta Mater._, 2008, vol. 56, pp. 985–94.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2007.10.057)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXhvFyqs7o%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2007.10.057&volume=56&pages=985-994&publication_year=2008&author=Xu%2CDK&author=Liu%2CL&author=Xu%2CYB&author=Han%2CEH)
+
+53.   X.Y. Chen, Q.A. Li, J.L. Yan, and P.J. Chen: _J. Mater. Res. Technol._, 2023, vol. 24, pp. 866–78.
+
+[Article](https://doi.org/10.1016%2Fj.jmrt.2023.03.065)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXlsFantb0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Res.%20Technol.&doi=10.1016%2Fj.jmrt.2023.03.065&volume=24&pages=866-878&publication_year=2023&author=Chen%2CXY&author=Li%2CQA&author=Yan%2CJL&author=Chen%2CPJ)
+
+54.   H. Qin, G.Y. Yang, Z.Y. Kan, C.H. Wang, S.X. Ouyang, and W.Q. Jie: _J. Mater. Res. Technol._, 2023, vol. 25, pp. 5781–94.
+
+[Article](https://doi.org/10.1016%2Fj.jmrt.2023.07.049)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhsVyms7jP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Res.%20Technol.&doi=10.1016%2Fj.jmrt.2023.07.049&volume=25&pages=5781-5794&publication_year=2023&author=Qin%2CH&author=Yang%2CGY&author=Kan%2CZY&author=Wang%2CCH&author=Ouyang%2CSX&author=Jie%2CWQ)
+
+55.   M. Ahmed, M.S. Islam, S. Yin, and R. Lupoi: _Fatigue Fract. Eng. Mater. Struct._, 2020, vol. 43, pp. 628–34.
+
+[Article](https://doi.org/10.1111%2Fffe.13182)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Fatigue%20Fract.%20Eng.%20Mater.%20Struct.&doi=10.1111%2Fffe.13182&volume=43&pages=628-634&publication_year=2020&author=Ahmed%2CM&author=Islam%2CMS&author=Yin%2CS&author=Lupoi%2CR)
+
+56.   C. Zhai, Q. Luo, Q. Cai, R.G. Guan, and Q. Li: _J. Alloys Compd._, 2019, vol. 773, pp. 202–09.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2018.09.203)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXhvVams7zN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2018.09.203&volume=773&pages=202-209&publication_year=2019&author=Zhai%2CC&author=Luo%2CQ&author=Cai%2CQ&author=Guan%2CRG&author=Li%2CQ)
+
+57.   A.R. Natarajan, E.L.S. Solomon, B. Puchala, E.A. Marquis, and A.V.D. Ven: _Acta Mater._, 2016, vol. 108, pp. 367–79.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2016.01.055)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28Xisl2nsb8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2016.01.055&volume=108&pages=367-379&publication_year=2016&author=Natarajan%2CAR&author=Solomon%2CELS&author=Puchala%2CB&author=Marquis%2CEA&author=Ven%2CAVD)
+
+58.   C. You, C.M. Liu, Y.C. Wan, B. Tang, B.Z. Wang, Y.H. Gao, and X.Z. Han: _J. Magnes. Alloys_, 2019, vol. 7, pp. 414–18.
+
+[Article](https://doi.org/10.1016%2Fj.jma.2019.05.009)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1MXhsFCmsLrN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Magnes.%20Alloys&doi=10.1016%2Fj.jma.2019.05.009&volume=7&pages=414-418&publication_year=2019&author=You%2CC&author=Liu%2CCM&author=Wan%2CYC&author=Tang%2CB&author=Wang%2CBZ&author=Gao%2CYH&author=Han%2CXZ)
+
+59.   X.Y. Shi, D.J. Li, A.A. Luo, B. Hu, L. Li, X.Q. Zeng, and W.J. Ding: _Metall. Mater. Trans. A_, 2013, vol. 44A, pp. 4788–99.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-013-1799-3)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-013-1799-3&volume=44A&pages=4788-4799&publication_year=2013&author=Shi%2CXY&author=Li%2CDJ&author=Luo%2CAA&author=Hu%2CB&author=Li%2CL&author=Zeng%2CXQ&author=Ding%2CWJ)
+
+60.   G. Castillo-Hernandez, M. Yasseri, B. Klobes, S. Ayachi, E. Müller, and J.D. Boor: _J. Alloys Compd._, 2020, vol. 845, 156205.
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2020.156205)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXhsVyisr3P)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2020.156205&volume=845&publication_year=2020&author=Castillo-Hernandez%2CG&author=Yasseri%2CM&author=Klobes%2CB&author=Ayachi%2CS&author=M%C3%BCller%2CE&author=Boor%2CJD)
+
+61.   W. Sun, Y.C. Deng, Y.H. Hu, H.Y. Zhan, K. Yan, S.S. Shuai, E.Y. Guo, Z.B. Zheng, and G. Zeng: _J. Magnes. Alloys_, 2025, in press.
+
+62.   Z.Y. Wang, S.C. Wu, Y. Lei, Q.H. Kan, and G.Z. Kang: _Int. J. Fatigue_, 2022, vol. 164, 107124.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2022.107124)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38Xit1Sls7nO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2022.107124&volume=164&publication_year=2022&author=Wang%2CZY&author=Wu%2CSC&author=Lei%2CY&author=Kan%2CQH&author=Kang%2CGZ)
+
+63.   T.J. Li, J. Zhang, H.G. Shou, R. Shi, Y.F. Zhang, G.L. Wen, K. Huang, D.D. Yin, and J.S. Rao: _Mater. Sci. Eng. A_, 2022, vol. 839, 142838.
+
+[Article](https://doi.org/10.1016%2Fj.msea.2022.142838)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XltFSmtr4%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2022.142838&volume=839&publication_year=2022&author=Li%2CTJ&author=Zhang%2CJ&author=Shou%2CHG&author=Shi%2CR&author=Zhang%2CYF&author=Wen%2CGL&author=Huang%2CK&author=Yin%2CDD&author=Rao%2CJS)
+
+64.   Y. Cai, J.X. Wei, H. Yan, Y.P. Chen, and R.S. Chen: _J. Magnes. Alloys_, 2024, vol. 12, pp. 2284–97.
+
+[Article](https://doi.org/10.1016%2Fj.jma.2022.09.026)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38Xis1Ohsb3M)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Magnes.%20Alloys&doi=10.1016%2Fj.jma.2022.09.026&volume=12&pages=2284-2297&publication_year=2024&author=Cai%2CY&author=Wei%2CJX&author=Yan%2CH&author=Chen%2CYP&author=Chen%2CRS)
+
+65.   X.M. Yang, H.J. Yang, F. Yang, S.M. Yin, W. Wang, S.X. Li, and Q.D. Wang: _J. Mater. Sci. Technol._, 2029, vol. 25, pp. 731–37.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&volume=25&pages=731-737&publication_year=2029&author=Yang%2CXM&author=Yang%2CHJ&author=Yang%2CF&author=Yin%2CSM&author=Wang%2CW&author=Li%2CSX&author=Wang%2CQD)
+
+66.   R. Ahmad, Z.X. Wu, and W.A. Curtin: _Acta Mater._, 2020, vol. 183, pp. 228–41.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2019.10.053)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1MXitF2ltb7F)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2019.10.053&volume=183&pages=228-241&publication_year=2020&author=Ahmad%2CR&author=Wu%2CZX&author=Curtin%2CWA)
+
+67.   D.D. Yin, C.J. Boehlert, L.J. Long, G.H. Huang, H. Zhou, J. Zheng, and Q.D. Wang: _Int. J. Fatigue_, 2021, vol. 136, 102878.
+
+[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXitlOgtbvI)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&volume=136&publication_year=2021&author=Yin%2CDD&author=Boehlert%2CCJ&author=Long%2CLJ&author=Huang%2CGH&author=Zhou%2CH&author=Zheng%2CJ&author=Wang%2CQD)
+
+68.   D. Zhao, X.L. Ma, A. Srivastava, G. Turner, I. Karaman, and K.Y. Xie: _Acta Mater._, 2021, vol. 207, 116691.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2021.116691)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXivVGhsbY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2021.116691&volume=207&publication_year=2021&author=Zhao%2CD&author=Ma%2CXL&author=Srivastava%2CA&author=Turner%2CG&author=Karaman%2CI&author=Xie%2CKY)
+
+69.   X.Z. Zhou, H.H. Su, H.Q. Ye, and Z.Q. Yang: _Acta Mater._, 2021, vol. 217, p. 117170.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2021.117170)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXhs1WntbrP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2021.117170&volume=217&publication_year=2021&author=Zhou%2CXZ&author=Su%2CHH&author=Ye%2CHQ&author=Yang%2CZQ)
+
+70.   S.E. Stanzl-Tschegg and H. Mayer: _Int. J. Fatigue_, 2001, vol. 23, pp. 231–37.
+
+[Article](https://doi.org/10.1016%2FS0142-1123%2801%2900167-0)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2FS0142-1123%2801%2900167-0&volume=23&pages=231-237&publication_year=2001&author=Stanzl-Tschegg%2CSE&author=Mayer%2CH)
+
+71.   W.K. Li, C.C. Engler-Pinto Jr., H.T. Cui, W.D. Wen, and X.M. Su: _Fatigue Fract. Eng. Mater. Struct._, 2016, vol. 39, pp. 1263–71.
+
+[Article](https://doi.org/10.1111%2Fffe.12441)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Fatigue%20Fract.%20Eng.%20Mater.%20Struct.&doi=10.1111%2Fffe.12441&volume=39&pages=1263-1271&publication_year=2016&author=Li%2CWK&author=Engler-Pinto%2CCC&author=Cui%2CHT&author=Wen%2CWD&author=Su%2CXM)
+
+72.   J.X. Zhou, X.J. Luo, H. Yang, B. Jiang, W.L. Xie, Z.H. Dong, J.F. Song, J.Y. Xu, G.S. Huang, D.F. Zhang, and F.S. Pan: _J. Mater. Res. Technol._, 2023, vol. 24, pp. 7258–69.
+
+[Article](https://doi.org/10.1016%2Fj.jmrt.2023.04.252)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXpvVGntrs%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Res.%20Technol.&doi=10.1016%2Fj.jmrt.2023.04.252&volume=24&pages=7258-7269&publication_year=2023&author=Zhou%2CJX&author=Luo%2CXJ&author=Yang%2CH&author=Jiang%2CB&author=Xie%2CWL&author=Dong%2CZH&author=Song%2CJF&author=Xu%2CJY&author=Huang%2CGS&author=Zhang%2CDF&author=Pan%2CFS)
+
+73.   C. He, X. Liu, Y.J. Liu, C. Wang, H. Zhang, L. Li, Q.Y. Wang, X.H. Shao, and Q. Chen: _Int. J. Fatigue_, 2021, vol. 150, 106302.
+
+[Article](https://doi.org/10.1016%2Fj.ijfatigue.2021.106302)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXht1WqsL7M)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Fatigue&doi=10.1016%2Fj.ijfatigue.2021.106302&volume=150&publication_year=2021&author=He%2CC&author=Liu%2CX&author=Liu%2CYJ&author=Wang%2CC&author=Zhang%2CH&author=Li%2CL&author=Wang%2CQY&author=Shao%2CXH&author=Chen%2CQ)
+
+74.   S.H. Wang, Y. Wang, Q.M. Ramasse, R. Schmid-Fetzer, and Z.Y. Fan: _Acta Mater._, 2023, vol. 257, 119147.
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2023.119147)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXhsVygurrM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2023.119147&volume=257&publication_year=2023&author=Wang%2CSH&author=Wang%2CY&author=Ramasse%2CQM&author=Schmid-Fetzer%2CR&author=Fan%2CZY)
+
+75.   W.J. Quadakkers and K. Bongartz: _Mater. Corros._, 1994, vol. 45, pp. 232–41.
+
+[Article](https://doi.org/10.1002%2Fmaco.19940450404)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK2cXktl2rsb4%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Corros.&doi=10.1002%2Fmaco.19940450404&volume=45&pages=232-241&publication_year=1994&author=Quadakkers%2CWJ&author=Bongartz%2CK)
+
+76.   Z.Z. Shi, F.Z. Dai, M. Zhang, X.F. Gu, and W.Z. Zhang: _Metall. Mater. Trans. A_, 2013, vol. 44A, pp. 2478–86.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-013-1633-y)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-013-1633-y&volume=44A&pages=2478-2486&publication_year=2013&author=Shi%2CZZ&author=Dai%2CFZ&author=Zhang%2CM&author=Gu%2CXF&author=Zhang%2CWZ)
+
+77.   Y. Hashimoto, M. Hino, T. Yanagiya, T. Yamaguchi, Y. Mitooka, and T. Kanadani: _Mater. Trans._, 2020, vol. 61, pp. 2156–61.
+
+[Article](https://doi.org/10.2320%2Fmatertrans.MT-M2020236)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3MXlt1KgsL8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Trans.&doi=10.2320%2Fmatertrans.MT-M2020236&volume=61&pages=2156-2161&publication_year=2020&author=Hashimoto%2CY&author=Hino%2CM&author=Yanagiya%2CT&author=Yamaguchi%2CT&author=Mitooka%2CY&author=Kanadani%2CT)
+
+78.   P. Zhang and Z.M. Li: _J. Mater. Sci._, 2023, vol. 58, pp. 1315–29.
+
+[Article](https://link.springer.com/doi/10.1007/s10853-022-08060-4)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2Fs10853-022-08060-4&volume=58&pages=1315-1329&publication_year=2023&author=Zhang%2CP&author=Li%2CZM)
+
+79.   J.F. Nie: _Metall. Mater. Trans. A_, 2012, vol. 43A, pp. 3891–3939.
+
+[Article](https://link.springer.com/doi/10.1007/s11661-012-1217-2)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-012-1217-2&volume=43A&pages=3891-3939&publication_year=2012&author=Nie%2CJF)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08193-0?format=refman&flavour=references)

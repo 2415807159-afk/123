@@ -1,0 +1,228 @@
+Title: Neural network backflow for ab-initio solid calculations
+
+URL Source: https://arxiv.org/abs/2603.14775v1
+
+Markdown Content:
+# [2603.14775v1] Neural network backflow for ab-initio solid calculations
+
+[Skip to main content](https://arxiv.org/abs/2603.14775v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cond-mat](https://arxiv.org/list/cond-mat/recent)> arXiv:2603.14775v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Condensed Matter > Strongly Correlated Electrons
+
+**arXiv:2603.14775v1** (cond-mat) 
+
+ [Submitted on 16 Mar 2026]
+
+# Title:Neural network backflow for ab-initio solid calculations
+
+Authors:[An-Jun Liu](https://arxiv.org/search/cond-mat?searchtype=author&query=Liu,+A), [Bryan K. Clark](https://arxiv.org/search/cond-mat?searchtype=author&query=Clark,+B+K)
+
+View a PDF of the paper titled Neural network backflow for ab-initio solid calculations, by An-Jun Liu and 1 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.14775v1)[HTML (experimental)](https://arxiv.org/html/2603.14775v1)
+> Abstract:Accurately simulating extended periodic systems is a central challenge in condensed matter physics. Neural quantum states (NQS) offer expressive wavefunctions for this task but face issues with scalability. In this work, we successfully extend the neural network backflow (NNBF) approach to ab-initio solid-state materials. Building on our scalable optimization framework for molecules [Liu et al., PRB 112, 155162 (2025)], we introduce a two-stage pruning strategy to manage the massive configuration space expansions: by utilizing a computationally cheap, physics-informed importance proxy, we devote exact NNBF amplitude evaluations solely to the most relevant determinants, significantly improving optimization efficiency, energy estimation, and convergence. Our framework achieves state-of-the-art accuracy across diverse solid-state benchmarks. For 1D hydrogen chains, NNBF matches or surpasses DMRG and AFQMC, remains robust in strongly correlated bond-breaking regimes where coupled-cluster methods fail, and smoothly extrapolates to the thermodynamic limit. We further demonstrate its scalability by computing ground-state potential energy curves for 2D graphene and 3D silicon. Finally, ablation studies validate the computational savings of our pruning strategy and highlight the dependence of the NNBF energies on basis sets.
+
+Subjects:Strongly Correlated Electrons (cond-mat.str-el); Disordered Systems and Neural Networks (cond-mat.dis-nn); Computational Physics (physics.comp-ph); Quantum Physics (quant-ph)
+Cite as:[arXiv:2603.14775](https://arxiv.org/abs/2603.14775) [cond-mat.str-el]
+(or [arXiv:2603.14775v1](https://arxiv.org/abs/2603.14775v1) [cond-mat.str-el] for this version)
+[https://doi.org/10.48550/arXiv.2603.14775](https://doi.org/10.48550/arXiv.2603.14775)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: An-Jun Liu [[view email](https://arxiv.org/show-email/0df7bc74/2603.14775)] 
+
+**[v1]** Mon, 16 Mar 2026 03:15:59 UTC (273 KB)
+
+[](https://arxiv.org/abs/2603.14775v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Neural network backflow for ab-initio solid calculations, by An-Jun Liu and 1 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.14775v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.14775v1)
+*   [TeX Source](https://arxiv.org/src/2603.14775v1)
+
+[![Image 5: license icon](https://arxiv.org/icons/licenses/by-4.0.png)view license](http://creativecommons.org/licenses/by/4.0/ "Rights to this article")
+
+ Current browse context: 
+
+cond-mat.str-el
+
+[<prev](https://arxiv.org/prevnext?id=2603.14775&function=prev&context=cond-mat.str-el "previous in cond-mat.str-el (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.14775&function=next&context=cond-mat.str-el "next in cond-mat.str-el (accesskey n)")
+
+[new](https://arxiv.org/list/cond-mat.str-el/new) | [recent](https://arxiv.org/list/cond-mat.str-el/recent) | [2026-03](https://arxiv.org/list/cond-mat.str-el/2026-03)
+
+ Change to browse by: 
+
+[cond-mat](https://arxiv.org/abs/2603.14775?context=cond-mat)
+
+[cond-mat.dis-nn](https://arxiv.org/abs/2603.14775?context=cond-mat.dis-nn)
+
+[physics](https://arxiv.org/abs/2603.14775?context=physics)
+
+[physics.comp-ph](https://arxiv.org/abs/2603.14775?context=physics.comp-ph)
+
+[quant-ph](https://arxiv.org/abs/2603.14775?context=quant-ph)
+
+### References & Citations
+
+*   [INSPIRE HEP](https://inspirehep.net/arxiv/2603.14775)
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.14775)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.14775)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.14775)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.14775v1)
+
+### Bookmark
+
+[![Image 6: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.14775&description=Neural%20network%20backflow%20for%20ab-initio%20solid%20calculations "Bookmark on BibSonomy")[![Image 7: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.14775&title=Neural%20network%20backflow%20for%20ab-initio%20solid%20calculations "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+- [x] IArxiv recommender toggle 
+
+IArxiv Recommender _([What is IArxiv?](https://iarxiv.org/about))_
+
+*   [Author](https://arxiv.org/abs/2603.14775v1)
+*   [Venue](https://arxiv.org/abs/2603.14775v1)
+*   [Institution](https://arxiv.org/abs/2603.14775v1)
+*   [Topic](https://arxiv.org/abs/2603.14775v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.14775) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

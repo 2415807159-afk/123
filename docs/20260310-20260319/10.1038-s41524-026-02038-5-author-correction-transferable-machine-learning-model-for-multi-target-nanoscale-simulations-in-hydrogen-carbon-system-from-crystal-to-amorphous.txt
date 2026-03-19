@@ -1,0 +1,284 @@
+Title: Author Correction: Transferable machine learning model for multi-target nanoscale simulations in hydrogen-carbon system from crystal to amorphous
+
+URL Source: https://www.nature.com/articles/s41524-026-02038-5
+
+Markdown Content:
+# Author Correction: Transferable machine learning model for multi-target nanoscale simulations in hydrogen-carbon system from crystal to amorphous | npj Computational Materials
+
+## Your privacy, your choice
+
+We use essential cookies to make sure the site can function. We also use optional cookies for advertising, personalisation of content, usage analysis, and social media, as well as to allow video information to be shared for both marketing, analytics and editorial purposes.
+
+By accepting optional cookies, you consent to the processing of your personal data - including transfers to third parties. Some third parties are outside of the European Economic Area, with varying standards of data protection.
+
+See our [privacy policy](https://www.nature.com/info/privacy) for more information on the use of your personal data.
+
+Manage preferences for further information and to change your choices.
+
+Accept all cookies Reject optional cookies
+
+[Skip to main content](https://www.nature.com/articles/s41524-026-02038-5#content)
+
+Thank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles and JavaScript.
+
+Advertisement
+
+[![Image 1: npj Computational Materials](https://media.springernature.com/full/nature-cms/uploads/product/npjcompumats/header-4baba14304e9c3518bdc0d6f35b470b9.svg)](https://www.nature.com/npjcompumats)
+
+*   [View all journals](https://www.nature.com/siteindex)
+*   [Search](javascript:;)
+
+## Search
+
+Search articles by subject, keyword or author  Show results from  Search   [Advanced search](https://www.nature.com/search/advanced) 
+### Quick links
+
+    *   [Explore articles by subject](https://www.nature.com/subjects)
+    *   [Find a job](https://www.nature.com/naturecareers)
+    *   [Guide to authors](https://www.nature.com/authors/index.html)
+    *   [Editorial policies](https://www.nature.com/authors/editorial_policies/)
+
+*   [Log in](https://idp.nature.com/auth/personal/springernature?redirect_uri=https://www.nature.com/articles/s41524-026-02038-5)
+
+*   [Content Explore content](javascript:;)
+
+## Explore content
+
+    *   [Research articles](https://www.nature.com/npjcompumats/research-articles)
+    *   [Reviews & Analysis](https://www.nature.com/npjcompumats/reviews-and-analysis)
+    *   [News & Comment](https://www.nature.com/npjcompumats/news-and-comment)
+    *   [Collections](https://www.nature.com/npjcompumats/collections)
+
+    *   [Follow us on X](https://twitter.com/Nature_NPJ)
+    *   [Sign up for alerts](https://journal-alerts.springernature.com/subscribe?journal_id=41524)
+    *   [RSS feed](https://www.nature.com/npjcompumats.rss)
+
+*   [About the journal](javascript:;)
+
+## About the journal
+
+    *   [Aims & Scope](https://www.nature.com/npjcompumats/aims)
+    *   [Content types](https://www.nature.com/npjcompumats/content-types)
+    *   [Journal Information](https://www.nature.com/npjcompumats/journal-information)
+    *   [Open Access](https://www.nature.com/npjcompumats/open-access)
+    *   [About the Editors](https://www.nature.com/npjcompumats/editors)
+    *   [Contact](https://www.nature.com/npjcompumats/contact)
+    *   [Editorial policies](https://www.nature.com/npjcompumats/editorial-policies)
+    *   [Journal Metrics](https://www.nature.com/npjcompumats/journal-impact)
+    *   [About the partner](https://www.nature.com/npjcompumats/partner)
+
+*   [Publish with us](javascript:;)
+
+## Publish with us
+
+    *   [For Authors and Referees](https://www.nature.com/npjcompumats/for-authors-and-referees)
+    *   [Language editing services](https://authorservices.springernature.com/go/sn/?utm_source=For+Authors&utm_medium=Website_Nature&utm_campaign=Platform+Experimentation+2022&utm_id=PE2022)
+    *   [Open access funding](https://www.nature.com/npjcompumats/open-access-funding)
+    *   [Submit manuscript](https://submission.springernature.com/new-submission/41524/3)
+
+*   [Sign up for alerts](https://journal-alerts.springernature.com/subscribe?journal_id=41524)
+*   [RSS feed](https://www.nature.com/npjcompumats.rss)
+
+1.   [nature](https://www.nature.com/)
+2.   [npj computational materials](https://www.nature.com/npjcompumats)
+3.   [author correction](https://www.nature.com/npjcompumats/articles?type=author-correction)
+4.   article
+
+ Author Correction: Transferable machine learning model for multi-target nanoscale simulations in hydrogen-carbon system from crystal to amorphous 
+
+[Download PDF](https://www.nature.com/articles/s41524-026-02038-5.pdf)
+
+[Download PDF](https://www.nature.com/articles/s41524-026-02038-5.pdf)
+
+*   Author Correction
+*   [Open access](https://www.springernature.com/gp/open-science/about/the-fundamentals-of-open-access-and-open-research)
+*   Published: 17 March 2026
+
+# Author Correction: Transferable machine learning model for multi-target nanoscale simulations in hydrogen-carbon system from crystal to amorphous
+
+*   [Weiqi Chen](https://www.nature.com/articles/s41524-026-02038-5#auth-Weiqi-Chen-Aff1)[1](https://www.nature.com/articles/s41524-026-02038-5#Aff1), 
+*   [Zhiyue Xu](https://www.nature.com/articles/s41524-026-02038-5#auth-Zhiyue-Xu-Aff1)[1](https://www.nature.com/articles/s41524-026-02038-5#Aff1), 
+*   [Kang Wang](https://www.nature.com/articles/s41524-026-02038-5#auth-Kang-Wang-Aff1-Aff2)[1](https://www.nature.com/articles/s41524-026-02038-5#Aff1),[2](https://www.nature.com/articles/s41524-026-02038-5#Aff2), 
+*   [Lei Gao](https://www.nature.com/articles/s41524-026-02038-5#auth-Lei-Gao-Aff3)[ORCID: orcid.org/0000-0001-8555-5168](https://orcid.org/0000-0001-8555-5168)[3](https://www.nature.com/articles/s41524-026-02038-5#Aff3), 
+*   [Aisheng Song](https://www.nature.com/articles/s41524-026-02038-5#auth-Aisheng-Song-Aff1)[1](https://www.nature.com/articles/s41524-026-02038-5#Aff1)&
+*   …
+*   [Tianbao Ma](https://www.nature.com/articles/s41524-026-02038-5#auth-Tianbao-Ma-Aff1)[ORCID: orcid.org/0000-0001-8016-9241](https://orcid.org/0000-0001-8016-9241)[1](https://www.nature.com/articles/s41524-026-02038-5#Aff1)
+
+Show authors
+[_npj Computational Materials_](https://www.nature.com/npjcompumats)**volume 12**, Article number:116 (2026) [Cite this article](https://www.nature.com/articles/s41524-026-02038-5#citeas)
+
+The [Original Article](https://doi.org/10.1038/s41524-025-01629-y) was published on 03 May 2025
+
+Correction to: _npj Computational Materials_[https://doi.org/10.1038/s41524-025-01629-y](https://doi.org/10.1038/s41524-025-01629-y), published online 03 May 2025
+
+In this article, there are amendments to the Data availability statement. The original article has been corrected.
+
+## Author information
+
+### Authors and Affiliations
+
+1.   State Key Laboratory of Tribology in Advanced Equipment, Tsinghua University, Beijing, China
+
+Weiqi Chen,Zhiyue Xu,Kang Wang,Aisheng Song&Tianbao Ma
+
+2.   Xi’an Modern Chemistry Research Institute, Xi’an, China
+
+Kang Wang
+
+3.   Beijing Advanced Innovation Center for Materials Genome Engineering, University of Science and Technology Beijing, Beijing, China
+
+Lei Gao
+
+Authors
+1.   Weiqi Chen[View author publications](https://www.nature.com/search?author=Weiqi%20Chen) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Weiqi%20Chen)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Weiqi%20Chen%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+2.   Zhiyue Xu[View author publications](https://www.nature.com/search?author=Zhiyue%20Xu) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Zhiyue%20Xu)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Zhiyue%20Xu%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+3.   Kang Wang[View author publications](https://www.nature.com/search?author=Kang%20Wang) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Kang%20Wang)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Kang%20Wang%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+4.   Lei Gao[View author publications](https://www.nature.com/search?author=Lei%20Gao) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Lei%20Gao)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Lei%20Gao%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+5.   Aisheng Song[View author publications](https://www.nature.com/search?author=Aisheng%20Song) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Aisheng%20Song)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Aisheng%20Song%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+6.   Tianbao Ma[View author publications](https://www.nature.com/search?author=Tianbao%20Ma) Search author on:[PubMed](https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Tianbao%20Ma)[Google Scholar](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Tianbao%20Ma%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)  
+
+### Corresponding author
+
+Correspondence to [Tianbao Ma](mailto:mtb@mail.tsinghua.edu.cn).
+
+## Additional information
+
+The original article can be found online at [https://doi.org/10.1038/s41524-025-01629-y](https://doi.org/10.1038/s41524-025-01629-y).
+
+## Rights and permissions
+
+**Open Access** This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit [http://creativecommons.org/licenses/by-nc-nd/4.0/](http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+[Reprints and permissions](https://s100.copyright.com/AppDispatchServlet?title=Author%20Correction%3A%20Transferable%20machine%20learning%20model%20for%20multi-target%20nanoscale%20simulations%20in%20hydrogen-carbon%20system%20from%20crystal%20to%20amorphous&author=Weiqi%20Chen%20et%20al&contentID=10.1038%2Fs41524-026-02038-5&copyright=The%20Author%28s%29&publication=2057-3960&publicationDate=2026-03-17&publisherName=SpringerNature&orderBeanReset=true&oa=CC%20BY-NC-ND)
+
+## About this article
+
+[![Image 2: Check for updates. Verify currency and authenticity via CrossMark](blob:http://localhost/df43c82f6cb6dcd2a87db38f317bf9f2)](https://crossmark.crossref.org/dialog/?doi=10.1038/s41524-026-02038-5)
+
+### Cite this article
+
+Chen, W., Xu, Z., Wang, K. _et al._ Author Correction: Transferable machine learning model for multi-target nanoscale simulations in hydrogen-carbon system from crystal to amorphous. _npj Comput Mater_**12**, 116 (2026). https://doi.org/10.1038/s41524-026-02038-5
+
+[Download citation](https://citation-needed.springer.com/v2/references/10.1038/s41524-026-02038-5?format=refman&flavour=citation)
+
+*   Published: 17 March 2026
+
+*   Version of record: 17 March 2026
+
+*   DOI: https://doi.org/10.1038/s41524-026-02038-5
+
+### Share this article
+
+Anyone you share the following link with will be able to read this content:
+
+Get shareable link
+
+Sorry, a shareable link is not currently available for this article.
+
+Copy shareable link to clipboard
+
+Provided by the Springer Nature SharedIt content-sharing initiative
+
+### Subjects
+
+*   [Atomistic models](https://www.nature.com/subjects/atomistic-models)
+*   [Theory and computation](https://www.nature.com/subjects/theory-and-computation)
+
+[Download PDF](https://www.nature.com/articles/s41524-026-02038-5.pdf)
+
+## Sections
+
+*   [Author information](https://www.nature.com/articles/s41524-026-02038-5#author-information)
+*   [Additional information](https://www.nature.com/articles/s41524-026-02038-5#additional-information)
+*   [Rights and permissions](https://www.nature.com/articles/s41524-026-02038-5#rightslink)
+*   [About this article](https://www.nature.com/articles/s41524-026-02038-5#article-info)
+
+Advertisement
+
+npj Computational Materials  (_npj Comput Mater_)
+
+ISSN 2057-3960 (online)
+
+## nature.com footer links
+
+### About Nature Portfolio
+
+*   [About us](https://www.nature.com/npg_/company_info/index.html)
+*   [Press releases](https://www.nature.com/npg_/press_room/press_releases.html)
+*   [Press office](https://press.nature.com/)
+*   [Contact us](https://support.nature.com/support/home)
+
+### Discover content
+
+*   [Journals A-Z](https://www.nature.com/siteindex)
+*   [Articles by subject](https://www.nature.com/subjects)
+*   [protocols.io](https://www.protocols.io/)
+*   [Nature Index](https://www.natureindex.com/)
+
+### Publishing policies
+
+*   [Nature portfolio policies](https://www.nature.com/authors/editorial_policies)
+*   [Open access](https://www.nature.com/nature-research/open-access)
+
+### Author & Researcher services
+
+*   [Reprints & permissions](https://www.nature.com/reprints)
+*   [Research data](https://www.springernature.com/gp/authors/research-data)
+*   [Language editing](https://authorservices.springernature.com/language-editing/)
+*   [Scientific editing](https://authorservices.springernature.com/scientific-editing/)
+*   [Nature Masterclasses](https://masterclasses.nature.com/)
+*   [Research Solutions](https://solutions.springernature.com/)
+
+### Libraries & institutions
+
+*   [Librarian service & tools](https://www.springernature.com/gp/librarians/tools-services)
+*   [Librarian portal](https://www.springernature.com/gp/librarians/manage-your-account/librarianportal)
+*   [Open research](https://www.nature.com/openresearch/about-open-access/information-for-institutions)
+*   [Recommend to library](https://www.springernature.com/gp/librarians/recommend-to-your-library)
+
+### Advertising & partnerships
+
+*   [Advertising](https://partnerships.nature.com/product/digital-advertising/)
+*   [Partnerships & Services](https://partnerships.nature.com/)
+*   [Media kits](https://partnerships.nature.com/media-kits/)
+*   [Branded content](https://partnerships.nature.com/product/branded-content-native-advertising/)
+
+### Professional development
+
+*   [Nature Awards](https://www.nature.com/immersive/natureawards/index.html)
+*   [Nature Careers](https://www.nature.com/naturecareers/)
+*   [Nature Conferences](https://conferences.nature.com/)
+
+### Regional websites
+
+*   [Nature Africa](https://www.nature.com/natafrica)
+*   [Nature China](http://www.naturechina.com/)
+*   [Nature India](https://www.nature.com/nindia)
+*   [Nature Japan](https://www.natureasia.com/ja-jp)
+*   [Nature Middle East](https://www.nature.com/nmiddleeast)
+
+*   [Privacy Policy](https://www.nature.com/info/privacy)
+*   [Use of cookies](https://www.nature.com/info/cookies)
+*   Your privacy choices/Manage cookies 
+*   [Legal notice](https://www.nature.com/info/legal-notice)
+*   [Accessibility statement](https://www.nature.com/info/accessibility-statement)
+*   [Terms & Conditions](https://www.nature.com/info/terms-and-conditions)
+*   [Your US state privacy rights](https://www.springernature.com/ccpa)
+
+[![Image 3: Springer Nature](https://www.nature.com/static/images/logos/sn-logo-white-c8f7a9c061.svg)](https://www.springernature.com/)
+© 2026 Springer Nature Limited
+
+Close
+
+![Image 4: Nature Briefing](https://www.nature.com/static/images/logos/nature-briefing-logo-n150-white-afc2e6ccc7.svg)
+Sign up for the _Nature Briefing_ newsletter — what matters in science, free to your inbox daily.
+
+Email address 
+
+Sign up
+
+- [x] I agree my information will be processed in accordance with the _Nature_ and Springer Nature Limited [Privacy Policy](https://www.nature.com/info/privacy). 
+
+Close
+
+Get the most important science stories of the day, free in your inbox.[Sign up for Nature Briefing](https://www.nature.com/briefing/signup/?brieferEntryPoint=MainBriefingBanner)

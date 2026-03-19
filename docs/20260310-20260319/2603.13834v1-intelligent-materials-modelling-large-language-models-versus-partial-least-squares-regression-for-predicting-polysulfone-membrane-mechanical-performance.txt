@@ -1,0 +1,215 @@
+Title: Intelligent Materials Modelling: Large Language Models Versus Partial Least Squares Regression for Predicting Polysulfone Membrane Mechanical Performance
+
+URL Source: https://arxiv.org/abs/2603.13834v1
+
+Markdown Content:
+# [2603.13834v1] Intelligent Materials Modelling: Large Language Models Versus Partial Least Squares Regression for Predicting Polysulfone Membrane Mechanical Performance
+
+[Skip to main content](https://arxiv.org/abs/2603.13834v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cs](https://arxiv.org/list/cs/recent)> arXiv:2603.13834v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Computer Science > Artificial Intelligence
+
+**arXiv:2603.13834v1** (cs) 
+
+ [Submitted on 14 Mar 2026]
+
+# Title:Intelligent Materials Modelling: Large Language Models Versus Partial Least Squares Regression for Predicting Polysulfone Membrane Mechanical Performance
+
+Authors:[Dingding Cao](https://arxiv.org/search/cs?searchtype=author&query=Cao,+D), [Mieow Kee Chan](https://arxiv.org/search/cs?searchtype=author&query=Chan,+M+K), [Wan Sieng Yeo](https://arxiv.org/search/cs?searchtype=author&query=Yeo,+W+S), [Said Bey](https://arxiv.org/search/cs?searchtype=author&query=Bey,+S), [Alberto Figoli](https://arxiv.org/search/cs?searchtype=author&query=Figoli,+A)
+
+View a PDF of the paper titled Intelligent Materials Modelling: Large Language Models Versus Partial Least Squares Regression for Predicting Polysulfone Membrane Mechanical Performance, by Dingding Cao and 4 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.13834v1)
+> Abstract:Predicting the mechanical properties of polysulfone (PSF) membranes from structural descriptors remains challenging due to extreme data scarcity typical of experimental studies. To investigate this issue, this study benchmarked knowledge-driven inference using four large language models (LLMs) (DeepSeek-V3, DeepSeek-R1, ChatGPT-4o, and GPT-5) against partial least squares (PLS) regression for predicting Young's modulus (E), tensile strength (TS), and elongation at break (EL) based on pore diameter (PD), contact angle (CA), thickness (T), and porosity (P) measurements. These knowledge-driven approaches demonstrated property-specific advantages over the chemometric baseline. For EL, LLMs achieved statistically significant improvements, with DeepSeek-R1 and GPT-5 delivering 40.5% and 40.3% of Root Mean Square Error reductions, respectively, reducing mean absolute errors from $11.63\pm5.34$% to $5.18\pm0.17$%. Run-to-run variability was markedly compressed for LLMs ($\leq$3%) compared to PLS (up to 47%). E and TS predictions showed statistical parity between approaches ($q\geq0.05$), indicating sufficient performance of linear methods for properties with strong structure-property correlations. Error topology analysis revealed systematic regression-to-the-mean behavior dominated by data-regime effects rather than model-family limitations. These findings establish that LLMs excel for non-linear, constraint-sensitive properties under bootstrap instability, while PLS remains competitive for linear relationships requiring interpretable latent-variable decompositions. The demonstrated complementarity suggests hybrid architectures leveraging LLM-encoded knowledge within interpretable frameworks may optimise small-data materials discovery.
+
+Comments:29 pages, 8 figures, 5 tables
+Subjects:Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+Cite as:[arXiv:2603.13834](https://arxiv.org/abs/2603.13834) [cs.AI]
+(or [arXiv:2603.13834v1](https://arxiv.org/abs/2603.13834v1) [cs.AI] for this version)
+[https://doi.org/10.48550/arXiv.2603.13834](https://doi.org/10.48550/arXiv.2603.13834)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: Dingding Cao [[view email](https://arxiv.org/show-email/a96e5b87/2603.13834)] 
+
+**[v1]** Sat, 14 Mar 2026 08:36:28 UTC (3,217 KB)
+
+[](https://arxiv.org/abs/2603.13834v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Intelligent Materials Modelling: Large Language Models Versus Partial Least Squares Regression for Predicting Polysulfone Membrane Mechanical Performance, by Dingding Cao and 4 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.13834v1)
+
+[![Image 5: license icon](https://arxiv.org/icons/licenses/by-4.0.png)view license](http://creativecommons.org/licenses/by/4.0/ "Rights to this article")
+
+ Current browse context: 
+
+cs.AI
+
+[<prev](https://arxiv.org/prevnext?id=2603.13834&function=prev&context=cs.AI "previous in cs.AI (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.13834&function=next&context=cs.AI "next in cs.AI (accesskey n)")
+
+[new](https://arxiv.org/list/cs.AI/new) | [recent](https://arxiv.org/list/cs.AI/recent) | [2026-03](https://arxiv.org/list/cs.AI/2026-03)
+
+ Change to browse by: 
+
+[cs](https://arxiv.org/abs/2603.13834?context=cs)
+
+[cs.LG](https://arxiv.org/abs/2603.13834?context=cs.LG)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.13834)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.13834)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.13834)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.13834v1)
+
+### Bookmark
+
+[![Image 6: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.13834&description=Intelligent%20Materials%20Modelling:%20Large%20Language%20Models%20Versus%20Partial%20Least%20Squares%20Regression%20for%20Predicting%20Polysulfone%20Membrane%20Mechanical%20Performance "Bookmark on BibSonomy")[![Image 7: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.13834&title=Intelligent%20Materials%20Modelling:%20Large%20Language%20Models%20Versus%20Partial%20Least%20Squares%20Regression%20for%20Predicting%20Polysulfone%20Membrane%20Mechanical%20Performance "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+*   [Author](https://arxiv.org/abs/2603.13834v1)
+*   [Venue](https://arxiv.org/abs/2603.13834v1)
+*   [Institution](https://arxiv.org/abs/2603.13834v1)
+*   [Topic](https://arxiv.org/abs/2603.13834v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.13834) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

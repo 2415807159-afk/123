@@ -1,0 +1,221 @@
+Title: Development of a Methodology for the Automated Spatial Mapping of Heterogeneous Elastoplastic Properties of Welded Joints
+
+URL Source: https://arxiv.org/abs/2603.12892v1
+
+Markdown Content:
+# [2603.12892v1] Development of a Methodology for the Automated Spatial Mapping of Heterogeneous Elastoplastic Properties of Welded Joints
+
+[Skip to main content](https://arxiv.org/abs/2603.12892v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cs](https://arxiv.org/list/cs/recent)> arXiv:2603.12892v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Computer Science > Computational Engineering, Finance, and Science
+
+**arXiv:2603.12892v1** (cs) 
+
+ [Submitted on 13 Mar 2026]
+
+# Title:Development of a Methodology for the Automated Spatial Mapping of Heterogeneous Elastoplastic Properties of Welded Joints
+
+Authors:[Robert Hamill](https://arxiv.org/search/cs?searchtype=author&query=Hamill,+R) (1 and 2), [Allan Harte](https://arxiv.org/search/cs?searchtype=author&query=Harte,+A) (2), [Aleksander Marek](https://arxiv.org/search/cs?searchtype=author&query=Marek,+A) (1), [Fabrice Pierron](https://arxiv.org/search/cs?searchtype=author&query=Pierron,+F) (1 and 3) ((1) University of Southampton, (2) United Kingdom Atomic Energy Authority, (3) MatchID NV, Ghent, Belgium)
+
+View a PDF of the paper titled Development of a Methodology for the Automated Spatial Mapping of Heterogeneous Elastoplastic Properties of Welded Joints, by Robert Hamill (1 and 2) and 7 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.12892v1)[HTML (experimental)](https://arxiv.org/html/2603.12892v1)
+> Abstract:Knowledge of the mechanical properties of materials is required for the design and analysis of engineering products, however, the characterisation of heterogeneous properties using traditional techniques is limited by spatial resolution or insufficient reliability. This paper presents a novel methodology for the characterisation of heterogeneous mechanical properties by extending the virtual fields method through the automated spatial parameterisation of constitutive parameters. Collaboration with the United Kingdom Atomic Energy Authority provided this project with an application focus on the characterisation of the spatially-varying, elastoplastic mechanical properties of welded joints. The developed methodology enables the novel characterisation of welds with assorted geometries, varied loading configurations and dissimilar materials. Numerical verification of the developed method was performed using synthetic data equivalent to that obtained experimentally using optical measurements, where the kinematic fields are known and controlled. The results confirm that the proposed approach converges towards the target parameter maps without any a priori information on the distribution of the properties, successfully demonstrating the established methodology as a proof of concept.
+
+Comments:39 pages, 14 figures
+Subjects:Computational Engineering, Finance, and Science (cs.CE); Numerical Analysis (math.NA)
+Cite as:[arXiv:2603.12892](https://arxiv.org/abs/2603.12892) [cs.CE]
+(or [arXiv:2603.12892v1](https://arxiv.org/abs/2603.12892v1) [cs.CE] for this version)
+[https://doi.org/10.48550/arXiv.2603.12892](https://doi.org/10.48550/arXiv.2603.12892)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: Robert Hamill [[view email](https://arxiv.org/show-email/a25b9e44/2603.12892)] 
+
+**[v1]** Fri, 13 Mar 2026 10:46:32 UTC (6,123 KB)
+
+[](https://arxiv.org/abs/2603.12892v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Development of a Methodology for the Automated Spatial Mapping of Heterogeneous Elastoplastic Properties of Welded Joints, by Robert Hamill (1 and 2) and 7 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.12892v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.12892v1)
+*   [TeX Source](https://arxiv.org/src/2603.12892v1)
+
+[view license](http://arxiv.org/licenses/nonexclusive-distrib/1.0/ "Rights to this article")
+
+ Current browse context: 
+
+cs.CE
+
+[<prev](https://arxiv.org/prevnext?id=2603.12892&function=prev&context=cs.CE "previous in cs.CE (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.12892&function=next&context=cs.CE "next in cs.CE (accesskey n)")
+
+[new](https://arxiv.org/list/cs.CE/new) | [recent](https://arxiv.org/list/cs.CE/recent) | [2026-03](https://arxiv.org/list/cs.CE/2026-03)
+
+ Change to browse by: 
+
+[cs](https://arxiv.org/abs/2603.12892?context=cs)
+
+[cs.NA](https://arxiv.org/abs/2603.12892?context=cs.NA)
+
+[math](https://arxiv.org/abs/2603.12892?context=math)
+
+[math.NA](https://arxiv.org/abs/2603.12892?context=math.NA)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.12892)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.12892)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.12892)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.12892v1)
+
+### Bookmark
+
+[![Image 5: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.12892&description=Development%20of%20a%20Methodology%20for%20the%20Automated%20Spatial%20Mapping%20of%20Heterogeneous%20Elastoplastic%20Properties%20of%20Welded%20Joints "Bookmark on BibSonomy")[![Image 6: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.12892&title=Development%20of%20a%20Methodology%20for%20the%20Automated%20Spatial%20Mapping%20of%20Heterogeneous%20Elastoplastic%20Properties%20of%20Welded%20Joints "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+*   [Author](https://arxiv.org/abs/2603.12892v1)
+*   [Venue](https://arxiv.org/abs/2603.12892v1)
+*   [Institution](https://arxiv.org/abs/2603.12892v1)
+*   [Topic](https://arxiv.org/abs/2603.12892v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.12892) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)
