@@ -1,0 +1,767 @@
+Title: Thermodynamic Descriptors from Molecular Dynamics as Machine Learning Features for Extrapolable Property Prediction
+
+URL Source: https://arxiv.org/pdf/2603.12017v2
+
+Published Time: Thu, 19 Mar 2026 01:40:20 GMT
+
+Number of Pages: 16
+
+Markdown Content:
+# Thermodynamic Descriptors from Molecular Dynamics as Machine Learning Features for Extrapolable Property Prediction 
+
+Nuria H. Espejo †,1, 2 Pablo Llombart †,1 Andr´ es Gonz´ alez de Castilla, 3 Jorge Ramirez, 4, a) Jorge R. Espinosa, 1, 5, b) 
+
+and Adiran Garaizar 2, c) 
+
+> 1)
+
+Department of Physical-Chemistry, Universidad Complutense de Madrid, Av. Complutense s/n, Madrid 28040, Spain 
+
+> 2)
+
+Data Science, Bayer AG, Alfred-Nobel-Straße 50, 40789 Monheim am Rhein, Germany 
+
+> 3)
+
+Crop Protection Innovation, Bayer AG, Kaiser-Wilhelm-Alle 1, 51373 Leverkusen, Germany 
+
+> 4)
+
+Department of Chemical Engineering, Universidad Polit´ ecnica de Madrid, C/ Jose Gutierrez Abascal 2, Madrid 28006, Spain 
+
+> 5)
+
+Yusuf Hamied Department of Chemistry, University of Cambridge, Lensfield Road, Cambridge CB2 1EW, UK 
+
+† These authors contributed equally to this work. 
+
+(Dated: 19 March 2026) 
+
+The limited extrapolative power of structure-based machine learning (ML) models is a critical bottleneck in chemical discovery, particularly for industrial R&D, where navigating uncharted chemical space to find next-generation materials or drugs is paramount. These models, reliant on structural descriptors or graph neural networks (GNNs), often fail when predicting properties for molecules with novel chemotypes. Here, we introduce a physics-augmented ML framework that overcomes this limitation. Our approach replaces conventional structural inputs with thermodynamic properties such as cohesive energy, heat of vaporization, and density, derived directly from molecular dynamics (MD) simulations. While performing comparably to structure-based models on known organic compounds, our method uniquely maintains low error when extrapolating to dissimilar chemical spaces. Crucially, it accurately predicts boiling points for entire chemical classes absent from the training set, including inorganic compounds, salts, and molecules with elements such as Si, B, and Te. By learning from the intermolecular forces that govern phase transitions, our framework provides a more fundamental and generalizable strategy for molecular property prediction, enabling chemical exploration beyond established structural domains. Keywords: Boiling points, Physics-Augmented Machine Learning, All-Atom Molecular Dynamics, Thermo-dynamic descriptors, Ionic liquids 
+
+I. INTRODUCTION 
+
+The accurate prediction of macroscopic material prop-erties from molecular structure is a foundational goal of computational chemistry, underpinning fields from drug discovery to materials science 1,2 . The utility, safety, and commercial viability of new compounds are dictated by a suite of physicochemical properties, including its solu-bility, viscosity, and phase behavior 3,4 . Among this di-verse landscape of properties, those governing phase tran-sitions are particularly fundamental. The normal boiling point (nBP), for instance, serves as a key benchmark for testing the generalization of any predictive frame-work 5. This property is of immense practical impor-tance, with broad relevance in pharmaceutical manufac-turing, chemical engineering, sustainability, and safety assessment 6–9 . However, experimental determination, while well-established for many common substances, can be a low-throughput endeavor, with methodologies and 
+
+> a) Electronic mail: jorge.ramirez@upm.es
+> b) Electronic mail: jorgerene@ucm.es
+> c) Electronic mail: adiran.garaizarsuarez@bayer.com
+
+costs that vary significantly based on the substance in question 9–12 . This challenge is particularly pronounced for difficult-to-measure or model compounds, such as active pharmaceutical ingredients (APIs) 13 , difficult-to-isolate systems including impurities 14,15 , salts and ionic liquids 16 . This gap between the industrial demand for re-liable data and the limitations of current predictive tools has been identified as a key challenge for the future of applied thermodynamics, underscoring the urgent need for more robust and transferable models capable of nav-igating the novel chemical spaces essential for industrial innovation and intellectual property. 17 .A rich spectrum of methods has been developed to address nBP and vapor-pressure prediction. Classical approaches, such as corresponding-states methods 18,19 ,exploit reduced-property correlations based on critical data, but their scope is limited when such data is unavail-able, or the target molecule’s chemotype diverges signif-icantly 20 . Group-contribution (GC) schemes 21–30 , like the well-known Joback 31 or Nannoolal 32 methods, de-compose molecules into predefined structural fragments. While rapid, and highly effective for molecules that can be segmented into their parameterized groups, GC meth-ods are structurally blind to compounds built from el-
+
+> arXiv:2603.12017v2 [physics.chem-ph] 18 Mar 2026
+
+2ements or motifs not encoded in their parameterized fragment libraries 33 . In a similar vein, equation-of-state (EoS) models like Peng–Robinson or SAFT 34–36 can offer physically motivated predictions, but only when reliable component-specific parameters are known or sufficient experimental data is available for their parameterization. The last two decades, however, have seen a revolution driven by the modern data-driven paradigm of Quanti-tative Structure-Property Relationship (QSPR) model-ing 37 . This approach uses pre-calculated molecular de-scriptors to train a statistical model, from early efforts with multiple linear regression 38–42 to more advanced al-gorithms like Random Forest 43 or Gradient Boosting 44 .While powerful, the predictive capability of all these models is fundamentally limited by the expressiveness and transferability of manually engineered descriptors 45 .A more recent breakthrough has been the evolution to deep learning, particularly Graph Neural Networks (GNNs), which they learn property-relevant represen-tations directly from the molecular graph, bypassing the need for manual descriptor engineering 46–48 . This paradigm has been successfully applied to a wide array of thermophysical properties 49–55 , and it has become a dominant strategy for nBP prediction 56–59 . This ap-proach has been notably successful, with state-of-the-art frameworks like GRAPPA 60 , achieving exceptional accuracy. Trained on tens of thousands of experimen-tal data points, GNNs routinely outperform classical schemes within their training domain 60 . Indeed, re-cent work has shown that specialized GNNs can achieve high accuracy even for notoriously complex systems like ionic liquids, provided they are trained on vast, domain-specific datasets 61 . However, because they learn statisti-cal associations from molecular topology without direct access to the thermodynamic state of the liquid, their performance is tightly coupled to the training data’s di-versity 62 . When applied to molecules that are struc-turally and physicochemically dissimilar from the train-ing distribution, their extrapolative behavior becomes uncertain 63 . This effectively excludes many classes of novel, drug-like structures from their reliable applicabil-ity domain 64,65 . This limitation is particularly significant in industrial settings, where the primary goal is to gen-erate intellectual property by exploring precisely these novel chemical domains. The limitations of purely structural models motivate a direct solution: re-introducing the missing physics by using physics-based descriptors. This approach moves beyond the pre-defined structural descriptors—ranging from 2D fragments to 3D conformational properties— common in traditional QSPR, and instead computes fea-tures derived directly from first-principles simulations. One category of these descriptors is derived from quan-tum mechanics (QM), which provides a highly accu-rate description of a single molecule’s electronic struc-ture 66–68 . However, while physically rigorous, these de-scriptors inherently describe a molecule in isolation, and thus neglect the crucial intermolecular interactions and ensemble effects that govern a condensed-phase prop-erty like the boiling point, a subtlety that can lead to misleading conclusions if not interpreted carefully 69 . Amore sophisticated approach, COSMO-RS, attempts to bridge this gap 70 . It uses QM to predict thermodynamic properties for a wide range of chemicals by placing the molecule in a virtual conductor, thereby modeling the en-semble effect via a continuum 71–73 . Yet, as a continuum-based model, COSMO-RS averages intermolecular in-teractions, leading to documented quantitative failures for systems governed by strong, specific forces, such as those in ionic liquids 74,75 . A more direct approach is to use molecular dynamics (MD) simulations to explic-itly model the molecular ensemble 76–78 . Indeed, compu-tational studies have long leveraged MD to investigate phase transitions and related thermodynamic properties, from calculating vaporization enthalpies of complex flu-ids like ionic liquids 79 to characterizing liquid-vapor in-terfaces 80 , and determining phase equilibria from rigor-ous but computationally demanding free energy calcu-lations 81,82 . However, these computational efforts have traditionally focused on either highly demanding, direct coexistence simulations to compute the nBP in the liquid-vapor equilibrium from scratch 83 , or on using simulation data to develop more accurate force fields 84 . The com-putational expense of such simulations, however, has re-mained a significant barrier to their routine use for gen-erating descriptors at scale, creating a need for more efficient methodologies. The challenge, therefore, is to create a hybrid framework that harnesses the predictive efficiency of data-driven models while being firmly an-chored in the physical principles that govern molecular behavior. This goal of anchoring data-driven models in physical principles is central to the emerging paradigm of Physics-Informed Machine Learning (PIML) 85–92 .In this work, we implement a physics-augmented strat-egy specifically designed for scalable and extrapolative property prediction. We hypothesize that thermody-namic features derived from computationally tractable MD simulations can unlock robust generalization where purely structural models fail. We run short, all-atom simulations to compute descriptors such as the cohesive energy, and use these quantities as features to train a CatBoost 93 regression model. We show that this en-ables reliable extrapolation beyond the traditional do-main of QSPR, successfully predicting boiling points for chemical classes where structural models are often fragile or inapplicable, including inorganic compounds, complex charged systems like salts, and molecules containing un-common elements such as tellurium and boron.   
+
+> II. MATERIALS AND METHODS A. Training and Test Sets
+
+The initial training dataset was sourced from the curated compilation in Ref. 43 , which provides boiling 3System preparation Forcefields  
+
+> OpenFF or
+> OPLS4
+
+Training Cross-validation 
+
+## Molecular dynamics 
+
+Thermodynamic Properties 
+
+## ML Model Scope & Application +   
+
+> 1... ... +++
+> nFold 1 Test Train Train Train Fold 2 Train Test Train Train Train Train Test Train Train Train Train Test Fold 3 Fold 4
+
+## Parametrization 
+
+All-atom simulation MD-based ML model 
+
+Benchmarking 
+
+Novel Predictions    
+
+> Single Components & Neutral Mixtures Wider Range of Elements (Si, B, Te...) &Ionic Systems (Ionic liquids, molten salts...) (i.e. Hvap ,δ, C p, dens, E coh )
+
+FIG. 1. Schematic of the physics-augmented workflow for normal boiling point prediction. Molecular structures are built from SMILES strings and subjected to short all-atom molecular dynamics simulations using the OPLS and OpenFF forcefields. Thermodynamics properties, including cohesive energy and heat of vaporization, are extracted from the simulations and used as physics-augmented descriptors to train a CatBoost regression model for the final boiling point prediction. 
+
+point data for approximately 1,748 organic compounds (primarily hydrocarbons, alcohols, and amines) origi-nally extracted from the CAS database 94 . To ensure the highest data quality, all experimental values were subsequently cross-verified against multiple authorita-tive databases: the NIST Chemistry WebBook 95 , Pub-Chem 11 , and ChemSpider 96 . Compounds were excluded from our final dataset if they exhibited discrepancies greater than 10 K across sources, lacked corroborating entries, or were flagged with uncertainty markers. To en-sure the physical validity of the simulations, a molecular weight threshold of 225 g/mol was applied. This step was necessary to exclude high-molecular-weight compounds that would likely be solid or crystalline. In either case, the simulation would not represent a stable liquid-phase ensemble, invalidating the basis for our descriptor calcu-lation. This filtering removed approximately 500 com-pounds, yielding a final training set of 1,280 entries with high-confidence experimental values. This collection forms the basis of our Training Set (available in section VI). To rigorously evaluate model performance, two distinct test sets were curated, each designed to probe a differ-ent aspect of predictive capability. The first, a bench-mark set for extrapolation, comprises active pharma-ceutical ingredients (APIs) sourced from DrugBank 97 .These molecules were selected for their high structural complexity, often featuring more intricate scaffolds and a greater diversity of functional groups compared to the simpler, smaller molecules constituting the training set. These molecules, while structurally complex and diverse, are composed of standard organic elements. This com-position ensures they fall within the theoretical applica-bility domain of modern GNNs, enabling a direct, head-to-head comparison of our model’s extrapolative perfor-mance against state-of-the-art methods on challenging, real-world structures. The second, an out-of-domain challenge set, was cu-rated to challenge the model’s generalization capabilities on chemical classes that lie far outside the applicability domain of traditional QSPR. It comprises chemotypes— including ionic liquids, salts, and molecules containing non-standard elements such as B, Si, and Te—for which many standard models are fundamentally inapplicable as they cannot generate a prediction for structures contain-ing unparameterized elements or fragments. As a direct benchmark is therefore often impossible, predictions for this set are reported in order to characterize the model’s behavior and define the boundaries of its applicability in these challenging chemical spaces. 
+
+B. Molecular Dynamics Simulations 
+
+To generate the thermodynamic descriptors for our model, we performed atomistic molecular dynamics (MD) simulations for all compounds. The following pro-tocol constitutes the workflow necessary to generate fea-tures for each compound. To assess the robustness and transferability of the descriptors, we established two par-allel and independent simulation workflows, each employ-ing a different state-of-the-art force field. The OpenFF workflow used the OpenFF-2.0.0 ’Pars-ley’ force field 98 , with simulations run in the GROMACS 2025.2 package 99 . Separately, the OPLS4 workflow was run using the OPLS4 force field 100 as implemented in Schr¨ odinger’s Materials Science Suite. For each compound and for each of the two force fields, three independent NPT simulations of 20 ns were per-formed at 300, 400 and 500 K, all at 1 atm with a 2 fs integration time step. Simulation boxes contained approximately 15,000 atoms. Thermodynamic proper-4ties were averaged over the final 5 ns of each trajec-tory. From these trajectories, a set of thermodynamic descriptors was computed, including the cohesive energy (Ecoh ), defined as the negative of the average intermolec-ular potential energy ( Ecoh ≈ −⟨ Uinter ⟩), heat of vapor-ization (∆ Hvap ≈ Ecoh + RT ), density ( ρ), the Hilde-brand solubility parameter ( δ = p(∆ Hvap − RT )/V m), and the isobaric specific heat capacity ( CP ). The latter was computed from enthalpy fluctuations via the relation 
+
+CP = ( ⟨H2⟩ − ⟨ H⟩2)/(kB T 2)101 . 
+
+> 1. OpenFF Simulations
+
+Molecular topologies were generated from SMILES strings using RDKit 102 and the OpenFF Toolkit, with Gasteiger 103 partial charges. Initial simulation boxes were built with Packmol 104 . Systems were then energy-minimized and equilibrated for 2 ns under NPT condi-tions in GROMACS 2025.2 99 .Production runs were conducted using the leap-frog (md) integrator with a 2 fs time step. Long-range electro-statics were handled via the Particle Mesh Ewald (PME) method 105 with a short-range cutoff of 0.9 nm. Van der Waals interactions were treated with a cutoff at 0.9 nm, using a force-switching function that started at 0.8 nm to smoothly bring the forces to zero. Long-range dispersion corrections for energy and pressure were ap-plied. The V-rescale thermostat 106 (1.0 ps relaxation time, isotropic) and the C-rescale barostat (2.0 ps re-laxation time) were used to maintain temperature and pressure, respectively. All bonds were constrained using the LINCS algorithm 107 .To calculate Ecoh in this workflow, the system was di-vided into two equal molecular subgroups. The total in-termolecular potential energy between these subgroups (short-range Coulomb + van der Waals) was summed, and the resulting value, ⟨Uinter ⟩, was inverted in sign and normalized by the number of molecules to yield the final cohesive energy.  
+
+> 2. OPLS4 Simulations
+
+Systems were prepared using the Desmond System Builder in Maestro (Schr¨ odinger Materials Science Suite). After energy minimization and multi-stage equilibration, production NPT runs of 20 ns were conducted using the Nos´ e–Hoover chain thermostat 108 (1 ps relaxation) and Martyna–Tobias–Klein barostat 108 (2 ps, isotropic). The RESPA integrator was employed with bonded/near/far time steps of 2.0/2.0/6.0 fs. Short-range Coulomb in-teractions were truncated at 0.9 nm. For this workflow, the cohesive energy ( Ecoh ) was computed as the nega-tive of the average total intermolecular potential energy, extracted directly from Desmond’s simulation output.  
+
+> C. Machine Learning Model
+
+The set of MD-derived descriptors was chosen based on a balance between their direct physical relevance to vaporization and their computational accessibility. Prop-erties like cohesive energy and heat of vaporization di-rectly quantify the intermolecular forces that must be overcome during boiling. Density reflects the packing of molecules in the liquid phase, while the solubility pa-rameter and the isobaric heat capacity provide composite measures of the system’s cohesive and thermal proper-ties. Crucially, all these descriptors can be efficiently ex-tracted from standard NPT simulations, providing a rich, physically-grounded feature set for the machine learning model without resorting to more computationally inten-sive protocols. For each force field, three CatBoost 93 gradient-boosted regression models were trained: 1. MD-only model: Trained exclusively on MD-derived thermodynamic descriptors ( Ecoh , ∆ Hvap ,
+
+ρ, δ, CP ) extracted at 300, 400 and 500 K. 2. Chemoinformatics-only models: Trained on a large set of chemoinformatics descriptors computed from SMILES strings using RDKit 102 . This feature set is composed of three main groups: (a) MACCS keys (166 bits), (b) Morgan circular fingerprints (radius 2, 2048 bits), and (c) a wide range of other 2D physicochemical descriptors, including proper-ties like molecular weight, TPSA, hydrogen bond counts, and many others. 3. Hybrid models: Combined both MD-derived thermodynamic features and structural descriptors into a unified feature set. Hyperparameter optimization was performed via Bayesian search using Optuna 109 with 50 trials. The training set (1280 compounds) was split using stratified 4-fold outer cross-validation scheme. The groups were generated by clustering the 1,280 training compounds based on structural similarity, using a sphere exclusion algorithm with Morgan fingerprints and a Tanimoto sim-ilarity threshold of 0.65. This procedure ensures that structurally similar molecules are kept within the same fold, forcing the model to be validated on chemical scaf-folds that are distinct from those seen during training in each split. For each outer fold, a 3-fold inner cross-validation loop was used for hyperparameter optimiza-tion, which was conducted via a 50-trial Bayesian search using Optuna 109 . Key optimized parameters included the learning rate, tree depth, L2 regularization, and the number of boosting iterations (up to 1000, with early stopping). Feature selection used CatBoost’s native im-portance scores. Our model performance was quantified using the mean absolute error (MAE), root mean squared error (RMSE), and coefficient of determination ( R2). Statistical significance was assessed via paired Wilcoxon signed-rank tests 110 .5  
+
+> III. RESULTS A. Simulation-derived cohesive energies correlate with experimental boiling points across multiple force fields and temperatures
+
+The boiling point of a substance is a direct manifesta-tion of its intermolecular cohesive forces, a foundational principle of classical thermodynamics 111 . Based on this principle, we hypothesized that descriptors derived di-rectly from the physics of the liquid phase could serve as a more robust foundation for property prediction than purely structural representations. Our approach there-fore leverages cohesive energy, extracted directly from atomistic simulations, to encode the intermolecular in-teraction landscape that governs phase transitions. To validate this hypothesis, our initial objective was to establish a direct, quantitative relationship between the computed cohesive energy and experimental boiling points. We perform atomistic molecular dynamics sim-ulations of 1,280 organic compounds (see section II.B) at three temperatures (300, 400, and 500K). To inter-rogate the robustness of this physics-based descriptor, we compare the performance of two structurally distinct force fields: OpenFF-2.0.0 98 , a modern open-source pa-rameterization, and OPLS4 100 , an extensively validated commercial force field, yielding a total of 7,680 indepen-dent trajectories (1,280 compounds × 3 temperatures ×
+
+2 force fields). As shown in Fig.2, our analysis reveals a strong linear correlation between the simulated cohe-sive energy and experimental boiling points, though its quality is force-field dependent 112 . This linear trend is physically grounded in Trouton’s rule, which implies a direct proportionality between the heat of vaporization (∆ Hvap )—for which our cohesive energy is a proxy—and the boiling temperature ( Tb)111 . Under the OpenFF-2.0.0 force field (Fig.2a), linear regression yields coeffi-cients of determination ( R2) of 0.73 (300 K; blue), 0.76 (400 K; green), and 0.73 (500 K; pink). This correlation is further enhanced with the OPLS4 force field (Fig.2b), which affords R2 values of 0.77 (300 K), 0.81 (400 K), and 0.82 (500 K). More important than the performance difference is the fact that a strong correlation exists for both, especially considering that neither force field was parameterized using boiling points from this dataset. This demonstrates the robustness of cohesive energy as a physics-based descriptor; its utility is not an artifact of a single, specific parameterization but stems from the underlying physical principle it represents. Taken to-gether, this extensive linear analysis confirms that our physics-based approach robustly captures the fundamen-tal intermolecular interactions governing boiling behav-ior. However, the residual scatter indicates that a simple linear model is insufficient. This is physically expected, as a linear model implicitly assumes a constant entropy of vaporization (∆ Svap ) across all compounds (the basis of Trouton’s rule). The observed deviation from linear-ity thus arises from molecule-specific variations in this entropic contribution. This is precisely where a flexible, non-linear machine-learning model becomes essential, as it can learn the complex mapping from the enthalpic fea-tures to the final boiling point while implicitly accounting for these entropic variations. A visible feature in both panels of Fig. 2 is the emer-gence of data points with cohesive energies approaching zero, most prominently at the higher simulation temper-atures (400 K in green and 500 K in pink). These cases correspond to compounds that undergo vaporization dur-ing the NPT simulations, transitioning from a condensed liquid to a dilute gas phase; in this regime, molecules are separated by large distances, intermolecular interac-tions are negligible, and the computed cohesive energy tends toward zero. Thus, these systems exhibit sharply reduced densities and expanded simulation-box volumes characteristic of the gas state. Importantly, we deliber-ately retain these phase-transitioned trajectories in the training dataset: they provide explicit supervision link-ing thermodynamic descriptors—low Ecoh , low density, high molar volume—to lower boiling points, and delin-eate the boundary where simulation-derived features re-main physically meaningful. In practice, this exposure will enable the CatBoost 93 regressor to implicitly encode liquid–gas phase behavior, enhancing predictive capabil-ity for compounds spanning a broad range of volatilities.  
+
+> B. Machine learning models trained on simulation-derived descriptors achieve competitive accuracy with substantially reduced feature dimensionality
+
+Having verified that simulation-derived cohesive ener-gies correlate strongly with experimental boiling points (Fig.2), we next evaluate whether these thermodynamic descriptors can serve as effective features for machine learning prediction models. To this end, we trained three categories of CatBoost 93 gradient-boosted regres-sion models (see Materials and Methods S.II.D for com-plete training details): (i) MD-only models using exclu-sively simulation-derived thermodynamic properties, (ii) chemoinformatics-only models based on molecular fin-gerprints and 2D structural descriptors, and (iii) hybrid models combining both descriptor types. Figure 3A presents the prediction performance of the MD-only models. This parity plot demonstrates that a model trained exclusively on a minimal set of thermody-namic features can yield remarkable predictive accuracy. The model trained on OPLS4-derived features (purple) achieves a strong coefficient of determination of R2 =0.95, closely tracking the line of perfect prediction. The model based on OpenFF-2.0.0 descriptors (yellow) also performs well, with an R2 = 0.90, though the increased scatter underscores the sensitivity of the approach to force field parameterization, simulation engine and the specific thermostat and barostat algorithms employed in each workflow. The significant improvement in predictive power, moving from the linear correlations in (Fig.2a and 6200 300 400 500 600 
+
+Experimental Boiling Point (K) 
+
+> 0.0 2.5 5.0 7.5 10.0 12.5 15.0 17.5
+> Cohesive Energy (kJ/mol)
+
+OpenFF (GROMACS) 300K (R² = 0.73) 400K (R² = 0.76) 500K (R² = 0.73)     
+
+> 200 300 400 500 600
+
+Experimental Boiling Point (K) 
+
+> 020 40 60 80 100 120 140 160
+> Cohesive Energy (kcal/mol)
+
+OPLS4 (Maestro) 300K (R² = 0.77) 400K (R² = 0.81) 500K (R² = 0.82) a) b)        
+
+> FIG. 2. Correlation between simulation-derived cohesive energy ( Ecoh ) and experimental boiling point ( Tb) for 1,280 organic compounds simulated at three temperatures using two independent force fields. (a) OpenFF-2.0.0 98 results showing linear relationships at 300 K (blue), 400 K (green), and 500 K (pink) with corresponding R2values of 0.73, 0.76, and 0.73, respectively. (b) OPLS4 100 results at the same temperature conditions yielding R2values of 0.77, 0.81, and 0.82. Each data point represents ensemble-averaged intermolecular interaction energies extracted from 20 ns NPT simulations. Data points at near-zero cohesive energy (predominantly at 500K) correspond to compounds that have undergone phase transition to the gas phase during simulation, exhibiting negligible intermolecular interactions due to substantial box expansion and reduced density. They are kept intentionally for the ML model to learn when MD features are meaningful. Linear regression lines are fitted to the full dataset at each temperature, encompassing both liquid-phase and transitioned gas-phase systems.
+
+b) to the machine learning predictions in (Fig.3), stems from the model’s ability to interpret complex, non-linear thermodynamic behavior. The points with near-zero co-hesive energy that appeared as outliers relative to the linear trend in (Fig.2) are no longer outliers here. The CatBoost regressor, unlike a simple linear model, success-fully learns to associate the full thermodynamic signature of this gas-phase state with a low boiling point. This ca-pability is a primary driver of the model’s high predictive accuracy. To contextualize the performance of our MD-only model, we conducted a systematic benchmark against the other architectures, presented in Figure 3B. The analysis reveals a clear performance hierarchy. Using the high-fidelity OPLS4 force field, the ”MD+Chemoinf.” hybrid model, which combines both MD and chemoinformatics features, attains the highest accuracy with a mean ab-solute error (MAE) of 6.2K and a root mean squared error (RMSE) of 11.7K (dark green bar). It is closely fol-lowed by the ”chemoinformatics-only” model, trained on a high-dimensional feature set of over 2,000 descriptors, which achieves an MAE of 6.9K and an RMSE of 12.2K (teal bar). Strikingly, our MD-only model (dark blue bar) remains highly competitive with an MAE of 8.2K and an RMSE of 13.8K. This result is highly significant. By re-placing thousands of abstract structural features with a handful of physically meaningful descriptors, we reduce the feature dimensionality by over two orders of mag-nitude. This dramatic reduction is a standard strategy to mitigating the risk of overfitting, as the model is en-couraged to learn the governing physical principles rather than memorizing spurious correlations from the training data 113,114 . This, in turn, is fundamental to its enhanced extrapolative power. Remarkably, this robust general-ization is achieved with only a minor sacrifice of 2K in MAE relative to the best-performing, high-dimensional model. The force field dependence is also instructive. The performance of the MD-only model is highly sen-sitive to the physical accuracy of the simulation, with the MAE degrading from 8.2K with OPLS4 to 12.2K with OpenFF-2.0.0 (hatched dark blue bar). In con-trast, the hybrid model shows remarkable resilience, with its MAE only slightly increasing from 6.2K (OPLS4) to 6.9K (OpenFF). This suggests that structural descriptors can partially compensate for inaccuracies in simulation-derived properties, providing a practical pathway for de-ployment. For a final point of comparison, we include re-sults from the Random Forest model reported by Kim et al. 43 , the study from which our initial, uncurated dataset was sourced (light green bar) (see section S.II.A for more details about the data). This baseline model exhibits substantially higher errors (MAE = 19.9K, RMSE = 43.3K) than even our worst-performing variant. Several factors likely contribute to this performance gap. We hy-pothesize that two primary factors are: (i) our rigorous data curation produced a cleaner, more consistent train-ing set, and (ii) our physics-based descriptors provide more causally relevant information than purely structural features. However, it must be acknowledged that the ob-served improvement cannot be attributed solely to the 7a) b)           
+
+> 010 20 30 40 50 60 70 80 90 100
+
+Normalized Importance (%) 
+
+MD 
+
+Chemoinf. 
+
+MD + Chemoinf. 
+
+> ΔHvap 300K
+> (84.0%) (61.7%) Molecular Weight (52.1%) Molecular Weight (20.7%) Ipc (15.5%) Ipc (8.1%) Solubility300K (14.0%) VSA (4.8%) SpHeatCap500K (2.0%) Other (27.6%) Other (9.5%)
+
+MD-based feature Chemoinf.-based feature 
+
+> ΔHvap 300K
+
+# c) Cross-validation Error (K) Mean Absolute Error (K) Root Mean Square Error (K) MD-only (feat=6) 
+
+> Chemoinf.-only (feat>1000
+
+)MD + Chemoinf. (feat>1000 )    
+
+> Random Forest
+> OPLS4
+> OpenFF (lit. train error)
+> 200 300 400 500 600
+
+Experimental boiling point (K)    
+
+> 200 300 400 500 600
+> Predicted boiling point (K)
+> 010 20 30 40 50
+> 12.2 8.2 7.2 6.9 6.9 6.2 19.9 20.1 13.8 13.0 12.2 12.5 11.7 43.3
+
+OpenFF (R² = 0.90) OPLS4 (R² = 0.95) 
+
+FIG. 3. Performance comparison of machine learning models trained on different descriptor sets for boiling point prediction. (a) Cross-validated predicted versus experimental boiling points for the MD-only models. The plot shows the out-of-sample predictions on the 1,280-compound training set, obtained from the 4-fold cross-validation procedure described in the methods. The models were trained exclusively on thermodynamic descriptors from simulations with the OPLS4 (purple) and OpenFF-2.0.0 (yellow) force fields. The solid black line represents a perfect prediction. (b) Cross-validated prediction errors across multiple model architectures. Bars represent mean absolute error (MAE) and root mean squared error (RMSE) for: MD-only models (dark blue), chemoinformatics-only models trained on molecular fingerprints and 2D descriptors (teal), hybrid models combining both descriptor types (dark green), and a literature baseline using Random Forest on the original uncurated dataset (light green) 43 . Solid bars correspond to OPLS4-derived features, while hatched bars show results for OpenFF-2.0.0 features. (c) Normalized feature importance (in %) for the OPLS4-based model architectures. The horizontal bars show the relative contribution of the most significant features. Blue segments represent MD-derived features red segments represent chemoinformatics descriptors, and gray represents the cumulative importance of other minor structural features. Top bar (MD-only, 3 features selected): Importance is concentrated in thermodynamic features like the heat of vaporization (∆ Hvap ). Middle bar (Chemoinformatics-only, >1000 features used): Importance is led by molecular weight, followed by the information content of the characteristic polynomial (Ipc) and van der Waals surface area (VSA). Bottom bar (Hybrid, >1000 features used): A synergistic model where a thermodynamic features are complemented by key structural descriptors. 
+
+descriptors. The overall modeling strategy itself intro-duces confounding variables. These include not only the change in the learning algorithm (from Random Forest to CatBoost), but also the distinct feature selection and hyperparameter optimization processes applied to each model. A full deconvolution of these effects is beyond the scope of this study. A deep dive into the feature importance, visualized in Figure 3C, reveals the distinct predictive logic of each model and highlights the efficiency of the physics-informed approach. Here, MD-derived features are col-ored in blue and chemoinformatics descriptors in red. For the MD-only model (top bar), we initially provided a pool of 15 physics-based features: five thermodynamic properties—cohesive energy ( Ecoh ), heat of vaporization (∆ Hvap ), density ( ρ), solubility parameter ( δ), and iso-baric specific heat capacity ( CP )—each calculated at three different temperatures (see section S.II.B for fur-ther details). From this set, CatBoost’s internal feature selection algorithm identifies the most predictive, non-redundant subset. For the model trained on the OPLS4 data, we observe a highly compact feature selection, with 8the model identifying just three features as sufficient for optimal prediction. As shown in the top bar, the predic-tive power is overwhelmingly concentrated in the heat of vaporization at 300K (∆ Hvap 300K), which accounts for 84% of the model’s cumulative feature importance. The solubility parameter ( δ) at 300K (Solubility300K, 14%) and specific heat capacity at 500K (SpHeatCap500K, 2%) play minor, supporting roles. This specific three-feature selection, however, highlights the model’s data-driven nature rather than a fixed physical rule. The algorithm’s goal is to find the most predictive signal, and the composition of that signal is force-field depen-dent. For instance, when the same modeling process is applied to the features derived from the OpenFF simu-lations (see Supplementary Information, Fig.S1 in Sup-plementary Information), the model selects a larger and more varied set of six features. This is instructive, sug-gesting that for the OpenFF-derived data, the predictive signal is more distributed across several thermodynamic properties, prompting the algorithm to construct a more complex model to capture it effectively. In contrast, the chemoinformatics-based models lever-age over 1000 features, but their importance distribution is revealing. In the chemoinformatics-only model, impor-tance is led by molecular weight (52.1%), but a substan-tial portion (27.6%) is fragmented across a vast ”long tail” of abstract structural descriptors. A stark contrast emerges in the number of employed features: our model relies on a handful of physical properties, whereas the baseline requires over a thousand abstract ones. The hy-brid model, however, reveals the decisive influence of the physics-augmented features. In the OPLS4-based model, a single thermodynamic descriptor—the heat of vaporiza-tion at 300K (∆ Hvap )—emerges as the overwhelmingly dominant feature, accounting for 61.7% of the total im-portance. This single physical property is nearly three times as important as the next most significant feature, molecular weight (20.7%), proving it provides the core predictive signal, which is then refined by structural in-formation. This dominance of MD-derived features as the most significant predictive block is consistent across both force fields (see Supplementary Information, Fig.S1). Together, these results establish a powerful principle: the computational investment in generating simulation-derived thermodynamic properties pays significant divi-dends in predictive power and interpretability. The abil-ity of the MD-only model to distill the prediction down to a few physically intuitive features like ∆ Hvap , marks a conceptual advance. This approach transcends the ’black-box’ correlation of abstract features by establish-ing a direct link between the target property and its un-derlying physical causes. This pursuit of interpretability and causal reasoning is a central goal of modern scien-tific machine learning 115,116 . This work, therefore, not only delivers a high-performance predictive tool but also provides strong support for the development of machine learning models for chemistry that are anchored in first principles based inputs to enhance robustness.  
+
+> C. MD-based models demonstrate superior extrapolation to structurally novel and complex chemical systems
+
+Given the superior performance of the models trained on OPLS4-derived features, as demonstrated in the previ-ous section, we selected these specific models for the sub-sequent extrapolation and benchmarking tests. A critical measure of a machine learning model’s utility is not just its accuracy within its training domain, but its ability to generalize to new, structurally distinct chemical matter. This capability is of crucial relevance for industrial appli-cations in the pharmaceutical, crop science, and chemical sectors, where the exploration of novel molecular struc-tures is essential for generating intellectual property and discovering materials with unprecedented properties. To evaluate the extrapolative power of our approach, we benchmarked our models against several well-established boiling point predictors: the group-contribution-based Joback 31 and Rarey-Nannoolal 32 methods, as well as a state-of-the-art graph neural network, GRAPPA 60 . Akey factor in this selection was their practical accessibil-ity via public web tools that provide instantaneous pre-dictions directly from a SMILES string, such as those for Joback 117 and GRAPPA 118 , allowing for a reproducible benchmark. The benchmark was performed on our rig-orous external benchmark set (see section S.II.A). This set was deliberately curated to probe the limits of ex-trapolation and consists of 32 structurally diverse ac-tive pharmaceutical ingredients with varied complexity sourced from the DrugBank database 97 . These molecules were chosen to represent the kind of structurally com-plex, real-world chemical matter encountered in indus-trial discovery pipelines. Crucially, while complex, they are composed of standard organic elements, placing them squarely within the theoretical applicability domain of the chemoinformatic predictors we benchmark. This de-sign ensures a direct and fair head-to-head comparison of true extrapolative performance, with the data also being curated to ensure high-quality experimental val-ues and compatibility across all models. It is important to note the practical trade-off between predictive speed and extrapolative power. While chemoinformatic mod-els are instantaneous, our physics-augmented approach requires an upfront simulation step. However, this com-putational cost is modest and highly accessible. On a modern GPU, a 20 ns simulation for a single compound is typically completed in half an hour. This makes it feasible to generate descriptors for dozens of compounds simultaneously on a modern multi-core workstation or a small high-performance computing cluster, represent-ing a practical and manageable investment to unlock the model’s robust extrapolative capabilities. Figure 4A plots the Mean Absolute Error (MAE) in Kelvin for all models on this challenging extrapolation test set. The corresponding Root Mean Squared Er-ror (RMSE) plot, which reinforces the same trends, is provided in the Supplementary Information (Fig.S2.A). A surface-level comparison of the MAE suggests that 9b) a) c) Predictive model  
+
+> 020 40 60 80 100 120
+> MAE (K)
+> 11.8 14.2 31.0 40.4 53.5 98.0
+> GRAPPA (T=0.82) RareyNanoolal MD (T=0.36)
+> MD+Chemoinf.(T=0.36)
+> Chemoinf. (T=0.36) Joback
+
+Tanimoto Range MAE (K)      
+
+> 200 300 400 500 600 700
+
+Experimental Boiling Point (K)      
+
+> 200 300 400 500 600 700
+> Predicted Boiling Point (K)  Neutral Compounds with Te,Si,B... Ionic mixtures (ILs, salts...)
+> BSi
+> K+ N-
+> N+ O-
+> Similarity to Training Set High Low
+> 0.75-0.9 0.5-0.75 0.25-0.5 010 20 30 40 50 60 6.4 12.6 28.3 9.8 26.9 40.9 MD GRAPPA
+
+FIG. 4. Extrapolative performance of MD-based models on structurally novel and complex chemical systems. (a) Mean Absolute Error (MAE) on a curated test set of 32 complex organic molecules for various models: GRAPPA (pink), Rarey-Nanoolal (yellow), MD-only (dark blue), hybrid MD+chemoinformatics (dark green), chemoinformatics-only (light green), and the Joback method (light blue). The average Tanimoto similarity of the test set to the respective training sets is noted for GRAPPA (0.82) and our models (0.38), highlighting the greater novelty of the test set for our approach. (b) MAE comparison between the MD-only model (dark blue) and GRAPPA (pink), stratified by Tanimoto similarity between test compounds and each model’s respective training set. The MD-only model demonstrates consistently lower error, with its advantage growing significantly as structural similarity decreases. Each bin contains at least 3 data points. (c) Predicted versus experimental boiling points for chemical systems outside the applicability domain of most existing predictors. The model successfully predicts boiling points for neutral compounds with uncommon elements like Si, B, and Te (pink circles, e.g., tribromosilane) and charged systems including salts and ionic liquids (blue stars, e.g., Acesulfame K and an IL-methanol mixture). 
+
+the literature models GRAPPA and Rarey-Nannoolal achieve the highest accuracy on this dataset. However, this simple comparison is misleading. A deeper analysis reveals a lower MAE for our thermodynamics-based models once the nature of the ex-trapolation task is considered. The test set compounds exhibit a high average Tanimoto similarity of 0.82 to GRAPPA’s training set, but a low similarity (0.38) to our own. This confirms that for our models, trained on only 1,000 compounds versus GRAPPA’s 20,000, this benchmark represents a significantly more challenging out-of-distribution extrapolation task. In this true ex-trapolative regime, our MD-only model clearly outper-forms the other models trained in this work, achieving an MAE of 31.0 K 4A. This result highlights a known limitation of chemoinformatics descriptors: features that are effective for interpolating within a known chemical space become unreliable when the model is faced with novel structures containing fragments or motifs absent from the training data 119 . The performance degrada-tion is systematic: our chemoinformatics-only model fails (MAE = 53.5 K), and the hybrid model (MAE = 40.4 K) is penalized by including these same unreliable structural features. While a state-of-the-art GNN like GRAPPA does not use traditional chemoinformatics descriptors, its performance is also tightly coupled to training data similarity. Therefore, while GRAPPA remains the supe-rior tool for high-precision predictions within its vast, well-defined domain, our results demonstrate that for true out-of-distribution extrapolation—especially when training data is limited—a model anchored in underly-ing physics is fundamentally more robust. This finding aligns with recent conclusions in other domains, such as protein-ligand binding affinity prediction 120 .To dissect the true generalization capabilities of both our MD-only model and the GNN we stratified the ex-ternal test set by Tanimoto similarity, measuring how structurally similar each test compound is to its nearest neighbor in each model’s respective training set (a full breakdown is provided in S.I of Supplementary Informa-tion). This analysis (Fig.S2.B) reveals their fundamen-tally different strengths. In the high-similarity regime (Tanimoto > 0.75), GRAPPA’s performance is excep-tional, with its MAE dropping to 4.1K for compounds most similar to its training data, confirming its power as a high-precision interpolator. To assess true extrapola-tive capability, we therefore focused the main analysis on the more challenging similarity range below 0.9 (Fig. 4B). In this view, a clear and consistent trend emerges where our MD-only model maintains a superior performance. For compounds with moderate similarity (0.75–0.9), our model’s MAE is 6.4K versus 9.8K for GRAPPA. This per-formance gap widens substantially as compound novelty increases, with our model achieving an MAE of 12.6K versus 26.9K in the medium similarity range, and 28.3K versus 40.9K for the most dissimilar compounds. The disparity in robustness is most evident when con-sidering normalized error growth. When extrapolating to the most dissimilar compounds, GRAPPA’s error es-calates tenfold from its 4.1 K interpolation baseline. In contrast, our MD-only model exhibits a far more con-trolled response, its error growing by a factor of only 10 4.4 from its 6.4 K baseline. This confirms their distinct behaviours. While GRAPPA excels at high-precision in-terpolation, our physics-augmented approach provides a more graceful degradation in performance, establishing it as a more robust foundation for prediction in low-similarity regimes. The ultimate advantage of a physics-based approach is the ability to predict properties for chemical classes that lie entirely outside the domain of traditional models. Ex-isting predictors, including GRAPPA, are restricted to neutral organic molecules containing a limited set of el-ements (typically C, H, O, N, S, P, and sometimes vari-ous halogens) and cannot handle charged species or ex-otic elements. Fig. 4C showcases the model’s capability to extrapolate to these systems even though they were not in the training set. The first group (pink circles) includes neutral compounds containing uncommon ele-ments such as Si, B, and Te, or molecules lacking carbon altogether (e.g., tribromosilane). The second group (blue stars) comprises charged systems, including salts (e.g., Acesulfame K), ionic liquids (ILs), and ternary mixtures containing ILs and solvents. We note that experimentally measured boiling points for such systems are scarce, par-ticularly for salts and ILs which often decompose at high temperatures 121 . The ability of our model to make rea-sonable predictions for these complex systems, which are inaccessible to many widely used tools, underscores the power of leveraging fundamental thermodynamic proper-ties for molecular property prediction and opens a path toward a more universal predictive framework. Taken together, this section thus demonstrates the dis-tinct advantages of a thermodynamics-informed frame-work: it is more robust for extrapolation towards new structures and elemental compositions and enables pre-diction for chemical domains, such as inorganic and charged species, that lie beyond the reach of conventional methods.  
+
+> IV. CONCLUSIONS
+
+In this work, we have developed a physics-augmented machine learning framework that demonstrates how first-principles-informed networks can perform more robustly when extrapolating. While existing methods like the group contribution-based Rarey-Nannoolal 32 or machine learning models like GRAPPA 60 are very competitive around the training set, our work highlights a specific strength in navigating structural novelty. Our approach successfully integrates the regression power of modern machine learning with the fundamental principles of ther-modynamics and explicit MD simulations, offering a re-liable tool for exploring the novel chemical spaces. We demonstrated that a minimal set of three simulation-derived features yields a model with predic-tive accuracy competitive with complex chemoinformat-ics models that rely on thousands of abstract descriptors (Fig. 3B). The resulting framework is, moreover, inter-pretable and physically grounded. This approach suc-cessfully integrates the regression power of modern ma-chine learning with the fundamental principles of ther-modynamics, offering a reliable tool for exploring novel chemical spaces. The primary strength of our framework is revealed when venturing beyond chemical space of the training set. Our physics-informed model’s performance is sub-stantially less sensitive to structural dissimilarity, in con-trast to purely data-driven approaches (Fig. 4A-B). This robustness establishes our model as a reliable tool, capa-ble of predicting boiling points for systems inaccessible to most established methods, including inorganic com-pounds, molecules with uncommon elements like silicon and boron, and charged systems such as ionic liquids (Fig. 4C). By anchoring predictions to molecular ther-modynamics, we demonstrate a clear path toward more generalizable ML models capable of navigating uncharted chemical space. While this study is focused solely on normal boiling point predictions, our results provide strong, systematic evidence for a broader principle: MD-informed machine learning models are more robust for predicting properties governed by intermolecular forces. Rooting predictions in thermodynamics offers a pathway to develop more accu-rate and widely applicable models, essential for navigat-ing the unexplored chemical territories vital to the future of materials science, pharmacology, drug discovery and engineering.  
+
+> V. ACKNOWLEDGEMENTS
+
+N.H.E. acknowledges funding from Bayer Aktienge-sellschaft at Kaiser-Wilhelm-Allee 1, 51373 Leverkusen, Germany (“Bayer”). J.R.E. acknowledges funding from Emmanuel College, the University of Cambridge, the Ra-mon y Cajal fellowship (RYC2021-030937-I), the Span-ish scientific plan and committee for research reference PID2022-136919NA-C33, and the European Research Council (ERC) under the European Union’s Horizon Europe research and innovation program (grant agree-ment no. 101160499). J.R. acknowledges funding from the Spanish Ministry of Economy and Competitivity (PID2022-136919NB-C32). This work has been per-formed using resources provided by the HPC system in Bayer. The authors also thankfully acknowledge RES computational resources provided by Mare Nos-trum 5 through the activity 2024-3-0001. Finally, the authors thank Marco Hoffmann for generously providing GRAPPA’s training set data, which enabled a direct and valuable comparison between models.  
+
+> VI. DATA AVAILABILITY
+
+To ensure the reproducibility of our research, all rel-evant data, simulation parameters, and analysis scripts 11 have been deposited in a public GitHub repository. The repository contains the three datasets used in this work, as detailed in the Materials and Methods section. Fur-thermore, it provides the GROMACS input files (.mdp) for the energy minimization and production steps of the molecular dynamics simulations based on the OpenFF toolkit. 
+
+VII. REFERENCES 
+
+> 1
+
+G. Schneider, “Automating drug discovery,” Nature reviews drug discovery 17 , 97–113 (2018). 
+
+> 2
+
+K.-K. Mak, Y.-H. Wong, and M. R. Pichika, “Artificial intel-ligence in drug discovery and development,” Drug discovery and evaluation: safety and pharmacokinetic assays , 1461–1498 (2024). 
+
+> 3
+
+H. Van De Waterbeemd and E. Gifford, “Admet in silico mod-elling: towards prediction paradise?” Nature reviews Drug dis-covery 2, 192–204 (2003). 
+
+> 4
+
+R. C. Reid, T. K. Sherwood, and R. E. Street, “The properties of gases and liquids,” Physics Today 12 , 38–40 (1959). 
+
+> 5
+
+L. M. Egolf, M. D. Wessel, and P. C. Jurs, “Prediction of boiling points and critical temperatures of industrially important or-ganic compounds from molecular structure,” Journal of Chem-ical Information and Computer Sciences 34 , 947–956 (1994). 
+
+> 6
+
+J. D. Seader, E. J. Henley, and D. K. Roper, “Separation process principles: Chemical and biochemical operations,” John Wiley & Sons (2016). 
+
+> 7
+
+P. G. Jessop, “Searching for green solvents,” Green Chemistry 
+
+13 , 1391–1398 (2011). 
+
+> 8
+
+D. Prat, A. Wells, J. Hayler, H. Sneddon, C. R. McElroy, S. Abou-Shehada, and P. J. Dunn, “Cyanex solvent selection guide,” Green Chemistry 18 , 288–296 (2016). 
+
+> 9
+
+B. E. Poling, J. M. Prausnitz, and J. P. O’Connell, The Prop-erties of Gases and Liquids , 5th ed. (McGraw-Hill, New York, 2001). 
+
+> 10
+
+I. H. Bell, J. Wronski, S. Quoilin, and V. Lemort, “Pure and pseudo-pure fluid thermophysical property evaluation and the open-source thermophysical property library coolprop,” Indus-trial & Engineering Chemistry Research 53 , 2498–2508 (2014). 
+
+> 11
+
+S. Kim, J. Chen, T. Cheng, A. Gindulyte, J. He, S. He, Q. Li, B. A. Shoemaker, P. A. Thiessen, B. Yu, et al. , “Pubchem 2025 update,” Nucleic acids research 53 , D1516–D1525 (2025). 
+
+> 12
+
+S. I. Sandler, Chemical, Biochemical, and Engineering Thermo-dynamics , 5th ed. (John Wiley & Sons, 2017). 
+
+> 13
+
+W. Wu, R. Sayin, K. Shvedova, S. C. Born, C. J. Testa, S. S. Yeole, A. S. Censullo, A. K. Srivastava, A. Ramnath, C. Hu, 
+
+et al. , “A continuous rotary filtration for the separation and purification of an active pharmaceutical ingredient,” Organic Process Research & Development 28 , 1618–1631 (2023). 
+
+> 14
+
+A. Castro, I. Sanchez-Burgos, N. H. Espejo, A. Garaizar, G. M. Maggioni, and J. R. Espinosa, “Understanding how synthetic impurities affect glyphosate solubility and crystal growth using free energy calculations and molecular dynamics simulations,” The Journal of Physical Chemistry B (2025). 
+
+> 15
+
+C. Finotti Cordeiro, L. Lopardi Franco, D. Teixeira Carvalho, and R. Bonfilio, “Impurities in active pharmaceutical ingredi-ents and drug products: A critical review,” Critical Reviews in Analytical Chemistry 56 , 55–75 (2026). 
+
+> 16
+
+J. F. Brennecke and E. J. Maginn, “Ionic liquids: innovative fluids for chemical processing,” American Institute of Chemical Engineers. AIChE Journal 47 , 2384 (2001). 
+
+> 17
+
+J.-C. De Hemptinne, G. M. Kontogeorgis, R. Dohrn, I. G. Economou, A. Ten Kate, S. Kuitunen, L. Fele ˇZilnik, M. G. De Angelis, and V. Vesovic, “A view on the future of ap-plied thermodynamics,” Industrial & Engineering Chemistry Research 61 , 14664–14680 (2022). 
+
+> 18
+
+B. I. Lee and M. G. Kesler, “A generalized thermodynamic correlation based on three-parameter corresponding states,” AIChE Journal 21 , 510–527 (1975). 
+
+> 19
+
+D. Ambrose and J. Walton, “Vapour pressures up to their crit-ical temperatures of normal alkanes and 1-alkanols,” Pure and Applied Chemistry 61 , 1395–1403 (1989). 
+
+> 20
+
+B. E. Poling, J. M. Prausnitz, and O. John Paul, The properties of gases and liquids (McGraw-Hill New York, 2001). 
+
+> 21
+
+D. Edwards and J. Prausnitz, “Estimation of vapor pressures of heavy liquid hydrocarbons containing nitrogen or sulfur by a group-contribution method,” Industrial & Engineering Chem-istry Fundamentals 20 , 280–283 (1981). 
+
+> 22
+
+C.-H. Tu, “Group-contribution method for the estimation of va-por pressures,” Fluid Phase Equilibria 99 , 105–120 (1994). 
+
+> 23
+
+L. Constantinou and R. Gani, “New group contribution method for estimating properties of pure compounds,” AIChE Journal 
+
+40 , 1697–1710 (1994). 
+
+> 24
+
+J. Marrero-Morej´ on and E. Pardillo-Fontdevila, “Estimation of pure compound properties using group-interaction contribu-tions,” AIChE journal 45 , 615–621 (1999). 
+
+> 25
+
+W. E. Asher and J. F. Pankow, “Vapor pressure prediction for alkenoic and aromatic organic compounds by a unifac-based group contribution method,” Atmospheric Environment 
+
+40 , 3588–3600 (2006). 
+
+> 26
+
+J. F. Pankow and W. E. Asher, “Simpol. 1: a simple group con-tribution method for predicting vapor pressures and enthalpies of vaporization of multifunctional organic compounds,” Atmo-spheric Chemistry and Physics 8, 2773–2796 (2008). 
+
+> 27
+
+B. Moller, J. Rarey, and D. Ramjugernath, “Estimation of the vapour pressure of non-electrolyte organic compounds via group contributions and group interactions,” Journal of Molecular Liq-uids 143 , 52–63 (2008). 
+
+> 28
+
+R. Ceriani, R. Gani, and Y. Liu, “Prediction of vapor pressure and heats of vaporization of edible oil/fat compounds by group contribution,” Fluid Phase Equilibria 337 , 53–59 (2013). 
+
+> 29
+
+M. Rezakazemi, A. Marjani, and S. Shirazian, “Development of a group contribution method based on unifac groups for the estimation of vapor pressures of pure hydrocarbon compounds,” Chemical Engineering & Technology 36 , 483–491 (2013). 
+
+> 30
+
+T.-Y. Wang, X.-Z. Meng, M. Jia, and X.-C. Song, “Predicting the vapor pressure of fatty acid esters in biodiesel by group contribution method,” Fuel Processing Technology 131 , 223– 229 (2015). 
+
+> 31
+
+K. G. Joback and R. C. Reid, “Estimation of pure-component properties from group-contributions,” Chemical Engineering Communications 57 , 233–243 (1987). 
+
+> 32
+
+Y. Nannoolal, J. Rarey, D. Ramjugernath, and W. Cordes, “Es-timation of pure component properties: Part 1. estimation of the normal boiling point of non-electrolyte organic compounds via group contributions and group interactions,” Fluid Phase Equilibria 226 , 45–63 (2004). 
+
+> 33
+
+A. Alibakhshi and B. Hartke, “Dependence of vaporization en-thalpy on molecular surfaces and temperature: Thermodynami-cally effective molecular surfaces,” Physical Review Letters 129 ,206001 (2022). 
+
+> 34
+
+D.-Y. Peng and D. B. Robinson, “A new two-constant equation of state,” Industrial & Engineering Chemistry Fundamentals 15 ,59–64 (1976). 
+
+> 35
+
+W. G. Chapman, K. E. Gubbins, G. Jackson, and M. Radosz, “Saft: Equation-of-state solution model for associating fluids,” Fluid Phase Equilibria 52 , 31–38 (1989). 
+
+> 36
+
+J. Gross and G. Sadowski, “Perturbed-chain saft: An equation of state based on a perturbation theory for chain molecules,” In-dustrial & engineering chemistry research 40 , 1244–1260 (2001). 
+
+> 37
+
+A. R. Katritzky, V. S. Lobanov, and M. Karelson, “Qspr: the correlation and quantitative prediction of chemical and physical properties from structure,” Chemical Society Reviews 24 , 279– 287 (1995). 12 
+
+> 38
+
+A. R. Katritzky, S. H. Slavov, D. A. Dobchev, and M. Karel-son, “Rapid qspr model development technique for prediction of vapor pressure of organic compounds,” Computers & chemical engineering 31 , 1123–1130 (2007). 
+
+> 39
+
+S. Hilal, S. Karickhoff, and L. Carreira, “Prediction of the vapor pressure boiling point, heat of vaporization and diffusion coef-ficient of organic compounds,” QSAR & Combinatorial Science 
+
+22 , 565–574 (2003). 
+
+> 40
+
+Y. Dai, Z. Zhu, C. Zhong, Y. Zhang, J. Zeng, and L. Xun, “Prediction of boiling points of organic compounds by qspr tools,” Journal of Molecular Graphics and Modelling 44 , 113– 119 (2013). 
+
+> 41
+
+H. Mirshahvalad, R. Ghasemiasl, N. Raoufi, and M. Malekzadeh Dirin, “A neural network qspr model for accurate prediction of flash point of pure hydrocarbons,” Molecular Informatics 38 , 1800094 (2019). 
+
+> 42
+
+M. R. Fissa, Y. Lahiouel, L. Khaouane, and S. Hanini, “Qspr estimation models of normal boiling point and relative liquid density of pure hydrocarbons using mlr and mlp-ann meth-ods,” Journal of Molecular Graphics and Modelling 87 , 109–120 (2019). 
+
+> 43
+
+S.-Y. Kim, I. Jeon, and S.-J. Kang, “Integrating data science and machine learning to chemistry education: Predicting classi-fication and boiling point of compounds,” Journal of Chemical Education 101 , 1771–1776 (2024). 
+
+> 44
+
+J.-h. Zhang, Z.-m. Liu, and W.-r. Liu, “Qspr study for predic-tion of boiling points of 2475 organic compounds using stochas-tic gradient boosting,” Journal of Chemometrics 28 , 161–167 (2014). 
+
+> 45
+
+A. N. Koam, M. U. Majeed, S. Zaman, A. Ahmad, I. Masmali, and A. A. H. Ahmadini, “Machine learning approaches for mod-eling the physiochemical characteristics of polycyclic aromatic hydrocarbons,” The European Physical Journal E 48 , 21 (2025). 
+
+> 46
+
+D. K. Duvenaud, D. Maclaurin, J. Iparraguirre, R. Bombarell, T. Hirzel, A. Aspuru-Guzik, and R. P. Adams, “Convolutional networks on graphs for learning molecular fingerprints,” Ad-vances in neural information processing systems 28 (2015). 
+
+> 47
+
+J. Gilmer, S. S. Schoenholz, P. F. Riley, O. Vinyals, and G. E. Dahl, “Neural message passing for quantum chemistry,” in 
+
+Proceedings of the 34th International Conference on Machine Learning , Proceedings of Machine Learning Research, Vol. 70 (PMLR, 2017) pp. 1263–1272. 
+
+> 48
+
+Z. Xiong, D. Wang, X. Liu, F. Zhong, X. Wan, X. Li, Z. Li, X. Luo, K. Chen, H. Jiang, et al. , “Pushing the boundaries of molecular representation for drug discovery with the graph attention mechanism,” Journal of medicinal chemistry 63 , 8749– 8760 (2019). 
+
+> 49
+
+J. G. Rittig, K. C. Felton, A. A. Lapkin, and A. Mitsos, “Gibbs– duhem-informed neural networks for binary activity coefficient prediction,” Digital Discovery 2, 1752–1767 (2023). 
+
+> 50
+
+J. Damay, F. Jirasek, M. Kloft, M. Bortz, and H. Hasse, “Predicting activity coefficients at infinite dilution for varying temperatures by matrix completion,” Industrial & Engineering Chemistry Research 60 , 14564–14578 (2021). 
+
+> 51
+
+T. Specht, M. Nagda, S. Fellenz, S. Mandt, H. Hasse, and F. Ji-rasek, “Hanna: hard-constraint neural network for consistent ac-tivity coefficient prediction,” Chemical science 15 , 19777–19786 (2024). 
+
+> 52
+
+W. Ahmad, H. Tayara, and K. T. Chong, “Attention-based graph neural network for molecular solubility prediction,” ACS omega 8, 3236–3244 (2023). 
+
+> 53
+
+B. Winter, P. Rehner, T. Esper, J. Schilling, and A. Bardow, “Understanding the language of molecules: predicting pure com-ponent parameters for the pc-saft equation of state from smiles,” Digital Discovery 4, 1142–1157 (2025). 
+
+> 54
+
+K. C. Felton, L. Raßpe-Lange, J. G. Rittig, K. Leonhard, A. Mitsos, J. Meyer-Kirschner, C. Kn¨ osche, and A. A. Lapkin, “Ml-saft: A machine learning framework for pcp-saft parameter prediction,” Chemical Engineering Journal 492 , 151999 (2024). 
+
+> 55
+
+J. Habicht, C. Brandenbusch, and G. Sadowski, “Predicting pc-saft pure-component parameters by machine learning using a molecular fingerprint as key input,” Fluid Phase Equilibria 565 ,113657 (2023). 
+
+> 56
+
+C. Qu, A. J. Kearsley, B. I. Schneider, W. Keyrouz, and T. C. Allison, “Graph convolutional neural network applied to the pre-diction of normal boiling point,” Journal of Molecular Graphics and Modelling 112 , 108149 (2022). 
+
+> 57
+
+S. A. R. Sangala and S. Raghunathan, “Graph neural network for 3-dimensional structures including dihedral angles for molec-ular property prediction,” Journal of Computational Chemistry 
+
+46 , e70121 (2025). 
+
+> 58
+
+Y.-H. Lin, H.-H. Liang, S.-T. Lin, and Y.-P. Li, “Advancing vapor pressure prediction: A machine learning approach with directed message passing neural networks,” Journal of the Tai-wan Institute of Chemical Engineers , 105926 (2024). 
+
+> 59
+
+V. V. Santana, C. M. Rebello, L. P. Queiroz, A. M. Ribeiro, N. Shardt, and I. B. Nogueira, “Puffin: A path-unifying feed-forward interfaced network for vapor pressure prediction,” Chemical Engineering Science 286 , 119623 (2024). 
+
+> 60
+
+M. Hoffmann, H. Hasse, and F. Jirasek, “Grappa—a hybrid graph neural network for predicting pure component vapor pressures,” Chemical Engineering Journal Advances 22 , 100750 (2025). 
+
+> 61
+
+J. G. Rittig, K. B. Hicham, A. M. Schweidtmann, M. Dah-men, and A. Mitsos, “Graph neural networks for temperature-dependent activity coefficient prediction of solutes in ionic liq-uids,” Computers & Chemical Engineering 171 , 108153 (2023). 
+
+> 62
+
+K. Yang, K. Swanson, W. Jin, C. Coley, P. Eiden, H. Gao, A. Guzman-Perez, T. Hopper, B. Kelley, M. Mathea, et al. , “An-alyzing learned molecular representations for property predic-tion,” Journal of chemical information and modeling 59 , 3370– 3388 (2019). 
+
+> 63
+
+I. V. Tetko, P. Karpov, R. Van Deursen, and G. Godin, “State-of-the-art augmented nlp transformer models for direct and single-step retrosynthesis,” Nature Communications 11 , 5575 (2020). 
+
+> 64
+
+J. P. Janet, S. Ramesh, C. Duan, and H. J. Kulik, “Accurate multiobjective design in a space of millions of transition metal complexes with neural-network-driven efficient global optimiza-tion,” ACS Central Science 6, 513–524 (2020). 
+
+> 65
+
+Z. Wu, B. Ramsundar, E. N. Feinberg, J. Gomes, C. Geniesse, A. S. Pappu, K. Leswing, and V. Pande, “Moleculenet: a bench-mark for molecular machine learning,” Chemical science 9, 513– 530 (2018). 
+
+> 66
+
+S. Gugler, Machine learning with physics-based descriptors for quantum chemistry , Ph.D. thesis, ETH Zurich (2023). 
+
+> 67
+
+R. A. Bryce, “Physics-based scoring of protein–ligand interac-tions: explicit polarizability, quantum mechanics and free ener-gies,” Future Medicinal Chemistry 3, 683–698 (2011). 
+
+> 68
+
+S.-C. Li, H. Wu, A. Menon, K. A. Spiekermann, Y.-P. Li, and W. H. Green, “When do quantum mechanical descriptors help graph neural networks to predict chemical properties?” Journal of the American Chemical Society 146 , 23103–23120 (2024). 
+
+> 69
+
+T. Higginbotham, K. Meier, J. Ram´ ırez, and A. Garaizar, “Pre-dicting drug-polymer compatibility in amorphous solid disper-sions by md simulation: on the trap of solvation free energies,” Molecular Pharmaceutics 22 , 760–770 (2024). 
+
+> 70
+
+A. Klamt and F. Eckert, “Cosmo-rs: a novel and efficient method for the a priori prediction of thermophysical data of liquids,” Fluid Phase Equilibria 172 , 43–72 (2000). 
+
+> 71
+
+M. Zhang and E. M. Suuberg, “Estimation of vapor pressures of perfluoroalkyl substances (pfas) using cosmotherm,” Journal of Hazardous Materials 443 , 130185 (2023). 
+
+> 72
+
+C. Song, R. Shariyati, and I. Alkhrsan, “Prediction of thermo-dynamic properties of ionic liquids using the pc-saft eos coupled with cosmo-rs model,” Chemical Engineering Research and De-sign 213 , 1–10 (2025). 
+
+> 73
+
+T. Dupeux, T. Gaudin, C. Marteau-Roussy, J.-M. Aubry, and V. Nardello-Rataj, “Cosmo-rs as an effective tool for predict-13 
+
+ing the physicochemical properties of fragrance raw materials,” Flavour and Fragrance Journal 37 , 106–120 (2022). 
+
+> 74
+
+K. A. Kurnia, S. P. Pinho, and J. A. Coutinho, “Evaluation of the conductor-like screening model for real solvents for the prediction of the water activity coefficient at infinite dilution in ionic liquids,” Industrial & Engineering Chemistry Research 53 ,12466–12475 (2014). 
+
+> 75
+
+K. Paduszy´ nski, “An overview of the performance of the cosmo-rs approach in predicting the activity coefficients of molecular solutes in ionic liquids and derived properties at infinite dilu-tion,” Physical Chemistry Chemical Physics 19 , 11835–11850 (2017). 
+
+> 76
+
+D. Frenkel and B. Smit, Understanding Molecular Simulation: From Algorithms to Applications , 2nd ed. (Academic Press, San Diego, 2002). 
+
+> 77
+
+T. K¨ oddermann, D. Paschek, and R. Ludwig, “Molecular dy-namic simulations of ionic liquids: A reliable description of structure, thermodynamics and dynamics,” ChemPhysChem 8,2464–2470 (2007). 
+
+> 78
+
+W. R. Smith, S. Figueroa-Gerstenmaier, and M. Skvorova, “Molecular simulation for thermodynamic properties and pro-cess modeling of refrigerants,” Journal of Chemical & Engineer-ing Data 59 , 3258–3271 (2014). 
+
+> 79
+
+D. H. Zaitsau, J. Neumann, A. Strate, et al. , “Isolating the role of hydrogen bonding in hydroxyl-functionalized ionic liquids by means of vaporization enthalpies, infrared spectroscopy and molecular dynamics simulations,” Physical Chemistry Chemical Physics 21 , 20308–20314 (2019). 
+
+> 80
+
+J. G. Harris, “Liquid-vapor interfaces of alkane oligomers: struc-ture and thermodynamics from molecular dynamics simulations of chemically realistic models,” The Journal of Chemical Physics 
+
+96 , 5498–5504 (1992). 
+
+> 81
+
+J. Luo, C. Zhou, Q. Li, and L. Liu, “A unified approach for calculating free energies of liquid and defective crystals based on thermodynamic integration,” The Journal of Chemical Physics 
+
+156 (2022). 
+
+> 82
+
+M. Emamian, H. Azizpour, H. Moradi, K. Keynejad, H. Bah-manyar, and Z. Nasrollahi, “Performance of molecular dynamics simulation for predicting of solvation free energy of neutral so-lutes in methanol,” Chemical Product and Process Modeling 
+
+17 , 489–497 (2022). 
+
+> 83
+
+A. Z. Panagiotopoulos, “Direct determination of phase coexis-tence properties of fluids by monte carlo simulation in a new ensemble,” Molecular Physics 61 , 813–826 (1987). 
+
+> 84
+
+I. Nitzke, G. Guevara-Carrion, D. Saric, S. Homes, S. Stephan, R. Fingerhut, M. Bernreuther, H. Hasse, and J. Vrabec, “ms2: A molecular simulation tool for thermodynamic properties, release 5.0,” Computer Physics Communications 310 , 109541 (2025). 
+
+> 85
+
+G. E. Karniadakis, I. G. Kevrekidis, L. Lu, P. Perdikaris, S. Wang, and L. Yang, “Physics-informed machine learning,” Nature Reviews Physics 3, 422–440 (2021). 
+
+> 86
+
+C. Meng, S. Griesemer, D. Cao, S. Seo, and Y. Liu, “When physics meets machine learning: a survey of physics-informed machine learning,” Machine Learning for Computational Sci-ence and Engineering 1, 20 (2025). 
+
+> 87
+
+K. Kashinath, M. Mustafa, A. Albert, J.-L. Wu, C. Jiang, S. Es-maeilzadeh, K. Azizzadenesheli, R. Wang, A. Chattopadhyay, A. Singh, et al. , “Physics-informed machine learning: case stud-ies for weather and climate modelling,” Philosophical Transac-tions of the Royal Society A: Mathematical, Physical and Engi-neering Sciences 379 (2021). 
+
+> 88
+
+M. Raissi, P. Perdikaris, and G. E. Karniadakis, “Physics-informed neural networks: A deep learning framework for solv-ing forward and inverse problems involving nonlinear partial differential equations,” Journal of Computational physics 378 ,686–707 (2019). 
+
+> 89
+
+S. Zhu, L. Wang, C. Luo, et al. , “Physics-informed machine learning and its structural integrity applications: state of the art,” Philosophical Transactions of the Royal Society A: Math-ematical, Physical and Engineering Sciences 381 , 20220406 (2023). 
+
+> 90
+
+G. C. Sosso and M. Bernasconi, “Harnessing machine learn-ing potentials to understand the functional properties of phase-change materials,” Mrs Bulletin 44 , 705–709 (2019). 
+
+> 91
+
+J.-L. Wu, H. Xiao, and E. Paterson, “Physics-informed ma-chine learning approach for augmenting turbulence models: A comprehensive framework,” Physical Review Fluids 3, 074602 (2018). 
+
+> 92
+
+F. Jirasek, R. Bamler, and S. Mandt, “Hybridizing physical and data-driven prediction methods for physicochemical properties,” Chemical Communications 56 , 12407–12410 (2020). 
+
+> 93
+
+L. Prokhorenkova, G. Gusev, A. Vorobev, A. V. Dorogush, and A. Gulin, “Catboost: unbiased boosting with categorical fea-tures,” Advances in neural information processing systems 31 
+
+(2018). 
+
+> 94
+
+CAS, a division of the American Chemical Society, “CAS Common Chemistry,” https://commonchemistry.cas.org/ , ac-cessed: Feb 18, 2026. 
+
+> 95
+
+P. J. Linstrom and W. G. Mallard, “The nist chemistry web-book: A chemical data resource on the internet,” Journal of Chemical & Engineering Data 46 , 1059–1063 (2001). 
+
+> 96
+
+H. E. Pence and A. Williams, “Chemspider: an online chemical information resource,” (2010). 
+
+> 97
+
+D. S. Wishart, Y. D. Feunang, A. C. Guo, E. J. Lo, A. Marcu, J. R. Grant, T. Sajed, D. Johnson, C. Li, Z. Sayeeda, N. Assem-pour, I. Iynkkaran, Y. Liu, A. Maciejewski, N. Gale, A. Wilson, L. Chin, R. Cummings, D. Le, A. Pon, C. Knox, and M. Wil-son, “DrugBank 6.0: the DrugBank Knowledgebase for 2024,” Nucleic Acids Research 52 , D1265–D1275 (2024). 
+
+> 98
+
+J. Wagner, M. Thompson, D. Dotson, A. L. East, P. K. Behara, T. Gokey, J. Horton, H. Jang, D. Cole, C. I. Bayly, D. L. Mob-ley, and J. Rodr´ ıguez-Guerra, “openforcefield/openff-forcefields: Version 2.0.0 ”Sage”,” (2021). 
+
+> 99
+
+D. Van Der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark, and H. J. Berendsen, “Gromacs: fast, flexible, and free,” Journal of Computational Chemistry 26 , 1701–1718 (2005). 
+
+> 100
+
+C. Lu, C. Wu, D. Ghoreishi, W. Chen, L. Wang, W. Damm, G. A. Ross, M. K. Dahlgren, E. Russell, C. D. Von Bargen, et al. ,“Opls4: improving force field accuracy on challenging regimes of chemical space,” Journal of chemical theory and computation 
+
+17 , 4291–4300 (2021). 
+
+> 101
+
+M. P. Allen and D. J. Tildesley, “Computer simulation of liq-uids,” (2017). 
+
+> 102
+
+G. Landrum et al. , “Rdkit documentation,” Release 1, 4 (2013). 
+
+> 103
+
+J. Gasteiger and M. Marsili, “Iterative partial equalization of orbital electronegativity—a rapid access to atomic charges,” Tetrahedron 36 , 3219–3228 (1980). 
+
+> 104
+
+L. Mart´ ınez, R. Andrade, E. G. Birgin, and J. M. Mart´ ınez, “Packmol: A package for building initial configurations for molecular dynamics simulations,” Journal of computational chemistry 30 , 2157–2164 (2009). 
+
+> 105
+
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee, and L. G. Pedersen, “A smooth particle mesh ewald method,” The Journal of chemical physics 103 , 8577–8593 (1995). 
+
+> 106
+
+G. Bussi, D. Donadio, and M. Parrinello, “Canonical sampling through velocity rescaling,” The Journal of chemical physics 126 
+
+(2007). 
+
+> 107
+
+B. Hess, H. Bekker, H. J. Berendsen, and J. G. Fraaije, “Lincs: A linear constraint solver for molecular simulations,” Journal of computational chemistry 18 , 1463–1472 (1997). 
+
+> 108
+
+D. J. Evans and B. Holian, “The nose–hoover thermostat,” A)’=(A Is) 1, 18 (1985). 
+
+> 109
+
+T. Akiba, S. Sano, T. Yanase, T. Ohta, and M. Koyama, “Op-tuna: A next-generation hyperparameter optimization frame-work,” in Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery & data mining (2019) pp. 2623–2631. 
+
+> 110
+
+R. F. Woolson, “Wilcoxon signed-rank test,” Wiley encyclope-dia of clinical trials , 1–3 (2007). 14 
+
+> 111
+
+P. W. Atkins, J. de Paula, and J. Keeler, Atkins’ Physical Chem-istry , 11th ed. (Oxford University Press, Oxford, 2018). 
+
+> 112
+
+A. G. Suarez, A. H. G¨ oller, M. E. Beck, S. K. O. Gheta, and K. Meier, “Comparative assessment of physics-based in silico methods to calculate relative solubilities,” Journal of Computer-Aided Molecular Design 38 , 36 (2024). 
+
+> 113
+
+T. Dietterich, “Overfitting and undercomputing in machine learning,” ACM computing surveys (CSUR) 27 , 326–327 (1995). 
+
+> 114
+
+M. M. Bejani and M. Ghatee, “A systematic review on over-fitting control in shallow and deep neural networks,” Artificial Intelligence Review 54 , 6391–6438 (2021). 
+
+> 115
+
+A. Adadi and M. Berrada, “Peeking inside the black-box: asurvey on explainable artificial intelligence (xai),” IEEE access 
+
+6, 52138–52160 (2018). 
+
+> 116
+
+A. Lavecchia, “Explainable artificial intelligence in drug discov-ery: bridging predictive power and mechanistic insight,” Wi-ley Interdisciplinary Reviews: Computational Molecular Science 
+
+15 , e70049 (2025). 
+
+> 117
+
+C. Calc, “Joback Method Critical Properties Calculator [Web Application],” https://toricalc.com/critical-properties/ joback (2026), retrieved 2026-01-20. 
+
+> 118
+
+M. Hoffmann, T. Specht, N. Hayer, H. Hasse, and F. Jirasek, “Mlprop–an interactive web interface for thermophysical prop-erty prediction with machine learning,” Chemie Ingenieur Tech-nik 97 , 1052–1056 (2025). 
+
+> 119
+
+A. Tropsha, “Best practices for qsar model development, val-idation, and exploitation,” Molecular informatics 29 , 476–488 (2010). 
+
+> 120
+
+A. Kubincov´ a and D. L. Mobley, “Bridging between structure-based and data-driven affinity prediction,” (2026). 
+
+> 121
+
+M. Ahrenberg, M. Beck, C. Neise, O. Keßler, U. Kragl, S. P. Verevkin, and C. Schick, “Vapor pressure of ionic liquids at low temperatures from ac-chip-calorimetry,” Physical Chem-istry Chemical Physics 18 , 21381–21390 (2016). Thermodynamic Descriptors from Molecular Dynamics as Features for Extrapolable Property Prediction. (Supplementary Material 
+
+Nuria H. Espejo 1,2,+, Pablo Llombart 1,+, Andres Gonz´ alez de Castilla 3, Jorge Ramirez 4,∗, Jorge R. Espinosa 1,5,6,7∗,Adiran Garaizar 2,∗
+
+[1] Department of Physical-Chemistry, Universidad Complutense de Madrid, Av. Complutense s/n, Madrid 28040, Spain [2] Data Science, Bayer AG, Alfred-Nobel-Straße 50, 40789 Monheim am Rhein, Germany [3] Bayer Crop Protection Innovation, Kaiser-Wilhelm-Alle 1, 51373 Leverkusen, Germany [4] Department of Chemical Engineering, Universidad Polit´ ecnica de Madrid, C/ Jose Gutierrez Abascal 2, Madrid 28006, Spain [5] Yusuf Hamied Department of Chemistry, University of Cambridge, Lensfield Road, Cambridge CB2 1EW, UK [6] PhAsIca Biosciences S.L, Calle Velazquez, 27, 28001 Madrid, Spain [7] Multidisciplinary Institute, Complutense University of Madrid, Paseo Juan XXIII, 1, Madrid 28040, Spain. * = To whom correspondence should be sent. email: jorge.ramirez@upm.es, jorgerene@ucm.es, adiran.garaizarsuarez@bayer.com 
+
+SI. TANIMOTO SIMILARITY ANALYSIS METHODOLOGY 
+
+To quantify the structural novelty of the benchmark set relative to different training domains, we performed a Tanimoto similarity analysis using the RDKit toolkit. Morgan fingerprints (256-bit, radius 2) were generated for all molecules in our internal training set, the GRAPPA training set, and our external benchmark set. For each compound in the benchmark set, we calculated its maximum Tanimoto similarity to any molecule in a given training set (either our own or GRAPPA’s). This score, ranging from 0 to 1, represents the compound’s proximity to the most similar entry in the training domain. This process allowed us to stratify the benchmark set by structural similarity and directly assess how each model’s predictive accuracy degrades as a function of increasing chemical novelty, thereby providing a rigorous measure of extrapolative performance. 
+
+SII. SUPPLEMENTARY FIGURES 0 10 20 30 40 50 60 70 80 90 100 Normalized Importance (%) MD Chemoinf. MD + Chemoinf. (42.5%)    
+
+> ΔHvap 500K Density 300K (15.4%) Solubility 300K (14.1%) Other (28.0%) Molecular Weight (34.3%) Ipc (25.3%) TPSA (14.8%) Other (25.7%) Density 400K (16.9%) (15.3%)
+> ΔHvap 500K Molecular Weight (13.3%) Other (54.5%)
+
+MD-based feature RDKit-based feature 
+
+FIG. S1. Normalized feature importance (in %) for the OpenFF-based model architectures. The horizontal bars show the relative contribution of the most significant features. Blue segments represent MD-derived features red segments represent chemoinformatics descriptors, and gray represents the cumulative importance of either minor structural features. Top bar (MD-only, 3 features selected): Importance is concentrated in thermodynamic features like the heat of vaporization (∆ Hvap ). Middle bar (Chemoinformatics-only, >1000 features used): Importance is led by molecular weight, followed by the information content of the characteristic polynomial (Ipc) and Topological Polar Surface Area (TPSA). Bottom bar (Hybrid, >1000 features used): A synergistic model where a thermodynamic features are complemented by key structural descriptors. 2a) b) Tanimoto Range MAE (K) MD GRAPPA Model 
+
+> GRAPPA (T=0.82) RareyNanoolal MD (T=0.36)
+> MD+Chemoinf.(T=0.36)
+> Chemoinf. (T=0.36) Joback
+
+RMSE 
+
+30.7 31.1 40.1 58.3 86.9 142.1 
+
+0.75-1 0.5-0.75 0.25-0.5 010 20 30 40 50 60 6.4 12.6 28.3 4.1 26.9 40.9 
+
+Similarity to Training Set High Low 
+
+FIG. S2. Detailed performance analysis including the high-similarity regime. (a) Root Mean Square Error (RMSE) for the curated test set across various models: GRAPPA (pink), Rarey-Nanoolal (yellow), MD-only (dark blue), hybrid MD+chemoinformatics (dark green), chemoinformatics-only (light green), and the Joback method (light blue). (b) MAE comparison between the MD-only model (dark blue) and GRAPPA (pink), stratified by Tanimoto similarity. This analysis includes the full similarity range up to 1.0, combining the moderate and high similarity compounds into a single bin (0.75-1.0).

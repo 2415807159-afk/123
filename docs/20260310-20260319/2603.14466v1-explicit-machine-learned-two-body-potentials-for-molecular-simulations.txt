@@ -1,0 +1,570 @@
+Title: Explicit, Machine-Learned Two-Body Potentials for Molecular Simulations
+
+URL Source: https://arxiv.org/pdf/2603.14466v1
+
+Published Time: Tue, 17 Mar 2026 03:49:08 GMT
+
+Number of Pages: 50
+
+Markdown Content:
+# Explicit, Machine-Learned Two-Body Potentials for Molecular Simulations 
+
+## Kham Lek Chaton, Eric D. Boittier, Mike Devereux and Markus Meuwly ∗
+
+Department of Chemistry, University of Basel, Klingelbergstrasse 80, CH-4056 Basel, Switzerland. 
+
+E-mail: m.meuwly@unibas.ch 
+
+March 17, 2026 
+
+Abstract 
+
+A new pairwise hybrid machine-learning/molecular mechanics (ML/MM) potential is introduced that is conceived for application to large, heterogeneous condensed-phase systems. The PhysNet ML method describes monomers and short-range dimer interac-tions, while a classical MM force field describes pairwise interactions beyond a defined switching distance. Models are fitted to MP2 dimer and pairwise cluster energies, and the quality of each model is assessed at different switching distances and using MM approaches with and without detailed distributed charge electrostatics. The applica-bility of the approach to molecular dynamics simulations is demonstrated for a basic implementation applied to a small model system. Dichloromethane and acetone are used as test systems to demonstrate the accuracy of the approach in describing pair-wise reference data, and also to highlight the limitations of the pairwise approach for systems that exhibit significant many-body effects in condensed phase, paving the way for the addition of a general many-body correction in future work. 
+
+1
+
+> arXiv:2603.14466v1 [physics.chem-ph] 15 Mar 2026 Keywords: Machine Learning, Potential Energy Surface, Long Range Interactions
+
+# 1 Introduction 
+
+Empirical energy functions (EEFs) are a successful concept for modeling chemical and bi-ological materials and processes at various scales. One of the hallmarks of a meaningful 
+
+model is the fact that it can be improved in a targeted fashion. For example, a model can be improved by changing several or all parameters in view of experiments. Depending on how this is done, a deeper understanding may be obtained. This has, for example, been at-tempted by morphing potential energy surfaces (PESs) given measurements of rovibrational energies or kinetic energy distributions for small molecules. 1 In this case, the fitted model provides a new, improved PES which can be used in new simulations. On the other hand, biasing a given energy function in view of measured infrared transitions and their relative intensities for cationic trialanine yielded a Ramachandran map consistent with NMR exper-iments. However, because only the RM was biased and not the underlying energy function, no improved PES was available for running new simulations. Yet another approach for improving empirical force fields (EFFs) is to declare each (additive) contribution as replaceable by a more physics-motivated and/or computationally improved model and representation. This was recently pursued for electrostatic contributions and within the formulation of EEFs. 2 However, the advent of machine learning-based potential energy surfaces (ML-PESs) has brought additional opportunities for targeted improvement of models to represent inter- and intramolecular interactions. 3,4 Such models come in very different flavours and range from highly accurate ML-PESs for single systems to foundational models for particular applications. Much recent progress has been made on computational approaches that increase the accu-2racy of condensed phase simulations while maintaining computational cost at a level where sufficiently large system sizes and sufficiently long timescales for condensed phase properties to converge remain accessible. They can be broadly divided into pure machine learning-based (ML) methods, “next-generation” molecular mechanics (MM), and hybrid ML/MM. “Deep Potential Molecular Dynamics” (DPMD) 5 is one example of a pure ML approach, where atomic energies are a function of their local environment up to a cutoff, thereby in-cluding local many-body effects but neglecting explicit long-range electrostatic interactions. Pure “next generation” MM approaches with increased accuracy due to more comprehensive functional forms include SIBFA, 6 designed to describe each term of a reference ab initio 
+
+energy decomposition scheme in order to recover the total system energy, and AMOEBA, 7
+
+another multipolar, fully polarizable classical potential. Particularly promising are various hybrid ML/MM approaches, such as the SO3LR 8 model that combines the SO3krates NN for semilocal interactions with a pairwise force field for short-range repulsion, long-range electrostatics and dispersion interactions. Also the QCT-FF 9 method that partitions the wave function and with it the total system energy into atomic contributions using the topol-ogy of the molecular electron density. A NN then learns the atomic energy contributions from their local environment, plus associated atomic multipole moments are used to evaluate long-range electrostatics. Finally, the MB-pol 10 model combines permutationally invariant polynomials that describe monomer, 2-body and 3-body interactions with a classical empir-ical polarization term for higher order many-body effects. The goal of the current work is to combine accurate neural network (NN) intramolecular en-ergies from PhysNet 11 with molecular mechanics “(k)MDCM” 12,13 zeroth-order electrostatics and a new 2-body potential to handle non-bonded interactions at short-range. PhysNet in-tramolecular contributions offer a reliable description of the monomer PES, while (k)MDCM + Lennard-Jones (LJ) terms provide similar accuracy for medium to long-range non-bonded interactions at reduced computational cost. The remaining, short-range intermolecular in-3teractions are described by adding PhysNet dimer potentials, maintaining a similar level of accuracy to the intramolecular and long-range terms, but within a 2-body approximation. 2
+
+Missing many-body effects will be added in future work. The combination of methods envisaged capitalizes on the strengths of each component part. A simple hybrid ML/MM approach that combined ML monomer potentials with classi-cal force field non-bonded terms at all intermolecular separations will suffer from reduced accuracy in condensed-phase simulations due to the coarse approximation of force field non-bonded terms at short-range. 2 Similarly, training pure ML models for high-dimensional, heterogeneous systems leads to difficulties in generating sufficient training data and requires larger neural networks for accurate description of that data, increasing computational cost in evaluating energies and forces in molecular dynamics (MD) simulations. Explicit dimer potentials offer a compromise in the short-range, non-bonded region where they are more accurate than force fields within the limits of the 2-body approximation, 2 and they require substantially less overhead to train than high-dimensional ML potentials. The preference for a 2-body ML potential over an empirical force field with improved non-bonded terms such as penetration corrections 14 or charge-transfer 15,16 arises from the nature of non-bonded interactions at close range. Monomer wave function overlap cannot be ne-glected at shorter intermolecular separations, leading to reorganization of electron clouds in accordance with Pauli exclusion in ways that are difficult to describe using simple empirical potentials that do not account for electrons explicitly. In addition, the available conforma-tional and permutational space of non-bonded neighbors is much larger than for bonded interactions where neighbors are fixed, meaning such empirical potentials must also be par-ticularly transferable, leading to much work fine-tuning the functional forms. 6,7,14,17 
+
+Long-range interactions, on the other hand, are dominated by electrostatic Coulomb terms 4as overlap of the monomer wave functions is small. 18 These interactions are well described using classical electrostatics models such as assigned point charges or multipole expansions of the monomer charge densities, 12,19–21 coupled with higher order terms such as polariza-tion 7,22–25 and dispersion corrections 6 as needed. As a consequence, fitting explicit ML dimer surfaces for each interacting pair avoids prob-lems by precalculating these energy surfaces explicitly for each interaction type, increasing parametrization costs with respect to an empirical force field but yielding accurate pairwise energies for all conformations and interaction permutations. The solution pursued here is therefore to apply NNs at short range to overcome the difficul-ties and computational costs associated with empirical interaction potentials in this region, switching to more physics-inspired electrostatic interactions combined with LJ-models be-yond a cutoff at longer range where these models perform well and at significantly reduced computational cost. Initially, this approach was applied to dichloromethane (DCM), for its challenging electrostatics involving H-bonding and sigma holes, 26,27 but also as DCM is an ideal test system for a 2-body potential where many-body effects have been found to play a minor role. 2 These results are then contrasted with acetone, which provides a counter-example where missing many-body contributions would need to be included, as a motivation for future work. Finally, exploratory molecular dynamics simulations are carried out to establish the utility and feasibility of the total interaction model for dynamics studies. 52 Methods 
+
+## 2.1 Data Generation 
+
+All condensed-phase simulations to generate reference structures were carried out using the CHARMM suite of codes. 28 The simulation systems consisted of a 32 3 ˚A3 cubic box generated using PACKMOL. 29 For DCM and acetone the systems contained 320 and 300 monomers, respectively. Both systems were initially relaxed using 2000 steps of Steepest Descent (SD) minimization. This was followed by heating and equilibration simulations of 20 ps and 50 ps, respectively, with a timestep of ∆ t = 1 fs, in the N V T and N pT ensembles applying SHAKE 30 on bonds involving H-atoms. A Nose-Hoover thermostat 31–34 was used to maintain the temperature at 300 K. Finally, 1 ns production simulations in the N pT ensemble were carried out using the Leapfrog Verlet integrator with a timestep of ∆ t = 0 .2 fs whereby all bonds involving hydrogen atoms were now free to move. The pressure was controlled using the Langevin Piston barostat 35 with a reference pressure of 1 atm. Long range interactions were treated using particle mesh Ewald 36 with a cutoff of 14 ˚ A and the Lennard-Jones inter-actions were switched between 10 ˚ A and 12 ˚ A. A total of 200 and 100 snapshots were saved for DCM and acetone, respectively. 
+
+## 2.2 The MDCM Models 
+
+For the conformationally averaged minimal distributed charge models (MDCMs) 12,13,23 first the structure of each monomer was geometry-optimized at the MP2/aug-cc-pVTZ level of theory using Gaussian16. 37 Following this, additional structures were generated from MD simulations using ASE 38 and the XTB semiempirical functional 39 and 5 structures were se-lected from a 1 ns run using a timestep of 0.1 fs, from a set of 10000 structures. Next, the molecular electrostatic potential (ESP) was computed across a grid for all 6 struc-6tures at the MP2/aug-cc-pVTZ level of theory. A grid resolution of Mx × My × Mz reference points ( xk, y l, z m) with {k, l, m } = 1 . . . {Mx, M y, M z } was used, on which the electron den-sity and ESP of the converged wavefunction was determined. Points within the molecular volume, as defined by the van der Waals radii of each atom, were discarded. The grid spacing on which the ESP was evaluated was 0.33 a 0 and 0.19 a 0 for DCM and acetone, respectively. Hence, the reference data consists of discrete values for ESP ref (x, y, z ) on a regular grid. This target quantity was then represented by a minimal distributed charge model (MDCM) with 
+
+N off-center point charges {qk, Rk}Nk=1 . The charge magnitudes qk and their position Rk
+
+relative to the reference atom are fitted such as to best reproduce the reference ESP( x, y, z )by minimizing the loss function Lj =
+
+q 1
+
+> Npts
+
+PNpts  
+
+> i=1
+
+[ESP ref ,j (ri) − ESP MDCM ,j (ri)] 2 subject to 
+
+P 
+
+> k
+
+qk = Qtot , where ri is the position vector of each of the Npts grid points outside the molecular volume. For a conformationally averaged MDCM model comprising Nconf con-formers, L = PNconf  
+
+> j=1
+
+Lj was the loss function. Minimization of the loss function was carried out using differential evolution. 12,23,40,41 
+
+To determine the minimum number of charges N required, models were generated for each 
+
+N ∈ [Nmin , N max ] charges, recording the lowest RMSE( N ) from several fits at each N . When the improvement in the RMSE achieved by increasing N dropped below ∼ 0.1 kcal/mol, fitting was halted and the model was selected. Otherwise, the value of Nmax was increased further and the DE fit was repeated. In the present work, 14 and 16 charges were sufficient for DCM and acetone, respectively. 
+
+## 2.3 The ML-Based Energy Functions 
+
+The reference data for training the NN-PESs were determined using ORCA 42,43 with DLPNO-MP2 44,45 and cc-pVTZ and cc-pVDZ basis sets basis for DCM and for acetone, respectively. For DCM and acetone 4000 and 2000 monomer geometries were extracted from the 200 and 7100 distinct clusters, respectively. Furthermore, (DCM) 2 and (acetone) 2 dimer structures were extracted from the 200 and 100 distinct clusters, respectively. Each 20mer cluster gives rise to  20 2
+
+ = 20! 2!(20 −2)! = 20 ·19 2·1 = 190 different dimers. In total, this yields 38000 (DCM) 2 and 19000 (acetone) 2 dimer structures. In addition to the DLPNO-MP2 monomer and dimer ref-erence data (energies and forces), total energies for the 20mer clusters were also determined. This information was used to (i) assess the accuracy of total NN-PES cluster energies and cluster energies from empirical energy functions and (ii) quantify the residual many-body contributions beyond pairwise interactions. No BSSE corrections were included. PhysNet models 11 were trained jointly on monomers and dimers for each species (DCM and acetone) using the Asparagus environment. 46 For DCM the dataset consisted of 38000 dimers and 4000 monomers, whereas the acetone dataset consisted of 19000 dimers and 2000 monomers. For training, both datasets were split into 80/10/10 for the training, validation and test sets, respectively. The models were trained on Eref (total energies), F ref  
+
+> i,α
+
+(forces), 
+
+Qref (charges), and pref  
+
+> α
+
+(dipole-moment components) with reference calculation done at the DLPNO–MP2 level in ORCA, 42,43 using cc-pVTZ for DCM and cc-pVDZ for acetone. The loss function to be optimized was 
+
+L = wE E − Eref + wF
+
+3Na
+
+> Na
+
+X
+
+> i=1 3
+
+X
+
+> α=1
+
+− ∂E ∂r i,α 
+
+− F ref 
+
+> i,α
+
++ wQ
+
+> Na
+
+X
+
+> i=1
+
+qi − Qref + wp
+
+3
+
+> 3
+
+X
+
+> α=1
+> Na
+
+X
+
+> i=1
+
+qiri,α − pref  
+
+> α
+
++ Lnh .
+
+(1) where Na is the number of atoms in the species (DCM or acetone) considered. The Adam optimizer 47,48 was used for minimizing L and the hyperparameters 11,49 wi for i ∈ E, F, Q, p 
+
+weight the contributions to the loss and were wE = 1, wF ≈ 52 .92, wQ ≈ 14 .39, and 
+
+wp ≈ 27 .21. The term Lnh is the “non-hierarchical penalty” used as a regularizer. 11 The resulting fitted charges and dipole moments were not used here. 82.4 Adjusting the Lennard-Jones Parameters 
+
+The nonbonded interaction in an empirical energy function comprises Lennard-Jones and electrostatic contributions for which either a point charge (PC) or an MDCM description was used in the present work. Two different strategies were pursued to improve the em-pirical FFs by adjusting the Lennard-Jones (LJ) parameters. “Approach A” assumes that the total nonbonded interaction energy of a cluster consists of pairwise additive dimer inter-actions which necessarily neglects many-body contributions beyond the dimer, whereas for “Approach B” the total cluster nonbonded interaction was employed as the target quantity which does contain many-body contributions. 
+
+Approach A: The total energy Epair  
+
+> j
+
+for cluster j is the sum of all pairwise contributions (dimers) 
+
+Epair  
+
+> j
+
+=
+
+> 190
+
+X
+
+> i=1
+
+Edimer ,inter  
+
+> i,j
+
+.
+
+For optimizing the LJ-parameters, the force-field non-bonded interaction energies for all clusters j, Epair FF ,j , were compared with the sum of reference dimer energies, Epair ref ,j at the DLPNO–MP2/[cc-pVTZ / cc-pVDZ] level of theory for each of the 190 dimers comprising cluster j for DCM and acetone, respectively. 
+
+Approach B: In this case, the total energy for each cluster from the empirical energy function, 
+
+Efull FF ,j , and Efull ref ,j from reference DLPNO–MP2/[cc-pVTZ / cc-pVDZ] calculations was em-ployed for adjusting the LJ-parameters. Note that Efull ref ,j contains many-body contributions beyond the dimer whereas Epair ref ,j from “Approach A” does not. In both approaches, the ab initio reference energies Epair ref ,j and Efull ref ,j , respectively, were used as the target for fitting the total nonbonded interaction energies of each cluster j represented as an empirical energy expression. Thus, the Lennard-Jones parameters ϵ and Rmin /2 for 9each atom type were optimized. Following the conventions in the CHARMM and CGenFF force fields, Lorentz-Berthelot 50,51 combination rules were used for combining LJ-parameters of different atom types. During fitting, each LJ-parameter was constrained towards the original CGenFF values. The force field interaction energy EFF ,j = Eelec  
+
+> j
+
++ ELJ  
+
+> j
+
+was the sum of electrostatic and LJ contributions and the loss function to be minimized was the difference between EFF ,j and Eref ,j 
+
+L = 1
+
+J
+
+X
+
+> j∈J
+
+
+
+EFF ,j − Eref ,j 
+
+2
+
+(2) For approaches A and B the interaction energies were either sums of dimer energies or total cluster energies as explained above, J is the total number of clusters and the optimisation was performed using a Nelder-Mead 52 algorithm as implemented in the Scipy 53 module in Python. 
+
+## 2.5 The ML/MM Boundary 
+
+A hybrid ML/MM energy function with explicit two-body ML-interactions requires at least two regions. Interactions with monomers within “Region 1” around a first monomer are evaluated using the ML-PES. For interactions with monomers within “Region 2” an MM-description is employed, see Figure 1. In the present work, the MM-energy function uses either charges from the CGenFF force field or MDCM-charges combined with CGenFF LJ-parameters or those refitted to best describe the quantum chemical reference data. For the hybrid ML/MM energy function the trained PhysNet model was used for ri < r cut ,whereas for ri ≥ rcut , the energy was computed from the MM energy function. In the fol-lowing, ri is the C–C distance for DCM and the carbonyl C–C distance for acetone. For a given value of rcut , the total nonbonded interaction for a collection of monomers is EMM 
+
+for ri ≥ rcut and EML = Edimer ML − EmonomerA ML − EmonomerB ML for ri < r cut . Sensitivity of this 10 rcut < rCC 
+
+> Region 1 PhysNet
+
+rcut > rCC 
+
+> Region 2 ML/MM
+
+rcut > rCC 
+
+> Region 2 ML/MM
+
+Figure 1: Definitions of “Region 1” and “Region 2” necessary to model the ML/MM bound-ary. hybrid ML/MM energy function with respect to the actual value of rcut was probed for values 3 ≤ rcut ≤ 18 ˚ A in steps of 1 ˚ A. 
+
+## 2.6 Molecular Dynamics Simulations 
+
+Finally, the applicability of the potential energy functions developed here to molecular dynamics simulations was demonstrated. For this, gas phase clusters of increasing sizes (n ∈ { 2, 10 , 20 }) were generated using PACKMOL, where different initial (local) densi-ties were obtained using different box side lengths for the initial structure generation ( L ∈{10 .0, 20 .0, 30 .0, 40 .0}). Cluster simulations were carried out in the N V E ensemble us-ing ASE, pyCHARMM, and jaxmd. 54 Integration time steps (ranging from 0.05 to 0.5 fs) were tested to check changes in the variance of the total energy. Similarly, the variance (E− < E > )2 of the total energy for simulations ∼ 1 ns in length was followed and the 11 influence of training and using single- vs. double-precision ( float32 (the jax default) to 
+
+float64 ) for running the simulations was assessed. This was motivated by recent findings that depending on the observable sought, increased numerical precision is mandatory for meaningful results and may lead to more stable simulations. 55 
+
+For MD simulations, the cut-offs for switching between the ML and MM regions were im-plemented based on the SO3LR potential. 8 Three parameters are available: the position of the switching region (ML to MM) and the width σwidth ML of the ML switching regime (smaller is better) and half the width of the MM region, where the potential is damped (smoothly and continuously) such that the derivative at the bounds of the cut-off is equal to 0.0 (kcal/mol)/˚ A. The contribution of the ML potential energy surface (ML-PES) is con-trolled by a smooth switching function vswitch (r) defined in terms of an auxiliary variable 
+
+s(r) that varies between 0 and 1. The function s(r) was defined as 
+
+s(r) = 
+
+
+
+0, r ≤ r0,r − r0
+
+r1 − r0
+
+, r0 < r < r 1,
+
+1, r ≥ r1,
+
+(3) where r0 and r1 define the inner and outer boundaries of the switching region. A smooth C1
+
+switching profile is then constructed as 
+
+vswitch (r) = s(r)2 (3 − 2s(r)) . (4) The total interaction energy is obtained by smoothly interpolating between the ML and MM descriptions, 
+
+V (r) = vswitch (r)VML (r) + [1 − vswitch (r)] VMM (r). (5) 12 For the MM region, interactions are gradually turned off using a distance-dependent cutoff applied to the center-of-mass separation rCoM between monomers. The cutoff is defined as 
+
+vMMcut = vswitch 
+
+rCoM − [ρon MM + σwidth ML ]
+
+ρon MM − σwidth ML 
+
+γ
+
+, (6) where ρon MM defines the distance at which the MM interaction begins to be switched off, σwidth ML 
+
+controls the width of the transition region, and γ = 1 determines the steepness of the cutoff see Figure S1. It is noted that the C–C separation used as the progression coordinate for defining the boundary for the ML/MM potential slightly differs from rCoM used for the MD simulations. This was done for practical reasons when fitting the LJ-parameters and is no limitation. Using rCoM for the MD simulations is considered more general. 
+
+# 3 Results 
+
+The following section describes validation of the machine learned PhysNet dimer PESs (ML-PESs), followed by assessing the performance of CGenFF and the fitted CGenFF+MDCM models after refitting LJ parameters to the reference data. The accuracy of the different non-bonded contributions as a function of intermolecular separation is then used to select an appropriate cut-off to switch between the ML-PES, which performs well at all ranges, and CGenFF or CGenFF+MDCM, which perform well at medium to long range. Finally, the stability of an initial implementation of this 2-body potential to perform MD simulations is shown for N V E simulations on the ns timescale. 13 3.1 Validation of Monomer and Dimer ML-PESs 
+
+To set the stage, the machine-learned monomer and dimer PESs were validated. This was done by determining the performance of the trained PhysNet models on the test set which contained both, monomer and dimer structures. Figure 2 demonstrates that the monomer and dimer contributions for both systems are very accurately represented compared with the reference DLPNO-MP2/cc-pVTZ and DLPNO-MP2/cc-pVDZ data for DCM and acetone, respectively. For both systems monomer deformation and dimer interaction energies cover a range of 10 kcal/mol. A B
+
+Figure 2: Training performance of Dichloromethane and Acetone evaluated on the test set. Panel A: Performance of the PhysNet model for DCM. Panel B: Performance of the PhysNet model for acetone. The green and red symbols are for monomer and dimer energies, respectively. For both models the correlation coefficient is R2 = 0 .99. For DCM PhysNet was trained on 42000 structures (4000 monomer and 38000 dimer ge-ometries) comprising ( Ei, F i, μ i = qr i, q i) using Asparagus. 46 For DCM the test set RMSE-values for monomers and dimers on the jointly fitted model are 0.0114 kcal/mol and 0.0282 14 kcal/mol, respectively, whereas the total RMSE is 0.0269 kcal/mol. This compares with 0.0161 kcal/mol and 0.0325 kcal/mol for individually trained monomer and dimer models. For acetone these values are 0.0119 kcal/mol and 0.0628 kcal/mol for monomer and dimer for the jointly fitted model and 0.0599 kcal/mol for the total RMSE. The individually trained monomer and dimer models feature RMSE values of 0.0509 kcal/mol and 0.0585 kcal/mol, respectively. The performance of all trained models discussed above is within the expectations of previous work. For example, trained PhysNet models for syn-Criegee based on MP2 calculations re-ported RMSE( E) = 0 .19 kcal/mol for a reactive potential energy surface. 56 Similarly, Phys-Net trained on MP2-reference data for malonaldehyde and singly and doubly methylated Malonaldehyde reported RMSE-values of 0.0005 to 0.0218 kcal/mol depending on the sub-stitutions considered. 57 Comparable RMSE( E)-values ranging from 0.020 to 0.042 kcal/mol were reported for long alkane chains trained using the t-MB-PIP framework. 58 
+
+## 3.2 Two-Body, Range-Separated ML/MM 
+
+As mentioned in the methods, two approaches were chosen to readjust the CGenFF LJ-parameters to the reference data and to using MDCM instead of PC-electrostatics. This sections discusses the performance of “Approach A” which employed dimer interaction en-ergies as the reference to fit to. The performance of “Approach B”, which uses total cluster interaction energies, is discussed in the final Section. Using “Approach A”, the 2-body cluster energies are the reference data to obtain refined LJ-parameters for CGenFF and CGenFF+MDCM, see Figures 3 and 4 and Tables S1 and S2. Without readjusting the LJ-parameters (green symbols and lines), the [RMSE( E), MAE( E)] are [3.45, 2.83] kcal/mol and [8.30, 9.93] kcal/mol for DCM and acetone, respectively. Be-15 cause CGenFF is based on MP2/6-31G(d) calculations for dimers and fitting to condensed phase properties from simulations for the LJ-parameters, 59 allowing the LJ ranges and well depths to vary for the DLPNO-MP2/cc-pVTZ ad DLPNO-MP2/cc-pVDZ reference data is still expected to improve the model. Evidently, when changing from a point charge-based description to MDCM, the LJ-parameters also need to be optimized. As can be seen in Figures 3 and 4 (orange symbols and lines) and quantified in Table 1 for DCM and acetone, the refitted parameters (Table 2) primarily lead to a systematic shift in the CGenFF and CGenFF+MDCM cluster energies, moving the mean of the distributions closer to the mean of the reference DLPNO-MP2 2-body energies. This reduces the RMSE from 3.45 to 1.88 kcal/mol (CGenFF) and from 3.74 to 3.26 kcal/mol (CGenFF+MDCM) in the case of DCM. Relaxing constraints on allowed LJ parameter values would further remove the residual systematic shift for (CGenFF+MDCM), but typically without improv-ing the residual slope and variance. For acetone, [RMSE( E), MAE( E)] reduce from [8.30, 7.93] to [6.68, 6.27] kcal/mol for CGenFF and from [16.01, 15.92] to [2.38, 2.07] kcal/mol for CGenFF+MDCM, respectively. Again, residual shift for CGenFF could be removed by further relaxing constraints on parameter values, but likely without improving the residual variance and with a danger of overfitting at the expense of accuracy in regions of conforma-tional space that are not well represented in the training data. The consistent observation that residual variance (the spread in the data away from the diagonal) is not substantially re-duced by refitting highlights the errors that remain even after refitting LJ terms if such force fields are used for all non-bonded interactions in condensed phase. In contrast, the Phys-Net ML-PES (green symbols and lines in panel C) achieves much lower variance, faithfully representing the 2-body reference data with an RMSE of 1.07 kcal/mol and 1.20 kcal/mol for DCM and acetone, respectively. The small residual shift from PhysNet results from cu-mulative errors when summing over all 190 ML dimer pairs in each cluster, while the LJ parameters for MM models are deliberately fitted to summed pairwise cluster energies to 16 Eref, j (kcal/mol) 
+
+> EFF, j (kcal/mol)
+> Dcm:-dimer vs dimer
+
+# A B
+
+# CFigure 3: Correlation between reference electronic structure data ( x−axis) and the MM (panels A and B) or ML (panel C) energies for DCM using “Approach A”. In panels A to C, the green traces are results from using CGenFF, CGenFF+MDCM, and PhysNet energies without modification. The orange traces in panels A and B are the results after refitting the LJ-parameters but without ML-contributions. The performance of hybrid ML/MM models are the blue and red symbols and lines in panels A and B, respectively. Light and dark traces are for rcut = 4 ˚ A and rcut = 7 ˚ A, respectively. Note that for larger values of rcut , the mixed ML/MM models progressively approach the PhysNet model. Computationally more advantageous are ML/MM models with shorter rcut . For statistical performance measures, see Table 1. avoid cumulative errors. It is also of interest to consider changes in the LJ-parameters made by fitting using “Ap-proach A”, see Table 2. Atomic radii Rmin change by up to 10 % whereas the well depths 17 Eref, j (kcal/mol) 
+
+> ace:-dimer vs dimer
+
+# A B
+
+# C
+
+> EFF, j (kcal/mol)
+
+Figure 4: Correlation between reference electronic structure data ( x−axis) and the MM (panels A and B) or ML (panel C) energies for acetone using “Approach A”. In panels A to C, the green traces are results from using CGenFF, CGenFF+MDCM, and PhysNet energies without modification. The orange traces in panels A and B are the results after refitting the LJ-parameters but without ML-contributions. The performance of hybrid ML/MM models are the blue and red symbols and lines in panels A and B, respectively. Light and dark traces are for rcut = 4 ˚ A and rcut = 7 ˚ A, respectively. Note that for larger values of rcut , the mixed ML/MM models progressively approach the PhysNet model. Computationally more advantageous are ML/MM models with shorter rcut . For statistical performance measures, see Table 1. ‘ϵ’ can change more substantially, by up to 30 % relative to the original CGenFF values, occasionally also reaching fitting constraints (e.g. atom type OG2D3 for acetone). This is likely in response to the DLNPO-MP2 level of theory used here as opposed to the MP2 level used for CGenFF. Also, the different nature of the training data (molecular cluster binding energies) relative to CGenFF training data (interaction with water, condensed phase proper-ties), requires adjustment to implicitly account for effects such as DLNPO-MP2 dispersion, 18 Table 1: Error statistics for DCM and acetone following “Approach A” for optimizing the LJ-parameters, see orange symbols and lines in Figures 3A/B and 4A/B. Values for R2, RMSE, MAE, and STD (in kcal/mol) for correlations between reference energies P190  
+
+> i=1
+
+Edimer  
+
+> i
+
+(Ref) and energies using unfitted and fitted LJ-parameters P190  
+
+> i=1
+
+Edimer  
+
+> i
+
+(Model). Results for Phys-Net and the corresponding ML/MM models using cutoff values of rcut = 4 and 7 ˚ A are also reported for comparison. 
+
+Dichloromethane (DCM) Acetone Model R2 RMSE MAE STD R2 RMSE MAE STD CGenFF 0.92 3.45 2.83 2.55 0.81 8.30 7.93 2.45 CGenFF + Fit 0.93 1.88 1.55 1.87 0.83 6.68 6.27 2.29 ML/MM (4 ˚ A) 0.95 1.70 1.40 1.70 0.84 6.04 5.64 2.30 ML/MM (7 ˚ A) 0.99 0.40 0.35 0.26 0.94 1.53 1.32 1.37 CGenFF+MDCM 0.90 3.74 3.00 2.78 0.93 16.01 15.92 1.77 CGenFF+MDCM + Fit 0.87 3.26 2.69 2.69 0.88 2.38 2.07 1.98 ML/MM (4 ˚ A) 0.96 1.52 1.22 1.49 0.88 2.79 2.30 1.96 ML/MM (7 ˚ A) 0.99 0.42 0.34 0.27 0.97 1.08 0.73 0.96 PhysNet 0.99 1.07 1.01 0.50 0.98 1.20 1.11 0.59 
+
+Table 2: Original and fitted Lennard–Jones parameters for Dichloromethane and Acetone atom types using CGenFF and CGenFF+MDCM approaches for DCM and acetone. For both, “Approach A” and “Approach B” no cutoff was used.                                                                           
+
+> Molecule Atom Type Parameter CGenFF CGenFF+Fit CGenFF+MDCM+Fit Approach A Approach B Approach A Approach B Dichloromethane CG321 (C) ϵ-0.0560 -0.0839 -0.0627 -0.0840 -0.0784
+> Rmin /22.0100 1.8478 1.8590 1.8180 1.8957 HGA2 (H) ϵ-0.0350 -0.0524 -0.0420 -0.0525 -0.0490
+> Rmin /21.3400 1.1956 1.2559 1.2314 1.2384 CLGA1 (Cl) ϵ-0.3430 -0.3400 -0.3333 -0.3062 -0.3340
+> Rmin /21.9100 1.9941 1.9653 1.9763 1.9609 Acetone CG331 (C) ϵ-0.0780 -0.1017 -0.1040 -0.1040 -0.1039
+> Rmin /22.0500 2.0068 2.0052 2.1330 2.0500 HGA3 (H) ϵ-0.0240 -0.0168 -0.0196 -0.0312 -0.0273
+> Rmin /21.3400 1.4469 1.4596 1.2960 1.3337 OG2D3 (O) ϵ-0.0500 -0.0650 -0.0650 -0.0650 -0.0650
+> Rmin /21.7000 1.6292 1.5017 1.5233 1.5302
+
+polarization and charge transfer. In contrast, the more stable radii suggest intermolecular separation is less dependent on the level of theory or choice of training data. One of the primary objectives of the present work is to devise and quantitatively assess the performance of a range-separated ML/MM energy function for which the short-range part 19 B
+
+# AFigure 5: Performance of the unfitted dark (blue and red) and LJ-fitted light (blue and red) models for different values of the cutoff. Top panel for DCM, bottom panel for acetone. The standard deviations of the fits are comparable to the magnitude of the RMSE. is handled by the ML-model and for the long-range part an empirical or modified empirical energy function is used. Such a mixed energy function is constructed for different values of the cut-off, defining the boundary between short- and long-range contributions. 20 ΔE  (kcal/mol) ΔE  (kcal/mol) ΔE  (kcal/mol) 
+
+A B
+
+C D
+
+E FFigure 6: Performance of the CGenFF (A), CGenFF+Fit (B), CGenFF+MDCM (C), CGenFF+MDCM+Fit (D), PhysNet (E), and Range-separated ML/MM with rcut =7 ˚ A(F) models for DCM. The target quantity considered is ∆ Edimer  
+
+> j
+
+= Edimer ref ,j − Edimer FF ,j , plot-ted against dimer separation length for the  20 2
+
+ = 20! 2! ·(20 −2)! = 20 ·19 2·1 = 190 dimers. Green and red numerals refer to the RMSE( E) and MAE( E) on the ∆ Epair  
+
+> j
+
+at every 1˚ A C-C distance. Panel E for ”PhysNet” represents Epair  
+
+> j
+
+of ML energy functions against Epair ref ,j . Panel F is for the hybrid ML/MM PES for r ≤ rcut = 7 ˚ A and LJ-fitted dimers for r > r cut on the same set using ”approach A” in red. For the present case, the “coordinate” that was considered is the C–C separation between two monomers. However, depending on the shape of the monomers, other choices may be more advantageous. A quantitative assessment for using different cutoff distances for switch-ing between the ML-PES and the MM contributions is shown in Figure 5 for DCM (panel A) and acetone (panel B). 21 The rapid improvement in all CGenFF and MDCM models, with or without refitted LJ pa-rameters, with increasing rcut highlights the advantage of handling short-range interactions with an ML potential. Even after refitting LJ parameters to dimer reference data, errors are significantly larger for smaller than for larger rcut values for which short-range interactions are determined from the ML-PES and only interactions beyond rcut are handled through the empirical energy function. For DCM the initial rapid improvement levels off by ∼ 7 ˚ A for all ML/MM models. This demonstrates that there is little improvement in accuracy beyond this point to justify the increased complexity and computational cost of the ML approach. For acetone the convergence with rcut is slower, but the trend is the same. In this case, using the more detailed, anisotropic MDCM electrostatic model allows a significantly shorter rcut 
+
+than the original CGenFF charges, yielding a similar RMSE at 7 ˚ A to CGenFF with refitted LJ at 10 ˚ A. This highlights the advantage of using an accurate electrostatic representation, even at separations up to 10 ˚ A. Figure 5 additionally shows the impact of refitting LJ parameters as a function of rcut . With a cutoff at 4 ˚ A, the CGenFF model improves by ∼ 15 % (dark vs. light blue) after refitting LJ parameters. This effect also decreases progressively as rcut increases. One reason for this is that the number of pairs that contribute to the fit progressively increases with increasing rcut 
+
+whereas for larger rcut the interaction energies become less sensitive to the LJ-parameters and the magnitude of the contributions decreases in concert. For the CGenFF+MDCM model (red colors) the impact of fitting the LJ-parameters is considerably more pronounced. The improvement is typically a factor of 2 over the unfitted models and the performance of fitted CGenFF+MDCM is uniformly better than for fitted CGenFF (compare light blue and red in Figure 5A). For acetone in Figure 5B similar observations are made although the improvement of fitted CGenFF+MDCM over CGenFF is not as pronounced at shorter rcut 
+
+values as for DCM. 22 The degradation in performance of MM potentials at short range is also highlighted explicitly in Figures 6 and S2 (A to D). For DCM and starting from the long-range (large rcut ), the figures highlight the degradation in performance of CGenFF and CGenFF+MDCM, even after refitting LJ contributions, at separations shorter than rC−C = 8 ˚ A. In contrast, the PhysNet PES (Figure 6E) maintains a comparable level of accuracy across the entire range of distances, again demonstrating the advantage of an ML potential over a empirical FFs at short-range in particular. Figure 6F further illustrates benefits of ”Approach A” over “Approach B”: for rcut = 7 ˚ A the errors in the ML/MM PES with “Approach A” are closer to PhysNet compared with ”Approach B”, see Figures S3 to S6. Table 1 also shows that when applied to pairwise cluster energies, the ML/MM models for MDCM in particular can actually exceed the accuracy of the pure pairwise ML approach (0.42 vs 1.07 kcal/mol for DCM, 1.08 vs 1.20 kcal/mol for acetone). By fitting to dimers only, a small systematic shift arises in the total ML pairwise cluster energy after summing over all 190 dimer pairs involved in each cluster. As the MM potentials were fitted to pairwise cluster energies rather than individual dimer energies, the systematic shift does not arise and when combined with the short-range ML potential the overall ML/MM accuracy exceeds that of the ML model alone. Finally, it is of interest to compare the performance of the mixed ML/MM for two typi-cal cutoffs ( rcut = 4 and 7 ˚ A) with PhysNet and the unfitted and LJ-fitted CGenFF and CGenFF+MDCM models, see Figures 3 and 4. For DCM and CGenFF already a short cutoff of 4 ˚ A (Figure 3A, light blue) brings the ML/MM into rather favourable agreement with the reference data. Extending the cutoff to 7 ˚ A further improves the performance (dark blue). The same is observed for CGenFF+MDCM (panel B, light and dark red). For acetone and CGenFF on the other hand (Figure 4A) a large cutoff rcut = 7 ˚ A (dark blue) is required for 23 good performance. This differs for CGenFF+MDCM for which both cutoffs perform very well and on par with each other (panel B, light and dark red). Hence, for the more strongly interacting system (acetone) advanced electrostatics (MDCM) provides a clear advantage over point charge-based models such as CGenFF. Further details on the performance of the hybrid ML/MM PESs based on different cutoffs are reported in Tables S3 and S4. 
+
+## 3.3 N V E Molecular Dynamics Simulations 
+
+Finally, exploratory MD simulations using the mixed ML/MM-PES with cutoff 8 ˚ A were carried out for DCM-clusters of different sizes. To avoid decomposition of the clusters in the gas phase a flat-bottomed external potential was used. The simulations were carried out in the microcanonical N V E ensemble to check conservation of total energy. This establishes correct implementation of the forces and handling of the switching region across the ML/MM boundary. 24 0 200 400 600 800 1000                      
+
+> 1
+> 0
+> 1
+> Etot  Etot
+> 0510
+> Count
+> = 0.0
+> = 0.147
+> 0200 400 600 800 1000
+> 1
+> 0
+> 1
+> Epot  Epot
+> 010
+> Count
+> = 0.0
+> = 0.203
+> 0200 400 600 800 1000
+> Time [ps]
+> 1
+> 0
+> 1
+> Ekin  Ekin
+> 010
+> Count
+> = 0.0
+> = 0.104
+> Energy (kcal/mol)
+> Etot Etot Epot Epot Ekin Ekin
+> Cluster size
+> N=2 N=10 N=20
+
+Figure 7: Conservation of total energy, potential energy, and temperature for N V E simula-tions (∆ t = 0 .5 fs) with initial velocities scaled to 200 K for DCM molecules ( n = 2 , 10 , 20). The right-hand panel shows the corresponding distributions which appear Gaussian with no observable drift. As Figure 7 demonstrates, total energy is conserved on average with no observable drift for dimers and clusters consisting of 10 and 20 DCM monomers on a time scale of 1 ns. The distributions of total energy and its contributions are Gaussian, as expected. It is also worthwhile to briefly comment on relative timings for the test systems consid-ered in the present work. Using the same computer environment (CPU) and the cur-rent implementation in pyCHARMM the relative timings for the small model system were MM : ML : ML /MM ≈ 1 : 25 : 25. However, this ratio is likely to change for larger systems set up together with periodic boundary conditions, featuring a considerably larger number of pairwise interactions. The current results suggest that such condensed-phase production simulations will be computationally feasible even using full pairwise ML, while savings from ML/MM splitting are predicted to be substantial as the number of pairwise interactions increases. 25 4 Discussion and Conclusions 
+
+The present work presented the construction and validation of range-separated, two-body mixed ML/MM-PESs. To illustrate and to quantitatively assess the procedure, dichloromethane and acetone were used. The main focus of this work concerned the feasibility and perfor-mance of such a mixed ML/MM-PES with a particular emphasis on narrowing down the region where to switch between the two descriptions to a) maintain accuracy and b) improve computational performance. For both model systems it was found that a mixed ML/MM-PES was advantageous after refitting the LJ-parameters. Depending on the system and MM-representation (CGenFF or CGenFF+MDCM) a shorter ( rcut = 4 ˚ A) or longer ( rcut = 7 ˚ A) cutoff yielded performance comparable to that of a genuine two-body ML-PES. Although the quality of such models is already quite respectable (see dark red and dark blue traces in Figures 3 and 4) one essential future improvement concerns inclusion of many-body contributions. Hence, the validity of the 2-body approximation was examined next for the DCM and acetone clusters extracted from MD simulations (Figure 8). In agreement with previous work, 2 the 2-body approximation obtained by a simple sum over all dimers in each cluster agrees well with the calculated total interaction energy evaluated by subtracting monomer energies from the total DLPNO-MP2 cluster energy. The R2 of 0.998 and RMSE and MAE of 0.58 and 0.50 kcal/mol confirms that many-body effects are comparatively small for DCM in the condensed phase. In contrast, the lower R2 of 0.959 and higher RMSE of 4.21 kcal/mol for acetone, that is largely caused by a systematic shift in the total interaction energy when neglecting many-body effects, highlights that DCM is unusual in this respect, and reliable improvement in the PES will require a many-body correction to be added in the future. 26 Figure 8: Correlation between total cluster interaction energies ( x−axis) and the sum of dimer interaction energies ( y−axis) to quantify the magnitude of many-body contributions. Panels A and B are for DCM and Acetone, respectively. Blue symbols are for data based on 
+
+ab initio calculations whereas red symbols use the trained ML-PES to evaluate the sum over all dimer energies. This comparison further establishes the high quality of the ML-PES. The solid lines are least-squares fits and the dashed lines indicate a 1:1 correlation. For DCM, the RMSE and MAE are 0.58 and 0.50 kcal/mol, respectively. For Acetone, the RMSE and MAE are 4.21 and 4.05 kcal/mol (blue), and 3.23 and 3.02 kcal/mol (red), respectively, which is consistent with Table 1. Table 3: Error statistics for DCM and acetone following “Approach B”. (R2;RMSE/MAE/STD in kcal/mol) for correlations of cluster ERef (x−axis) vs. EModel (y−axis). Left: DCM; see Figure S7. Right: Acetone; see Figure 9.                                                  
+
+> Dichloromethane (DCM) Acetone Model R2RMSE MAE STD R2RMSE MAE STD CGenFF 0.92 3.75 3.08 2.51 0.78 4.65 3.95 2.25 CGenFF + Fit 0.94 1.88 1.56 1.88 0.84 2.34 1.74 2.28 CGenFF+MDCM 0.98 1.61 1.31 1.54 0.89 12.01 11.86 1.90 CGenFF+MDCM + Fit 0.98 1.12 0.90 1.13 0.87 2.94 2.41 1.97 PhysNet 0.99 1.07 1.01 0.50 0.96 3.23 3.02 1.17
+
+27 Figure 9: Correlation between reference electronic structure data ( x−axis) and the MM (panels A and B) energies for acetone using “Approach B” for the LJ-fit. Green traces are results from using CGenFF, CGenFF+MDCM energies without modification. Red traces are the results after refitting the LJ-parameters. For statistical performance measures, see Table 3. 28 Approach B: An alternative to “Approach A” is to use total cluster energies Efull ref from elec-tronic structure calculations as the target quantity for fitting the LJ-parameters, implicitly adding an averaged many-body correction to LJ terms at the expense of accuracy in the two-body description. While parameters from “Approach A” can be corrected by adding an explicit many-body term, making the resulting ML/MM potential highly transferable, the implicit, averaged many-body correction of “Approach B” is more approximate and valid only for the system for which it was fitted. To test “Approach B” for DCM and acetone, total cluster energies including many-body interactions beyond the two-body approximation were used. Figures 9 and S7 compare the cluster energies from electronic structure calculations for acetone with those from the CGenFF (panel A) and the CGenFF+MDCM (panel B) models (green symbols and lines). After readjusting the LJ-parameters (Table 2) to best describe the cluster energies both mod-els manifestly improve (red symbols and lines): the [RMSE( E), and MAE( E)] improve from [4.65, 3.95] kcal/mol to [2.34, 1.74] kcal/mol for CGenFF and from [12.01, 11.86] kcal/mol to [2.94, 2.41] kcal/mol. For DCM the improvements are even larger: from [3.75, 3.08] kcal/mol to [1.88, 1.56] kcal/mol for CGenFF and from [1.61, 1.31] kcal/mol to [1.12, 0.90] kcal/mol, see Table 3. Again the improvement arises predominantly from shifting the mean of the FF distribution towards the reference, removing the systematic error, while the width of the distribution, representing the relative cluster energies and quantified using the standard deviation, is largely unchanged. As a result, the DCM 2-body ML description is closer to the total cluster energy (RMSE 1.88 kcal/mol CGenFF+Fit, 1.12 kcal/mol MDCM+Fit vs. 1.01 kcal/mol PhysNet 2-body), despite neglecting many-body effects, while the acetone 2-body ML description (2.34 kcal/mol CGenFF+Fit, 2.94 MDCM+Fit vs. 3.23 kcal/mol PhysNet 2-body) has a slightly larger systematic shift (overestimated formation energies) than the FFs but still a smaller standard deviation (better relative energies) despite neglecting many-body effects entirely. 29 Changes in the LJ-parameters following “Approach B” are also reported in Table 2. While parameters obtained are comparable to those of “Approach A”, the changes again highlight that ϵ well-depth parameters are more sensitive to the type and level of theory of reference data than the atom radii. It is useful to compare these findings with previous work primarily carried out for water us-ing the MB-pol and q-AQUA models. 60–64 The two water models are on-par when compared with CCSD(T) reference energies. One relevant benchmark to consider is the range of two-, three-, and four-body energies in the reference data. For the q-AQUA model they cover 300 kcal/mol, 20 kcal/mol, and 3 kcal/mol, respectively. In other words, the magnitude of the contributions decrease by one order of magnitude when increasing the order by one. On the other hand, for particular applications, the importance of the higher many-body contributions relative to the two-body energy can deviate from this. For water hexamer cluster energies the ratio of 2:3:4-body contributions is closer to 1:0.3:0.03. In other words: three-body contributions are considerably more important for water hexamers than for ran-dom structures which are part of the training set. It should, however, be noted that for water 3-body contributions are expected to be particularly relevant and for the two systems discussed in the present work - dichloromethane and acetone - their importance is expected to be smaller. In summary, the present work introduces a practical approach for 2-body, range-separated mixed ML/MM-PES for condensed systems. The range-separated ML/MM approach was validated for dichloromethane and acetone and showed accuracies for cluster energies on par with a ML-PES trained on monomers and dimers with considerably fewer pairwise in-teractions handled through explicit ML energies. Using CGenFF and CGenFF+MDCM as the MM description in the LJ-fits, the improvement of the ML/MM-PES levels off by ∼ 730 ˚A for DCM. For acetone, the anisotropic MDCM electrostatic model also allows a shorter 
+
+∼ 7 ˚ A cutoff whereas with the original CGenFF energy function only saturates by ∼ 10 ˚ A. This highlights the advantage of using an accurate electrostatic representation for such an ML/MM-PES. Importantly, the present approach can also be extended to mixed chemical systems and systems containing ions. Future extensions concern the inclusion of many-body contributions. 
+
+# Supporting Information 
+
+Figures reporting the performance for fitted models depending on the cutoff for both systems and Tables with RMSE( E) and standard deviations for the LJ-fitted values. 
+
+# Data Availability 
+
+The data for the present study are available from https://github.com/MMunibas/mlmm 
+
+upon publication. 
+
+# Acknowledgment 
+
+We thank the Swiss National Science Foundation (grants 200020 219779 and 200021 215088) (to MM), and the University of Basel for supporting this work. 31 References 
+
+(1) Meuwly, M.; Hutson, J. M. Morphing ab initio potentials: A systematic study of Ne– HF. J. Chem. Phys. 1999 , 110 , 8338–8347. (2) Devereux, M.; Boittier, E. D.; Meuwly, M. Systematic improvement of empirical energy functions in the era of machine learning. J. Comp. Chem. 2024 ,(3) Unke, O. T.; Chmiela, S.; Sauceda, H. E.; Gastegger, M.; Poltavsky, I.; Sch¨ utt, K. T.; Tkatchenko, A.; M¨ uller, K.-R. Machine Learning Force Fields. Chemical Reviews 2021 ,
+
+121 , 10142–10186. (4) Meuwly, M. Atomistic Simulations for Reactions and Vibrational Spectroscopy in the Era of Machine Learning - Quo Vadis? J. Phys. Chem. B 2022 , 126 , 2155–2167. (5) Zhang, L.; Han, J.; Wang, H.; Car, R.; E, W. Deep Potential Molecular Dynamics: A Scalable Model with the Accuracy of Quantum Mechanics. Phys. Rev. Lett. 2018 , 120 ,143001. (6) Naseem-Khan, S.; Lagard` ere, L.; Narth, C.; Cisneros, G. A.; Ren, P.; Gresh, N.; Pique-mal, J.-P. Development of the Quantum-Inspired SIBFA Many-Body Polarizable Force Field: Enabling Condensed-Phase Molecular Dynamics Simulations. J. Chem. Theo. Comp. 2022 , 18 , 3607–3621, PMID: 35575306. (7) Ren, P.; Ponder, J. W. Polarizable atomic multipole water model for molecular me-chanics simulation. J. Phys. Chem. B 2003 , 107 , 5933–5947. (8) Kabylda, A.; Frank, J. T.; Su´ arez-Dou, S.; Khabibrakhmanov, A.; Medrano San-donas, L.; Unke, O. T.; Chmiela, S.; M¨ uller, K.-R.; Tkatchenko, A. Molecular Sim-ulations with a Pretrained Neural Network and Universal Pairwise Force Fields. J. Am. Chem. Soc. 2025 , 147 , 33723–33734, PMID: 40886167. 32 (9) Popelier, P. L. A. QCTFF: On the construction of a novel protein force field. Int. J. Quant. Chem. 2015 , 115 , 1005–1011. (10) Bore, S. L.; Paesani, F. Realistic phase diagram of water from “first principles” data-driven quantum simulations. Nat. Commun. 2023 , 14 , 3349. (11) Unke, O. T.; Meuwly, M. PhysNet: A Neural Network for Predicting Energies, Forces, Dipole Moments, and Partial Charges. J. Chem. Theo. Comp. 2019 , 15 , 3678–3693. (12) Unke, O. T.; Devereux, M.; Meuwly, M. Minimal distributed charges: Multipolar qual-ity at the cost of point charge electrostatics. J. Chem. Phys. 2017 , 147 , 161712. (13) Boittier, E.; T¨ opfer, K.; Devereux, M.; Meuwly, M. Kernel-Based Minimal Distributed Charges: A Conformationally Dependent ESP-Model for Molecular Simulations. J. Chem. Theo. Comp. 2024 ,(14) Stone, A. J. Electrostatic Damping Functions and the Penetration Energy. J. Phys. Chem. A 2011 , 115 , 7017–7027, PMID: 21619003. (15) Misquitta, A. J. Charge Transfer from Regularized Symmetry-Adapted Perturbation Theory. J. Chem. Theo. Comp. 2013 , 9, 5313–5326, PMID: 26592269. (16) Gresh, N.; Claverie, P.; Pullman, A. Intermolecular interactions: Elaboration on an additive procedure including an explicit charge-transfer contribution. Int. J. Quant. Chem. 1986 , 29 , 101–118. (17) Wu, X.; Brooks, B. R. A double exponential potential for van der Waals interaction. 
+
+AIP Adv. 2019 , 9, 065304. (18) Murrell, J. N.; Randi´ c, M.; Williams, D. R. The Theory of Intermolecular Forces in the Region of Small Orbital Overlap. Proc. Roy. Soc. Lond. 1965 , 284 , 566–581. (19) Stone, A.; Alderton, M. Distributed multipole analysis. Mol. Phys. 1985 , 56 , 1047– 1064. 33 (20) Ponder, J. W.; Wu, C.; Ren, P.; Pande, V. S.; Chodera, J. D.; Schnieders, M. J.; Haque, I.; Mobley, D. L.; Lambrecht, D. S.; DiStasio Jr, R. A.; Head-Gordon, M.; Clark, G. N. I.; Johnson, M. E.; Head-Gordon, T. Current status of the AMOEBA polarizable force field. J. Phys. Chem. B 2010 , 114 , 2549–2564. (21) Cardamone, S.; Hughes, T. J.; Popelier, P. L. Multipolar electrostatics. Phys. Chem. Chem. Phys. 2014 , 16 , 10367–10387. (22) Thole, B. Molecular polarizabilities calculated with a modified dipole interaction. Chem. Phys. 1981 , 59 , 341–350. (23) Devereux, M.; Pezzella, M.; Raghunathan, S.; Meuwly, M. Polarizable Multipolar Molecular Dynamics Using Distributed Point Charges. J. Chem. Theo. Comp. 2020 ,
+
+16 , 7267–7280. (24) Lemkul, J. A.; Huang, J.; Roux, B.; MacKerell, A. D. J. An Empirical Polarizable Force Field Based on the Classical Drude Oscillator Model: Development History and Recent Applications. Chem. Rev. 2016 , 116 , 4983–5013, PMID: 26815602. (25) Lagard` ere, L.; El-Khoury, L.; Naseem-Khan, S.; Aviat, F.; Gresh, N.; Piquemal, J.-P. Towards scalable and accurate molecular dynamics using the SIBFA polarizable force field. AIP Conf. Proc. 2017 , 1906 , 030018. (26) Alm´ asy, L.; Bende, A. Intermolecular Interaction in Methylene Halide (CH 2F2, CH 2Cl 2,CH 2Br 2 and CH 2I2) Dimers. Mol. 2019 , 24 , 1810. (27) Allen, F. H.; Wood, P. A.; Galek, P. T. Role of chloroform and dichloromethane solvent molecules in crystal packing: an interaction propensity study. Acta Cryst. 2013 , 69 ,379–388. (28) Brooks, B. R. et al. CHARMM: The Biomolecular Simulation Program. J. Comp. Chem. 2009 , 30 , 1545–1614. 34 (29) Mart´ ınez, L.; Andrade, R.; Birgin, E. G.; Mart´ ınez, J. M. PACKMOL: A package for building initial configurations for molecular dynamics simulations. J. Comp. Chem. 
+
+2009 , 30 , 2157–2164. (30) Ryckaert, J.-P.; Ciccotti, G.; Berendsen, H. J. Numerical integration of the cartesian equations of motion of a system with constraints: molecular dynamics of n-alkanes. J. Chem. Phys. 1977 , 23 , 327–341. (31) Evans, D. J.; Holian, B. L. The Nose–Hoover thermostat. J. Chem. Phys. 1985 , 83 ,4069–4074. (32) Nos´ e, S. A unified formulation of the constant temperature molecular dynamics meth-ods. J. Chem. Phys. 1984 , 81 , 511–519. (33) NOS ´E, S. U. I. A molecular dynamics method for simulations in the canonical ensemble. 
+
+Mol. Phys. 2002 , 100 , 191–198. (34) Hoover, W. G. Canonical dynamics: Equilibrium phase-space distributions. Phys. Rev. A 1985 , 31 , 1695. (35) Feller, S. E.; Zhang, Y.; Pastor, R. W.; Brooks, B. R. Constant pressure molecular dynamics simulation: The Langevin piston method. J. Chem. Phys. 1995 , 103 , 4613– 4621. (36) Feller, S. E.; Pastor, R. W.; Rojnuckarin, A.; Bogusz, S.; Brooks, B. R. Effect of electrostatic force truncation on interfacial and transport properties of water. J. Phys. Chem. 1996 , 100 , 17011–17020. (37) Frisch, M. J. et al. Gaussian˜16 Revision C.01. 2016; Gaussian Inc. Wallingford CT. (38) Larsen, A. H.; Mortensen, J. J.; Blomqvist, J.; Castelli, I. E.; Christensen, R.; Du lak, M.; Friis, J.; Groves, M. N.; Hammer, B.; Hargus, C.; others The atomic simula-35 tion environment—a Python library for working with atoms. J. Phys. Condens. Matter 
+
+2017 , 29 , 273002. (39) Bannwarth, C.; Ehlert, S.; Grimme, S. GFN2-xTB—An Accurate and Broadly Parametrized Self-Consistent Tight-Binding Quantum Chemical Method with Multi-pole Electrostatics and Density-Dependent Dispersion Contributions. J. Chem. Theo. Comp. 2019 , 15 , 1652–1671. (40) Storn, R.; Price, K. Differential Evolution – A Simple and Efficient Heuristic for global Optimization over Continuous Spaces. J. Glob. Optim. 1997 , 11 , 341–359. (41) Devereux, M.; Raghunathan, S.; Fedorov, D. G.; Meuwly, M. A Novel, computation-ally efficient multipolar model employing distributed charges for molecular dynamics simulations. J. Chem. Theo. Comp. 2014 , 10 , 4229–4241. (42) Neese, F. The ORCA program system. WIRES Comput. Molec. Sci. 2012 , 2, 73–78. (43) Neese, F. Software update: the ORCA program system, version 5.0. WIRES Comput. Molec. Sci. 2022 , 12 , e1606. (44) Pinski, P.; Riplinger, C.; Valeev, E. F.; Neese, F. Sparse maps—A systematic infrastruc-ture for reduced-scaling electronic structure methods. I. An efficient and simple linear scaling local MP2 method that uses an intermediate basis of pair natural orbitals. J. Chem. Phys. 2015 , 143 .(45) Neugebauer, H.; Pinski, P.; Grimme, S.; Neese, F.; Bursch, M. Assessment of DLPNO-MP2 approximations in double-hybrid DFT. J. Chem. Theo. Comp. 2023 , 19 , 7695– 7703. (46) T¨ opfer, K.; Vazquez-Salazar, L. I.; Meuwly, M. Asparagus: A toolkit for autonomous, user-guided construction of machine-learned potential energy surfaces. Comput. Phys. Commun. 2025 , 308 , 109446. 36 (47) Kingma, D. P. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980 2014 ,(48) Reddi, S. J.; Kale, S.; Kumar, S. On the convergence of adam and beyond. arXiv preprint arXiv:1904.09237 2019 ,(49) Song, K.; K¨ aser, S.; T¨ opfer, K.; Vazquez-Salazar, L. I.; Meuwly, M. PhysNet meets CHARMM: A framework for routine machine learning/molecular mechanics simula-tions. J. Chem. Phys. 2023 , 159 .(50) Berthelot, D.; AMOREUX, G. Comptes Rendus Acad. 1898. (51) Lorentz, H. A. Ueber die Anwendung des Satzes vom Virial in der kinetischen Theorie der Gase. Ann. Phys. (Leipzig) 1881 , 248 , 127–136. (52) Nelder, J. A.; Mead, R. A Simplex Method for Function Minimization. Comput. J. 
+
+1965 , 7, 308–313. (53) Virtanen, P.; Gommers, R.; Oliphant, T. E.; Haberland, M.; Reddy, T.; Courna-peau, D.; Burovski, E.; Peterson, P.; Weckesser, W.; Bright, J.; others SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat. Methods. 2020 , 17 ,261–272. (54) Schoenholz, S. S.; Cubuk, E. D. JAX, M.D.: A Framework for Differentiable Physics. (55) K¨ aser, S.; Meuwly, M. Numerical Accuracy Matters: Applications of Machine Learned Potential Energy Surfaces. J. Phys. Chem. Lett. 2024 ,(56) Upadhyay, M.; Meuwly, M. Thermal and vibrationally activated decomposition of the syn-CH 3CHOO Criegee intermediate. ACS Earth Space Chem. 2021 , 5, 3396–3406. (57) K¨ aser, E. D.; Boittier, M.; Upadhyay, M.; Meuwly, M. Transfer Learning to CCSD(T): Accurate Anharmonic Frequencies from Machine Learning Models. J. Chem. Theo. Comp. 2021 , 17 , 3687–3699. 37 (58) Qu, C.; Houston, P. L.; Allison, T.; Bowman, J. M. Targeted transferable machine-learned potential for linear alkanes trained on C14H30 and tested for C4H10 to C30H62. 
+
+J. Chem. Theo. Comp. 2025 , 21 , 3552–3562. (59) Vanommeslaeghe, K.; MacKerell Jr, A. D. Automation of the CHARMM General Force Field (CGenFF) I: bond perception and atom typing. J. Chem. Inf. and Mod. 2012 ,
+
+52 , 3144–3154. (60) Babin, V.; Leforestier, C.; Paesani, F. Development of a “First-Principles” Water Po-tential with Flexible Monomers: Dimer Potential Energy Surface, VRT Spectrum, and Second Virial Coefficient. J. Chem. Theo. Comp. 2013 , 9, 5395–5403. (61) Babin, V.; Medders, G. R.; Paesani, F. Development of a “First Principles” Water Potential with Flexible Monomers. II: Trimer Potential Energy Surface, Third Virial Coefficient, and Small Clusters. J. Chem. Theo. Comp. 2014 , 10 , 1599–1607. (62) Medders, G. R.; Babin, V.; Paesani, F. Development of a “First-Principles” Water Potential with Flexible Monomers. III. Liquid Phase Properties. J. Chem. Theo. Comp. 
+
+2014 , 10 , 2906–2910. (63) Palos, E.; Bull-Vulpe, E. F.; Zhu, X.; Agnew, H.; Gupta, S.; Saha, S.; Paesani, F. Cur-rent Status of the MB-pol Data-Driven Many-Body Potential for Predictive Simulations of Water Across Different Phases. J. Chem. Theo. Comp. 2024 , 20 , 9268. (64) Yu, Q.; Qu, C.; Houston, P. L.; Conte, R.; Nandi, A.; Bowman, J. M. q-AQUA: A Many-Body CCSD(T) Water Potential, Including Four-Body Interactions, Demonstrates the Quantum Nature of Water from Clusters to the Liquid Phase. J. Phys. Chem. Lett. 
+
+2022 , 13 , 5068–5074. 38 SUPPORTING INFORMATION: Explicit, Machine-Learned Two-Body Poten-tials for Molecular Simulations 
+
+39 S1 Switching Function 
+
+Figure S1: Examples of the cut-offs and switching functions used. 40 S2 Dimer distance vs Dimer Energy Error ΔE  (kcal/mol)  ΔE  (kcal/mol) 
+
+# A
+
+> ΔE  (kcal/mol)
+
+# B
+
+# C D
+
+# E F
+
+Figure S2: ∆ Epair  
+
+> j
+
+= Epair ref ,j − Epair FF ,j for acetone, plotted against dimer separation length. A total of  20 2
+
+ = 20! 2! ·(20 −2)! = 20 ·19 2·1 = 190 dimers are analyzed. Panels A to D: CGenFF with fitted LJ, CGenFF+MDCM, and CGenFF+MDCM with fitted LJ using “Approach B”. Panel E: the PhysNet model Epair  
+
+> j
+
+of ML energy functions against Epair ref ,j . Panel F: PhysNet for r ≤ rcut and CGenFF+MDCM with fitted LJ dimers for r ≥ rcut using ”approach A”. 41 Figure S3: DCM:Model=CGenFF+LJ . ∆ EDimer =
+
+(
+
+EPhysNet − EORCA , if r < r cut 
+
+EModel − EORCA , if r ≥ rcut 
+
+.42 Figure S4: DCM: Model = MDCM+LJ . ∆ EDimer =
+
+(
+
+EPhysNet − EORCA , if r < r cut 
+
+EModel − EORCA , if r ≥ rcut 
+
+.43 S2.1 Acetone 
+
+Figure S5: Acetone: Model = CGenFF+LJ . ∆EDimer =(
+
+EPhysNet − EORCA , if r < r cut 
+
+EModel − EORCA , if r ≥ rcut 
+
+.44 Figure S6: Acetone:Model=MDCM+LJ . ∆ EDimer =
+
+(
+
+EPhysNet − EORCA , if r < r cut 
+
+EModel − EORCA , if r ≥ rcut 
+
+.45 Eref, j (kcal/mol) Eref, j (kcal/mol) 
+
+# A B
+
+> EFF, j (kcal/mol)
+
+Figure S7: Correlation between reference electronic structure data ( x−axis) and the MM (panels A and B) energies for DCM using “Approach B” for the LJ-fit. Green traces are results from using CGenFF, CGenFF+MDCM energies without modification. Red traces are the results after refitting the LJ-parameters. For statistical performance measures, see Table 3. 46 S3 LJ-Fits: Tables 
+
+Table S1: Statistical performance for the ML/MM PES for DCM following “Approach A”. The table reports RMSE and MAE in (kcal/mol) for the dimer interaction energies evaluated for distances r < r cut . For each value of rcut , the RMSE and MAE are reported in the first and second row, respectively. Cutoff Metric CGenFF MDCM Ntotal N<cut N≥cut 
+
+(˚ A) No fit Fit No fit Fit 4 RMSE 0.2417 0.2036 0.2383 0.1286 37949 404 37545 MAE 0.2414 0.2029 0.2380 0.1244 5 RMSE 0.1601 0.1369 0.1601 0.09426 37949 3637 34312 MAE 0.1598 0.1369 0.1598 0.09424 6 RMSE 0.0498 0.04671 0.04966 0.02687 37949 8979 28970 MAE 0.04894 0.04652 0.04879 0.02642 7 RMSE 0.02652 0.02391 0.02638 0.01497 37949 12263 25686 MAE 0.02546 0.02340 0.02532 0.01407 8 RMSE 0.01895 0.01660 0.01886 0.01077 37949 16130 21819 MAE 0.01799 0.01658 0.01789 0.01058 9 RMSE 0.01436 0.01277 0.01426 0.008333 37949 20335 17614 MAE 0.01366 0.01276 0.01355 0.008177 10 RMSE 0.01083 0.009899 0.01073 0.00623 37949 25360 12589 MAE 0.01037 0.009885 0.01026 0.006219 47 Table S2: Statistical performance for the ML/MM PES for acetone following “Approach A”. The table reports RMSE and MAE in (kcal/mol) for the dimer interaction energies evaluated for distances r < r cut . For each value of rcut , the RMSE and MAE are reported in the first and second row, respectively. Cutoff Metric CGenFF MDCM Ntotal N<cut N≥cut 
+
+(˚ A) No fit Fit No fit Fit 4 RMSE 0.2914 0.2261 0.2738 0.2103 18999 112 18887 MAE 0.2889 0.2462 0.2621 0.2523 5 RMSE 0.2260 0.1910 0.1884 0.1502 18999 1536 17463 MAE 0.2257 0.2118 0.1848 0.1764 6 RMSE 0.1484 0.1151 0.08228 0.07124 18999 4333 14666 MAE 0.1483 0.1318 0.08195 0.07887 7 RMSE 0.1208 0.1008 0.06082 0.05571 18999 6027 12972 MAE 0.1202 0.1181 0.05976 0.05615 8 RMSE 0.09542 0.08842 0.04791 0.04195 18999 7783 11216 MAE 0.09472 0.09212 0.04696 0.04391 9 RMSE 0.07667 0.07301 0.03841 0.03352 18999 9929 9070 MAE 0.07650 0.07580 0.03809 0.03591 10 RMSE 0.05909 0.05719 0.02933 0.02599 18999 12379 6620 MAE 0.05904 0.07841 0.02920 0.02732 48 Table S3: Dichloromethane. Comparison of RMSE and standard deviation (STD) values for different ML/MM hybrid models. The cumulative cluster representation (Model) is constructed such that interactions with ri ≤ rcut are described by PhysNet, whereas inter-actions with ri ≥ rcut are described by either CGenFF or MDCM and their corresponding LJ-refitted variants. Here ri denotes the C–C distance. Each cutoff rcut is represented by two rows separated by horizontal lines. Inside the row Top: P190  
+
+> i=1
+
+Edimer ,inter  
+
+> i
+
+(Model) vs. 
+
+Eref cluster , benchmarked against pure PhysNet energies, with RMSE 1.572 kcal/mol and STD 0.501 kcal/mol over the entire cutoff. Bottom: P190  
+
+> i=1
+
+Edimer ,inter  
+
+> i
+
+(Model) vs. P190  
+
+> i=1
+
+Edimer ,inter  
+
+> i, ref
+
+,with RMSE 1.071 kcal/mol and STD 0.341. Numbers in parentheses correspond to metrics obtained from rcut -dependent LJ parameter optimization using “Approach A” (See Figure 5). 
+
+rcut (˚ A) CGenFF CGenFF LJ MDCM MDCM LJ 
+
+RMSE STD RMSE STD RMSE STD RMSE STD 4 3.54 2.47 1.73(1.75) 1.729(1.67) 3.83 2.72 1.89(1.76) 1.83 1.51) 3.26 2.53 1.84(1.70) 1.772(1.70) 3.56 2.77 1.89(1.52) 1.89(1.49) 5 2.30 2.00 3.31(1.54) 1.534(1.44) 2.30 2.002 2.62(1.34) 1.56(1.11) 2.60 2.04 3.75(1.49) 1.584(1.49) 2.60 2.06 3.04(1.38) 1.61(1.33) 6 0.84 0.56 2.42(0.48) 0.992(0.48) 0.85 0.558 1.52(0.40) 0.75(0.40) 1.19 0.43 2.82(0.53) 0.874(0.37) 1.19 0.439 1.90(0.55) 0.62(0.49) 7 0.44 0.41 1.25(0.46) 0.383(0.38) 0.43 0.407 0.76(0.41) 0.39(0.30) 0.67 0.27 1.69(0.40) 0.282(0.26) 0.67 0.259 1.15(0.42) 0.26(0.27) 8 0.51 0.43 0.48(0.64) 0.416(0.43) 0.50 0.426 0.42(0.79) 0.42(0.36) 0.36 0.30 0.78(0.29) 0.314(0.29) 0.36 0.296 0.55(0.33) 0.30(0.28) 9 0.78 0.41 0.55(0.74) 0.397(0.41) 0.77 0.409 0.66(0.63) 0.40(0.52) 0.32 0.26 0.27(0.29) 0.253(0.23) 0.31 0.255 0.26(0.25) 0.25(0.22) 10 1.15 0.49 1.05(1.13) 0.484(0.48) 1.14 0.48 1.10(1.10) 0.48(0.47) 0.66 0.37 0.57(0.65) 0.341(0.56) 0.66 0.33 0.61(0.62) 0.34(0.34) 
+
+49 Table S4: Acetone. Comparison of RMSE and standard deviation (STD) values for differ-ent ML/MM hybrid models. The cumulative cluster representation (Model) is constructed such that interactions with ri ≤ rcut are described by PhysNet, whereas interactions with 
+
+ri ≥ rcut are described by either CGenFF or MDCM and their corresponding LJ-refitted variants. Here ri denotes the carbonyl C–C distance. Each cutoff rcut is represented by two rows separated by horizontal lines. Inside the row Top: P190  
+
+> i=1
+
+Edimer ,inter  
+
+> i
+
+(Model) vs. Eref cluster ,benchmarked against pure PhysNet energies, with RMSE = 3.230 kcal/mol and STD = 1.167 kcal/mol over the entire cutoff. Bottom: P190  
+
+> i=1
+
+Edimer ,inter  
+
+> i
+
+(Model) vs. P190  
+
+> i=1
+
+Edimer ,inter  
+
+> i, ref
+
+, with RMSE = 1.195 kcal/mol and STD = 0.589 kcal/mol. Numbers in parentheses correspond to metrics obtained from rcut -dependent LJ parameter optimization using “Approach A” (See Figure 5). 
+
+rcut (˚ A) CGenFF CGenFF L-J MDCM MDCM L-J 
+
+RMSE STD RMSE STD RMSE STD RMSE STD 4 6.64 6.16 2.73(2.82) 2.44(2.39) 11.03 1.96 3.47(6.41) 1.99(2.12) 8.99 6.17 3.82(6.04) 2.58(2.30) 15.00 1.67 2.13(2.79) 1.76(1.96) 5 6.56 6.04 5.32(4.06) 2.21(2.10) 2.93 1.63 6.77(10.01) 1.46(1.54) 6.44 6.26 2.66(2.57) 2.54(2.50) 6.80 2.08 3.06(6.08) 1.67(1.67) 6 7.85 5.92 5.96(5.61) 1.67(1.68) 4.98 1.32 7.95(9.52) 1.32(1.29) 6.11 6.01 2.48(2.23) 1.84(1.81) 1.34 1.11 3.94(5.50) 1.11(1.15) 7 8.29 5.81 6.22(6.05) 1.59(1.59) 5.32 1.26 6.53(7.36) 1.25(1.27) 6.13 5.84 2.39(1.53) 1.36(1.37) 1.46 0.93 2.53(1.08) 0.94(0.96) 8 8.04 5.79 5.54(5.46) 1.49(1.50) 4.93 1.27 5.54(5.96) 1.25(1.27) 5.99 5.80 1.72(1.67) 1.15(1.15) 1.10 0.84 1.57(0.76) 0.82(0.83) 9 7.30 5.71 4.38(4.34) 1.40(1.40) 4.16 1.29 4.48(4.96) 1.28(1.29) 5.73 5.71 0.98(0.98) 0.98(0.98) 0.79 0.78 0.80(0.64) 0.77(0.58) 10 6.94 5.71 3.74(3.73) 1.34(1.34) 3.66 1.26 3.80(3.89) 1.24(1.25) 5.67 5.67 1.05(1.06) 0.89(0.89) 0.97 0.75 0.87(0.73) 0.74(0.74) 
+
+50

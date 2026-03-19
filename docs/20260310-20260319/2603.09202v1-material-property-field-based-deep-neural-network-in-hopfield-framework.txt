@@ -1,0 +1,362 @@
+Title: 2603.09202v1.pdf
+
+URL Source: https://arxiv.org/pdf/2603.09202v1
+
+Published Time: Wed, 11 Mar 2026 00:34:09 GMT
+
+Number of Pages: 39
+
+Markdown Content:
+# Material-Property-Field-based Deep Neural Network in Hopfield Framework 
+
+Yanxiao Hu 1, # , Ye Sheng 1, # , Caichao Ye 1, 4,* , Wenxing Qian 1 , Xiaoxin Xu 1, 2 , Yabei Wu 1 , Jiong Yang 2 , William A. Goddard III 3 , Wenqing Zhang 1, 4, *  
+
+> 1
+
+State Key Laboratory of Quantum Functional Materials & Department of Materials Science and Engineering, Southern University of Science and Technology, Shenzhen 518055, China. 2 Materials Genome Institute, Shanghai Engineering Research Center for Integrated Circuits and Advanced Display Materials, Shanghai University, Shanghai 200444, China. 3 Materials and Process Simulation Center (MSC), California Institute of Technology, Pasadena 91125, California, United States 4 Guangdong Provincial Key Laboratory of Computational Science and Material Design & Institute of Innovative Materials, Academy for Advanced Interdisciplinary Studies, Southern University of Science and Technology, Shenzhen 518055, Guangdong, China. # Authors contributed equally. * Corresponding Authors: W. Zhang: zhangwq@sustech.edu.cn; C. Ye: yecc@sustech.edu.cn 
+
+ABSTRACT 
+
+The current Deep Neural Networks (DNNs) lack the necessary physical priors and a clear formulation specifically designed for material systems. making them non-analytical and non-interpretable “black boxes”. In this work, we integrate Material Property Fields (MPF) with the Hopfield network architecture and propose an analytical DNN framework named mPFDNN. MPF provides a unified framework that represents physical properties of materials as an analytical field built upon pairwise interactions, rigorously respecting fundamental symmetries, while also enabling a physically legitimate decomposition of property distributions at the atomic level. Although the Hopfield model was initially developed for Ising-like systems, we prove that its dynamical evolution strategy for DNN design is equally well suited to MPF. By mathematically reformatting interatomic nonlinear interactions as “hidden neurons”, the MPF can be naturally evolved into a deep yet analytically tractable DNN architecture that approximates a fully connected interaction landscape. This framework also unifies nonlinear DNNs and linear approaches within a single cohesive model. Extensive validation across diverse systems (inorganic crystals, organic molecules, and aqueous solutions) and multiple properties (diffusion coefficients, adsorption energy, etc.) confirm that mPFDNN not only achieves accurate predictions but also provides a principled and universal framework for structure–property mapping for physical, chemical and materials science. 1. INTRODUCTION 
+
+A central objective of physics, chemistry and materials science is to establish robust, quantitatively predictive relationships that link composition and structure to properties. However, this pursuit is inherently limited by the intrinsic complexity of the structure-property relationship, which resides in a high-dimensional space of strong nonlinearity exceeding the capacity of human intuition. In recent years, the integration of artificial intelligence into materials science [1-8], particularly through deep neural networks (DNNs) [9-12], marked a turning point. By stacking multiple nonlinear hidden layers, DNNs acquire the theoretical capacity to approximate any continuous functions[13], thereby enabling the description of high-order interatomic interactions. Simply by applying this off-the-shelf technique, current material-oriented DNNs have achieved significant success that traditional paradigms could hardly attain. This impressive performance, however, comes at the cost of interpretability and reliability. Due to the absence of necessary and explicit mathematical formalisms as inductive biases, DNNs suffer from a lack of generalization capability and physical verifiability. In this context, the integration of bottom-up data-driven modeling with top-down physics-based modeling has emerged as a crucial frontier in the application of artificial intelligence to science[14-16]. According to the first Hohenberg-Kohn theorem [17], the ground-state properties of physical and chemical systems are fundamentally determined by its atomic coordinates. This determinative relationship can be formulated and modeled through effective interatomic interactions. Notably, the modeling of these interactions is not a wholly uncharacterized “black box”, instead, it is guided by well-defined physical prior and is manifested in specific forms within various chemical bonding theory. It is a fundamental insight that pairwise interatomic interactions are strongly dependent on interatomic distance, while many-body effects must be captured via directional features such as bond angles and dihedral angles. Consequently, the interaction space serves as an intermediary that bridges atomic coordinates and macroscopic properties, thereby offering a unique language for the modeling of real systems. Motivated by this insight, we proposed in our previous work [18] the concept of Material Property Fields (MPF). This is an analytical field representation inspired by wave functions in quantum many-body systems, providing a unified framework for physical property defined as a functional distribution in real space (e.g., total energy, stress, and dielectric constant). In this framework, pairwise interactions serve as fundamental building blocks, endowing MPF with a mathematical structure that inherently satisfies all required symmetries. Building on this foundation and incorporating global scaling laws, we further developed SUS 2 -MLIP [18], an ultra-compact analytical machine-learning interatomic potential (MLIP) with a linear basis architecture. It delivers accuracy on par with advanced DNNs while using 2-3 orders of magnitude fewer parameters and achieving substantially higher simulation efficiency. Following this line of thought naturally leads to an intriguing consideration that whether MPF can be translated into a DNN architecture and what role “interactions” would play within such a network. Addressing this consideration is key to breaking the “black box” dilemma. To this end, we turn to the Hopfield network, which is built upon the interactions and collective dynamical evolution inherent to many-body systems. In the classical formulation [19] of Hopfield network, the pairwise interactions between neurons refer to the Ising model of magnetic spins. Leveraging the tendency of thermodynamic systems to evolve toward steady states, the Hopfield network achieves memory functionality by tailoring specific interaction rules that place important information at the bottom of the energy landscape. When a state (e.g., a noisy or incomplete memory) is presented to a trained model, dynamical evolution automatically drives it downhill to the nearest energy minimum, i.e. the stored memory pattern. This mechanism has been utilized to solve linear and nonlinear equations of mathematical physics [20]. By constructing a Hopfield network that the minima of its energy function correspond exactly to the solutions of the target problem, an approximate solution, when input as an initial state, can be automatically refined through dynamical evolution to converge to the exact solution. Recent studies [21] have further extended this paradigm by employing modern Hopfield networks as “predictor-corrector” models for forecasting the evolution of complex systems, where an approximate solution for the system’s next state is first obtained via a crude model, and a Hopfield network then serves as a corrector to learn and rectify the prediction errors, yielding more accurate results. Drawing on this strategy, this work proposes the forward-analytical mPFDNN, a Hopfield-like framework that strictly treats “interatomic interactions” as “hidden neurons” driving the system’s evolution. Starting from a mean-field representation of MPF, it progressively recovers the modulating role of the chemical environment on interactions, and thereby spontaneously evolves into a fully connected interaction landscape. The performance of mPFDNN was rigorously evaluated across diverse systems, including solids, molecules, and liquid solutions, demonstrating accuracy comparable to state-of-the-art models in each domain, mostly at low-cost with an order-of-magnitude less parameters. Notably, the strong predictive capability of mPFDNN for adsorption energies on high-entropy alloy catalysts highlights our model’s robust extrapolation performance, even for complex and out-of-domain systems. By combining exceptional predictive accuracy with analytical insights, mPFDNN provides a principle-based framework for advancing targeted DNN designs. 
+
+2. THEORETICAL FRAMEWORK 2.1 Theory of Material Property Field and MPF-based DNN framework 
+
+In density functional theory, the ground-state properties of a system are completely determined by the nuclear coordinates { ࢞ }. In this context, all the ground-state-dependent properties P is also the function of { ࢞ }, and it can also be decomposed into a sum of atomic contributions { ܲ ூ } as: ܲ({࢞ }) = ෍ܲ ூ
+
+> ே
+> ூୀଵ
+
+({࢞ }), (1) It is important to emphasize that ܲ  ூ depends on the coordinates of all atoms { ࢞ }, which ensures that the decomposition fully captures arbitrary long-range interactions, including nucleus-nucleus electrostatic interactions. This decomposition is legitimized by the fact that the total electron density can itself be partitioned into atomic contributions, even if such partitions are not unique (e.g., Bader analysis, Hirshfeld analysis, and Mulliken population analysis). Naturally, ܲ  ூ also need satisfy fundamental symmetry constraints, including translational invariance, permutation invariance with respect to atomic indices, and rotational covariance corresponding to the specific property of interest. In coordinate space, perturbations of atomic nuclei lead to alterations in the overall electron density distribution, consequently changing the properties of the system. This process inherently involves exchange-correlation effects in many-electron systems and thus intricate interatomic interactions, thereby establishing ܲ  ூ ({࢞ }) a high-dimensional nonlinear function. In DNNs, this intricate physical relationship is abstractly encapsulated in the interconnections between feature neurons as Y = σ(Wx), where the weight matrix W encode node correlations and the activation function σ fit nonlinear patterns. Yet this implicit formulation, while statistically powerful, leaves the true physical nature of ܲ  ூ
+
+obscured. To render the underlying physics explicit and analytically tractable, we define ܲ  ூ in interaction space as the ܲ  ߮൛[ ூ௝ ൟ] . The ߮  ூ௝ ࢘( ࡵ ݒ , ூ ݒ , ௃ ) represents the effective interaction of atom j on atom I,which is a function of the position vector ࢘  ࡵ ࢞= ࢞− ࡵ , and the intrinsic states ݒூ and ݒ௃ of the atoms. ݒூ is dominated by its elemental factors as nuclear charge, while being strongly modulated by the surrounding chemical environment. The function ߮  ூ௝ inherently satisfies translational invariance, and consequently, so does the ܲ  ߮൛[ ூ௝ ൟ] . As swapping the index { j} should not alter the physical outcome, drawing inspiration from the physically-clear representation of wave functions in quantum many-body systems, we express it in a product form and name it as material property field (MPF) [18]: ܲ 
+
+= ෍ܲ ூூ= ෍ ෑ(߮ ூ௝ ࢘( ࡵ ݒ , ூ ݒ , ௝ )௝ஷூ + 1) ூ. (2) As illustrated in Figure 1a , Eq. (2) provides a mathematical mapping from coordinate space to property space, mediated by effective interactions. This formulation is physically well grounded, drawing analogy to tensor network approaches in which high-order many-body correlations are represented as tensor products defined on the Hilbert spaces of individual subsystems, as seen in Slater determinants for many-electron systems and the order parameter expansion in Landau’s theory [22]. The “+1” factor prevents the product from vanishing as any individual interaction term ߮  ூ௝ approaches zero, consistent with the logic of the Mayer f-function [23] in statistical mechanics. Moreover, upon expansion, this construction naturally generates a hierarchical series spanning many-body contributions, as will be demonstrated in Eq. (7). Importantly, such resulting interaction terms are physically rational, distinct from general DNNs rely on multiple active layers. To capture rotational covariance, ߮  ூ௝ is expanded using a complete set of SO(3) basis functions, such as the spherical harmonics ܻ  ௟௠ . This expansion is then expressed as a tensor product: ߮  
+
+> ூ௝
+
+= ݒூ ⊗ Âሬሬሬ⃗ ൫࢘ ூ௝ ൯ ⊗ ݒ௝ , (3) where the tensor representation of Âሬሬሬ⃗ ൫࢘ ூ௝ ൯ = ⨁ܴ ௟ ݎ|൫ ூ௝ ܻ൯| ௟௠ ̂ݎ൫ ூ௝ ൯௟௠ is used for physical completeness. The ܴ  ௟ ݎ|൫ ூ௝ |൯ is the radial weight function to be determined. In our previous work, ݒூ and ݒ௝ are regarded as quantities related to the elemental factors ( ܼ ), which is an approximation within the mean-field framework. This treatment inevitably introduces systematic errors because the state of atom is fluctuating, is dependent on its neighboring atoms. In the following, we demonstrate that by adopting MPF as the governing equation similar to Hopfield network, the chemical environment modulation on {ݒூ } can be effectively incorporated through recursive iterations, leading to an analytical network-based formulation of MPF.    
+
+> Figure 1. (a) Conceptual diagram of the Material Property Field (MPF) and (b) the interaction-driven Hopfield dynamics analytically incorporate local chemical environment effects as well as indirect long-range correlations.
+
+In a Hopfield network, the system state is characterized by a set of feature neurons { ݒூ }. In the Ising energy landscape, for instance, each ݒூ takes a discrete binary value, either +1 or -1. The interactions among these nodes enable the system to evolve dynamically and gives rise to collective correlations that link the system’s components. In modern Hopfield frameworks that incorporate many-body couplings, such correlations are implicitly encoded via hidden neurons { ݒఓ }. The interplay between feature and hidden neurons collectively shapes the “energy landscape” of the system. For a model consisting of ܰ  ௙ feature neurons and ܰ  ௛ hidden neurons, its “energy” is then given by[24]: 
+
+ܧ = ෍ ߥ௜݃ ௜
+
+> ே೑
+> ௜
+
+− ܮ௩ − ܮ௛, (4) where ܮఔ ݒ{( ௜ }) and ܮ௛ ({ℎ ఓ }) denote the Lagrangians for feature and hidden neurons, with ݃ ௜ = డ௅ ೡడ௩ ೔
+
+.Typically, ܮ௩ = ଵଶ ݒ ∑ ூଶூ and ܮ௛ shapes the global interaction patterns and thus dictates the system’s dynamical evolution. Substituting the explicit form of the MPF into Eq. (4) as ܮ௛ = ∑ ∏ ߮( ூ௝ ௝ஷூ + 1) ூ yields the energy function: 
+
+ܧ = 1
+
+2 ෍ ݒூ
+
+> ଶ
+> ூ
+
++ ෍݁ ݌ݔ (෍ ℎఓୀ(ூ,ఉ)
+
+> ఉஹଵ
+
+)
+
+> ூ
+
+, (5) where the hidden neuron ℎఓ ≡ ℎ (ூ,ఉ) = ∑ (ି ଵ)ഁ ఉ ߮൫ ூ௝ ൯ ఉ௝ aggregate all pairwise interactions centered on atom ܫ, with ߚ implicitly covering the full ݉, ݈( ) expansion space and higher-order terms. A complete derivation is given in Section I of the SI. From eq. (5) the dynamical evolution of the feature nodes ݒ{ ூ } simplifies to: 
+
+ߥூ 
+
+> (௧ାଵ)
+
+= ෍ ߦூఓ ߲ ܮ௛
+
+> (௧)
+
+߲
+
+ℎఓ
+
+> (௧)
+> ே೓
+> ఓ
+
+=ܲ ூ 
+
+> (௧)
+
+෍ ߦூఓ 
+
+> ே೓
+> ఓ
+
+, (6) where ߦூఓ is an adjustable Hopfield network parameter quantifying the contribution of hidden neuron 
+
+ߤ to node ܫ. By imposing the normalization condition ( ∑ ߦூఓ ே ೓ఓ = 1 ), the dynamics simplify to a direct update rule of ߥூ(௧ାଵ) ܲ= ூ(௧) , where the field at step ݐ recursively determines the atomic state at step + ݐ 1 . As depicted in Figure 1b , beginning with the mean-field approximation ݒூ଴ ݒ ≡ ௓ ಺ , the model gradually incorporates environmental effects—first through local neighbor interactions, then via extending to subtle long-range correlations—and ultimately builds a fully connected interaction landscape, reminiscent of a wave function delocalized across space. Notably, all the above results are strictly forward-analytically derived from the MPF, avoiding traditional trail-and-error paradigms. 
+
+2.2 Unification of Linear Approach with Scalable Nonlinear DNNs 
+
+Following the theoretical framework developed above, we construct mPFDNN, an analytically derived model that integrates linear basis with DNNs. A schematic of its architecture is provided in 
+
+Figure 2a .First, by expanding the product form in Eq. (2), ignoring constant terms, we obtain a body-ordered expansion: ܲூ = ෍߮ ூ௝ 
+
+> ௝
+
++ 1
+
+2 ቆ෍߮ ூ௝ 
+
+> ௝
+
+ቇ
+
+> ଶ
+
++ 1
+
+6 ቆ෍߮ ூ௝ 
+
+> ௝
+
+ቇ
+
+> ଷ
+
++ ⋯ (7) In theory, ܲ  ூ includes all high-order interactions. Introducing a tensor function ऋூ = ∑ൣ ݒூ ⊗௝
+
+Âሬሬሬ⃗ ൫࢘ ூ௝ ൯ ⊗ ݒ ௝ ൧ allows the above expression to be rewritten more compactly as: ܲ  
+
+> ூ
+
+=< चࡵ >= ෍ 1ܰ
+
+! 〈ऋூ⊗ே〉
+
+> ே
+
+(8) where च ࡵ is a tensor including the complete irreducible representation space of SO(3) group, and the 
+
+〈 〉 indicates symmetry constrains such as rotational invariance, as required by specific properties. The (ܰ + 1 )-body nonlinear interaction is represented as ݒ times direct product of pair function, i.e. the 
+
+⊗ ே in Eq. (8). Two examples of three-body and four-body are shown in Figure 2b .
+
+Figure 2 . (a) End-to-end pipeline of mPFDNN. Atomic pairs serve as fundamental building blocks to encode atomic structures. (b) Starting from a body-ordered linear expansion under the mean-field approximation, (c) the framework evolves via Hopfield dynamics, capturing chemical environment correlations and yielding an analytical DNN architecture. Through initially summing over neighboring atoms and subsequently applying the tensor product operation, Eq.(8) can obtain the aggregate of all body-ordered interactions while preventing a significant increase in computational complexity. Note that the tensor function ऋூ ≡ ⨁ ऋூ࢓࢒ ࢓࢒ , covers the full { l,m } space. This allows us to expand Eq. (8) into a linear-like form, where Clebsch-Gordan coefficients ܥ௟భ ௠భ …௟ ೙ ௠೙௅ெ are employed to select the irreducible representation subspaces (L,M )consistent with rotational covariance: ܲ  
+
+> ூ
+
+= ෍ ܿ෍ ఈఈ࢒(∈ భ ࢓ భ ࢒… ೙ ࢓ ೙ ࡹࡸ→) ܥ௟భ ௠భ …௟ ೙ ௠೙௅ெࣛ ூ௟భ ௠భ …ࣛ ூ௟ ೙ ௠೙ே௡ୀ଴ 
+
+(9) = ܤ෨ூ଴ + ෍ ܿ෍ ఈ ܤ෨ ூఈఈ࢒(∈ భ ࢓ భ ࢒… ೙ ࢓ ೙ ࡹࡸ→) ே௡ୀଵ ,
+
+where ߙ indexes the chosen reduction path of the representation space, and the coefficients ܿ  ఈ are parameters to be determined. As LM=00 , it naturally degenerates into a scalar field. The self-interaction of ܤ෨ ூ଴ = ଵଶ ݒ ூ ݒ⨂ ூ > ௅ெ corresponds the first term of Eq. (5), which in conventional DNN models is typically treated as a constant bias dependent solely on element type. It is worth noting that although Eq. (9) takes the form of a linear expansion, it inherently captures the nonlinear physics of many-body interactions, which laid the groundwork for the development of SUS 2 -MLIP in our prior work [18]. To generalize this framework while maintaining physical transparency embodied in Eq. (9), we incorporate Hopfield dynamics via substituting the tensor form of Eq. (8) into the iterative relation of Eq. (6). This yields a recursive dynamics that naturally gives rise to deep network architectures in an analytically tractable form: 
+
+⎩
+
+⎪
+
+⎨
+
+⎪
+
+⎧ऋூ 
+
+> (ܜ)
+
+=࢜  ࡵ 
+
+> (૙)
+
+෍ ቂÂሬሬሬ⃗ ൫࢘ ூ௝ ൯ ⊗࢜ (࢚ )ቃ
+
+> ௝
+
+ߥூ(௧ାଵ) = ෍ቂऋ ூ(௧) ቃ ⊗జ జ
+
+(10) As illustrated in Figure 2c , at t=0, the effective interatomic interactions { ߮ ூ௝ } are determined solely by the geometric and elemental information of each atomic pair. After one recursive step, ݒ௝ becomes aware of and modulated by its surrounding chemical environment. Specifically, the recursive approach systematically captures indirect correlations, such as those arising from multi-step interaction pathways (e.g., ݇  ݆→ ܫ → ) that are inherently absent in the mean-field approximation. Theoretically, as  ݐ→ ∞ ,the model converges to a fully connected interaction landscape. Note that ݒ௝ has been tensorized during the iterative process. As the present work focuses on scalar properties, we restrict ݒ௝(௧) to the irreducible representation subspace with ܮᇱ = 0 (denoted as ݒ௝(௧),௅ ᇲ ୀ଴ ) when updating ܣூ(௧) . The more general formulation is provided in Section I of the SI. Besides, in our implementation, the scalar radial functions ܴ  ௟ ݎ( ூ௝ ) are expanded to form a k-channel tensor ܴ  ௟(௞) ݎ( ூ௝ ). This expansion, which has no impact on the analytical derivations, is equivalent to integrating k models to enhance the expressive capability. 
+
+In summary, the mPFDNN framework unifies linear basis expansions and DNNs within a coherent, analytically derived architecture. Within this framework, the physical transparency of the former and the representational capacity of the latter coexist synergistically, thereby offering a principled alternative to purely data-driven DNNs for materials modeling. 3. RESULTS 3.1 Comprehensive Benchmarking Demonstrates Universal Accuracy Table 1 Summary of benchmark datasets. Category Dataset Sampler Number Property 
+
+Crystal Jarvis [25] 75,908 Formation Energy, E
+
+Total Energy, Total E 
+
+Voigt bulk, Kv
+
+Shear modulus, Gv
+
+Dielectric constant, є MPtraj (M3GNet) [26] 187,687 Energy/Force/Stress Molecule QM9 [25] 133,885 Isotropic polarizability, α
+
+Electronic spatial extent, r 2
+
+Dipole moment, μ
+
+Internal energy at 0K, U0
+
+Drug [27] 1.4 Million Energy/Force OC2M [28] 2 Million Energy/Force Metal Alloy [29] 72,722 Energy/Force Aqueous solutions Water & Salt-water [30] 33,819 Energy/Force HEA IrPdPtRhRu [30] 16,772 Energy/Force To rigorously evaluate the universality and accuracy of mPFDNN, we curated a diverse set of benchmark datasets spanning inorganic crystals, organic molecules, and catalytic systems [30]. As summarized in Table 1 , these datasets cover a wide spectrum of critical properties, including standard force field targets (e.g., energies and atomic forces) and key electronic properties derived from first-principles calculations (e.g., polarizability, dielectric constants, and dipole moments). Notably, the included elements span nearly the entire periodic table ( Figure 3a ), providing a stringent testbed for assessing the model’s transferability. mPFDNN demonstrates superior or highly competitive performance compared to state-of-the-art models across these benchmarks. On the Mptraj dataset for inorganic crystals and the OC2M dataset for molecular adsorption on surfaces, mPFDNN achieves the lowest error metrics ( Figure 3b, c ). This performance advantage is consistently maintained on the large-scale Drug and Alloy dataset, highlighting its broad applicability ( Figure 3d, e ). For the Jarvis benchmark, mPFDNN delivers accuracy in property predictions comparable to that of ALIGNN and outperforms CGCNN models 
+
+(Figure 4a ). On the QM9 benchmark for small molecules, mPFDNN yields comparable or superior results across all evaluated properties except for electronic spatial extent (r²) ( Figure 4b ). Figure 3. Benchmarking on force field datasets. (a) Elemental coverage of the benchmark datasets. (b) The MAE error of dataset Mptraj [26] . (c) The RMSE error on dataset OC2M [28] . (d) The RMSE error on dataset Drug [27] . (e) The RMSE error on dataset Alloy [29] .
+
+Figure 4. The performances on datasets with properties. (a) MAE error on dataset JARVIS. (b) MAE error on dataset QM9. [25] It is noteworthy that while most state-of-the-art models rely on stacking multiple graph convolution or interaction layers, all aforementioned mPFDNN models here employed only a single recursion. To explore the effect of recursion depth on model accuracy, we trained five model groups with recursion depths ranging from 0 to 4 using the drug database, which is characterized by significant chemical environmental fluctuations. Our results show that the first recursion yields the most substantial improvement in accuracy, while the model converges after the second recursion (see Figure S1 ). This is because a single recursion qualitatively endows the model with ability to discern atom-specific chemical environments. For example, within the mean-field approximation framework, the model cannot distinguish whether two carbon atoms form a double, single, or π bond. In contrast, the recursively updated representation ࢜  ௝(௧) effectively discriminates each atom’s chemical environment, ultimately providing a more accurate description of the interaction. We further examine the trade-off between model performance and size by varying the channel count ( k) and orbital truncation ( L' ) of vi (see Figure S2 ). Our results indicate that increasing L' while maintaining a modest k yields the optimal parameter efficiency. For instance, on the drug dataset, the model with L' =2 and k=32 achieves comparable accuracy to that with L' =0 and k=128, yet the parameter count of the former (107,568) is merely one-fifth that of the latter (526,736). 
+
+3.2 mPFDNN Accurately Captures Ion-Specific Dynamics in Aqueous Solutions 
+
+To rigorously evaluate mPFDNN’s transferability and predictive reliability, its effectiveness in systems governed by nuanced, long-range non-covalent interactions, as typified by aqueous electrolytes, remained unverified. We constructed a dedicated dataset comprising pure water and aqueous solutions (1-4 mol/kg) of NaCl, NaBr, and KCl, totaling 33,819 configurations. The optimized mPFDNN achieved high predictive accuracy (energy MAE: 1.3 meV/atom; force MAE: 36.4 meV/Å), enabling production-level molecular dynamics simulations [30].     
+
+> Figure 5. Ion-specific water diffusion in aqueous salt solutions. (a) The ratio of the diffusion coefficient of water in NaCl, NaBr, and KCl solutions to that in pure water, as a function of salt concentration calculated by mPFDNN and Madrid-2019 ; (b) Radial distribution function (RDF) of water (O-O) in water and KCl solutions calculated by mPFDNN and Madrid-2019.
+
+A long-standing challenge for classical force fields is capturing ion-specific effects on water dynamics, particularly the counterintuitive enhancement of water diffusivity ( DH2O ) in chaotropic salt solutions (e.g., KCl) [31]. While experimental trends following the Hofmeister series are well-established [32-34], conventional force fields such as Madrid-2019 [35] systematically fail to distinguish KCl from kosmotropic salts (NaCl, NaBr), erroneously predicting decreased diffusion for all salts.[36]. In striking contrast, mPFDNN-driven MD simulations quantitatively reproduced the concentration-dependent DH2O trends across all three salts (Figure 5a) , correctly capturing both the reduction for kosmotropes and the enhancement for chaotropic KCl, which in full agreement with experiments and ab initio molecular dynamics (AIMD) benchmarks. Radial distribution function (RDF) analysis revealed the mechanistic basis for this fidelity ( Figure 5b and Figure S3 ). mPFDNN accurately reproduces the experimental oxygen-oxygen (O-O) RDF of pure water, whereas Madrid-2019 exhibits clear structural deviations (Figure 5b) . Building on this accurate water baseline, mPFDNN simulations uncovered pronounced KCl-induced changes in the O-O RDF, particularly within the second solvation shell (highlighted red regions, Figure 5b ), shows the signatures of a more labile hydrogen-bond network and loosened water structure characteristic of chaotropic perturbation. These structural rearrangements, absent in classical FF simulation by Madrid-2019 [35], provide a coherent mechanistic explanation for the enhanced water diffusivity uniquely captured by mPFDNN By accurately resolving ion-specific hydration effects and their propagation through the hydrogen-bond network, which is a persistent blind spot for classical force fields, mPFDNN demonstrates its suitability for large-scale MLMD simulations of liquid electrolytes and other hydrogen-bonded systems where accurate ion-solvent cooperativity is essential. 
+
+3.3 mPFDNN Enables Accurate Adsorption Energy Predictions for HEA Catalysts 
+
+High-entropy alloys (HEAs) represent a promising class of catalytic materials, leveraging compositional and structural diversity to achieve tunable reactivity. However, their complexity poses challenges for both experimental screening and computationally intensive ab initio methods [37,38]. Machine learning potentials, particularly the mPFDNN framework validated on the OC2M dataset (Figure 3c ), provide a transformative pathway by establishing efficient mappings from local site environments to catalytic properties. A key descriptor of catalytic activity is adsorption energy ( Eads ), which reflects the binding strength of reaction intermediates (e.g., H* in HER, N* and N 2 * in NRR) to catalytic sites [39-41]. Accurate Eads 
+
+prediction on HEAs requires capturing both site-specific chemical environments and the accompanying surface relaxations. Traditional DFT methods, burdened by computational costs scaling exponentially with system size, are inherently unsuitable for navigating the vast configurational space of HEAs. Furthermore, static DFT calculations neglect crucial surface structural relaxations, limiting the physical realism of E ads predictions. To address this, we developed a comprehensive workflow integrating mPFDNN with structural optimization. Taking the Ir-Pd-Pt-Rh-Ru HEA (100-atom cell) as a model system, the workflow as follows: (i) constructs unrelaxed surfaces (such as 100, 110, 111, etc.); (ii) relaxes surface slabs using the optimizer embedded with the Alloy mPFDNN model ( Figure 3e ); (iii) identifies adsorption sites (top, fcc, bridge) via a site finder; and (iv) performs adsorption relaxation guided by the optimizer embedded with the HEA mPFDNN model. This process involves a loop of active learning via AIMD sampling, DFT labeling, configuration distribution analysis, model training and until converged.   
+
+> Figure 6. mPFDNN guided adsorption energy ( Eads ) predictions for HEA Catalysts. The mPFDNN models are integrated into a workflow that relaxes the high-entropy alloy (HEA) bulk, surface, and adsorption configurations. Guided by an optimizer embedded with the HEA mPFDNN model, this workflow ultimately yields adsorption energy predictions for adsorbates (H, N, and N₂).
+
+The optimized mPFDNN model achieved high accuracy (Energy: MAE = 1.3 meV/atom, Force: MAE = 64.7 meV/Å; Figure S18 ) using only 16,772 configurations, merely 5% of the dataset (~355K) required by the state-of-the-art GNN model AGAT [42], which achieves comparable accuracy (1.3 meV/atom, 64.7 meV/Å) on the same HEA system. Notably, mPFDNN achieved this state-of-the-art performance with only 562,448 parameters. This represents a drastic reduction in model size and complexity, approximately 3 to 4 orders of magnitude lower, compared to prevalent large-scale models such as EquiformerV2, which typically contain tens to hundreds of millions of parameters [43,44]. This translates directly to reduced memory footprint, faster inference, and lower training costs, enabling large-scale HEA exploration computationally feasible. Ultimately, this integrated workflow enables accurate adsorption energy predictions for adsorbates (H, N, and N₂), as validated by the correlation between mPFDNN predicted adsorption energies (mPFDNN Eads ) and DFT-calculated ones (DFT Eads ) shown in the Figure 6 , with metrics like MAE (0.121 eV) and RMSE (0.165 eV) demonstrating the model's efficacy. Notably, unlike the dual-network architecture of the AGAT model, where energy and force are trained separately by two distinct networks, the mPFDNN employs a single unified network with self-consistent energy and forces. Furthermore, mPFDNN demonstrates robust extrapolation to out-of-sample HEA catalysts ( Figure S19 ), underscoring its strong generalization capability rooted in its well-founded and parsimonious mathematical formulation. By combining machine-learned potential with atomic-scale structural relaxation, mPFDNN overcomes the limitations of traditional methods in handling HEA complexity. This approach enables efficient and accurate exploration of HEA configurational space and site-specific catalytic behavior, while maintaining strong extrapolation capability for out-of-domain systems, offering significant potential to accelerate the discovery and rational design of HEA catalysts. 
+
+4. DISCUSSION 
+
+Unlike traditional artificial intelligence domains like language and image processing, materials science is rooted in centuries of systematic research, thereby offering a wealth of top-down prior knowledge complementary to purely data-driven methods. However, as a cornerstone of materials science, “interaction” has been largely overlooked in the design of material-oriented DNNs, leading to persistent challenges in generalization and physical scalability. In contrast, the mPFDNN framework builds upon the MPF to explicitly integrate interatomic interactions, resulting in a forward-analytical “white-box” framework for structure-property mapping. The key standpoint of mPFDNN posits that any material properties { P} can be formulated as a complicated functional of interatomic interactions, i.e. ℱ௉ ߮[ ூ௝ ݎ൫ ூ௝ ൯] . In this work, we employ the physically-rational form of the MPF ܲ  to represent any specific functional ℱ௉ . MPF possesses an explicit mathematical formulation, thus distinctions in modeling different material properties are encoded in their corresponding effective pairwise interactions ߮  ෤ ூ௝ , as ℱ߮௉ൣ ூ௝ ൧ = (ܲ ିܲ∘ ଵ ∘ℱ௉ ߮ൣ) ூ௝ ߮ൣܲ൧ = ෤ ூ௝ ൧. The construction of { ߮ ෤ ூ௝ } can be realized in a physically complete and tractable manner. This tractability directly endows mPFDNN with outstanding universality and accuracy across diverse material systems and properties, as exhibited in benchmark tests. Beyond general benchmarks, mPFDNN also exhibits distinct advantages in challenging tasks. In Hofmeister series solutions, our approach exhibits unique capability to treat weak interactions and kinetic processes which are inaccessible for traditional empirical force fields. Furthermore, in the challenging task of adsorption energy prediction for HEA catalysts, the mPFDNN-Potential excels not only in efficiently and accurately exploring the vast configurational space and resolving site-specific catalytic activities, but also in robustly extrapolating to out-of-domain alloy systems. In summary, this work shifts the design of material-oriented neural networks from black-box optimization to physically rationalized construction. We expect this framework to enable diverse applications in materials science and pave the way for universal, multi-modal materials foundation models. 5. METHODS 5.1 Model Training Set-up 
+
+All the mPFDNN models employed in this study were implemented with the recursive depth of 
+
+t=1, the maximum order of the spherical harmonic expansion L max = 3 and number of channels is set to 
+
+k = 128. By setting the maximum tensor product order v = 3, the models are capable of capturing 5-body interactions. We adopt spherical Bessel function ݆  ଴௡ = ට ଶ௥೎ୱ୧୬ቀ௡గ ೝ಺ೕ ೝ೎ ቁ௥ ಺ೕ 
+
+and polynomial truncation functions ݂  ௖௨௧௢௙௙ = 1 − 28 ቀ ௥ ಺ೕ ௥೎ቁ ଺+ 48 ቀ ௥ ಺ೕ ௥೎ቁ ଻− 21 ቀ ௥ ಺ೕ ௥೎ቁ଼ to construct the radial function: ܴ
+
+(ݎூ௝ ) = ෍݆ ଴
+
+> ௡
+
+݂ ௖௨௧௢௙௙ 
+
+> ௡ୀଵ,…,଼
+
+(11) The cutoff radius ݎ௖ was set to 6 Å. The loss function, ℒ, is typically computed as the weighted sum of mean squared errors of target properties { ܲ }: 
+
+ℒ = ෍ ݓ௧் 
+
+> ∈{࣮}
+
+(ܲ −ܲ ෠)ଶ (12) Specifically, in the multi-objective training process of PES, we use the weights for energy, force, and stress ݓ( ா ݓ : ி ݓ : ௌ ) = (1,10,100) . All Models were trained with the Adam optimizer with β 1 = 0.9, β 2= 0.999, and ε = 10 −8 with float32 precision. We use a learning rate of 0.005 and an exponential moving average (EMA) learning scheduler with decaying factor of 0.995. The training process will be terminated when the number of iterations reaches 200, or when no improvement in model performance is observed over 50 consecutive epochs. 
+
+5.2 Diffusion Simulation 5.2.1 Aqueous Salt Solutions Dataset. 
+
+The dataset comprises approximately 33,819 structures of aqueous salt solutions, including water, NaCl, KCl, and NaBr. The dataset was labeled using the SCAN functional, which exhibits significant advantages in describing aqueous systems. Compared to traditional GGA functionals such as PBE (which overestimates hydrogen bond strength) and BLYP (which fails to correct density inversion issues), SCAN, as a meta-GGA functional, accurately balances covalent bonds, hydrogen bonds, and van der Waals interactions. For salt solutions, SCAN also outperforms functionals like revPBE-D3 in describing cation hydration structures. To enhance computational efficiency, the r2SCAN single-point energy calculations were used as initial guesses for the SCAN wavefunction to accelerate convergence. 
+
+5.2.2 Aqueous Salt Solutions ML Potential Model The mPFDNN model employs a three-stage iterative workflow to construct the final network model: (1) initial model training based on the dataset, (2) acquisition of new structures through active learning, and (3) dataset expansion via data labeling using CP2K. During the training, the dataset was partitioned into training, validation, and test sets in an 8:1:1 ratio. Model training was conducted with a learning rate of 0.005, and a maximum of 100 gradient propagation steps was allowed. Model performance was monitored using the validation set. The final machine learning potential was evaluated on the test set to ensure accuracy, providing a reliable force field for subsequent molecular dynamics simulations. More details for active learning process, see SI Section II. 
+
+5.2.3 Water Diffusion Coefficient Calculation via MD Simulations 
+
+The diffusion coefficients of water ( DH2O ) in salt solutions were determined through MD simulations. Initial structures were generated using PACKMOL [45], constructing systems with 512 water molecules per unit cell and varying salt concentrations (9, 18, 27, and 36 solutes). The simulation box size was determined based on experimental solution density. Structural equilibration was performed using GROMACS with the Madrid-2019 force field, involving 200 ps of NPT and 50 ps of NVT simulations at 300 K to ensure proper density and stability. The molecular dynamics simulations were carried out in LAMMPS [46] using the mPFDNN potential at 330 K (to account for nuclear quantum effects in SCAN [47]) with a 0.5 fs timestep. The simulation included 25 ps of NPT equilibration at 1 bar and 1 ns of NVT process. Water diffusion coefficients were calculated from the NVT trajectory analysis. The diffusion coefficient is calculated through the Mean Squared Displacement (MSD) of the salt solution. MSD is defined as the average of the squared displacement of water molecules. 
+
+MSD (t) = 〈|r(t) − r(0)|ଶ〉 (13) Where r(t) is the position of a water molecule at time t, and ⟨⟩ represents the average over all water molecules. The diffusion coefficient D is directly related to the slope of the MSD: 
+
+D = lim 
+
+> ୲→ஶ
+
+1
+
+6t MSD (t) (14) Based on the Einstein relation applicable to three-dimensional diffusion systems, the water diffusion coefficient in salt solutions was calculated The trajectory from the 1 ns NVT production simulation was utilized for this calculation. The MSD was obtained using the built-in msd command in LAMMPS, and the diffusion coefficient D was derived from the MSD using the Einstein relation formula. Each diffusion coefficient was determined from five independent simulations, and the final value was averaged from the diffusion coefficients obtained from the simulation trajectories, see SI Section III. 
+
+5.3 HEA Dataset and Adsorption Energy Calculation Methods The dataset consists of approximately 16,772 configurations of Ir–Pd–Pt–Rh–Ru high-entropy alloy (HEA) surface slabs (with H, N, and N₂ adsorbates) and bulk structures. All structures in the dataset was labeled by the Vienna Ab Initio Simulation Package (VASP) [48,49] with periodic boundary conditions and the projector augmented wave (PAW) pseudopotentials [50]. To ensure consistency and complementarity with the OC20 dataset, we adopted identical computational parameters [28]. The plane-wave basis set was employed with a kinetic energy cutoff of 350 eV. Exchange and correlation effects were treated within the generalized gradient approximation (GGA) using the revised Perdue-Burke-Ernzerhof (RPBE) functional [51,52], which provides an improved description of the energetics for atomic and molecular adsorption on surfaces. Bulk and surface calculations were performed considering a K-point mesh for the Brillouin zone derived from the unit cell parameters as an on-the-spot method, employing the MonkhorstPack grid [53]. The adsorption energy ( E ads ) for HEA systems was calculated according to the following expression: 
+
+E ads = E relaxed - ( E surface + E adsorbate ), where E relaxed is the total energy of the relaxed adsorbate-substrate system, E surface is the energy of the clean, relaxed HEA surface, and Eadsorbate is the energy of the free adsorbate in the gas phase. A negative E ads value corresponds to a thermodynamically favorable adsorption process. 
+
+ASSOCIATED CONTENT Supporting Information: See Supporting Information for: (i) the recursion of ݒூ(௧) in model dynamics, (ii) aqueous solution ML potential modeling and dataset specifications, (iii) diffusion simulation convergence, and (iv) mPFDNN performance for in-domain and out-of-domain HEA systems. 
+
+Data availability: All related datasets and model files in this work can be found in https://doi.org/10.5281/zenodo.17717505 26 .
+
+Code availability: The source code for mPFDNN is available in the github :https://github.com/yecaichao/mPFDNN. 
+
+AUTHOR INFORMATION Author contributions: Y.H., Y.S., C.Y. and W.Z. conceived the initial idea. C. Y., W.Q. and X.X. constructed datasets. Y.H. and Y.S. developed and formalized the code base. W.Q. and C.Y. performed the simulations and analyzed the data. W.Z., C.Y., Y.W., J.Y. and W.A.G offered insight and guidance throughout the project. Y.H., Y.S., C.Y. and W.Z wrote the manuscript and contributed to the discussion and revision. ACKNOWLEDGMENTS 
+
+This project is supported by the National Natural Science Foundation of China (92463310, 92163212, 52473235), National Key R&D Program of China (2022YFA1203400), Guangdong Basic and Applied Basic Research Foundation (2025A1515011494), Guangdong Provincial Key Laboratory of Computational Science and Material Design (2019B030301001), Shenzhen Science and Technology Program (JCYJ20250604144327038) and High Level of Special Funds (G03050K002). Computing resources were supported by the Center for Computational Science and Engineering at Southern University of Science and Technology. 
+
+Notes 
+
+The authors declare no competing interests. REFERENCES 
+
+[1] C. López, Adv Mater 35 , 2208683 (2023). [2] J. S. Huang, J. X. Liew, A. S. Ademiloye, and K. M. Liew, Arch Comput Method E 28 , 3399 (2021). [3] X. P. Bai and X. C. Zhang, Nano-Micro Lett 17 , 135 (2025). [4] X. Jiang, D. Xue, Y. Bai, W. Y. Wang, J. Liu, M. Yang, and Y. Su, Rev Mater Res 1, 100010 (2025). [5] X. Zhang, Y. Sheng, X. Liu, J. Yang, W. A. Goddard Iii, C. Ye, and W. Zhang, J ChemTheory Comput 20 , 2908 (2024). [6] C. Ye, T. Feng, W. Liu, and W. Zhang, Acc Mater Res 6, 914 (2025). [7] W. Y. Wang et al. , MGE Adv. 2, e56 (2024). [8] Y. Sheng, Y. Wu, C. Jiang, X. Cui, Y. Mao, C. Ye, and W. Zhang, J Mater Inf 5, 7 (2025). [9] H. K. D. H. Bhadeshia, Isij Int 39 , 966 (1999). [10] K. Choudhary et al. , npj Comput Mater 8, 59 (2022). [11] Y. Hong, B. Hou, H. L. Jiang, and J. C. Zhang, Wires Comput Mol Sci 10 , e1450 (2020). [12] A. Merchant, S. Batzner, S. S. Schoenholz, M. Aykol, G. Cheon, and E. D. Cubuk, Nature 624 , 80 (2023). [13] G. Cybenko, Math Control Signal 2, 303 (1989). [14] D. Raabe, J. R. Mianroodi, and J. Neugebauer, Nat Comput Sci 3, 198 (2023). [15] A. Wei and O. Fink, Nat Commun 16 , 6867 (2025). [16] K. Luo, J. S. Zhao, Y. P. Wang, J. Y. Li, J. J. Wen, J. Liang, H. Soekmadji, and S. L. Liao, Artif Intell Rev 58 , 323 (2025). [17] P. Hohenberg and W. Kohn, Phys Rev B 136 , B864 (1964). [18] Y. Hu et al. , P Natl Acad Sci 122 , e2503439122 (2025). [19] J. J. Hopfield, P Natl Acad Sci 79 , 2554 (1982). [20] I. Boykov, V. Roudnev, and A. Boykova, Mathematics 10 , 2207 (2022). [21] M. B. Shahid and C. Fleming, arXiv preprint, arXiv:2501.16587 (2025). [22] E. F. Gramsbergen, L. Longa, and W. H. Dejeu, Phys Rep 135 , 195 (1986). [23] D. A. McQuarrie, Statistical Mechanics (Harpercollins College Div, 1976). [24] D. Krotov and J. Hopfield, arXiv preprint, arXiv:2008.06996 (2020). [25] T. Xie and J. C. Grossman, Phys Rev Lett 120 , 145301 (2018). [26] C. Chen and S. P. Ong, Nat Comput Sci 2, 718 (2022). [27] C. Chen, W. K. Ye, Y. X. Zuo, C. Zheng, and S. P. Ong, Chem Mater 31 , 3564 (2019). [28] L. Chanussot et al. , ACS Catal 11 , 6059 (2021). [29] D. Zhang et al. , npj Comput Mater 10 , 293 (2024). [30] C. Ye, Y. Sheng, Y. Hu, and W. Zhang, mPFDNN datasets and related models [Data set], Zenodo https://doi.org/10.5281/zenodo.17717505 (2025). [31] J. W. Yu, S. Kim, J. H. Ryu, W. B. Lee, and T. J. Yoon, Sci Adv 10 , eadp9662 (2024). [32] R. A. Miranda-Quintana and J. Smiatek, J Phys Chem B 125 , 13840 (2021). [33] K. J. Muller and H. G. Hertz, J Phys Chem 100 , 1256 (1996). [34] R. W. Gurney, Ionic processes in solution (McGraw-Hill, New York,, 1953), International chemical series. [35] S. Blazquez, M. M. Conde, J. L. F. Abascal, and C. Vega, J Chem Phys 156 , 044505 (2022). [36] J. S. Kim, Z. Wu, A. R. Morrow, A. Yethiraj, and A. Yethiraj, J Phys Chem B 116 , 12007 (2012). [37] Q. Wang and Y. G. Yao, npj Comput Mater 11 , 91 (2025). [38] Y. Liu et al. , Adv Funct Mater, 2314820 (2024). [39] Y. Song, H. Kim, J. H. Jang, W. Bai, C. Ye, J. Gu, and Y. Bu, Adv Energy Mater 13 , 2302384 (2023). [40] R. B. Araujo, I. B. Pehlivan, and T. Edvinsson, Nano Energy 105 , 108027 (2023). [41] J. Kim et al. , Angew Chem Int Ed 65 , e23481 (2026). [42] J. Zhang et al. , Joule 7, 1832 (2023). [43] Y.-L. Liao, B. Wood, A. Das, and T. Smidt, arXiv preprint, arXiv:2306.12059v3 (2024). [44] C. M. Clausen, J. Rossmeisl, and Z. W. Ulissi, J Phys Chem C 128 , 11190 (2024). [45] L. Martínez, R. Andrade, E. G. Birgin, and J. M. Martínez., J Comput Chem 30 , 2157 (2009). [46] A. P. Thompson et al. , Comput Phys Commun 271 , 108171 (2022). [47] Y. Yao and Y. Kanai, J Chem Phys 153 , 044114 (2020). [48] G. Kresse and J. Furthmuller, Phys Rev B 54 , 11169 (1996). [49] G. Kresse and J. Furthmüller, Comp Mater Sci 6, 15 (1996). [50] G. Kresse and D. Joubert, Phys Rev B 59 , 1758 (1999). [51] J. P. Perdew, K. Burke, and M. Ernzerhof, Phys Rev Lett 77 , 3865 (1996). [52] B. Hammer, L. B. Hansen, and J. K. Nørskov, Phys Rev B 59 , 7413 (1999). [53] H. J. Monkhorst and J. D. Pack, Phys Rev B 13 , 5188 (1976). Support Information for 
+
+# Material-Property-Field-based Deep Neural Network in Hopfield Framework 
+
+Table of Contents: 
+
+ Section I: The Recursion of ࢜  ࡵ) ࢚( in Model Dynamics. 
+
+ Section II: Aqueous Solution ML Potential Modeling and Dataset Specifications. 
+
+ Section III: Diffusion Simulation Convergence. 
+
+ Section IV: mPFDNN Performance for In-domain and Out-of-domain HEA Systems. Section I: The Recursion of ࢜  ࡵ) ࢚( in Model Dynamics 
+
+In our model, the Lagrangian function for hidden neurons ܮ௛ is defined to be the property field 
+
+ञ, which can be reformulated as: 
+
+ञ = ෍ ञࡵூ= ෍ ෑ(߮ ூ௝ ࢘( ࡵ ܼ, ூ ܼ, ௝ )௝ஷூ + 1) ூ
+
+= ෍ exp(෍ ln (߮ ூ௝ + 1) ௝)ூ
+
+= ෍ exp ቆ෍ ෍ ((−1)ఉߚ ߮൫ ூ௝ ൯ ఉ )ఉ௝ቇூ
+
+(S1) Here, we define ∑ ( (ି ଵ)ഁ ఉ ߮൫ ூ௝ ൯ ఉ )௝ as the hidden neurons ℎఓ with the composite index )ߚ ,ܫ( = ߤ ,thus ܮ௛ = ∑ exp൫∑ ℎ (ூ,ఉ) ఉ ൯ூ . Notably, under this definition, ߲ 
+
+ܮ௛߲
+
+ℎఓ
+
+=߲ ∑ exp ൫∑ ℎ(ூᇲ,ఉᇲ)ఉᇲ ൯ூᇲ߲
+
+ℎ(ூ,ఉ)
+
+= exp (෍ ℎ(ூᇲ ,ఉ ᇲ )ఉ ᇲܲ≡ ) ூ
+
+(S2) ܲ ூ is ߤ-independent ，so the update of feature neurons follows ݒூ(௧ାଵ) ܲ= ூ(௧) , as ∑ ߦூఓ ே ೓ఓ = 1 .A more general recursive process in mPFDNN can be written in the following form: 
+
+࡭ூ(௧ାଵ)ۻۺ = ෍ ෍ ࢉఈ ࡯ ࡸ࢓࢒ ᇲ ࡹ ᇲۻۺ ࢜[ ௝௞ ࡸ)ܜ( ᇲ ࡹᇲ⊗
+
+Â ࢓࢒ ࢘( ூ௝ )ఈࡸ࢓࢒(∈ ᇲ ࡹ ᇲ ۻۺ→) ]௝
+
+(S3) This constitutes a sophisticated tensor product process, wherein α denotes the specific pathway for reducing the tensor product into irreducible representations. Figure S1 illustrates the model convergency on drug dataset with the deep of recursion. 
+
+Figure S1. The convergence of model accuracy on drug dataset with the number of recursions. Our framework incorporates a truncation of the orbital angular momentum L' (of vjk ) to manage computational expense. Within this setup, we identify that appropriately increasing L' is a more parameter-efficient strategy for boosting accuracy than expanding the channel count k, as shown in 
+
+Figure S2 . Besides, to prevent excessive model complexity, the maximum order of ࡸ is truncated at 
+
+࢒࢞ࢇ࢓ .
+
+Figure S2. Dependence of model performance and size on recursive depth under different truncation and channel conditions: (a-c) fixed L’ =0, (a'-c') fixed k=32 and (a''-c'') fixed k=128. Section II: Aqueous Solution ML Potential Modeling and Dataset Specifications. 
+
+The mPFDNN model employs a three-stage iterative workflow to construct the final network model: (1) initial model training based on the dataset, (2) acquisition of new structures through active learning, and (3) dataset expansion via data labeling using CP2K. During the training, the dataset was partitioned into training, validation, and test sets in an 8:1:1 ratio. Model training was conducted with a learning rate of 0.005, and a maximum of 100 gradient propagation steps was allowed. Model performance was monitored using the validation set. The final machine learning potential was evaluated on the test set to ensure accuracy, providing a reliable force field for subsequent molecular dynamics simulations. In the active learning process, the mPFDNN method was used to extract atomic local environment descriptors as structural features. These descriptors were analyzed using the k-means clustering algorithm: (1) the cluster centers for each descriptor category were computed, (2) the frequency of each category across the dataset was calculated, and (3) a frequency score was generated based on the descriptor distribution and frequency, serving as a quantitative measure of structural rarity. The system prioritized the 20% of data with the lowest frequency scores as initial structures for molecular dynamics simulations, ensuring that the active learning process focused on rare configurations. Iterations were terminated when the frequency scores of newly selected structures reached 80% of the dataset, indicating comprehensive coverage of the target conformational space. 
+
+Figure S3. Radial distribution functions of water simulated by mPFDNN model compared to the experiments. Section III: Diffusion Simulation Convergence. 
+
+The following is an approximate process for calculating the diffusion coefficient: 
+
+Figure S4. Process for calculating the diffusion coefficient The diffusion coefficients of the salt solutions were obtained using molecular dynamics simulations. The initial structures for the molecular dynamic simulations were generated by the PACKMOL software, where different concentrations of salt solutions were constructed by adding 9, 18, 27, and 36 salt solutes into 512 water molecules. When generating the initial structures, the box size was calculated based on the experimental solution density; subsequently, the initial structures were preliminarily adjusted using the Madrid-2019 empirical force field through GROMACS software: 200 ps of NPT ensemble simulation and 50 ps of NVT ensemble simulation were performed at 300 K to ensure density and structural stability. The molecular dynamics simulations for the analysis part were performed using LAMMPS software, driven by the mPFDNN network model. The SCAN functional typically employs molecular dynamics simulations at 330 K to compensate for the absence of nuclear quantum effects at 300 K, so all simulations were conducted at 330 K, including 25 ps of NPT ensemble equilibration and 1 ns of NVT ensemble production simulation, with a uniform time step of 0.5 ps. The structures were all under periodic boundary conditions, and the pressure during the NPT stage was set to 1 bar. The diffusion coefficients were obtained by analyzing the trajectories from the NVT production simulations. The diffusion coefficient is calculated through the Mean Squared Displacement (MSD) of the salt solution. MSD is defined as the average of the squared displacement of water molecules. 
+
+MSD (t) = 〈|r(t) − r(0)|ଶ〉 (S8) Where r(t) is the position of a water molecule at time t, and ⟨⟩ represents the average over all water molecules. 
+
+D = lim 
+
+> ୲→ஶ
+
+1
+
+6t MSD (t) (S9) The diffusion coefficient D is directly related to the slope of the MSD. Based on the Einstein relation applicable to three-dimensional diffusion systems, the water diffusion coefficient in salt solutions was calculated. The trajectory from the 1 ns NVT production simulation was utilized for this calculation. The MSD was obtained using the built-in compute msd command in LAMMPS, with msd output every 100 steps, and the diffusion coefficient D was derived from the MSD using the Einstein relation formula. Each diffusion coefficient is determined by five independent simulations, each with the same initial structure and random initial velocities. The final value is obtained by averaging the diffusion coefficients derived from the simulation trajectories. The diffusion coefficient ( D) calculation part is derived from the fitting of the mean square displacement (MSD) curve. Below are the MSD curves for each system, where the blue curve represents MSD, and the grey curve represents the diffusion coefficient calculated after fitting the MSD. 
+
+Figure S5. The MSD curve of pure water Figure S6. The MSD curve of potassium chloride (KCl - 0.9757 mol/kg) Figure S7. The MSD curve of potassium chloride (KCl - 1.9515 mol/kg) Figure S8. The MSD curve of potassium chloride (KCl - 2.9272 mol/kg) Figure S9. The MSD curve of potassium chloride (KCl - 3.9029 mol/kg) Figure S10. The MSD curve of sodium chloride (NaCl - 0.9757 mol/kg) Figure S11. The MSD curve of sodium chloride (NaCl - 1.9515 mol/kg) Figure S12. The MSD curve of sodium chloride (NaCl - 2.9272 mol/kg) Figure S13. The MSD curve of sodium chloride (NaCl - 3.9029 mol/kg) Figure S14. The MSD curve of sodium bromide (NaBr - 0.9757 mol/kg) Figure S15. The MSD curve of sodium bromide (NaBr - 1.9515 mol/kg) Figure S16. The MSD curve of sodium bromide (NaBr - 2.9272 mol/kg) Figure S17. The MSD curve of sodium bromide (NaBr -3.9029 mol/kg) Section IV: mPFDNN Performance for In-domain and Out-of-domain HEA Systems. 
+
+Figure S18. mPFDNN performance in energy and force prediction for HEA catalysts 
+
+Figure S19. mPFDNN performance in adsorption energy prediction for out-of-sample HEA catalysts

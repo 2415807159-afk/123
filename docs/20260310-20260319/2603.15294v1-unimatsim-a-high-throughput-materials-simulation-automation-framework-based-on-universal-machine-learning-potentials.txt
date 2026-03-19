@@ -1,0 +1,391 @@
+Title: UniMatSim: A High-Throughput Materials Simulation Automation Framework Based on Universal Machine Learning Potentials
+
+URL Source: https://arxiv.org/pdf/2603.15294v1
+
+Published Time: Tue, 17 Mar 2026 06:08:48 GMT
+
+Number of Pages: 31
+
+Markdown Content:
+# UniMatSim: A High-Throughput Materials Simulation Automation Framework Based on Universal Machine Learning Potentials 
+
+Yanjin Xiang a, Yihan Nie a, Yunzhi Gao a, Haidi Wang b, ∗, Wei Hu a, ∗
+
+> aSchool of Emerging Technology, Hefei National Research Center for Physical Sciences at the Microscale, and Hefei National Laboratory, University of Science and Technology of China, Hefei, Anhui 230026, China
+> bSchool of Physics, Hefei University of Technology, Hefei, Anhui 230009, China
+
+Abstract 
+
+The universal machine learning interatomic potentials (UMLIPs) have emerged as a new generation of atomic-scale modeling method, offering accuracy close to first-principles calculations at a fraction of the computational cost, which shows significant potential for large-scale material simulations. However, the current UMLIPs software and toolchain ecosystem remains fragmented, lacking unified interface standards and a standardized framework for integration and workflow scheduling. This severely hinders their large-scale, automated deployment in high-throughput materials simu-lation workflows. To address this, we present UniMatSim, a Python framework based on unified interfaces and modular design. It is designed to systematically integrate various UMLIPs (e.g., CHGNet, M3GNet, MACE) and to automate the entire workflow from structural optimization and property calculation to stability verification. The framework en-ables seamless model switching via abstracted computational engine interfaces. It incorporates built-in task registration and workflow orchestration, provides standardized modules for calculating key properties like elasticity, phonons, and molecular dynamics, and includes automated handling for low-dimensional materials. As a test case, using the two-dimensional Lieb lattice system, we constructed a multi-stage high-throughput screening workflow covering structural optimization, elastic stability screening, and phonon spectrum calculation. Starting from 1,176 candidate compositions, a four-model consensus pipeline yields 393 stable structures, which are then refined by magnetic-state screening and DFT band-structure calculations to 59 Lieb-lattice candidates with staggered-magnetic-band characteristics. Results show that UniMatSim offers significant advantages in improving computational efficiency and ensuring reproducibility. Therefore, we present UniMatSim, a unified, efficient, and extensible high-throughput computational framework for universal UMLIPs, providing reliable infrastructure for data-driven materials discovery and design. 
+
+Keywords: High-throughput calculations, Machine learning interatomic potentials, Materials simulation, Workflow automation 
+
+PROGRAM SUMMARY 
+
+Program Title: UniMatSim 
+
+CPC Library link to program files: (to be added by Technical Editor) 
+
+Developer’s repository link: https://gitee.com/haidi-hfut/unimatsim 
+
+Licensing provisions: MIT License 
+
+Programming language: Python 3.7+ 
+
+Nature of problem: The integration of various universal ma-chine learning interatomic potentials (UMLIPs) into a unified high-throughput screening workflow is currently hindered by fragmented interfaces and the lack of automated scheduling tools. 
+
+Solution method: We developed UniMatSim, a Python-based framework that provides a unified interface for multiple UMLIPs (CHGNet, M3GNet, MACE, etc.) and integrates an   
+
+> ∗Corresponding authors.
+> E-mail addresses: haidi@hfut.edu.cn (Haidi Wang)
+> E-mail addresses: whuustc@ustc.edu.cn (Wei Hu)
+
+automated workflow engine for structural relaxation, stability analysis, and property calculation. 
+
+1. Introduction 
+
+Materials science is experiencing a paradigm shift driven by data-driven methodologies[1, 2]. Historically, materi-als discovery has relied heavily on empirical knowledge and trial-and-error experimentation. This approach is not only time-consuming and costly but also struggles to systematically explore the vast design space defined by composition, structure, and processing. Advances in computational power and theoretical methods have po-sitioned high-throughput computational simulation as a key tool to overcome these limitations[3, 4, 5]. By imple-menting standardized, automated workflows, it enables the rapid prediction, screening, and ranking of physical, chem-ical, and functional properties across thousands of can-didate materials, compressing the development timeline 
+
+> arXiv:2603.15294v1 [cond-mat.mtrl-sci] 11 Mar 2026
+
+from years to months or even weeks. This computation-driven, experiment-guided paradigm[6] dramatically re-duces the cost and uncertainty associated with early-stage exploration. Its impact is particularly pronounced in crit-ical fields such as energy storage materials[7], semiconduc-tors, industrial catalysts, and structural alloys (e.g., high-entropy alloys)[8, 9], where it unlocks new opportunities for rational, performance-oriented design, offering consid-erable scientific and strategic value. In recent years, new-generation machine learning tech-niques, particularly universal machine learning inter-atomic potentials (UMLIPs), have advanced rapidly within materials simulation, profoundly reshaping the traditional research paradigm centered on first-principles calculations[10, 11]. For instance, models like CHGNet [12], 
+
+> M3GNet
+
+[13], MACE [14], MatterSim [15], and SevenNet [16] de-liver accuracy comparable to Density Functional Theory (DFT) while offering computational speedups of several orders of magnitude[13, 12]. This opens new avenues for large-scale screening and dynamic simulations of materi-als across different scales and compositions. However, in-tegrating these advanced potentials into practical materi-als research in an efficient, reliable, and scalable manner remains challenging. On one hand, the current ecosys-tem is fragmented; different models are developed and maintained independently, leading to significant dispari-ties in computational workflows, model loading, param-eter configuration, and interfaces for fine-tuning and in-ference. This lack of a unified abstraction layer and stan-dardized calling conventions[11, 17] increases the overhead for researchers and impedes systematic model compari-son, integration, and broader adoption. On the other hand, although workflow management frameworks such as 
+
+> atomate2
+
+[17], jobflow [17], and AiiDA [18] have emerged and successfully automated traditional DFT calculations, they are primarily designed for first-principles engines and lack a unified interface and agnostic abstraction for the diverse and rapidly evolving landscape of machine learning poten-tials. [11, 13]. Consequently, there is a pressing need for a unified integration framework dedicated to UMLIPs to enable standardized access, efficient scheduling, and large-scale automated deployment.[11, 16] To tackle these challenges, we present UniMatSim , an in-tegrated Python framework for high-throughput materials simulation. Its design adheres to the principles of uni-fied interfaces, modular decoupling, and extensibility. The framework aims to bridge machine learning potentials with automated materials research, offering a streamlined, effi-cient, and reliable platform for computational studies. The core innovation is a multi-tiered standardization architec-ture. At the base level, a unified PotentialModel interface encapsulates diverse potentials (e.g., CHGNet, M3GNet, MACE), enabling seamless model switching through sim-ple configuration, eliminating the need to rewrite scripts or adapt calling protocols. At the task level, common simula-tion steps—including structural optimization, elastic con-stant calculation, phonon spectrum analysis, and molec-ular dynamics simulation—are abstracted into standard-ized, reusable Task modules, each with well-defined inputs, outputs, and execution logic. At the workflow level, an in-telligent WorkflowEngine automates task orchestration, de-pendency resolution, parallel scheduling, and state man-agement, facilitating the construction of computational pipelines from simple linear sequences to complex directed acyclic graphs (DAGs). Additionally, the framework incor-porates specialized features for low-dimensional materials (e.g., automatic dimensionality recognition, in-plane relax-ation constraints, 2D Brillouin zone path generation) and a comprehensive stability assessment system covering elas-tic, dynamical, and thermodynamic properties. Together, these components deliver an end-to-end solution for high-throughput screening, applicable to systems ranging from 3D bulk materials to 2D layered structures. Through this systematic design, UniMatSim is engineered to advance the automation, reproducibility, and overall efficiency of ma-terials simulation, allowing researchers to dedicate greater focus to core scientific inquiry rather than computational logistics. The rest of this work is structured as follows. Section II ("Methods and Implementation") details the overall archi-tecture and key modules of UniMatSim . Section III ("Case Study") demonstrates the framework’s complete workflow, computational efficiency, and robustness in practice, using high-throughput stability screening of a two-dimensional Lieb lattice system as a representative example. Finally, Section IV ("Conclusion and Outlook") concludes the pa-per and discusses future development directions for the framework, such as enhanced integration of machine learn-ing potentials, adaptive workflows, and interactive inter-faces. 
+
+2. System Architecture Design 
+
+UniMatSim employs a layered, modular architecture consisting of six core hierarchical tiers: the Core Infras-tructure Layer (Core), the Structure Manipulation Layer (Structures), the Computational Engine Layer (Engine), the Workflow Management Layer (Workflows), the Data Processing Layer (Data), and the Interface Layer (In-terface). The framework adheres to the separation-of-concerns principle. Interactions between layers are facil-itated through well-defined interfaces, enabling the inde-pendent development, testing, and maintenance of individ-ual modules. The overall core workflow and architectural schematic of the framework are summarized in Figure 1. The core module provides foundational, platform-wide utilities and definitions, including enumeration types for tasks and models, configuration management, caching mechanisms, and error handling. The structures mod-ule offers tools for atomic structure manipulation and ge-ometry operations, featuring specialized support for two-dimensional materials, symmetry analysis, and format conversion. The engine module handles interaction with 2Figure 1: Architectural overview of the UniMatSim framework. The schematic illustrates the system’s core workflow. It accepts diverse structural inputs (e.g., bulk crystals, 2D monolayers) and processes them through the UniMatSim Automated Core. This core features a Unified Potential Interface that supports various models (CHGNet, M3GNet, MACE, MatterSim and others) and a Smart Workflow Engine (DAG Scheduler) for executing tasks such as geometry optimization, elastic tensor calculation, phonon spectra analysis, and thermodynamic stability checks. The framework integrates dimensionality awareness for low-dimensional handling and outputs high-throughput screening results, including convex hull energy diagrams, phonon dispersion band structures, and mechanical modulus bar charts. 
+
+3specific computational backends ("engines" or calcula-tors), defining the execution of calculations for a given po-tential model. The workflows module encapsulates higher-level workflow logic, containing classes that represent indi-vidual tasks and a WorkflowBuilder for task orchestration and dependency management. The data module manages the parsing and conversion of external DFT data; for in-stance, it extracts results from VASP outputs to facilitate the fine-tuning of UMLIPs. The interface module imple-ments the user-facing APIs, comprising a programmatic Python library interface and hooks for RESTful API ser-vices. The ui module supplies the command-line interface (CLI). This modular design allows users to interact with UniMatSim flexibly: through scripted workflows using the Python API or by executing predefined workflows via the CLI. The modular architecture enables the independent de-velopment and testing of system components. For in-stance, support for new potential models can be ex-tended simply by adding corresponding calculators to the engine module, without altering workflow definitions. Similarly, new workflow tasks can be introduced with-out modifying the underlying computation execution. Modules interact via well-defined interfaces. A key in-terface is the MaterialsSimulationSystem class, accessi-ble through the API, which acts as the primary high-level entry point by integrating core, engine, and work-flow functionalities. Upon initializing a MaterialsSimula-tionSystem instance, the system loads default configura-tions, initializes caching and storage backends, and pre-pares the computational engines. Users can then execute workflow tasks, such as structural optimization via sys-tem.workflow_manager.optimization(...). These invoca-tions are automatically routed to the appropriate engine for computation, with results handled seamlessly. This design ensures simplicity and efficiency for common oper-ations while offering advanced users significant customiza-tion flexibility. Examples include defining new task types by subclassing BaseTask or implementing custom storage in core.storage, both of which incur minimal impact on the rest of the system. 
+
+3. Key Technical Implementations 
+
+To translate the modular architecture described above into a robust computational platform, UniMatSim incor-porates several critical technical implementations. These components are designed to resolve the fragmentation of the current ecosystem while providing a standardized, au-tomated execution environment. In this section, we elabo-rate on the specific engineering strategies employed, rang-ing from the foundational abstraction of diverse potential models and data-driven fine-tuning workflows to the high-level orchestration of complex simulation tasks and the implementation of flexible local-remote interaction modes. 
+
+3.1. Unified Machine Learning Interatomic Potential In-terface 
+
+A core feature of UniMatSim is its unified interface for diverse interatomic potentials, implemented via the CalculationInvocation class for consistent potential man-agement. Implementation-wise, UniMatSim utilizes the Atomic Simulation Environment (ASE[19]) as its primary calculator backend. For instance, selecting the Lennard-Jones potential[20] triggers the engine module to instanti-ate ASE’s LennardJones calculator and associate it with the atomic structure. For machine learning potentials like M3GNet and CHGNet, UniMatSim either calls their na-tive Python implementations or wraps them via ASE’s external interface when available. All calculators con-form to a unified interface for computing energy, forces, stress, and related properties. This abstraction allows high-level workflow tasks to be model-agnostic, insulat-ing them from implementation specifics. This design aligns with ASE’s philosophy of a unified Calculator in-terface, which UniMatSim generalizes and embeds within a comprehensive workflow framework. Consequently, users can switch between models seamlessly by invoking the set_potential_model() method, leaving downstream cal-culation code unchanged. The interface currently sup-ports: 
+
+• UMLIPs: CHGNet, M3GNet, MACE, MatterSim, SevenNet, DeepMD[21] 
+
+• Classical potentials: Lennard-Jones, Buckingham[22] (used for testing and validation) 
+
+3.2. Data-Driven Model Fine-Tuning Support 
+
+While universal UMLIPs demonstrate strong general-ization across diverse chemical spaces, fine-tuning is often necessary to enhance their accuracy for specific material systems or extreme conditions [23, 24]. To address this, UniMatSim integrates a complete data-driven fine-tuning workflow, encompassing all steps from raw data acquisi-tion to model training. The framework offers efficient data extraction and conversion tools through the unimatsim.data mod-ule. It supports the batch extraction of physi-cal quantities—including total energy, atomic forces, and stress—from VASP output files (OUTCAR and vasprun.xml). To ensure training data quality, the VASPDataExtraction module implements an energy-tolerance-based structure filtering mechanism that auto-matically removes redundant configurations from molec-ular dynamics trajectories or structural relaxation path-ways. The VASPDataConverter then transforms the ex-tracted data into standardized formats suitable for ma-chine learning (e.g., JSON or Extended XYZ), applying predefined thresholds to filter outlier energies or exces-sively large forces. Once data preparation is complete, the framework pro-vides a unified command-line interface for fine-tuning 4(unimatsim model fine-tuning ), compatible with several universal potentials such as CHGNet and MatterSim. It includes comprehensive support for validation: users can specify a separate validation data file with the --valid-material argument or automatically reserve a fraction (de-fault: 0.1) of the training data via --valid-split . An early-stopping strategy is configured with the --early-stop-patience argument (default: 10), which halts train-ing if the validation loss fails to improve over consec-utive epochs, thereby mitigating overfitting. For sce-narios requiring detailed control, a JSON configuration file can be supplied with --config to define advanced hyperparameters such as force and stress loss weights (force_loss_ratio , stress_loss_ratio ), energy renormal-ization ( re_normalize ), and learning-rate decay step size (step_size ). After fine-tuning, the system creates an output di-rectory named ft_<model>_<name> containing the final fine-tuned model ( <model>_finetuned.pth ), the best check-point ( best_model.pth ), and periodically saved intermedi-ate checkpoints. The resulting model can be referenced directly in subsequent workflow configurations. 
+
+3.3. Modular Task Architecture and Computational Capa-bilities 
+
+To ensure extensibility and maintainability, UniMatSim adopts a modular architecture that abstracts complex sim-ulation procedures into discrete, self-contained units re-ferred to as Tasks . Rather than hard-coding simulation logic, the framework utilizes a dynamic registration mech-anism based on the decorator pattern. This design decou-ples the definition of physical protocols from the workflow execution engine, allowing for the seamless integration of novel computational methods without altering the core in-frastructure. Significantly, a Task in UniMatSim encapsulates more than a single atomic operation; it orchestrates compre-hensive, multi-stage physical workflows. For instance, the elastic constant calculation (ELASTIC) is not merely a function call but an automated pipeline that sequentially executes structural relaxation, symmetry-adapted strain generation, energy-force evaluation, and stress-strain fit-ting. This high-level abstraction ensures methodologi-cal consistency and reproducibility across high-throughput screening campaigns, reducing the potential for human er-ror in complex simulation chains. UniMatSim currently integrates nine core task modules, categorized into four functional domains: 
+
+A. Structural Optimization and Symmetry Anal-ysis 1. Geometry Optimization (OPTIMIZATION) :Implements robust energy minimization protocols us-ing algorithms such as BFGS, FIRE, and LBFGS. The module allows for precise control over convergence cri-teria, including force thresholds and maximum iter-ation steps, ensuring reliable ground-state structure determination.[25, 19] 
+
+2. Symmetry Characterization (SYMMETRY) :Integrates spglib to automatically identify space groups and standardized primitive cells, essential for reducing computational cost and classifying material topology.[26] 
+
+3. Static Calculation (SINGLE_POINT) : Per-forms single-point evaluations of energy, forces, and virial stresses. This module serves as a fundamen-tal building block for data generation and potential validation. 
+
+B. Mechanical and Dynamical Properties 1. Elastic Stiffness Tensor (ELASTIC) : Automates the calculation of second-order elastic constants via the stress-strain method. The module derives bulk, shear, and Young’s moduli while rigorously checking mechanical stability criteria.[27, 28, 29, 30, 31] 
+
+2. Equation of State (EOS) : Fits energy-volume data to the Birch-Murnaghan equation of state to deter-mine equilibrium lattice parameters and bulk moduli under hydrostatic conditions.[32] 
+
+3. Phonon Dispersion (PHONON) : Computes phonon spectra and density of states (DOS) using the finite displacement method[33, 34]. It features auto-mated generation of high-symmetry band paths[35] for Brillouin zone sampling. 
+
+4. Molecular Dynamics (MOLECU-LAR_DYNAMICS) : Facilitates finite-temperature simulations under NVE ensembles, enabling the analysis of thermodynamic evolution and transport phenomena through mean squared displacement (MSD) calculations. 
+
+C. Thermal Transport Properties 1. Boltzmann Transport Solver (BTE) : Interfaces with phono3py to evaluate lattice thermal conduc-tivity by solving the linearized Boltzmann transport equation, accounting for anharmonic phonon-phonon interactions.[36, 37, 38, 39] 
+
+D. High-Throughput Data Curation 1. Data Ingestion (VASP_EXTRACT) : Provides automated parsing routines for batch extraction and standardization of physical quantities from legacy DFT outputs (e.g., VASP), facilitating the construc-tion of training datasets for machine learning poten-tials. 53.4. Workflow Scheduling Strategy (WorkflowBuilder) 
+
+Task dependencies are managed by the workflow engine to enforce correct execution order and to accommodate complex workflow topologies. Each task class specifies its inputs—commonly an atomic structure and calcula-tion parameters—and outputs, such as a relaxed structure or computed material properties. During workflow con-struction, a task’s output can be passed as input to down-stream tasks. UniMatSim’s WorkflowManager (accessible via system.workflow_manager) works in tandem with the underlying WorkflowBuilder to track these dependencies. For straightforward sequential operations (e.g., a chain of optimization(), elastic(), phonon() calls), outputs are au-tomatically forwarded. For more intricate patterns, the WorkflowBuilder allows explicit definition of dependency graphs, where users can construct directed acyclic graphs (DAGs) from task nodes and edges, mixing serial and par-allel execution as needed. The WorkflowBuilder further provides flexible topology and parallel-synchronization control. Users can define join tasks that wait for several predecessor branches to finish. For instance, after a structure relaxation (relax), both elas-tic constant (elastic) and phonon spectrum (phonon) cal-culations can be launched in parallel; a final stability evalu-ation (stability) is then triggered only after both complete. This branch-and-join logic can be expressed concisely as a Python dictionary: "relax": ["elastic", "phonon"], "elas-tic": "stability", "phonon": "stability", "stability": None. The WorkflowBuilder automatically schedules the execu-tion: first relax, then concurrent elastic and phonon tasks, and finally stability once the parallel branches succeed. This abstracts away all low-level concurrency and synchro-nization details, requiring no manual threading or schedul-ing code from the user. Additionally, the framework implements a checkpointing mechanism that periodically persists intermediate results to disk or a database, linking them to a unique workflow hash ID. If a task fails or the run is interrupted, the work-flow can resume from the last valid checkpoint, avoiding a full restart. This feature is especially valuable for lengthy or computationally unstable simulations. 
+
+3.5. API and Remote Invocation 
+
+UniMatSim’s programmatic interface supports the com-plete development cycle, from interactive scripting to fully automated pipeline deployment. Its core Python API cen-ters on the MaterialsSimulationSystem class. This class in-tegrates essential operations—including model configura-tion, structure loading, engine management, and workflow orchestration—into a single, coherent entry point. The design ensures seamless interoperability with established structure representation libraries such as Pymatgen and ASE, accepting Structure or Atoms objects directly and returning results as standardized Python dictionaries or objects containing energy, forces, stress, and associated metadata. To facilitate access to distributed computational re-sources, UniMatSim implements remote model invocation within its engine module. This is especially valuable for machine-learning potentials that require specialized hard-ware (e.g., GPUs) or specific software environments. The  
+
+> ModelInvocation
+
+class allows users to toggle between two operational modes: DIRECT (local execution) and REMOTE .In remote mode, the RemoteCalculator packages the atomic structure and calculation parameters, transmitting them via a REST API (built with FastAPI[40, 41]) to a remote server. The invocation remains transparent to the user, and results are returned in the same unified format as lo-cal calls, guaranteeing processing consistency. The command-line interface (CLI) mirrors this dual-mode capability, governed by an InvocationMode 
+
+enumeration. Remote execution is activated with the  
+
+> --remote
+
+flag, with server location specified by --host and 
+
+> --port
+
+; authentication can be supplied via --api-key . For instance: 
+
+> # Local-mode elastic constant calculation
+> unimatsim calc elastic -i Si.cif -m mattersim
+> # Remote-mode execution
+> unimatsim calc elastic -i Si.cif -m chgnet --remote --host 192.168.1.100 --port 8000
+
+This unified dual-mode architecture offers distinct bene-fits for distributed computing. Users can design and man-age workflows on modest local workstations while offload-ing compute-intensive steps—such as single-point energy evaluations for elastic or phonon calculations—to remote clusters equipped with GPUs or high-performance CPUs. The local machine then only handles lightweight orches-tration and result aggregation, eliminating the need to de-ploy full software stacks and large model files on every node. Moreover, the architecture promotes collaborative research: multiple groups can share a centralized comput-ing service, reducing the overhead of maintaining disparate software environments and enhancing both resource effi-ciency and reproducibility across studies. 
+
+3.6. Command-Line Interface and Interaction Design 
+
+To facilitate seamless integration into high-performance computing (HPC) environments and automated pipelines, UniMatSim provides a robust Command-Line Interface (CLI) constructed upon the Typer framework [41, 42]. The CLI is structured around a modular hierarchy, compartmentalizing functionality into four distinct do-mains: property evaluation ( calc ), workflow orchestration (workflow ), data ingestion ( data ), and post-processing analysis ( analysis ). 
+
+3.6.1. Direct Property Evaluation Module 
+
+The calc module orchestrates the execution of funda-mental physical property solvers. It serves as the primary entry point for launching atomic simulations, supporting 6both single-task execution and batch parallelization. Key capabilities include: 
+
+1. Geometry Optimization: The system enables rapid ground-state determination. For instance, 
+
+unimatsim calc optimize -i Si.cif -m chgnet per-forms relaxation on a single structure. To maximize resource utilization on multi-core nodes, batch pro-cessing can be invoked via unimatsim calc optimize -i ./structures/ -m mattersim --parallel 4 , which distributes optimization tasks across four concurrent processes. 
+
+2. Elastic Stiffness Tensor: The command unimatsim calc elastic -i optimized.cif -m mattersim auto-mates the deformation-energy method to derive the elastic tensor. Crucially, the --check-stability flag integrates an on-the-fly evaluation of the Born-Huang mechanical stability criteria, filtering unstable candi-dates immediately after computation. 
+
+3. Phonon Dispersion: Vibrational properties are computed using the finite displacement method. The command unimatsim calc phonon -i structure.cif --supercell 2 2 2 --mesh 10 10 10 -m chgnet speci-fies the supercell expansion matrix via --supercell 
+
+and the Brillouin zone sampling density via --mesh 
+
+, automating the generation of force constants and band structures. 
+
+4. Molecular Dynamics: Finite-temperature evo-lution is simulated using commands such as 
+
+unimatsim calc md -i initial.cif --ensemble nvt --temperature 300 --steps 10000 -m m3gnet .This module supports standard ensembles (NVE, NVT, NPT) and provides granular control over thermodynamic parameters, enabling the study of phase stability and diffusion kinetics. 
+
+3.6.2. Automated Workflow Orchestration Module 
+
+The workflow module manages complex simulation pipelines by defining tasks as nodes in a Directed Acyclic Graph (DAG). This approach handles dependency resolu-tion and concurrent execution via declarative configuration files (YAML/JSON). 
+
+1. Declarative Configuration Generation: Users can rapidly scaffold complex pipelines using the gen-erator command. For example, unimatsim workflow create -o workflow.yaml -s opt,elastic,phonon -m mattersim synthesizes a complete configuration file for a sequential relaxation-elastic-phonon workflow. The resulting YAML artifact (shown below) encapsulates all execution parameters and dependency logic:                                 
+
+> 1metadata:
+> 2description: "Sequential workflow generated from: opt, elastic, phonon"
+> 3ml_potential: "mattersim"
+> 4ml_params:
+> 5model_path: "best_model.pth"
+> 6potential_type: "ml"
+> 78tasks:
+> 9- name: "optimization"
+> 10 type: "optimize"
+> 11 config:
+> 12 fmax: 0.01
+> 13 steps: 500
+> 14 optimizer: "BFGS"
+> 15 16 - name: "elastic"
+> 17 type: "elastic"
+> 18 config:
+> 19 fmax: 0.1
+> 20 relax_structure: true
+> 21 check_stability: true
+> 22 norm_strains: [-0.01, -0.005, 0.005, 0.01]
+> 23 shear_strains: [-0.06, -0.03, 0.03, 0.06]
+> 24 25 - name: "phonon"
+> 26 type: "phonon"
+> 27 config:
+> 28 supercell: [2, 2, 2]
+> 29 mesh: [10, 10, 10]
+> 30 check_stability: true
+> 31 save_bandstructure: true
+> 32 33 dependencies:
+> 34 optimization: "elastic"
+> 35 elastic: "phonon"
+> 36 phonon: null
+
+2. Workflow Execution and Scheduling: The com-mand unimatsim workflow run -C workflow.yaml -i ./structures/ initiates the workflow engine. The sys-tem topologically sorts the task graph and executes independent nodes in parallel where possible. State persistence is handled automatically, generating a .checkpoint_<workflow_id>.json log to track task com-pletion. 
+
+3. Fault Tolerance and Recovery: To mitigate in-terruptions in long-running simulations, the frame-work supports state recovery via unimatsim workflow resume --id <workflow_id> -C workflow.json . This mechanism ensures that calculations can be resumed from the last successful checkpoint, significantly im-proving efficiency in unstable computational environ-ments. 
+
+3.6.3. Data Ingestion and Transformation Module 
+
+The data module functions as an ETL (Extract, Trans-form, Load) pipeline, bridging the gap between first-principles raw data and machine learning training require-ments. 
+
+1. High-Throughput Extraction: The command 
+
+unimatsim data import vasp -i ./vasp_results/ -o extracted_data.json parses large directories of VASP outputs, extracting key physical quantities (energy, forces, stress tensors). The --converged-only 
+
+filter ensures data quality by discarding unconverged calculation results. 72. Structure Serialization: For bulk structure processing, unimatsim data import poscar -i ./ POSCAR_files/ -o structures.csv --format csv 
+
+aggregates lattice parameters and atomic coordinates from multiple POSCAR files into a tabular format suitable for statistical analysis. 
+
+3. Training Data Standardization: To facilitate model training, unimatsim data convert to-xyz -i ./structures/ -O ./training_data/ converts struc-tural datasets into the Extended XYZ format, a stan-dard input format for many modern machine learning potential frameworks. 
+
+4. Dataset Partitioning: Large datasets can be man-aged using unimatsim data slide -i large_dataset. json -o chunks/ --chunk-size 1000 , which segments data into manageable shards based on record count, optimizing memory usage during subsequent training or analysis steps. 
+
+3.6.4. Post-Processing and Validation Module 
+
+The analysis module provides tools for structural char-acterization and the comparative validation of model pre-dictions. 
+
+1. Symmetry Identification: The com-mand unimatsim analysis symmetry -i optimized_structures/ --symprec 0.01 employs  
+
+> spglib
+
+to determine crystal systems, space groups, and point groups. The --symprec parameter allows for tunable numerical tolerance, while --filter 
+
+enables the selective screening of structures based on symmetry constraints. 
+
+2. Consensus Stability Analysis: unimatsim analysis compare module -i ./results/ -o stability_comparison.png facilitates multi-model cross-validation. It automatically generates UpSet plots[43] to visualize the intersection of stability predictions (e.g., formation energy, phonon stability) across different potentials, aiding in the identifica-tion of high-confidence candidates through model consensus. 
+
+3.7. Low-Dimensional Material Identification and Stabil-ity Analysis Strategy 
+
+Low-dimensional materials, particularly two-dimensional (2D) systems, exhibit distinct physical properties compared to their three-dimensional counter-parts, necessitating specialized handling in structural identification, simulation setup, and analysis. To this end, UniMatSim incorporates a dedicated 2D material support framework within its structures/materials_2d module. This framework leverages pymatgen’s[44] dimensionality analysis tools to automatically assess the dimensionality of an input crystal structure. The algorithm analyzes the atomic connectivity matrix and periodic boundary con-ditions, employing graph-theoretic methods to determine the spatial connectivity of the bonding network. A struc-ture is classified as 2D if it exhibits continuous in-plane covalent bonding with significant van der Waals gaps in the perpendicular direction. This approach provides more accurate identification of genuine layered materials compared to simple heuristics based on lattice parameter ratios, and can also recognize other low-dimensional forms such as one-dimensional nanotubes and zero-dimensional clusters. Based on this identification, UniMatSim automatically tailors subsequent simulation steps. For instance, during structural relaxation, the apply_2d_cell_filter() function constrains the unit cell using ASE’s FrechetCellFilter[25, 19] with a default mask=[1,1,0,0,0,1], permitting only in-plane lattice and atomic relaxation to preserve phys-ically meaningful interlayer distances. For phonon and Boltzmann transport equation (BTE) calcula-tions, supercell construction is adjusted from (n,n,n) to (n,n,1) to eliminate unnecessary computational cost along the non-periodic direction. Furthermore, the get_filtered_2d_bz_path() function generates an appro-priate Brillouin zone path by excluding high-symmetry points with a non-zero kz component, thereby prevent-ing artifacts from spurious out-of-plane dispersion. These automated protocols minimize manual input and enhance the reliability and consistency of simulations for low-dimensional materials. Stability assessment is crucial for identifying synthesiz-able candidates in high-throughput screening. UniMat-Sim evaluates stability from three complementary per-spectives: elastic, dynamic, and thermodynamic. Elastic stability is verified by the stability_test_3d() and stabil-ity_test_2d() functions, which check the positive definite-ness of the elastic tensor according to the Born–Huang criteria. The implementation supports the stability con-ditions for all seven crystal systems (cubic, hexago-nal, tetragonal, orthorhombic, monoclinic, triclinic, and rhombohedral[45]) and includes specific 2D criteria for common 2D lattice types (e.g., hexagonal, square, rect-angular). Dynamic stability is analyzed by the Phonon-StabilityChecker module, which scans the phonon spec-trum for soft modes or imaginary frequencies. Different thresholds are applied to high-symmetry points and gen-eral k-points (default: -0.005 eV and -0.001 eV, respec-tively) to distinguish genuine instabilities from numerical noise. Thermodynamic stability is assessed by the Ther-malStabilityChecker, which calculates the formation en-ergy and the energy above the convex hull[46] to gauge a material’s phase stability. This process can interface with the Materials Project API[47] to automatically fetch data on competing phases for comparison. 84. Application Example 
+
+4.1. High-Throughput Lieb-Lattice Screening Workflow 
+
+To demonstrate the performance of UniMatSim in complex material discovery, we applied it to high-throughput stability screening of two-dimensional Lieb lattices and their derivatives—systems notable for their unique structural and electronic properties. The Lieb lattice is a canonical model for studying strong elec-tron correlations[48]. Its unit cell comprises three in-equivalent atomic sites and hosts characteristic flat elec-tronic bands[49], making it a valuable platform for in-vestigating magnetic, superconducting[50], and topologi-cal phenomena[51]. These features, however, also demand high accuracy and efficiency from computational methods. We implemented a systematic screening workflow, il-lustrated in figure 2, using a machine-learning potential previously optimized for 2D materials[52]. The workflow follows a coarse-to-fine, condition-triggered strategy: pro-gressively applying stricter stability filters (elastic, dy-namic, thermodynamic) only to candidates that pass ear-lier, less expensive stages. This approach maximizes com-putational efficiency while maintaining physical rigor. The initial candidate set contained 1,176 distinct Lieb lattice compositions spanning 36 chemical elements—a di-verse chemical space. These included 29 transition met-als (Ag, Au, Cd, Co, Cr, Cu, Fe, Hf, Hg, Ir, Mn, Mo, Nb, Ni, Os, Pd, Pt, Re, Rh, Ru, Sc, Ta, Tc, Ti, V, W, Y, Zn, Zr), 4 chalcogens (O, S, Se, Te), and 3 pnic-togens (As, N, P). In the prototypical structure (Figure 4a), two symmetry-inequivalent transition-metal sites oc-cupy the (0, 0.5, 0.5) and (0.5, 0, 0.5) positions, a third transition-metal site resides at (0, 0, 0.5), and the four equivalent ligand sites are filled by either chalcogen or pnictogen atoms. To efficiently filter out unstable structures prior to com-putationally expensive high-precision DFT calculations, this study employs a rapid pre-screening workflow based on the MatterSim machine-learning potential to conduct a multi-dimensional stability assessment of the initial can-didates, as illustrated in Figure2. 
+
+Step 1: Structural optimization and preprocessing.. All initial candidates were first subjected to rigorous geometry optimization using the MatterSim machine-learning poten-tial for energy and force evaluation and the BFGS algo-rithm for ionic relaxation. Convergence was achieved when the maximum residual force component fell below fmax ≤
+
+0.05 eV/Å, a threshold chosen to balance accuracy and computational cost. Given the 2D nature of the Lieb lat-tice, the framework automatically engaged its specialized 2D optimization routine, applying in-plane relaxation con-straints via the FrechetCellFilter (mask = [1 , 1, 0, 0, 0, 1] )to prevent unphysical changes in the interlayer distance. The resulting relaxed structures served as the baseline for all subsequent property evaluations. 
+
+Step 2: High-throughput elastic stability screening.. The second-order elastic stiffness tensor Cij was computed for each optimized structure. Because Lieb lattices typically exhibit square or rectangular symmetry, the correspond-ing Born-Huang criteria were applied automatically: for a square lattice, C11 > |C12 | and C66 > 0; for a rectangular lattice, C11 > 0, C22 > 0, C66 > 0, and C11 C22 − C212 > 0.This screening was performed using the finite displacement method, which is computationally much cheaper than a full phonon calculation and thus efficiently filters out me-chanically unstable ("soft") candidates. 
+
+Step 3: Selective phonon calculations.. Only structures that passed the elastic stability test proceeded to full phonon spectrum calculations. An appropriate super-cell (typically 5 × 5 × 1, avoiding spurious interactions along the non-periodic direction) was constructed auto-matically. The dynamical matrix was computed via the fi-nite displacement method and diagonalized along the high-symmetry path Γ-X-M-Γ to obtain the phonon dispersion. The primary indicator of dynamic instability was the pres-ence of imaginary frequencies ( ω2 < 0), which can occur even in elastically stable materials due to complex vibra-tional modes. 
+
+Step 4: Integrated stability assessment and classification.. 
+
+The results from steps 1–3 were combined to assign a multi-dimensional stability rating to each candidate: (1) Fully stable (passes both elastic and dynamic tests); (2) Elastically unstable (fails the Born–Huang criteria); (3) Dynamically unstable (elastically stable but exhibits imag-inary phonon frequencies). The workflow finally produced a structured report containing key properties such as for-mation energy, elastic constants, and the location and magnitude of any imaginary frequencies. To further enhance result reliability, we fine-tuned the MatterSim potential, generating four independent model variants trained with different random seeds (42, 123, 2025, 8888; see SI for details), as shown in Figure2. Multi-model cross-validation identified 393 stable structures. To quantify workflow efficiency, all calculations were executed on a high-performance computing cluster with AMD EPYC 9354 processors (192 cores per node). Batch runs used 2 nodes (64 CPU cores in total) for parallel pro-cessing. With the MatterSim-2D potential [52], the av-erage processing time per structure was 4.6 s, distributed as follows: structural optimization ∼0.5 s, elastic-constant calculation ∼0.4 s, and phonon calculation ∼3.8 s. This cost is substantially lower than that of DFT, demonstrat-ing the efficiency and robustness of UniMatSim for the automated screening of complex low-dimensional materi-als. The framework’s conditional execution and dedicated 2D material support thus provide a reliable platform for large-scale exploration of novel quantum materials. The high-throughput DFT screening workflow is illustrated in Figure3.Starting with the 393 structures that passed the 9Figure 2: High-throughput stability-screening workflow for Lieb lattices implemented in UniMatSim. The diagram illustrates the parallel screening process starting from 1176 initial candidate structures. Four independent models (Models A–D) are employed to run parallel screening pipelines, each performing structural optimization (convergence criteria fmax ≤ 0.05 eV/Å), elastic stability verification, and phonon spectrum calculations. The individual models identified 449, 438, 438, and 428 stable candidates, respectively. These sets enter the Multi-Judge Consensus System, where a strict intersection check confirms 393 final consistent candidates for subsequent analysis.     
+
+> Figure 3: Workflow for the identification of altermagnetic Lieb lat-tices. The process begins with the relaxation of 393 candidates in a ferromagnetic (FM) state. Antiferromagnetic (AFM) configura-tions are generated by flipping the spin signs (MAGMOM) of specific atoms. Candidates are retained only if the AFM state is energetically more favorable than the FM state ( EAFM < E FM ). The resulting 61 AFM-stable structures undergo band structure analysis to verify altermagnetism, yielding 59 final candidates.
+
+preliminary stability screening, we evaluated their mag-netic ground states by comparing the total energies of fer-romagnetic (FM) and antiferromagnetic (AFM) configu-rations. The AFM states were constructed by flipping specific atomic spins within the relaxed FM structures. Only systems satisfying the energetic criterion EAFM <EFM —indicating a stable AFM ground state—were re-tained. This magnetic screening narrowed the candi-date pool to 61 structures, which subsequently underwent DFT band-structure calculations (computational details provided in the Supplementary Information). Ultimately, 59 Lieb-lattice candidates exhibiting staggered-magnetic-band characteristics were selected; their fundamental data are compiled in the SI. Among these 59 final candidates, the chemical diver-sity was reduced from the initial 36 to 26 element types (72.2% retention). Transition metals decreased from 29 to 22, chalcogens from 4 to 3 (oxygen was eliminated), and pnictogens to phosphorus alone (N and As were ex-cluded). Manganese emerged as the most frequent ele-ment, appearing in 30 of the 59 materials (50.8%), under-scoring the pivotal role of Mn 2+ (high-spin d 5) in stabi-lizing the magnetic Lieb lattice, followed by Fe (37.3%) and Co (11.9%). Among the ligands, selenium (39.0%) surpassed sulfur (30.5%) as the dominant chalcogen, with tellurium (28.8%) also well represented. Phosphorus (P) was retained but appears only in the single compound Fe 2TcP 4. The strong presence of 4d/5d heavy transition metals (Tc, Mo, Os, Re, Ru, W) highlights their utility in tuning magnetic exchange and spin–orbit coupling. We discuss TaCo 2Se 4 as a representative structure. It 10 exhibits the prototypical Lieb-lattice geometry: Co atoms occupy the (0, 0.5, 0.5) and (0.5, 0, 0.5) sites, Ta resides at (0, 0, 0.5), and Se atoms populate the four equivalent ligand positions. As shown in Figure 4(b), the front and top views clearly reveal the metal-atom skeleton and its characteristic symmetry. The calculated band structure (Figure 4c) exhibits clear spin splitting, a direct signature of the staggered-magnetic-band character. (Band struc-tures for the remaining 58 candidates are provided in the Supplementary Information.)       
+
+> Figure 4: Geometry and electronic structure of the representative Lieb-lattice material TaCo 2Se 4.(a) Schematic of the Lieb lattice: light blue and dark blue spheres denote two distinct transition-metal sites, and green spheres denote chalcogen or pnictogen sites. (b) Atomic structure of TaCo 2Se 4showing the Lieb-lattice framework and coordination environment. Co, Ta, and Se atoms are colored dark blue, light blue, and green, respectively. (c) DFT-calculated spin-polarized band structure, revealing the characteristic spin split-ting and staggered-magnetic-band character.
+
+5. Discussion 
+
+5.1. Comparison with Existing Tools 
+
+UniMatSim is designed specifically for high-throughput screening with UMLIPs. Unlike frameworks such as ASR and Atomate, which are built primarily around DFT, Uni-MatSim natively incorporates mainstream UMLIPs (e.g., CHGNet, M3GNet, MatterSim) at the architectural level. A unified set_potential_model() interface allows seamless switching between potentials, enabling the same work-flow to be applied across different models without mod-ification. Coupled with its remote-invocation capability, the framework can transparently offload calculations to high-performance servers, offering substantial scalability for resource-constrained environments. Regarding deployment complexity, UniMatSim adopts a lightweight strategy, contrasting with the heavier re-quirements of tools like Atomate and AiiDA. Atomate requires a MongoDB database and the FireWorks sched-uler; AiiDA depends on PostgreSQL and a complex plu-gin ecosystem. Such dependencies can be prohibitive for small- to medium-scale screenings. In contrast, UniMat-Sim stores results directly as JSON files [53] on the filesys-tem. Users need only a standard Python environment with ASE and pymatgen to run calculations locally or on an HPC cluster. The FastAPI-based remote mode further enables "zero-deployment" operation: all potential evalu-ations are performed on a remote server, so no model files or specialized backends need be installed locally. Usability is enhanced by dual interfaces—a Python API and a command-line tool. The CLI’s workflow create --sequence command, for instance, generates complete workflow configurations from simple strings (e.g., opt, elastic,phonon ). Remote execution is seamlessly inte-grated: adding flags like --remote and --host redirects the workflow to a remote cluster, maintaining a consistent user experience. A key strength is the integrated, tripartite stability assessment. The framework combines (i) elastic stabil-ity tests (Born–Huang criteria for all crystal systems), (ii) dynamic stability checks (phonon imaginary-frequency analysis), and (iii) thermodynamic stability evaluation (convex-hull analysis via the Materials Project API). This unified pipeline eliminates the need to cobble together sep-arate tools for end-to-end screening. Finally, UniMatSim offers built-in support for low-dimensional materials. Using pymatgen’s dimen-sionality detection, it automatically identifies 2D systems and adjusts simulation parameters accordingly: phonon supercells are set to (n,n,1) , structural relaxation is constrained to the plane via FrechetCellFilter , and Brillouin-zone paths exclude out-of-plane high-symmetry points. In general-purpose frameworks (e.g., Atomate, AiiDA), achieving the same adaptations requires extensive manual configuration. UniMatSim automates these steps through functions like detect_2d_material() , boosting both reliability and efficiency for low-dimensional material discovery. 
+
+5.2. Future Development Directions 
+
+Future development of UniMatSim will focus on: (1) ex-panding support for emerging UMLIPs; (2) implementing an active-learning workflow to close the loop between ML potential evaluation, DFT validation, and model refine-ment; (3) developing a Textual-based terminal user inter-face (TUI) to improve accessibility for non-programmers; (4) integrating database backends (e.g., MongoDB) for en-hanced management of large-scale simulation data. 11 6. Conclusion and Outlook 
+
+We have presented UniMatSim, a comprehensive Python framework for high-throughput materials simu-lation. The framework integrates a unified interface for machine-learning potentials, a modular task-registration system, dedicated support for two-dimensional materials, and a robust multi-faceted stability-verification workflow. Together, these features offer an efficient and reliable plat-form for computational materials research. Our validation demonstrates that UMLIP-based calculations achieve ac-curacy comparable to DFT while offering speedups of 2–3 orders of magnitude, thus providing a powerful foundation for large-scale materials screening and discovery. 
+
+Acknowledgements 
+
+UniMatSim builds upon several key open-source projects, including pymatgen for materials analysis, ASE for atomistic simulations, phono3py for phonon calcu-lations, and the original implementations of machine-learning interatomic potentials such as CHGNet, M3GNet, and MACE. While our framework was developed indepen-dently, we acknowledge the matcalc package for its early work in this area, which provided valuable inspiration for our own methodological objectives. We also extend our sincere gratitude to Dr. Jielan Li of Microsoft for their valuable contributions to the Boltzmann Transport Equa-tion (BTE) code. This work was supported by the Open Research Fund of State Key Laboratory of Precision and Intelligent Chemistry and the National Natural Science Foundation of China (Grant No. 22203026). During the preparation of this manuscript, the authors used GPT-5 to improve text readability and coherence and Claude 4.5 to assist with code optimization. 
+
+References 
+
+[1] L. Himanen, A. Geurts, A. S. Foster, P. Rinke, Data-driven materials science: Status, challenges, and per-spectives, Adv. Sci. 7 (2) (2020) 1903667. [2] D. Sivan, K. S. Kumar, A. Abdullah, V. Raj, I. I. Misnon, S. Ramakrishna, R. Jose, Advances in ma-terials informatics: A review, J. Mater. Sci. 59 (10) (2024) 2602–2643. [3] H. Daglar, S. Keskin, Recent advances, opportu-nities, and challenges in high-throughput computa-tional screening of MOFs for gas separations, Coord. Chem. Rev. 422 (2020) 213470. [4] H. M. Polat, S. Kavak, H. Kulak, A. Uzun, S. Ke-skin, CO 2 separation from flue gas mixture us-ing [BMIM][BF 4]/MOF composites: Linking high-throughput computational screening with experi-ments, Chem. Eng. J. 394 (2020) 124916. [5] J. E. Fowler, M. A. Kottwitz, N. Trask, R. Dingre-ville, Beyond combinatorial materials science: The 100 prisoners problem, Integr. Mater. Manuf. Innov. 13 (1) (2024) 83–91. [6] K. S. Jakob, A. Walsh, K. Reuter, J. T. Margraf, Learning crystallographic disorder: Bridging predic-tion and experiment in materials discovery, Adv. Mater. (2025) e2405148. [7] A. S. Palakkal, Y. Yue, S. A. Mohamed, J. Jiang, Ex-ploiting metal-organic frameworks for vinylidene flu-oride adsorption: From force field development, com-putational screening to machine learning, Environ. Sci. Technol. 58 (37) (2024) 16465–16474. [8] S. Jain, R. Jain, K. R. Rao, A. Bhowmik, Leverag-ing machine learning to minimize experimental tri-als and predict hot deformation behaviour in dual phase high entropy alloys, Mater. Today Commun. 41 (2024) 110813. [9] H. C. Ozdemir, A. Nazarahari, B. Yilmaz, D. Canad-inc, E. Bedir, R. Yilmaz, U. Unal, H. J. Maier, Machine learning-informed development of high en-tropy alloys with enhanced corrosion resistance, Elec-trochim. Acta 476 (2024) 143722. [10] S. Batzner, A. Musaelian, L. Sun, M. Geiger, J. P. Mailoa, M. Kornbluth, N. Molinari, T. E. Smidt, B. Kozinsky, E(3)-equivariant graph neural networks for data-efficient and accurate interatomic potentials, Nat. Commun. 13 (2022) 2453. [11] D. Bidoggia, N. Manko, M. Peressi, A. Marrazzo, AiiDA-TrainsPot: Towards automated training of neural-network interatomic potentials, Mater. Cloud Arch. (Jan. 2026). [12] B. Deng, P. Zhong, K. Jun, J. Riebesell, K. Han, C. J. Bartel, G. Ceder, CHGNet as a pretrained universal neural network potential for charge-informed atom-istic modelling, Nat. Mach. Intell. 5 (2023) 1031–1041. [13] C. Chen, S. P. Ong, A universal graph deep learn-ing interatomic potential for the periodic table, Nat. Comput. Sci. 2 (11) (2022) 718–728. [14] I. Batatia, D. P. Kovacs, G. Simm, C. Ortner, G. Csanyi, MACE: Higher order equivariant message passing neural networks for fast and accurate force fields, in: Adv. Neural Inf. Process. Syst., Vol. 35, Curran Associates, Inc., 2022, pp. 11423–11436. [15] H. Yang, C. Hu, Y. Zhou, X. Liu, Y. Shi, J. Li, G. Li, Z. Chen, S. Chen, C. Zeni, M. Horton, R. Pinsler, A. Fowler, D. Zügner, T. Xie, J. Smith, L. Sun, Q. Wang, L. Kong, C. Liu, H. Hao, Z. Lu, MatterSim: A deep learning atomistic model across elements, tem-peratures and pressures (2024). arXiv:2405.04967 .12 [16] Y. Park, J. Kim, S. Hwang, S. Han, Scalable parallel algorithm for graph neural network interatomic po-tentials in molecular dynamics simulations, J. Chem. Theory Comput. 20 (11) (2024) 4857–4868. [17] A. M. Ganose, et al., Atomate2: Modular workflows for materials science, Digit. Discov. 4 (7) (2025) 1944– 1973. [18] S. P. Huber, Automated reproducible workflows and data provenance with AiiDA, Nat. Rev. Phys. 4(2022) 431. [19] A. H. Larsen, et al., The atomic simulation environment—a Python library for working with atoms, J. Phys.: Condens. Matter 29 (27) (2017) 273002. [20] J. E. Lennard-Jones, On the determination of molec-ular fields, Proc. R. Soc. A 106 (738) (1924) 463–477. [21] J. Zeng, et al., DeePMD-kit v3: A multiple-backend framework for machine learning potentials, J. Chem. Theory Comput. 21 (9) (2025) 4375–4385. [22] R. A. Buckingham, The classical equation of state of gaseous helium, neon and argon, Proc. R. Soc. A 168 (933) (1938) 264–283. [23] X. Liu, S. Lysgaard, J. Schiøtz, T. Vegge, Fine-tuning universal machine-learned interatomic potentials: Atutorial on methods and applications (2025). arXiv: 2506.21935 .[24] L. Zhang, H. Wang, W. E, An efficient forgetting-aware fine-tuning framework for pretrained univer-sal machine-learning interatomic potentials, npj Com-put. Mater. 11 (2025) 9. [25] E. Bitzek, P. Koskinen, F. Gähler, M. Moseler, P. Gumbsch, Structural relaxation made simple, Phys. Rev. Lett. 97 (17) (2006) 170201. [26] A. Togo, K. Shinohara, I. Tanaka, Spglib: A soft-ware library for crystal symmetry search, Sci. Tech-nol. Adv. Mater. Methods 4 (1) (2024) 2384822. [27] O. H. Nielsen, R. M. Martin, Quantum-mechanical theory of stress and force, Phys. Rev. B 32 (6) (1985) 3780. [28] Y. Le Page, P. Saxe, Symmetry-general least-squares extraction of elastic data for strained materials from ab initio calculations of stress, Phys. Rev. B 65 (10) (2002) 104104. [29] M. Born, K. Huang, Dynamical Theory of Crystal Lattices, Oxford University Press, Oxford, 1954. [30] F. Mouhat, F.-X. Coudert, Necessary and sufficient elastic stability conditions in various crystal systems, Phys. Rev. B 90 (22) (2014) 224104. [31] Q. Wei, X. Peng, Superior mechanical flexibility of phosphorene and few-layer black phosphorus, Appl. Phys. Lett. 104 (25) (2014) 251915. [32] F. Birch, Finite elastic strain of cubic crystals, Phys. Rev. 71 (11) (1947) 809–824. [33] A. Togo, I. Tanaka, First principles phonon calcula-tions in materials science, Scr. Mater. 108 (2015) 1–5. [34] K. Parlinski, Z. Q. Li, Y. Kawazoe, First-principles determination of the soft mode in cubic ZrO 2, Phys. Rev. Lett. 78 (21) (1997) 4063. [35] Y. Hinuma, G. Pizzi, Y. Kumagai, F. Oba, I. Tanaka, Band structure diagram paths based on crystallogra-phy, Comput. Mater. Sci. 128 (2017) 140–184. [36] A. Togo, L. Chaput, T. Tadano, I. Tanaka, Implemen-tation strategies in phonopy and phono3py, J. Phys.: Condens. Matter 35 (2023) 353001. [37] A. Togo, L. Chaput, I. Tanaka, Distributions of phonon lifetimes in Brillouin zones, Phys. Rev. B 91 (9) (2015) 094306. [38] L. Chaput, Direct solution to the linearized phonon Boltzmann equation, Phys. Rev. Lett. 110 (26) (2013) 265506. [39] J. M. Ziman, Electrons and Phonons: The Theory of Transport Phenomena in Solids, Oxford University Press, Oxford, 2001. [40] S. Ramírez, FastAPI: Modern, fast web framework for building APIs with Python 3.7+, Tech. rep., FastAPI (2024). [41] P. K. Narayanan, Engineering machine learning and data REST APIs using FastAPI, Apress, 2024, pp. 191–210. [42] S. Ramírez, Typer, cLI library based on Python type hints (2019). [43] A. Lex, N. Gehlenborg, H. Strobelt, R. Vuillemot, H. Pfister, UpSet: Visualization of intersecting sets, IEEE Trans. Vis. Comput. Graph. 20 (12) (2014) 1983–1992. [44] S. P. Ong, W. D. Richards, A. Jain, G. Hautier, M. Kocher, S. Cholia, D. Gunter, V. L. Chevrier, K. A. Persson, G. Ceder, Python materials genomics (pymatgen): A robust, open-source python library for materials analysis, Comput. Mater. Sci. 68 (2013) 314–319. [45] H. Wang, T. Li, X. Liu, W. Zhu, Z. Chen, Z. Li, J. Yang, mech2d: Anefficient tool for high-throughput calculation of mechanical properties for two-dimensional materials, Molecules 28 (11) (2023) 4337. 13 [46] C. J. Bartel, A. Trewartha, Q. Wang, A. M. Holder, G. Ceder, Physical descriptor for the Gibbs en-ergy of inorganic crystalline solids and temperature-dependent materials chemistry, Nat. Commun. 10 (2019) 4168. [47] A. Jain, et al., Commentary: The Materials Project: A materials genome approach to accelerating materi-als innovation, APL Mater. 1 (1) (2013) 011002. [48] E. H. Lieb, Two theorems on the Hubbard model, Phys. Rev. Lett. 62 (10) (1989) 1201–1204. [49] N. Goldman, D. F. Urban, D. Bercioux, Topological phases for fermionic cold atoms on the Lieb lattice, Phys. Rev. A 83 (6) (2011) 063601. [50] A. Julku, S. Peotta, T. I. Vanhala, D.-H. Kim, P. Törmä, Geometric origin of superfluidity in the Lieb-lattice flat band, Phys. Rev. Lett. 117 (4) (2016) 045303. [51] C. Weeks, M. Franz, Topological insulators on the Lieb and perovskite lattices, Phys. Rev. B 82 (8) (2010) 085310. [52] H. Wang, Y. Yao, H. Song, X. Liu, Z. Chen, W. Chen, W. Zhu, Z. Li, J. Yang, Accelerating two-dimensional materials research via a universal interatomic poten-tial and large language model agent (2025). arXiv: 2506.07043 .[53] T. Bray, The JavaScript Object Notation (JSON) data interchange format, RFC 8259, Internet Engi-neering Task Force (IETF) (2017). [54] G. Kresse, J. Furthmüller, Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set, Phys. Rev. B 54 (16) (1996) 11169– 11186. [55] G. Kresse, J. Furthmüller, Efficiency of ab-initio total energy calculations for metals and semiconductors us-ing a plane-wave basis set, Comput. Mater. Sci. 6 (1) (1996) 15–50. 14 Supporting Information 
+
+# UniMatSim: A High-Throughput Materials Simulation Automation Framework Based on Universal Machine Learning Potentials 
+
+Yanjin Xiang, Yihan Nie, Yunzhi Gao, Haidi Wang ∗, Wei Hu ∗
+
+> ∗Corresponding authors: haidi@hfut.edu.cn (Haidi Wang), whuustc@ustc.edu.cn (Wei Hu)
+
+S1 S1. Cross-Validation and Model Stability Analysis 
+
+To improve the reliability of our screening, we fine-tuned the MatterSim potential, generating four independent model variants trained with distinct random seeds (4, 123, 2025, 8888). Each variant was used to run the complete high-throughput stability workflow—comprising structural optimization, elastic stability screening, phonon calculations, and a final stability assessment—on all candidate Lieb-lattice structures. We then performed a systematic cross-validation of the predictions from the four models. The UpSet plot in Fig. S1 visualizes the agreement among models regarding phonon stability. The analysis reveals that only 393 materials were consistently predicted as stable by all four models. This consensus subset effectively filters out false positives arising from training stochasticity, yielding a high-confidence pool of candidates for subsequent first-principles validation. 
+
+> Figure S1: UpSet plot showing the overlap in phonon-stable materials identified by four independently fine-tuned MatterSim models. A total of 393 materials were predicted as stable by all four models.
+
+This exercise confirms the robustness of UniMatSim for multi-model screening and illustrates how model ensembles can enhance the reliability of high-throughput computational pipelines. 
+
+S2. Details of Density Functional Theory Calculation Parameters 
+
+All density functional theory (DFT) calculations were performed using the Vienna Ab initio Simulation Package (VASP)[54, 55] with the projector-augmented wave (PAW) method. Initial structural relaxations used a plane-wave energy cutoff ( ENCUT ) of 520 eV and the PREC = Accurate setting. Electronic and ionic relaxations were considered converged when the energy change between steps fell below 1 × 10 −5 eV (EDIFF ) and the forces on all atoms were less than 0.01 eV/Å( EDIFFG ), respectively. The exchange-correlation functional was the Becke-Roussel (BO) optimized functional, and spin polarization was included ( ISPIN = 2). Brillouin-zone integration employed a 9 × 9 × 1 Γ -centered k-point mesh with Gaussian or first-order Methfessel-Paxton smearing (ISMEAR = 0 or 1) and a smearing width of 0.05 eV ( SIGMA ). Static self-consistent field calculations for final energies and densities used a finer 13 ×13 ×1 k-mesh and the tetrahedron method with Blöchl corrections ( ISMEAR = −5) to improve accuracy for metallic and narrow-gap systems. The plane-wave cutoff, functional, and spin settings remained unchanged from the relaxation stage. Band structures were computed along the high-symmetry path Γ-M-K-Γ using the same potential and cutoff, with Gaussian smearing ( ISMEAR = 0) applied for smooth dispersion. A vacuum layer of at least 15 Åwas added perpendicular to the layers to avoid spurious interactions between periodic images in these two-dimensional materials. S2 S3. Summary of Crystallographic Parameters for Staggered-Magnetic Lieb Lattice Materials 
+
+Crystallographic parameters for all 59 identified staggered-magnetic Lieb-lattice materials are summarized here, in-cluding optimized lattice constants, unit-cell volumes, and space-group symmetries. All data were obtained from the final relaxed structures of the VASP calculations. The materials crystallize in the two-dimensional layered Lieb-lattice structure, modeled with a vacuum layer along the *c* axis. Variations in the lattice parameters reflect the influence of different chemical compositions. Space-group analysis shows that the symmetry is highly consistent: 58 of the 59 compounds adopt the P-4m2 space group, with Fe 2Te 4Ru being the sole exception (space group Cmm2). 
+
+> Table S1: Basic crystallographic parameters of the 59 staggered-magnetic Lieb-lattice materials
+
+ID Formula Lattice Volume Atoms Space Group 1 Co 2CuSe 4 a = 5 .402 , b = 5 .402 , c = 19 .985 583.16 7 P-42m 2 Co 2WSe 4 a = 5 .487 , b = 5 .487 , c = 19 .985 601.69 7 P-42m 3 CrFe 2S4 a = 5 .257 , b = 5 .257 , c = 19 .985 552.23 7 P-42m 4 CrFe 2Se 4 a = 5 .416 , b = 5 .416 , c = 19 .985 586.31 7 P-42m 5 Fe 2CuTe 4 a = 5 .246 , b = 5 .246 , c = 19 .985 550.02 7 P-42m 6 Fe 2MoSe 4 a = 5 .417 , b = 5 .417 , c = 19 .985 586.45 7 P-42m 7 Fe 2NiS 4 a = 5 .039 , b = 5 .039 , c = 19 .985 507.42 7 P-42m 8 Fe 2NiSe 4 a = 5 .278 , b = 5 .278 , c = 19 .985 556.68 7 P-42m 9 Fe 2OsSe 4 a = 5 .325 , b = 5 .325 , c = 19 .985 566.71 7 P-42m 10 Fe 2PtSe 4 a = 5 .359 , b = 5 .359 , c = 19 .985 574.01 7 P-42m 11 Fe 2ReSe 4 a = 5 .412 , b = 5 .412 , c = 19 .985 585.40 7 P-42m 12 Fe 2ReTe 4 a = 5 .542 , b = 5 .542 , c = 19 .985 613.85 7 P-42m 13 Fe 2TcP 4 a = 5 .446 , b = 5 .446 , c = 19 .985 592.80 7 P-42m 14 Fe 2TcS 4 a = 5 .289 , b = 5 .288 , c = 19 .985 558.94 7 P-42m 15 Fe 2TcSe 4 a = 5 .419 , b = 5 .419 , c = 19 .985 586.90 7 P-42m 16 Fe 2TcTe 4 a = 5 .595 , b = 5 .595 , c = 19 .985 625.54 7 P-42m 17 Fe 2Te 4Pt a = 5 .309 , b = 5 .309 , c = 19 .985 563.38 7 P-42m 18 Fe 2Te 4Rh a = 5 .574 , b = 5 .574 , c = 19 .985 620.91 7 P-42m 19 Fe 2Te 4Ru a = 5 .551 , b = 5 .551 , c = 19 .985 615.46 7 Cmm2 20 Fe 2WSe 4 a = 5 .556 , b = 5 .556 , c = 19 .985 616.90 7 P-42m 21 HfMn 2S4 a = 6 .123 , b = 6 .123 , c = 19 .985 749.16 7 P-42m 22 HfMn 2Se 4 a = 6 .272 , b = 6 .272 , c = 19 .985 786.15 7 P-42m 23 HfMn 2Te 4 a = 6 .503 , b = 6 .503 , c = 19 .985 845.06 7 P-42m 24 Mn 2CrSe 4 a = 5 .852 , b = 5 .852 , c = 19 .985 684.39 7 P-42m 25 Mn 2CrTe 4 a = 6 .082 , b = 6 .082 , c = 19 .985 739.32 7 P-42m 26 Mn 2CuS 4 a = 5 .477 , b = 5 .477 , c = 19 .985 599.54 7 P-42m 27 Mn 2MoS 4 a = 5 .654 , b = 5 .654 , c = 19 .985 638.94 7 P-42m 28 Mn 2MoSe 4 a = 5 .778 , b = 5 .778 , c = 19 .985 667.16 7 P-42m 29 Mn 2NbS 4 a = 5 .828 , b = 5 .828 , c = 19 .985 678.84 7 P-42m 30 Mn 2NbSe 4 a = 5 .982 , b = 5 .982 , c = 19 .985 715.13 7 P-42m 31 Mn 2NbTe 4 a = 6 .212 , b = 6 .212 , c = 19 .985 771.17 7 P-42m 32 Mn 2NiTe 4 a = 5 .412 , b = 5 .412 , c = 19 .985 585.36 7 P-42m 33 Mn 2OsS 4 a = 5 .280 , b = 5 .280 , c = 19 .985 557.21 7 P-42m 34 Mn 2OsSe 4 a = 5 .377 , b = 5 .377 , c = 19 .985 577.80 7 P-42m 35 Mn 2ReSe 4 a = 5 .571 , b = 5 .572 , c = 19 .985 620.36 7 P-42m 36 Mn 2RuS 4 a = 5 .290 , b = 5 .286 , c = 19 .985 558.83 7 P-42m 37 Mn 2RuSe 4 a = 5 .430 , b = 5 .430 , c = 19 .985 589.31 7 P-42m 38 Mn 2TcSe 4 a = 5 .580 , b = 5 .580 , c = 19 .985 622.37 7 P-42m 39 Mn 2TcTe 4 a = 5 .790 , b = 5 .790 , c = 19 .985 670.06 7 P-42m 40 Mn 2Te 4Mo a = 5 .970 , b = 5 .970 , c = 19 .985 712.29 7 P-42m 41 Mn 2Te 4Pd a = 5 .482 , b = 5 .482 , c = 19 .985 600.50 7 P-42m 42 Mn 2VS 4 a = 5 .670 , b = 5 .670 , c = 19 .985 642.53 7 P-42m 43 Mn 2VSe 4 a = 5 .854 , b = 5 .854 , c = 19 .985 684.94 7 P-42m 44 Mn 2VTe 4 a = 6 .099 , b = 6 .099 , c = 19 .985 743.35 7 P-42m S3 Table S1: Basic crystallographic parameters of the 59 staggered-magnetic Lieb-lattice materials (continued) 
+
+ID Formula Lattice Volume Atoms Space Group 45 Mn 2WS 4 a = 5 .656 , b = 5 .656 , c = 19 .985 639.33 7 P-42m 46 TaCo 2Se 4 a = 5 .653 , b = 5 .653 , c = 19 .985 638.69 7 P-42m 47 TaCo 2Te 4 a = 5 .873 , b = 5 .873 , c = 19 .985 689.40 7 P-42m 48 TaMn 2S4 a = 5 .837 , b = 5 .836 , c = 19 .985 680.82 7 P-42m 49 TaMn 2Se 4 a = 5 .981 , b = 5 .981 , c = 19 .985 714.89 7 P-42m 50 TiCo 2S4 a = 5 .445 , b = 5 .445 , c = 19 .985 592.53 7 P-42m 51 TiCo 2Se 4 a = 5 .602 , b = 5 .600 , c = 19 .985 626.92 7 P-42m 52 TiFe 2S4 a = 5 .614 , b = 5 .614 , c = 19 .985 629.87 7 P-42m 53 TiMn 2S4 a = 5 .930 , b = 5 .930 , c = 19 .985 702.87 7 P-42m 54 TiMn 2Te 4 a = 6 .343 , b = 6 .343 , c = 19 .985 804.11 7 P-42m 55 VCo 2S4 a = 5 .310 , b = 5 .310 , c = 19 .985 563.40 7 P-42m 56 VFe 2S4 a = 5 .243 , b = 5 .242 , c = 19 .985 549.31 7 P-42m 57 ZnFe 2S4 a = 5 .353 , b = 5 .353 , c = 19 .985 572.62 7 P-42m 58 ZnFe 2Se 4 a = 5 .451 , b = 5 .451 , c = 19 .985 593.78 7 P-42m 59 ZrMn 2Te 4 a = 6 .519 , b = 6 .519 , c = 19 .985 849.34 7 P-42m 
+
+S4. Complete Atlas of Band Structures for Staggered-Spin Lieb Lattice Materials 
+
+This section presents the full set of DFT-calculated band structures for the 59 Lieb-lattice materials identified by our high-throughput screening as exhibiting staggered-spin magnetic bands. These candidates were selected from an initial pool of 393 structures validated by multi-model cross-validation (employing four MatterSim models fine-tuned with distinct random seeds: 42, 123, 2025, 8888). All band structures were computed with spin-polarized DFT, highlighting their characteristic spin splitting and potential relevance to spintronics and magnetic quantum phenomena. To aid comparison, the materials are grouped logically by their chemical composition. S4 S4.0.1. Cobalt-based Lieb Lattice Materials 
+
+Cobalt-based Lieb lattices display a range of magnetic behaviors stemming from the partially filled 3d orbitals of Co. This subgroup includes various chalcogenide and pnictide compounds. 
+
+Spin-polarized band structure of Co 2CuSe 4. Spin-polarized band structure of Co 2WSe 4.
+
+Spin-polarized band structure of TiCo 2S4. Spin-polarized band structure of TiCo 2Se 4.
+
+Spin-polarized band structure of TaCo 2Se 4. Spin-polarized band structure of TaCo 2Te 4.
+
+S5 Spin-polarized band structure of VCo 2S4.
+
+S6 S4.0.2. Cr-Fe Mixed Lieb Lattice Materials 
+
+The combination of Cr and Fe within the Lieb lattice configuration yields materials exhibiting particularly strong magnetic exchange interactions, which typically result in large spin splitting in the electronic band structure.  
+
+> Spin-polarized band structure of CrFe 2S4.Spin-polarized band structure of CrFe 2Se 4.
+
+S7 S4.0.3. Iron-based Lieb Lattice Materials 
+
+Iron-based Lieb lattices constitute a significant portion of the discovered materials, exhibiting diverse electronic and magnetic properties across various compositions. 
+
+Spin-polarized band structure of Fe 2CuTe 4. Spin-polarized band structure of Fe 2MoSe 4.
+
+Spin-polarized band structure of Fe 2NiS 4. Spin-polarized band structure of Fe 2NiSe 4.
+
+Spin-polarized band structure of Fe 2OsSe 4. Spin-polarized band structure of Fe 2PtSe 4.
+
+S8 Spin-polarized band structure of Fe 2ReSe 4. Spin-polarized band structure of Fe 2ReTe 4.
+
+Spin-polarized band structure of Fe 2TcP 4. Spin-polarized band structure of Fe 2TcS 4.
+
+Spin-polarized band structure of Fe 2TcSe 4. Spin-polarized band structure of Fe 2TcTe 4.
+
+S9 Spin-polarized band structure of Fe 2Te 4Pt. Spin-polarized band structure of Fe 2Te 4Rh. 
+
+Spin-polarized band structure of Fe 2Te 4Ru. Spin-polarized band structure of Fe 2WSe 4.
+
+Spin-polarized band structure of TiFe 2S4. Spin-polarized band structure of VFe 2S4.
+
+S10 S4.0.4. Manganese-based Lieb Lattice Materials 
+
+Manganese-based compounds form the largest subgroup among the identified materials. The high-spin d 5 configuration of Mn 2+ gives rise to strong magnetic exchange interactions and diverse spin-polarized electronic properties. 
+
+Spin-polarized band structure of HfMn 2S4. Spin-polarized band structure of HfMn 2Se 4.
+
+Spin-polarized band structure of HfMn 2Te 4. Spin-polarized band structure of Mn 2CrSe 4.
+
+Spin-polarized band structure of Mn 2CrTe 4. Spin-polarized band structure of Mn 2CuS 4.
+
+S11 Spin-polarized band structure of Mn 2MoS 4. Spin-polarized band structure of Mn 2MoSe 4.
+
+Spin-polarized band structure of Mn 2NbS 4. Spin-polarized band structure of Mn 2NbSe 4.
+
+Spin-polarized band structure of Mn 2NbTe 4. Spin-polarized band structure of Mn 2NiTe 4.
+
+S12 Spin-polarized band structure of Mn 2OsS 4. Spin-polarized band structure of Mn 2OsSe 4.
+
+Spin-polarized band structure of Mn 2ReSe 4. Spin-polarized band structure of Mn 2RuS 4.
+
+Spin-polarized band structure of Mn 2RuSe 4. Spin-polarized band structure of Mn 2TcSe 4.
+
+S13 Spin-polarized band structure of Mn 2TcTe 4. Spin-polarized band structure of Mn 2Te 4Mo. 
+
+Spin-polarized band structure of Mn 2Te 4Pd. Spin-polarized band structure of Mn 2VS 4.
+
+Spin-polarized band structure of Mn 2VSe 4. Spin-polarized band structure of Mn 2VTe 4.
+
+S14 Spin-polarized band structure of Mn 2WS 4. Spin-polarized band structure of TaMn 2S4.
+
+Spin-polarized band structure of TaMn 2Se 4. Spin-polarized band structure of TiMn 2S4.
+
+Spin-polarized band structure of TiMn 2Te 4.
+
+S15 S4.0.5. Other Lieb Lattice Materials 
+
+This subgroup comprises Zn- and Zr-based compounds, illustrating the behavior of non-magnetic or weakly magnetic constituents in the Lieb-lattice framework. 
+
+Spin-polarized band structure of ZnFe 2S4. Spin-polarized band structure of ZnFe 2Se 4.
+
+Spin-polarized band structure of ZrMn 2Te 4.
+
+S16 S5. Machine Learning Interatomic Potential Models Supported by UniMatSim 
+
+> Table S2: Machine Learning Interatomic Potential Models Supported by UniMatSim
+
+Model Name Identifier GitHub 
+
+CHGNet PotentialModelType.CHGNET CederGroupHub/chgnet M3GNet PotentialModelType.M3GNET materialsvirtuallab/m3gnet MACE PotentialModelType.MACE ACEsuit/mace MatterSim PotentialModelType.MATTERSIM microsoft/mattersim SevenNet PotentialModelType.SEVENNET MDIL-SNU/SevenNet S17

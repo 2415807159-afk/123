@@ -1,0 +1,316 @@
+Title: Bayesian Model Calibration with Integrated Discrepancy: Addressing Inexact Dislocation Dynamics Models
+
+URL Source: https://arxiv.org/pdf/2603.11960v1
+
+Published Time: Fri, 13 Mar 2026 00:59:41 GMT
+
+Number of Pages: 25
+
+Markdown Content:
+> DRAFT
+
+Bayesian Model Calibration with Integrated Discrepancy: Addressing Inexact Dislocation Dynamics Models 
+
+Liam Myhill 1∗, Enrique Martinez Saez 1,2 , Sez Russcher 1
+
+1 Department of Mechanical Engineering, Clemson University 
+
+2 Department of Materials Science and Engineering, Clemson University 
+
+∗ lmyhill@clemson.edu 
+
+March 13, 2026 
+
+Abstract 
+
+In this work, a novel approach to Bayesian model calibration routines is devel-oped which reinterprets the traditional definition of model discrepancy as defined by Kennedy and O’Hagan (KOH) [1]. The novelty lies in the integration of δθ (xi) GPs within the simulator, which is approximated as a GP surrogate model to ensure com-putational tractability. This approach assumes that the utilized simulator sufficiently predicts observed trends when calibrated with respect to the application domain, and that all model-form errors can be attributed to uncertainty in the input param-eters. In contrast, the KOH method assumes discrepancy to be inherently decoupled from the simulator, acting as a ’catch-all’ for various sources of model error. The new method is applied to Molecular Dynamics observations of the critical stress to drive dislocation dipoles, and equivalent predictions using a Discrete Dislocation Dynam-ics simulator whose coarse-grained physical interpretation of the underlying physical mechanisms requires calibration against MD observations. We present an overview of similar state-aware calibration routines; differentiate the provided approach through redefining the commonly used discrepancy Gaussian process and benchmark against KOH. A philosophical argument as to when application of the proposed method is appropriate is provided, and future directions for expanding upon this methodology are proposed. 
+
+MSC2020: Primary 00A05, Secondary 00A66. 
+
+1
+
+> arXiv:2603.11960v1 [stat.ME] 12 Mar 2026 DRAFT
+
+1 Introduction 
+
+Bayesian inference is a widely used approach for calibrating computer simulations against experimental observations and quantifying uncertainties in model predictions [2, 3]. The foundational work of Kennedy and O’Hagan (KOH) [1] provided a frame-work for the systematic evaluation of computer simulations via Gaussian Process (GP) surrogates and since then has been applied in numerous fields [4, 5, 6]. The KOH frame-work entails two decoupled GP models. The first, typically referred to as η(·, ·), is a computational model that can be replaced with a GP emulator should the computational cost of the simulations make active data collection intractable. The second, δ(·), describes the discrepancy between the computational model and the observed value from some "ground-truth" experiment that cannot be explained by parameter calibration alone. Over the past two decades, various formulations of this framework have been developed. A re-cent review paper by Sung and Tuo [7] lists many of the fields where the KOH approach has been successfully utilized along with specialized modifications and alternative meth-ods for various types of applications. The KOH framework, however, is notoriously prone to confounding, where multiple θ
+
+and δ(·) combinations explain the observed data. In later work, O’Hagan [8] emphasized the importance of model discrepancy, especially when model emulators are asked to ex-trapolate beyond the bounds of their training data. It was their conviction that "in order to obtain realistic learning about model parameters, or to extrapolate outside the range of the observations, it is important [...] to incorporate model discrepancy [and] model the prior information about it. [8]". Maupin et al. differentiates discrepancy in spatial and temporal regimes, and highlights the role of differing experimental settings on the quality of observation data. [9]. Lei et al. specifically highlights the role of model inadequacy when addressing uncertainty quantification and model-observation discrepancies, specif-ically as it applies to the field of cardiology [4], where model selection also plays a cru-cial role in predicting patient outcomes. The sources of model/observation discrepancy are numerous and have complex interdependence [10]. The generally accepted additive treatment of discrepancy is the main cause for the documented identifiability problem in KOH-based Bayesian calibration methods [5] where generating sufficiently large datasets is financially or computationally infeasible. In the limit that the number of observation data and simulation data approach infinity, there is no identifiability issue; however, such limits are unrealistic when dealing with most computationally expensive models. In this paper, the importance of the discrepancy is explored for problems where the model form is known to be structurally acceptable, but its parameters are known or ex-pected to drift within or through the application domain. With such application in mind, we propose an approach where the model discrepancy term is folded into the simulator and used to correct for within a double-layered GP. This proposed approach is needed for the application in hand where it is assumed a-priori that the model physics are adequate 2DRAFT 
+
+to capture observed trends. The objective of the GP emulator is to account for and learn the significant model-form error that originate from the omitted dependency of model parameters across the application domain between atomistic and continuum simulations of line defects in crystalline materials. 
+
+1.1 State of the art calibration 
+
+Model calibration relative to benchmark observation data is of critical importance, particularly for simulations of physical phenomena where experimental observations are cumbersome to produce. State-of-the-art Bayesian methods involve representing an ob-served phenomenon, y(x) as a summation of Gaussian Processes (GPs) η(·, ·) and δη (·).The KOH formalism is presented in Equation 1: 
+
+y(xi) = η(xi, θi) + δη (xi) + ei (1) The computer model, or simulation η(x, θ), can be considered as a Gaussian Process with nonzero mean function and a covariance provided in Equation 2 [6]. The input vector 
+
+xi refers to physical quantities which are specific to the ith observed phenomenon, θi are a vector of calibration parameters with variable uncertainty, and ei are observation errors which are inherent to any experiment. GPs are typically flexible enough to reflect input data even with a zero mean function as the ’kernel’ or model covariance encodes the simulator behavior: 
+
+Cov (( x, θ), (x′, θ′)) = 1
+
+λη
+
+R(( x, θ), (x′, θ′); ρη ) (2) where {x, θ} are the sampled physical inputs and calibration parameters utilized in the simulator, and {λη , ρη } denote the marginal precision and correlation lengths of the η GP, respectively. The function R is the autocorrelation between input samples to the η model, or the various data-points used to train the GP. The second GP defines the discrepancy between the observed phenomenon and the model ( η) predictions δη (x) and is assumed to have zero mean, and a covariance function given by Equation 3 [6]. 
+
+Cov (x, x′) = 1
+
+λδ
+
+R(( x, x′); ρδ) (3) where {λδ, λη } denote the marginal precision and correlation lengths of the discrepancy 
+
+δ GP, respectively. Summing the η and δη GPs assumes that all of the model-form error can be decoupled from the simulator predictions, indicating that model deficiency is what necessitates correction of the predicted values. For most applications where models are in close agreement with observed phenomenon, the Bayesian calibration approach of Kennedy and O’Hagan (KOH) [11] is suitable. Using 3DRAFT 
+
+such a formalism, one is able to account for model-form biases and construct GP emula-tors which provide metrics of uncertainty quantification that can be used to benchmark the quality of a given model prediction. Such benchmarks are important for evaluating the validity of a model, especially when modeling mechanisms that are critically impor-tant for application-based engineering. Pitfalls of the KOH formalism include the use of cryptic hyperparameters that lack in-terpretability and wariness in the application of trained δη (x) GPs which can over/underestimate the decoupled model-form error, leading to a lack of trust in critical decision making. In an attempt to address these issues, we propose a modification to the conventional methods that account for model discrepancy as a correction to the input parameters. Equation 4 is an adaptation of the previously formulated state-aware Bayesian calibration techniques, which we shall refer to as the ’integrated delta’ formalism: 
+
+y(xi) = η(xi, θi + δθ (xi)) + ei (4) where δθ are zero-mean GPs acting directly on the input parameters to the η model. There exists one δθ GP per calibration parameter, and each varies as a function of the application domain xi.We have termed the formulation provided in Equation 4 the ’integrated delta’ tech-nique due to the embedding of the δθ (xi) within the η GP. The guiding principle behind this technique is that the constitutive relations governing the simulation behavior are cor-rect, and any form of discrepancy can be attributed to differential values of the input parameters across the application domain. It is hypothesized that this implementation may/will • Allow for extrapolative insight for suitable input parameter values • Increase the interpretability of the model discrepancy • Reduce overfitting of observation data in select cases • Improve the identification of critical calibration parameters θi
+
+With regards to the extrapolative capabilities of the model given in Equation 4, it is apparent that its predictive capabilities should improve with respect to Equation 1. Using traditional methods, when outside the physical application {xi} domain, the summation of η and δη often result in poor extrapolation [12]. Typically with KOH, exploration out-side of the prior {θi} domain is generally forbidden in the Markov-chain Monte Carlo (MCMC) sampling used to update posterior distributions for θi. Using the integrated δ
+
+approach, the summation of a fixed θi with δθ (xi) consistently requires η to make predic-tions based on input parameters outside the prior distributions of θi. If the optimal values for θi drift significantly across the application domain, this behavior is ideal and cannot be replicated using a traditional KOH approach. 4DRAFT 
+
+The modifications of Equation 4 force the observation/simulation discrepancy to in-teract with the model emulator directly instead of as a correction factor, which drastically improves the interpretability of the model formulation. Calibration parameters remain interpretable as baseline physical parameters while δθ (xi) become context dependent pa-rameter variation. The discrepancy influences emulator predictions in a way that reflects the sensitivity of the model, which should tighten posterior distributions for θ and im-prove Markov-chain Monte Carlo (MCMC) trajectories. In this formulation, the discrep-ancy exists in a parameter space that must respect the physics injected into simulator models. When dealing with simulation results which are motivated by physics with the aim of generating constitutive models, more physically motivated discrepancy is attrac-tive. Despite the listed model benefits, it is important to note the trade-offs of the proposed modification. Sampling the emulator to make predictions becomes more nonlinear than conventional methods, resulting in an increased computational expense. The identifiabil-ity issue, while addressed, is still highly dependent on the model sensitivity. A physical intuition is still required when selecting critical calibration parameters. There is also an el-evated importance of the prior hyperparameters for δθ (x) due to the existence of multiple 
+
+δθ GPs, each requiring hyperparameter tuning during the initial MCMC steps; however, implementing adaptive step sizes for individual δθ mitigate this issue with little added computational cost. 
+
+1.2 Dislocations and crystal plasticity 
+
+One field that has recently explored verification, validation and uncertainty quantifi-cation (VVUQ) and GPs more vigorously is the integrated computational materials engi-neering (ICME) community. One exciting development which takes advantage of an ac-tive learning [13] approach is the calibration of crystal plasticity flow rules from discrete dislocation dynamics (DDD) simulations. Julian [14] considers the flow rule determin-ing a crystalline metal’s plastic behavior as a GP model. Coupling the GP model with a Bayesian optimization routine to enable active learning allows for a systematic reduction in error with subsequent training cycles. Other work by Akhondzadeh et al. [15] demon-strates how flow rules can be fitted from large DDD datasets; however, their approach makes no attempt at constructing GPs for prior-posterior relationships. This paper out-lines how state of the art Bayesian model calibration practices can be applied to mesoscale dislocation dynamics simulations to improve the model agreement relative to atomistic predictions. Plastic deformation of crystalline materials is caused by the dynamic behavior of line defects, or dislocations [16, 17, 18, 19]. Dislocations control deformation mechanisms in ductile metals through their nucleation, glide, climb, and interactions with boundaries or other dislocations. Material strengthening, or hardening, occurs when networks of dislo-cations arrest the motion of other dislocations through a crystal grain, until a critical stress 5DRAFT 
+
+to continue material deformation has been attained. Dislocations have been visualized ex-perimentally via electron microscopy techniques, confirming plasticity theories observed since the early 1930’s [20]. Today, dislocations are studied via coupled experimentation, theory and computer simulation. One can study dislocations from an atomic perspective using electronic structure meth-ods such as density functional theory (DFT), or molecular dynamics (MD)with empirical interatomic potentials; however, to study dislocation ensembles at larger scales, mesoscale dislocation dynamics models, such as DDD or phase field dislocation dynamics (PFDD) [21] are utilized. DDD is a coarse-grained model which does not have the same phys-ical fidelity as atomistic models; however, it is much less computationally expensive to conduct DDD studies than DFT or MD. To simulate dislocation behavior using DDD, one must first extract important material properties from the atomistic scale such as elastic constants {μ, ν} and dislocation mobility coefficients {Be
+
+0, Bs
+
+0, Be
+
+1, Bs
+
+1} [19]. To avoid singu-larities in the computed stress field about dislocations, a non-singular theory is utilized [16, 22]. This necessitates further coarse-graining of physical mechanisms and the need to fit an effective core size parameter lC. Line tension model parameter αLT are also nec-essary to maintain physical dislocation shapes and mitigate instabilities arising from the ultraviolet catastrophe [23]. Each of these variables is an input into the DDD simulation, and is subject to a degree of parameter uncertainty. For the context of this work, the main characteristic of dislocations that shall be studied is the critical resolved shear stress τCRSS which, when resolved on the dislocation glide plane, results in continuous dislocation glide. A dataset of MD simulations is generated which analyzes τCRSS as a function of the separation distance between dislocation glide planes hd. DDD simulations are then instantiated to explore the application domain {hd},and the variables which influence τCRSS . This subset is identified as {lC, μ, ν}, as the critical stress is independent of dislocation mobility and there exists no curvature to the dislocation lines in the computation of τCRSS for the chosen microstructure. The current work is presented as follows: Section 2 outlines developments to con-ventional calibration routines and how they apply to the defined problem. Subsections 2.3-2.4 define how observation and simulation data is collected. Subsection 2.5 introduces the computational methods to deploy the integrated δ formalism. Section 3 demonstrates the predictive capabilities of the new methodology against the Gaussian Process Models for Simulation Analysis (GPM-SA) [24] implementation of the KOH formalism for the estab-lished DDD dataset. Section 4 discusses the ramifications of the new methodology, and proposes several directions for future work. 6DRAFT 
+
+2 Computational methods and model formulation 
+
+The means by which the computational studies are conducted are described in this sec-tion. Specific processes for data generation are outlined, along with general descriptions of the utilized models. Section 2.5 outlines novel developments to the KOH [8] formalism, which are similar in many respects to previous "state-aware" approaches [25, 26] nested or "deep" GPs [27]. 
+
+2.1 Motivation and critical stress 
+
+The multi-scale modeling of material behavior involves a number of simulation tools capable of spanning several time and length scales. Information is extracted from the smallest scale models of discrete atoms, whose methods suffer from length and timescale limitations, and propagated to larger scale continuum models. In the passing of informa-tion between simulation frameworks, model calibration with accompanied uncertainty quantification is critical for benchmarking the predictive capabilities at larger scales. The primary goal of the DDD simulator is to formulate plastic flow-rules, whereby large en-sembles of interacting dislocations provide insight on loading configurations and rates to permanently deform engineering metals. To accurately capture the critical stress to activate large ensembles of interacting dis-locations, it is important to first ensure the critical stress necessary to drive a single set of interacting dislocations is consistent between MD and DDD. Dislocation-dislocation in-teraction is one of the primary mechanisms for material hardening, along with junction formation; however, we do not consider the role of junction formation in this work. The chosen microstructure and loading orientations do not lend themselves to junction for-mation, due to inability to cross slip for FCC edge Shockley partials whose separation is maintained by a uniform intrinsic staking fault energy. To this effect, a simple dislocation dipole is generated in a face-centered cubic (FCC) Cu MD simulation cell. The simulation cell is replicated in a continuum DDD model, with equivalent dimensions describing the simulation cells and dislocation microstructure. Figure 1 depicts the MD simulation cell, and the continuum DDD simulation cell. Evaluating the degree of certainty in the predictive capabilities of the chosen DDD simulator, with the goal of verifying the information being passed into larger scales, Bayesian calibration is performed on the DDD model, considering MD simulation re-sults as ground truth observations. Any uncertainty, residual variability, or error in the MD simulations caused by shortcomings in the utilized interatomic potential will be ac-counted for in the observation error term ei from Equations 1 and 4. The DDD simulation data, η(x, θ), shall be utilized to train a set of embedded GPs η(x, θ + δ(x)) where both η
+
+and δ are GPs. 7DRAFT 
+
+Figure 1: MD (left) and DDD (right) equivalent simulation cells. Dislocation dipoles dis-sociate into Shockley partials in FCC creating an intrinsic stacking fault colored by the atoms in MD and the shaded field in DDD. The dipole height is the number of glide planes separating dislocation defects. 8DRAFT Figure 2: Plot of τCRSS in both MD (Observed Data) and DDD computed for a simple dipole microstructure. Colorbars indicate the sampled input parameters for each simula-tion. The x-axis indicates the vertical separation distance between the glide planes of each segment of the dipole. Figure 2 demonstrates that for dipole height hd > 18 |⃗ b|, the DDD model predictions are in relatively close agreement with the MD observations; however, for hd < 18 |⃗ b|, there is a significant discrepancy in the model predictions against the observed MD trends. This is caused by a dislocation core interaction ESRC which MD captures, yet DDD neglects in its formulation, based on linear elasticity with infinitesimal displacements. The energy of interacting dislocations takes the form of Equation 5. 
+
+Ed−d = EEL + ESRC (5) where Ed−d is the interaction energy between dislocations, EEL is a long-range elastic in-teraction, and ESRC is a short-range core interaction energy. Each component of Ed−d is accounted for in MD, with explicit core geometries and interactions between individual atoms. The missing core component in DDD explains the systemic increase in the model discrepancy relative to observation data in the low hd regime. Physically, we can attribute the discrepancy between MD observations and DDD simulations to a deficiency of the elastic interaction kernel used to compute dislocation-dislocation interactions. Such model form discrepancies naturally lend themselves to interpretation via sys-temic analysis using Bayesian inference and the additive discrepancy provided in the KOH formalism. The δη GP as shown in Equation 1 would learn a functional form to describe inadequacy of the elastic interaction kernel which could serve as a correction fac-tor if carefully applied to the DDD simulator; however, posterior distributions for the θi
+
+parameters would never converge to acceptable margins. For convergence to occur, the span of simulation data ysim (xi) needs to envelope yobs (xi), and a singular value for θi
+
+independent of xi would be exposed by the posterior. The proposed methodology has no singular θi, as the θi posterior is now updated across the application domain. The θi posterior is generated in this case by reinterpreting the physical meaning of the discrepancy δη → δθ . If one accepts that the model physics 9DRAFT 
+
+are sufficient to describe the observation data, and that the calibration parameters are expected to drift as a function of the application domain, the model-form error can be addressed through manipulation of the input parameters without the need to correct the model physics. The MD-DDD calibration is a natural application of such a development because one can interpret the high density of defects or close proximity of dislocations as a local variation in the material parameters. Experimental studies of a magnesium alloy demonstrate how stress-strain behavior of samples changes with dislocation density [28]. While such phenomena are usually explained by Taylor hardening laws [29] and Kocks-Mecking dislocation multiplication models [30], the phenomenological nature of these models does not address whether or not local changes in elastic properties are present or if the short range core interactions between dislocations can be considered as local changes to material properties. 
+
+2.2 Convergence of DDD simulations 
+
+The selected DDD simulator, MoDELib [19], utilizes a gauss-quadrature interpola-tion to determine important physical quantities along the dislocation line. As with any discrete-point continuum field solver, convergence of the simulation results ought to be evaluated prior to generating viable datasets. In predicting the critical stress necessary to drive dislocation motion, the most critical value for which convergence must be checked is the number of periodic images utilized to approximate a fully periodic simulation cell. The implemented periodicity utilizes a Ewald summation formalism as a truncation pa-rameter, meaning that the user must prescribe an appropriate number of periodic images to achieve a convergent result. Testing the convergence of τCRSS DDD for the given simulation cell shows that NPBC ≥ 8 to attain a converged result. Directly accounting for eight images spread radially about the simulation cell results in 16 3 considered simulation cells, which becomes computationally intractable for larger simulations with multiple dislocations. For the relatively simplistic microstructure shown in the continuum frame of Figure 1, computing dynamics utilizing NPBC = 8 is feasible, but still computationally expensive. A benefit of approaching the calibration problem uti-lizing GP regression is that the η(·, ·) GP can act as a model emulator, which can eliminate the need to continually run DDD in order to predict τCRSS .
+
+2.3 Gathering MD Observations 
+
+MD simulations of the critical stress serve as the ground-truth observation data in this study due to its low cost (relative to physical experiments) and physical fidelity. The uti-lized simulation cell is derived from earlier work [31]. The simulation cells are oriented such that ⃗ x = [ 011 ],⃗ y = [ 1¯ 11 ],⃗ z = [ 21¯ 1]. Edge dislocations are generated into the sim-ulation cell using Atomsk [32] aligned with ⃗ z and Burgers vector in ⃗ x, such that the total dislocation length is 153.177 ˚ A. The dimensions in ⃗ x and ⃗ y are 154.820 ˚ A and 318.07 ˚ A re-10 DRAFT 
+
+spectively. The interatomic potential for Cu developed by Mishin [33] is used to compute atomic interactions. To quantify the critical stress necessary to drive dislocations over one another, MD simulations are conducted whereby a force is applied to a layer of two atomic planes at the top and bottom of the cell in the direction of the Burgers vector resulting in an applied shear stress τxy . The position of the dislocation cores is tracked throughout the simulation trajectory. Upon reaching a critical stress value, the dislocations begin to glide continuously and the global structure becomes unstable. The value of the resolved stress on the glide plane at the onset of simulation cell instability defines the observed τCRSS .
+
+2.4 Latin hypercube sampling of DDD simulations 
+
+A simplistic method for calculating τCRSS in DDD is to compute directly via the bi-section algorithm, whereby multiple DDD runs are instantiated at varying stress levels in accordance with finding a minimum value for τCRSS . Provided a prior distribution for the possible τCRSS values, the average value is selected first, and a simulation is instantiated where the resolved stress on the slip plane, τRSS = τmax +τmin 
+
+2 . The DDD simulator then tracks the plastic distortion throughout the simulation, which is indicative of the relative motion of the dislocation dipoles. Should τRSS < τCRSS , the stress is increased by 12 the span of the possible remaining values. Should τRSS ≥ τCRSS , the stress is reduced by the same magnitude until a minimum value for τCRSS is determined with a provided resolu-tion. The bisection search was chosen for generating data on critical stresses in DDD, due to improved interpretability of the simulation results, despite the existence of alternative numerical methods with higher convergence rates. The ability to run multiple simula-tions in parallel using the Palmetto Cluster [34] allows for fast data generation; however, the computational price is still significant enough to warrant GP surrogate treatment. The applied stress to the DDD simulation cell was specified such that all of the stress is resolved on the glide plane in the direction of the total burgers vector. The partial dislocations being studied sum to edge character, so a stress resolved in the direction of dislocation glide will act on each partial dislocation equally. To facilitate the calibration procedure, large datasets of DDD data were needed to compare with MD simulation results, and to ensure future applicability of the approach abstraction is applied. These DDD datasets ought to sample the identified DDD input parameters along the entire application domain, with specific feature engineering for θi
+
+depending on the relevant observed physical mechanisms yobs (x). Significant input pa-rameters to be evaluated when calibrating τCRSS DDD are ⃗ θ := {μ, ν, lC }, where {μ, ν} are elas-tic constants utilized for solving the elastic constitutive equations (shear modulus and Poison’s ratio, respectively), and {lC } is a spreading parameter utilized to avoid compu-tational singularities. The determination of τCRSS DDD is entirely independent of the effective drag of the dislocation Be f f , so no mobility parameters ought to be considered. To ensure uniform sampling of the application domain and chosen calibration param-11 DRAFT 
+
+eters, a latin-hypercube sample was generated for each {xi, θi} for the calibration of τCRSS DDD .The Scipy.stats library [35] was utilized to facilitate the latin hypercube sampling of the parameter space, which was subsequently passed into MoDELib [19] DDD. 43 individual predictions of τCRSS were generated for the dataset shown in Figure 2, which serves as the simulation data for the proposed calibration routine. 
+
+2.5 Integrated delta formalism 
+
+In this section, we outline the formulation of the "integrated delta" calibration tech-nique, whereby the inherent model-observation discrepancy is accounted for in the emu-lator, as shown in Equation 4. We define modifications to the interpretation of δ(x), and how we can utilize the summation of a constant θ with the δ(x) GP as a synthetic hyper-parameter for training the model emulator η(x, θ + δ(x)) . If one considers θ∗ to be defined as 
+
+θ∗ = θ + δ(x) (6) then the emulator model can be macroscopically represented in the modified form of Equation 1 present in step 4 of Algorithm 1. The embedded discrepancy formulation considers model inadequacy to be caused en-tirely by the omitted dependency of the calibration parameters on xi. Discrepancy in this sense no longer signifies model-observation discrepancy, but rather interprets discrep-ancy as a structured distortion of the simulator inputs. Therefore, a set of δθ GPs are con-structed to predict the parameter drift necessary to attain model-observation agreement with coupled uncertainty quantification. Algorithm 1 outlines the proposed procedure, which has been programmed in Python using both the Scipy [35] and Scikit-learn libraries [36]. The embedded discrepancy hy-perparameters ℓδk and σδk denote the correlation length scale and discrepancy variance, respectively. Each of these parameters are systematically updated using a Metropolis-Hastings [37] accept/reject step. The final parameter that is sampled is the variance in observation noise, denoted as σ2, which represents the ε term in Equation 4 in that 
+
+ε ∼ N (0, σ2). This noise is sampled using a conventional Gibbs approach [38]. 
+
+3 Results 
+
+To benchmark the performance of the integrated delta formalism, we compare the posterior distributions and the predictive capabilities of the emulator against the KOH formalism presented by Gattiker [24]. 12 DRAFT 
+
+Algorithm 1 Bayesian Calibration with Embedded Parameter Discrepancy 
+
+Require: Observed data {(xi, yi)}No
+
+i=1, simulator evaluations {(xj, θj, ysim 
+
+j )}Ns
+
+j=1, initial pa-rameter estimate θ(0).
+
+1: Train a Gaussian process emulator for the simulator: 
+
+η(x, θ) ≈ GP (mη (x, θ), Kη (( x, θ), (x′, θ′))) 
+
+2: Initialize latent discrepancy fields: 
+
+δ(0)
+
+k (xi) = 0, k = 1, . . . , dθ
+
+3: Specify discrepancy priors: 
+
+δk(x) ∼ GP (0, Kδk ), Kδk (x, x′) = ρδk exp − ∥x − x′∥2
+
+λ2
+
+δk
+
+!
+
+4: Specify observation model: 
+
+yi = η(xi, θ⋆(xi)) + εi, εi ∼ N (0, σ2)
+
+5: Define embedded parameter correction: 
+
+θ⋆(x) = θ + δ(x)
+
+6: for t = 1, . . . , T (MCMC iterations) do 
+
+7: for k = 1, . . . , dθ do 
+
+8: Propose an update δ′
+
+k(x) using a Metropolis–Hastings step: 
+
+δ′
+
+k(x) ∼ q(δ′
+
+k(x) | δ(t−1)
+
+k (x)) 
+
+9: Accept or reject based on posterior ratio: 
+
+α = min 
+
+
+
+1, p(y | θ + δ′)p(δ′)
+
+p(y | θ + δ)p(δ)
+
+
+
+10: end for 
+
+11: Update discrepancy hyperparameters (λδk , ρδk ) via Metropolis steps. 
+
+12: Update noise variance σ2 via Gibbs sampling: 
+
+σ2 ∼ p(σ2 | y, θ, δ)
+
+13: Store posterior samples of δ(t), σ2(t).
+
+14: end for 
+
+15: Posterior predictive distribution at input x:
+
+p(y(x) | y) = 
+
+Z
+
+η(x, θ + δ(x)) p(θ, δ | y) dθ dδ
+
+13 DRAFT Figure 3: Predictions of the η(x, θ∗) emulator with coupled uncertainty. 
+
+3.1 Integrated delta calibration of MD-DDD calculations for τCRSS 
+
+Applying the methodology described in Section 2.5 to the dataset shown in Figure 2 containing Nsim = 43 and Nobs = 5 produces a model emulator that converges to the observation data without needing an additive correction by a discrepancy model δη . In-stead, the predictions made using this model emulator utilize θ∗ given in Equation 6 as the calibration parameters sampled to make predictions. Figure 3 demonstrates the predictions of the integrated δ emulator which makes pre-dictions based on the calibration parameters in Figure 4. The posterior mean of the η
+
+GP converges to MD observations, despite being trained exclusively on DDD calcula-tions of τCRSS . The trend is realized due to the extrapolated input parameters θ∗. The results presented in Figure 4 demonstrate how the modeled material parameters ought to be corrected (drift) to ensure that the conventional elastic interaction kernel present within continuum DDD is in agreement with the discrete atomistic results of MD calcu-lations. The short-range core effects in Cu appear to significantly decrease the effective elastic constants {μ, ν} as the local density of dislocations increases (i.e. dipole separation is reduced). The core spreading parameter {lC }, however, appears to have almost no pa-rameter drift throughout the application domain. The non-singular theory of dislocations [16] utilizes this parameter to resolve singularities in stress-strain fields about dislocation cores. It is expected that in the limit of hd → 0, that lC would have some significant change in magnitude. One potential reason for the diminished importance of this param-eter may be the prior distribution utilized in the calibration procedure. The bounds of the 14 DRAFT 
+
+Figure 4: Parameter drift as a function of the normalized application domain. The opaque line and shaded region denote the posterior mean and standard deviation of each discrep-ancy field, while the translucent lines denote sampled δθ (xi) functions. 15 DRAFT 
+
+lC prior distribution are [0.56, 2.88 ], which span only an order of magnitude. Such bounds were chosen as ’typical’ values; however, the non-physicality of the parameter lends a sig-nificant amount of uncertainty to its magnitude. Although exploring broader priors for this specific parameter may elucidate more of its influence in predicting τCRSS , its lack of physical interpretability relative to elastic constants diminishes the value of such a study. Figure 4 also elucidates how ESRC can be represented in the DDD space, as a correction to the local elastic constants. As evidenced by the simulation/observation results in Fig-ure 3, lim hd →5⃗ b− τCRSS DDD ≈ 3 ∗ lim hd →5⃗ b− τCRSS MD , which is a direct consequence of a missing 
+
+ESRC term that would otherwise require a direct correction in the DDD elastic interaction kernel. If one considers ESRC = ESRC (Cijkl (ρd)) , where Cijkl is the 4 th order elastic tensor and ρd is the dislocation density, and extracts the Lamé parameters of Cijkl as a function of ρd which is analogous in our case to hd, then one can directly map the correction to the elastic constants {μ, ν} to an ESRC term which depends on ρd or the local density of dislocation defects. 
+
+3.2 GPMSA calibration of MD-DDD calculations for τCRSS 
+
+Utilizing the KOH formalism via the GPMSA [24] framework on the same dataset provides insight on the model-observation error that is not available when using the in-tegrated delta framework. The decoupling of δη from η explicitly demonstrates which regions of the application domain contain the largest discrepancy. Using this method, the generated posterior distributions determine a singular value for each component of the 
+
+θi parameters ; however, the results lack any conclusive information regarding optimal θ
+
+input. Despite the returned values having the maximum likelihood estimates, the param-eter variation across the application domain does not result in well-converged posteriors. This is because the simulation data does not overlap observations in the low hd regime, and there likely exists no singular value for θi which produces a converged model with a reasonable discrepancy window. Furthermore, the θi parameters that may lead to tighter residuals in the low hd regime would not converge to observation data in the moderate-high hd regime, as evidenced by Figure 4. Despite this deficiency, the GPMSA formalism is still capable of producing a combined 
+
+η(x, θ) + δη (x) emulator converging to the observed data. Figure 5 demonstrates how the summation of η(x, θ) (Fig. 5 top-right) and δ(x) (Fig. 5 bottom-left) converges with observed data (Fig. 5 bottom-right). The trained discrepancy model δ(x) captures the transition from high discrepancy in the low hd regime to the low model-observation error regime beyond hd ≈ 17 ⃗ b. In this case, the discrepancy can be entirely considered as a model inadequacy, or the lack of an explicit ESRC considered in DDD elastic interaction kernels. It should be noted that the form of Figure 5’s posterior reality prediction is most likely an overfitting stemming from noise in the given data, and not physically moti-vated. Specifically regarding the increasing trend at [0.3, 0.4 ] ∈ xnorm i , there is no physical 16 DRAFT 
+
+Figure 5: Model emulator and learned discrepancy from GPMSA [24] 17 DRAFT 
+
+motivation for increasing τCRSS as the distance between isolated, interacting dislocations increases. Analytically, the stress field emanating from each set of partial edge dislocations will decay ∼ 1
+
+r , where r is the radial distance away from the dislocation segment. While the application domain hd differs from r, in that hd is the vertical separation between the active glide planes, analytically there should be no increase of τCRSS as hd increases. The overfitting is likely driven by the large predictive distribution for δη in this region and the preceding regions. The integrated delta approach does not show the same signs of over-fitting, as the smooth transition of the calibration parameters produce a monotonically decreasing trend for τCRSS .
+
+4 Discussion 
+
+The proposed integrated delta method provides context on the source of model-form errors. However, it is only appropriate for models in which the underlying mechanisms are adequately solved via its respective numerical method. Prior information on the qual-ity of a model is difficult to evaluate systematically without expert insight as to the various inputs of the model and their significance. In the context of the given study, the physi-cal scale of the simulations increases the degree of uncertainty further. One cannot easily make conclusive remarks about physical phenomena at the nanometer scale without hav-ing dedicated significant time to learning the intricacies of material defects and how they influence deformation. Furthermore, treating MD simulations as concrete observations, while pragmatic, does not guarantee agreement with physical observations. The quality of MD predictions scales with respect to the quality of the utilized interatomic potential. While the authors do not anticipate much observation error for a relatively simple mate-rial such as the utilized Cu single-crystal, material complexity will add another layer of uncertainty to MD predictions that will require careful treatment. The following subsec-tions outline potential modifications to the integrated delta formalism with cost-benefit analysis (4.1), and how the current results may be utilized to improve the DDD model (4.2). 
+
+4.1 Proposed improvements to the integrated delta method 
+
+One major pitfall of the integrated delta formalism, as implemented in this study, is the inability to attribute model form error to any source outside of calibration parameter uncertainty. Equation 4 inherently assumes that all model/observation discrepancy can be described by the drift of calibration parameters across the application domain. This sacrifice may be acceptable in some cases. However, when simulation frameworks do not adequately capture the physical trends of observations, an explicit consideration of discrepancy bias as an additive corrective term ( δη ) becomes necessary. This treatment would take the form of Equation 7 18 DRAFT 
+
+y(x) = η(x, θ∗) + δη (x) + ε (7) where θ∗ = θ + δθ (x), and δη and δθ describe model form discrepancy and calibration parameter discrepancy, respectively. The added complexity of such a modification is that differentiating δ into two components introduces both interparameter and intraparameter confounding. The current method only deals with intraparameter confounding, which may cause issues in the event that calibration parameters are significantly correlated. The current formalism utilizes nested or deep [27] GPs where Nδ = Nθ . Each δθ GP is aware of the contributions of each other δθ GP, hence the intraparameter confounding. To address the issues of interparameter confounding, the authors propose a multi-step calibration process which is left for future work. 
+
+4.2 Implementing improvements to the DDD model 
+
+With regards to improving the current DDD simulator, the results of each calibration routine provide a number of methods for correcting the predictions of future simulations. Calculating τCRSS is a relatively simplistic use of the DDD model, as its mesoscale repre-sentation of material defects naturally lends its uses to the computation of higher-order mechanisms such as macroscale flow rules [15]. One would be remiss, however, to fit such rules without first ensuring model agreement with either theory or observation data for metrics like τCRSS .The simplest way to correct the DDD simulator based on the calibration results would be to modify the effective elastic constants as a function of radial dislocation density (or proximity). The necessary modifications could be extracted from Figure 4. One drawback of such an approach is that the modifications to the elastic constants are likely dependent on both the material and dislocation character, necessitating a much larger DDD dataset to fully account for all the possible dislocation characters (edge/screw/mixed). Even with character considered in the application domain, the results are still material dependent, and the process would need to be repeated to fully calibrate the dislocation behavior for a given crystal. The different core structures of dislocations in different materials may bear some similarities dependent on the crystal structure of the material system but that does not guarantee that the elastic parameters will drift in the same way as a function of radial defect density. Furthermore, the primary set of equations being solved within the DDD simulator are Green’s functions, which are used to compute the local stress-strain at discrete points in the simulation cell. One of the fundamental assumptions of using the Green’s function is that the elastic constants do not vary in the spatiotemporal domain, which raises con-cern with the proposed correction method. If one interprets ESRC = ESRC (ρd, Cijkl ) ≈
+
+ESRC (hd, lC, μ, ν), then one could consider an ’effective’ set of elastic constants {μ, ν} that modify the evaluated Green’s function to agree with atomistic data. These effective elastic 19 DRAFT 
+
+constants are an approximation to a necessary modification to the conventional Green’s function formalism, which may account for spatially varied elastic constants. A more complex method for improving the DDD model would be to utilize the re-sults of the KOH δη discrepancy model and apply a correction term to the elastic interac-tion kernel directly. Such a technique would lack the interpretability of creating effective elastic coefficients, but nevertheless account for the missing ESRC in DDD simulations. The method would likely suffer the same pitfalls as the implementation of the integrated delta results, in that more verification would be required to verify dislocation character and crystal structure/material dependence. The proposed implementation of calibration results to improve the DDD model is left as future work. 
+
+5 Conclusions 
+
+In this work, we have presented a novel approach to Bayesian model calibration, with the goal of refining mesoscale material defect models to atomistic observations. The mod-ification to the KOH formalism was necessitated by significant model form error in the predictions of a critical stress between DDD and MD that could be explained by cali-bration parameter drift. The model form error stems from physical interactions that are present in the MD computations but absent from the DDD predictions of dislocation tra-jectories. Through accounting for the discrepancy δ between the MD and DDD simulator directly within the η emulator, the trend of τCRSS MD (hd) was recovered without the need for an external discrepancy GP. Future work aims to improve the DDD model utilizing inte-grated discrepancy, modifications to the integrated discrepancy, and with the overarching goal of propagating information to materials models at even larger length and time scales. 
+
+Acknowledgments 
+
+The authors acknowledge support from the CU-SRNL collaboration which funded this research venture. The authors acknowledge the intellectual contributions of Dr. Giacomo Po and Dr. Nikhil Admal, and appreciate their ongoing collaboration. This research used in part resources on the Palmetto Cluster at Clemson University under National Science Foundation awards MRI 1228312, II NEW 1405767, MRI 1725573, and MRI 2018069. The views expressed in this article do not necessarily represent the views of NSF or the United States government. 20 DRAFT 
+
+References 
+
+[1] Marc C. Kennedy and Anthony O’Hagan. Bayesian calibration of computer models. 
+
+Journal of the Royal Statistical Society: Series B (Statistical Methodology) , 63(3):425–464, 2001. doi: 10.1111/1467-9868.00294. [2] G. S. Flynn, E. Chodora, S. Atamturktur, and D. A. Brown. A Bayesian Inference-Based Approach to Empirical Training of Strongly Coupled Constituent Models. Journal of Verification, Validation and Uncertainty Quantification , 4(2): 021005, June 2019. ISSN 2377-2158, 2377-2166. doi: 10.1115/1.4044804. URL https://asmedigitalcollection.asme.org/verification/article/doi/10. 1115/1.4044804/975534/A-Bayesian-InferenceBased-Approach-to-Empirical .[3] Matthew Plumlee. Bayesian Calibration of Inexact Computer Models. Journal of the American Statistical Association , 112(519):1274–1285, July 2017. ISSN 0162-1459, 1537-274X. doi: 10.1080/01621459.2016.1211016. URL https://www.tandfonline.com/ doi/full/10.1080/01621459.2016.1211016 .[4] Chon Lok Lei, Sanmitra Ghosh, Dominic G. Whittaker, Yasser Aboelkassem, Kylie A. Beattie, Chris D. Cantwell, Tammo Delhaas, Charles Houston, Gustavo Montes No-vaes, Alexander V. Panfilov, Pras Pathmanathan, Marina Riabiz, Rodrigo Weber dos Santos, John Walmsley, Keith Worden, Gary R. Mirams, and Richard D. Wilkin-son. Considering discrepancy when calibrating a mechanistic electrophysiology model. 378(2173):20190349. ISSN 1364-503X. doi: 10.1098/rsta.2019.0349. URL 
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7287333/ .[5] You Ling and Sankaran Mahadevan. Challenging issues in bayesian calibration of multi-physics models. In 54th AIAA/ASME/ASCE/AHS/ASC Structures, Structural Dynamics, and Materials Conference . American Institute of Aeronautics and Astronau-tics. doi: 10.2514/6.2013-1874. URL https://arc.aiaa.org/doi/abs/10.2514/6. 2013-1874 . _eprint: https://arc.aiaa.org/doi/pdf/10.2514/6.2013-1874. [6] Dave Higdon, James Gattiker, Brian Williams, and Maria Rightley. Computer Model Calibration Using High-Dimensional Output. Journal of the American Sta-tistical Association , 103(482):570–583, June 2008. ISSN 0162-1459, 1537-274X. doi: 10.1198/016214507000000888. URL https://www.tandfonline.com/doi/full/10. 1198/016214507000000888 .[7] Chih-Li Sung and Rui Tuo. A review on computer model calibration. WIREs Com-putational Statistics , 16(1):e1645, January 2024. ISSN 1939-5108, 1939-0068. doi: 10.1002/wics.1645. URL https://wires.onlinelibrary.wiley.com/doi/10.1002/ wics.1645 .21 DRAFT 
+
+[8] Jenny Brynjarsdottir and Anthony O’Hagan. Learning about physical parameters: the importance of model discrepancy. Inverse Problems , 30(11):114007, November 2014. ISSN 0266-5611, 1361-6420. doi: 10.1088/0266-5611/30/11/114007. URL 
+
+https://iopscience.iop.org/article/10.1088/0266-5611/30/11/114007 .[9] Kathryn A. Maupin and Laura P. Swiler. Model discrepancy calibration across exper-imental settings. 200:106818. ISSN 0951-8320. doi: 10.1016/j.ress.2020.106818. URL 
+
+https://www.sciencedirect.com/science/article/pii/S0951832019301802 .[10] Paul D. Arendt, Daniel W. Apley, and Wei Chen. Quantification of model uncertainty: Calibration, model discrepancy, and identifiability. 134(100908). ISSN 1050-0472. doi: 10.1115/1.4007390. URL https://doi.org/10.1115/1.4007390 .[11] M. J. Bayarri, J. O. Berger, J. Cafeo, G. Garcia-Donato, F. Liu, J. Palomo, R. J. Parthasarathy, R. Paulo, J. Sacks, and D. Walsh. Computer model validation with functional output. The Annals of Statistics , 35(5), October 2007. ISSN 0090-5364. doi: 10.1214/009053607000000163. URL http://arxiv.org/abs/0711.3271 .arXiv:0711.3271 [stat]. [12] Lingjing Kong, Guangyi Chen, Petar Stojanov, Haoxuan Li, Eric P. Xing, and Kun Zhang. Towards Understanding Extrapolation: a Causal Lens, January 2025. URL 
+
+http://arxiv.org/abs/2501.09163 . arXiv:2501.09163 [cs]. [13] Brian J. Williams, Jason L. Loeppky, Leslie M. Moore, and Mason S. Macklem. Batch sequential design to achieve predictive maturity with calibrated computer mod-els. Reliability Engineering & System Safety , 96(9):1208–1219, September 2011. ISSN 09518320. doi: 10.1016/j.ress.2010.04.017. URL https://linkinghub.elsevier.com/ retrieve/pii/S095183201100072X .[14] Nicholas Julian, Giacomo Po, Enrique Martinez, Nithin Mathew, and Danny Perez. Active learning of a crystal plasticity flow rule from discrete dislocation dynamics simulations. [15] Sh. Akhondzadeh, Ryan B. Sills, Nicolas Bertin, and Wei Cai. Dislocation density-based plasticity model from massive discrete dislocation dynamics database. 145: 104152. ISSN 00225096. doi: 10.1016/j.jmps.2020.104152. URL https://linkinghub. elsevier.com/retrieve/pii/S0022509620303859 .[16] Wei Cai, Athanasios Arsenlis, Christopher R. Weinberger, and Vasily V. Bula-tov. A non-singular continuum theory of dislocations. 54(3):561–587. ISSN 0022-5096. doi: https://doi.org/10.1016/j.jmps.2005.09.005. URL https://www. sciencedirect.com/science/article/pii/S002250960500195X .22 DRAFT 
+
+[17] A. H. Cottrell. Thermally activated plastic glide. 82(2):65–70. ISSN 0950-0839, 1362-3036. doi: 10.1080/09500830110104297. URL https://www.tandfonline.com/doi/ full/10.1080/09500830110104297 .[18] Elizabeth H. Mann. An elastic theory of dislocations. 199(1058):376–394. ISSN 0080-4630. doi: 10.1098/rspa.1949.0144. URL https://doi.org/10.1098/rspa.1949. 0144 .[19] Giacomo Po, Yinan Cui, David Rivera, David Cereceda, Tom D. Swinburne, Jaime Marian, and Nasr Ghoniem. A phenomenological dislocation mobility law for bcc metals. 119:123–135, . ISSN 13596454. doi: 10.1016/j.actamat.2016.08.016. URL 
+
+https://linkinghub.elsevier.com/retrieve/pii/S1359645416305948 .[20] Geoffrey Ingram Taylor. The mechanism of plastic deformation of crystals. part i.—theoretical. 145(855):362–387. ISSN 0950-1207, 2053-9150. doi: 10.1098/rspa. 1934.0106. URL https://royalsocietypublishing.org/rspa/article/145/855/ 362/3682/The-mechanism-of-plastic-deformation-of-crystals .[21] Xiaoyao Peng, Abigail Hunter, Irene J. Beyerlein, Ricardo A. Lebensohn, Kaushik Dayal, and Enrique Martinez. Non-orthogonal computational grids for study-ing dislocation motion in phase field approaches. 200:110834. ISSN 09270256. doi: 10.1016/j.commatsci.2021.110834. URL https://linkinghub.elsevier.com/ retrieve/pii/S0927025621005528 .[22] Giacomo Po, Markus Lazar, Nikhil Chandra Admal, and Nasr Ghoniem. A non-singular theory of dislocations in anisotropic crystals. 103:1–22, . ISSN 07496419. doi: 10.1016/j.ijplas.2017.10.003. URL https://linkinghub.elsevier.com/retrieve/ pii/S0749641917304540 .[23] Max Boleininger, Thomas D. Swinburne, Laurent Dupuy, and Sergei L. Dudarev. Ul-traviolet catastrophe of a fluctuating curved dislocation line. 2(3):032033. ISSN 2643-1564. doi: 10.1103/PhysRevResearch.2.032033. URL https://link.aps.org/doi/ 10.1103/PhysRevResearch.2.032033 .[24] James Gattiker, Kary Myers, Brian Williams, Dave Higdon, Marcos Carzolio, and Andrew Hoegh. Gaussian process-based sensitivity analysis and bayesian model calibration with GPMSA. In Handbook of Uncertainty Quantification , pages 1–41. Springer, Cham. ISBN 978-3-319-11259-6. doi: 10.1007/978-3-319-11259-6_58-1. URL 
+
+https://link.springer.com/rwe/10.1007/978-3-319-11259-6_58-1 .[25] Dr Atamturktur. STATE-AWARE CALIBRATION FOR INFERRING SYSTEMATIC BIAS IN COMPUTER MODELS OF COMPLEX SYSTEMS. 23 DRAFT 
+
+[26] Matthew Plumlee. Computer Model Calibration with Confidence and Consis-tency. Journal of the Royal Statistical Society Series B: Statistical Methodology , 81(3): 519–545, July 2019. ISSN 1369-7412, 1467-9868. doi: 10.1111/rssb.12314. URL 
+
+https://academic.oup.com/jrsssb/article/81/3/519/7048342 .[27] Andreas C. Damianou and Neil D. Lawrence. Deep Gaussian Processes, March 2013. URL http://arxiv.org/abs/1211.0358 . arXiv:1211.0358 [stat]. [28] Woei-Shyan Lee and Cheng-Wen Chou. Dynamic deformation behaviour and dis-location substructure of AZ80 magnesium alloy over a wide range of tempera-tures. 183:03010. ISSN 2100-014X. doi: 10.1051/epjconf/201818303010. URL 
+
+https://www.epj-conferences.org/10.1051/epjconf/201818303010 .[29] Taylors relation - an overview | ScienceDirect topics. URL https://www. sciencedirect.com/topics/engineering/taylors-relation .[30] C. Keller and E. Hug. Kocks-mecking analysis of the size effects on the mechan-ical behavior of nickel polycrystals. 98:106–122. ISSN 0749-6419. doi: 10.1016/ j.ijplas.2017.07.003. URL https://www.sciencedirect.com/science/article/pii/ S0749641917302620 .[31] Mohammadhossein Nahavandian, Liam Myhill, and Enrique Martinez. Rate analy-sis of dislocations overcoming elastic barriers: Effects of entropy and langevin fric-tion via kramers theory. URL http://arxiv.org/abs/2504.21246 .[32] Pierre Hirel. Atomsk: A tool for manipulating and converting atomic data files. 
+
+Computer Physics Communications , 197:212–219, 2015. doi: 10.1016/j.cpc.2015.07.012. URL https://doi.org .[33] Y. Mishin, M. J. Mehl, D. A. Papaconstantopoulos, A. F. Voter, and J. D. Kress. Structural stability and lattice defects in copper: Ab initio , tight-binding, and embedded-atom calculations. 63(22):224106. ISSN 0163-1829, 1095-3795. doi: 10. 1103/PhysRevB.63.224106. URL https://link.aps.org/doi/10.1103/PhysRevB. 63.224106 .[34] Asher Antao, James Daly Burton, Douglas Dawson, Jill Gemmill, Zachary Gerstener, Ben Godfrey, Scott Groel, Zach Jordan, Becky Ligon, Dane Smith, et al. Modern-izing clemson university’s palmetto cluster: Lessons learned from 17 years of hpc administration. In Practice and Experience in Advanced Research Computing 2024: Hu-man Powered Computing , pages 1–9. 2024. [35] Eric Jones, Travis Oliphant, Pearu Peterson, et al. SciPy: Open source scientific tools for Python, 2001–. 24 DRAFT 
+
+[36] F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blon-del, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duchesnay. Scikit-learn: Machine learning in Python. 
+
+Journal of Machine Learning Research , 12:2825–2830, 2011. [37] Christian P. Robert. The metropolis-hastings algorithm. URL http://arxiv.org/ abs/1504.01896 .[38] Ilker Yildirim. Bayesian inference: Gibbs sampling. 25

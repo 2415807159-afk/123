@@ -1,0 +1,1949 @@
+Title: 2603.16457v1.pdf
+
+URL Source: https://arxiv.org/pdf/2603.16457v1
+
+Published Time: Wed, 18 Mar 2026 01:09:26 GMT
+
+Number of Pages: 43
+
+Markdown Content:
+1
+
+Tritium as an Unambiguous Isotopic Tracer for Nanoscale Hydrogen Analysis 
+
+by Atom Probe Tomography 
+
+Maria Vrellou 1*, Alexander Welle 2,3 , Stefan Wagner 1, Marco Weber 1, Rolf Rolli 1, Hans -
+
+Christian Schneider 1, A strid Pundt 1,2 , Xufei Fang 1* , Christoph Ki rchlechner 1
+
+> 1
+
+Institute for Applied Materials, Karlsruhe Institute of Technology, Kaiserstr. 12, 76131 
+
+Karlsruhe , Germany 
+
+> 2
+
+Karlsruhe Nano Micro Facility (KNMFi), Karlsruhe Institute of Technology, Kaiserstr. 
+
+12, German y
+
+> 3
+
+Institute of Functional Interfaces , Karlsruhe Institute of Technology, Kaiserstr. 12, 
+
+76131 Karlsruhe , Germany 
+
+*Corresponding authors: maria.vrellou @kit.edu (M. V.); xufei.fang@kit.edu (X. F .)
+
+Abstract 
+
+Accurate nanoscale detection of hydrogen is essential for understanding hydrogen -
+
+related phenomena in materials , yet conventional deuterium tracing is often 
+
+complicated by residual background hydrogen. This study evaluates tritium as an 
+
+unambiguous isotopic marker for nanoscale hydrogen analysis in metals using atom 
+
+probe tomo graphy (APT). Titanium was selected for its ability to incorporate hydrogen 
+
+isotopes, providing a suitable platform for tritium detection. Time -of -flight secondary 
+
+ion mass spectrometry (ToF -SIMS) and electron backscatter diffraction ( EBSD ) were 
+
+performed prior to tritium charging to characterize the initial composition and 
+
+microstructure. APT analysis in laser -mode before and after tritium charging, at three 
+
+post -charging intervals, enabl es tracking of tritium incorporation over time. Thermal 2
+
+de sorption analysis (TDA) confirmed the presence of tritium and complemented the 
+
+SIMS measurements, highlighting the role of the surface oxide layer in modulating 
+
+tritium release. This work serves as a fundamental benchmarking study for leveraging 
+
+tritium and APT as a combined tool for understanding the nanoscale location of 
+
+hydrogen in materials, being relevant for interpreting local processes related to e.g., 
+
+hydrogen embrittlemen t. 
+
+Keywords: Atom probe tomography , hydrogen isotopes , tritium , titanium , thermal 
+
+desorption analysis 3
+
+1. Introduction 
+
+Hydrogen and its isotopes protium, deuterium , and tritium are central to the energy 
+
+transition. They hold promise as carbon -free fuels for future energy systems and as 
+
+essential elements in fusion reactors (Lu ís et al., 2021; Villari et al., 2025) . At the same 
+
+time, their interaction with structural metallic materials such as high -strength steels 
+
+can severely compromise the mechanical integrity, a phenomenon known as hydrogen 
+
+embrittlement (HE). This degradation process threatens the safety and durability of 
+
+critical infrastructures, making it vital to understand hydrogen behavior in advanced 
+
+microstructures, whose properties critically depend on defect structures such as 
+
+inte rfaces, dislocations, and point defects. 
+
+Atom probe tomography (APT) enables near -atomic -scale mapping of hydrogen and 
+
+its isotopes , and remains unique in providing three -dimensional spatial and 
+
+compositional information with quasi -atomic spatial resolution within materials (Gault 
+
+et al., 2025a, 2021) . Nevertheless, accurately quantifying hydrogen using APT 
+
+remains a major challenge due to the combined effects of hydrogen’s hig h mobility, its 
+
+ubiquitous presence in experimental environments, and several intrinsic limitations of 
+
+the APT technique (Chen et al., 2023; Kolli, 2017a) .
+
+The A PT sample preparation procedures may alter the hydrogen content of the 
+
+specimen. Hydrogen’s interstitial nature and exceptionally high diffusivity in metals 
+
+even at low temperatures make it prone to rapid ad/ab sorption and desorption, 
+
+especially at ambient and higher temperatures. Consequently, specimen preparation 
+
+(mechanical polishing, electropolishing, or focused ion beam (FIB) milling) and transfer 
+
+steps can alter the hydrogen content and distribution . These processes may also lead 
+
+to hydrogen desorption in hydrogen -charged specimens . Th ese issue s are 4
+
+exacerbated in the small, needle -shaped APT specimen s, where the high surface -to -
+
+volume ratio accelerates hydrogen loss (Suzuki and Takai, 2012) . To mitigate t hese 
+
+effects, cryogenic FIB preparation has been adopted to suppress hydrogen uptake 
+
+and prevent hydride formation during specimen milling (Chang et al., 2018; Mouton et 
+
+al., 2021) . Vacuum -cryogenic transfer systems using dedicated shuttles are employed 
+
+to minimize outgassing and the ingress of atmospheric moisture during specimen 
+
+handling (Che n et al., 2017; McCarroll et al., 2020) .
+
+Even when specimens are prepared carefully, additional complications arise from the 
+
+analysis environment itself. Despite the ultra -high vacuum (UHV) conditions in the APT 
+
+analysis chamber, a certain level of residual gas remains , tha t needs to be considered 
+
+when analyzing APT data. Among these species, hydrogen is typically the dominant 
+
+component, mainly originating from the continuous outgassing of the stainless -steel 
+
+chamber walls and in -vacuum parts of the atom probe instrument (Felfer et al., 2022; 
+
+Gupta et al., 2015; Hong et al., 2008) . The residual H ₂ molecules may adsorb onto the 
+
+surface of the APT specimen, where they are ionized and evaporated under the strong 
+
+electrostatic field at the tip apex. This process produces H ⁺, H ₂⁺ (Chen et al., 2020, 
+
+2023; Gault et al., 2025a; K olli, 2017b) , and sometimes – depending on several 
+
+parameters such as the experimental protocol and the material – even H₃⁺ ions (Chen 
+
+et al., 2020; Ernst and Block, 1983 .; Reckz ügel et al., 1995; Stepie ń and Tsong, 1998) ,
+
+which appear in the mass -to -charge -state ratio spectra as peaks at 1, 2, and 3 Da ,
+
+respectively .
+
+The 1 Da peak corresponds to protons (H ⁺), which may arise via (i) direct ionization of 
+
+a H atom , (i i) double ionization of the molecule followed by field dissociation into two 
+
+H⁺ ions, or (ii i) single ionization leading to the formation of H ⁺ and a neutral H⁰ atom, 
+
+the latter being undetectable in APT. As a result, the 1 Da signal is predominantly 5
+
+attributed to residual background hydrogen (Felfer et al., 2022) . The 2 Da peak 
+
+corresponds to molecular H ₂⁺ ions produced by the direct ionization of adsorbed H ₂.
+
+A much smaller contribution to the 2 Da peak may arise from D ⁺, whose natural 
+
+isotopic abundance is only 0.0145 at .% (Gault et al., 2025a) . The formation of H ₂⁺ is 
+
+particularly favored under laser -pulsing conditions, as the lower effective electrostatic 
+
+fields associated with laser assistance reduce the likelihood of molecular dissociation 
+
+into protons  (Breen et al., 2020; Chen et al., 2020, 2019; Kim and Seidman, 2015; 
+
+Tsong et al., 1983) . The 3 Da peak corresponds to H ₃⁺ . While neutral H ₃ is unstable 
+
+in free space, H ₃⁺ is a stable molecular ion and a field -induced, surface -mediated 
+
+spec ies involving interactions between adsorbed H and H ₂ under high electrostatic 
+
+fields according to the reaction sequence (Ernst and Block, 1983 .; Reckz ügel et al., 
+
+1995; Stepie ń and Tsong, 1998; Tsong et al., 1983) :
+
+𝐻 2 + 𝐻 → 𝐻 3 → 𝐻 3 
+
+> +
+
++ 𝑒 − (1) 
+
+Under the APT electrostatic field, the transient H ₃ complex can be stabilized and 
+
+ionized upon formation, allowing H ₃⁺ to be desorb ed and detected before field -induced 
+
+dissociation occurs (Kolli, 2017b) . The observation of H ₃⁺ ions in the mass spectra is 
+
+sensitive to experimental parameters such as field strength, laser pulse energy, and 
+
+specimen apex temperature (Kolli, 2017b) . High -voltage pulsing can be used to 
+
+suppress H ₂⁺ and H ₃⁺ formation and amplifies the H ⁺ signal at 1 Da by dissociating 
+
+molecular hydrogen into H ⁺ (Chang et al., 2019; Takahashi et al., 2018) . Charge -state 
+
+ratio monitoring of the majority lattice element serves as an in situ indicator of local 
+
+electrostatic field strength and aids in the interpretation of hyd rogen -related peaks 
+
+(Breen et al., 2020; Diagne et al., 2024; Kingham, 1982; Shariq et al., 2009; Tegg et 
+
+al., 2024) . Mo reover, the use of titanium -alloy chamber components and getter 6
+
+materials has been shown to minimize residual hydrogen within the analysis 
+
+environment (Felfer et al., 2022) .
+
+Apart from the well -known diffusion mechanisms, athermal tunneling -mediated 
+
+migration of hydrogen (Gault et al., 2025b) can also influence the measured 
+
+distributions. Light ele ments , and particularly hydrogen isotopes, can penetrate energy 
+
+barriers via quantum tunnelling more readily than heavier species (“Tunneling | 
+
+Institute for Theoretical Chemistry | University of Stuttgart, ” 2025 ). Tunnelling effects 
+
+become increasingly significant at low temperatures, where classical over -the -barrier 
+
+processes slow down while tunnelling rates remain substantial (K ästner, 2014) . As a 
+
+resu lt, isotope -dependent mobility and trap occupancy may be modified during 
+
+specimen preparation and cold -stage handling, and isotope effects arising from 
+
+tunneling should therefore be considered when interpreting APT data. So, although 
+
+cryogenic preparation, transfer, and APT analysis conditions strongly suppress 
+
+thermally activated diffusion, quantum -driven migration cannot be entirely excluded. 
+
+To overcome the limitations imposed by residual hydrogen, isotopic labelling is often 
+
+employed. Deuterium (²H) is widely used as a practical surrogate for hydrogen 
+
+(Gemma et al., 2007; Takahashi et al., 2010) because of its lower diffusion coefficient 
+
+and its significantly lower tunnelling probability (Maxelon et al., 2001) , making 
+
+deuterium less prone to migrate within the nano -specimen especially during the 
+
+analysis at low temperatures (Gemma et al., 2009) . Indeed, previous APT studies 
+
+have demonstrated that deuterium distributions consistent with expected trapping 
+
+behavior can be measured at temperatures below ~30 K (Gemma et al., 2012) .
+
+However , the detection of deuterium (²H ⁺) is often complicated by the limited mass 
+
+resolution of APT, which prevents a clear distinction between deuterium peaks and 
+
+the background signal from the molecular ion H ₂⁺ mainly originating from residual 7
+
+hydrogen. In contrast, such a distinction can be achieved using ToF -SIMS, owing to 
+
+its considerably higher mass resolution compared to that of APT, although this comes 
+
+at the expense of quantitative accuracy. 
+
+To address these analytical challenges, tritium (³H ) has recently been employed as an 
+
+isotopic tracer in APT studies of HE in t winning -induced plasticity ( TWIP ) steels 
+
+(Khanchandani et al., 2023) , as its higher atomic mass, low diffusivity , and extremely 
+
+low natural abundance (about 10 ⁻¹⁸ at. % (“Tritium | Radioactive, Hydrogen, Decay | 
+
+Britannica, ” 2025) ) render its presence from residual gases in the analysis c hamber 
+
+negligible. The present work aims to validate tritium as an unambiguous isotopic 
+
+marker for directly studying hydrogen behavior in metals at the nanoscale using APT, 
+
+representing an essential step toward enabling reliable quantification of hydrogen 
+
+isotopes in future APT. investigations. Thermal desorption analysis (TDA) was 
+
+additionally performed to independently verify the global presence the presence of 
+
+tritium in the specimens by monitoring its release during controlled heating .
+
+Commercially pure titanium was selected as a model material because it readily 
+
+absorbs hydrogen isotopes and provides conditions favorable for detecting even low 
+
+levels of tritium. The advantages and po ssible limitations of this tritium -based 
+
+approach are discussed later. 
+
+2. Materials and method 
+
+2.1 . Sample preparation and EBSD analysis 
+
+A c ommercially available titanium rod (99.9+% purity, CAS No. 7440 -32 -6) 100 mm 
+
+long and with a diameter of 6.35 mm from MaTeck (Material, Technologie & Kristalle 
+
+GmbH, J ülich, Germany) was used in this study . Disk -shaped samples, each ~0.7 mm 8
+
+in thickness , were cut from the rod . The se disk -shaped specimens were mechanically 
+
+polished using a QATM Saphir 520/Rubin 500 system. Grinding was carried out 
+
+sequentially with silicon carbide (SiC) abrasive papers of progressively finer grit sizes 
+
+(from #320 to #4000), followed by polishing with a suspension containing 9 μm 
+
+diamond particles . Final surface finishing was achieved using colloidal silica (OP -S) 
+
+mixed with a few drops of hydrogen peroxide (H ₂O₂). Grain size was determined by 
+
+electron backscatter diffraction (EBSD) using an Oxford Instruments Symmetry S2 
+
+detector, at acceleration voltage of 20 kV and a current of 4 nA in a ZEISS Crossbeam 
+
+550 L FIB/SEM. EBSD data were acquired using the AZTEC software, and the 
+
+resulting datasets were subsequently processed and analyzed using AZTEC C rystal 
+
+as well as a custom MATLAB script based on the MTEX toolbox. 
+
+2.2 . ToF -SIMS 
+
+Time -of -flight secondary ion m ass spectrometry (ToF -SIMS) was employed prior to 
+
+tritium exposure , to qualitatively identify the elemental constituents of the material. 
+
+The analyses were performed in negative polarity under ultra -high vacuum conditions 
+
+using an IONTOF ToF -SIMS.5 instrument , without targeting a specific grain 
+
+orientation . A Bi ⁺ primary ion beam operated in high current bunched (HCB) mode, 
+
+yielding a 1. 3 pA current, was used for spectral acquisition to provide high mass 
+
+resolution and enhanced secondary ion yields. To evaluate the elemental distribution 
+
+as a function of sputterin g time , depth profiles were acquired over 500 μm × 500 μm 
+
+areas in both positive and negative polarity. At least two independent depth profiles 
+
+were collected in each polarity. Positive polarity analyses were performed using a 
+
+1 keV O₂⁺ primary ion beam, w hile 1 keV Cs ⁺ ions were used for negative polarity 9
+
+measurements. Signals prone to detector saturation (like 16 O-) were not considered, 
+
+but replaced by suitable signals of lower intensities (e.g. 18 O-). Depth profiles are 
+
+consequently reported as a function of ion fluence rather than nanomet ers .
+
+Additionally, owing to the element and matrix dependence of SIMS sputter yields, the 
+
+resulting depth scale is species -specific and does not correspond to a uniform physical 
+
+depth across all elements. Data acquisition and processing were performed using 
+
+IONTOF SurfaceLab 7 software. 
+
+2.3 . Charging with a hydrogen isotope gas mixture 
+
+Tritium charg ing 1 (the term charging is used instead of loading to avoid confusion with 
+
+mechanical loading) was carried out at the Fusion Materials Laboratory (Karlsruhe 
+
+Institute of Technology, Germany), using a gas mixture of nominally 500 appm tritium 
+
+(³H 2) in hydrogen (¹H 2) (bottled on 24 June 2014, TRITEC Ltd., Switzerland ). This 
+
+correspond s to a total tritium activity of 1.85 TBq (±5%). The decay in tritium 
+
+concentration over time was estimated using the radioactive decay equation: 
+
+𝑁 (𝑡 ) = 𝑁 0 × 𝑒 −𝜆𝑡  (2) 
+
+where 𝑁 0 is the number of initial tritium nuclei in the gas mixture , 𝜆  = ln (2)
+
+> 𝑡 1/2
+
+≈
+
+1.7 × 10 −9 𝑠 −1 is the tritium decay constant with  𝑡 1/2 = 12.32 years being the half -life 
+
+of tritium (Canadian Nuclear Safety, 2026 .) . t is the time elapsed between the gas 
+
+bottling date and the charging experiment (in years) , which will be given later .    
+
+> 1In literature, “hydrogen loading “ is often us ed instead of “hydrogen charging”, however, we deliberately use
+> charging here to avoid confusion with mechanical loading carried out by our group in parallel to this work. 10
+
+Three tritium charging campaigns wer e carried out, followed by TDA and APT 
+
+analyses. Prior to tritium charging , the charging system was evacuated and purged 
+
+with helium in two consecutive cycles to remove residual gases before introducing the 
+
+tritiu m – hy drogen gas mixture. In all three campaigns, charging was performed at 
+
+500 °C and 1 bar for 6 hours under the tritium -containing gas mixture. After charging, 
+
+samples that were not immediately analyzed , were stored under nitrogen atmosphere 
+
+(99.2% N ₂) to min imize surface reactions. 
+
+The first charging campaign was conducted in May 2024, when the tritium 
+
+concentration in the gas mixture had decayed to approximately 281 appm . One 
+
+titanium sample was charged and analyzed by APT after 150 days of storage for 
+
+investigating the effect of tritium retention . The second campaign took place in January 
+
+2025, when the tritium concentration was estimated to be 260 appm owing to its 
+
+decay . Three samples were charged. Two were analyzed by APT and TDA 1 day after 
+
+charging , while the third was analyzed by APT after 7 days. Several of the 1 -day APT 
+
+tips exhibited significant surface contamination (see below) and were therefore 
+
+excluded from the analysis. To compensate for this loss, a third campaign was carried 
+
+out in March 2025, when the tritium concentration had further decreased to 
+
+approximately 254 appm . Samples from this campaign were analyzed by APT after 1 
+
+day of charging. 
+
+2.4 . Thermal Desorption Analysis 
+
+Thermal desorption analysis (TDA) was performed after tritium charging using an 
+
+ionization chamber (FML, Karlsruhe Institute of Technology, Germany) . The detector 
+
+output was first calibrated with a 2 GBq ³H 2/He 5.0/ 1H₂ 0.1% calibration gas obtained 11 
+
+from TRITEC Ltd., Switzerland in 2018 . During calibration, di fferent carrier gas flow 
+
+rates were used, corresponding to different tritium activities, and the resulting current 
+
+(of the order of pA) was measured to determine a calibration factor. This factor was 
+
+then applied to convert the measured current in the carr ier gas into tritium activity (Bq). 
+
+The background noise was measured just before the desorption measurements 
+
+started . TDA analysis was conducted under a continuous flow of carrier gas ( 10 ml /min 
+
+He with 0.1 vol% 1H₂). The sample was heated from room temperature to 1100 °C at 
+
+a rate of 7 °C/min, followed by a 3 h hold at the maximum temperature and 
+
+subsequently cooled down back to ambient temperature . Tritium atoms in the flow gas 
+
+travel through a n approximately 1 1 m long p ipeline that is heated at 200 °C before 
+
+reaching the ionization chamber , where they get detected with a detection efficiency 
+
+of approximately 30% . For each sample, the background activity was subtracted to 
+
+obtain a background -corrected release rate (Bq/s), which was then used to calculate 
+
+the tritium release rate and the corresponding global tritium concentration. More 
+
+information about the TDA cap abilities can be found in Supplementary Material S4 .
+
+2. 5. Atom Probe Tomography 
+
+Lift -out specimens were prepared from samples before and after tritium charging using 
+
+standard methods (Lefebvre -Ulrikson, 2016) with an FEI Scios FIB/SEM at the Fusion 
+
+Materials Laboratory. For each sample, lift -outs were taken from multiple regions of 
+
+the material and were welded onto coupon pre -tips. On the same day, annular milling 
+
+followed by a final low -voltage Ga ⁺ ion cleaning step (5 kV , 90 pA ) were performed on 
+
+a ZEISS Auriga SEM/FIB adjacent to the APT system. After the final milling step, the 
+
+specimens were immediately introduced into the APT airlock chamber to minimize 12 
+
+contamination . Although the close proximity minimizes the delay between FIB 
+
+preparation and transfer, brief exposure to air during handling is unavoidable and may 
+
+lead to limited surface oxidation of titanium and possible hydrogen loss. In most 
+
+analyzed tips, oxygen -related species w ere uniformly distributed and did not indicate 
+
+the presence of a distinct oxide layer. One tip measured one day after charging 
+
+exhibited a slightly non -uniform distribution of O and TiO signals ( Figure S2 ), as 
+
+discussed in the Supplementary Material S 3.
+
+The APT experiments were performed the day after the samples were placed in the 
+
+APT airlock, using a CAMECA LEAP 4000 X HR. Prior to tritium charging, the as -
+
+prepared samples were analyzed in voltage -pulsing mode at 30 K, with a 20% pulse 
+
+fraction , similar to previous hydrogen -related APT studies (Gemma et al., 2022, 2012; 
+
+Wilke et al., 2011) . A pulse rate of 200 kHz w as used. Eight successful measurements 
+
+were collected, yielding on average one million atoms per run . To improve sample 
+
+survival and data quality, subsequent APT analyses of samples before and after tritium 
+
+charging were conducted in laser -pulsing mode at 30 K, using 50 pJ laser energy and 
+
+a 200 kHz pulse rate. For each sample and charging condition, thr ee to four successful 
+
+measurements were obtained in laser -pulsing mode, each comprising approximately 
+
+3.8 million atoms. 
+
+The obtained data were reconstructed using the CAMECA AP Suite 6.3.2.135. To 
+
+account for variations due to the dataset size, ion -weigh ted means and standard errors 
+
+were calculated for each material state (“Weighted mean, ” 2026 .; “Weighted standard 
+
+deviation, ” 2026 ). The spatial distribution of solutes and hydrogen species within the 
+
+APT tips was evaluated through a nearest -neighbor analysis. Experimental 
+
+distributions were compared with a theoretical random distribution generated by 13 
+
+shuffling the chemical identity of atoms at each coordinate position within the 
+
+reconstructed volumes. This statistical comparison was complemented by χ² tests. 
+
+Since the voltage -mode runs did not contain any 𝑇𝑖 + ions, the char ge -state ratio 
+
+(CSR) was calculated as :
+
+𝐶 𝑆𝑅 (𝑇𝑖 ) = 𝑛 (𝑇𝑖 3+) 
+
+> 𝑛 (𝑇𝑖 2+)
+
+(3) 
+
+where 𝑛 (𝑇𝑖 3+) and 𝑛 (𝑇𝑖 2+) are the detected ion counts of Ti³ ⁺ and Ti² ⁺, respectively .
+
+To ensure that the ion counts originated solely from titanium, only the ⁴⁶Ti isotope was 
+
+used, thereby avoiding overlaps with peaks from other species. The corresponding 
+
+electric field was then estimated using the formula as proposed by Tegg et al. (Tegg 
+
+et al., 2024) :
+
+𝐹 = 𝑎 (1 − 𝑏 
+
+> 𝐶𝑆𝑅 0.3+𝑏 +0.256
+
+) (4) 
+
+with a = 16.24 and b = 0.1968 determined for the Ti³ ⁺/Ti² ⁺ CSR. For each analysis 
+
+dataset, the CSR and its associated field were calculated. For each material condition, 
+
+their mean values and standard errors were determined. 
+
+Further, t o visualize the variation o f the field , the x, y, z coordinates and the mass -to -
+
+charge -state ratio of each detected ion were derived from the acquired .pos files and 
+
+were processed using analysis scripts adapted from the Python code originally 
+
+provided by Tegg et al. (Tegg et al., 2024) . The script ranges each ion and bins it into 
+
+0.25 nm × 0.25 nm pixels to generate a two -dimensional map of the field -eva porated 
+
+ions. The ratio of the ion counts within these bins was then used to calculate and plot 
+
+the CSR, which was subsequently inserted into Equation (3) to derive and visualize 
+
+the corresponding local electric -field intensity, thus enabling direct correl ation between 
+
+⁴⁶Ti charge -states, field strength, and spatial distribution .14 
+
+3. Results 
+
+3.1. Microstructure prior to tritium charging 
+
+EBSD was performed on the disk -shaped Ti specimens prior to tritium charging to 
+
+quantify the grain size, given that hydrogen adsorption has been reported to exhibit 
+
+grain -size dependence in vapor -deposited titanium films (Tanaka et al., 2009 ),
+
+although such effects are not anticipated to be significant in bulk material. Inverse pole 
+
+figure (IPF) maps of the Ti samples (Figure 1) reveal grains with a random 
+
+crystallographic distribution, having an average diameter of 110 ± 21 μm, with the 
+
+scatter bar corresponding to the standard deviation. Several grains display ed twin 
+
+boundaries, with misorientation angles close to 64° and 85° between neighboring 
+
+grains, consistent with known twinning systems in HCP Ti (Zahiri et al., 2023) . No 
+
+titanium hydride phases were detected prior to tritium charging .
+
+Figure 1: Inverse pole figure (IPF) orientation map with color key of a Ti sample prior 
+
+to tritium charging. High angle grain boundaries are indicated in black (misorientation 15 
+
+angle ≥ 5°), while low angle grain boundaries are shown in gray (2° ≤ misorientation 
+
+angle < 5°). 
+
+3.2. Elemental constituents of the sample prior to tritium charging based on 
+
+ToF -SIMS 
+
+ToF -SIMS analysis was performed for the identification of the elemental constituents 
+
+of the material (see details in Supplementary Material S1) . Depth profiling provided 
+
+qualitative insight into the surface and near -surface chemistry of the material. 
+
+A native oxide layer was identified through the behavior of oxygen - and titanium -oxide -
+
+related ions, which displayed characteristic maxima at low sputterin g fluence. The 
+
+primary oxygen signal ( 16 O-), as commonly observed, was saturated and therefore lay 
+
+outside the detector’s dynamic range. Consequently, the ¹⁸O ₂⁻ signal was monitored 
+
+instead, which remained within the measurable range. Both the 18 O₂- and TiO 3-
+
+signals exhibited pronounced maxima at low sputtering fluence (~2 × 10 15 ions·cm -2), 
+
+followed by a rapid decay, indicating that the oxide is confined to the near -surface 
+
+region. In contrast, the TiO - signal increased beyond ~2.5 × 10 15 ions·cm -2 and formed 
+
+a broad plateau before reaching a maximum at ~1 × 10 16 ions·cm ⁻². This apparent 
+
+broad transition does not indicate intermediate oxidation st ates but rather arises from 
+
+ion -beam –induced mixing at the crater bottom together with lateral variations in oxide 
+
+thickness (see Supplementary Fig. S1b ). The Ti 2O- and 49 TiOH - species displayed 
+
+bell -shaped distributions with maxima at ~1.4 × 10 16 and ~1.9 × 10 16 ions·cm -2,
+
+respectively. 
+
+ToF -SIMS detected hydrogen -related signals originating from environmental 
+
+contamination. Peaks were observed at 1 Da and 2 Da , whereas no signa l was 16 
+
+detected at 3 Da (Figure 2a ), documenting that tritium is not present in the sample 
+
+before charging . A minor secondary feature near 1 Da was also visible ( Figure 2b ), 
+
+which is attributed to possible electronic artifacts . Owing to the high mass resolution 
+
+of ToF -SIMS, the 2 Da region could be resolved into two distinct peaks, both exhibiting 
+
+intensities approximately three orders of magnitude lower than the 1 Da peak (Figure 
+
+2c ). The first peak, located at ~2.0145 Da, is consistent with ²H ⁺, while a second, 
+
+slightly higher -mass peak at ~2.0163 Da can be attributed to H ₂⁺ . By comparing the 
+
+integrated intensities of the 1 Da and ~2.016 3 Da peaks, the resulting isotopic ratio 
+
+corres ponds to ≈99.99 % ¹H and ≈0.01 % ²H, which is consistent with the natural 
+
+hydrogen isotopic abundance. In addition, TiOH and TiH molecular ions such as TiH ⁻
+
+and TiH ₃⁻ were also detected. Their depth profiles show a near -surface maximum, 
+
+followed by a continuous decrease with increasing depth, i.e. fluence. Depth -
+
+integrated ToF -SIMS images confirm that TiH molecular ion species are present only 
+
+in very small amounts rel ative to the total titanium or hydrogen content and suggest 
+
+uniform distribution (see Supplementary Figure S1 ).
+
+Figure 2: (a) ToF -SIMS mass spectra of a Ti sample prior to tritium charging, covering 
+
+the 0.8 –3.2 Da range, obtained from two depth -profiled regions and showing 
+
+hydrogen -related peaks attributed to environmental contamination. Enlarged view of 
+
+one representative profile highlighting (b) the 0.97 –1.06 Da region, including the ¹H 
+
+## ⁺17 
+
+peak and a signal associated with an electronic artifact, and (c) the ~2.0138 –2.0176 
+
+Da region, containing contributions from ¹H 
+
+## ₂⁺ and ²H 
+
+## ⁺.
+
+3. 3. Elemental constituents of the sample prior to tritium charging based on 
+
+APT measurements 
+
+The composition of the samples prior to tritium charg ing was further quantified by APT, 
+
+conducted in both voltage - and laser -pulsing modes, and is reported in Table 1 .
+
+Because these specimens were not intentionally charged with hydrogen isotopes, the 
+
+peak at 1 Da and hydrogen -related contributions at 2 Da we re excluded from the 
+
+compositional analysis and attributed to residual environmental hydrogen. No peak at 
+
+3 Da was observed in the uncharged specimens. Nevertheless, hydrogen -related 
+
+molecular ions (H MI ), i.e., titanium hydride ions such as TiH n+ , were included in the 
+
+analysis (see Supplementary Material S2 for details) because they form during field 
+
+evaporation and provide indirect information on hydrogen associated with titanium. 
+
+The titanium content was measured as 98.6 ± 0.4 at. % under voltage pulsin g and 99.0 
+
+± 0.1 at. % under laser pulsing. Apart from the typical contaminants introduced during 
+
+mechanical preparation, APT identified the same minor impurities as detected by ToF -
+
+SIMS, along with gallium implanted during FIB milling. Nitrogen was observe d
+
+exclusively in the laser -pulsed datasets, most likely arising from laser -assisted surface 
+
+desorption rather than bulk incorporation. Localized heating and transient 
+
+perturbations of the electric field during laser pulsing promote the ionization of surfac e-
+
+adsorbed nitrogen, in contrast to the more stable, field -driven evaporation 
+
+characteristic of voltage pulsing. 18 
+
+Table 1: Ion -weighted average contents of Ti, O, C, Si, and hydrogen -related 
+
+molecular ions (H MI ) (in at. %) for the as -prepared and tritium -charged titanium samples 
+
+obtained by APT . Peaks at 1, 2, and 3 Da were excluded from the calculation. The 
+
+reported uncertainties correspond to two ion -weighted standard errors. 
+
+State  Ti (at. %) O (at. %) C (at. %) Si (at. %) HMI (at. %)
+
+As 
+
+prepared 
+
+Voltage  98. 4 ± 0. 1
+
+0. 53 ±
+
+0. 04 
+
+0. 07 ±
+
+0.0 3
+
+0.0 84±
+
+0.0 05 
+
+0. 24 ± 0.0 4
+
+Laser  98.6 ± 0. 2
+
+0.5 7 ±
+
+0. 08
+
+0. 36 ±
+
+0.0 1
+
+0.0 12 ±
+
+0.00 3
+
+0. 03 4 ±
+
+0.0 6
+
+Post -
+
+charging 
+
+1 day  98. 3 ± 0.8 
+
+0.66 ±
+
+0.85 
+
+0. 14 ±
+
+0. 26 
+
+0.008 ± 
+
+0.00 7
+
+0. 11 ± 0. 20 
+
+7 days  97. 5 ± 1. 2
+
+1.84 ±
+
+1.2 6
+
+0.07 ±
+
+0. 06
+
+0.0 10 ±
+
+0.0 04
+
+0. 25 ± 0. 04 
+
+150 
+
+days 
+
+97.7 ± 1. 7 1.40 ± 1. 7
+
+0. 07 ±
+
+0. 02
+
+0.0 18 ±
+
+0.0 07
+
+0. 32 ± 0.0 9
+
+To quantify hydrogen and compare it with tritium -charged specimens, the composition 
+
+was recalculated to include all hydrogen peaks. Table 2 summarizes the ion -weighted 
+
+average hydrogen content and the individual contributions from the 1 Da, 2 Da, and 
+
+3 Da peaks for both voltage - and laser -pulsed datasets . Signals at 1 Da and 2 Da were 
+
+consistently detected in both acquisition modes, while no peak at 3 Da was observed 
+
+in either mode (Figure 3a ).19 
+
+Figure 3: Mass -to -charge -state ratio spectra of a pure titanium sample obtained by 
+
+APT : (a) before (blue) and (b) 1 day (red), 7 days (green), and 150 days (cyan) after 
+
+gas charging .
+
+It’s observed that l aser pulsing results in nearly twice the total hydrogen concentration 
+
+compared with voltage pulsing. However, substantial tip -to -tip variability was evident. 
+
+In voltage mode, hydrogen contents ranged from 0.31 ± 0.01 to 4.73 ± 0.09 at. %, while 
+
+in laser mode they ranged from 2.25 ± 0.01 to 6.00 ± 0.02 at. %. These differences were 
+
+largely driven by fluctuations in the 1 Da peak, which varied from 0.2 3 ± 0.0 1 to 
+
+3.5 9 ± 0. 13 at. % in voltage mode , and from 1. 40 ± 0.0 1 to 5. 41 ± 0.0 2 at. % in laser 
+
+mode. 
+
+Further, i t is worth noting that for all analyses, with the exception of one voltage run 
+
+and two laser runs, the presented a peak at 6 Da (correspond ing to carbon ions , 12 C2+ )
+
+in the all mass -to -charge -state -ratio spectra. 
+
+Table 2: Ion -weighted average compositions (at. %) of the total hydrogen content as 
+
+well as of the 1 Da , 2 Da and 3 Da peaks in the as -prepared and tritium -charged 20 
+
+titanium samples . The reported uncertainty corresponds to two ion weighted standard 
+
+errors. 
+
+State 
+
+Total H
+
+(at. %)
+
+1 Da 
+
+(at. %)
+
+2 Da 
+
+(at. %)
+
+3 Da (at. %)
+
+As 
+
+prepared 
+
+Voltage  2. 38 ± 1. 5
+
+2.08 ±
+
+1.37 
+
+0.18 ± 
+
+0.18 
+
+Not detected 
+
+Laser  4. 49 ± 1.6 
+
+3.5 6 ±
+
+1.37 
+
+0.62 ± 
+
+0. 12 
+
+Not detected 
+
+Post -
+
+charging 
+
+1 day  3.08 ± 1. 13 
+
+2.3 4 ±
+
+0.70 
+
+0.6 3 ±
+
+0. 45 
+
+0.00 4 ±
+
+0.0 11 
+
+7 days  4. 79 ± 1.30 
+
+3.7 4 ±
+
+1.18 
+
+0.8 3 ±
+
+0. 17 
+
+0.0 28 ±
+
+0.0 22 
+
+150 
+
+days 
+
+4.31 ± 2.58 
+
+3.4 5 ±
+
+1. 68 
+
+0.5 6 ±
+
+0. 26 
+
+0.0 07 ±
+
+0.0 06 
+
+Atom maps (Figure 4a ) revealed that the ions of the 1 Da and 2 Da peaks were 
+
+preferentially located near the [0002 ] and [10 1̅2] crystallographic poles of the HCP 
+
+lattice of α -Ti in voltage runs , while laser runs did not display a similarly pronounced 
+
+pole preference. Statistical analysis across both pulsing mode s indicated a
+
+homogeneous element distribution, with no evidence of clustering or segregation. For 
+
+all dataset s, both CSR values and their corresponding field intensities displayed 
+
+uniform spatial distribution. The average CSR value was calculated as (6.1 ± 5.3) ×10 - 
+
+> 4
+
+in voltage runs, corresponding to a field of 34.00 ± 0.62 V/nm, while in laser runs it 
+
+was (6.1 ± 9.5) × 10 -4 with a field of 33.92 ± 0.16 V/nm. 21 
+
+Figure 4: Side and top views of atom maps showing Ti atoms, ions at the 1 Da peak, 
+
+atoms at the 3 Da peak, and the corresponding field distribution. Data are presented 
+
+for (a) an as 
+
+## ‑prepared voltage run, (b) an as 
+
+## ‑prepared laser run, and (c) a laser run 
+
+performed one day after tritium charging. Al l atoms except tritium are represented as 
+
+points, while tritium atoms are depicted as larger red spheres with a radius of 1.25 nm 
+
+for improved visualization. Tritium atoms were detected only after charging .
+
+3.4. Thermal desorption analysis of tritium char ged samples 
+
+TDA was performed following tritium charging to verify the globally retained tritium 
+
+content in the whole sample . Immediately following tritium charging, the sample mass 
+
+was measured to be 0.1268 g. Using the sample mass, the detector counts, and the 
+
+background signal from the subsequent TDA measurement, a background -corrected 
+
+specific activity curve was generated along with its integral (representing the total 22 
+
+amount of disintegration ). Th ese curves, together with the applied temperature ramp, 
+
+are shown in Figure 5 as a function of the analysis time. Over the 11 hours of this 
+
+experiment, the total number of disintegrations counted was 1.96 × 10 5 which 
+
+correspond s to 2.1 × 10 9 tritium atoms .
+
+As illustrated in Figure 5 , the background -corrected specific activity signal was 
+
+detected at baseline levels until the temperature reached approximately 500 °C (black 
+
+dashed line 1) . Beyond this temperature, a small but noticeable increase in the signal 
+
+was observed, and after an additional ~30 min, corresponding to a temperature of 
+
+roughly 700 °C (black dashed line 2) , a marked change in slope indicated a
+
+pronounced increase in the tritium release rate. 23 
+
+Figure 5: Background 
+
+## ‑corrected specific activity (green), its integral (blue), and the 
+
+applied temperature ramp (red), as a function of analysis time. The dashed lines 1 and 
+
+2 correspond to the temperatures at 500 °C and 700 °C, respectively .
+
+3.5. Elemental constituents of the sample after tritium charging based on APT 
+
+measurements 
+
+APT data for the tritium -charged samples were first analyzed excluding the 1, 2, and 
+
+3 Da peaks. Across all post -charging intervals, the titanium content, minor impurities, 
+
+and 1H- and 2H-related ions remained similar to those in the as -prepared material, with 
+
+their concentrations reported in Table 2. While the oxygen content measured 1 day 
+
+after charging is similar to that of the as -prepared condition, slightly higher average 
+
+oxygen contents are observed after 7 and 150 days of storage. However, these 24 
+
+differences remain within experimental uncertainty and do not indicate a statistically 
+
+significant increase. The oxyg en and TiO signals were uniformly distributed across all 
+
+tips, with the exception of a single tip measured in the 1 -day post -charging condition 
+
+(see Supplementary Figure S 2). 
+
+In contrast to the as -prepared samples, a distinct peak at 3 Da was detected in all 
+
+post -charging states (Figure 3b ), except for one tip in the 150 -day post -charging 
+
+interval. The ion -weighted averages of these peaks, together with the total hydrogen 
+
+content, are summarized in Table 2.
+
+Spatial distribution analysis of the hydrogen related ions was similar to that of the as -
+
+prepared laser runs, showing no pronounced pole preference. Notably, atoms 
+
+corresponding to the 3 Da peak were located within the bulk volume of the tip rather 
+
+than at the surface, and thi s behavior was consistent across all post -charging intervals 
+
+(Figure 4c).
+
+The ion -weighted average CSR were estimated as (5.9 ± 0.6) × 10 ⁻⁴, (5.3 ± 1.9) × 10 -
+
+> 4
+
+, and (10.7 ± 0.9) × 10 ⁻⁴ for 1 day, 7 days, and 150 days post -charging, respectively. 
+
+These values correspond to average electric fields of 33.96 ± 0.11 V/nm, 33.85 ± 0.97 
+
+V/nm, and 34.62 ± 0.10 V/nm, respectively. 
+
+4. Discussion 
+
+4. 1. Hydrogen isotope detection using APT 
+
+4. 1.1 . On the 1 Da peak 
+
+Prior to tritium charging, both APT and ToF -SIMS consistently exhibit a pronounced 
+
+1 Da peak. As noted earlier, this signal corresponds to protons ( 1H+) and is widely 25 
+
+recognized as mainly arising from environmental contamination and preparation -
+
+induced hydrogen uptake (Chen et al., 2020, 2023; Gault et al., 2025a; Kolli, 2017b) .
+
+In ToF -SIMS depth profiles , 1H+ appears as a near -surface maximum that gradually 
+
+decreases with sputtering depth. APT analysis of the as -prepared samples reveals a 
+
+consistent 1 Da signal, uniformly distributed along the entire tip in both pulsing modes. 
+
+This apparent spatial difference could be attributed to the fundamentally different 
+
+probing length scales of ToF -SIMS and APT, as well as to the presence of titanium’s 
+
+native oxide layer at the surface, which is readily detected by ToF -SIMS but most likely 
+
+removed during APT tip preparati on and just slightly build during fast sample transfer .
+
+The 1H+ content was calculated at approximately 2. 08 ± 1.37 at. % under voltage 
+
+pulsing and 3.5 6 ± 1.37 at. % under laser pulsing, despite the average electric fields 
+
+being nearly identical for both acquisition modes. 
+
+APT measurements performed in laser -pulsed mode of samples after tritium charging 
+
+verify a 1H+ content (1 Da and 2 Da ) being similar to the state o f the as -prepared 
+
+sample (Figure 6a ). A slight decrease in the 1 Da signal was observed 1 day after 
+
+charging, but this falls within experimental uncertainty and thus, is not statistically 
+
+significant. Nevertheless, it is relevant to assess whether this apparent decrease could 
+
+arise from variations in the evaporation field (which depends on multiple parameters 
+
+such as residual gas pressure, tip geometry, temperature, and local electrostatic 
+
+conditions) o r whether it instead reflects intrinsic tip -to -tip variability associated with 
+
+the local nature of APT measurements. Because the average field was only 0.04 ± 
+
+0.19 V/nm lower than the field measured before charging, and the field distribution was 
+
+uniform b oth before and after charging, this observed slight decrease in the 1 Da signal 
+
+cannot be attributed to changes in evaporation conditions. Considering also the 
+
+relatively limited number of measurements, these observations suggest that the slight 26 
+
+reduction in the 1 Da signal after 1 day of charging is most likely due to statistical 
+
+scatter arising from to tip -to -tip variability. 
+
+Figure 6: APT measurement results on (a) Total hydrogen (grey), 1 Da ions (blue), 
+
+2 Da ions (green), and (b) 3 Da ions (red) contents (at. %) before and after tritium 
+
+charging for 1, 7, and 150 days. 
+
+4. 1.2 . On the 2 Da peak 
+
+ToF -SIMS measurements on the as -prepared specimens resolved the 2 Da region into 
+
+two peaks, one at ~2.015 Da, consistent with deuterium, and a smaller one at 
+
+~2.0168 Da, corresponding to 1H₂⁺ . Both peaks have intensities roughly three orders 
+
+of magnitude l ower than the 1 Da peak. 
+
+In APT experiments, the 2 Da peak originates primarily from molecular 1H₂⁺ ions 
+
+formed through the direct ionization of adsorbed 1H₂, with only a minor contribution 
+
+from 2H⁺ owing to its low natural abundance. Under laser -pulsing conditions, the 
+
+reduced effective electrostatic field decreases the probability that these molecular ions 
+
+will dissociate into protons  (Breen et al., 2020; Chen et al., 2020, 2019; Kim and 
+
+Seidman, 2015; Tsong et al., 1983) . Indeed, prior to tritium charging, the ion -weighted 27 
+
+average 2 Da content was estimated at 0.18 ± 0.18 at. % in voltage mode and 0.62 ± 
+
+0.12 at. % in laser mode, an increase of more than a factor of three. 
+
+Based on the total number of hydrogen atoms detected by APT and the natural isotopic 
+
+abundance of deuterium, the expected number of deuterium atoms was calculated 
+
+and compared with the number of atoms contributing to the 2 Da peak (since no 
+
+detectable peaks were present at 3 or 4 Da ). Prior to tritium charging d euterium 
+
+accounted for approximately 0.20 % of the 2 Da peak in voltage -pulsed datasets and 
+
+approximately 0.10 % in laser -pulsed datasets. After tritium charging, a similar 
+
+deuterium fraction of approximately 0.075 % of the 2 Da peak was measured, 
+
+consistent with the stability of the total 2 Da ion content observed across all conditions 
+
+(Figure 6a ). This stability is expected, as parameters influencing residual 1H₂⁺ 
+
+formation (such as laser pulse energy and pulse frequency) were held constant 
+
+throughout the laser -pulsed APT experiments .
+
+4.2.3 . On the 3 Da peak 
+
+A signal observed at 3 Da may originate from any single species or a mixture of ³H ⁺,
+
+(1H 2H) +, ³He ⁺, and, in the context of APT, H ₃⁺ . However, prior to tritium charging the 
+
+likelihood of contributions from ³H ⁺ and ³He ⁺ is minimal given their extremely low 
+
+natural abundances, and any in volvement of (1H2H) + is further diminished by the 
+
+negligible deuterium concentration present in the samples. ToF -SIMS analysis of 
+
+pristine Ti samples did not detect any peak at 3 Da , indicating that these species were 
+
+not formed under the measurement condi tions. 
+
+In APT, 1H₃⁺ formation can occur due the intense fields at the specimen apex, though 
+
+this process is highly sensitive to experimental parameters such as local field strength, 
+
+laser pulse energy, and tip temperature (Kolli, 2017b) . Notably, before tritium charging, 28 
+
+neither voltage - nor laser -pulsed APT revealed a 3 Da signal, confirming that the 
+
+applied pulsing conditions effectively suppressed 1H₃⁺ formation from residual 
+
+hydrogen. Therefore, these experimental conditions were also applied to all tritium 
+
+charged samples and 1H₃⁺ presence can be excluded in the measurements. 
+
+Following tritium charging, a distinct 3 Da peak was consistently observed in all post -
+
+charg ing states during laser -pulsed APT experiments , with similar contents across 
+
+conditions ( Figure 6b ). Tritium incorporation is discussed in Supplementary Material 
+
+S4 and confirmed both by the predicted uptake from Sieverts’ law (see 
+
+Supplementary Material S5) and by TDA. With contributions from 1H₃+ and (1H2H) +
+
+excluded, and ³H ⁺ established, the possibility of a ³He ⁺ contribution must be 
+
+considered, since tritium decay produces ³He. 
+
+Tritium (³H) undergoes β ⁻ decay with a half -life of 12.32 years, transforming into ³He 
+
+according to the nuclear reaction: 
+
+𝐻 3 → 𝐻𝑒 + 𝛽 −3 + 𝜈 ̅𝑒 (5) 
+
+By the time of the charging campaigns, app roximately 43 % of the initial 3H present in 
+
+the gas mixture during filling of the bottle had decayed, reducing the 3H concentration 
+
+and generating ³He. The ³He content for each campaign was estimated from the 
+
+difference between the initial 3H concentration (500 ppm) and the remaining 3H and is 
+
+reported in Table 3 .
+
+Table 3: Nominal 3H and 3He content in the gas mixture for each charging campaign. 
+
+Campaign date  May 2024  January 2025  March 2025 
+
+> 3
+
+H content  281 ppm  260 ppm  254 ppm 
+
+> 3
+
+He content  219 ppm  240 ppm  246 ppm 29 
+
+Despite the comparable content fractions of helium and tritium in the gas phase, ³H is 
+
+expected to dominate the species absorbed into titanium, not only due to its slightly 
+
+higher concentration but primarily because of its significantly stronger chemical 
+
+reactivity. In contrast, ³He is chemically i nert and, although it may become physically 
+
+trapped at defect sites at the surface , it does not appreciably dissolve in or migrate 
+
+through the titanium lattice under the high -temperature (500 °C) charging conditions. 
+
+The contribution of ³He to the observed 3 Da signal can be therefore considered 
+
+negligible, and the peak can be attributed to 3H. Complementary ToF -SIMS 
+
+measurements on tritium -charged specimens could provide additional confirmation of 
+
+the 3 Da assignment, though such experiments were not feasi ble in the present study 
+
+due to radiological constraints of the instrument .
+
+With the origin of the 3 Da peak established, the relative tritium abundance was 
+
+quantified by normalizing the tritium signal to the detected protium signal. The average 
+
+values were 671, 9794, and 2369 appm for the 1 -, 7 -, and 150 -day post -charging 
+
+states, respectively. As expected, these values do not agree with the nominal tritium 
+
+concentrations in the charging gas mixture, since the 1 Da signal is dominated by 
+
+residual chamber hydrogen rather than hydrogen originating from the specimen itself. 
+
+4. 2. Influence of the oxide layer 
+
+Commercially pure titanium (Ti) possesses a natural titanium oxide surface layer 
+
+typically ranging from 3 to 10 nm in thickness (Li et al., 20 24) , acting as efficient barrier 
+
+to hydrogen isotope transport. ToF -SIMS analysis ( see Sec. 3.2 ) of the as -prepared 
+
+samples before tritium charging confirmed the presence of this native near -surface 30 
+
+oxide. This oxide layer has been found to play a dual role in our tritium analysis , as 
+
+illustrated in the following. 
+
+The mechanism of hydrog en migration in rutile TiO ₂ (110) has been modeled and 
+
+found to involve high activation energies for proton hopping. Namely, approximately 
+
+0.60 eV for movement parallel to the c-axis, and about 1.23 eV for motion 
+
+perpendicular to it (the latter involving both bond rotation and hopping) (Bates et al., 
+
+1979) . For tritium, the activation energy i ncreases slightly to ~0.69 eV along the c -axis 
+
+(Bates et al., 1979) . These values highlight the kinetic difficulty of hydrogen isotope 
+
+transport t hrough TiO ₂ at ambient temperatures. To overcome the barrier imposed by 
+
+the oxide layer, a charging temperature of 500 °C (773 K) was selected as it enables 
+
+the reduction of the oxide layer and formation of water due to the presence of hydrogen 
+
+(Beste and Bufford, 2021) . At this elevated temperature, the originally impermeable 
+
+oxide layer is dissolved and the Ti surface is reported in the literature to be free of 
+
+oxides (Beste and Bufford, 2021; Efron et al., 1989; Shugard et al., 2012 ). After tritium 
+
+charging, the samples were stored in a nitrogen atmosphere (99.2% N ₂). Lu et al. (Lu 
+
+et al., 2009) measured approximately 10 ppm O₂ in commercially supplied N₂
+
+(99.999% N ₂) and demonstrated that, under flowing N ₂ (200 sccm) in a gas -tight 
+
+furnace, Ti can uptake oxygen and develop a near -surface oxide layer during 
+
+annealing and cooldown. Consequently, re -oxidation during storage and transport of 
+
+the Ti sample cannot be entirely excluded in the present study .
+
+Consistent with this interpretation, the TDA result of tritium -charged samples shows a 
+
+delayed onset of tritium release until temperatures of approximately 500 °C, followed 
+
+by a pronounced tritium release at higher temperatures (see Figure 5 ). This behavior 
+
+is consistent with the presence of a surface barrier to tritium outgassing, attributed to 
+
+an oxide layer formed after charging (see Supplementary Material S 5). In agreement 31 
+
+with this, APT measurements show slightly higher average oxygen contents after 7 
+
+and 150 days of storage compared to the as -prepared and 1 -day conditions, although 
+
+these differences remain within experimental uncertainty. 
+
+APT measurements indicate a slightly lower tritium content in the 1 -day post -charging 
+
+condi tion . H owever , considering the experimental uncertainty, the measured contents 
+
+remain within statistical margins and show no significant variation across the intervals 
+
+investigated. But, t he apparent variation may reflect differences in surface condition, 
+
+as subtle re -oxidation differences during storage can be expected, and sample 
+
+transport that could modify the near -surface barrier to isotope transport . However, this 
+
+effect cannot be quantified , here. Additional ly, the scatter may arise from small 
+
+variations between th e three independent charging campaigns despite identical 
+
+nominal procedures. Furthermore, hydrogen isotope diffusion in α-Ti is 
+
+crystallographically anisotropic, with diffusion coefficients differing by approximately a 
+
+factor of two between directions para llel and perpendicular to the c-axis (see 
+
+Supplementary Material S 4). Because no crystallographic control was imposed 
+
+during APT specimen lift -out, individual tips likely sampled grains with different 
+
+diffusion pathways, contributing as well to tip -to -tip variability in retained tritium. 
+
+5. Conclusion 
+
+Using a combined approach of atom probe tomography (APT), time -of -flight secondary 
+
+ion mass spectrometry (ToF -SIMS), and thermal desorption analysis (TDA) on tritium -
+
+free and tritium -charged titanium samples, this study demonstrates that tritium is a 
+
+highly effective and unambiguous isotopic marker for probing hydrogen behavior at 
+
+the nanoscale. TDA verified the successful incorporation of tritium into the material. 32 
+
+APT measurements revealed a clearly resolved mass peak at 3 Da attributable to 
+
+tritium uptake, which was absent in the as -prepared titanium sample . In contrast to 
+
+deuterium, whose detection is intrinsically limited by the persistent 2 Da background 
+
+arising from residual 1H₂⁺ , tritium yields a distinct and stable 3 Da signal. This signal 
+
+is not present in uncharged material and is largely insensitive to contributions from 
+
+chamber -derived hydrogen. Consequently, tritium enables reliable ide ntification of 
+
+hydrogen at very low concentrations in APT analyses. Overall, this work establishes 
+
+tritium as a robust probe for mechanistic investigations of hydrogen uptake, retention, 
+
+and release, enabling reliable nanoscale studies of hydrogen -related phenomena, 
+
+including hydrogen embrittlement .33 
+
+Acknowledgment s
+
+Financial support by the European Research Council (ERC Consolidator Grant, 
+
+project TRITIME, grant No. 101043969) is acknowledged . Views and opinions 
+
+expressed are, however, those of the authors only and do not necessarily reflect those 
+
+of the European Union or the European Research Council. Neither the European 
+
+Union nor the granting authority can be held responsible for them. 
+
+The authors acknowledge Dr. Lorenzo Rigutti and Dr. Aissatou D iagne, both from 
+
+Univ . Rouen Normandie, CNRS INSA Rouen Normandie, Normandie Univ, GPM UMR 
+
+6634, 76000 Rouen, France, for fruitful and insightful discussions. 
+
+Declaration of interests 
+
+The authors declare that they have no known competing financial interes ts or personal 
+
+relationships that could have appeared to influence the work reported in this paper. 
+
+Data statement: 
+
+The data underlying this article are available in Zenodo , at 
+
+https://dx.doi.org/ 10.5281/zenodo.19064457 .
+
+Author contributions 
+
+• Maria Vrellou : Conceptualization, Methodology, Software, Formal analysis, 
+
+Investigation, Writing - Original Draft, Visualization 
+
+• Alexander Welle : Review & Editing, Investigation 34 
+
+• Stefan Wagner : Review & Editing, Investigation 
+
+• Marco Weber : Investigation, Methodology 
+
+• Rolf R olli : Methodology, Review & Editing, Validation 
+
+• Hans -Christian Schneider : Review & Editing, Validation 
+
+• Astrid Pundt : Review & Editing, Validation 
+
+• Xufei Fang : Methodology, Formal analysis, Investigation, Writing - Review & 
+
+Editing, Validation, Supervision 
+
+• Christoph Kirchlechner : Conceptualization, Methodology, Formal analysis, 
+
+Writing - Review & Editing, Funding acquisition, Validation, Supervision 35 
+
+References 
+
+Bates, J.B., Wang, J.C., Perkins, R.A., 1979. Mechanisms for hydrogen diffusion in 
+
+Ti O2. Phys. Rev. B 19, 4130 –4139. 
+
+https://doi.org/10.1103/PhysRevB.19.4130 
+
+Beste, A., Bufford, D., 2021. Understanding the TiH (2 -x) /TiO y System at Elevated 
+
+Temperature: A Literature Review (No. SAND2021 -7272, 1822588, 700242). 
+
+https://doi.org/10.2172/1822588 
+
+Breen, A.J., Stephenson, L.T., Sun, B., Li, Y., Kasian, O., Raabe, D., Herbig, M., 
+
+Gault, B., 2020. Solute hydrogen and deuterium obs erved at the near atomic 
+
+scale in high -strength steel. Acta Mater. 188, 108 –120. 
+
+https://doi.org/10.1016/j.actamat.2020.02.004 
+
+Canadian Nuclear Safety, 2026 Facts about tritium [WWW Document]. URL 
+
+https://www.nuclearsafety.gc.ca/eng/resources/fact -sheets/t ritium/ (accessed 
+
+3.2.26). 
+
+Chang, Y., Breen, A.J., Tarzimoghadam, Z., Kürnsteiner, P., Gardner, H., Ackerman, 
+
+A., Radecka, A., Bagot, P.A.J., Lu, W., Li, T., Jägle, E.A., Herbig, M., 
+
+Stephenson, L.T., Moody, M.P., Rugg, D., Dye, D., Ponge, D., Raabe, D., 
+
+Gault, B., 2018. Characterizing solute hydrogen and hydrides in pure and 
+
+alloyed titanium at the atomic scale. Acta Mater. 150, 273 –280. 
+
+https://doi.org/10.1016/j.actamat.2018.02.064 
+
+Chang, Y.H., Mouton, I., Stephenson, L., Ashton, M., Zhang, G.K., Szczpani ak, A., 
+
+Lu, W.J., Ponge, D., Raabe, D., Gault, B., 2019. Quantification of solute 
+
+deuterium in titanium deuteride by atom probe tomography with both laser 
+
+pulsing and high -voltage pulsing: influence of the surface electric field. New J. 
+
+Phys. 21, 053025. h ttps://doi.org/10.1088/1367 -2630/ab1c3b 36 
+
+Chen, S., Murakami, R., Araki, K., Owari, M., 2020. Quantitative Analysis of Residual 
+
+Hydrogen on Platinum Surface by Atom Probe. E -J. Surf. Sci. Nanotechnol. 
+
+18, 127 –132. https://doi.org/10.1380/ejssnt.2020.127 
+
+Chen , Y. -S., Bagot, P.A.J., Moody, M.P., Haley, D., 2019. Observing hydrogen in 
+
+steel using cryogenic atom probe tomography: A simplified approach. Int. J. 
+
+Hydrog. Energy 44, 32280 –32291. 
+
+https://doi.org/10.1016/j.ijhydene.2019.09.232 
+
+Chen, Y. -S., Haley, D., G erstl, S.S.A., London, A.J., Sweeney, F., Wepf, R.A., 
+
+Rainforth, W.M., Bagot, P.A.J., Moody, M.P., 2017. Direct observation of 
+
+individual hydrogen atoms at trapping sites in a ferritic steel.  Science 355, 
+
+1196 –1199. https://doi.org/10.1126/science.aal2418 
+
+Chen, Y. -S., Liu, P. -Y., Niu, R., Devaraj, A., Yen, H. -W., Marceau, R.K.W., Cairney, 
+
+J.M., 2023.  Atom Probe Tomography for the Observation of Hydrogen in 
+
+Materials: A Review. Microsc. Microanal. 29, 1 –15. 
+
+https://doi.org/10.1093/micmic/ozac005 
+
+Diagne, A., Garcia, L.G., Ndiaye, S., Gogneau, N., Vrellou, M., Houard, J., Rigutti, L., 
+
+2024. Field ‑dependent abundances of hydride molecular ions in atom probe 
+
+tomography of III ‑N semiconductors. J. Microsc. 293, 153 –159. 
+
+https://doi.org/10.1111/jmi.13233 
+
+Efron, A., Lifshitz, Y., Lewkowicz, I., Mintz, M.H., 1989. The kinetics and mechanism 
+
+of titanium hydride formation. J. Common Met. 153, 23 –34. 
+
+https://doi.org/10.1016/0022 -5088(89)90529 -8
+
+Ernst, N., Block, J.H., 1983 . Temperature programmed field desorption of protonated 
+
+hyd rogen from rhodium and tungsten .37 
+
+Felfer, P., Ott, B., Monajem, M., Dalbauer, V., Heller, M., Josten, J., Macaulay, C., 
+
+2022. An Atom Probe with Ultra -Low Hydrogen Background. Microsc. 
+
+Microanal. 28, 1255 –1263. https://doi.org/10.1017/S1431927621013702 
+
+Gault, B., Chiaramonti, A., Cojocaru -Mirédin, O., Stender, P., Dubosq, R., Freysoldt, 
+
+C., Makineni, S.K., Li, T., Moody, M., Cairney, J.M., 2021. Atom probe 
+
+tomography. Nat. Rev. Methods Primer 1, 51. https://doi.org/10.1038/s43586 -
+
+021 -00047 -w
+
+Gault, B., Saksena, A., Sauvage, X., Bagot, P., Aota, L.S., Arlt, J., Belkacemi, L.T., 
+
+Boll, T., Chen, Y. -S., Daly, L., Djukic, M.B., Douglas, J.O., Duarte, M.J., 
+
+Felfer, P.J., Forbes, R.G., Fu, J., Gardner, H.M., Gemma, R., Gerstl, S.S.A., 
+
+Gong, Y., Hachet, G., Jako b, S., Jenkins, B.M., Jones, M.E., Khanchandani, 
+
+H., Kontis, P., Krämer, M., Kühbach, M., Marceau, R.K.W., Mayweg, D., 
+
+Moore, K.L., Nallathambi, V., Ott, B.C., Poplawsky, J.D., Prosa, T., Pundt, A., 
+
+Saha, M., Schwarz, T.M., Shang, Y., Shen, X., Vrellou, M. , Yu, Y., Zhao, Y., 
+
+Zhao, H., Zou, B., 2025a. Towards Establishing Best Practice in the Analysis 
+
+of Hydrogen and Deuterium by Atom Probe Tomography. Microsc. Microanal. 
+
+30, 1205 –1220. https://doi.org/10.1093/mam/ozae081 
+
+Gault, B., Saksena, A., Sauvage, X., Bagot, P., Aota, L.S., Arlt, J., Belkacemi, L.T., 
+
+Boll, T., Chen, Y. -S., Daly, L., Djukic, M.B., Douglas, J.O., Duarte, M.J., 
+
+Felfer, P.J., Forbes, R.G., Fu, J., Gardner, H.M., Gemma, R., Gerstl, S.S.A., 
+
+Gong, Y., Hachet, G., Jakob, S., Jenkins, B.M., Jon es, M.E., Khanchandani, 
+
+H., Kontis, P., Krämer, M., Kühbach, M., Marceau, R.K.W., Mayweg, D., 
+
+Moore, K.L., Nallathambi, V., Ott, B.C., Poplawsky, J.D., Prosa, T., Pundt, A., 
+
+Saha, M., Schwarz, T.M., Shang, Y., Shen, X., Vrellou, M., Yu, Y., Zhao, Y., 
+
+Zhao, H., Zou, B., 2025b. Towards Establishing Best Practice in the Analysis 38 
+
+of Hydrogen and Deuterium by Atom Probe Tomography.  Microsc. Microanal. 
+
+30, 1205 –1220. https://doi.org/10.1093/mam/ozae081 
+
+Gemma, R., Al -Kassab, T., Kirchheim, R., Pundt, A., 2012.  Vis ualization of 
+
+deuterium dead layer by atom probe tomography. Scr. Mater. 67, 903 –906. 
+
+https://doi.org/10.1016/j.scriptamat.2012.08.025 
+
+Gemma, R., Al -Kassab, T., Kirchheim, R., Pundt, A., 2009. APT analyses of 
+
+deuterium -loaded Fe/V multi -layered films. Ultr amicroscopy, IFES 2008 109, 
+
+631 –636. https://doi.org/10.1016/j.ultramic.2008.11.005 
+
+Gemma, R., Al -Kassab, T., Kirchheim, R., Pundt, A., 2007. Studies on hydrogen 
+
+loaded V –Fe8at% films on Al2O3 substrate. J. Alloys Compd. 446 –447, 534 –
+
+538. https://doi.org/1 0.1016/j.jallcom.2007.01.099 
+
+Gemma, R., Al -Kassab, T., Pundt, A., 2022. Deuterium Distribution in Fe/V Multi -
+
+Layered Films. Molecules 27, 7848. 
+
+https://doi.org/10.3390/molecules27227848 
+
+Gupta, M.K., Priyadarshi, A., Khan, Z., 2015. Hydrogen in Stainless St eel as Killing 
+
+Agent for UHV: A Review. Mater. Today Proc., 4th International Conference 
+
+on Materials Processing and Characterzation 2, 1074 –1081. 
+
+https://doi.org/10.1016/j.matpr.2015.07.011 
+
+Hong, S.S., Shin, Y.H., Kim, J.T., 2008. Residual gas survey of s tainless steel 304 
+
+extreme high vacuum chamber with hot cathode ionization gauge. 
+
+Measurement 41, 1026 –1031. 
+
+https://doi.org/10.1016/j.measurement.2008.02.006 
+
+Kästner, J., 2014. Theory and simulation of atom tunneling in chemical reactions. 
+
+WIREs Comput. M ol. Sci. 4, 158 –168. https://doi.org/10.1002/wcms.1165 39 
+
+Khanchandani, H., Rolli, R., Schneider, H. -C., Kirchlechner, C., Gault, B., 2023. 
+
+Hydrogen embrittlement of twinning -induced plasticity steels: Contribution of 
+
+segregation to twin boundaries. Scr. Mate r. 225, 115187. 
+
+https://doi.org/10.1016/j.scriptamat.2022.115187 
+
+Kim, Y. -J., Seidman, D.N., 2015. Atom -Probe Tomographic Analyses of Hydrogen 
+
+Interstitial Atoms in Ultrahigh Purity Niobium. Microsc. Microanal. 21, 535 –
+
+543. https://doi.org/10.1017/S14319276 1500032X 
+
+Kingham, D.R., 1982. The post -ionization of field evaporated ions: A theoretical 
+
+explanation of multiple charge states. Surf. Sci. 116, 273 –301. 
+
+https://doi.org/10.1016/0039 -6028(82)90434 -4
+
+Kolli, R.P., 2017a. Controlling residual hydrogen gas in mass spectra during pulsed 
+
+laser atom probe tomography. Adv. Struct. Chem. Imaging 3, 10. 
+
+https://doi.org/10.1186/s40679 -017 -0043 -4
+
+Kolli, R.P., 2017b. Controlling residual hydrogen gas in mass spectra during pulsed 
+
+laser atom probe tomography. Adv. Struct . Chem. Imaging 3, 10. 
+
+https://doi.org/10.1186/s40679 -017 -0043 -4
+
+Lefebvre -Ulrikson, W. (Ed.), 2016. Atom probe tomography: put theory into practice. 
+
+Academic Press, London. 
+
+Li, W., Yang, Z., Wang, P., Liu, L., Wang, Y., Wang, S., Chang, L., Ma, L., 2024. 
+
+Effect of different oxidation modes on the growth of oxide layer o f TC11 
+
+titanium alloy. J. Mater. Res. Technol. 32, 4265 –4277. 
+
+https://doi.org/10.1016/j.jmrt.2024.09.005 
+
+Lu, F. -H., Jiang, B. -F., Lo, J. -L., Chan, M. -H., 2009. Influences of oxygen impurity 
+
+contained in nitrogen on the reaction of titanium with nitrogen. J . Mater. Res. 
+
+24, 2400 –2408. https://doi.org/10.1557/jmr.2009.0288 40 
+
+Luís, R., Nietiadi, Y., Silva, A., Gonçalves, B., Franke, T., Biel, W., 2021. Nuclear 
+
+analysis of the DEMO divertor survey visible high -resolution spectrometer. 
+
+Fusion Eng. Des. 169, 112460 .
+
+https://doi.org/10.1016/j.fusengdes.2021.112460 
+
+Maxelon, M., Pundt, A., Pyckhout -Hintzen, W., Barker, J., Kirchheim, R., 2001. 
+
+Interaction of hydrogen and deuterium with dislocations in palladium as 
+
+observed by small angle neutron scattering. Acta Mater. 49, 2625 –2634. 
+
+https://doi.org/10.1016/S1359 -6454(01)00185 -9
+
+McCarroll, I.E., Bagot, P.A.J., Devaraj, A., Perea, D.E., Cairney, J.M., 2020. New 
+
+frontiers in atom probe tomography: a review of research enabled by cryo 
+
+and/or vacuum transfer systems. Mater. Today Adv. 7, 100090. 
+
+https://doi.org/10.1016/j.mtadv.2020.100090 
+
+Mouton, I., Chang, Y., Chakraborty, P., Wang, S., Stephenson, L.T., Ben Britton, T., 
+
+Gault, B., 2021. Hydride growth mechanism in zircaloy -4: Investigation of the 
+
+partitioning of alloying e lements. Materialia 15, 101006. 
+
+https://doi.org/10.1016/j.mtla.2021.101006 
+
+Reckzügel, M.C., Drachsel, W., Block, J.H., 1995. Structure of H+3 in high electric 
+
+fields with implications for the structure of adsorbed H3. J. Chem. Phys. 
+
+https://doi.org/10.1063 /1.469022 
+
+Shariq, A., Mutas, S., Wedderhoff, K., Klein, C., Hortenbach, H., Teichert, S., 
+
+Kücher, P., Gerstl, S.S.A., 2009. Investigations of field -evaporated end forms 
+
+in voltage - and laser -pulsed atom probe tomography. Ultramicroscopy 109, 
+
+472 –479. https ://doi.org/10.1016/j.ultramic.2008.10.001 41 
+
+Shugard, A.D., Walters, R.T., Blarigan, P.V., 2012 . Titanium tritide radioisotope heat 
+
+source development: palladium -coated titanium hydriding kinetics and tritium 
+
+loading tests. 
+
+Stepień, Z.M., Tsong, T.T., 1998. Fo rmation of metal hydride ions in low -temperature 
+
+field evaporation.  Surf. Sci. 409, 57 –68. https://doi.org/10.1016/S0039 -
+
+6028(98)00200 -3
+
+Suzuki, H., Takai, K., 2012.  Summary of Round -robin Tests for Standardizing 
+
+Hydrogen Analysis Procedures. ISIJ Int. 52, 174 –180. 
+
+https://doi.org/10.2355/isijinternational.52.174 
+
+Takahashi, J., Kawakami, K., Kobayashi, Y., 2018. Origin of hydrogen trapping site 
+
+in vanadium carbide precipitation strengthening steel. Acta Mater. 153, 193 –
+
+204. https://doi.org/10.1016/j.actamat .2018.05.003 
+
+Takahashi, J., Kawakami, K., Kobayashi, Y., Tarui, T., 2010. The first direct 
+
+observation of hydrogen trapping sites in TiC precipitation -hardening steel 
+
+through atom probe tomography. Scr. Mater. 63, 261 –264. 
+
+https://doi.org/10.1016/j.scripta mat.2010.03.012 
+
+Tanaka, S., Abe, Y., Kawabe, M., Kutsukake, C., Oginuma, Y., Yamada, M., Suzuki, 
+
+T., Yamanishi, T., Konno, C., 2009 . Prototype Manufacturing of Small Tritium 
+
+Target inside JAEA. 
+
+Tegg, L., Stephenson, L.T., Cairney, J.M., 2024. Estimation of the Electric Field in 
+
+Atom Probe Tomography Experiments Using Charge State Ratios. Microsc. 
+
+Microanal. 30, 466 –475. https://doi.org/10.1093/mam/ozae047 
+
+Tritium | Radioactive, Hydrogen, Decay | Britannica [WWW Document], 2025. URL 
+
+https://www.britannica.com /science/tritium (accessed 10.21.25). 42 
+
+Tsong, T.T., Kinkus, T.J., Ai, C.F., 1983. Field induced and surface catalyzed 
+
+formation of novel ions : A pulsed -laser time -of -flight atom -probe study. J. 
+
+Chem. Phys. 78, 4763 –4775. https://doi.org/10.1063/1.445276 
+
+Tu nneling | Institute for Theoretical Chemistry | University of Stuttgart [WWW 
+
+Document], 2025 . URL https://www.itheoc.uni -
+
+stuttgart.de/research/kaestner/research/tunneling/ (accessed 10.21.25). 
+
+Villari, R., Litaudon, X., Mailloux, J., Dentan, M., Fonnesu, N. , Ghani, Z., Packer, 
+
+L.W., Rimini, F., Vila, R., Afanasenko, R., Alguacil, J., Batistoni, P., 
+
+Beaumont, P., Bradnam, S.C., Carman, P., Catalan, J.P., Cecchetto, M., 
+
+Colangeli, A., Croft, D., Cufe, J., De Pietri, M., Fabbri, M., Figueiredo, J., 
+
+Flammini, D. , Grove, C.L., Hjalmarsson, A., Ioannou -Sougleridis, V., Jones, 
+
+L., Kierepko, R., Klosowski, M., Kolsek, A., Kos, B., Laszynska, E., Lerche, E., 
+
+Tonqueze, Y.L., Leichtle, D., Leon -Gutierrez, E., Lengar, I., Loughlin, M., 
+
+Lobel, R., Loreti, S., Mariano, G., Mianowski, S., Milnes, J., Moindjie, S., 
+
+Moro, F., Mietelski, J., Naish, R., Noce, S., Peric, J., Pontier, J.B., Reynolds, 
+
+S., Radulović, V., Savva, M.I., Sauvan, P., Shand, C.R., Snoj, L., 
+
+Stamatelatos, I.E., Štancar, Z., Stokes, T., Terranova, N., Turne r, A.N., 
+
+Vasilopoulou, T., Wójcik -Gargula, A., 2025. Overview of deuterium -tritium 
+
+nuclear operations at JET. Fusion Eng. Des. 217, 115133. 
+
+https://doi.org/10.1016/j.fusengdes.2025.115133 
+
+Weighted mean, 2026 . URL 
+
+https://www.itl.nist.gov/div898/software/dataplot/refman2/ch2/weigmean.pdf 
+
+(accessed 03 .06 .2 6)43 
+
+Weighted standard deviation, 2026. URL 
+
+https://www.itl.nist.gov/div898/software/dataplot/refman2/ch2/weightsd.pdf 
+
+(accessed 0 3.0 6.2026) .
+
+Wilke, M., Tei chert, G., Gemma, R., Pundt, A., Kirchheim, R., Romanus, H., Schaaf, 
+
+P., 2011. Glow discharge optical emission spectroscopy for accurate and well 
+
+resolved analysis of coatings and thin films. Thin Solid Films 520, 1660 –1667. 
+
+https://doi.org/10.1016/j.tsf.2 011.07.058 
+
+Zahiri, A.H., Ombogo, J., Lotfpour, M., Cao, L., 2023. Twinning in Hexagonal Close -
+
+Packed Materials: The Role of Phase Transformation. Metals 13, 525. 
+
+https://doi.org/10.3390/met13030525

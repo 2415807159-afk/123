@@ -1,0 +1,2226 @@
+Title: Reliable Viscosity Calculation from High-Pressure Equilibrium Molecular Dynamics: Case Study of 2,2,4-Trimethylhexane
+
+URL Source: https://arxiv.org/pdf/2603.11247v1
+
+Published Time: Fri, 13 Mar 2026 00:09:30 GMT
+
+Number of Pages: 74
+
+Markdown Content:
+# Reliable Viscosity Calculation from High-Pressure Equilibrium Molecular Dynamics: Case Study of 2,2,4-Trimethylhexane 
+
+## Gözdenur Toraman, † Dieter Fauconnier, †,‡ and Toon Verstraelen ∗,¶
+
+†Soete Laboratory, Ghent University, Technologiepark-Zwijnaarde 46, 9052 Ghent, Belgium 
+
+‡FlandersMake@UGent, Core Lab MIRO, 3001 Leuven, Belgium 
+
+¶Center for Molecular Modeling (CMM), Ghent University, Technologiepark-Zwijnaarde 46, B-9052, Ghent, Belgium 
+
+E-mail: toon.verstraelen@ugent.be 
+
+1
+
+> arXiv:2603.11247v1 [physics.comp-ph] 11 Mar 2026
+
+Abstract 
+
+Viscosity is a fundamental property of liquid lubricants, yet it is challenging to deter-mine accurately, especially at high pressures. Although equilibrium molecular dynamics (EMD) simulations are a promising alternative to resource-intensive experiments, prac-tical challenges remain in assessing the sufficiency of simulation time and in controlling uncertainties in the Green–Kubo formalism due to the finite amount of trajectory data. In this work, we extend the STable AutoCorrelation Integral Estimator (STACIE), a re-cently developed algorithm for estimating transport properties. First, we introduce the Lorentz model to estimate the viscosity and the exponential correlation time from the low-frequency power spectrum of anisotropic pressure fluctuations. Second, we show how to supplement the three conventional off-diagonal elements of the pressure tensor (Pxy , Pyz and Pzx ) with two additional independent time series for shear viscosity cal-culations. Using these improvements, we apply STACIE to calculate the shear viscosity of 2,2,4-trimethylhexane from EMD simulations. We demonstrate STACIE’s capabil-ity to reliably calculate viscosity under high-pressure conditions, offering a robust and automated solution with validated uncertainty quantification. Our results, when com-pared to the outcomes of the 10 th International Fluid Properties Simulation Challenge (IFPSC), underscore the need for long EMD simulations. Large deviations from exper-imental viscosities in previous works were primarily due to insufficient simulation times and ad hoc post-processing choices, rather than the limitations of the force fields used. Unlike previous studies, our viscosity estimates agree well with experimental results (relative error < 6%) up to the highest pressure of 1 GPa , highlighting the improved reliability and accuracy of STACIE’s systematic approach to viscosity predictions. 
+
+21 Introduction 
+
+Shear viscosity is a fundamental transport property of fluids, both liquids and gases, that quantifies their resistance to shear motion as a result of momentum exchanged between nearby fluid molecules. Accurate viscosity input is essential for modeling fluid dynamics across scientific and engineering disciplines, including aeronautics, medicine, geophysics, as-trophysics, high-energy physics, polymer chemistry and pharmaceutics. 1–9 In tribology, a sub-discipline of mechanical engineering, accurate characterization of the viscosity of lu-bricants in a relevant range of pressures, shear rates and temperatures, holds paramount importance. Such knowledge is crucial for selecting a suitable and optimal lubricant for machines and their mechanical components (gears, bearings, . . . ) as it affects lubricant film thickness ( ≈ 1 μm) between solid surfaces, their energy efficiency and lifetime. Unfortunately, dependable, precise, and complete data on viscosity for different lubri-cants remains scarce. In particular for high pressures (> 1 GPa ), relevant for heavily loaded contacts operating in the thermo-elastohydrodynamic lubrication (TEHL) regime, experi-mental data is very limited. Performing ultra-high-pressure experiments, even up to 1 GPa ,is notably challenging and requires highly specialized equipment. 10 Since the early 2000s, Molecular Dynamics (MD) has gained traction as a promising alternative. 11–13 With only the molecular structure and an appropriate force field as inputs, MD simulations can, in prin-ciple, make predictions and give detailed atomistic insight at any thermodynamic state. 14–16 
+
+However, accurate predictions of bulk and shear viscosity of hydrocarbon lubricants using MD are notoriously challenging, even at ambient conditions. These challenges exacerbate under very high hydrostatic pressures, since the viscosity of hydrocarbon lubricants is known to increase nearly exponentially with pressure, 10 significantly slowing down molecular motion and complicating statistical sampling from simulations. In MD, shear viscosity can be determined using either EMD or non-equilibrium MD (NEMD) methods, both having their strengths and ranges of applicability. 16 NEMD ne-cessitates high shear rates (typically > 1 × 10 7 s−1) to obtain an acceptable signal-to-noise 3ratio. 14,17 Consequently, the method is inherently well-suited for characterizing the non-Newtonian rheology of fluids under high-shear rates. One practical limitation is that the zero-shear viscosity must be extrapolated empirically. 15 In contrast, EMD directly predicts zero-shear viscosity and offers several advantages over NEMD. For example, one can derive multiple transport properties from the same EMD simulation. Moreover, EMD has been shown to yield consistent and reliable results if convergence issues are properly addressed and post-simulation analysis is carefully performed. 15,16,18 However, in systems with long relaxation times, such as lubricants under high pressure, the challenge is that convergence is slow and difficult to confirm. The motivation of this work is to provide a more rigor-ous, robust and systematic framework for addressing these challenges with a novel EMD post-processing technique. Green–Kubo theory is the main theoretical framework to derive transport properties from EMD simulations. 19,20 For example, it relates shear viscosity to the autocorrelation of microscopic off-diagonal pressure tensor fluctuations. 11,21,22 Using the notation introduced in our previous work, 23 it can be expressed as follows: 
+
+η = V
+
+2kBT
+
+Z +∞−∞ 
+
+D ˆPxy (t0) ˆPxy (t0 + ∆ t)
+
+E| {z } 
+
+> ACF, c(∆ t)
+
+d∆ t (1) where V is the volume of the simulation cell, kB is the Boltzmann constant, T is the temper-ature, and ˆPxy is an off-diagonal element of the instantaneous pressure tensor. The integrand in Eq. (1) is the autocorrelation function (ACF) of ˆPxy , denoted as c(∆ t), where ∆t is the time lag. Various algorithms have been developed to estimate transport properties from finite amounts of EMD trajectory data, all of which can be justified from Green–Kubo theory. As outlined in our previous work, 23 they can be broadly classified into four categories: Green– Kubo (GK) algorithms, which truncate the integral in Eq. (1) and use a sampling estimate of the ACF; 24,25 Einstein–Helfand (EH) algorithms based on mean squared displacements; 26,27 
+
+4cepstral 28–30 and spectral methods. 23,31 The latter two categories utilize the Wiener–Khinchin theorem to relate the transport property to the zero-frequency limit (of the logarithm) of a power spectrum. The time decomposition method (TDM) proposed by Zhang et al. 25 falls into the category of GK algorithms, and it has been widely used for shear viscosity estimation of lubricants at elevated pressures. 32–35 Although the TDM achieved promising results in some cases, it relies on ad hoc choices and human judgment, which limits its robustness and reproducibility. Originally developed and tested for systems with relatively fast dynamics, its applicability to high-pressure systems is uncertain. In fact, as demonstrated in our previous work, 36 the visual assessment of intermediate plots required in TDM can severely bias the predicted viscosity in more challenging cases. This difficulty exacerbates at higher pressures, when viscosity and relaxation time of pressure fluctuations increase. This reveals a broader issue: Many commonly used methods for evaluating transport properties have primarily been tested under ambient or high-temperature conditions, or on relatively simple systems (typically Lennard-Jones fluids) where system dynamics are fast (lower viscosities) and correlation times are short. However, under high-pressure conditions, with high viscosity and long correlation times, it becomes far more difficult to achieve reliable estimates of transport properties. These challenges become especially pronounced in the TEHL regime and raise concerns about the reliability of EMD results, as evidenced in the findings of the 10 th IFPSC. 32,33,37 
+
+To address these challenges, we recently developed STACIE (STable AutoCorrelation Integral Estimator), 23 a spectral algorithm designed to tackle three major issues in EMD-based transport property estimation: (i) the need for a robust, automated approach that avoids subjective human intervention in the analysis of EMD data; (ii) the difficulty of determining the required simulation time, especially in systems with slow dynamics; and (iii) the need for uncertainty quantification of the estimated transport properties for reliable and accurate estimates. STACIE estimates a transport property by evaluating the zero-5frequency limit of a model fitted to the low-frequency part of the power spectrum of the corresponding time-dependent quantity, which allows for a precise uncertainty quantification in a fully automated manner. The primary objective of this work is to demonstrate the applicability and performance of STACIE to calculations of the shear viscosity of 2,2,4-trimethylhexane up to a pressure of 1 GPa . To this end, we extend STACIE by introducing the “Lorentz” model for the low-frequency region of the power spectrum, which is specifically tailored for ACFs with exponentially decaying tails. The secondary objective is to provide a physically grounded guideline for determining the required simulation time. The exponential correlation time, 38 
+
+τexp , is one of the parameters of the Lorentz model and corresponds to the width of the Lorentzian peak centered at frequency zero in the power spectrum. Unlike the integrated correlation time, τint , which is related to the error of the mean of time-correlated data, τexp 
+
+characterizes the slowest relaxation in the system. We demonstrate how τexp can be used to assess whether an MD simulation is sufficiently long to capture these slowest modes. Our new approach offers a more systematic alternative to existing ad hoc guidelines for determining the simulation time. 16,39 We compare our results with those reported in the 10 th IFPSC and discuss the implications for high-pressure viscosity calculations. The remainder of the paper is structured as follows: Section 2 introduces the Lorentz model, which is applicable to any autocorrelation function with exponentially decaying tails. This section also provides practical guidelines for preparing inputs to ensure reliable estimates when applying this new model. Section 2 concludes with a discussion of how exponential and integrated correlation times differ and how they are related. Section 3 starts with a brief description of the EMD dataset employed in this study. It also shows how to incorporate five independent anisotropic pressure contributions, as opposed to the usual three, to improve the statistical efficiency of viscosity estimates. Section 4 presents the viscosity results obtained with STACIE under both ambient and high-pressure conditions, and includes comparisons with experimental data and previously reported values in the literature. Additionally, it 6discusses the influence of simulation duration on the reliability of viscosity estimates. Finally, Section 5 summarizes the key findings and outlines potential directions for future work. All error estimates are standard uncertainties unless they are specified as a 95% confidence interval (CI). 
+
+# 2 Power Spectrum Model 
+
+This section begins with a brief overview of the core concept behind STACIE. For a com-prehensive explanation, including detailed mathematical derivations and implementation specifics, readers are referred to our earlier work and STACIE’s documentation. 23,40 We then introduce a model tailored for ACFs that exhibit exponential decay at long time lags, which is suitable for shear viscosity calculations. With this new model, we revisit and extend our practical guidelines for preparing input data to ensure accurate and reliable viscosity esti-mates using STACIE. Finally, we discuss the exponential and integrated correlation times, both of which can be estimated within this framework. In essence, STACIE constructs the sampling power spectral density (PSD), fits a user-defined model to the low-frequency region of the spectrum, and evaluates the fitted model at zero frequency to obtain the autocorrelation integral, I, and its uncertainty, σI . The main advantage of spectral analysis is that the Fourier spectrum amplitudes have uncorrelated un-certainties at different frequencies, which simplifies uncertainty quantification. 23,28–31 In con-trast, ACFs and mean squared displacements have correlated uncertainties at different time lags, 41,42 which are typically ignored in Green–Kubo and Einstein–Helfand algorithms, 24,25,27 
+
+hampering a robust uncertainty quantification. STACIE automatically detects a suitable low-frequency part of the spectrum defined by a cutoff frequency. The robustness of STACIE’s uncertainty quantification stems from considering a wide range of possible cutoff frequencies, fcut ,j . Instead of selecting a single best cutoff frequency, STACIE fits model parameters for all cutoffs, assigns a weight to each 7fit using cross validation, and marginalizes statistical estimates over the grid of frequency cutoffs. This effectively accounts for the uncertainty associated with selecting the cutoff frequency. The current version of STACIE (v1.2.1) supports three models for fitting the low-frequency region of the spectrum, 40 namely the exponential polynomial model (exppoly), the Padé model, and the Lorentz model. Our earlier work introduced the exppoly model, 23 which rep-resents the PSD as an exponential of a low-degree polynomial. It offers broad applicability with minimal assumptions about spectral shape. It also provides robust parameter estima-tion because initial guesses can be obtained through linear regression. Its effectiveness was demonstrated using both synthetic data and the ionic conductivity of an electrolyte. In the present work, we introduce a model suited for autocorrelation functions that decay expo-nentially, characterized by a correlation time, τexp , which represents the slowest relaxation mode of the system. This parameter provides valuable insight into selecting appropriate sim-ulation times and block sizes, which is particularly valuable for high-pressure systems with slow dynamics. This extends the practical guidelines we previously outlined for preparing sufficient input data. 23 
+
+## 2.1 The Lorentz model 
+
+STACIE’s exppoly model is robust and broadly applicable. However, when the ACF exhibits an exponential tail, the Lorentz model is preferable because its Fourier transform matches this tail closely. In case of exponential decay, the Lorentz model can explain a larger por-tion of the low-frequency spectrum compared to a fully generic model, using only three parameters, which results in more robust fits. The Lorentz model assumes that the input time series exhibits one slow decay mode, superimposed on significantly faster oscillations. For large time lags, the ACFs is assumed 8to have the following form: 
+
+c(∆ t) ≈ C1 exp 
+
+
+
+−|∆t|
+
+τexp 
+
+
+
+(2) where C1 is the tail amplitude and τexp is the exponential correlation time. If the ACF were purely exponential for all time lags, the corresponding PSD would be a Lorentzian function centered at zero frequency: 
+
+Ipure-exp (f ) = 2C1τexp 
+
+1 + (2 πf τ exp )2 (3) In practice, this pure exponential form is rarely observed because of intricate short-time dynamics. If the short time dynamics occur on a timescale τfast ≪ τexp , the spectrum at low frequencies remains Lorentzian but with a white-noise background, represented by a constant C0 in the final form of STACIE’s Lorentz model: 
+
+Ilorentz (f ) = C0 + 2C1τexp 
+
+1 + (2 πf τ exp )2 for f ≪ 1/τ fast (4) To facilitate the regression and the uncertainty quantification, STACIE internally represents this model as a special case of the Padé model: 
+
+Ipade (f ) = 
+
+X
+
+> s∈Snum
+
+psf s
+
+1 + X
+
+> s∈Sden
+
+qsf s (5) with Snum = {0, 2} and Sden = {2}.As detailed in our previous work, STACIE fits a model to only the low-frequency spec-trum, which is controlled by a cutoff frequency. A logarithmic grid of cutoff frequencies is constructed and for each cutoff frequency, fcut ,j , the regression is repeated. To clarify this aspect, all fitted parameters are denoted with a superscript (j) below. 9For a given cutoff fcut ,j , the estimated Padé model parameters {ˆp(j)0 , ˆp(j)2 , ˆq(j)2 } are trans-formed into Lorentz model parameters as follows: 
+
+ˆC(j)0 = ˆp(j)2
+
+ˆq(j)2
+
+ˆC(j)1 = π
+
+q
+
+ˆq(j)2
+
+ˆp(j)0 − ˆp(j)2
+
+ˆq(j)2
+
+!
+
+ˆτ (j) 
+
+> exp
+
+=
+
+q
+
+ˆq(j)2
+
+2π
+
+(6) Hats are used throughout this work to denote stochastic quantities. The results for cutoff 
+
+j are only retained if the Padé corresponds to a Lorentzian peak, namely if ˆq(j)2 > 0 and 
+
+ˆp(j)0 ˆq(j)2 > ˆp(j)2 . When these conditions are met, STACIE performs the transformation to 
+
+ˆC(j)0 , ˆC(j)1 , and ˆτ (j) 
+
+> exp
+
+and applies first-order uncertainty propagation to map the covariance of the Padé parameters to the covariance of the Lorentz parameters. This allows STACIE to report the uncertainty in ˆτ (j)
+
+> exp
+
+. Finally, note that the estimate of the autocorrelation integral is simply ˆI(j) = ˆ p(j)0 .To ensure stable estimates of ˆτexp , STACIE applies two heuristics when marginalizing the fitted parameters over all frequency cutoffs. First, fits with an extremely large relative uncertainty in ˆτ (j) 
+
+> exp
+
+are discarded, namely when 
+
+ˆRj = ˆσ(j) 
+
+> τexp
+
+/ˆτ (j)
+
+> exp
+
+ˆσ(j) 
+
+> I
+
+/ˆI(j) > 100 . (7) A large relative uncertainty in ˆτ (j) 
+
+> exp
+
+indicates that the cutoff frequency is so low that the model is fitted to the flat part of the maximum of the Lorentzian peak. In this situation, we observed that the Laplace approximation for the parameter uncertainty tends to break down, leading to poor uncertainty estimates and an unreliable cross-validation. Second, to further reduce the risk of including misleading fits, the weights used to marginalize over all 10 cutoff frequencies also include an exponential penalty: 
+
+ˆW lorentz  
+
+> j
+
+∝ ˆLCV2L  
+
+> j
+
+exp( − ˆRj ) H(100 − ˆRj ) (8) where H( ·) is the Heaviside step function, and ˆLCV2L  
+
+> j
+
+is a weight factor determined via cross-validation, as described in our original paper on STACIE. 23 The exponential penalty gradually assigns lower weights to fits with larger relative uncertainties in ˆτ (j)
+
+> exp
+
+. By expressing the penalty as a function of a ratio of relative uncertainties, it becomes independent of the overall statistical quality of the input data. This penalty mitigates unreliable fits and leads to a more robust estimate of ˆτexp after marginalization: 
+
+ˆτexp = X
+
+> j
+
+ˆW lorentz  
+
+> j
+
+ˆτ (j) 
+
+> exp
+
+with X
+
+> j
+
+ˆW lorentz  
+
+> j
+
+= 1 (9) Final values of all fitted parameters are constructed using the same weighted average. STACIE’s implementation of the Lorentz model has been validated using the ACID test, which also contains two test cases with exponentially decaying ACFs. 23,43 This validation, summarized in section S1 of the Supporting Information, confirms that both the autocorre-lation integral and the exponential correlation time are accurately estimated with reliable uncertainties. One minor limitation is that the uncertainty in ˆτexp tends to be overestimated, by about 25%. It may seem surprising that the Lorentz model can be applied to a wide range of systems, despite its simplicity and the strong assumptions it makes about the ACF. 44 A well-known example that gives exactly this form of the ACF is the solution of a first-order Langevin equation, which describes the velocity of a Brownian particle in a fluid. 45 More complex systems often exhibit the same exponential decay at long time lags, because their fast modes act as thermal noise perturbing the slowest degrees of freedom, which is the essence of the first-order Langevin equation. However, when there is no clear separation between slow and fast timescales, the ACF may not exhibit an exponential tail, and the Lorentz model becomes 11 less suitable. 46,47 STACIE’s documentation includes several examples to illustrate when the Lorentz model is appropriate and when it is not. 40 
+
+The relevance of the Lorentz model extends directly to transport properties. Although the long-time decay of the velocity ACF of a dense liquid is known to follow a power law, 48 our results show that the Lorentz model can be applied effectively to pressure tensor ACFs. We demonstrate that it is suitable for computing the shear viscosity of liquid 2,2,4-trimethylhexane (C 9H20 ) at pressures up to 1 GPa , highlighting its potential for tribology applications. Furthermore, STACIE’s documentation illustrates the broader applicability to other transport properties, including successful calculation of diffusivity (of a single particle on a surface), thermal conductivity and bulk viscosity. 40 
+
+## 2.2 Guidelines for preparing sufficient inputs for the Lorentz model 
+
+Accurate predictions of transport properties require MD simulations long enough to capture the system’s slowest modes. These slow modes determine how the power spectral density (PSD) converges to its zero-frequency limit. If the simulation time ( tsim ) is too short, the Discrete Fourier Transform (DFT) grid resolution ( 1/t sim ) becomes too coarse to adequately resolve the low-frequency region of the spectrum, which has two major consequences. First, fitting a model to such low-resolution data results in a poor estimate of the autocorrelation integral and hence the value of the transport property. Second, the exponential correlation time cannot be derived reliably from a low-resolution spectrum for the same reason. Since this is an essential indicator for the simulation time required to obtain converged transport properties, we emphasize that one can confirm only a posteriori whether the chosen simula-tion time was sufficiently long. In our previous work, we introduced some practical guidelines to systematically extend inputs until they pass STACIE’s internal sanity checks, thereby of-fering a practical approach to obtaining sufficient data and accurate transport properties with reliable uncertainty estimates. 23 More detailed information of these recommendations can be found in the STACIE documentation. 40 Here, we briefly summarize them and present 12 further guidelines tailored to the Lorentz model introduced in Section 2.1, by making use of the exponential correlation time, τexp .1. Running multiple independent simulations is essential for improving statistical accu-racy. A single MD trajectory can yield multiple time-correlated input sequences, such as the three Cartesian components of the heat flux in thermal conductivity calculations. However, relying on only one trajectory, even if it provides several such sequences, typi-cally results in poor statistical estimates, reflected in large error bars. Running multiple independent MD trajectories, each starting from distinct initial configurations or ve-locity distributions, enhances the reliability of the autocorrelation integral and leads to reduced statistical uncertainties. In our previous work, we recommended choosing the number of independent sequences as M ≈ 1/(20 P ϵ 2
+
+> rel
+
+), based on the target relative error, ϵrel , of the autocorrelation integral and the number of model parameters, P .23 
+
+We further recommended that each sequence should contain at least N ≥ 400 P steps. 2. For a given cutoff frequency, the FFT grid points are assigned weights that are one for the lowest frequencies and that gradually decrease to zero around the cutoff frequency. The sum of these weights is the effective number of data points used in the fit, Neff . As a general guideline, we recommend using at least 20 P effective points. For the Lorentz model, this corresponds to a minimum of Neff ≥ 60 to ensure that the peak shape is captured accurately. 3. As mentioned earlier, an ACF with exponentially decaying tails has a corresponding spectrum featuring a Lorentzian peak at zero frequency, whose peak width equals 
+
+1/(2 πτ exp ). To obtain a reliable fit, this peak must be well-resolved on the DFT frequency grid, whose spacing is 1/t sim . A sufficiently fine grid is achieved when the simulation time is much longer than 2πτ exp . Accordingly, we recommend a minimum 13 simulation time of: 
+
+tmin ≈ 20 πτ exp (10) This guideline ensures that the Lorentzian peak is well-resolved and the Lorentz model can accurately capture the slowest mode of the system. It is not intended as a strict requirement, but rather as another useful quantity to monitor when using STACIE with the Lorentz model, complementing the earlier points and the Z-scores introduced in our earlier work. 23 
+
+4. For systems with slow dynamics, the required simulation time in Eq. (10) can easily lead to excessive data storage requirements when data is saved at every time step. To reduce the storage burden, we have shown that it is sufficient to keep and analyze block-averaged data. 23 This is particularly beneficial for high-pressure simulations, where slower system dynamics necessitate much longer trajectories. For a block size B, every block average stored on disk replaces B individual values it averages over, reducing the data size by a factor of 1/B . Given a time step h, one block spans a time interval 
+
+Bh , and according to the Nyquist–Shannon sampling theorem, the highest frequency that can be captured in the averaged data is 1/(2 Bh ). To ensure that a Lorentzian at f = 0 and with width 1/(2 πτ exp ) can be represented without aliasing artifacts, the Nyquist–Shannon frequency of the block-averaged data must be significantly higher than the width of the peak: 
+
+12Bh ≫ 12πτ exp 
+
+(11) Hence, we recommend choosing the maximum block size as: 
+
+Bmax ≈ πτ exp 
+
+10 h (12) 14 Again, this is not a strict rule but rather a guideline to ensure a good trade-off between storage efficiency and reliable estimates when using STACIE with the Lorentz model. The Lorentz model implementation in STACIE provides diagnostic guidance on the recom-mended simulation lengths and block sizes, enabling a systematic assessment of whether the sampling is sufficient to yield statistically converged estimates. If the simulation time is insufficient, the results of the analysis (including the error estimates) are potentially severely biased. To remedy this, the simulation should be extended further (e.g., by using restart files) until the low-frequency region is sufficiently resolved. 
+
+## 2.3 Integrated versus exponential correlation time 
+
+The term “correlation time” is often used in the context of time-correlated data, and gen-erally refers to the “integrated correlation time”. In this work, however, we introduced the “exponential correlation time”, τexp , in Section 2.1. In fact, with the Lorentz model, both timescales can be estimated from the same data in a single analysis. They only coincide in the special case of a purely exponential ACF without additional fast components, whereas in realistic MD time series, they can differ substantially. To avoid confusion, this section clarifies the definitions of the two timescales and how they relate to each other. The integrated correlation time appears naturally when quantifying the uncertainty in the sample mean of time-correlated data. Consider a time series {ˆxn}N −1 
+
+> n=0
+
+consisting of N
+
+time-correlated samples of a scalar observable x. The sample mean and its variance are defined as follows: 
+
+ˆxav = 1
+
+N 
+
+> N−1
+
+X
+
+> n=0
+
+ˆxn (13) 
+
+VAR[ˆ xav ] = 1
+
+N 2 
+
+> N−1
+
+X 
+
+> n=0
+> N−1
+
+X
+
+> m=0
+
+COV[ˆ xn , ˆxm] (14) A well-known result from time-series analysis states that, for large N , the variance of the 15 sample mean can be approximated as: 21,22,38 
+
+VAR[ˆ xav ] = 1
+
+tsim 
+
+Z ∞−∞ 
+
+c(∆ t) d∆ t (15) This is often rewritten in terms of the integrated correlation time, τint , defined as follows: 
+
+τint = 12
+
+Z ∞−∞ 
+
+c(∆ t)
+
+c(0) d∆ t (16) Using this definition and tsim = N h , the variance of the sample mean can be expressed in an intuitive form: 
+
+VAR[ˆ xav ] = 2τint 
+
+hc(0) 
+
+N (17) The second factor is the naive variance estimate, neglecting time correlations, and the first factor is called the “statistical inefficiency”, 21 which accounts for time correlations. To clarify how τint differs from τexp , we derive a relation between the two, starting from the Lorentz model. In the time domain, the corresponding ACF is given by the inverse Fourier transform of Ilorentz (f ):
+
+c(∆ t) = C0 δ(∆ t) + C1 exp 
+
+
+
+−|∆t|
+
+τexp 
+
+
+
+(18) The Dirac delta distribution, δ(∆ t), is a model for the fast dynamics occurring on timescales much shorter than τexp . In reality, the fast dynamics are not instantaneous and the ACF has a more complex shape at short time lags. For discrete time series, the fastest oscillations may be limited by the Nyquist frequency. To show the effect of the fast oscillations on τint ,we replace the Dirac delta distribution with a finite sharp peak centered at ∆t = 0 :
+
+c(∆ t) = A0 f
+
+ ∆t
+
+τfast 
+
+
+
++ C1 exp 
+
+
+
+−|∆t|
+
+τexp 
+
+
+
+(19) 16 where f is a fixed shape function with f (0) = 1 and R ∞−∞ f (u) d u = 2 . One can always renormalize f , A0 and τfast to satisfy these conditions. This model represents a sharp peak if 
+
+f (u) decays rapidly for |u| > 1 and the parameter τfast , which controls the width of the peak, is much shorter than τexp . Formally, one recovers the original Lorentz model term C0 δ(∆ t)
+
+by identifying C0 = 2 A0τfast and considering the limit τfast → 0 with C0 held fixed. With this more realistic ACF, the integrated correlation time can be written as a weighted average of two timescales: 
+
+τint = A0τfast + C1τexp 
+
+A0 + C1
+
+(20) If the ACF has no fast component and is purely exponential ( A0 = 0 ), the integrated and exponential correlation times coincide, τint = τexp . However, in the presence of some fast dynamics, the exponential correlation time always corresponds to the slowest mode and the integrated correlation time becomes a weighted average of multiple timescales present in the ACF. Note that, because STACIE only fits a model to the spectrum at the lowest frequencies, it can constrain only the effective white-noise background level, C0 = 2 A0τfast . Neither the detailed shape function f nor the individual parameters A0 and τfast are identifiable separately from this low-frequency fit. In summary, τint and τexp serve different practical purposes and cannot generally be in-terchanged. The two timescales become comparable only when A0 ≪ C1, and the slow mode determines both the long-time decay and the statistical inefficiency. In viscosity calcula-tions, anisotropic pressure fluctuations typically exhibit fast oscillations caused by atomic vibrations superimposed on a slow mode. In such cases, the time series may have a small τint 
+
+(hence relatively small uncertainty in time-averaged quantities for a given tsim ) while still exhibiting a large τexp , meaning that long simulations are required to converge the predicted transport properties. 17 3 EMD simulations for shear viscosity calculations 
+
+This section first outlines the technical details of the EMD simulations from which shear viscosity estimates were derived. This is followed by a summary of how to transform the pressure tensor elements, in case of an isotropic liquid, into five statistically independent anisotropic contributions from which the shear viscosity can be estimated. 
+
+## 3.1 Simulation details 
+
+In this study, we estimated the shear viscosity of 2,2,4-trimethylhexane (C 9H20 ), a short, branched hydrocarbon commonly used as a lubricant base oil molecule. This molecule was se-lected for its computational simplicity and its relevance to the 10 th IFPSC. 49 The availability of experimental data and prior computational studies enables validation and benchmarking of our results. 32,33,37,50–52 We analyzed trajectories from an EMD dataset 53 computed using LAMMPS 54 with a simulation protocol detailed in our previous work. 36 For this study, we expanded the dataset with simulations at a pressure of 1 GPa using the same protocol, and made it available in a more reusable format. 55 
+
+Fifty independent NVT EMD simulations were performed 56 for each investigated pres-sure, with increasing simulation times at higher pressures. All simulations were conducted at a temperature of 293 K using the Nosé-Hoover thermostat with a relaxation time of 0.5 ps .The density of each simulation cell was determined from prior NPT simulations at the target pressure and temperature. 16 At ambient conditions, the shortest simulation time was 2 ns ,while for high-pressure conditions, simulations were extended (up to 500 ns at 1 GPa ). The simulation duration at 1 GPa was determined by available computational resources. 500 ns 
+
+long runs at 1 GPa were performed using 1 node with 64 processor cores per trajectory on a high-performance computing cluster with AMD Epyc 7H12 architecture. Each trajectory had a wall time of approximately 30 days, and the simulations were run in parallel. The total CPU hours for the 50 trajectories were approximately 2,300,000 (50 trajectories × 118 node × 64 processors × 30 days × 24 hours). (Due to a technical issue, two trajectories failed to complete, yielding 48 independent trajectories at 1 GPa .) Since the primary focus of this work is on high-pressure conditions and demonstrating the applicability of STACIE to systems with slow dynamics, systematic uncertainties and bias due to force field selection or finite-size effects are not accounted for here. 33,37,50,51 
+
+To reduce storage demands, particularly at higher pressures, we used the “fix ave/time” command of LAMMPS. In this way, the pressure tensor components were block averaged over a chosen block size, B = 2000 , as explained in Section 2.2. Because the MD time step is 
+
+h = 0 .5 fs , this corresponds to a new average every picosecond. For each external pressure, the time-dependent block-averaged pressure tensors from 50 independent trajectories were combined, which served as the inputs for STACIE to estimate shear viscosity and mean pressure, along with their associated uncertainties. 
+
+## 3.2 Five independent anisotropic pressure contributions of an isotropic liquid 
+
+Shear viscosity is typically estimated using each off-diagonal element of the pressure ten-sor, namely ˆPxy , ˆPxz , ˆPyz and then expressed as an average over the three estimates. For isotropic fluids, Daivis and Evans showed that the shear viscosity can also be estimated using six components of the pressure tensor: the three off-diagonal elements ( ˆPxy , ˆPxz , ˆPyz )and the traceless parts of the diagonal elements ( ˆPxx , ˆPyy , ˆPzz ) obtained by subtracting the isotropic or hydrostatic pressure contribution ( ˆPxx + ˆPyy + ˆPzz )/3.11 Including diagonal el-ements became a more common practice in the literature to improve the statistics and it is also recommended by the best practices guide for computing transport properties from EMD simulations by Maginn and co-workers. 16,57–61 They emphasized the need for rigorous uncertainty quantification and clear methodologies for incorporating additional elements. Although the method of Daivis and Evans enhances statistical accuracy, removing the trace introduces correlations among the diagonal pressure tensor elements. This conflicts with 19 STACIE’s requirement of statistically independent inputs, on which it relies to perform un-certainty quantification. Consequently, the approach by Daivis and Evans cannot be applied directly. Instead, we will show below how one can construct five statistically independent anisotropic pressure contributions, each of which can be used to estimate shear viscosity. The following terminology is used in this paper: we refer to the elements ˆPxy , ˆPxz , ˆPyz 
+
+of the pressure tensor as “the off-diagonal elements” while ˆPxx , ˆPyy , ˆPzz are termed “the di-agonal elements”. After a transformation of the pressure tensor, we obtain five independent “anisotropic contributions”, each providing a valid time series from which the viscosity of an isotropic liquid can be estimated. Three of these terms correspond directly to the off-diagonal elements, while the remaining two involve combinations of the diagonal elements. These five independent terms, denoted as { ˆP ′
+
+> 1
+
+, ˆP ′
+
+> 2
+
+, ˆP ′
+
+> 3
+
+, ˆP ′
+
+> 4
+
+, ˆP ′
+
+> 5
+
+}, are defined explicitly below. Hereafter we adopt Voigt notation to simplify the representation of the pressure tensor as a vector ˆP:
+
+ˆP =
+
+h
+
+ˆPxx ˆPyy ˆPzz ˆPyz ˆPzx ˆPxy 
+
+i⊤
+
+(21) The transformation of ˆP to the traceless form is given by ˆPtl = T ˆP, where T is an idempotent matrix that projects the pressure tensor onto its traceless (deviatoric) part by subtracting the hydrostatic pressure, p = 13 Tr ( ˆP). The matrix T is given by: 
+
+T =
+
+A 00 I
+
+ where A = 13
+
+
+
+2 −1 −1
+
+−1 2 −1
+
+−1 −1 2
+
+ (22) 
+
+A operates on the diagonal elements, ensuring that the diagonal terms of ˆPtl sum to zero. 
+
+I and 0 are the 3 × 3 identity and zero matrix, respectively. The matrix T is symmetric and can therefore be decomposed through eigendecomposition T = UΛU ⊤, where U is an 20 orthogonal matrix and Λ is a diagonal matrix. 
+
+diag( Λ) = 
+
+
+
+0 1 1 1 1 1
+
+⊤
+
+U =
+
+
+
+> 1√3
+
+q23 0 
+
+> 1√3
+
+− 1√61√21√3 − 1√6 − 1√2
+
+111
+
+
+
+(23) Transforming the pressure tensor ˆP onto this basis of eigenvectors separates the isotropic component (zero eigenvalue) from five remaining ones, which represent the traceless, devia-toric part of the pressure. To obtain five anisotropic pressure time series, each suitable for independently estimating shear viscosity, we construct a new transformation matrix V, which transforms the original pressure tensor into the five anisotropic contributions ˆP′ = V ˆP, where 
+
+V =
+
+ 
+
+> 1√3
+
+0
+
+− 12√312
+
+− 12√3 −12
+
+111
+
+
+
+(24) Note that the first two columns are eigenvectors of U rescaled by a factor 1/√2. Assuming that the Cartesian components of the pressure tensor are statistically uncorrelated, this orthogonal transformation yields five statistically independent anisotropic contributions. 
+
+ˆP ′
+
+> 3
+
+, ˆP ′ 
+
+> 4
+
+and ˆP ′ 
+
+> 5
+
+are obviously valid inputs for viscosity calculations, as they correspond to the off-diagonal elements of the original pressure tensor. Because the justification for 21 ˆP ′ 
+
+> 1
+
+and ˆP ′ 
+
+> 2
+
+is more involved, it is provided in Section S2 of the Supporting Information and in STACIE’s documentation. 40 In short, ˆP ′ 
+
+> 2
+
+corresponds to an off-diagonal element of the pressure tensor after a rotation of the coordinate frame about the x-axis by π/ 4. ˆP ′
+
+> 1
+
+cannot be found by a similar transformation. Instead, it is a renormalized average of two similar constructions with rotations about the y-axis and the z-axis by π/ 4. Section S2 also shows that the average of these five viscosity estimates is equivalent to the result of Daivis and Evans. Figure 1 illustrates the pressure tensor elements on a cubic simulation box of 
+
+2,2,4-trimethylhexane and shows how to prepare them as an input for STACIE. 
+
+# 4 Shear viscosity of 2,2,4-trimethylhexane 
+
+We first apply the Lorentz model in STACIE to analyze the viscosity of 2,2,4-trimethylhexane 
+
+at ambient conditions, and illustrate some of the intermediate results provided by STACIE. Subsequently, we extend our analysis to higher pressures, up to 1 GPa , and compare our findings with experimental data as well as results from other computational studies reported in the literature. 
+
+## 4.1 Ambient conditions 
+
+Figure 2 presents STACIE’s output for viscosity at ambient conditions ( 0.1 MPa and 293 K ). The screen output shows the main results and the recommended simulation settings. The graph displays the average spectrum of the anisotropic contributions and the Lorentz model fitted to these data. As can be seen from the graph, the estimated shear viscosity using 
+
+2 ns trajectories was η = 0 .66 ± 0.01 mPa s , closely matching the experimental value of 
+
+η = 0 .64 ± 0.03 mPa s .52 
+
+As discussed in Section 2.2, the exponential correlation time, τexp , is the crucial parame-ter to confirm that the simulation time is sufficient. Figure 2(b) shows that τexp is estimated to be 7.44 ps . Applying our heuristic guideline in Eq. (10), the minimal recommended simu-22 Figure 1: Preparation of five independent anisotropic pressure contributions per trajectory as input for STACIE’s shear viscosity calculation. (a) Illustration of pressure tensor elements for a cubic simulation box containing 100 2,2,4-trimethylhexane molecules. (b) Block averages of pressure tensor elements printed using the “fix ave/time” command in LAMMPS. (c) Transformation of the pressure tensor into the five independent terms required as input for STACIE, resulting in M = 5 Ntraj input time series in total. 23 (a)  (b)              
+
+> INPUT TIME SERIES
+> Time step: 1.00 ps
+> Simulation time: 2000.00 ps
+> Maximum degrees of freedom: 500.0
+> MAIN RESULTS
+> Autocorrelation integral: 0.66 ± 0.01 mPa s
+> Integrated correlation time: 1.24 ± 0.02 ps
+> SANITY CHECKS (weighted averages over cutoff grid)
+> Effective number of points: 79.9 (ideally > 60)
+> Regression cost Z-score: -1.2 (ideally < 2)
+> Cutoff criterion Z-score: 0.8 (ideally < 2)
+> MODEL lorentz() | CUTOFF CRITERION cv2l(125%)
+> Number of parameters: 3
+> Average cutoff frequency: 38.71 GHz
+> Exponential correlation time: 7.44 ± 0.79 ps
+> RECOMMENDED SIMULATION SETTINGS (EXPONENTIAL CORR. TIME)
+> Block time: < 2.34 ± 0.44 ps
+> Simulation time: > 467.40 ± 6.22 ps
+
+Figure 2: STACIE viscosity analysis of 2,2,4-trimethylhexane at ambient conditions ( 0.1 MPa 
+
+and 293 K ), with 50 trajectories, each 2 ns long. (a) The final part of STACIE’s screen output showing the shear viscosity estimate and recommended simulation settings. Note that the “time step” is not the MD integration time step, but the block size in units of time, as this is the input time series given to STACIE. (b) PSD averaged over the five independent pressure tensor elements and 50 MD trajectories, fitted with the Lorentz model. A detailed description of all elements of the spectrum plot can be found in Section S3 of the Supporting Information. 24 lation time is 20 × π × τexp ≈ 0.47 ns , confirming that our simulation time of 2 ns is sufficient to capture the slowest decay mode in the system for this condition. Additionally, the recom-mended maximal block size is 2.34 ps , indicating that our selected block size of 1 ps is small enough to obtain a low-frequency spectrum without aliasing artifacts. Note that the integrated correlation time, τint , is estimated to be 1.22 ps , roughly six times smaller than τexp . This reveals that the two time constants can indeed differ signifi-cantly, meaning that the slow dynamics of interest is superimposed with faster decay modes. Some caution is needed when interpreting τint as a physical timescale of the system. It is un-avoidably affected by the block averaging procedure, which filters out high-frequency modes that would otherwise reduce the integrated correlation time. Hence, τint cannot go below the block time, while τexp remains unaffected by this choice. 
+
+## 4.2 Pressure dependence of the viscosity up to 1 GPa 
+
+A key property of liquid lubricants is the pressure-viscosity relationship, which describes the substantial increase in the viscosity of liquid lubricants with increasing pressure. This trend is particularly pronounced under elastohydrodynamic lubrication (EHL) conditions, where pressure-induced densification and reduced molecular mobility significantly affect the lubricant film thickness in highly loaded contacts. This section investigates this piezovis-cous effect for 2,2,4-trimethylhexane at pressures up to 1 GPa . Our simulation results are compared against experimental data from the 10 th IFPSC, alongside computational find-ings from contributing researchers. 32,33,37,50–52 These comparative studies employed various methodologies, including both EMD and NEMD, and different force fields. As previously stated, we used the COMPASS class II force field 62 in our simulations. 36 
+
+In Section 3.2, we hypothesized that the five anisotropic pressure contributions used to estimate the viscosity are statistically independent. To validate this assumption, we computed the cross-correlation coefficients between all pairs of the five contributions at all pressures considered. A detailed statistical analysis is provided in Section S6 of the 25 Supporting Information, and it does indeed confirm empirically that the five contributions are statistically independent, supporting our theoretical arguments presented in Section 3.2. Figure 3(a) presents the viscosity as a function of pressure, comparing our results with those from other studies. When available, we used the average pressure obtained from the production runs, ¯PMD (this work, Cunha et al. ,50 Messerly et al. 33 ). For the other stud-ies, 32,37,51 we used the desired pressure from the NPT simulations, PD. To display the dis-crepancies better, Figure 3(b) shows the relative error on viscosity compared to experimental data. When possible, we interpolated the experimental data to compute relative errors at 
+
+¯PMD using cubic splines for the logarithm of the experimental viscosity and its relative error. Although cubic splines are not suitable for extrapolation in general, the pressure differences here are small enough to yield reasonable estimates. The error bars in Fig. 3(b) represent the propagated uncertainties from both the simulation and experimental measurements. Vis-cosity values obtained with STACIE at different pressures are compared with experimental values in Table 1. Detailed plots with intermediate results of STACIE at each pressure can be found in Section S3 of the Supporting Information. We also applied STACIE to estimate the uncertainty in the average pressure, which was found to be at least five orders of magnitude smaller than the average. The discrepancy between the average and desired pressures in Table 1 stems entirely from a small error in the density, which was estimated from NPT simulations preceding the NVT production runs. The results shown in Figure 3 indicate that many IFPSC challenge participants accurately estimated shear viscosity up to 500 MPa , except for Zheng et al. ,37 whose coarse-grained interaction model likely introduces systematic errors. In contrast, results obtained with STACIE show an excellent agreement with experimental data across the entire pressure range. The relative error is below 6 % at all pressures considered and is comparable to or smaller than the predicted relative uncertainty. Insufficient simulation time is one potential cause of the discrepancies between the sim-ulated and experimental viscosities reported in other studies. As pressure increases, the 26 0 200 400 600 800 1000 
+
+> Pressure [MPa]
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> [mPa s]
+
+(a)      
+
+> This work
+> Cunha (NEMD, AIREBO-m)
+> Gong (NEMD, TEAM-LJ-9-6)
+> Kondratyuk (EMD, COMPASS)
+> Messerly (EMD, MiPPE)
+> Zheng (EMD, SAFT-CG)
+> Bair (Experiment)
+> 0200 400 600 800 1000
+> Pressure [MPa]
+> 0
+> 10 2
+> experiment experiment  × 100
+
+(b)      
+
+> 0200 400 600 800 1000
+> Pressure [MPa]
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> Simulation time [ns]
+
+(c)   
+
+> tsim 20 exp
+
+Figure 3: Comparison of shear viscosity results with experimental data 52 and entries from the 10 th IFPSC. 32,33,37,50–52 (a) Shear viscosity as a function of pressure up to 1 GPa . (b) Relative error in viscosity versus pressure. The dashed green line indicates the experimental value as the zero-reference. 52 A “symlog” scale with a linear threshold of 100 is used on the y-axis to emphasize discrepancies. (c) EMD simulation times as a function of pressure, with the solid blue line representing the minimum required simulation time based on Eq. (10). The legend in (a) applies to all subplots, with consistent gray shades used for each IFPSC entry. 27 Table 1: Shear viscosity ( η) and exponential correlation time ( τexp ) for 2,2,4-trimethylhexane 
+
+at various pressures, estimated using STACIE. PD is the desired pressure in the NPT equi-libration runs, while ¯PMD is the average pressure in the NVT production runs performed at density ρ. Experimental viscosities, ηexperiment , are taken from Bair et al. 52                                                                   
+
+> PD[MPa ]ηexperiment [mPa s ]¯PMD [MPa ]ρ[kg /m3]η[mPa s ]τexp [ps ]
+> 0.10.64 ±0.03 1.14 722 0.66 ±0.01 7.44 ±0.79 100 .01.71 ±0.08 99 .89 784 1.73 ±0.02 19 .24 ±1.48 250 .05.13 ±0.25 246 .50 834 5.30 ±0.07 48 .68 ±4.18 500 .030 .90 ±1.98 494 .17 888 29 .62 ±0.52 258 .44 ±21 .96 1000 .01187 .00 ±106 .83 1017 .07 959 1325 .97 ±61 .00 13 071 .65 ±2754 .74
+
+exponential time constant, τexp , also increases, requiring much longer simulations to accu-rately capture the slowest decay mode. This problem is evident in Figure 3(c), where many entries fall short of the required simulation time, especially at higher pressures. Among the challenge entries, Messerly et al. 33 used the longest simulation time at 1 GPa (96 ns ), but overestimated the viscosity by nearly 300 % . As noted by the authors, this discrepancy is likely due to the Mie 16-6 potential used in their work, which is overly repulsive at short intermolecular distances. 33 Zheng et al. 37 performed 40 ns simulations at each pressure, but their coarse-grained model resulted in solidification above 500 MPa .At 1 GPa , the simulation time employed in this work ( 500 ns ) was substantially longer than those reported in previous studies. As expected, the system exhibited slow dynamics, with an exponential correlation time of approximately 13 .07 ns , implying a recommended sim-ulation duration of around 830 ns . STACIE predicted a viscosity of η = 1325 .97 ±61 .00 mPa s 
+
+at 1017 MPa , showing a good agreement with the experimental value of η = 1187 .00 ±
+
+106 .83 mPa s at 1000 MPa .52 When the experimental viscosity is extrapolated to 1017 MPa 
+
+using cubic splines, it yields η = 1351 ± 123 mPa s , which is in excellent agreement with our simulation result. Further extending the simulation time could improve convergence of our results as it would increase the resolution of the low-frequency region of the spectrum. Unfortunately, this was not feasible due to computational resource limitations. For compar-ison, Kondratyuk et al. 32 used the same force field but conducted much shorter production runs ( 2 ns ) at pressures above 250 MPa , resulting in viscosity underestimations of roughly 28 75% at 1 GPa . The authors attributed this discrepancy to the limitations of the force field. Our findings, however, indicate that insufficient simulation time is likely the dominant factor affecting the accuracy under such conditions, rather than the deficiencies in the force field itself. The importance of simulation time is further supported by convergence tests in which we estimated the viscosity from truncated trajectories. Starting from the full trajectory, we discarded the second half, analyzed the first half, and then repeated this procedure itera-tively until the retained part was shorter than 2 ns . Figure 4(a) shows the estimated shear viscosity at 494 MPa as a function of simulation time, using truncated sequences with du-rations {1.875 , 3.75 , 7.5, 15 , 30 , 60 } ns . Figure 4(b) presents the same analysis for 1017 MPa ,with simulation times of {1.95 , 3.9, 7.8, 15 .6, 31 .25 , 62 .5, 125 , 250 , 500 } ns . Hollow symbols indicate results for which the minimum simulation time recommended by STACIE was not met. In such cases, the viscosity estimate and its uncertainty are not expected to be reliable. Plots with STACIE’s intermediate results for the truncated trajectories are given in Section S4 and S5 of the Supporting Information. For 494 MPa , the viscosity estimate converges towards the experimental value after about 15 ns , whereas at 1017 MPa , it only converges to the experimental value after about 125 ns . The orange data points represent viscosity estimates obtained by Kondratyuk et al. 32 using the TDM, based on 30 trajectories of 2 ns 
+
+each. Notably, at 1 GPa , the TDM estimates are substantially lower than the experimen-tal value, indicating that the simulation time was insufficient to capture the slowest decay mode. In fact, it is remarkable that the TDM estimate at 500 MPa agrees well with the experimental value, given that it is based on an MD production run of 2 ns , which is only 8 times the exponential correlation time ( 0.259 ns ). Because TDM results are sensitive to user choices during analysis, this agreement could be coincidental. 36 However, it may also indicate opportunities to enhance STACIE’s data efficiency for short MD trajectories. Finally, assuming that the shear viscosity continues to increase exponentially with pres-sure and that the lubricant remains in a liquid state (which is not necessarily guaranteed at 29 0 10 20 30 40 50 60 
+
+Simulation time [ns] 
+
+22 
+
+24 
+
+26 
+
+28 
+
+30 
+
+> [mPa s]
+
+(a) PMD = 494 MPa     
+
+> Bair (spline, 494 MPa)
+> This work (t sim 20 exp )
+> This work (t sim < 20 exp )
+> Kondratyuk (as is, 500 MPa)
+
+0 100 200 300 400 500 
+
+Simulation time [ns] 
+
+200 
+
+400 
+
+600 
+
+800 
+
+1000 
+
+1200 
+
+1400 
+
+> [mPa s]
+
+(b) PMD = 1017 MPa     
+
+> Bair (spline, 1017 MPa)
+> This work (t sim 20 exp )
+> This work (t sim < 20 exp )
+> Kondratyuk (as is, 1000 MPa)
+
+Figure 4: Shear viscosity with its standard error estimated from EMD trajectories as a function of simulation time. (a) ¯PMD = 494 MPa with 60 ns -long trajectories. (b) 
+
+¯PMD = 1017 MPa with 500 ns -long trajectories. The green line and dashed lines repre-sent the experimental value and its uncertainty, 52 respectively, extrapolated to the average pressure of our production runs. The orange data points correspond to viscosity estimates of Kondratyuk et al. 32 
+
+30 such high pressures), we provide a rough estimate of the simulation time required to obtain converged results at 1.5 GPa and 2 GPa . This extrapolation is not intended as a defini-tive prediction of viscosity, but rather as an illustration of the computational challenges of lubricant EMD simulations under such extreme conditions. The results of the extrapolation are shown in Figure 5. The error bars only represent the uncertainty propagating through the regression from the viscosity estimates at lower pressures. They do not account for potential systematic errors in the exponential model. At 1.5 GPa and 2 GPa , the extrapolated viscosity values reached the order of 10 5 and 10 6
+
+mPa s , respectively. Correspondingly, the required simulation times extended into the mi-crosecond and millisecond ranges. In principle, such extended simulations are possible with advanced supercomputing and GPU acceleration, but they remain extremely computation-ally demanding. The results of this extrapolation should be interpreted with caution. At sufficiently high pressures, liquid lubricants may undergo a transition to a glassy or amorphous solid-like state, typically occurring at a pressure of about 2 GPa .10 Under such conditions, molecular mobility is severely restricted, which can lead to a dramatic increase in apparent viscosity. Furthermore, the assumptions underlying standard force fields parameterized for the liquid state may no longer hold at extreme conditions. 63–65 
+
+In summary, our findings demonstrate that EMD can produce reliable high-pressure viscosity estimates, albeit at a significant computational cost. By applying STACIE, we achieved, to the best of our knowledge, the most accurate EMD-based shear viscosities reported for 2,2,4-trimethylhexane . Throughout this work, we highlighted several key con-siderations for using EMD to calculate liquid viscosity at very high pressures: the need for sufficiently long trajectories to capture the slowest decay mode, which requires accurate es-timation of the exponential correlation time, τexp , and the reduction of storage requirements through block averages. These insights and best practices provide a framework for investigat-ing lubricant rheology under high pressures, optimizing the trade-off between computational 31 10 0 10 1 10 2 10 3 10 4 10 5 10 6   
+
+> [mPa s]
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> 10 4
+> 10 5
+> 10 6
+> tsim  [ns]
+> tsim (This work)
+> Exponential fit
+> trecommended sim (This work)
+> trecommended sim (Extrapolated)
+
+Figure 5: Simulation times as a function of viscosity. Blue points show the simulation times used in this study to compute viscosities up to 1 GPa . STACIE’s recommended simulation times based on the exponential correlation time, τexp , are shown in orange. Red points represent the extrapolated viscosities and corresponding simulation times at 1.5 GPa and 
+
+2 GPa , assuming an exponential viscosity increase with pressure. The fitted model is shown as a dashed black line. efficiency and predictive accuracy. 
+
+# 5 Conclusions 
+
+We introduced the Lorentz model for estimating transport properties with STACIE. Using this model, we calculated the shear viscosity of 2,2,4-trimethylhexane at pressures up to 
+
+1 GPa via EMD simulations. Our results show excellent agreement with experimental data at high pressures, validating the method’s accuracy. Furthermore, a comparison with the 10 th IFPSC emphasized that high-viscosity liquids requires high simulation times. The applicability of the Lorentz model extends beyond shear viscosity. For instance, we used it to quantify the uncertainty in the mean pressure in our simulations. STACIE’s documentation details additional use cases, including bulk viscosity and thermal conductivity calculations. The model is suitable whenever the relevant autocorrelation function exhibits 32 exponential decay. A key advantage of the Lorentz model is its ability to estimate the exponential correlation time, τexp , which characterizes the system’s slowest timescale. If faster modes are also present, τexp is greater than the commonly used integrated correlation time, τint . With τexp , one can derive the minimum simulation time required to obtain reliable transport properties and their associated uncertainties. Additionally, τexp can guide the size of block averages for writing out dynamical quantities, thereby optimizing storage efficiency without compromising post-processing quality. A second innovation improving our viscosity calculations is the use of five independent anisotropic pressure contributions. Two contributions are derived from the diagonal com-ponents of the pressure tensor, while the remaining three are off-diagonal components. We demonstrated, both theoretically and numerically, that these five contributions are statisti-cally independent and equally valid for viscosity estimation. Finally, we extrapolated the shear viscosity of 2,2,4-trimethylhexane to pressures beyond 
+
+1 GPa and estimated the required simulation times, offering valuable insights into the com-putational challenges facing future viscosity calculations. In future work, we will also apply STACIE to longer molecules that are more representative of industrial lubricants. Although STACIE has proven robust and reliable, the computational cost of EMD simulations for longer chains and higher pressures will likely be significant. Nonetheless, post-processing should remain feasible provided that time-correlated data is acquired following the proce-dures outlined in this work. Methodologically, it would be beneficial to extend STACIE beyond the maximum a poste-riori (MAP) estimate of model parameters and their covariance. The current implementation of the Lorentz model imposes a penalty to mitigate the influence of models fitted to insuf-ficient spectral data, where poorly resolved parameters may violate MAP assumptions. Amore rigorous analysis of the full posterior distribution, for instance, through Markov Chain Monte Carlo (MCMC) sampling, could improve STACIE’s robustness, especially for cases with limited data. 33 Data and software availability 
+
+The method used in this work is implemented in the Python package STACIE, which we developed and made publicly available on PyPI (pip install stacie), Conda Forge (conda install -c conda-forge stacie) and GitHub ( http://github.com/molmod/stacie ), along with extensive documentation. The source code has been deposited on Zenodo ( https://doi. org/10.5281/zenodo.18077751 ). The ACID dataset used to validate the accuracy of STACIE’s implementation of the Lorentz model is available at http://doi.org/10.5281/zenodo.18044643 . Molecular dy-namics trajectory data used in this study are available at https://doi.org/10.5281/ zenodo.15689551 as npz files corresponding to each simulation condition. 
+
+# Supporting Information 
+
+The Supporting Information is available free of charge at https://pubs.acs.org/doi/10. 1234/acs.abcd.1234 .
+
+• PDF document with additional display items: 
+
+– Section S1: Validation of STACIE’s Lorentz model using the ACID test set. 
+
+– Section S2: Proof of validity of the five anisotropic pressure contributions for viscosity calculations. 
+
+– Section S3: STACIE shear viscosity results for other pressure conditions. 
+
+– Section S4: STACIE shear viscosity results at 500 MPa for truncated trajectories. 
+
+– Section S5: STACIE shear viscosity results at 1000 MPa for truncated trajectories. 
+
+– Section S6: Analysis of the five anisotropic pressure contributions to the shear viscosity. 34 • ZIP file with CSV files containing the numerical data of all figures and tables in the main text. 
+
+# Author Information 
+
+## Author Contributions 
+
+G.T. performed and analyzed simulations, designed and validated algorithms and contributed to software development. D.F. and T.V. conceptualized and supervised the project. T.V. designed and validated algorithms, and led software development. All authors wrote the original draft of the manuscript. 
+
+## Notes 
+
+The authors declare no competing financial interest. 
+
+# Acknowledgments 
+
+This research was funded by the Research Board of Ghent University with grant number BOF/24J/2021/118. Computational resources were provided by Ghent University’s Stevin High-Performance Computing (HPC) infrastructure and the Flemish Supercomputer Center (VSC), funded by the Research Foundation Flanders (FWO). 
+
+# References 
+
+(1) Connes, P.; Dufour, S.; Pichon, A.; Favret, F. Blood Rheology, Blood Flow and Human Health ; Elsevier, 2013; DOI: 10.1016/b978-0-12-396454-0.00028-x .(2) Chevrel, M. O.; Pinkerton, H.; Harris, A. J. Measuring the viscosity of lava in the field: 35 A review. Earth-Sci. Rev. 2019 , 196 , 102852, DOI: 10.1016/j.earscirev.2019.04. 024 .(3) Wesp, C.; El, A.; Reining, F.; Xu, Z.; Bouras, I.; Greiner, C. Calculation of shear viscosity using Green-Kubo relations within a parton cascade. Phys. Rev. C 2011 , 84 ,054911, DOI: 10.1103/physrevc.84.054911 .(4) Deng, X.-G.; Fang, D.-Q.; Ma, Y.-G. Shear viscosity of nucleonic matter. Prog. Part. Nucl. Phys. 2024 , 136 , 104095, DOI: 10.1016/j.ppnp.2023.104095 .(5) Ofengeim, D. D.; Yakovlev, D. G. Shear viscosity in magnetized neutron star crust. 
+
+EPL (Europhysics Lett.) 2015 , 112 , 59001, DOI: 10.1209/0295-5075/112/59001 .(6) Bishop, N. T.; van der Walt, P. J.; Naidoo, M. Effect of a viscous fluid shell on the propagation of gravitational waves. Phys. Rev. D 2022 , 106 , 084018, DOI: 10.1103/ physrevd.106.084018 .(7) Dobrynin, A. V.; Sayko, R.; Colby, R. H. Viscosity of Polymer Solutions and Molec-ular Weight Characterization. ACS Macro Lett. 2023 , 12 , 773–779, DOI: 10.1021/ acsmacrolett.3c00219 .(8) Janchai, K.; Yamaguchi, M. Shear-induced crystallization of polypropylene/low-density polyethylene blend. J. Rheol. 2023 , 68 , 59–69, DOI: 10.1122/8.0000742 .(9) Brubaker, J.; Moghtadernejad, S. A Comprehensive Review of the Rheological Prop-erties of Powders in Pharmaceuticals. Powders 2024 , 3, 233–254, DOI: 10.3390/ powders3020015 .(10) Bair, S. High Pressure Rheology for Quantitative Elastohydrodynamics ; Elsevier, 2019; DOI: 10.1016/b978-0-444-64156-4.00016-7 .(11) Daivis, P. J.; Evans, D. J. Comparison of constant pressure and constant volume 36 nonequilibrium simulations of sheared model decane. J. Chem. Phys. 1994 , 100 , 541– 547, DOI: 10.1063/1.466970 .(12) McCabe, C.; Cui, S.; Cummings, P. T. Characterizing the viscosity–temperature de-pendence of lubricants by molecular simulation. Fluid Phase Equilibria 2001 , 183–184 ,363–370, DOI: 10.1016/s0378-3812(01)00448-4 .(13) Martini, A.; Liu, Y.; Snurr, R.; Wang, Q. J. Molecular dynamics characterization of thin film viscosity for EHL simulation. Tribol. Lett. 2006 , 21 , 217–225, DOI: 10.1007/ s11249-006-9023-x .(14) Ewen, J. P.; Heyes, D. M.; Dini, D. Advances in nonequilibrium molecular dynamics simulations of lubricants and additives. Friction 2018 , 6, 349–386, DOI: 10.1007/ s40544-018-0207-9 .(15) Spikes, H.; Jie, Z. History, Origins and Prediction of Elastohydrodynamic Friction. 
+
+Tribol. Lett. 2014 , 56 , 1–25, DOI: 10.1007/s11249-014-0396-y .(16) Maginn, E. J.; Messerly, R. A.; Carlson, D. J.; Roe, D. R.; Elliot, J. R. Best Practices for Computing Transport Properties 1. Self-Diffusivity and Viscosity from Equilibrium Molecular Dynamics [Article v1.0]. Living J. Comput. Mol. Sci. 2020 , 2, 6324, DOI: 
+
+10.33011/livecoms.1.1.6324 .(17) Todd, B. D.; Daivis, P. J. Homogeneous non-equilibrium molecular dynamics simula-tions of viscous flow: techniques and applications. Mol. Simul. 2007 , 33 , 189–229, DOI: 
+
+10.1080/08927020601026629 .(18) Chen, T.; Smit, B.; Bell, A. T. Are pressure fluctuation-based equilibrium methods really worse than nonequilibrium methods for calculating viscosities? J. Chem. Phys. 
+
+2009 , 131 , 246101, DOI: 10.1063/1.3274802 .37 (19) Kubo, R. Statistical-Mechanical Theory of Irreversible Processes. I. General Theory and Simple Applications to Magnetic and Conduction Problems. J. Phys. Soc. Jpn. 
+
+1957 , 12 , 570–586, DOI: 10.1143/jpsj.12.570 .(20) Green, M. S. Markoff Random Processes and the Statistical Mechanics of Time-Dependent Phenomena. II. Irreversible Processes in Fluids. J. Chem. Phys. 1954 , 22 ,398–413, DOI: 10.1063/1.1740082 .(21) Allen, M. P.; Tildesley, D. J. Computer Simulation of Liquids (second edition) ; Oxford University Press, 2017; DOI: 10.1093/oso/9780198803195.001.0001 .(22) Frenkel, D.; Smit, B. Understanding Molecular Simulation ; Elsevier, 2002; DOI: 10. 1016/b978-0-12-267351-1.x5000-7 .(23) Toraman, G.; Fauconnier, D.; Verstraelen, T. STable AutoCorrelation Integral Esti-mator (STACIE): Robust and accurate transport properties from molecular dynamics simulations. J. Chem. Inf. Model. 2025 , 65 , 10445–10464, DOI: 10.1021/acs.jcim. 5c01475 .(24) Otero-Lema, M.; Lois-Cuns, R.; Boado, M. A.; Montes-Campos, H.; Méndez-Morales, T.; Varela, L. M. KUTE: Green–Kubo Uncertainty-Based Transport Coeffi-cient Estimator. J. Chem. Inf. Model. 2025 , 65 , 3477–3487, DOI: 10.1021/acs.jcim. 4c02219 .(25) Zhang, Y.; Otani, A.; Maginn, E. J. Reliable Viscosity Calculation from Equilibrium Molecular Dynamics Simulations: A Time Decomposition Method. J. Chem. Theory Comput. 2015 , 11 , 3537–3546, DOI: 10.1021/acs.jctc.5b00351 .(26) Helfand, E. Transport Coefficients from Dissipation in a Canonical Ensemble. Phys. Rev. 1960 , 119 , 1–9, DOI: 10.1103/physrev.119.1 .38 (27) Pranami, G.; Lamm, M. H. Estimating Error in Diffusion Coefficients Derived from Molecular Dynamics Simulations. J. Chem. Theory Comput. 2015 , 11 , 4586–4592, DOI: 
+
+10.1021/acs.jctc.5b00574 .(28) Ercole, L.; Marcolongo, A.; Baroni, S. Accurate thermal conductivities from opti-mally short molecular dynamics simulations. Sci. Rep. 2017 , 7, 1–11, DOI: 10.1038/ s41598-017-15843-2 .(29) Ercole, L.; Bertossa, R.; Bisacchi, S.; Baroni, S. SporTran: A code to estimate transport coefficients from the cepstral analysis of (multivariate) current time series. Comput. Phys. Commun. 2022 , 280 , 108470, DOI: 10.1016/j.cpc.2022.108470 .(30) Drigo, E.; Baroni, S.; Pegolo, P. Seebeck Coefficient of Ionic Conductors from Bayesian Regression Analysis. J. Chem. Theory Comput. 2024 , 20 , 6152–6159, DOI: 10.1021/ acs.jctc.4c00124 .(31) Pegolo, P.; Drigo, E.; Grasselli, F.; Baroni, S. Transport coefficients from equilibrium molecular dynamics. J. Chem. Phys. 2025 , 162 , 064111, DOI: 10.1063/5.0249677 .(32) Kondratyuk, N. D.; Pisarev, V. V. Calculation of viscosities of branched alkanes from 0.1 to 1000 MPa by molecular dynamics methods using COMPASS force field. Fluid Ph. Equilibria 2019 , 498 , 151–159, DOI: 10.1016/j.fluid.2019.06.023 .(33) Messerly, R. A.; Anderson, M. C.; Razavi, S. M.; Elliott, J. R. Mie 16–6 force field predicts viscosity with faster-than-exponential pressure dependence for 2, 2, 4-trimethylhexane. Fluid Ph. Equilibria 2019 , 495 , 76–85, DOI: 10.1016/j.fluid. 2019.05.013 .(34) Ewen, J. P.; Spikes, H. A.; Dini, D. Contributions of Molecular Dynamics Simula-tions to Elastohydrodynamic Lubrication. Tribol. Lett. 2021 , 69 , 24, DOI: 10.1007/ s11249-021-01399-w .39 (35) Kruse, L. B.; Falk, K.; Moseler, M. Calculating High-Pressure PAO4 Viscosity with Equilibrium Molecular Dynamics Simulations. Tribol. Lett. 2024 , 72 , 1–15, DOI: 10. 1007/s11249-024-01835-7 .(36) Toraman, G.; Verstraelen, T.; Fauconnier, D. Impact of Ad Hoc Post-Processing Pa-rameters on the Lubricant Viscosity Calculated with Equilibrium Molecular Dynamics Simulations. Lubricants 2023 , 11 , 183, DOI: 10.3390/lubricants11040183 .(37) Zheng, L.; Trusler, J. M.; Bresme, F.; Müller, E. A. Predicting the pressure dependence of the viscosity of 2, 2, 4-trimethylhexane using the SAFT coarse-grained force field. 
+
+Fluid Ph. Equilibria 2019 , 496 , 1–6, DOI: 10.1016/j.fluid.2019.05.017 .(38) Sokal, A. In Functional Integration: Basics and Applications ; DeWitt-Morette, C., Cartier, P., Folacci, A., Eds.; Springer US: Boston, MA, 1997; pp 131–192, DOI: 10. 1007/978-1-4899-0319-8_6 .(39) Carlson, D. J.; Giles, N. F.; Wilding, W. V.; Knotts, T. A. Liquid viscosity oriented parameterization of the Mie potential for reliable predictions of normal alkanes and alkylbenzenes. Fluid Ph. Equilibria 2022 , 561 , 113522, DOI: 10.1016/j.fluid.2022. 113522 .(40) Toraman, G.; Verstraelen, T. STACIE: STable AutoCorrelation Integral Estimator (Version 1.2.1, Sunday, December 28, 2025). 2025; DOI: 10.5281/zenodo.18077751 .(41) Bartlett, M. S. Introduction to Stochastic Processes With Special Reference to Methods and Applications ; Cambridge University Press, 1980. (42) Francq, C.; Zakoïan, J.-M. Bartlett’s formula for a general class of nonlinear processes. 
+
+J. Time Ser. Anal. 2009 , 30 , 449–465, DOI: 10.1111/j.1467-9892.2009.00623.x .(43) Toraman, G.; Fauconnier, D.; Verstraelen, T. The AutoCorrelation Integral Drill 40 (ACID) Test Set (Version 1.2.0, Wednesday, December 24, 2025). 2025; DOI: 10.5281/ zenodo.18044643 .(44) Jones, P. A. Cloud-Cover Distributions and Correlations. J. Appl. Meteorol. 1992 , 31 ,732–741, DOI: 10.1175/1520-0450(1992)031<0732:ccdac>2.0.co;2 .(45) Kubo, R.; Toda, M.; Hashitsume, N. In Statistical Physics II: Nonequilibrium Statistical Mechanics ; Fulde, P., Ed.; Springer Berlin Heidelberg: Berlin, Heidelberg, 1991; pp 1– 39, DOI: 10.1007/978-3-642-58244-8_1 .(46) Rowlands, G.; Sprott, J. C. A simple diffusion model showing anomalous scaling. Phys. Plasmas 2008 , 15 , 082308, DOI: 10.1063/1.2969429 .(47) Siegle, P.; Goychuk, I.; Hänggi, P. Origin of Hyperdiffusion in Generalized Brownian Motion. Phys. Rev. Lett. 2010 , 105 , 100602, DOI: 10.1103/physrevlett.105.100602 .(48) Alder, B. J.; Wainwright, T. E. Decay of the Velocity Autocorrelation Function. Phys. Rev. A 1970 , 1, 18–21, DOI: 10.1103/physreva.1.18 .(49) Industrial Fluid Properties Simulation Challenge 10th International Fluid Properties Simulation Challenge. http://fluidproperties.org/10th , accessed Tuesday, Decem-ber 30, 2025. (50) Galvani Cunha, M. A.; Robbins, M. O. Determination of pressure-viscosity relation of 2, 2, 4-trimethylhexane by all-atom molecular dynamics simulations. Fluid Ph. Equilibria 
+
+2019 , 495 , 28–32, DOI: 10.1016/j.fluid.2019.05.008 .(51) Gong, Z.; Sun, H. Pressure-viscosity relation of 2, 2, 4-trimethylhexane predicted using all-atom TEAM force field. Fluid Ph. Equilibria 2019 , 497 , 64–70, DOI: 10.1016/j. fluid.2019.06.008 .(52) Bair, S. The pressure dependence of viscosity for 2,2,4 trimethylhexane to 1 GPa along 41 the 20 °C isotherm. Fluid Ph. Equilibria 2019 , 488 , 9–12, DOI: 10.1016/j.fluid. 2019.01.021 .(53) Toraman, G.; Verstraelen, T.; Fauconnier, D. EMD data for the paper "Impact of ad-hoc post-processing parameters on the lubricant viscosity calculated with equilibrium molecular dynamics simulations" version 0.1.1. 2023; DOI: 10.5281/zenodo.7825900 .(54) Thompson, A. P.; Aktulga, H. M.; Berger, R.; Bolintineanu, D. S.; Brown, W. M.; Crozier, P. S.; in ’t Veld, P. J.; Kohlmeyer, A.; Moore, S. G.; Nguyen, T. D.; Shan, R.; Stevens, M. J.; Tranchida, J.; Trott, C.; Plimpton, S. J. LAMMPS - a flexible simulation tool for particle-based materials modeling at the atomic, meso, and continuum scales. 
+
+Comput. Phys. Commun. 2022 , 271 , 108171, DOI: 10.1016/j.cpc.2021.108171 .(55) Toraman, G.; Verstraelen, T.; Fauconnier, D. 2,2,4-trimethylhexane Equilibrium Molec-ular Dynamics Viscosity Dataset (version 1.0.0, Wednesday, January 7, 2026). 2025; DOI: 10.5281/zenodo.15689551 .(56) Basconi, J. E.; Shirts, M. R. Effects of Temperature Control Algorithms on Transport Properties and Kinetics in Molecular Dynamics Simulations. J. Chem. Theory Comput. 
+
+2013 , 9, 2887–2899, DOI: 10.1021/ct400109a .(57) Mondello, M.; Grest, G. S. Viscosity calculations of n-alkanes by equilibrium molecular dynamics. J. Chem. Phys. 1997 , 106 , 9327–9336, DOI: 10.1063/1.474002 .(58) Borodin, O.; Smith, G. D.; Kim, H. Viscosity of a Room Temperature Ionic Liquid: Predictions from Nonequilibrium and Equilibrium Molecular Dynamics Simulations. J. Phys. Chem. B 2009 , 113 , 4771–4774, DOI: 10.1021/jp810016e .(59) Liu, H.; Maginn, E.; Visser, A. E.; Bridges, N. J.; Fox, E. B. Thermal and Transport Properties of Six Ionic Liquids: An Experimental and Molecular Dynamics Study. Ind. amp; Eng. Chem. Res. 2012 , 51 , 7242–7254, DOI: 10.1021/ie300222a .42 (60) Aquing, M.; Ciotta, F.; Creton, B.; Féjean, C.; Pina, A.; Dartiguelongue, C.; Trusler, J. P. M.; Vignais, R.; Lugo, R.; Ungerer, P.; Nieto-Draghi, C. Composition Analysis and Viscosity Prediction of Complex Fuel Mixtures Using a Molecular-Based Approach. 
+
+Energy Fuels 2012 , 26 , 2220–2230, DOI: 10.1021/ef300106z .(61) Mercier Franco, L. F.; Firoozabadi, A. Computation of Shear Viscosity by a Con-sistent Method in Equilibrium Molecular Dynamics Simulations: Applications to 1-Decene Oligomers. J. Phys. Chem. B 2023 , 127 , 10043–10051, DOI: 10.1021/acs. jpcb.3c04994 .(62) Sun, H. COMPASS: An ab Initio Force-Field Optimized for Condensed-Phase Appli-cationsOverview with Details on Alkane and Benzene Compounds. J. Phys. Chem. B 
+
+1998 , 102 , 7338–7364, DOI: 10.1021/jp980939v .(63) Leach, A. R. Molecular Modelling: Principles and Applications ; Pearson Education Limited, 2001. (64) Ponder, J. W.; Wu, C.; Ren, P.; Pande, V. S.; Chodera, J. D.; Schnieders, M. J.; Haque, I.; Mobley, D. L.; Lambrecht, D. S.; DiStasio, R. A.; Head-Gordon, M.; Clark, G. N. I.; Johnson, M. E.; Head-Gordon, T. Current Status of the AMOEBA Polarizable Force Field. J. Phys. Chem. B 2010 , 114 , 2549–2564, DOI: 10.1021/jp910674d .(65) Jorgensen, W. L.; Maxwell, D. S.; Tirado-Rives, J. Development and Testing of the OPLS All-Atom Force Field on Conformational Energetics and Properties of Organic Liquids. J. Am. Chem. Soc. 1996 , 118 , 11225–11236, DOI: 10.1021/ja9621760 .43 Supporting information for: 
+
+# Reliable Viscosity Calculation from High-
+
+# Pressure Equilibrium Molecular Dynamics: 
+
+# Case Study of 2,2,4-Trimethylhexane 
+
+Gözdenur Toraman, † Dieter Fauconnier, †‡  and Toon Verstraelen ✶¶
+
+† Soete Laboratory, Ghent University, Technologiepark-Zwijnaarde 46, 9052 Ghent, Belgium 
+
+‡ FlandersMake@UGent, Core Lab MIRO, 3001 Leuven, Belgium 
+
+¶ Center for Molecular Modeling (CMM), Ghent University, Technologiepark-Zwijnaarde 46, B-9052, 
+
+Ghent, Belgium 
+
+✶E-mail:  toon.verstraelen@ugent.be 
+
+Version 2026-03-11 (19c0825) 
+
+## Contents 
+
+S1.  Validation of STACIE’s Lorentz model using the ACID test set  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s3 
+
+S1.1.  Summary of figures and tables of the ACID test set results  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s3 
+
+S1.2.  Kernel exp1p  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s5 
+
+S1.3.  Kernel exp1w  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s7 
+
+S2.  Proof of validity of the five anisotropic pressure contributions for viscosity calculations  . . . . . . . . . . . . . . s9 
+
+S3.  STACIE shear-viscosity results for all pressures (full trajectories)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s11 
+
+S3.1.  𝑃  = 0.1 MPa , 𝑡 sim  = 2 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s12 
+
+S3.2.  𝑃  = 100 MPa , 𝑡 sim  = 20 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s12 
+
+S3.3.  𝑃  = 250 MPa , 𝑡 sim  = 20 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s13 
+
+S3.4.  𝑃  = 500 MPa , 𝑡 sim  = 60 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s13 
+
+S3.5.  𝑃  = 1000 MPa , 𝑡 sim  = 500 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s13 
+
+S4.  STACIE results for truncated trajectories at  𝑃  = 500 MPa  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s14 
+
+S4.1.  𝑁  = 1875 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s14 
+
+S4.2.  𝑁  = 3750 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s14 
+
+S4.3.  𝑁  = 7500 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s14 
+
+S4.4.  𝑁  = 15000 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s15 
+
+S4.5.  𝑁  = 30000 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s15 
+
+S4.6.  𝑁  = 60000 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s15 
+
+S5.  STACIE shear-viscosity results for truncated trajectories at  𝑃  = 1000 MPa  . . . . . . . . . . . . . . . . . . . . . . . . . . s16 
+
+S5.1.  𝑁  = 1953 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s16 
+
+S5.2.  𝑁  = 3906 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s16 
+
+S5.3.  𝑁  = 7812 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s16 
+
+S5.4.  𝑁  = 15625 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s17 
+
+S5.5.  𝑁  = 31250 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s17 
+
+S5.6.  𝑁  = 62500 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s17 
+
+S5.7.  𝑁  = 125000 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s18 
+
+S5.8.  𝑁  = 250000 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s18 
+
+S5.9.  𝑁  = 500000 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s18 
+
+S6.  Analysis of the five anisotropic pressure contributions to the shear viscosity  . . . . . . . . . . . . . . . . . . . . . . . . . s18 
+
+S6.1.  𝑃  = 0.1 MPa , 𝑡 sim  = 2 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s21 
+
+s1 S6.1.1.  Contribution  ̂  𝑃  ′ 
+
+> 1
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s21 
+
+S6.1.2.  Contribution  ̂  𝑃  ′ 
+
+> 2
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s21 
+
+S6.1.3.  Contribution  ̂  𝑃  ′ 
+
+> 3
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s21 
+
+S6.1.4.  Contribution  ̂  𝑃  ′ 
+
+> 4
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s22 
+
+S6.1.5.  Contribution  ̂  𝑃  ′ 
+
+> 5
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s22 
+
+S6.2.  𝑃  = 100 MPa , 𝑡 sim  = 20 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s22 
+
+S6.2.1.  Contribution  ̂  𝑃  ′ 
+
+> 1
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s22 
+
+S6.2.2.  Contribution  ̂  𝑃  ′ 
+
+> 2
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s23 
+
+S6.2.3.  Contribution  ̂  𝑃  ′ 
+
+> 3
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s23 
+
+S6.2.4.  Contribution  ̂  𝑃  ′ 
+
+> 4
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s23 
+
+S6.2.5.  Contribution  ̂  𝑃  ′ 
+
+> 5
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s24 
+
+S6.3.  𝑃  = 250 MPa , 𝑡 sim  = 20 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s24 
+
+S6.3.1.  Contribution  ̂  𝑃  ′ 
+
+> 1
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s24 
+
+S6.3.2.  Contribution  ̂  𝑃  ′ 
+
+> 2
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s24 
+
+S6.3.3.  Contribution  ̂  𝑃  ′ 
+
+> 3
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s25 
+
+S6.3.4.  Contribution  ̂  𝑃  ′ 
+
+> 4
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s25 
+
+S6.3.5.  Contribution  ̂  𝑃  ′ 
+
+> 5
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s25 
+
+S6.4.  𝑃  = 500 MPa , 𝑡 sim  = 60 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s26 
+
+S6.4.1.  Contribution  ̂  𝑃  ′ 
+
+> 1
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s26 
+
+S6.4.2.  Contribution  ̂  𝑃  ′ 
+
+> 2
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s26 
+
+S6.4.3.  Contribution  ̂  𝑃  ′ 
+
+> 3
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s26 
+
+S6.4.4.  Contribution  ̂  𝑃  ′ 
+
+> 4
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s27 
+
+S6.4.5.  Contribution  ̂  𝑃  ′ 
+
+> 5
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s27 
+
+S6.5.  𝑃  = 1000 MPa , 𝑡 sim  = 500 ns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s27 
+
+S6.5.1.  Contribution  ̂  𝑃  ′ 
+
+> 1
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s27 
+
+S6.5.2.  Contribution  ̂  𝑃  ′ 
+
+> 2
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s28 
+
+S6.5.3.  Contribution  ̂  𝑃  ′ 
+
+> 3
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s28 
+
+S6.5.4.  Contribution  ̂  𝑃  ′ 
+
+> 4
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s28 
+
+S6.5.5.  Contribution  ̂  𝑃  ′ 
+
+> 5
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s29 
+
+Bibliography  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . s30 
+
+s2 S1.  Validation of STACIE’s Lorentz model using the ACID test set 
+
+The validation with the ACID test set  [1]  in this section is completely analogous to the one presented in 
+
+the original STACIE paper  [2] . The main difference is that we now consider the Lorentz model instead of 
+
+the ExpPoly model. The Lorentz model applies to autocorrelation functions (ACFs) with exponentially 
+
+decaying tails, and it contains an exponential correlation time as model parameter. To validate STACIE’s 
+
+implementation of the Lorentz model, we applied it to the  exp1p  and  exp1w  cases from the ACID test set. 
+
+Both cases contain time series with an exponential decay of the ACF, with an exponential correlation time 
+
+𝜏 exp  = 5 (dimensionless units). More specifically, the analytical ACF and power spectral density (PSD) of 
+
+the two kernels have the following form: 
+
+𝑐 (Δ𝑡 ) = 𝐶 0𝛿 (Δ𝑡 ) + 𝐶 1 exp (−|Δ𝑡 
+
+|
+
+𝜏 exp 
+
+)
+
+𝐶 (𝑓 ) = 𝐶 0 + 2𝐶 1𝜏 exp 
+
+1 + (2𝜋 𝑓 𝜏 exp )2
+
+The two kernels use different parameters: 
+
+Kernel  𝐶 0 𝐶 1 𝜏 exp 
+
+exp1p  0.0  1.0  5
+
+exp1w  0.1  0.9  5
+
+As shown in panels (b) and (c) of the figures below, the results confirm that STACIE’s estimates of the 
+
+autocorrelation integral are accurate, for both kernels. In addition, the uncertainty scales proportionally to  
+
+> 1√𝑁 𝑀
+
+, where  𝑁  𝑀  is the total amount of data in each test case. A slight improvement is observed 
+
+compared to the ExpPoly model presented in the previous paper. This improvement is expected, as the 
+
+Lorentz model better matches the underlying data. Furthermore, STACIE’s estimates of the exponential 
+
+correlation time are accurate and scale correctly with the amount of input data, as shown in panels (d) and 
+
+(e), for both kernels. However, there is an overestimation of the uncertainty in the exponential correlation 
+
+time by about 25%. This overestimation is evident in panel (e), where the square markers are mostly below 
+
+the ideal value of 100%. 
+
+Panels (f) and (g) show no significant sensitivity to the choice of cutoff frequency, for both the 
+
+autocorrelation integral and exponential correlation time, respectively. These results are more robust than 
+
+those obtained with the ExpPoly model in the previous paper. Panels (h) through (k) confirm that the 
+
+sanity checks introduced in the initial paper are consistently met, with no apparent systematic violations. 
+
+S1.1.  Summary of figures and tables of the ACID test set results 
+
+The two subsections below contain figures and tables with the same type of results, but computed for 
+
+different kernels ( exp1p  and  exp1w ). All figures and tables are labeled with a letter and are explained here. 
+
+For a full discussion of the results, we refer to the initial paper on STACIE.  [2]  All error estimates in the 
+
+ACID test are standard uncertainties. 
+
+(a)  Illustration of input data. 
+
+• Left: an example input sequences (first 100 steps). 
+
+• Center: the sampling autocorrelation function (ACF) of the input data ( 𝑁  = 1024, 𝑀  = 256, purple 
+
+line) and the analytical ACF (dashed line). 
+
+• Right: the sampling power spectral density (PSD) of the input data ( 𝑁  = 1024, 𝑀  = 256, turquoise 
+
+line) and the analytical PSD (dashed line). 
+
+(b)  Scaling of uncertainty in the autocorrelation integral with input data. 
+
+s3 • The slope of the slanted gray lines indicates the ideal scaling of the uncertainty (proportional to  
+
+> 1√𝑁 𝑀
+
+). The spacing between the lines corresponds to a factor of 2 in the uncertainty, the ideal case 
+
+when changing  𝑁  by a factor of 4. 
+
+• A square represents the standard deviations over 64 repetitions of STACIE’s estimate of the 
+
+autocorrelation integral for a specific combination of  𝑁  and  𝑀 .
+
+• The dotted lines represent the corresponding predicted uncertainties. 
+
+(c)  Assessment of the error estimate of the autocorrelation integral. 
+
+• The square blocks show the ratio of the standard deviation of the STACIE estimate and the RMS 
+
+value of the predicted uncertainty, over 64 repetitions. This value is ideally 100%. Lower values mean 
+
+that STACIE’s predictions have a smaller spread than the predicted uncertainty. 
+
+• The dots show the ratio of the mean error and the RMS value of the predicted uncertainty, over 64 
+
+repetitions. This value is ideally 0%. 
+
+(d)  Scaling of the uncertainty in the exponential correlation time with input data. 
+
+• This figure follows the same convention as in (b), but shows results for the uncertainty in the 
+
+exponential correlation time. 
+
+(e)  Assessment of the error estimate of the exponential correlation time. 
+
+• This figure follows the same convention as in (c), but shows results for the uncertainty in the 
+
+exponential correlation time. 
+
+(f)  Sensitivity of the autocorrelation integral to the cutoff frequency. 
+
+• This plot shows how the autocorrelation integral correlates with the effective number of points used 
+
+in the fit (top) and the cutoff frequency (bottom). 
+
+• Results are shown only for the  𝑀  = 64.
+
+• The color code for different  𝑁  corresponds to the legends shown in figures (b), (c), (d) and (e). 
+
+(g)  Sensitivity of the exponential correlation time to the cutoff frequency. 
+
+• The same conventions as in (f) apply, but this figure shows results for the exponential correlation 
+
+time. 
+
+(h)  Number of successful test cases  (Failures are typically due to not finding any cutoff frequency with 
+
+acceptable results.) 
+
+(i)  Sanity check counts for the effective number of points 
+
+• Number of test cases for each combination of  𝑁  and  𝑀  where the effective number of points used in 
+
+the fit is below  20𝑃  = 60.
+
+(j)  Sanity check counts for the regression cost z-score 
+
+• Number of test cases for each combination of  𝑁  and  𝑀  where the z-score of the regression cost 
+
+exceeds 2. 
+
+(k)  Sanity check counts for the cutoff criterion z-score 
+
+• Number of test cases for each combination of  𝑁  and  𝑀  where the z-score of the cutoff criterion 
+
+exceeds 2. 
+
+s4 S1.2.  Kernel exp1p 
+
+(a) Illustration of input data 
+
+(b) Scaling of uncertainty in the autocorrelation 
+
+integral with input data 
+
+(c) Assessment of the error estimate of the 
+
+autocorrelation integral 
+
+(d) Scaling of uncertainty in the exponential 
+
+correlation time with input data 
+
+(e) Assessment of the error estimate of the 
+
+exponential correlation time 
+
+s5 (f) Sensitivity of the autocorrelation integral to 
+
+the cutoff frequency 
+
+(g) Sensitivity of the exponential correlation 
+
+time to the cutoff frequency 
+
+(h) Number of successful test cases 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 64  64  64  64  64 
+
+𝑁  = 4096 64  64  64  64  64 
+
+𝑁  = 16384 64  64  64  64  64 
+
+𝑁  = 65536 64  64  64  64  64 
+
+(i) Sanity check counts for the effective number of points 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 0 0 0 0 0
+
+𝑁  = 4096 0 0 0 0 0
+
+𝑁  = 16384 0 0 0 0 0
+
+𝑁  = 65536 0 0 0 0 0
+
+(j) Sanity check counts for the regression cost z-score 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 0 0 0 1 1
+
+𝑁  = 4096 0 1 0 0 0
+
+𝑁  = 16384 0 0 0 2 1
+
+𝑁  = 65536 0 0 0 0 2
+
+(k) Sanity check counts for the cutoff criterion z-score 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 0 0 1 1 0
+
+𝑁  = 4096 0 0 0 1 1
+
+𝑁  = 16384 1 0 2 0 0
+
+𝑁  = 65536 1 1 1 1 0
+
+s6 S1.3.  Kernel exp1w 
+
+(a) Illustration of input data 
+
+(b) Scaling of uncertainty in the autocorrelation 
+
+integral with input data 
+
+(c) Assessment of the error estimate of the 
+
+autocorrelation integral 
+
+(d) Scaling of uncertainty in the exponential 
+
+correlation time with input data 
+
+(e) Assessment of the error estimate of the 
+
+exponential correlation time 
+
+s7 (f) Sensitivity of the autocorrelation integral to 
+
+the cutoff frequency 
+
+(g) Sensitivity of the exponential correlation 
+
+time to the cutoff frequency 
+
+(h) Number of successful test cases 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 64  64  64  64  64 
+
+𝑁  = 4096 64  64  64  64  64 
+
+𝑁  = 16384 64  64  64  64  64 
+
+𝑁  = 65536 64  64  64  64  64 
+
+(i) Sanity check counts for the effective number of points 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 1 0 0 0 0
+
+𝑁  = 4096 0 0 0 0 0
+
+𝑁  = 16384 0 0 0 0 0
+
+𝑁  = 65536 0 0 0 0 0
+
+(j) Sanity check counts for the regression cost z-score 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 0 2 1 0 1
+
+𝑁  = 4096 0 0 2 0 1
+
+𝑁  = 16384 0 0 0 1 1
+
+𝑁  = 65536 0 0 0 1 0
+
+(k) Sanity check counts for the cutoff criterion z-score 
+
+𝑀  = 1 𝑀  = 4 𝑀  = 16 𝑀  = 64 𝑀  = 256
+
+𝑁  = 1024 0 0 0 1 0
+
+𝑁  = 4096 0 0 0 0 1
+
+𝑁  = 16384 0 0 0 0 2
+
+𝑁  = 65536 1 3 1 0 1
+
+s8 S2.  Proof of validity of the five anisotropic pressure contributions 
+
+## for viscosity calculations 
+
+In the main text, we propose five anisotropic pressure contributions  ̂  𝑃  ′ 
+
+> 𝑖
+
+with  𝑖  = 1, …, 5, which are defined 
+
+as follows: 
+
+{<<<<=<<<<>̂𝑃  ′ 
+
+> 1
+
+= (𝑃 xx  − 1 
+
+> 2
+
+𝑃 yy  − 1 
+
+> 2
+
+𝑃 zz )/√3̂
+
+𝑃  ′ 
+
+> 2
+
+= (𝑃 yy  − 𝑃 zz )/2̂
+
+𝑃  ′ 
+
+> 3
+
+= 𝑃 xy ̂
+
+𝑃  ′ 
+
+> 4
+
+= 𝑃 yz ̂
+
+𝑃  ′ 
+
+> 5
+
+= 𝑃 zx 
+
+They were derived by projecting the pressure tensor onto its anisotropic subspaces, followed by an eigen-
+
+decomposition of the projection operator. The contributions  ̂  𝑃  ′ 
+
+> 3
+
+, ̂  𝑃  ′ 
+
+> 4
+
+, and  ̂  𝑃  ′ 
+
+> 5
+
+correspond to the off-diagonal 
+
+elements of the pressure tensor, and require no further justification. Here, we will focus on the validity of 
+
+the contributions  ̂  𝑃  ′ 
+
+> 1
+
+and  ̂  𝑃  ′ 
+
+> 2
+
+.
+
+First, note that  ̂  𝑃  ′ 
+
+> 2
+
+corresponds to an off-diagonal element of the pressure tensor expressed in a rotated 
+
+frame of reference. The rotation matrix that transforms the original frame of reference into the rotated one 
+
+is given by: 
+
+𝐑  =
+
+(DDDDE1 1√2
+
+> 1√2
+
+− 1√2 
+
+> 1√2
+
+)GGGGH
+
+By applying this rotation matrix to the pressure tensor, ̂
+
+𝐏  =
+
+(DDDDDÊ𝑃 𝑥 𝑥 ̂
+
+𝑃 𝑥 𝑦 ̂
+
+𝑃 𝑧 𝑥 ̂
+
+𝑃 𝑥 𝑦 ̂
+
+𝑃 𝑦 𝑦 ̂
+
+𝑃 𝑦 𝑧 ̂
+
+𝑃 𝑧 𝑥 ̂
+
+𝑃 𝑦 𝑧 ̂
+
+𝑃 𝑧 𝑧  )GGGGGH
+
+,
+
+one obtains the rotated pressure tensor 
+
+𝐑 ̂ 𝐏 𝐑 ⊤ =
+
+(DDDDDDDDÊ 𝑃 𝑥 𝑥 ̂    
+
+> 𝑃 𝑥 𝑦 −̂𝑃 𝑧 𝑥
+> √2̂
+> 𝑃 𝑥 𝑦 +̂𝑃 𝑧 𝑥
+> √2̂
+> 𝑃 𝑥 𝑦 −̂𝑃 𝑧 𝑥
+> √2̂
+> 𝑃 𝑦 𝑦 −2̂𝑃 𝑦 𝑧 +̂𝑃 𝑧 𝑧
+> 2̂
+> 𝑃 𝑦 𝑦 −̂𝑃 𝑧 𝑧
+> 2̂
+> 𝑃 𝑥 𝑦 +̂𝑃 𝑧 𝑥
+> √2̂
+> 𝑃 𝑦 𝑦 −̂𝑃 𝑧 𝑧
+> 2̂
+> 𝑃 𝑦 𝑦 +2̂𝑃 𝑦 𝑧 +̂𝑃 𝑧 𝑧
+> 2
+
+)GGGGGGGGH
+
+In this new frame of reference, the off-diagonal element in row 2 and columns 3 is exactly  ̂  𝑃  ′ 
+
+> 2
+
+as defined 
+
+above, confirming that it is a valid off-diagonal pressure component and therefore a valid input to STACIE 
+
+for viscosity calculations. 
+
+In contrast, for the first component,  ̂  𝑃  ′ 
+
+> 1
+
+, there is no rotation of the Cartesian axis frame that results in this 
+
+linear combination appearing as an off-diagonal element. Instead, it is simply a scaled sum of two 
+
+anisotropic stress components: ̂
+
+𝑃  ′ 
+
+> 1
+
+= 𝑃 xx  − 1 
+
+> 2
+
+𝑃 yy  − 1 
+
+> 2
+
+𝑃 zz 
+
+√3 = 1
+
+2√3[(̂𝑃 𝑥 𝑥  −̂ 𝑃 𝑦 𝑦 ) + (̂𝑃 𝑥 𝑥  −̂ 𝑃 𝑧 𝑧 )]
+
+To confirm that this is a valid anisotropic pressure contribution for viscosity calculation, we work out the 
+
+ACF of  ̂  𝑃  ′ 
+
+> 1
+
+and rewrite it under the assumption that the liquid is isotropic: 
+
+s9 COV [̂𝑃  ′ 
+
+> 1
+
+(𝑡 ),̂ 𝑃  ′ 
+
+> 1
+
+(𝑡  + Δ𝑡 )]
+
+= 1
+
+3 COV [̂𝑃 𝑥 𝑥 (𝑡 ),̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 )] − 1
+
+6 COV [̂𝑃 𝑥 𝑥 (𝑡 ),̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 )] − 1
+
+6 COV [̂𝑃 𝑥 𝑥 (𝑡 ),̂ 𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )]
+
+−1
+
+6 COV [̂𝑃 𝑦 𝑦 (𝑡 ),̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 )] + 1
+
+12 COV [̂𝑃 𝑦 𝑦 (𝑡 ),̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 )] + 1
+
+12 COV [̂ 𝑃 𝑦 𝑦 (𝑡 ),̂ 𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )]
+
+−1
+
+6 COV [̂𝑃 𝑧 𝑧 (𝑡 ),̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 )] + 1
+
+12 COV [̂ 𝑃 𝑧 𝑧 (𝑡 ),̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 )] + 1
+
+12 COV [̂𝑃 𝑧 𝑧 (𝑡 ),̂ 𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )]
+
+In an isotropic liquid, all diagonal elements of the pressure tensor have the same ACF, and all cross-
+
+correlations between different diagonal elements are also equal. The coefficients of the diagonal terms add 
+
+up to  1 
+
+> 2
+
+, while those of the cross-terms add up to  −1 
+
+> 2
+
+. Hence, we can rewrite the above expression as: 
+
+COV [̂𝑃  ′ 
+
+> 1
+
+(𝑡 ),̂ 𝑃  ′ 
+
+> 1
+
+(𝑡  + Δ𝑡 )]
+
+= 1
+
+4 COV [̂ 𝑃 𝑥 𝑥 (𝑡 ),̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 )] − 1
+
+4 COV [̂𝑃 𝑥 𝑥 (𝑡 ),̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 )]
+
+−1
+
+4 COV [̂ 𝑃 𝑥 𝑥 (𝑡 ),̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 )] + 1
+
+4 COV [̂𝑃 𝑦 𝑦 (𝑡 ),̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 )]
+
+= COV [̂ 𝑃 𝑥 𝑥 (𝑡 ) −̂ 𝑃 𝑦 𝑦 (𝑡 )
+
+2 ,̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 ) −̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 )
+
+2 ]
+
+This final expression is indeed also the ACF of an anisotropic pressure contribution. Note that the identity 
+
+only holds for the ACF, which is an expectation value, and not for the time series themselves: ̂
+
+𝑃  ′ 
+
+> 1
+
+(𝑡 ) ≠̂ 𝑃 𝑥 𝑥 (𝑡 ) −̂ 𝑃 𝑦 𝑦 (𝑡 )
+
+2
+
+It is also worth pointing out that the viscosity obtained with the average ACF of the five contributions  ̂  𝑃  ′
+
+> 𝑖
+
+is equivalent to an expression proposed by Daivis and Evans  [3]  formulated in terms of the traceless 
+
+pressure tensor. They showed that the shear viscosity can be computed as (expressed here in our notation): 
+
+𝜂 DE  = 𝑉 
+
+5𝑘 B𝑇 
+
+1
+
+2 ∫
+
+> ∞
+> −∞
+
+1
+
+2 E[̂𝑃  tl 
+
+> 𝑖 𝑗
+
+(𝑡 ) :̂ 𝑃  tl 
+
+> 𝑖 𝑗
+
+(𝑡  + Δ𝑡 )] dΔ𝑡 
+
+with ̂
+
+𝑃  tl  
+
+> 𝑖 𝑗
+
+=̂ 𝑃 𝑖 𝑗  − 𝛿 𝑖 𝑗 
+
+1
+
+3 ∑
+
+> 𝑖 =𝑥 ,𝑦 ,𝑧
+
+̂
+
+𝑃 𝑖 𝑖 
+
+The argument of the expectation value operator  𝐸 [⋅] times  1 
+
+> 2
+
+is 
+
+1
+
+2̂ 𝑃  tl 
+
+> 𝑖 𝑗
+
+(𝑡 ) :̂ 𝑃  tl 
+
+> 𝑖 𝑗
+
+(𝑡  + Δ𝑡 )
+
+= 1
+
+3̂ 𝑃 𝑥 𝑥 (𝑡 )̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 ) − 1
+
+6̂ 𝑃 𝑥 𝑥 (𝑡 )̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) − 1
+
+6̂ 𝑃 𝑥 𝑥 (𝑡 )̂ 𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )
+
+−1
+
+6̂ 𝑃 𝑦 𝑦 (𝑡 )̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 ) + 1
+
+3̂ 𝑃 𝑦 𝑦 (𝑡 )̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) − 1
+
+6̂ 𝑃 𝑦 𝑦 (𝑡 )̂𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )
+
+−1
+
+6̂ 𝑃 𝑧 𝑧 (𝑡 )̂𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 ) − 1
+
+6̂ 𝑃 𝑧 𝑧 (𝑡 )̂𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) + 1
+
+3̂ 𝑃 𝑧 𝑧 (𝑡 )̂𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )
+
++̂𝑃 𝑥 𝑦 (𝑡 )̂ 𝑃 𝑥 𝑦 (𝑡  + Δ𝑡 ) +̂ 𝑃 𝑦 𝑧 (𝑡 )̂𝑃 𝑦 𝑧 (𝑡  + Δ𝑡 ) +̂ 𝑃 𝑧 𝑥 (𝑡 )̂𝑃 𝑧 𝑥 (𝑡  + Δ𝑡 )
+
+This can be compared to a similar analysis of the sum of the ACFs of the five anisotropic pressure 
+
+contributions  ̂  𝑃  ′ 
+
+> 𝑖
+
+proposed in this work: 
+
+s10 𝜂 STACIE  = 1
+
+5 ∑
+
+> 5
+> 𝑖 =1
+
+𝑉 
+
+𝑘 B𝑇 
+
+1
+
+2 ∫
+
+> ∞
+> −∞
+
+E[̂𝑃  ′ 
+
+> 𝑖
+
+(𝑡 )̂𝑃  ′ 
+
+> 𝑖
+
+(𝑡  + Δ𝑡 )] dΔ𝑡 
+
+The five arguments of the expectation value operators are: ̂
+
+𝑃  ′ 
+
+> 1
+
+(𝑡 )̂ 𝑃  ′ 
+
+> 1
+
+(𝑡  + Δ𝑡 )
+
+= 1
+
+3̂ 𝑃 𝑥 𝑥 (𝑡 )̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 ) − 1
+
+6̂ 𝑃 𝑥 𝑥 (𝑡 )̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) − 1
+
+6̂ 𝑃 𝑥 𝑥 (𝑡 )̂ 𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )
+
+−1
+
+6̂ 𝑃 𝑦 𝑦 (𝑡 )̂ 𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 ) + 1
+
+12̂ 𝑃 𝑦 𝑦 (𝑡 )̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) + 1
+
+12̂ 𝑃 𝑦 𝑦 (𝑡 )̂𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )
+
+−1
+
+6̂ 𝑃 𝑧 𝑧 (𝑡 )̂𝑃 𝑥 𝑥 (𝑡  + Δ𝑡 ) + 1
+
+12̂ 𝑃 𝑧 𝑧 (𝑡 )̂𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) + 1
+
+12̂ 𝑃 𝑧 𝑧 (𝑡 )̂𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )̂
+
+𝑃  ′ 
+
+> 2
+
+(𝑡 )̂ 𝑃  ′ 
+
+> 2
+
+(𝑡  + Δ𝑡 )
+
+= 1
+
+4̂ 𝑃 𝑦 𝑦 (𝑡 )̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) − 1
+
+4̂ 𝑃 𝑦 𝑦 (𝑡 )̂𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )
+
+−1
+
+4̂ 𝑃 𝑧 𝑧 (𝑡 )̂ 𝑃 𝑦 𝑦 (𝑡  + Δ𝑡 ) + 1
+
+4̂ 𝑃 𝑧 𝑧 (𝑡 )̂ 𝑃 𝑧 𝑧 (𝑡  + Δ𝑡 )̂
+
+𝑃  ′ 
+
+> 3
+
+(𝑡 )̂𝑃  ′ 
+
+> 3
+
+(𝑡  + Δ𝑡 ) =̂ 𝑃 𝑥 𝑦 (𝑡 )̂𝑃 𝑥 𝑦 (𝑡  + Δ𝑡 )̂
+
+𝑃  ′ 
+
+> 4
+
+(𝑡 )̂𝑃  ′ 
+
+> 4
+
+(𝑡  + Δ𝑡 ) =̂ 𝑃 𝑦 𝑧 (𝑡 )̂𝑃 𝑦 𝑧 (𝑡  + Δ𝑡 )̂
+
+𝑃  ′ 
+
+> 5
+
+(𝑡 )̂ 𝑃  ′ 
+
+> 5
+
+(𝑡  + Δ𝑡 ) =̂ 𝑃 𝑧 𝑥 (𝑡 )̂𝑃 𝑧 𝑥 (𝑡  + Δ𝑡 )
+
+Adding all five terms confirms that our approach is indeed equivalent to the Daivis-Evans expression for 
+
+the shear viscosity, i.e.: 
+
+1
+
+2̂ 𝑃  tl 
+
+> 𝑖 𝑗
+
+(𝑡 ) :̂ 𝑃  tl 
+
+> 𝑖 𝑗
+
+(𝑡  + Δ𝑡 ) = ∑
+
+> 5
+> 𝑖 =1
+
+̂
+
+𝑃  ′ 
+
+> 𝑖
+
+(𝑡 )̂𝑃  ′ 
+
+> 𝑖
+
+(𝑡  + Δ𝑡 )
+
+(This identity does not rely on the assumption of isotropy.) 
+
+## S3.  STACIE shear-viscosity results for all pressures (full trajectories) 
+
+This section (and the next two) presents the default figures that STACIE produces upon the analysis of a 
+
+time series. A detailed discussion of these figures can be found in the “minimal example” in the original 
+
+STACIE paper  [2]  and in the online documentation of STACIE  [4] . Here, we briefly summarize the content 
+
+of each panel in the figures below for completeness: 
+
+• Left side:  Low-frequency part of the spectrum of the time series (blue dots), and the model fitted by 
+
+STACIE (green line), from which the autocorrelation integral (viscosity,  𝜂 ) and the exponential 
+
+correlation time,  𝜏 exp , are derived. The integrated autocorrelation time,  𝜏 int , is also shown and is typically 
+
+a smaller value as it incorporates contributions from faster modes in the data. The green band is the 95% 
+
+confidence interval where data is expected to be found, based on the fitted model and the estimated 
+
+uncertainty. The green dotted lines represent the 95% confidence interval of the fitted model itself. The 
+
+red dotted line shows the weight function used to select the low-frequency part of the spectrum for 
+
+fitting. 
+
+• Right side: 
+
+‣ Top-left panel:  The weight assigned to each cutoff frequency considered during the fitting procedure 
+
+(orange curve). 
+
+s11 ‣ Top-right panel:  The fitted autocorrelation integral (viscosity,  𝜂 ) as a function of the cutoff frequency 
+
+(red curve) and its uncertainty estimate (red band, 95% confidence interval). Selected points for 
+
+averaging over cutoff frequencies are shown, with darker dots indicating higher weights. 
+
+‣ Bottom-left panel:  Sanity checks for the fit at different cutoff frequencies, expressed as two z-scores, 
+
+as explained in the initial STACIE paper  [2] . In well-behaved cases, a Z-score is expected to be zero 
+
+with a standard deviation of 1. Values outside the range [−2, 2] indicate potential issues with the fit at 
+
+that cutoff frequency. 
+
+‣ Bottom-right panel:  The eigenvalues of the Hessian of the regression cost function, in a pre-
+
+conditioned parameter space. This can be used to detect ill-conditioned fits. 
+
+S3.1.  𝑃  = 0.1 MPa , 𝑡 sim  = 2 ns 
+
+S3.2.  𝑃  = 100 MPa , 𝑡 sim  = 20 ns 
+
+s12 S3.3.  𝑃  = 250 MPa , 𝑡 sim  = 20 ns 
+
+S3.4.  𝑃  = 500 MPa , 𝑡 sim  = 60 ns 
+
+S3.5.  𝑃  = 1000 MPa , 𝑡 sim  = 500 ns 
+
+> s13
+
+## S4.  STACIE results for truncated trajectories at  𝑃  = 500 MPa          
+
+> S4.1. 𝑁 =1875
+> S4.2. 𝑁 =3750
+> S4.3. 𝑁 =7500
+> s14
+
+S4.4.  𝑁  = 15000
+
+S4.5.  𝑁  = 30000
+
+S4.6.  𝑁  = 60000
+
+> s15
+
+## S5.  STACIE shear-viscosity results for truncated trajectories at  𝑃  =
+
+## 1000 MPa          
+
+> S5.1. 𝑁 =1953
+> S5.2. 𝑁 =3906
+> S5.3. 𝑁 =7812
+> s16
+
+S5.4.  𝑁  = 15625
+
+S5.5.  𝑁  = 31250
+
+S5.6.  𝑁  = 62500
+
+> s17
+
+S5.7.  𝑁  = 125000
+
+S5.8.  𝑁  = 250000
+
+S5.9.  𝑁  = 500000
+
+## S6.  Analysis of the five anisotropic pressure contributions to the 
+
+## shear viscosity 
+
+For every simulation, five anisotropic pressure contributions  ̂  𝑃  ′ 
+
+> 𝑖
+
+with  𝑖  = 1, …, 5 are defined in the main text 
+
+as follows: 
+
+s18 {<<<<=<<<<>̂𝑃  ′ 
+
+> 1
+
+= (𝑃 xx  − 1 
+
+> 2
+
+𝑃 yy  − 1 
+
+> 2
+
+𝑃 zz )/√3̂
+
+𝑃  ′ 
+
+> 2
+
+= (𝑃 yy  − 𝑃 zz )/2̂
+
+𝑃  ′ 
+
+> 3
+
+= 𝑃 xy ̂
+
+𝑃  ′ 
+
+> 4
+
+= 𝑃 yz ̂
+
+𝑃  ′ 
+
+> 5
+
+= 𝑃 zx 
+
+To validate the hypothesis that these contributions are statistically independent, we analyze the Pearson 
+
+correlation coefficients  𝑟 (𝑖 , 𝑗 ) between all pairs of anisotropic pressure contributions  ̂  𝑃  ′ 
+
+> 𝑖
+
+and  ̂  𝑃  ′ 
+
+> 𝑗
+
+over the full 
+
+trajectories, for each isotropic pressure considered in this work. These results are summarized in  Table S1 
+
+and compared to the expected standard error of the correlation coefficient for uncorrelated variables, indeed 
+
+revealing no statistically significant correlations. 
+
+Secondly, to validate that all contributions are valid inputs for the viscosity calculation, STACIE is applied 
+
+to each one individually, while still combining data from all trajectories at the same pressure. The viscosity 
+
+obtained from each contribution is then compared to the viscosity obtained from the combined data in 
+
+Figure S1 . Filled blue circles indicate the results for contributions that passed all sanity checks, as defined 
+
+in our previous work  [2]  (z-scores below 2, number of effective frequency grid points above 60) and with a 
+
+sufficient simulation time ( > 20𝜋 𝜏 exp ). Open circles indicate results that failed one or more of these criteria. 
+
+For all cases that met the criteria, the viscosities obtained from the individual contributions agree well with 
+
+the combined result, confirming that they are all valid inputs for the viscosity calculation. Detailed plots of 
+
+STACIE’s analysis for each component can be found in the following subsections. 
+
+𝑃  [MPa]  0.1  100.0  250.0  500.0  1000.0 
+
+𝑡 sim  [ns]  2 20  20  60  500 
+
+𝜏 exp  [ps]  7.4  19.2  48.7  258.4  13071.6 
+
+𝑁 lb  285  1052  408  232  38 
+
+Expected  𝜎 𝑟  [%]  6.0 3.1 5.0 6.6 16.9
+
+𝑟 (1, 2) [%]  −0.5 ± 4.9 −0.1 ± 2.8 −0.1 ± 4.7 1.0 ± 6.7 −1.8 ± 17.6
+
+𝑟 (1, 3) [%]  −1.1 ± 5.2 −0.1 ± 2.6 −0.4 ± 5.5 0.9 ± 6.7 2.9 ± 15.7
+
+𝑟 (1, 4) [%]  −0.4 ± 6.8 −0.5 ± 3.2 0.3 ± 5.6 0.1 ± 6.8 2.6 ± 18.5
+
+𝑟 (1, 5) [%]  −0.3 ± 6.3 0.1 ± 2.9 −1.3 ± 4.7 0.9 ± 6.1 3.2 ± 16.5
+
+𝑟 (2, 3) [%]  0.2 ± 6.0 0.1 ± 2.9 0.1 ± 4.8 0.5 ± 7.1 0.4 ± 17.3
+
+𝑟 (2, 4) [%]  −0.8 ± 6.7 −0.7 ± 3.5 0.0 ± 4.5 −1.8 ± 6.7 −0.7 ± 16.8
+
+𝑟 (2, 5) [%]  0.7 ± 6.2 −0.1 ± 2.7 −0.4 ± 5.3 0.5 ± 6.3 3.4 ± 15.1
+
+𝑟 (3, 4) [%]  −0.6 ± 5.6 −0.6 ± 2.4 −0.8 ± 5.2 −1.8 ± 5.5 4.4 ± 12.8
+
+𝑟 (3, 5) [%]  0.3 ± 6.1 −0.1 ± 3.0 0.0 ± 5.0 −1.4 ± 7.1 1.0 ± 17.2
+
+𝑟 (4, 5) [%]  1.9 ± 7.0 −0.1 ± 3.5 −0.0 ± 4.1 −1.1 ± 5.7 0.7 ± 16.8
+
+Table S1: Analysis of correlations between anisotropic pressure contributions for the full trajectories at every 
+
+pressure considered in this work. The anisotropic pressure contributions were block-averaged with a block 
+
+size that corresponds to the exponential correlation time  𝜏 exp  to eliminate faster oscillations, resulting in 
+
+𝑁 lb  blocks per trajectory. Such fast oscillations are not relevant for the estimated viscosity and are caused 
+
+by local high-frequency modes, which are less likely to exhibit any significant correlation. Including them 
+
+could bias the correlation analysis by hiding low-frequency correlations behind high-frequency noise. For 
+
+each trajectory, the Pearson correlation coefficient  𝑟 (𝑖 , 𝑗 ) is computed between anisotropic block-averages 
+
+of contributions  ̂  𝑃  ′ 
+
+> 𝑖
+
+and  ̂  𝑃  ′ 
+
+> 𝑗
+
+. (See main text for the notation.) The values reported here are the mean and 
+
+standard deviation of  𝑟 (𝑖 , 𝑗 ) computed over all trajectories at the given pressure. To confirm that none of the 
+
+correlation coefficients are statistically significant, we also report the expected standard error on  𝑟 (𝑖 , 𝑗 ) for 
+
+uncorrelated variables, which is  𝜎 𝑟  = 1/√𝑁 lb  − 3. [5] 
+
+s19 𝑃  = 0.1 MPa , 𝑡 sim  = 2 ns  𝑃  = 100 MPa , 𝑡 sim  = 20 ns 
+
+𝑃  = 250 MPa , 𝑡 sim  = 20 ns  𝑃  = 500 MPa , 𝑡 sim  = 60 ns 
+
+𝑃  = 1000 MPa , 𝑡 sim  = 500 ns 
+
+Figure S1: Comparison of viscosity derived from individual anisotropic pressure contributions  ̂  𝑃  ′ 
+
+> 𝑖
+
+(blue) to 
+
+the viscosity derived from the combined data (horizontal orange lines). 
+
+s20 S6.1.  𝑃  = 0.1 MPa , 𝑡 sim  = 2 ns 
+
+S6.1.1.  Contribution  ̂  𝑃  ′
+
+> 1
+
+S6.1.2.  Contribution  ̂  𝑃  ′
+
+> 2
+
+S6.1.3.  Contribution  ̂  𝑃  ′
+
+> 3
+
+s21 S6.1.4.  Contribution  ̂  𝑃  ′
+
+> 4
+
+S6.1.5.  Contribution  ̂  𝑃  ′
+
+> 5
+
+S6.2.  𝑃  = 100 MPa , 𝑡 sim  = 20 ns 
+
+S6.2.1.  Contribution  ̂  𝑃  ′
+
+> 1
+
+s22 S6.2.2.  Contribution  ̂  𝑃  ′
+
+> 2
+
+S6.2.3.  Contribution  ̂  𝑃  ′
+
+> 3
+
+S6.2.4.  Contribution  ̂  𝑃  ′
+
+> 4
+
+s23 S6.2.5.  Contribution  ̂  𝑃  ′
+
+> 5
+
+S6.3.  𝑃  = 250 MPa , 𝑡 sim  = 20 ns 
+
+S6.3.1.  Contribution  ̂  𝑃  ′
+
+> 1
+
+S6.3.2.  Contribution  ̂  𝑃  ′
+
+> 2
+
+s24 S6.3.3.  Contribution  ̂  𝑃  ′
+
+> 3
+
+S6.3.4.  Contribution  ̂  𝑃  ′
+
+> 4
+
+S6.3.5.  Contribution  ̂  𝑃  ′
+
+> 5
+
+s25 S6.4.  𝑃  = 500 MPa , 𝑡 sim  = 60 ns 
+
+S6.4.1.  Contribution  ̂  𝑃  ′
+
+> 1
+
+S6.4.2.  Contribution  ̂  𝑃  ′
+
+> 2
+
+S6.4.3.  Contribution  ̂  𝑃  ′
+
+> 3
+
+s26 S6.4.4.  Contribution  ̂  𝑃  ′
+
+> 4
+
+S6.4.5.  Contribution  ̂  𝑃  ′
+
+> 5
+
+S6.5.  𝑃  = 1000 MPa , 𝑡 sim  = 500 ns 
+
+S6.5.1.  Contribution  ̂  𝑃  ′
+
+> 1
+
+s27 S6.5.2.  Contribution  ̂  𝑃  ′
+
+> 2
+
+S6.5.3.  Contribution  ̂  𝑃  ′
+
+> 3
+
+S6.5.4.  Contribution  ̂  𝑃  ′
+
+> 4
+
+s28 S6.5.5.  Contribution  ̂  𝑃  ′
+
+> 5
+
+s29 Bibliography 
+
+[1]  G. Toraman, D. Fauconnier, and T. Verstraelen, “The AutoCorrelation Integral Drill (ACID) Test Set 
+
+(Version 1.2.0, Wednesday, December 24, 2025).” Zenodo, 2025. doi:  10.5281/zenodo.18044643 .
+
+[2]  G. Toraman, D. Fauconnier, and T. Verstraelen, “STable AutoCorrelation Integral Estimator (STACIE): 
+
+Robust and accurate transport properties from molecular dynamics simulations,”  J. Chem. Inf. Model. ,
+
+vol. 65, no. 19, pp. 10445–10464, 2025, doi:  10.1021/acs.jcim.5c01475 .
+
+[3]  P. J. Daivis and D. J. Evans, “Comparison of constant pressure and constant volume nonequilibrium sim -
+
+ulations of sheared model decane,”  J. Chem. Phys. , vol. 100, no. 1, pp. 541–547, 1994, doi:  10.1063/1.466970 .
+
+[4]  G. Toraman and T. Verstraelen, “STACIE: STable AutoCorrelation Integral Estimator (Version 1.2.1, 
+
+Sunday, December 28, 2025).” Zenodo, 2025. doi:  10.5281/zenodo.18077751 .
+
+[5]  T. Gnambs, “A Brief Note on the Standard Error of the Pearson Correlation,”  Collabra: Psychol. , vol. 9, 
+
+no. 1, p. 87615, 2023, doi:  10.1525/collabra.87615 .
+
+s30 TOC Graphic yzx
+
+74
