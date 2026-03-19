@@ -1,0 +1,7 @@
+openai
+requests
+pymupdf
+arxiv
+numpy
+sentence-transformers
+pyyaml
