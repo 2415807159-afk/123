@@ -30,33 +30,25 @@ window.DPRWorkflowRunner = (function () {
     '10': {
       key: 'daily-now',
       dispatchInputs: {
-        run_enrich: 'false',
         fetch_days: '10',
-        fetch_mode: 'skims',
       },
     },
     '30': {
       key: 'daily-now',
       dispatchInputs: {
-        run_enrich: 'false',
         fetch_days: '30',
-        fetch_mode: 'skims',
       },
     },
     '30-skims': {
       key: 'daily-now',
       dispatchInputs: {
-        run_enrich: 'false',
         fetch_days: '30',
-        fetch_mode: 'skims',
       },
     },
     '30-standard': {
       key: 'daily-now',
       dispatchInputs: {
-        run_enrich: 'false',
         fetch_days: '30',
-        fetch_mode: 'standard',
       },
     },
   };
@@ -515,6 +507,24 @@ window.DPRWorkflowRunner = (function () {
     return merged;
   };
 
+  const filterInputsForWorkflow = (workflowFile, inputs) => {
+    const merged = inputs && typeof inputs === 'object' ? { ...inputs } : {};
+    if (String(workflowFile || '') === 'daily-paper-reader-fast.yml') {
+      const filtered = {};
+      const fetchDays = normalizeDispatchValue(merged.fetch_days);
+      if (fetchDays) {
+        filtered.fetch_days = fetchDays;
+      }
+      return filtered;
+    }
+    return merged;
+  };
+
+  const normalizeDispatchValue = (value) => {
+    if (typeof value === 'undefined' || value === null) return '';
+    return String(value).trim();
+  };
+
   const dispatchAndMonitor = async (workflow, extraInputs) => {
     const wf = workflow || {};
     const workflowFile = String(wf.id || '');
@@ -582,7 +592,10 @@ window.DPRWorkflowRunner = (function () {
       const dispatchUrl = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${encodeURIComponent(
         workflowFile,
       )}/dispatches`;
-      const dispatchInputs = combineInputs(wf.dispatchInputs, extraInputs);
+      const dispatchInputs = filterInputsForWorkflow(
+        workflowFile,
+        combineInputs(wf.dispatchInputs, extraInputs),
+      );
       const dispatchBody = {
         ref: String(repoContext.defaultBranch || 'main'),
       };
@@ -808,7 +821,6 @@ window.DPRWorkflowRunner = (function () {
     const preset = QUICK_FETCH_PRESETS[presetKey] || QUICK_FETCH_PRESETS[normalized] || {
       key: 'daily-now',
       dispatchInputs: {
-        run_enrich: 'false',
         fetch_days: normalized,
       },
     };

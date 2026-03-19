@@ -662,9 +662,9 @@ window.SubscriptionsManager = (function () {
               <div class="chat-quick-run-title" style="margin:0;">快速抓取</div>
               <button id="arxiv-admin-open-workflow-panel-btn" class="arxiv-tool-btn" type="button" style="padding:2px 8px;">打开工作流面板</button>
             </div>
-            <button id="arxiv-admin-quick-run-10d-btn" class="chat-quick-run-item" type="button">立即搜寻十天内论文</button>
-            <button id="arxiv-admin-quick-run-30d-btn" class="chat-quick-run-item" type="button">立即搜寻三十天内论文（全速览，约 0.76）</button>
-            <button id="arxiv-admin-quick-run-30d-standard-btn" class="chat-quick-run-item" type="button">立即搜寻三十天内论文（全标准 / 精读，约 1.22）</button>
+            <button id="arxiv-admin-quick-run-10d-btn" class="chat-quick-run-item" type="button">立即搜寻十天内论文（快速）</button>
+            <button id="arxiv-admin-quick-run-30d-btn" class="chat-quick-run-item" type="button">立即搜寻三十天内论文（快速）</button>
+            <button id="arxiv-admin-quick-run-30d-standard-btn" class="chat-quick-run-item" type="button">立即搜寻三十天内论文（兼容入口，当前同样走快速版）</button>
             <div class="chat-quick-run-divider" aria-hidden="true"></div>
             <div class="chat-quick-run-title">会议论文（暂未接入）</div>
             <div class="chat-quick-run-row">
@@ -956,7 +956,7 @@ window.SubscriptionsManager = (function () {
         runQuickFetch(
           30,
           quickRunMsgEl,
-          '已发起 30 天全速览抓取任务（skims，成本约 0.76）。',
+          '已发起 30 天快速抓取任务。',
           { fetchMode: 'skims' },
         );
       });
@@ -968,7 +968,7 @@ window.SubscriptionsManager = (function () {
         runQuickFetch(
           30,
           quickRunMsgEl,
-          '已发起 30 天全标准抓取任务（精读，成本约 1.22）。',
+          '已发起 30 天兼容入口抓取任务，当前同样走快速版。',
           { fetchMode: 'standard' },
         );
       });

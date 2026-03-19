@@ -3,10 +3,18 @@ name: daily-paper-reader-fast
 on:
   workflow_dispatch:
     inputs:
+      run_enrich:
+        description: "兼容旧前端参数；快速版忽略该值"
+        required: false
+        default: "false"
       fetch_days:
         description: "回溯抓取天数（快速版，默认 7）"
         required: false
         default: "7"
+      fetch_mode:
+        description: "兼容旧前端参数；快速版统一走轻量流程"
+        required: false
+        default: "skims"
 
 permissions:
   contents: write
