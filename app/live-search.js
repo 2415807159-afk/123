@@ -989,11 +989,15 @@ window.DPRLiveSearch = (function () {
     const journal = normalizeCompare(work.journal);
     const titleRaw = normalizeText(work.title).toLowerCase();
     const abstractRaw = normalizeText(work.abstract).toLowerCase();
+    const journalRaw = normalizeText(work.journal).toLowerCase();
+    const workKeywordText = normalizeCompare((Array.isArray(work.keywords) ? work.keywords : []).join(' '));
+    const workKeywordRaw = normalizeText((Array.isArray(work.keywords) ? work.keywords : []).join(' ')).toLowerCase();
     const text = `${title} ${abstract} ${journal}`;
     let score = 0;
     const evidence = [];
     const matchedKeywords = [];
     const anchorTerms = extractProfileAnchorTerms(profile);
+    const anchorRequired = anchorTerms.length >= 2;
 
     (Array.isArray(profile.keywords) ? profile.keywords : []).forEach((item) => {
       const keyword = normalizeCompare(item.keyword);
@@ -1044,6 +1048,19 @@ window.DPRLiveSearch = (function () {
         (anchor) =>
           !titleAnchorHits.includes(anchor) && workContainsAnchor(abstractRaw, abstract, anchor),
       );
+      const keywordAnchorHits = anchorTerms.filter(
+        (anchor) =>
+          !titleAnchorHits.includes(anchor) &&
+          !abstractAnchorHits.includes(anchor) &&
+          workContainsAnchor(workKeywordRaw, workKeywordText, anchor),
+      );
+      const journalAnchorHits = anchorTerms.filter(
+        (anchor) =>
+          !titleAnchorHits.includes(anchor) &&
+          !abstractAnchorHits.includes(anchor) &&
+          !keywordAnchorHits.includes(anchor) &&
+          workContainsAnchor(journalRaw, journal, anchor),
+      );
       if (titleAnchorHits.length) {
         score += 15 + titleAnchorHits.length * 2.5;
         evidence.push(`标题命中方向锚点：${titleAnchorHits.slice(0, 3).join(', ')}`);
@@ -1052,6 +1069,20 @@ window.DPRLiveSearch = (function () {
         score += 8 + abstractAnchorHits.length * 1.5;
         evidence.push(`摘要命中方向锚点：${abstractAnchorHits.slice(0, 3).join(', ')}`);
         matchedKeywords.push(...abstractAnchorHits);
+      } else if (keywordAnchorHits.length) {
+        score += 6 + keywordAnchorHits.length * 1.2;
+        evidence.push(`关键词命中方向锚点：${keywordAnchorHits.slice(0, 3).join(', ')}`);
+        matchedKeywords.push(...keywordAnchorHits);
+      } else if (journalAnchorHits.length) {
+        score += 3 + journalAnchorHits.length;
+        evidence.push(`期刊信息命中方向锚点：${journalAnchorHits.slice(0, 3).join(', ')}`);
+        matchedKeywords.push(...journalAnchorHits);
+      } else if (anchorRequired) {
+        return {
+          score: -50,
+          evidence: ['未命中当前方向锚点'],
+          matchedKeywords: [],
+        };
       } else {
         score -= 10;
       }
@@ -1223,6 +1254,8 @@ window.DPRLiveSearch = (function () {
     title: item.title,
     link: item.url || item.doi || item.id || '',
     score: String(item.match && item.match.score ? item.match.score : ''),
+    journal: item.journal || '',
+    date: item.publication_date || '',
     tags: []
       .concat(item.match && item.match.profileTag ? [{ kind: 'query', label: item.match.profileTag }] : [])
       .concat(
@@ -1264,8 +1297,10 @@ window.DPRLiveSearch = (function () {
       `doi: ${yamlQuote(item.doi || '')}`,
       `link: ${yamlQuote(item.url || '')}`,
       `tags: ${JSON.stringify(tagList)}`,
+      `keywords: ${JSON.stringify(Array.isArray(item.displayKeywords) ? item.displayKeywords : [])}`,
       `score: ${item.match && item.match.score ? item.match.score : ''}`,
       `evidence: ${yamlQuote(((item.match && item.match.evidence) || []).join('； '))}`,
+      `abstract_en: ${yamlQuote(item.abstract || '')}`,
       'selection_source: live_search_saved',
       '---',
       '',
@@ -1362,12 +1397,15 @@ window.DPRLiveSearch = (function () {
     return `${text}\n\n${block}\n`;
   };
 
-  const buildSnapshotFiles = async (snapshot) => {
-    const sidebarRes = await fetch('docs/_sidebar.md', { cache: 'no-store' });
-    if (!sidebarRes.ok) {
-      throw new Error(`无法读取 docs/_sidebar.md（HTTP ${sidebarRes.status}）`);
+  const buildSnapshotFiles = async (snapshot, currentSidebarText) => {
+    let currentSidebar = typeof currentSidebarText === 'string' ? currentSidebarText : '';
+    if (!currentSidebar) {
+      const sidebarRes = await fetch('docs/_sidebar.md', { cache: 'no-store' });
+      if (!sidebarRes.ok) {
+        throw new Error(`无法读取 docs/_sidebar.md（HTTP ${sidebarRes.status}）`);
+      }
+      currentSidebar = await sidebarRes.text();
     }
-    const currentSidebar = await sidebarRes.text();
     const sidebarBlock = buildSidebarBlock(snapshot);
     const nextSidebar = mergeSidebarBlock(currentSidebar, sidebarBlock);
     const files = [
@@ -1435,6 +1473,343 @@ window.DPRLiveSearch = (function () {
       throw new Error((data && data.error) || '本地写入失败');
     }
     return data;
+  };
+
+  const encodeBase64Utf8 = (value) => {
+    const text = String(value || '');
+    return btoa(unescape(encodeURIComponent(text)));
+  };
+
+  const decodeBase64Utf8 = (value) => {
+    const normalized = String(value || '').replace(/\n/g, '');
+    if (!normalized) return '';
+    const binary = atob(normalized);
+    if (window.TextDecoder) {
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i += 1) {
+        bytes[i] = binary.charCodeAt(i);
+      }
+      return new TextDecoder('utf-8').decode(bytes);
+    }
+    return decodeURIComponent(escape(binary));
+  };
+
+  const getGithubToken = () => {
+    try {
+      const secret = window.decoded_secret_private || {};
+      if (secret.github && secret.github.token) {
+        const token = String(secret.github.token || '').trim();
+        if (token) return token;
+      }
+    } catch {
+      // ignore
+    }
+    try {
+      if (window.SubscriptionsGithubToken && window.SubscriptionsGithubToken.loadGithubToken) {
+        const data = window.SubscriptionsGithubToken.loadGithubToken();
+        if (data && data.token) {
+          const token = String(data.token || '').trim();
+          if (token) return token;
+        }
+      }
+    } catch {
+      // ignore
+    }
+    try {
+      const raw = window.localStorage && window.localStorage.getItem('github_token_data');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.token) {
+          const token = String(parsed.token || '').trim();
+          if (token) return token;
+        }
+      }
+    } catch {
+      // ignore
+    }
+    return '';
+  };
+
+  const resolveGithubRepo = async (config, token) => {
+    const fromConfig = config && config.github && config.github.owner && config.github.repo
+      ? {
+          owner: normalizeText(config.github.owner),
+          repo: normalizeText(config.github.repo),
+          branch: normalizeText(config.github.branch || config.github.default_branch),
+        }
+      : null;
+    if (fromConfig && fromConfig.owner && fromConfig.repo) {
+      return fromConfig;
+    }
+
+    const secretGithub = window.decoded_secret_private && window.decoded_secret_private.github;
+    if (secretGithub && secretGithub.owner && secretGithub.repo) {
+      return {
+        owner: normalizeText(secretGithub.owner),
+        repo: normalizeText(secretGithub.repo),
+        branch: normalizeText(secretGithub.branch || secretGithub.default_branch),
+      };
+    }
+
+    const currentUrl = String((window.location && window.location.href) || '');
+    const githubPagesMatch = currentUrl.match(/https?:\/\/([^.]+)\.github\.io\/([^\/]+)/);
+    if (githubPagesMatch) {
+      return {
+        owner: normalizeText(githubPagesMatch[1]),
+        repo: normalizeText(githubPagesMatch[2]),
+        branch: '',
+      };
+    }
+
+    if (!token) {
+      throw new Error('未检测到 GitHub Token，无法推断远端仓库。');
+    }
+
+    const userRes = await fetch('https://api.github.com/user', {
+      headers: {
+        Authorization: `token ${token}`,
+        Accept: 'application/vnd.github.v3+json',
+      },
+    });
+    if (!userRes.ok) {
+      throw new Error(`无法读取 GitHub 用户信息（HTTP ${userRes.status}）`);
+    }
+    const user = await userRes.json();
+    const login = normalizeText(user && user.login);
+    if (!login) {
+      throw new Error('GitHub 用户信息不完整，无法推断仓库。');
+    }
+    return {
+      owner: login,
+      repo: '123',
+      branch: '',
+    };
+  };
+
+  const ghFetch = async (token, url, init = {}) => {
+    const headers = Object.assign(
+      {
+        Authorization: `token ${token}`,
+        Accept: 'application/vnd.github.v3+json',
+      },
+      init.headers || {},
+    );
+    return fetch(url, { ...init, headers });
+  };
+
+  const ghJson = async (token, url, init = {}) => {
+    const res = await ghFetch(token, url, init);
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      throw new Error(`GitHub API 失败：${res.status} ${res.statusText}${text ? ` - ${text}` : ''}`);
+    }
+    return res.json();
+  };
+
+  const readGithubFileText = async (token, owner, repo, branch, filePath) => {
+    const res = await ghFetch(
+      token,
+      `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(filePath)}?ref=${encodeURIComponent(branch)}`,
+    );
+    if (res.status === 404) return '';
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      throw new Error(`读取 GitHub 文件失败：${filePath}（HTTP ${res.status} ${text}）`);
+    }
+    const data = await res.json();
+    return decodeBase64Utf8(data && data.content);
+  };
+
+  const injectSnapshotIntoSidebar = (snapshot) => {
+    const nav = document.querySelector('.sidebar-nav');
+    const rootList = nav && nav.querySelector('ul');
+    if (!rootList) return;
+
+    Array.from(rootList.querySelectorAll('li[data-dpr-live-cache-root="1"]')).forEach((node) => node.remove());
+
+    const buildTagHtml = (item) =>
+      []
+        .concat(item.match && item.match.profileTag ? [{ kind: 'query', label: item.match.profileTag }] : [])
+        .concat(
+          (Array.isArray(item.displayKeywords) ? item.displayKeywords : [])
+            .slice(0, 3)
+            .map((keyword) => ({ kind: 'keyword', label: keyword })),
+        )
+        .map((tag) => `<span class="dpr-sidebar-tag dpr-sidebar-tag-${escapeHtml(tag.kind || 'other')}">${escapeHtml(tag.label || '')}</span>`)
+        .join(' ');
+
+    const buildItemHtml = (item) => {
+      const payload = escapeHtml(JSON.stringify(buildSidebarPayload(item)));
+      const abstractLine = cutText(item.abstract || '', 96);
+      const scoreText = item.match && item.match.score ? `${item.match.score}/10` : '-';
+      return `
+        <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/${snapshot.folder}/${item.paperSlug}" data-sidebar-item="${payload}">
+          <div class="dpr-sidebar-title">${escapeHtml(item.title)}</div>
+          <div class="dpr-sidebar-link-line">${escapeHtml(((item.match && item.match.evidence) || []).join('； ') || '-')}</div>
+          ${abstractLine ? `<div class="dpr-sidebar-link-line">${escapeHtml(abstractLine)}</div>` : ''}
+          <div class="dpr-sidebar-meta-line">
+            <span class="dpr-sidebar-tag dpr-sidebar-tag-score">${escapeHtml(scoreText)}</span>
+            <span class="dpr-sidebar-meta-tags">${buildTagHtml(item) || '<span class="dpr-sidebar-tag dpr-sidebar-tag-other">-</span>'}</span>
+          </div>
+        </a>
+      `.trim();
+    };
+
+    const rootLi = document.createElement('li');
+    rootLi.dataset.dprLiveCacheRoot = '1';
+    rootLi.innerHTML = `
+      <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="#/${snapshot.reportRoute}">实时检索缓存</a>
+      <ul>
+        <li>
+          <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="#/${snapshot.reportRoute}">${escapeHtml(snapshot.label)}</a>
+          <ul>
+            <li><a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="#/${snapshot.reportRoute}">检索报告</a></li>
+            ${snapshot.deepItems.length ? `<li>精读区<ul>${snapshot.deepItems.map((item) => `<li>${buildItemHtml(item)}</li>`).join('')}</ul></li>` : ''}
+            ${snapshot.quickItems.length ? `<li>速读区<ul>${snapshot.quickItems.map((item) => `<li>${buildItemHtml(item)}</li>`).join('')}</ul></li>` : ''}
+          </ul>
+        </li>
+      </ul>
+    `;
+
+    const beforeNode = Array.from(rootList.children).find((node) =>
+      /daily papers/i.test(String(node.textContent || '')),
+    );
+    if (beforeNode) {
+      rootList.insertBefore(rootLi, beforeNode);
+    } else {
+      rootList.insertBefore(rootLi, rootList.firstChild || null);
+    }
+  };
+
+  const persistSnapshotToGithub = async (snapshot, config) => {
+    const token = getGithubToken();
+    if (!token) {
+      throw new Error('未检测到 GitHub Token，无法把检索结果写回仓库。');
+    }
+
+    const repoInfo = await resolveGithubRepo(config, token);
+    const repoMeta = await ghJson(token, `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}`);
+    const branch = repoInfo.branch || normalizeText(repoMeta && repoMeta.default_branch) || 'main';
+    const sidebarText = await readGithubFileText(token, repoInfo.owner, repoInfo.repo, branch, 'docs/_sidebar.md');
+    const files = await buildSnapshotFiles(snapshot, sidebarText);
+    const headers = { 'Content-Type': 'application/json' };
+
+    let lastError = null;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      try {
+        const refData = await ghJson(
+          token,
+          `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/git/ref/heads/${encodeURIComponent(branch)}`,
+        );
+        const headSha = normalizeText(refData && refData.object && refData.object.sha);
+        if (!headSha) {
+          throw new Error(`无法读取分支 ${branch} 的 HEAD`);
+        }
+        const commitData = await ghJson(
+          token,
+          `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/git/commits/${headSha}`,
+        );
+        const baseTree = normalizeText(commitData && commitData.tree && commitData.tree.sha);
+        if (!baseTree) {
+          throw new Error('无法读取基础 tree SHA');
+        }
+        const treeData = await ghJson(
+          token,
+          `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/git/trees`,
+          {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({
+              base_tree: baseTree,
+              tree: files.map((file) => ({
+                path: file.path,
+                mode: '100644',
+                type: 'blob',
+                content: file.content,
+              })),
+            }),
+          },
+        );
+        const commitCreate = await ghJson(
+          token,
+          `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/git/commits`,
+          {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({
+              message: `chore: save live search snapshot ${snapshot.folder}`,
+              tree: treeData.sha,
+              parents: [headSha],
+            }),
+          },
+        );
+        const updateRes = await ghFetch(
+          token,
+          `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/git/refs/heads/${encodeURIComponent(branch)}`,
+          {
+            method: 'PATCH',
+            headers,
+            body: JSON.stringify({
+              sha: commitCreate.sha,
+              force: false,
+            }),
+          },
+        );
+        if (!updateRes.ok) {
+          const text = await updateRes.text().catch(() => '');
+          throw new Error(`更新分支失败：${updateRes.status} ${updateRes.statusText}${text ? ` - ${text}` : ''}`);
+        }
+        return {
+          owner: repoInfo.owner,
+          repo: repoInfo.repo,
+          branch,
+          commitSha: commitCreate.sha,
+          files: files.length,
+        };
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    throw lastError || new Error('写回 GitHub 仓库失败。');
+  };
+
+  const persistSnapshot = async (snapshot, config) => {
+    const messages = [];
+    const warnings = [];
+    let githubSaved = false;
+    let localSaved = false;
+
+    try {
+      const githubResult = await persistSnapshotToGithub(snapshot, config);
+      githubSaved = true;
+      messages.push(`已写回 GitHub：${githubResult.owner}/${githubResult.repo}@${githubResult.branch}`);
+    } catch (error) {
+      warnings.push(`GitHub 保存失败：${error && error.message ? error.message : error}`);
+    }
+
+    if (isLocalReaderHost()) {
+      try {
+        await persistSnapshotLocally(snapshot);
+        localSaved = true;
+        messages.push('已写入本地 docs');
+      } catch (error) {
+        warnings.push(`本地 docs 保存失败：${error && error.message ? error.message : error}`);
+      }
+    }
+
+    if (!githubSaved && !localSaved) {
+      throw new Error(warnings.join('； ') || '没有任何持久化路径写入成功。');
+    }
+
+    injectSnapshotIntoSidebar(snapshot);
+
+    return {
+      githubSaved,
+      localSaved,
+      message: messages.join('； '),
+      warning: warnings.join('； '),
+    };
   };
 
   const renderCachedLastResult = () => {
@@ -1564,14 +1939,21 @@ window.DPRLiveSearch = (function () {
       setSubStatus(`本次共整理 ${candidates.length} 条候选，已按你的专题和期刊层级完成本地排序。`);
       lastRenderedResult = { meta, items: enrichedItems };
 
-      if (isLocalReaderHost()) {
-        setSubStatus('检索完成，正在把结果写入左侧缓存与本地 docs 页面...');
-        await persistSnapshotLocally(snapshot);
-        setSubStatus(`已写入左侧缓存：${snapshot.label}。页面即将刷新并打开检索报告。`);
+      setSubStatus('检索完成，正在把结果写入左侧缓存与检索报告...');
+      const persistResult = await persistSnapshot(snapshot, config);
+      if (persistResult.warning) {
+        console.warn('[live-search persist warning]', persistResult.warning);
+      }
+
+      if (persistResult.localSaved) {
+        setSubStatus(`${persistResult.message}。页面即将刷新并打开检索报告。`);
         setTimeout(() => {
           window.location.hash = `#/${snapshot.reportRoute}`;
           window.location.reload();
         }, 900);
+      } else {
+        const warningSuffix = persistResult.warning ? `；${persistResult.warning}` : '';
+        setSubStatus(`${persistResult.message}${warningSuffix}。如需在主页左侧看到持久缓存，请等待 GitHub Pages 同步后刷新。`);
       }
 
       return { meta, items: enrichedItems, snapshot };

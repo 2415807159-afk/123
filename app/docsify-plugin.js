@@ -2454,6 +2454,12 @@ window.$docsify = {
           const link = String(payload.link || fallbackLink || href || '').trim();
           const score = String(payload.score || '').trim();
           const evidence = String((payload && payload.evidence) || '').trim();
+          const journal = String((payload && payload.journal) || '').trim();
+          const date = String((payload && payload.date) || '').trim();
+          const abstractRaw = String(
+            (payload && (payload.abstract_en || payload.abstract || payload.abstract_cn)) || '',
+          ).trim();
+          const abstract = abstractRaw.length > 96 ? `${abstractRaw.slice(0, 95).trim()}...` : abstractRaw;
           const tags = Array.isArray(payload.tags) ? payload.tags : [];
 
           const scoreHtml =
@@ -2474,7 +2480,8 @@ window.$docsify = {
 
           a.innerHTML =
             `<div class="dpr-sidebar-title">${escapeHtml(title)}</div>` +
-            `<div class="dpr-sidebar-link-line">${escapeHtml(evidence || '-')}</div>` +
+            `<div class="dpr-sidebar-link-line">${escapeHtml(evidence || [journal, date].filter(Boolean).join(' · ') || '-')}</div>` +
+            `${abstract ? `<div class="dpr-sidebar-link-line">${escapeHtml(abstract)}</div>` : ''}` +
             `<div class="dpr-sidebar-meta-line">` +
             `${scoreHtml}` +
             `<span class="dpr-sidebar-meta-tags">${tagsHtml || '<span class="dpr-sidebar-tag dpr-sidebar-tag-other">-</span>'}</span>` +
