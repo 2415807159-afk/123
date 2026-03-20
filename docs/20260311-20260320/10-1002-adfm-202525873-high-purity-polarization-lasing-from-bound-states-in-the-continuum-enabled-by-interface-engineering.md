@@ -1,5 +1,6 @@
 ---
 title: "High‐Purity Polarization Lasing From Bound States in the Continuum Enabled by Interface Engineering"
+title_zh: "界面工程赋能连续谱束缚态实现高纯度偏振激光发射"
 authors: "Zhiyong Zhang, Yuyang Zhang, Xin Zeng, Yubo Tian, Chun Li, Yuexing Xia, Kwok Kwan Tang, Qinglin Jia, Wenna Du, Yiyang Gong, Yutong Zhang, Xiaotian Bao, Chuanxiu Jiang, Heng Sun, Jianhui Fu, Shuai Yue, Xinfeng Liu, Qing Zhang"
 date: 2026-03-17
 source: live-search-local

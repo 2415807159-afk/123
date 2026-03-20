@@ -171,6 +171,11 @@ window.DPRLiveSearch = (function () {
       .replace(/\s+/g, ' ')
       .trim();
 
+  const MANUAL_TITLE_ZH_OVERRIDES = {
+    'high purity polarization lasing from bound states in the continuum enabled by interface engineering':
+      '界面工程赋能连续谱束缚态实现高纯度偏振激光发射',
+  };
+
   const tokenize = (value) =>
     normalizeCompare(value)
       .split(' ')
@@ -804,6 +809,8 @@ window.DPRLiveSearch = (function () {
   };
 
   const heuristicTranslateTitle = (title) => {
+    const manual = MANUAL_TITLE_ZH_OVERRIDES[normalizeCompare(title)];
+    if (manual) return manual;
     let text = normalizeText(title);
     if (!text) return '';
     const replacements = [
@@ -836,6 +843,12 @@ window.DPRLiveSearch = (function () {
     const result = {};
     const pending = [];
     uniqueTitles.forEach((title) => {
+      const manual = MANUAL_TITLE_ZH_OVERRIDES[normalizeCompare(title)];
+      if (manual) {
+        titleZhCache.set(title, manual);
+        result[title] = manual;
+        return;
+      }
       if (titleZhCache.has(title)) {
         result[title] = titleZhCache.get(title);
       } else {
