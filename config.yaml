@@ -10,7 +10,7 @@ journal_watch:
   enabled: true
   days_window: 30
   max_records_per_journal: 120
-  active_scope: all
+  active_scope: core
   scopes:
     - key: core
       label: 核心必看
