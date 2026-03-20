@@ -44,7 +44,7 @@ jobs:
             
       - name: Install fast deps
         run: |
-          pip install --quiet PyYAML requests supabase rank-bm25
+          pip install --quiet PyYAML requests supabase rank-bm25 arxiv numpy pymupdf sentence-transformers
           
       - name: Run Ultra-Fast Paper Reader (BM25 Only, Zero LLM)
         run: |
