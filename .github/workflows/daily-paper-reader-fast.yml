@@ -99,6 +99,13 @@ jobs:
           fi
 
           git commit -m "[chore] fast daily pipeline"
+          
+          # Robust git sync: fetch and merge instead of rebase to avoid unstaged changes issues
           git fetch origin "$branch"
-          git rebase -X theirs "origin/$branch"
+          git merge --no-edit "origin/$branch" || {
+            echo "Merge conflict detected, resolving with ours strategy..."
+            git checkout --ours .
+            git add -A
+            git commit -m "Resolve merge conflicts by keeping our changes"
+          }
           git push origin HEAD:"$branch"
