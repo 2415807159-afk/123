@@ -659,6 +659,7 @@ window.SubscriptionsManager = (function () {
               <div class="chat-quick-run-title" style="margin:0;">实时检索</div>
               <button id="arxiv-admin-open-workflow-panel-btn" class="arxiv-tool-btn" type="button" style="padding:2px 8px;">打开旧工作流面板</button>
             </div>
+            <div style="font-size:12px; color:#0f766e; margin-bottom:8px;">当前主入口：实时检索 v20260320-live2（不走 GitHub Actions）</div>
             <button id="arxiv-admin-quick-run-10d-btn" class="chat-quick-run-item" type="button">实时检索近十天论文</button>
             <button id="arxiv-admin-quick-run-30d-btn" class="chat-quick-run-item" type="button">实时检索近三十天论文</button>
             <button id="arxiv-admin-quick-run-30d-standard-btn" class="chat-quick-run-item" type="button">实时检索近三十天论文（扩展）</button>
