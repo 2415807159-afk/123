@@ -151,6 +151,7 @@ window.DPRLiveSearch = (function () {
   let lastRunOptions = null;
   let lastRenderedResult = null;
   const runtimeCache = new Map();
+  const titleZhCache = new Map();
 
   const escapeHtml = (value) =>
     String(value || '')
@@ -736,6 +737,199 @@ window.DPRLiveSearch = (function () {
   const yamlQuote = (value) => `"${String(value || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 
   const markdownQuote = (value) => String(value || '').replace(/\r\n/g, '\n').trim();
+
+  const loadLiveSearchLlmConfig = () => {
+    const secret = window.decoded_secret_private || {};
+    const summarized = secret.summarizedLLM || {};
+    const baseUrl = normalizeText(summarized.baseUrl || '');
+    const apiKey = normalizeText(summarized.apiKey || '');
+    const model = normalizeText(summarized.model || '');
+    if (baseUrl && apiKey && model) return { baseUrl, apiKey, model };
+
+    const chatLLMs = Array.isArray(secret.chatLLMs) ? secret.chatLLMs : [];
+    if (chatLLMs.length > 0) {
+      const first = chatLLMs[0] || {};
+      const cBase = normalizeText(first.baseUrl || '');
+      const cKey = normalizeText(first.apiKey || '');
+      const models = Array.isArray(first.models) ? first.models : [];
+      const cModel = normalizeText(models[0] || '');
+      if (cBase && cKey && cModel) return { baseUrl: cBase, apiKey: cKey, model: cModel };
+    }
+    return null;
+  };
+
+  const normalizeChatCompletionsUrl = (raw) => {
+    const value = normalizeText(raw);
+    if (!value) return '';
+    if (/\/chat\/completions$/i.test(value)) return value;
+    if (/\/v1$/i.test(value)) return `${value}/chat/completions`;
+    return `${value.replace(/\/+$/, '')}/v1/chat/completions`;
+  };
+
+  const extractLlmText = (data) => {
+    const firstChoice = (((data || {}).choices || [])[0] || {});
+    const message = firstChoice.message || {};
+    const content = message.content;
+    if (typeof content === 'string') return content;
+    if (Array.isArray(content)) {
+      return content
+        .map((part) => {
+          if (typeof part === 'string') return normalizeText(part);
+          if (!part || typeof part !== 'object') return '';
+          return normalizeText(part.text || part.content || part.output_text || '');
+        })
+        .filter(Boolean)
+        .join('\n');
+    }
+    if (typeof (data || {}).output_text === 'string') return normalizeText((data || {}).output_text);
+    return '';
+  };
+
+  const parseJsonLoose = (text) => {
+    const raw = normalizeText(text)
+      .replace(/^```(?:json)?\s*/i, '')
+      .replace(/\s*```$/i, '');
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch {
+      const match = raw.match(/\[[\s\S]*\]|\{[\s\S]*\}/);
+      if (!match) return null;
+      try {
+        return JSON.parse(match[0]);
+      } catch {
+        return null;
+      }
+    }
+  };
+
+  const heuristicTranslateTitle = (title) => {
+    let text = normalizeText(title);
+    if (!text) return '';
+    const replacements = [
+      [/High[-‐– ]Purity/gi, '高纯度'],
+      [/Polarization Lasing/gi, '偏振激光发射'],
+      [/Bound States in the Continuum/gi, '连续谱中的束缚态'],
+      [/Interface Engineering/gi, '界面工程'],
+      [/Molecular Dynamics/gi, '分子动力学'],
+      [/Titanium Alloys?/gi, '钛合金'],
+      [/Titanium/gi, '钛'],
+      [/Graphene/gi, '石墨烯'],
+      [/Interface/gi, '界面'],
+      [/Engineering/gi, '工程'],
+      [/enabled by/gi, '实现的'],
+      [/based on/gi, '基于'],
+    ];
+    replacements.forEach(([pattern, replacement]) => {
+      text = text.replace(pattern, replacement);
+    });
+    return text;
+  };
+
+  const translateTitlesBatchToZh = async (titles) => {
+    const uniqueTitles = uniqueBy(
+      (Array.isArray(titles) ? titles : []).map((item) => normalizeText(item)).filter(Boolean),
+      (item) => item,
+    );
+    if (!uniqueTitles.length) return {};
+
+    const result = {};
+    const pending = [];
+    uniqueTitles.forEach((title) => {
+      if (titleZhCache.has(title)) {
+        result[title] = titleZhCache.get(title);
+      } else {
+        pending.push(title);
+      }
+    });
+    if (!pending.length) return result;
+
+    const llm = loadLiveSearchLlmConfig();
+    if (!llm) {
+      pending.forEach((title) => {
+        const zh = heuristicTranslateTitle(title);
+        titleZhCache.set(title, zh);
+        result[title] = zh;
+      });
+      return result;
+    }
+
+    const endpoint = normalizeChatCompletionsUrl(llm.baseUrl);
+    if (!endpoint) {
+      pending.forEach((title) => {
+        const zh = heuristicTranslateTitle(title);
+        titleZhCache.set(title, zh);
+        result[title] = zh;
+      });
+      return result;
+    }
+
+    const batches = chunk(pending, 10);
+    for (const batch of batches) {
+      try {
+        const body = {
+          model: llm.model,
+          temperature: 0.1,
+          response_format: { type: 'json_object' },
+          messages: [
+            {
+              role: 'system',
+              content:
+                '你是一名材料与计算论文标题翻译助手。请把英文论文标题准确翻译成自然、简洁、学术风格的中文标题。保留化学式、合金牌号、BIC、DFT、MD、Ti-6Al-4V 等专有符号；不要扩写，不要评论，不要解释。',
+            },
+            {
+              role: 'user',
+              content: JSON.stringify(
+                {
+                  titles: batch,
+                  output_schema: {
+                    items: [{ title_en: '原英文标题', title_zh: '中文标题' }],
+                  },
+                },
+                null,
+                2,
+              ),
+            },
+          ],
+        };
+
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${llm.apiKey}`,
+            'x-api-key': llm.apiKey,
+          },
+          body: JSON.stringify(body),
+        });
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        const data = await res.json();
+        const parsed = parseJsonLoose(extractLlmText(data));
+        const items = Array.isArray(parsed && parsed.items)
+          ? parsed.items
+          : Array.isArray(parsed)
+            ? parsed
+            : [];
+
+        batch.forEach((title) => {
+          const match = items.find((item) => normalizeText(item && item.title_en) === title);
+          const zh = normalizeText(match && match.title_zh) || heuristicTranslateTitle(title) || title;
+          titleZhCache.set(title, zh);
+          result[title] = zh;
+        });
+      } catch {
+        batch.forEach((title) => {
+          const zh = heuristicTranslateTitle(title) || title;
+          titleZhCache.set(title, zh);
+          result[title] = zh;
+        });
+      }
+    }
+
+    return result;
+  };
 
   const splitAbstractSentences = (value) => {
     const text = normalizeText(value).replace(/\s+/g, ' ');
@@ -1348,7 +1542,7 @@ window.DPRLiveSearch = (function () {
   };
 
   const buildSidebarPayload = (item) => ({
-    title: item.title,
+    title: item.title_zh || item.title,
     link: item.url || item.doi || item.id || '',
     score: String(item.match && item.match.score ? item.match.score : ''),
     journal: item.journal || '',
@@ -1362,6 +1556,8 @@ window.DPRLiveSearch = (function () {
       ),
     evidence: ((item.match && item.match.evidence) || []).join('； '),
     abstract_en: item.abstract || '',
+    title_en: item.title || '',
+    title_zh: item.title_zh || '',
   });
 
   const buildPaperMarkdown = (item) => {
@@ -1388,6 +1584,7 @@ window.DPRLiveSearch = (function () {
     return [
       '---',
       `title: ${yamlQuote(item.title)}`,
+      `title_zh: ${yamlQuote(item.title_zh || '')}`,
       `authors: ${yamlQuote((item.authors || []).join(', '))}`,
       `date: ${item.publication_date || ''}`,
       'source: live-search-local',
@@ -1536,6 +1733,7 @@ window.DPRLiveSearch = (function () {
               paper_id: `${snapshot.folder}/${item.paperSlug}`,
               section: snapshot.deepItems.some((entry) => entry.paperSlug === item.paperSlug) ? 'deep' : 'quick',
               title_en: item.title,
+              title_zh: item.title_zh || '',
               authors: (item.authors || []).join(', '),
               date: item.publication_date,
               pdf: '',
@@ -2023,8 +2221,13 @@ window.DPRLiveSearch = (function () {
       };
       const rangeInfo = buildRangeSnapshotInfo(days);
       const sections = splitRankedSections(ranked);
+      if (ranked.length) {
+        setSubStatus('检索完成，正在优化论文标题中文翻译...');
+      }
+      const titleTranslations = await translateTitlesBatchToZh(ranked.map((item) => item.title));
       const enrichedItems = ranked.map((item) => ({
         ...item,
+        title_zh: normalizeText(titleTranslations[item.title]) || '',
         paperSlug: buildPaperSlug(item),
       }));
       const snapshot = {
