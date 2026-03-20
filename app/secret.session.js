@@ -984,6 +984,7 @@
           }
           const payload = await createEncryptedSecret(password, plainConfig);
           window.decoded_secret_private = plainConfig;
+          savePassword(password);
           setMode('full');
 
           const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });

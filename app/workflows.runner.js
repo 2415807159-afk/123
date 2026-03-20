@@ -53,8 +53,7 @@ window.DPRWorkflowRunner = (function () {
     },
   };
 
-  const isLegacySearchWorkflowKey = (workflowKey) =>
-    String(workflowKey || '') === 'daily-now';
+  const isLegacySearchWorkflowKey = () => false;
 
   const toLegacySearchRunOptions = (extraInputs) => {
     const inputs = extraInputs && typeof extraInputs === 'object' ? extraInputs : {};
@@ -852,10 +851,6 @@ window.DPRWorkflowRunner = (function () {
   };
 
   const runWorkflowByKey = async (workflowKey, extraInputs) => {
-    if (isLegacySearchWorkflowKey(workflowKey)) {
-      open();
-      return bridgeLegacySearchToLive(extraInputs);
-    }
     const wf = getWorkflowByKey(workflowKey);
     if (!wf) {
       setStatus('未找到对应的工作流配置。', '#c00');
@@ -878,7 +873,13 @@ window.DPRWorkflowRunner = (function () {
       },
     };
     const mergedInputs = combineInputs(preset.dispatchInputs, options.dispatchInputs);
-    return bridgeLegacySearchToLive(mergedInputs);
+    const wf = getWorkflowByKey(preset.key);
+    if (!wf) {
+      setStatus('未找到对应的抓取工作流配置。', '#c00');
+      return;
+    }
+    open();
+    return dispatchAndMonitor(wf, mergedInputs);
   };
 
   return {

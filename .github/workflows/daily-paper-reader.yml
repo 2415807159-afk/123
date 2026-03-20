@@ -22,7 +22,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: daily-paper-reader
+  group: daily-paper-reader-content
   cancel-in-progress: false
 
 jobs:

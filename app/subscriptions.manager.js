@@ -379,37 +379,45 @@ window.SubscriptionsManager = (function () {
   };
 
   const refreshQuickRunButtons = () => {
+    const requireSaveFirst = !!hasUnsavedChanges;
     [quickRun10dBtn, quickRun30dBtn, quickRun30dStandardBtn].forEach((btn) => {
       if (!btn) return;
-      btn.disabled = false;
-      btn.classList.remove('chat-quick-run-item--disabled');
-      btn.title = btn.getAttribute('data-default-title') || btn.textContent || '';
+      btn.disabled = requireSaveFirst;
+      btn.classList.toggle('chat-quick-run-item--disabled', requireSaveFirst);
+      btn.title = requireSaveFirst
+        ? '请先保存配置，再发起抓取'
+        : btn.getAttribute('data-default-title') || btn.textContent || '';
     });
     if (hasUnsavedChanges && quickRunMsgEl) {
-      quickRunMsgEl.textContent = '检测到未保存修改；实时检索会直接使用当前草稿，不必先保存。';
+      quickRunMsgEl.textContent = '检测到未保存修改；旧平台抓取会读取仓库中的 config.yaml，请先点击「保存」再抓取。';
+      quickRunMsgEl.style.color = '#666';
+    } else if (quickRunMsgEl) {
+      quickRunMsgEl.textContent = '抓取结果会写回左侧缓存、主页和单篇详情页。';
       quickRunMsgEl.style.color = '#666';
     }
   };
 
   const runQuickFetch = (days, msgEl, tipText, runOptions) => {
-    if (!window.DPRLiveSearch || typeof window.DPRLiveSearch.run !== 'function') {
+    if (hasUnsavedChanges) {
       if (msgEl) {
-        msgEl.textContent = '实时检索模块未加载到当前页面。';
+        msgEl.textContent = '请先保存配置，再发起抓取。';
+        msgEl.style.color = '#c00';
+      }
+      return;
+    }
+    if (!window.DPRWorkflowRunner || typeof window.DPRWorkflowRunner.runQuickFetchByDays !== 'function') {
+      if (msgEl) {
+        msgEl.textContent = '工作流触发器未加载到当前页面。';
         msgEl.style.color = '#c00';
       }
       return;
     }
     const options = runOptions && typeof runOptions === 'object' ? runOptions : {};
-    const draft = cloneDeep(draftConfig || {});
-    window.DPRLiveSearch.run({
-      days,
-      breadth: options.breadth || 'focus',
-      config: draft,
-    });
+    window.DPRWorkflowRunner.runQuickFetchByDays(days, options);
     if (msgEl) {
       msgEl.textContent =
         (typeof tipText === 'string' ? tipText : null) ||
-        `已开始实时检索近 ${days} 天论文。`;
+        `已发起近 ${days} 天抓取任务，结果会写回左侧缓存和单篇详情页。`;
       msgEl.style.color = '#080';
     }
   };
@@ -656,13 +664,13 @@ window.SubscriptionsManager = (function () {
 
           <div id="arxiv-search-quick-run-side">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px;">
-              <div class="chat-quick-run-title" style="margin:0;">实时检索</div>
-              <button id="arxiv-admin-open-workflow-panel-btn" class="arxiv-tool-btn" type="button" style="padding:2px 8px;">旧调试面板（不用）</button>
+              <div class="chat-quick-run-title" style="margin:0;">快速抓取</div>
+              <button id="arxiv-admin-open-workflow-panel-btn" class="arxiv-tool-btn" type="button" style="padding:2px 8px;">工作流面板</button>
             </div>
-            <div style="font-size:12px; color:#0f766e; margin-bottom:8px;">当前主入口：实时检索 v20260320-live3（不走 GitHub Actions）</div>
-            <button id="arxiv-admin-quick-run-10d-btn" class="chat-quick-run-item" type="button">实时检索近十天论文</button>
-            <button id="arxiv-admin-quick-run-30d-btn" class="chat-quick-run-item" type="button">实时检索近三十天论文</button>
-            <button id="arxiv-admin-quick-run-30d-standard-btn" class="chat-quick-run-item" type="button">实时检索近三十天论文（扩展）</button>
+            <div style="font-size:12px; color:#0f766e; margin-bottom:8px;">当前主入口：旧平台抓取（写回 docs / 左侧缓存 / 单篇页面）</div>
+            <button id="arxiv-admin-quick-run-10d-btn" class="chat-quick-run-item" type="button">抓取近十天论文</button>
+            <button id="arxiv-admin-quick-run-30d-btn" class="chat-quick-run-item" type="button">抓取近三十天论文</button>
+            <button id="arxiv-admin-quick-run-30d-standard-btn" class="chat-quick-run-item" type="button">抓取近三十天论文（扩展）</button>
             <div class="chat-quick-run-divider" aria-hidden="true"></div>
             <div class="chat-quick-run-title">会议论文（暂未接入）</div>
             <div class="chat-quick-run-row">
@@ -954,8 +962,7 @@ window.SubscriptionsManager = (function () {
         runQuickFetch(
           30,
           quickRunMsgEl,
-          '已开始实时检索近 30 天论文。',
-          { breadth: 'focus' },
+          '已发起近 30 天抓取任务，结果会写回左侧缓存和单篇详情页。',
         );
       });
     }
@@ -966,8 +973,7 @@ window.SubscriptionsManager = (function () {
         runQuickFetch(
           30,
           quickRunMsgEl,
-          '已开始扩展检索近 30 天论文，会放宽候选范围。',
-          { breadth: 'expanded' },
+          '已发起扩展范围的 30 天抓取任务，结果会写回左侧缓存和单篇详情页。',
         );
       });
     }
