@@ -1,5 +1,6 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
+  * [⚡ 超高速模式指南](tutorial/ultrafast-guide.md) - **零 LLM 调用，10 倍速度提升**
 * Daily Papers
   * 2026-03-11 ~ 2026-03-20 <!--dpr-date:20260311-20260320-->
     * 速读区
