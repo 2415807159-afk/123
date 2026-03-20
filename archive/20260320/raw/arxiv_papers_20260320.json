@@ -1,0 +1,66 @@
+[
+  {
+    "id": "10.1038/s41524-026-02037-6",
+    "source": "journal-crossref",
+    "title": "Framework to completely bypass expensive DFT calculations via graph neural networks for vacancy formation energy predictions in FCC high entropy alloys",
+    "abstract": "",
+    "authors": [
+      "Nathan Linton",
+      "Parampreet Singh",
+      "Dilpuneet S. Aidhy"
+    ],
+    "primary_category": "npj Computational Materials",
+    "categories": [],
+    "published": "2026-03-19",
+    "link": "https://www.nature.com/articles/s41524-026-02037-6",
+    "pdf_url": "",
+    "journal": "npj Computational Materials",
+    "doi": "10.1038/s41524-026-02037-6",
+    "publisher": "Springer Science and Business Media LLC",
+    "content_type": "journal-article",
+    "storage_id": "10.1038-s41524-026-02037-6"
+  },
+  {
+    "id": "10.1038/s41524-026-02029-6",
+    "source": "journal-crossref",
+    "title": "Discovery of a novel half metallic 2D Cr2Se3 monolayer with high Curie temperature from correlated antiferromagnetic 2D CrSe2",
+    "abstract": "",
+    "authors": [
+      "Khaled Badawy",
+      "Lianxi Zheng",
+      "Nirpendra Singh"
+    ],
+    "primary_category": "npj Computational Materials",
+    "categories": [],
+    "published": "2026-03-19",
+    "link": "https://www.nature.com/articles/s41524-026-02029-6",
+    "pdf_url": "",
+    "journal": "npj Computational Materials",
+    "doi": "10.1038/s41524-026-02029-6",
+    "publisher": "Springer Science and Business Media LLC",
+    "content_type": "journal-article",
+    "storage_id": "10.1038-s41524-026-02029-6"
+  },
+  {
+    "id": "10.1007/s11661-026-08202-2",
+    "source": "journal-crossref",
+    "title": "Cooperative Deformation of Martensite Blocks Driven by the TRIP Effect in Maraging Steel",
+    "abstract": "",
+    "authors": [
+      "X. Y. Liu",
+      "Z. H. Chen",
+      "B. Wen",
+      "B. B. He"
+    ],
+    "primary_category": "Metallurgical and Materials Transactions A",
+    "categories": [],
+    "published": "2026-03-19",
+    "link": "https://link.springer.com/10.1007/s11661-026-08202-2",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11661-026-08202-2.pdf",
+    "journal": "Metallurgical and Materials Transactions A",
+    "doi": "10.1007/s11661-026-08202-2",
+    "publisher": "Springer Science and Business Media LLC",
+    "content_type": "journal-article",
+    "storage_id": "10.1007-s11661-026-08202-2"
+  }
+]
