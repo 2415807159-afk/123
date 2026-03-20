@@ -16,7 +16,7 @@ for /f "tokens=5" %%P in ('netstat -ano ^| findstr ":%PORT%" ^| findstr "LISTENI
 )
 
 echo Starting Daily Paper Reader local server on port %PORT%...
-start "DPR Local Server" "%PYTHON_EXE%" -m http.server %PORT%
+start "DPR Local Server" "%PYTHON_EXE%" "%~dp0local_reader_server.py" %PORT%
 timeout /t 2 >nul
 start "" "http://127.0.0.1:%PORT%/?v=20260320-live3"
 exit /b 0

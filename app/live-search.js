@@ -1,7 +1,6 @@
 window.DPRLiveSearch = (function () {
   const OPENALEX_API = 'https://api.openalex.org';
   const SOURCE_CACHE_KEY = 'dpr_openalex_source_cache_v1';
-  const LAST_RESULT_KEY = 'dpr_live_search_last_v1';
   const SOURCE_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 14;
   const STOPWORDS = new Set([
     'a',
@@ -35,6 +34,37 @@ window.DPRLiveSearch = (function () {
     'based',
     'materials',
     'material',
+  ]);
+  const GENERIC_PROFILE_TERMS = new Set([
+    'molecular',
+    'dynamics',
+    'simulation',
+    'simulations',
+    'property',
+    'properties',
+    'prediction',
+    'predictions',
+    'structure',
+    'structures',
+    'relationship',
+    'relationships',
+    'machine',
+    'learning',
+    'data',
+    'driven',
+    'analysis',
+    'materials',
+    'material',
+    'informatics',
+    'model',
+    'models',
+    'modeling',
+    'modelling',
+    'study',
+    'studies',
+    'based',
+    'thermal',
+    'mechanical',
   ]);
   const PRESET_SOURCE_IDS = {
     'acta materialia': {
@@ -119,6 +149,8 @@ window.DPRLiveSearch = (function () {
   let rerunBtn = null;
   let closeBtn = null;
   let lastRunOptions = null;
+  let lastRenderedResult = null;
+  const runtimeCache = new Map();
 
   const escapeHtml = (value) =>
     String(value || '')
@@ -237,23 +269,11 @@ window.DPRLiveSearch = (function () {
   };
 
   const cacheGet = (key) => {
-    try {
-      const raw = window.localStorage && window.localStorage.getItem(key);
-      if (!raw) return null;
-      return JSON.parse(raw);
-    } catch {
-      return null;
-    }
+    return runtimeCache.has(key) ? runtimeCache.get(key) : null;
   };
 
   const cacheSet = (key, value) => {
-    try {
-      if (window.localStorage) {
-        window.localStorage.setItem(key, JSON.stringify(value));
-      }
-    } catch {
-      // ignore storage failures
-    }
+    runtimeCache.set(key, value);
   };
 
   const injectStyles = () => {
@@ -414,6 +434,29 @@ window.DPRLiveSearch = (function () {
         font-size: 13px;
         color: #374151;
         line-height: 1.65;
+      }
+      .dpr-live-search-keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .dpr-live-search-keyword-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: #eef6ff;
+        color: #1d4ed8;
+        font-size: 11px;
+        border: 1px solid #dbeafe;
+      }
+      .dpr-live-search-abstract-label,
+      .dpr-live-search-keyword-label {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #0f172a;
       }
       .dpr-live-search-footer-links {
         display: flex;
@@ -600,6 +643,131 @@ window.DPRLiveSearch = (function () {
       .filter((profile) => profile.enabled);
   };
 
+  const getActiveScopeLabel = (config) => {
+    const journalWatch = config && typeof config === 'object' ? config.journal_watch || {} : {};
+    const scopes = Array.isArray(journalWatch.scopes) ? journalWatch.scopes : [];
+    const activeScopeKey = normalizeText(journalWatch.active_scope || 'all');
+    const activeScope = scopes.find((item) => normalizeText(item && item.key) === activeScopeKey) || scopes[0];
+    return normalizeText(activeScope && activeScope.label) || '全部期刊';
+  };
+
+  const extractProfileAnchorTerms = (profile) => {
+    const rawTexts = []
+      .concat(normalizeText(profile && profile.description))
+      .concat(
+        (Array.isArray(profile && profile.keywords) ? profile.keywords : []).flatMap((item) => [
+          normalizeText(item && item.keyword),
+          normalizeText(item && item.query),
+        ]),
+      )
+      .concat(
+        (Array.isArray(profile && profile.intent_queries) ? profile.intent_queries : []).flatMap((item) => [
+          normalizeText(item && item.query),
+          normalizeText(item && item.query_cn),
+        ]),
+      )
+      .filter(Boolean);
+    const joined = rawTexts.join(' ');
+    const anchors = tokenize(joined).filter((token) => !GENERIC_PROFILE_TERMS.has(token));
+    if (/\bti\b/i.test(joined) || /\bti[-\s]/i.test(joined)) {
+      anchors.push('ti');
+    }
+    return uniqueBy(anchors, (item) => item).slice(0, 10);
+  };
+
+  const containsShortToken = (rawText, token) => {
+    const safe = String(token || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(^|[^a-z0-9])${safe}([^a-z0-9]|$)`, 'i').test(rawText || '');
+  };
+
+  const workContainsAnchor = (rawText, normalizedText, anchor) => {
+    if (!anchor) return false;
+    if (anchor.length <= 2) {
+      return containsShortToken(rawText, anchor);
+    }
+    return normalizedText.includes(anchor);
+  };
+
+  const collectWorkKeywords = (work) => {
+    const keywordItems = Array.isArray(work && work.keywords) ? work.keywords : [];
+    const conceptItems = Array.isArray(work && work.concepts) ? work.concepts : [];
+    const fromKeywords = keywordItems
+      .map((item) => ({
+        label: normalizeText(item && item.display_name),
+        score: Number(item && item.score) || 0,
+      }))
+      .filter((item) => item.label && !STOPWORDS.has(normalizeCompare(item.label)));
+    const fromConcepts = conceptItems
+      .map((item) => ({
+        label: normalizeText(item && item.display_name),
+        score: Number(item && item.score) || 0,
+      }))
+      .filter((item) => item.label && !STOPWORDS.has(normalizeCompare(item.label)));
+    return uniqueBy(
+      fromKeywords
+        .concat(fromConcepts)
+        .sort((a, b) => b.score - a.score)
+        .map((item) => item.label),
+      (item) => normalizeCompare(item),
+    ).slice(0, 8);
+  };
+
+  const buildDisplayKeywords = (workKeywords, matchedKeywords) =>
+    uniqueBy(
+      []
+        .concat(Array.isArray(matchedKeywords) ? matchedKeywords : [])
+        .concat(Array.isArray(workKeywords) ? workKeywords : [])
+        .map((item) => normalizeText(item))
+        .filter(Boolean),
+      (item) => normalizeCompare(item),
+    ).slice(0, 8);
+
+  const formatDateCompact = (value) => normalizeText(value).replace(/-/g, '');
+
+  const slugify = (value) =>
+    normalizeText(value)
+      .toLowerCase()
+      .replace(/^https?:\/\/(dx\.)?doi\.org\//, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 160);
+
+  const yamlQuote = (value) => `"${String(value || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
+
+  const markdownQuote = (value) => String(value || '').replace(/\r\n/g, '\n').trim();
+
+  const buildPaperSlug = (item) => {
+    const doiPart = slugify(item && item.doi);
+    const titlePart = slugify(item && item.title);
+    const joined = [doiPart, titlePart].filter(Boolean).join('-');
+    return joined || `paper-${Date.now()}`;
+  };
+
+  const splitRankedSections = (items) => {
+    const deep = [];
+    const quick = [];
+    (Array.isArray(items) ? items : []).forEach((item, index) => {
+      if ((item.match && item.match.score >= 9) || (deep.length < 8 && index < 12)) {
+        deep.push(item);
+      } else {
+        quick.push(item);
+      }
+    });
+    if (!deep.length && items.length) {
+      return {
+        deep: items.slice(0, Math.min(6, items.length)),
+        quick: items.slice(Math.min(6, items.length)),
+      };
+    }
+    return { deep, quick };
+  };
+
+  const isLocalReaderHost = () => {
+    const host = String((window.location && window.location.hostname) || '').toLowerCase();
+    return host === '127.0.0.1' || host === 'localhost';
+  };
+
   const loadSourceCache = () => {
     const cached = cacheGet(SOURCE_CACHE_KEY);
     return cached && typeof cached === 'object' ? cached : {};
@@ -714,6 +882,8 @@ window.DPRLiveSearch = (function () {
     'ids',
     'authorships',
     'abstract_inverted_index',
+    'keywords',
+    'concepts',
     'cited_by_count',
     'type',
   ].join(',');
@@ -791,6 +961,7 @@ window.DPRLiveSearch = (function () {
               .filter(Boolean)
           : [];
         const journalTitle = normalizeText(source && source.display_name) || normalizeText(sourceMeta.display_name);
+        const workKeywords = collectWorkKeywords(work);
         return {
           id: normalizeText(work && work.id),
           title,
@@ -802,6 +973,7 @@ window.DPRLiveSearch = (function () {
           journalTier: normalizeText(sourceMeta.tier) || 'core',
           sourceId,
           authors,
+          keywords: workKeywords,
           citedByCount: parseInt(work && work.cited_by_count, 10) || 0,
           query: normalizeText(work && work.__query),
           queryRank: parseInt(work && work.__queryRank, 10) || 0,
@@ -815,9 +987,13 @@ window.DPRLiveSearch = (function () {
     const title = normalizeCompare(work.title);
     const abstract = normalizeCompare(work.abstract);
     const journal = normalizeCompare(work.journal);
+    const titleRaw = normalizeText(work.title).toLowerCase();
+    const abstractRaw = normalizeText(work.abstract).toLowerCase();
     const text = `${title} ${abstract} ${journal}`;
     let score = 0;
     const evidence = [];
+    const matchedKeywords = [];
+    const anchorTerms = extractProfileAnchorTerms(profile);
 
     (Array.isArray(profile.keywords) ? profile.keywords : []).forEach((item) => {
       const keyword = normalizeCompare(item.keyword);
@@ -827,11 +1003,13 @@ window.DPRLiveSearch = (function () {
       if (titleExact) {
         score += 12;
         evidence.push(`标题命中关键词：${item.keyword}`);
+        matchedKeywords.push(item.keyword);
         return;
       }
       if (abstractExact) {
         score += 7;
         evidence.push(`摘要命中关键词：${item.keyword}`);
+        matchedKeywords.push(item.keyword);
         return;
       }
       const keywordTerms = buildMeaningfulTerms(item.query || item.keyword);
@@ -839,6 +1017,7 @@ window.DPRLiveSearch = (function () {
       if (coverage >= 0.5) {
         score += 6 * coverage;
         evidence.push(`关键词相关度：${item.keyword}`);
+        matchedKeywords.push(item.keyword);
       }
     });
 
@@ -859,6 +1038,25 @@ window.DPRLiveSearch = (function () {
       }
     });
 
+    if (anchorTerms.length) {
+      const titleAnchorHits = anchorTerms.filter((anchor) => workContainsAnchor(titleRaw, title, anchor));
+      const abstractAnchorHits = anchorTerms.filter(
+        (anchor) =>
+          !titleAnchorHits.includes(anchor) && workContainsAnchor(abstractRaw, abstract, anchor),
+      );
+      if (titleAnchorHits.length) {
+        score += 15 + titleAnchorHits.length * 2.5;
+        evidence.push(`标题命中方向锚点：${titleAnchorHits.slice(0, 3).join(', ')}`);
+        matchedKeywords.push(...titleAnchorHits);
+      } else if (abstractAnchorHits.length) {
+        score += 8 + abstractAnchorHits.length * 1.5;
+        evidence.push(`摘要命中方向锚点：${abstractAnchorHits.slice(0, 3).join(', ')}`);
+        matchedKeywords.push(...abstractAnchorHits);
+      } else {
+        score -= 10;
+      }
+    }
+
     if (work.query) {
       const queryTerms = buildMeaningfulTerms(work.query);
       const coverage = termCoverage(queryTerms, text);
@@ -876,6 +1074,7 @@ window.DPRLiveSearch = (function () {
     return {
       score: Number(score.toFixed(1)),
       evidence: uniqueBy(evidence, (item) => item).slice(0, 4),
+      matchedKeywords: buildDisplayKeywords(work.keywords, matchedKeywords),
     };
   };
 
@@ -891,12 +1090,14 @@ window.DPRLiveSearch = (function () {
               profileDescription: profile.description,
               score: current.score,
               evidence: current.evidence,
+              matchedKeywords: current.matchedKeywords,
             };
           }
         });
         return best
           ? {
               ...work,
+              displayKeywords: buildDisplayKeywords(work.keywords, best.matchedKeywords),
               match: best,
             }
           : null;
@@ -964,6 +1165,9 @@ window.DPRLiveSearch = (function () {
             if (item.id) {
               links.push(`<a href="${escapeHtml(item.id)}" target="_blank" rel="noopener">OpenAlex</a>`);
             }
+            const keywordHtml = (Array.isArray(item.displayKeywords) ? item.displayKeywords : [])
+              .map((keyword) => `<span class="dpr-live-search-keyword-chip">${escapeHtml(keyword)}</span>`)
+              .join('');
             return `
               <div class="dpr-live-search-result">
                 <div class="dpr-live-search-result-title">
@@ -982,7 +1186,10 @@ window.DPRLiveSearch = (function () {
                 <div class="dpr-live-search-evidence">
                   <strong>命中依据：</strong> ${escapeHtml((item.match.evidence || []).join('； ') || '标题 / 摘要与当前专题高度相关')}
                 </div>
-                <div class="dpr-live-search-abstract">${escapeHtml(cutText(item.abstract || '该记录暂未提供摘要，建议直接打开 DOI 或期刊落地页查看。', 420))}</div>
+                <div class="dpr-live-search-keyword-label">关键词</div>
+                <div class="dpr-live-search-keywords">${keywordHtml || '<span class="dpr-live-search-keyword-chip">暂无关键词</span>'}</div>
+                <div class="dpr-live-search-abstract-label">摘要</div>
+                <div class="dpr-live-search-abstract">${escapeHtml(cutText(item.abstract || '该记录暂未提供摘要，建议直接打开 DOI 或期刊落地页查看。', 900))}</div>
                 <div class="dpr-live-search-footer-links">${links.join('')}</div>
               </div>
             `;
@@ -999,8 +1206,239 @@ window.DPRLiveSearch = (function () {
     resultsEl.innerHTML = html;
   };
 
+  const buildRangeSnapshotInfo = (days) => {
+    const toDate = new Date().toISOString().slice(0, 10);
+    const fromDate = buildFromDate(days);
+    const folder = `${formatDateCompact(fromDate)}-${formatDateCompact(toDate)}`;
+    return {
+      fromDate,
+      toDate,
+      folder,
+      label: `${fromDate} ~ ${toDate}`,
+      reportRoute: `${folder}/README`,
+    };
+  };
+
+  const buildSidebarPayload = (item) => ({
+    title: item.title,
+    link: item.url || item.doi || item.id || '',
+    score: String(item.match && item.match.score ? item.match.score : ''),
+    tags: []
+      .concat(item.match && item.match.profileTag ? [{ kind: 'query', label: item.match.profileTag }] : [])
+      .concat(
+        (Array.isArray(item.displayKeywords) ? item.displayKeywords : [])
+          .slice(0, 3)
+          .map((keyword) => ({ kind: 'keyword', label: keyword })),
+      ),
+    evidence: ((item.match && item.match.evidence) || []).join('； '),
+    abstract_en: item.abstract || '',
+  });
+
+  const buildPaperMarkdown = (item) => {
+    const tagList = []
+      .concat(item.match && item.match.profileTag ? [`query:${item.match.profileTag}`] : [])
+      .concat(
+        (Array.isArray(item.displayKeywords) ? item.displayKeywords : [])
+          .slice(0, 6)
+          .map((keyword) => `keyword:${keyword}`),
+      );
+    const keywordLines = (Array.isArray(item.displayKeywords) ? item.displayKeywords : [])
+      .map((keyword) => `- ${keyword}`)
+      .join('\n');
+    const evidenceLines = ((item.match && item.match.evidence) || [])
+      .map((line) => `- ${line}`)
+      .join('\n');
+    const sourceLinks = []
+      .concat(item.url ? [`- [Publisher / Landing Page](${item.url})`] : [])
+      .concat(item.doi ? [`- [DOI](${item.doi})`] : [])
+      .concat(item.id ? [`- [OpenAlex](${item.id})`] : [])
+      .join('\n');
+
+    return [
+      '---',
+      `title: ${yamlQuote(item.title)}`,
+      `authors: ${yamlQuote((item.authors || []).join(', '))}`,
+      `date: ${item.publication_date || ''}`,
+      'source: live-search-local',
+      `journal: ${yamlQuote(item.journal || '')}`,
+      `doi: ${yamlQuote(item.doi || '')}`,
+      `link: ${yamlQuote(item.url || '')}`,
+      `tags: ${JSON.stringify(tagList)}`,
+      `score: ${item.match && item.match.score ? item.match.score : ''}`,
+      `evidence: ${yamlQuote(((item.match && item.match.evidence) || []).join('； '))}`,
+      'selection_source: live_search_saved',
+      '---',
+      '',
+      '## Keywords',
+      keywordLines || '- 暂无关键词',
+      '',
+      '## Abstract',
+      markdownQuote(item.abstract || 'This record does not provide an abstract.'),
+      '',
+      '## Match Evidence',
+      evidenceLines || '- 标题 / 摘要与当前专题高度相关',
+      '',
+      '## Source Links',
+      sourceLinks || '- 暂无外部链接',
+      '',
+    ].join('\n');
+  };
+
+  const buildReportMarkdown = (snapshot) => {
+    const renderSection = (title, items) => {
+      if (!items.length) return `## ${title}\n\n- 暂无结果`;
+      const lines = items.map((item, index) => {
+        const route = `/${snapshot.folder}/${item.paperSlug}`;
+        const keywords = (Array.isArray(item.displayKeywords) ? item.displayKeywords : []).slice(0, 6).join(', ');
+        return [
+          `${index + 1}. [${item.title}](${route})`,
+          `   - 期刊：${item.journal || 'Unknown'} · 日期：${item.publication_date || 'Unknown'} · 评分：${item.match && item.match.score ? item.match.score : '-'}/10`,
+          `   - 关键词：${keywords || '暂无关键词'}`,
+          `   - 命中依据：${((item.match && item.match.evidence) || []).join('； ') || '标题 / 摘要与专题相关'}`,
+          `   - 摘要：${cutText(item.abstract || '暂无摘要。', 260)}`,
+        ].join('\n');
+      });
+      return `## ${title}\n\n${lines.join('\n')}`;
+    };
+
+    return [
+      `# 实时检索缓存 · ${snapshot.label}`,
+      '',
+      `- 保存时间：${snapshot.generatedAt}`,
+      `- 检索窗口：近 ${snapshot.days} 天（${snapshot.label}）`,
+      `- 期刊层级：${snapshot.scopeLabel}`,
+      `- 期刊数量：${snapshot.journalCount}`,
+      `- 候选论文：${snapshot.candidateCount}`,
+      `- 最终结果：${snapshot.resultCount}`,
+      `- 命中专题：${snapshot.profileTags.join('、') || '未命名专题'}`,
+      '',
+      '## 简报',
+      `本次实时检索聚焦 ${snapshot.profileTags.join('、') || '当前专题'}，按期刊层级和方向锚点完成本地排序。更高分结果通常同时命中方向锚点、专题关键词和摘要语义。`,
+      '',
+      renderSection('精读区', snapshot.deepItems),
+      '',
+      renderSection('速读区', snapshot.quickItems),
+      '',
+    ].join('\n');
+  };
+
+  const buildSidebarBlock = (snapshot) => {
+    const buildItemLine = (item, indent) => {
+      const payload = escapeHtml(JSON.stringify(buildSidebarPayload(item)));
+      return `${indent}* <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/${snapshot.folder}/${item.paperSlug}" data-sidebar-item="${payload}">${escapeHtml(item.title)}</a>`;
+    };
+    const lines = [
+      '<!--dpr-live-search:start-->',
+      '* 实时检索缓存',
+      `  * ${snapshot.label} <!--dpr-live-cache:${snapshot.folder}-->`,
+      `    * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="#/${snapshot.reportRoute}">检索报告</a>`,
+    ];
+    if (snapshot.deepItems.length) {
+      lines.push('    * 精读区');
+      snapshot.deepItems.forEach((item) => lines.push(buildItemLine(item, '      ')));
+    }
+    if (snapshot.quickItems.length) {
+      lines.push('    * 速读区');
+      snapshot.quickItems.forEach((item) => lines.push(buildItemLine(item, '      ')));
+    }
+    lines.push('<!--dpr-live-search:end-->');
+    return lines.join('\n');
+  };
+
+  const mergeSidebarBlock = (existingSidebar, block) => {
+    const startMarker = '<!--dpr-live-search:start-->';
+    const endMarker = '<!--dpr-live-search:end-->';
+    const text = String(existingSidebar || '').trim();
+    if (text.includes(startMarker) && text.includes(endMarker)) {
+      return text.replace(
+        /<!--dpr-live-search:start-->[\s\S]*?<!--dpr-live-search:end-->/,
+        block,
+      );
+    }
+    const dailyMarker = '* Daily Papers';
+    if (text.includes(dailyMarker)) {
+      return text.replace(dailyMarker, `${block}\n${dailyMarker}`);
+    }
+    return `${text}\n\n${block}\n`;
+  };
+
+  const buildSnapshotFiles = async (snapshot) => {
+    const sidebarRes = await fetch('docs/_sidebar.md', { cache: 'no-store' });
+    if (!sidebarRes.ok) {
+      throw new Error(`无法读取 docs/_sidebar.md（HTTP ${sidebarRes.status}）`);
+    }
+    const currentSidebar = await sidebarRes.text();
+    const sidebarBlock = buildSidebarBlock(snapshot);
+    const nextSidebar = mergeSidebarBlock(currentSidebar, sidebarBlock);
+    const files = [
+      {
+        path: 'docs/_sidebar.md',
+        content: nextSidebar,
+      },
+      {
+        path: `docs/${snapshot.folder}/README.md`,
+        content: buildReportMarkdown(snapshot),
+      },
+      {
+        path: `docs/${snapshot.folder}/papers.meta.json`,
+        content: JSON.stringify(
+          {
+            label: snapshot.label,
+            date: snapshot.toDate,
+            generated_at: snapshot.generatedAt,
+            count: snapshot.resultCount,
+            papers: snapshot.items.map((item) => ({
+              paper_id: `${snapshot.folder}/${item.paperSlug}`,
+              section: snapshot.deepItems.some((entry) => entry.paperSlug === item.paperSlug) ? 'deep' : 'quick',
+              title_en: item.title,
+              authors: (item.authors || []).join(', '),
+              date: item.publication_date,
+              pdf: '',
+              score: String(item.match && item.match.score ? item.match.score : ''),
+              evidence: ((item.match && item.match.evidence) || []).join('； '),
+              tldr: '',
+              tags: `query:${item.match && item.match.profileTag ? item.match.profileTag : ''}`,
+              abstract_en: item.abstract || '',
+              keywords: item.displayKeywords || [],
+              selection_source: 'live_search_saved',
+            })),
+          },
+          null,
+          2,
+        ),
+      },
+    ];
+    snapshot.items.forEach((item) => {
+      files.push({
+        path: `docs/${snapshot.folder}/${item.paperSlug}.md`,
+        content: buildPaperMarkdown(item),
+      });
+    });
+    return files;
+  };
+
+  const persistSnapshotLocally = async (snapshot) => {
+    const files = await buildSnapshotFiles(snapshot);
+    const res = await fetch('/api/write-files', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ files }),
+    });
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      throw new Error(`本地写入失败：HTTP ${res.status} ${text}`);
+    }
+    const data = await res.json();
+    if (!data || data.ok !== true) {
+      throw new Error((data && data.error) || '本地写入失败');
+    }
+    return data;
+  };
+
   const renderCachedLastResult = () => {
-    const cached = cacheGet(LAST_RESULT_KEY);
+    const cached = lastRenderedResult;
     if (!cached || !cached.meta || !Array.isArray(cached.items)) return false;
     renderSummary(cached.meta);
     renderResults(cached.items);
@@ -1101,12 +1539,42 @@ window.DPRLiveSearch = (function () {
         profileCount: profiles.length,
         generatedAt,
       };
+      const rangeInfo = buildRangeSnapshotInfo(days);
+      const sections = splitRankedSections(ranked);
+      const enrichedItems = ranked.map((item) => ({
+        ...item,
+        paperSlug: buildPaperSlug(item),
+      }));
+      const snapshot = {
+        ...rangeInfo,
+        ...meta,
+        scopeLabel: getActiveScopeLabel(config),
+        profileTags: profiles.map((profile) => profile.tag).filter(Boolean),
+        items: enrichedItems,
+        deepItems: enrichedItems.filter((item) =>
+          sections.deep.some((entry) => entry.id === item.id || entry.title === item.title),
+        ),
+        quickItems: enrichedItems.filter((item) =>
+          sections.quick.some((entry) => entry.id === item.id || entry.title === item.title),
+        ),
+      };
       renderSummary(meta);
-      renderResults(ranked);
+      renderResults(enrichedItems);
       setStatus('实时检索完成。', '#0f766e');
       setSubStatus(`本次共整理 ${candidates.length} 条候选，已按你的专题和期刊层级完成本地排序。`);
-      cacheSet(LAST_RESULT_KEY, { meta, items: ranked });
-      return { meta, items: ranked };
+      lastRenderedResult = { meta, items: enrichedItems };
+
+      if (isLocalReaderHost()) {
+        setSubStatus('检索完成，正在把结果写入左侧缓存与本地 docs 页面...');
+        await persistSnapshotLocally(snapshot);
+        setSubStatus(`已写入左侧缓存：${snapshot.label}。页面即将刷新并打开检索报告。`);
+        setTimeout(() => {
+          window.location.hash = `#/${snapshot.reportRoute}`;
+          window.location.reload();
+        }, 900);
+      }
+
+      return { meta, items: enrichedItems, snapshot };
     } catch (error) {
       console.error(error);
       setStatus(`实时检索失败：${error && error.message ? error.message : error}`, '#c00');
