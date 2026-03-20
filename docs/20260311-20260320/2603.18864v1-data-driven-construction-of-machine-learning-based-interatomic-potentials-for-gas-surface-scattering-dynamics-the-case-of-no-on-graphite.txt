@@ -1,0 +1,221 @@
+Title: Data-driven construction of machine-learning-based interatomic potentials for gas-surface scattering dynamics: the case of NO on graphite
+
+URL Source: https://arxiv.org/abs/2603.18864v1
+
+Published Time: Fri, 20 Mar 2026 00:58:28 GMT
+
+Markdown Content:
+# [2603.18864v1] Data-driven construction of machine-learning-based interatomic potentials for gas-surface scattering dynamics: the case of NO on graphite
+
+[Skip to main content](https://arxiv.org/abs/2603.18864v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[physics](https://arxiv.org/list/physics/recent)> arXiv:2603.18864v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Physics > Chemical Physics
+
+**arXiv:2603.18864v1** (physics) 
+
+ [Submitted on 19 Mar 2026]
+
+# Title:Data-driven construction of machine-learning-based interatomic potentials for gas-surface scattering dynamics: the case of NO on graphite
+
+Authors:[Samuel Del Fré](https://arxiv.org/search/physics?searchtype=author&query=Del+Fr%C3%A9,+S), [Gilberto A. Alou Angulo](https://arxiv.org/search/physics?searchtype=author&query=Angulo,+G+A+A), [Maurice Monnerville](https://arxiv.org/search/physics?searchtype=author&query=Monnerville,+M), [Alejandro Rivero Santamaría](https://arxiv.org/search/physics?searchtype=author&query=Santamar%C3%ADa,+A+R)
+
+View a PDF of the paper titled Data-driven construction of machine-learning-based interatomic potentials for gas-surface scattering dynamics: the case of NO on graphite, by Samuel Del Fr\'e and 3 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.18864v1)[HTML (experimental)](https://arxiv.org/html/2603.18864v1)
+> Abstract:Accurate atomistic simulations of gas-surface scattering require potential energy surfaces that remain reliable over broad configurational and energetic ranges while retaining the efficiency needed for extensive trajectory sampling. Here, we develop a data-driven workflow for constructing a machine-learning interatomic potential (MLIP) tailored to gas-surface scattering dynamics, using nitric oxide (NO) scattering from highly oriented pyrolytic graphite (HOPG) as a benchmark system. Starting from an initial ab initio molecular dynamics (AIMD) dataset, local atomic environments are described by SOAP descriptors and analyzed in a reduced feature space obtained through principal component analysis. Farthest point sampling is then used to build a compact training set, and the resulting Deep Potential model is refined through a query-by-committee active-learning strategy using additional configurations extracted from molecular dynamics simulations over extended ranges of incident energies and surface temperatures. The final MLIP reproduces reference energies and forces with high fidelity and enables large-scale molecular dynamics simulations of NO scattering from graphite at a computational cost far below that of AIMD. The simulations provide detailed insight into adsorption energetics, trapping versus direct scattering probabilities, translational energy loss, angular distributions, and rotational excitation. Overall, the results reproduce the main experimental trends and demonstrate that descriptor-guided sampling combined with active learning offers an efficient and transferable strategy for constructing MLIPs for gas-surface interactions.
+
+Comments:19 pages, 9 figures
+Subjects:Chemical Physics (physics.chem-ph); Machine Learning (cs.LG)
+Cite as:[arXiv:2603.18864](https://arxiv.org/abs/2603.18864) [physics.chem-ph]
+(or [arXiv:2603.18864v1](https://arxiv.org/abs/2603.18864v1) [physics.chem-ph] for this version)
+[https://doi.org/10.48550/arXiv.2603.18864](https://doi.org/10.48550/arXiv.2603.18864)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite (pending registration)
+
+## Submission history
+
+ From: Samuel Del Fré [[view email](https://arxiv.org/show-email/62596cdd/2603.18864)] 
+
+**[v1]** Thu, 19 Mar 2026 13:11:27 UTC (1,763 KB)
+
+[](https://arxiv.org/abs/2603.18864v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Data-driven construction of machine-learning-based interatomic potentials for gas-surface scattering dynamics: the case of NO on graphite, by Samuel Del Fr\'e and 3 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.18864v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.18864v1)
+*   [TeX Source](https://arxiv.org/src/2603.18864v1)
+
+[![Image 5: license icon](https://arxiv.org/icons/licenses/by-nc-nd-4.0.png)view license](http://creativecommons.org/licenses/by-nc-nd/4.0/ "Rights to this article")
+
+ Current browse context: 
+
+physics.chem-ph
+
+[<prev](https://arxiv.org/prevnext?id=2603.18864&function=prev&context=physics.chem-ph "previous in physics.chem-ph (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.18864&function=next&context=physics.chem-ph "next in physics.chem-ph (accesskey n)")
+
+[new](https://arxiv.org/list/physics.chem-ph/new) | [recent](https://arxiv.org/list/physics.chem-ph/recent) | [2026-03](https://arxiv.org/list/physics.chem-ph/2026-03)
+
+ Change to browse by: 
+
+[cs](https://arxiv.org/abs/2603.18864?context=cs)
+
+[cs.LG](https://arxiv.org/abs/2603.18864?context=cs.LG)
+
+[physics](https://arxiv.org/abs/2603.18864?context=physics)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.18864)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.18864)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.18864)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.18864v1)
+
+### Bookmark
+
+[![Image 6: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.18864&description=Data-driven%20construction%20of%20machine-learning-based%20interatomic%20potentials%20for%20gas-surface%20scattering%20dynamics:%20the%20case%20of%20NO%20on%20graphite "Bookmark on BibSonomy")[![Image 7: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.18864&title=Data-driven%20construction%20of%20machine-learning-based%20interatomic%20potentials%20for%20gas-surface%20scattering%20dynamics:%20the%20case%20of%20NO%20on%20graphite "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+*   [Author](https://arxiv.org/abs/2603.18864v1)
+*   [Venue](https://arxiv.org/abs/2603.18864v1)
+*   [Institution](https://arxiv.org/abs/2603.18864v1)
+*   [Topic](https://arxiv.org/abs/2603.18864v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.18864) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

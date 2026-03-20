@@ -1,0 +1,229 @@
+Title: Tuning the optoelectronic properties of graphene quantum dots by BN-ring doping: A density functional theory study
+
+URL Source: https://arxiv.org/abs/2603.15906v1
+
+Published Time: Wed, 18 Mar 2026 00:14:24 GMT
+
+Markdown Content:
+# [2603.15906v1] Tuning the optoelectronic properties of graphene quantum dots by BN-ring doping: A density functional theory study
+
+[Skip to main content](https://arxiv.org/abs/2603.15906v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cond-mat](https://arxiv.org/list/cond-mat/recent)> arXiv:2603.15906v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Condensed Matter > Materials Science
+
+**arXiv:2603.15906v1** (cond-mat) 
+
+ [Submitted on 16 Mar 2026]
+
+# Title:Tuning the optoelectronic properties of graphene quantum dots by BN-ring doping: A density functional theory study
+
+Authors:[Samayita Das](https://arxiv.org/search/cond-mat?searchtype=author&query=Das,+S), [Alok Shukla](https://arxiv.org/search/cond-mat?searchtype=author&query=Shukla,+A)
+
+View a PDF of the paper titled Tuning the optoelectronic properties of graphene quantum dots by BN-ring doping: A density functional theory study, by Samayita Das and Alok Shukla
+
+[View PDF](https://arxiv.org/pdf/2603.15906v1)[HTML (experimental)](https://arxiv.org/html/2603.15906v1)
+> Abstract:Graphene monolayer is a material with zero band gap, because of which its applications in optoelectronics are limited. The question arises, can we modify the optoelectronic properties of graphene by doping it with other atoms? Synthesis of 2D monolayer of graphene doped with hetero-atoms such as boron and nitrogen, and a few computational studies of their structural and electronic properties were previously reported. In this work, we aim to answer this question for graphene quantum dots (GQDs) by replacing their carbon rings with $(BN)_3$ (borazine) hexagonal rings. We have studied in detail the geometry, electronic structure, and optical absorption spectra of fourteen different borazine-ring doped diamond-shaped GQDs using first-principles density functional theory (DFT). These BN-GQDs differ in the location, orientation, and the number of borazine rings. We computed their optical absorption spectra using time-dependent DFT (TDDFT) and examined: (a) for single-ring doped BN-GQDs the influence of ring location on optical properties, and (b) for double-ring doped systems, the influence of location, mutual distance and orientation of the rings on their absorption spectra. Frontier molecular orbitals are studied in detail to understand the nature of low-lying optical excitations. We also performed a group-theoretic analysis of the influence of their reduced symmetries on their optical properties. Our results indicate that BN-ring doping can achieve significant control over the optical properties of GQDs. The comparison of the optical absorption spectra of the BN-GQDs with the parent GQD shows remarkable spectral broadening with optical gap spanning over infrared to visible region. Thus, systematic BN-ring doping provides easy tunability of the electronic and optical properties of BN-GQDs, which is very promising for optoelectronic applications.
+
+Comments:35 pages and 9 figures (Manuscript), 10 pages and 6 figures (Supplemental Material)
+Subjects:Materials Science (cond-mat.mtrl-sci); Mesoscale and Nanoscale Physics (cond-mat.mes-hall)
+Cite as:[arXiv:2603.15906](https://arxiv.org/abs/2603.15906) [cond-mat.mtrl-sci]
+(or [arXiv:2603.15906v1](https://arxiv.org/abs/2603.15906v1) [cond-mat.mtrl-sci] for this version)
+[https://doi.org/10.48550/arXiv.2603.15906](https://doi.org/10.48550/arXiv.2603.15906)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+Journal reference:Physical Review B 113, 075426 (2026)
+Related DOI:[https://doi.org/10.1103/cmzs-x6qz](https://doi.org/10.1103/cmzs-x6qz)
+
+Focus to learn more
+
+ DOI(s) linking to related resources
+
+## Submission history
+
+ From: Samayita Das [[view email](https://arxiv.org/show-email/752a48d9/2603.15906)] 
+
+**[v1]** Mon, 16 Mar 2026 20:53:48 UTC (2,758 KB)
+
+[](https://arxiv.org/abs/2603.15906v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Tuning the optoelectronic properties of graphene quantum dots by BN-ring doping: A density functional theory study, by Samayita Das and Alok Shukla
+
+*   [View PDF](https://arxiv.org/pdf/2603.15906v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.15906v1)
+*   [TeX Source](https://arxiv.org/src/2603.15906v1)
+
+[view license](http://arxiv.org/licenses/nonexclusive-distrib/1.0/ "Rights to this article")
+
+ Current browse context: 
+
+cond-mat.mtrl-sci
+
+[<prev](https://arxiv.org/prevnext?id=2603.15906&function=prev&context=cond-mat.mtrl-sci "previous in cond-mat.mtrl-sci (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.15906&function=next&context=cond-mat.mtrl-sci "next in cond-mat.mtrl-sci (accesskey n)")
+
+[new](https://arxiv.org/list/cond-mat.mtrl-sci/new) | [recent](https://arxiv.org/list/cond-mat.mtrl-sci/recent) | [2026-03](https://arxiv.org/list/cond-mat.mtrl-sci/2026-03)
+
+ Change to browse by: 
+
+[cond-mat](https://arxiv.org/abs/2603.15906?context=cond-mat)
+
+[cond-mat.mes-hall](https://arxiv.org/abs/2603.15906?context=cond-mat.mes-hall)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.15906)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.15906)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.15906)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.15906v1)
+
+### Bookmark
+
+[![Image 5: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.15906&description=Tuning%20the%20optoelectronic%20properties%20of%20graphene%20quantum%20dots%20by%20BN-ring%20doping:%20A%20density%20functional%20theory%20study "Bookmark on BibSonomy")[![Image 6: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.15906&title=Tuning%20the%20optoelectronic%20properties%20of%20graphene%20quantum%20dots%20by%20BN-ring%20doping:%20A%20density%20functional%20theory%20study "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+- [x] IArxiv recommender toggle 
+
+IArxiv Recommender _([What is IArxiv?](https://iarxiv.org/about))_
+
+*   [Author](https://arxiv.org/abs/2603.15906v1)
+*   [Venue](https://arxiv.org/abs/2603.15906v1)
+*   [Institution](https://arxiv.org/abs/2603.15906v1)
+*   [Topic](https://arxiv.org/abs/2603.15906v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.15906) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

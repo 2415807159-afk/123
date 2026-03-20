@@ -1,0 +1,226 @@
+Title: Accelerating Structure-Property Relationship Discovery with Multimodal Machine Learning and Self-Driving Microscopy
+
+URL Source: https://arxiv.org/abs/2603.17028v1
+
+Published Time: Thu, 19 Mar 2026 00:05:14 GMT
+
+Markdown Content:
+# [2603.17028v1] Accelerating Structure-Property Relationship Discovery with Multimodal Machine Learning and Self-Driving Microscopy
+
+[Skip to main content](https://arxiv.org/abs/2603.17028v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cond-mat](https://arxiv.org/list/cond-mat/recent)> arXiv:2603.17028v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Condensed Matter > Materials Science
+
+**arXiv:2603.17028v1** (cond-mat) 
+
+ [Submitted on 17 Mar 2026]
+
+# Title:Accelerating Structure-Property Relationship Discovery with Multimodal Machine Learning and Self-Driving Microscopy
+
+Authors:[Jiawei Gong](https://arxiv.org/search/cond-mat?searchtype=author&query=Gong,+J), [Danqing Ma](https://arxiv.org/search/cond-mat?searchtype=author&query=Ma,+D), [Ralph Bulanadi](https://arxiv.org/search/cond-mat?searchtype=author&query=Bulanadi,+R), [Robert Moore](https://arxiv.org/search/cond-mat?searchtype=author&query=Moore,+R), [Rama Vasudevan](https://arxiv.org/search/cond-mat?searchtype=author&query=Vasudevan,+R), [Lianfeng Zhao](https://arxiv.org/search/cond-mat?searchtype=author&query=Zhao,+L), [Yongtao Liu](https://arxiv.org/search/cond-mat?searchtype=author&query=Liu,+Y)
+
+View a PDF of the paper titled Accelerating Structure-Property Relationship Discovery with Multimodal Machine Learning and Self-Driving Microscopy, by Jiawei Gong and 6 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.17028v1)
+> Abstract:Microscopy combined with local spectroscopy is widely used to correlate nanoscale structure with functional properties in materials, but conventional measurements rely heavily on human-selected sampling locations and predefined targets, limiting dataset diversity and the potential for discovery. Here, we present a framework that integrates autonomous microscopy with a dual-novelty deep kernel learning (DN-DKL) for adaptive data acquisition and a dual variational autoencoder (VAE) for representation learning. DN-DKL actively guides the microscopy toward structurally and spectroscopically novel regions, enabling efficient collection of large spectral datasets. Dual-VAE embeds local structure and spectroscopic responses into a shared latent manifold that serves as a structure-property relationship map. We applied this framework for the investigation of halide perovskite films using conductive atomic force microscopy. The results reveal distinct hysteresis behaviors that are linked to specific nanoscale structural motifs, including grain boundary junction points that show hysteresis under different bias conditions and asymmetric grain boundaries that suppress charge transport. This framework establishes a general strategy that leverages the complementary strengths of self-driving microscopy, machine learning, and human expertise to accelerate scientific discovery in functional materials.
+
+Comments:20 pages, 6 figures
+Subjects:Materials Science (cond-mat.mtrl-sci); Instrumentation and Detectors (physics.ins-det)
+ACM classes:I.2.6; I.5.1; J.2
+Cite as:[arXiv:2603.17028](https://arxiv.org/abs/2603.17028) [cond-mat.mtrl-sci]
+(or [arXiv:2603.17028v1](https://arxiv.org/abs/2603.17028v1) [cond-mat.mtrl-sci] for this version)
+[https://doi.org/10.48550/arXiv.2603.17028](https://doi.org/10.48550/arXiv.2603.17028)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: Jiawei Gong [[view email](https://arxiv.org/show-email/29dbe66e/2603.17028)] 
+
+**[v1]** Tue, 17 Mar 2026 18:08:57 UTC (1,428 KB)
+
+[](https://arxiv.org/abs/2603.17028v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Accelerating Structure-Property Relationship Discovery with Multimodal Machine Learning and Self-Driving Microscopy, by Jiawei Gong and 6 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.17028v1)
+
+[view license](http://arxiv.org/licenses/nonexclusive-distrib/1.0/ "Rights to this article")
+
+ Current browse context: 
+
+cond-mat.mtrl-sci
+
+[<prev](https://arxiv.org/prevnext?id=2603.17028&function=prev&context=cond-mat.mtrl-sci "previous in cond-mat.mtrl-sci (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.17028&function=next&context=cond-mat.mtrl-sci "next in cond-mat.mtrl-sci (accesskey n)")
+
+[new](https://arxiv.org/list/cond-mat.mtrl-sci/new) | [recent](https://arxiv.org/list/cond-mat.mtrl-sci/recent) | [2026-03](https://arxiv.org/list/cond-mat.mtrl-sci/2026-03)
+
+ Change to browse by: 
+
+[cond-mat](https://arxiv.org/abs/2603.17028?context=cond-mat)
+
+[physics](https://arxiv.org/abs/2603.17028?context=physics)
+
+[physics.ins-det](https://arxiv.org/abs/2603.17028?context=physics.ins-det)
+
+### References & Citations
+
+*   [INSPIRE HEP](https://inspirehep.net/arxiv/2603.17028)
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.17028)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.17028)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.17028)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.17028v1)
+
+### Bookmark
+
+[![Image 5: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.17028&description=Accelerating%20Structure-Property%20Relationship%20Discovery%20with%20Multimodal%20Machine%20Learning%20and%20Self-Driving%20Microscopy "Bookmark on BibSonomy")[![Image 6: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.17028&title=Accelerating%20Structure-Property%20Relationship%20Discovery%20with%20Multimodal%20Machine%20Learning%20and%20Self-Driving%20Microscopy "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+- [x] IArxiv recommender toggle 
+
+IArxiv Recommender _([What is IArxiv?](https://iarxiv.org/about))_
+
+*   [Author](https://arxiv.org/abs/2603.17028v1)
+*   [Venue](https://arxiv.org/abs/2603.17028v1)
+*   [Institution](https://arxiv.org/abs/2603.17028v1)
+*   [Topic](https://arxiv.org/abs/2603.17028v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.17028) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)

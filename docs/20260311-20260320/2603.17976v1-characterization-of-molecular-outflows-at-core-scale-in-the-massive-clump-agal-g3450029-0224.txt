@@ -1,0 +1,221 @@
+Title: Characterization of molecular outflows at core-scale in the massive clump AGAL G345.0029-0.224
+
+URL Source: https://arxiv.org/abs/2603.17976v1
+
+Published Time: Thu, 19 Mar 2026 01:30:47 GMT
+
+Markdown Content:
+# [2603.17976v1] Characterization of molecular outflows at core-scale in the massive clump AGAL G345.0029-0.224
+
+[Skip to main content](https://arxiv.org/abs/2603.17976v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[astro-ph](https://arxiv.org/list/astro-ph/recent)> arXiv:2603.17976v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Astrophysics > Astrophysics of Galaxies
+
+**arXiv:2603.17976v1** (astro-ph) 
+
+ [Submitted on 18 Mar 2026]
+
+# Title:Characterization of molecular outflows at core-scale in the massive clump AGAL G345.0029-0.224
+
+Authors:[E. Cohen Arazi](https://arxiv.org/search/astro-ph?searchtype=author&query=Arazi,+E+C), [M. E. Ortega](https://arxiv.org/search/astro-ph?searchtype=author&query=Ortega,+M+E), [S. Paron](https://arxiv.org/search/astro-ph?searchtype=author&query=Paron,+S), [P. F. Velázquez](https://arxiv.org/search/astro-ph?searchtype=author&query=Vel%C3%A1zquez,+P+F), [A. Rodríguez-González](https://arxiv.org/search/astro-ph?searchtype=author&query=Rodr%C3%ADguez-Gonz%C3%A1lez,+A), [E. Alquicira](https://arxiv.org/search/astro-ph?searchtype=author&query=Alquicira,+E)
+
+View a PDF of the paper titled Characterization of molecular outflows at core-scale in the massive clump AGAL G345.0029-0.224, by E. Cohen Arazi and 4 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.17976v1)[HTML (experimental)](https://arxiv.org/html/2603.17976v1)
+> Abstract:High-mass stars, with their powerful winds and intense radiation fields, are fundamental in regulating galactic dynamics and evolution; however, despite their great relevance, the mechanisms involved in their formation are still not fully understood. In this context, molecular outflows, which are essential for removing angular momentum and allowing accretion onto the central object, are a crucial phenomenon for characterizing their formation. Previous studies reveal a discrepancy in the masses of outflows associated with high-mass clumps between works conducted at the clump scale ($\sim$ pc) and those at the core scale ($\sim$ subpc). This suggests that the high-mass outflow activity observed at the clump scale might be the result of the contribution from several lower-mass outflows linked to individual molecular cores. This work presents a study of the molecular gas toward a high-mass clump associated with an Extended Green Object (EGO). EGOs are indicators of jets associated with high-mass protostars. Employing high angular resolution data from the Atacama Large Millimeter/submillimeter Array (ALMA), the presence of several hot cores with outflow activity was observed in the source. A characterization of the outflows at the core scale is presented within the context of the physical parameters of the molecular clumps.
+
+Comments:Accepted for publicacion in Boletín de la Asociación Argentina de Astronomía (February 2026)
+Subjects:Astrophysics of Galaxies (astro-ph.GA)
+Cite as:[arXiv:2603.17976](https://arxiv.org/abs/2603.17976) [astro-ph.GA]
+(or [arXiv:2603.17976v1](https://arxiv.org/abs/2603.17976v1) [astro-ph.GA] for this version)
+[https://doi.org/10.48550/arXiv.2603.17976](https://doi.org/10.48550/arXiv.2603.17976)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite (pending registration)
+
+## Submission history
+
+ From: Sergio Paron [[view email](https://arxiv.org/show-email/4588f19a/2603.17976)] 
+
+**[v1]** Wed, 18 Mar 2026 17:40:59 UTC (1,526 KB)
+
+[](https://arxiv.org/abs/2603.17976v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Characterization of molecular outflows at core-scale in the massive clump AGAL G345.0029-0.224, by E. Cohen Arazi and 4 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.17976v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.17976v1)
+*   [TeX Source](https://arxiv.org/src/2603.17976v1)
+
+[view license](http://arxiv.org/licenses/nonexclusive-distrib/1.0/ "Rights to this article")
+
+ Current browse context: 
+
+astro-ph.GA
+
+[<prev](https://arxiv.org/prevnext?id=2603.17976&function=prev&context=astro-ph.GA "previous in astro-ph.GA (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.17976&function=next&context=astro-ph.GA "next in astro-ph.GA (accesskey n)")
+
+[new](https://arxiv.org/list/astro-ph.GA/new) | [recent](https://arxiv.org/list/astro-ph.GA/recent) | [2026-03](https://arxiv.org/list/astro-ph.GA/2026-03)
+
+ Change to browse by: 
+
+[astro-ph](https://arxiv.org/abs/2603.17976?context=astro-ph)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.17976)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.17976)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.17976)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.17976v1)
+
+### Bookmark
+
+[![Image 5: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.17976&description=Characterization%20of%20molecular%20outflows%20at%20core-scale%20in%20the%20massive%20clump%20AGAL%20G345.0029-0.224 "Bookmark on BibSonomy")[![Image 6: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.17976&title=Characterization%20of%20molecular%20outflows%20at%20core-scale%20in%20the%20massive%20clump%20AGAL%20G345.0029-0.224 "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+- [x] IArxiv recommender toggle 
+
+IArxiv Recommender _([What is IArxiv?](https://iarxiv.org/about))_
+
+*   [Author](https://arxiv.org/abs/2603.17976v1)
+*   [Venue](https://arxiv.org/abs/2603.17976v1)
+*   [Institution](https://arxiv.org/abs/2603.17976v1)
+*   [Topic](https://arxiv.org/abs/2603.17976v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.17976) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)
