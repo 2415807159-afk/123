@@ -7,7 +7,7 @@ arxiv_paper_setting:
   docs_dir: docs
   prefer_supabase_read: true
 journal_watch:
-  enabled: true
+  enabled: false
   days_window: 30
   max_records_per_journal: 120
   active_scope: core
