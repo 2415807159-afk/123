@@ -156,7 +156,9 @@ jobs:
 
       - name: Cleanup non-recommend archives
         run: |
-          find archive -mindepth 2 -maxdepth 2 -type d \( -name raw -o -name filtered -o -name rank \) -exec rm -rf {} +
+          if [ -d archive ]; then
+            find archive -mindepth 2 -maxdepth 2 -type d \( -name raw -o -name filtered -o -name rank \) -exec rm -rf {} + || true
+          fi
 
       - name: Commit results
         run: |

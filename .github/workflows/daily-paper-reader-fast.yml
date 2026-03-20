@@ -28,6 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
+      BLT_API_KEY: ${{ secrets.BLT_API_KEY }}
+      BLT_REWRITE_MODEL: gemini-3-flash-preview
+      BLT_FILTER_MODEL: gemini-3-flash-preview-nothinking
       PYTHONUNBUFFERED: "1"
 
     steps:
@@ -51,7 +54,7 @@ jobs:
       - name: Install fast deps
         run: |
           python -m pip install --upgrade pip
-          python -m pip install openai requests pymupdf arxiv pyyaml
+          python -m pip install openai requests pymupdf arxiv pyyaml numpy
 
       - name: Run Fast Journal Monitor
         run: |
@@ -64,7 +67,9 @@ jobs:
 
       - name: Cleanup non-recommend archives
         run: |
-          find archive -mindepth 2 -maxdepth 2 -type d \( -name raw -o -name filtered -o -name rank \) -exec rm -rf {} +
+          if [ -d archive ]; then
+            find archive -mindepth 2 -maxdepth 2 -type d \( -name raw -o -name filtered -o -name rank \) -exec rm -rf {} + || true
+          fi
 
       - name: Commit results
         run: |
