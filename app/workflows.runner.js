@@ -53,6 +53,21 @@ window.DPRWorkflowRunner = (function () {
     },
   };
 
+  const isLegacySearchWorkflowKey = (workflowKey) =>
+    String(workflowKey || '') === 'daily-now';
+
+  const toLegacySearchRunOptions = (extraInputs) => {
+    const inputs = extraInputs && typeof extraInputs === 'object' ? extraInputs : {};
+    const fetchDays = parseInt(inputs.fetch_days, 10);
+    const safeDays = Number.isFinite(fetchDays) && fetchDays > 0 ? fetchDays : 10;
+    const fetchMode = String(inputs.fetch_mode || '').trim().toLowerCase();
+    const breadth =
+      fetchMode === 'expanded' || fetchMode === 'standard' || fetchMode === 'skims'
+        ? 'expanded'
+        : 'focus';
+    return { days: safeDays, breadth };
+  };
+
   let overlay = null;
   let panel = null;
   let statusEl = null;
@@ -507,6 +522,40 @@ window.DPRWorkflowRunner = (function () {
     return merged;
   };
 
+  const renderLegacySearchBridge = (options) => {
+    ensureOverlay();
+    const safeOptions = options && typeof options === 'object' ? options : { days: 10, breadth: 'focus' };
+    const breadthLabel = safeOptions.breadth === 'expanded' ? '扩展' : '聚焦';
+    if (runsEl) {
+      runsEl.innerHTML = `
+        <div style="color:#0f766e; font-weight:600; margin-bottom:8px;">已从旧工作流入口切换到实时检索</div>
+        <div style="color:#374151; line-height:1.7;">
+          为避免 GitHub Actions 触发慢、排队和失败，现在论文搜索默认直接走浏览器端实时检索。
+        </div>
+        <div style="margin-top:8px; color:#374151;">
+          当前参数：近 ${safeOptions.days} 天，${breadthLabel}范围。
+        </div>
+      `;
+    }
+    setStatus('旧工作流入口已自动改道到实时检索，不会触发 GitHub Actions。', '#0f766e');
+  };
+
+  const bridgeLegacySearchToLive = async (extraInputs) => {
+    const options = toLegacySearchRunOptions(extraInputs);
+    renderLegacySearchBridge(options);
+    if (window.DPRLiveSearch && typeof window.DPRLiveSearch.run === 'function') {
+      window.DPRLiveSearch.run({
+        days: options.days,
+        breadth: options.breadth,
+      });
+      return;
+    }
+    setStatus('实时检索模块未加载，请刷新页面后重试。', '#c00');
+    if (runsEl) {
+      runsEl.innerHTML = '<div style="color:#c00;">实时检索模块未加载，请回到主页刷新页面后重试。</div>';
+    }
+  };
+
   const filterInputsForWorkflow = (workflowFile, inputs) => {
     const merged = inputs && typeof inputs === 'object' ? { ...inputs } : {};
     if (String(workflowFile || '') === 'daily-paper-reader-fast.yml') {
@@ -803,6 +852,10 @@ window.DPRWorkflowRunner = (function () {
   };
 
   const runWorkflowByKey = async (workflowKey, extraInputs) => {
+    if (isLegacySearchWorkflowKey(workflowKey)) {
+      open();
+      return bridgeLegacySearchToLive(extraInputs);
+    }
     const wf = getWorkflowByKey(workflowKey);
     if (!wf) {
       setStatus('未找到对应的工作流配置。', '#c00');
@@ -825,7 +878,7 @@ window.DPRWorkflowRunner = (function () {
       },
     };
     const mergedInputs = combineInputs(preset.dispatchInputs, options.dispatchInputs);
-    return runWorkflowByKey(preset.key, mergedInputs);
+    return bridgeLegacySearchToLive(mergedInputs);
   };
 
   return {

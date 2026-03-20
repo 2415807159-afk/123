@@ -36,7 +36,7 @@
   <script src="https://cdn.jsdelivr.net/npm/libsodium-wrappers@0.7.9/dist/modules/libsodium-wrappers.js"></script>
 
   <!-- 自定义样式，包含评论区、订阅浮层、侧边栏拖拽等 UI -->
-  <link rel="stylesheet" href="app/app.css?v=20260320-live2">
+  <link rel="stylesheet" href="app/app.css?v=20260320-live3">
 </head>
 <body>
   <!-- 首次进入时的密钥解锁 / 游客模式选择 -->
@@ -73,32 +73,32 @@
   <div id="app">加载中...</div>
 
   <!-- 密钥会话管理（需在其他模块之前加载，以便设置 DPR_ACCESS_MODE / decoded_secret_private） -->
-  <script src="app/secret.session.js?v=20260320-live2"></script>
+  <script src="app/secret.session.js?v=20260320-live3"></script>
 
   <!-- Gist 分享内容组装工具（纯函数，可复用于测试） -->
-  <script src="app/gist-share-utils.js?v=20260320-live2"></script>
+  <script src="app/gist-share-utils.js?v=20260320-live3"></script>
   <!-- Zotero 元数据提取工具（纯函数，可复用于测试） -->
-  <script src="app/zotero-meta-utils.js?v=20260320-live2"></script>
+  <script src="app/zotero-meta-utils.js?v=20260320-live3"></script>
   <!-- Zotero 聊天区提取工具（纯函数，可复用于测试） -->
-  <script src="app/zotero-chat-utils.js?v=20260320-live2"></script>
+  <script src="app/zotero-chat-utils.js?v=20260320-live3"></script>
 
   <!-- Docsify 配置与公共插件（评论区 + Zotero 元数据） -->
-  <script src="app/docsify-plugin.js?v=20260320-live2"></script>
+  <script src="app/docsify-plugin.js?v=20260320-live3"></script>
   <!-- 私人研讨区聊天模块 -->
-  <script src="app/chat.discussion.js?v=20260320-live2"></script>
+  <script src="app/chat.discussion.js?v=20260320-live3"></script>
 
   <!-- GitHub Token 订阅配置模块 -->
-  <script src="app/subscriptions.github-token.js?v=20260320-live2"></script>
+  <script src="app/subscriptions.github-token.js?v=20260320-live3"></script>
   <!-- 统一智能 Query 模块 -->
-  <script src="app/subscriptions.smart-query.js?v=20260320-live2"></script>
+  <script src="app/subscriptions.smart-query.js?v=20260320-live3"></script>
   <!-- 订阅关键词 / Zotero / 跟踪论文模块 -->
-  <script src="app/subscriptions.keywords.js?v=20260320-live2"></script>
-  <script src="app/subscriptions.zotero.js?v=20260320-live2"></script>
-  <script src="app/subscriptions.tracked-papers.js?v=20260320-live2"></script>
-  <script src="app/subscriptions.manager.js?v=20260320-live2"></script>
-  <script src="app/live-search.js?v=20260320-live2"></script>
+  <script src="app/subscriptions.keywords.js?v=20260320-live3"></script>
+  <script src="app/subscriptions.zotero.js?v=20260320-live3"></script>
+  <script src="app/subscriptions.tracked-papers.js?v=20260320-live3"></script>
+  <script src="app/subscriptions.manager.js?v=20260320-live3"></script>
+  <script src="app/live-search.js?v=20260320-live3"></script>
   <!-- 工作流触发面板（依赖 GitHub Token） -->
-  <script src="app/workflows.runner.js?v=20260320-live2"></script>
+  <script src="app/workflows.runner.js?v=20260320-live3"></script>
   <script>
     // 初始化订阅管理模块（使用左下角 📚 按钮触发）
     if (window.SubscriptionsManager) {
@@ -107,7 +107,7 @@
   </script>
 
   <!-- 一些通用脚本：布局 + 订阅入口按钮 + API Base 配置 -->
-  <script src="app/ui.layout-and-subscriptions-entry.js?v=20260320-live2"></script>
+  <script src="app/ui.layout-and-subscriptions-entry.js?v=20260320-live3"></script>
 
   <!-- Docsify 主库（最后加载，读取 window.$docsify 配置） -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
