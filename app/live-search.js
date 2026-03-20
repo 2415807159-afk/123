@@ -737,6 +737,103 @@ window.DPRLiveSearch = (function () {
 
   const markdownQuote = (value) => String(value || '').replace(/\r\n/g, '\n').trim();
 
+  const splitAbstractSentences = (value) => {
+    const text = normalizeText(value).replace(/\s+/g, ' ');
+    if (!text) return [];
+    const pieces = text.match(/[^.!?]+[.!?]?/g) || [text];
+    return pieces.map((item) => item.trim()).filter(Boolean);
+  };
+
+  const buildAutoGlance = (item) => {
+    const sentences = splitAbstractSentences(item.abstract || '');
+    const evidenceText = ((item.match && item.match.evidence) || []).join('； ');
+    const keywordText = (Array.isArray(item.displayKeywords) ? item.displayKeywords : []).slice(0, 6).join(', ');
+    const first = sentences[0] || '';
+    const second = sentences[1] || '';
+    const third = sentences[2] || '';
+    const last = sentences[sentences.length - 1] || first;
+
+    return {
+      tldr:
+        cutText(first || item.abstract || `${item.journal || '该期刊'}近期论文，和当前专题高度相关。`, 180) ||
+        '该论文与当前专题高度相关，建议优先阅读全文。',
+      motivation:
+        cutText(
+          evidenceText ||
+            first ||
+            `该论文与专题 ${item.match && item.match.profileTag ? item.match.profileTag : '当前检索方向'} 相关，主要因标题、摘要或关键词出现了方向锚点。`,
+          140,
+        ) || '-',
+      method:
+        cutText(
+          second ||
+            `当前仅基于期刊元数据与摘要进行快速解析。可见关键词包括 ${keywordText || '暂无关键词'}。`,
+          140,
+        ) || '-',
+      result:
+        cutText(
+          third ||
+            first ||
+            `从摘要信息看，这篇论文在 ${item.journal || '目标期刊'} 中属于与你当前方向接近的一条结果。`,
+          140,
+        ) || '-',
+      conclusion:
+        cutText(
+          last ||
+            `建议结合 DOI / Publisher 页面继续阅读全文，并根据关键词 ${keywordText || '暂无'} 判断是否纳入精读。`,
+          140,
+        ) || '-',
+      sentences,
+    };
+  };
+
+  const buildAutoSummaryMarkdown = (item, glance) => {
+    const keywordLines = (Array.isArray(item.displayKeywords) ? item.displayKeywords : [])
+      .slice(0, 8)
+      .map((keyword) => `- ${keyword}`)
+      .join('\n');
+    const evidenceLines = ((item.match && item.match.evidence) || [])
+      .map((line) => `- ${line}`)
+      .join('\n');
+    const abstractSentences = (glance && Array.isArray(glance.sentences) ? glance.sentences : [])
+      .slice(0, 5)
+      .map((line) => `- ${line}`)
+      .join('\n');
+
+    return [
+      '## 论文详细总结（自动生成）',
+      '',
+      `这份页面由实时检索自动生成，目标是把这篇论文整理成接近旧论文页的阅读结构，方便你在站内继续筛选与精读。`,
+      '',
+      '### 1. 基本定位',
+      `- 期刊：${item.journal || 'Unknown'}`,
+      `- 发表日期：${item.publication_date || 'Unknown'}`,
+      `- 当前评分：${item.match && item.match.score ? `${item.match.score}/10` : '未评分'}`,
+      `- 命中专题：${item.match && item.match.profileTag ? item.match.profileTag : '未命名专题'}`,
+      '',
+      '### 2. 关键词',
+      keywordLines || '- 暂无关键词',
+      '',
+      '### 3. 命中依据',
+      evidenceLines || '- 标题 / 摘要 / 关键词与当前专题相关',
+      '',
+      '### 4. 摘要拆解',
+      abstractSentences || `- ${item.abstract || '当前记录未提供摘要。'}`,
+      '',
+      '### 5. 速览判断',
+      `- Motivation: ${glance.motivation || '-'}`,
+      `- Method: ${glance.method || '-'}`,
+      `- Result: ${glance.result || '-'}`,
+      `- Conclusion: ${glance.conclusion || '-'}`,
+      '',
+      '### 6. 使用建议',
+      `- 如果这篇论文的关键词、摘要和命中依据都贴合你的课题，可以把它作为后续精读候选。`,
+      `- 如果它只是命中了一部分泛化术语，但没有真正落到 titanium / graphene / interface / alloy 主线，可以直接跳过。`,
+      '',
+      '（完）',
+    ].join('\n');
+  };
+
   const buildPaperSlug = (item) => {
     const doiPart = slugify(item && item.doi);
     const titlePart = slugify(item && item.title);
@@ -1268,6 +1365,7 @@ window.DPRLiveSearch = (function () {
   });
 
   const buildPaperMarkdown = (item) => {
+    const glance = buildAutoGlance(item);
     const tagList = []
       .concat(item.match && item.match.profileTag ? [`query:${item.match.profileTag}`] : [])
       .concat(
@@ -1300,21 +1398,30 @@ window.DPRLiveSearch = (function () {
       `keywords: ${JSON.stringify(Array.isArray(item.displayKeywords) ? item.displayKeywords : [])}`,
       `score: ${item.match && item.match.score ? item.match.score : ''}`,
       `evidence: ${yamlQuote(((item.match && item.match.evidence) || []).join('； '))}`,
+      `tldr: ${yamlQuote(glance.tldr || '')}`,
+      `motivation: ${yamlQuote(glance.motivation || '')}`,
+      `method: ${yamlQuote(glance.method || '')}`,
+      `result: ${yamlQuote(glance.result || '')}`,
+      `conclusion: ${yamlQuote(glance.conclusion || '')}`,
       `abstract_en: ${yamlQuote(item.abstract || '')}`,
       'selection_source: live_search_saved',
       '---',
       '',
-      '## Keywords',
-      keywordLines || '- 暂无关键词',
-      '',
       '## Abstract',
       markdownQuote(item.abstract || 'This record does not provide an abstract.'),
+      '',
+      '## Keywords',
+      keywordLines || '- 暂无关键词',
       '',
       '## Match Evidence',
       evidenceLines || '- 标题 / 摘要与当前专题高度相关',
       '',
       '## Source Links',
       sourceLinks || '- 暂无外部链接',
+      '',
+      '---',
+      '',
+      buildAutoSummaryMarkdown(item, glance),
       '',
     ].join('\n');
   };
