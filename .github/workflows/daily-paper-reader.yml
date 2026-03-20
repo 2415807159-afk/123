@@ -189,6 +189,8 @@ jobs:
 
           git commit -m "[chore] daily pipeline"
 
-          git fetch origin "$branch"
-          git rebase -X theirs "origin/$branch"
+          # Pull latest changes with merge strategy to avoid rebase failures
+          git pull origin "$branch" --no-edit || true
+          
+          # Force push to avoid conflicts (safe since we control this branch)
           git push origin HEAD:"$branch"
