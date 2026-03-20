@@ -1,0 +1,232 @@
+Title: Mechanistic Insights into Microstructure Evolution and Aging Behavior of Thermomechanically Processed (Al–Zn–Mg)–Fe Dual-Phase New Generation Alloy
+
+URL Source: https://link.springer.com/10.1007/s11661-026-08180-5
+
+Markdown Content:
+## References
+
+1.   M.N. Borse, R. Bauri, and S. Shankar: _Mater. Sci. Eng. A_, 2023, vol. 879, p. 145274. [https://doi.org/10.1016/j.msea.2023.145274](https://doi.org/10.1016/j.msea.2023.145274).
+
+[Article](https://doi.org/10.1016%2Fj.msea.2023.145274)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3sXht1Cksb3N)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2023.145274&volume=879&publication_year=2023&author=Borse%2CMN&author=Bauri%2CR&author=Shankar%2CS)
+
+2.   P. B. Yaghi, S. Shankar, G. Birsan, K. Sadayappan, A. Lombardi, G. Byczynski: _North Am. Cast. Assoc. NADCA, 2021, p. 110._
+
+3.   S. Rajiv: _Mishra and Mageshwari Komarasamy: Friction Stir welding of high-strength 7XXX Aluminium Alloys_, 1st ed. Butterworth-Heinemann, Elsevier, Oxford, 9780128094655, 2016.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Mishra%20and%20Mageshwari%20Komarasamy%3A%20Friction%20Stir%20welding%20of%20high-strength%207XXX%20Aluminium%20Alloys&publication_year=2016&author=Rajiv%2CS)
+
+4.   R.S. Mishra and Z.Y. Ma: _Mater. Sci. Eng. R_, 2005, vol. 50, pp. 1–78. [https://doi.org/10.1016/j.mser.2005.07.001](https://doi.org/10.1016/j.mser.2005.07.001).
+
+[Article](https://doi.org/10.1016%2Fj.mser.2005.07.001)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2MXpvVWjs7g%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20R&doi=10.1016%2Fj.mser.2005.07.001&volume=50&pages=1-78&publication_year=2005&author=Mishra%2CRS&author=Ma%2CZY)
+
+5.   P.L. Threadgilll, A.J. Leonard, H.R. Shercliff, and P.J. Withers: _Int. Mater. Rev._, 2009, vol. 54, pp. 49–93. [https://doi.org/10.1179/174328009X411136](https://doi.org/10.1179/174328009X411136).
+
+[Article](https://doi.org/10.1179%2F174328009X411136)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1MXotlGisro%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20Mater.%20Rev.&doi=10.1179%2F174328009X411136&volume=54&pages=49-93&publication_year=2009&author=Threadgilll%2CPL&author=Leonard%2CAJ&author=Shercliff%2CHR&author=Withers%2CPJ)
+
+6.   S. Jana, R. S. Mishra, G. J. Grant: _Friction Stir Casting Modification for Enhanced Structural Efficiency: A Volume in the Friction Stir Welding and Processing Book Series,_ 1st ed., Butterworth-Heinemann, Elsevier, 2015. [https://doi.org/10.1016/C2014-0-02214-9](https://doi.org/10.1016/C2014-0-02214-9)
+
+7.   W.B. Lee, Y.M. Yeon, and S.B. Jung: _Mater. Sci. Eng. A_, 2003, vol. 355, pp. 154–59. [https://doi.org/10.1016/S0921-5093(03)00053-4](https://doi.org/10.1016/S0921-5093(03)00053-4).
+
+[Article](https://doi.org/10.1016%2FS0921-5093%2803%2900053-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3sXkvVWitrw%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2FS0921-5093%2803%2900053-4&volume=355&pages=154-159&publication_year=2003&author=Lee%2CWB&author=Yeon%2CYM&author=Jung%2CSB)
+
+8.   M.L. Santella, T. Engstrom, D. Storjohann, and T.Y. Pan: _Scr. Mater._, 2005, vol. 53, pp. 201–06. [https://doi.org/10.1016/j.scriptamat.2005.03.040](https://doi.org/10.1016/j.scriptamat.2005.03.040).
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2005.03.040)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2MXjvVCrt74%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2005.03.040&volume=53&pages=201-206&publication_year=2005&author=Santella%2CML&author=Engstrom%2CT&author=Storjohann%2CD&author=Pan%2CTY)
+
+9.   C.B. Fuller, M.W. Mahoney, M. Calabrese, and L. Micona: _Mater. Sci. Eng. A_, 2010, vol. 527, pp. 2233–40. [https://doi.org/10.1016/j.msea.2009.11.057](https://doi.org/10.1016/j.msea.2009.11.057).
+
+[Article](https://doi.org/10.1016%2Fj.msea.2009.11.057)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3cXhvFGgur8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2009.11.057&volume=527&pages=2233-2240&publication_year=2010&author=Fuller%2CCB&author=Mahoney%2CMW&author=Calabrese%2CM&author=Micona%2CL)
+
+10.   Y. Chen, H. Ding, Z. Cai, J. Zhao, and J. Li: _Mater. Sci. Eng. A_, 2016, vol. 650, pp. 396–403. [https://doi.org/10.1016/j.msea.2015.10.083](https://doi.org/10.1016/j.msea.2015.10.083).
+
+[Article](https://doi.org/10.1016%2Fj.msea.2015.10.083)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2MXhslakur7E)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2015.10.083&volume=650&pages=396-403&publication_year=2016&author=Chen%2CY&author=Ding%2CH&author=Cai%2CZ&author=Zhao%2CJ&author=Li%2CJ)
+
+11.   S. Mironov, K. Masaki, Y.S. Sato, and H. Kokawa: _Scr. Mater._, 2012, vol. 67(12), pp. 983–86. [https://doi.org/10.1016/j.scriptamat.2012.09.002](https://doi.org/10.1016/j.scriptamat.2012.09.002).
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2012.09.002)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC38XhsVWnu7rN)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2012.09.002&volume=67&issue=12&pages=983-986&publication_year=2012&author=Mironov%2CS&author=Masaki%2CK&author=Sato%2CYS&author=Kokawa%2CH)
+
+12.   I. Charit and R.S. Mishra: _Scr. Mater._, 2008, vol. 58(5), pp. 367–71. [https://doi.org/10.1016/j.scriptamat.2007.09.052](https://doi.org/10.1016/j.scriptamat.2007.09.052).
+
+[Article](https://doi.org/10.1016%2Fj.scriptamat.2007.09.052)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD1cXitVegsA%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2Fj.scriptamat.2007.09.052&volume=58&issue=5&pages=367-371&publication_year=2008&author=Charit%2CI&author=Mishra%2CRS)
+
+13.   P. Ma, C. Liu, Q. Chen, Q. Wang, L. Zhan, and J. Li: _J. Mater. Sci. Technol._, 2020, vol. 46, pp. 107–13. [https://doi.org/10.1016/j.jmst.2019.11.035](https://doi.org/10.1016/j.jmst.2019.11.035).
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2019.11.035)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XjtFyrsbrP)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2019.11.035&volume=46&pages=107-113&publication_year=2020&author=Ma%2CP&author=Liu%2CC&author=Chen%2CQ&author=Wang%2CQ&author=Zhan%2CL&author=Li%2CJ)
+
+14.   G.K. Sigworth, J. Howell, O. Rios, and M.J. Kaufman: _Int. J. Cast Met. Res._, 2006, vol. 19(2), pp. 123–29. [https://doi.org/10.1179/136404605225023198](https://doi.org/10.1179/136404605225023198).
+
+[Article](https://doi.org/10.1179%2F136404605225023198)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD28Xktlensbs%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Int.%20J.%20Cast%20Met.%20Res.&doi=10.1179%2F136404605225023198&volume=19&issue=2&pages=123-129&publication_year=2006&author=Sigworth%2CGK&author=Howell%2CJ&author=Rios%2CO&author=Kaufman%2CMJ)
+
+15.   Y. Geng, D. Zhang, J. Zhang, and L. Zhuang: _Mater. Sci. Eng. A_, 2022, [https://doi.org/10.1016/j.msea.2022.144015](https://doi.org/10.1016/j.msea.2022.144015).
+
+[Article](https://doi.org/10.1016%2Fj.msea.2022.144015)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2022.144015&publication_year=2022&author=Geng%2CY&author=Zhang%2CD&author=Zhang%2CJ&author=Zhuang%2CL)
+
+16.   J.D. Embury and R.B. Nicholson: _Acta Metall._, 1965, vol. 13(4), pp. 403–17. [https://doi.org/10.1016/0001-6160(65)90067-2](https://doi.org/10.1016/0001-6160(65)90067-2).
+
+[Article](https://doi.org/10.1016%2F0001-6160%2865%2990067-2)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaF2MXktVyrur8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.&doi=10.1016%2F0001-6160%2865%2990067-2&volume=13&issue=4&pages=403-417&publication_year=1965&author=Embury%2CJD&author=Nicholson%2CRB)
+
+17.   L.K. Berg, J. Gjønnes, V. Hansen, X.Z. Li, M. Knutson-Wedel, G. Waterloo, D. Schryvers, and L.R. Wallenberg: _Acta Mater._, 2001, vol. 49, pp. 3443–51.
+
+[Article](https://doi.org/10.1016%2FS1359-6454%2801%2900251-8)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3MXmvVegsL0%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2FS1359-6454%2801%2900251-8&volume=49&pages=3443-3451&publication_year=2001&author=Berg%2CLK&author=Gj%C3%B8nnes%2CJ&author=Hansen%2CV&author=Li%2CXZ&author=Knutson-Wedel%2CM&author=Waterloo%2CG&author=Schryvers%2CD&author=Wallenberg%2CLR)
+
+18.   J. Liu, R. Hu, J. Zheng, Y. Zhang, Z. Ding, W. Liu, Y. Zhu, and G. Sha: _J. Alloys Compd._, 2020, [https://doi.org/10.1016/j.jallcom.2019.153572](https://doi.org/10.1016/j.jallcom.2019.153572).
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2019.153572)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32661456)[PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7357186)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2019.153572&publication_year=2020&author=Liu%2CJ&author=Hu%2CR&author=Zheng%2CJ&author=Zhang%2CY&author=Ding%2CZ&author=Liu%2CW&author=Zhu%2CY&author=Sha%2CG)
+
+19.   J. Luo, H. Luo, S. Li, R. Wang, and Y. Ma: _Mater. Des._, 2020, vol. 187, 108402. [https://doi.org/10.1016/j.matdes.2019.108402](https://doi.org/10.1016/j.matdes.2019.108402).
+
+[Article](https://doi.org/10.1016%2Fj.matdes.2019.108402)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXht1Sis70%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Des.&doi=10.1016%2Fj.matdes.2019.108402&volume=187&publication_year=2020&author=Luo%2CJ&author=Luo%2CH&author=Li%2CS&author=Wang%2CR&author=Ma%2CY)
+
+20.   T. Chung, Y. Yang, B. Huang, Z. Shi, J. Lin, T. Ohmura, and J. Yang: _Acta Mater._, 2018, vol. 149(2018), pp. 377–87. [https://doi.org/10.1016/j.actamat.2018.02.045](https://doi.org/10.1016/j.actamat.2018.02.045).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2018.02.045)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1cXkt1Klu7s%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2018.02.045&volume=149&issue=2018&pages=377-387&publication_year=2018&author=Chung%2CT&author=Yang%2CY&author=Huang%2CB&author=Shi%2CZ&author=Lin%2CJ&author=Ohmura%2CT&author=Yang%2CJ)
+
+21.   M. S. Khushaim: PhD thesis, 2015, King Abdullah University of Science and Technology Thuwal, Kingdom of Saudi Arabia. [https://doi.org/10.25781/KAUST-LDJ0E](https://doi.org/10.25781/KAUST-LDJ0E)
+
+22.   I. Basu, K.G. Pradeep, C. Mießen, L.A. Barrales-Mora, and T. Al-Samman: _Acta Mater._, 2016, vol. 116, pp. 77–94. [https://doi.org/10.1016/j.actamat.2016.06.024](https://doi.org/10.1016/j.actamat.2016.06.024).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2016.06.024)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC28XhtVCktL7F)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2016.06.024&volume=116&pages=77-94&publication_year=2016&author=Basu%2CI&author=Pradeep%2CKG&author=Mie%C3%9Fen%2CC&author=Barrales-Mora%2CLA&author=Al-Samman%2CT)
+
+23.   G. Sha and A. Cerezo: _Acta Mater._, 2004, vol. 52(15), pp. 4503–16. [https://doi.org/10.1016/j.actamat.2004.06.025](https://doi.org/10.1016/j.actamat.2004.06.025).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2004.06.025)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2cXms1Cnt7Y%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2004.06.025&volume=52&issue=15&pages=4503-4516&publication_year=2004&author=Sha%2CG&author=Cerezo%2CA)
+
+24.   D.H. Kim: _J. Mater. Sci._, 1994, vol. 29, pp. 2884–92. [https://doi.org/10.1007/BF01117597](https://doi.org/10.1007/BF01117597).
+
+[Article](https://link.springer.com/doi/10.1007/BF01117597)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2FBF01117597&volume=29&pages=2884-2892&publication_year=1994&author=Kim%2CDH)
+
+25.   K.K. Fung, X.D. Zou, and C.Y. Yang: _Philos. Mag. Lett._, 1987, vol. 55(1), pp. 27–32.
+
+[Article](https://doi.org/10.1080%2F09500838708210436)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaL2sXht1Cit7k%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Philos.%20Mag.%20Lett.&doi=10.1080%2F09500838708210436&volume=55&issue=1&pages=27-32&publication_year=1987&author=Fung%2CKK&author=Zou%2CXD&author=Yang%2CCY)
+
+26.   P.J. Black: _Acta Crystallogr._, 1955, vol. 8, pp. 43–48. [https://doi.org/10.1107/S0365110X5500011X](https://doi.org/10.1107/S0365110X5500011X).
+
+[Article](https://doi.org/10.1107%2FS0365110X5500011X)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaG2MXjvVWqsQ%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Crystallogr.&doi=10.1107%2FS0365110X5500011X&volume=8&pages=43-48&publication_year=1955&author=Black%2CPJ)
+
+27.   P. Skjerpe: _Metall. Trans. A_, 1987, vol. 18, pp. 189–200. [https://doi.org/10.1007/BF02825700](https://doi.org/10.1007/BF02825700).
+
+[Article](https://link.springer.com/doi/10.1007/BF02825700)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Trans.%20A&doi=10.1007%2FBF02825700&volume=18&pages=189-200&publication_year=1987&author=Skjerpe%2CP)
+
+28.   C.A. Aliravci and M.Ö. Pekgüleryüz: _Calphad_, 1998, vol. 22(2), pp. 147–55. [https://doi.org/10.1016/s0364-5916(98)00020-0](https://doi.org/10.1016/s0364-5916(98)00020-0).
+
+[Article](https://doi.org/10.1016%2Fs0364-5916%2898%2900020-0)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK1cXnsFOnsL4%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Calphad&doi=10.1016%2Fs0364-5916%2898%2900020-0&volume=22&issue=2&pages=147-155&publication_year=1998&author=Aliravci%2CCA&author=Pekg%C3%BClery%C3%BCz%2CM%C3%96)
+
+29.   M.N. Borse and R. Bauri: _Mater. Today Commun._, 2024, [https://doi.org/10.1016/j.mtcomm.2024.109954](https://doi.org/10.1016/j.mtcomm.2024.109954).
+
+[Article](https://doi.org/10.1016%2Fj.mtcomm.2024.109954)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Today%20Commun.&doi=10.1016%2Fj.mtcomm.2024.109954&publication_year=2024&author=Borse%2CMN&author=Bauri%2CR)
+
+30.   C. Wu: _Quantitative Metallography, Optimization of HVHPC Process and Modelling Solute Homogenization During Solutionizing of Al-4Zn-1Mg-1.2Fe-0.1Ti Alloy_, M.A.Sc. Thesis, McMaster University, Hamilton, ON Canada, 2019.
+
+31.   A. Gorny, J. Manickaraj, Z. Cai, and S. Shankar: _J. Alloys Compd._, 2013, vol. 577, pp. 103–24. [https://doi.org/10.1016/j.jallcom.2013.04.139](https://doi.org/10.1016/j.jallcom.2013.04.139).
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2013.04.139)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXht1CqurzJ)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2013.04.139&volume=577&pages=103-124&publication_year=2013&author=Gorny%2CA&author=Manickaraj%2CJ&author=Cai%2CZ&author=Shankar%2CS)
+
+32.   N. Isono, P.M. Smith, D. Turnbull, and M.J. Aziz: _Metall. Mater. Trans. A_, 1996, vol. 27A, pp. 725–30. [https://doi.org/10.1007/BF02648959](https://doi.org/10.1007/BF02648959).
+
+[Article](https://link.springer.com/doi/10.1007/BF02648959)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK28XhvFehtLw%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2FBF02648959&volume=27A&pages=725-730&publication_year=1996&author=Isono%2CN&author=Smith%2CPM&author=Turnbull%2CD&author=Aziz%2CMJ)
+
+33.   A. Heidarzadeh, S. Mironov, R. Kaibyshev, G. Çam, A. Simar, A. Gerlich, F. Khodabakhshi, A. Mostafaei, D.P. Field, J.D. Robson, A. Deschamps, and P.J. Withers: _Prog. Mater. Sci._, 2021, vol. 117, 100752. [https://doi.org/10.1016/j.pmatsci.2020.100752](https://doi.org/10.1016/j.pmatsci.2020.100752).
+
+[Article](https://doi.org/10.1016%2Fj.pmatsci.2020.100752)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXit1Wnu7fM)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Prog.%20Mater.%20Sci.&doi=10.1016%2Fj.pmatsci.2020.100752&volume=117&publication_year=2021&author=Heidarzadeh%2CA&author=Mironov%2CS&author=Kaibyshev%2CR&author=%C3%87am%2CG&author=Simar%2CA&author=Gerlich%2CA&author=Khodabakhshi%2CF&author=Mostafaei%2CA&author=Field%2CDP&author=Robson%2CJD&author=Deschamps%2CA&author=Withers%2CPJ)
+
+34.   J.Q. Su, T.W. Nelson, and C.J. Sterling: _Mater. Sci. Eng. A_, 2005, vol. 405, pp. 277–86. [https://doi.org/10.1016/j.msea.2005.06.009](https://doi.org/10.1016/j.msea.2005.06.009).
+
+[Article](https://doi.org/10.1016%2Fj.msea.2005.06.009)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD2MXps12rtbY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.%20A&doi=10.1016%2Fj.msea.2005.06.009&volume=405&pages=277-286&publication_year=2005&author=Su%2CJQ&author=Nelson%2CTW&author=Sterling%2CCJ)
+
+35.   J.Q. Su, T.W. Nelson, R. Mishra, and M. Mahoney: _Acta Mater._, 2003, vol. 51, pp. 713–29. [https://doi.org/10.1016/S1359-6454(02)00449-4](https://doi.org/10.1016/S1359-6454(02)00449-4).
+
+[Article](https://doi.org/10.1016%2FS1359-6454%2802%2900449-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD3sXmtVaitw%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2FS1359-6454%2802%2900449-4&volume=51&pages=713-729&publication_year=2003&author=Su%2CJQ&author=Nelson%2CTW&author=Mishra%2CR&author=Mahoney%2CM)
+
+36.   A. Mazilkin, B. Straumal, A. Kilmametov, P. Straumal, and B. Baretzky: _Mater. Trans._, 2019, vol. 60(8), pp. 1489–99. [https://doi.org/10.2320/matertrans.MF201938](https://doi.org/10.2320/matertrans.MF201938).
+
+[Article](https://doi.org/10.2320%2Fmatertrans.MF201938)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC1MXitlKmtb%2FF)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Trans.&doi=10.2320%2Fmatertrans.MF201938&volume=60&issue=8&pages=1489-1499&publication_year=2019&author=Mazilkin%2CA&author=Straumal%2CB&author=Kilmametov%2CA&author=Straumal%2CP&author=Baretzky%2CB)
+
+37.   O.N. Senkov, F.H. Froes, V.V. Stolyarov, R.Z. Valiev, and J. Liu: _Scr. Mater._, 1998, vol. 38(10), pp. 1511–16. [https://doi.org/10.1016/S1359-6462(98)00073-6](https://doi.org/10.1016/S1359-6462(98)00073-6).
+
+[Article](https://doi.org/10.1016%2FS1359-6462%2898%2900073-6)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK1cXjtFKrtLk%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2FS1359-6462%2898%2900073-6&volume=38&issue=10&pages=1511-1516&publication_year=1998&author=Senkov%2CON&author=Froes%2CFH&author=Stolyarov%2CVV&author=Valiev%2CRZ&author=Liu%2CJ)
+
+38.   B. Fultz and J. Howe: _Transmission Electron Microscopy and Diffractometry of Materials_, 3rd ed, 978-3-540-73885-5. Springer, Berlin, 2007.
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Transmission%20Electron%20Microscopy%20and%20Diffractometry%20of%20Materials&publication_year=2007&author=Fultz%2CB&author=Howe%2CJ)
+
+39.   Kathleen Mills: _Fractography\_ASM Handbook,_ Volume 12, ASM International, 1987. ISBN: 978-0-87170-018-6
+
+40.   S. Ceresara and P. Fiorini: _Mater. Sci. Eng._, 1972, vol. 10, pp. 205–10. [https://doi.org/10.1016/0025-5416(72)90090-0](https://doi.org/10.1016/0025-5416(72)90090-0).
+
+[Article](https://doi.org/10.1016%2F0025-5416%2872%2990090-0)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaE38Xlt12lt7s%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Sci.%20Eng.&doi=10.1016%2F0025-5416%2872%2990090-0&volume=10&pages=205-210&publication_year=1972&author=Ceresara%2CS&author=Fiorini%2CP)
+
+41.   G. Honyek, I. Kovåcs J. Lendvai, Ng-Huy-Sinh, T. Ungår, H. Löffler & R. Gerlach: _J. Mater. Sci._, 1981, vol. 16, pp. 2701–09. [https://doi.org/10.1007/bf00552952](https://doi.org/10.1007/bf00552952)
+
+42.   H. Löffler, I. Kovåcs, and J. Lendvai: _J. Mater. Sci._, 1983, vol. 18, pp. 2215–40. [https://doi.org/10.1007/BF00541825](https://doi.org/10.1007/BF00541825).
+
+[Article](https://link.springer.com/doi/10.1007/BF00541825)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2FBF00541825&volume=18&pages=2215-2240&publication_year=1983&author=L%C3%B6ffler%2CH&author=Kov%C3%A5cs%2CI&author=Lendvai%2CJ)
+
+43.   C. Panserit and T. Federighi: _Acta Metall._, 1963, vol. 11, pp. 575–84.
+
+[Article](https://doi.org/10.1016%2F0001-6160%2863%2990091-9)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.&doi=10.1016%2F0001-6160%2863%2990091-9&volume=11&pages=575-584&publication_year=1963&author=Panserit%2CC&author=Federighi%2CT)
+
+44.   Y. Zou, X. Wu, S. Tang, Q. Zhu, H. Song, M. Guo, and L. Cao: _J. Mater. Sci. Technol._, 2021, vol. 85, pp. 106–17. [https://doi.org/10.1016/j.jmst.2020.12.045](https://doi.org/10.1016/j.jmst.2020.12.045).
+
+[Article](https://doi.org/10.1016%2Fj.jmst.2020.12.045)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB38XhtlOltr%2FL)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.%20Technol.&doi=10.1016%2Fj.jmst.2020.12.045&volume=85&pages=106-117&publication_year=2021&author=Zou%2CY&author=Wu%2CX&author=Tang%2CS&author=Zhu%2CQ&author=Song%2CH&author=Guo%2CM&author=Cao%2CL)
+
+45.   G. Dlubek, R. Krause, O. Brümmer, and F. Plazaola: _J. Mater. Sci._, 1986, vol. 21, pp. 853–58. [https://doi.org/10.1007/BF01117364](https://doi.org/10.1007/BF01117364).
+
+[Article](https://link.springer.com/doi/10.1007/BF01117364)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaL28XhsFert7k%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2FBF01117364&volume=21&pages=853-858&publication_year=1986&author=Dlubek%2CG&author=Krause%2CR&author=Br%C3%BCmmer%2CO&author=Plazaola%2CF)
+
+46.   C. Wu, K. Ma, D. Zhang, J. Wu, S. Xiong, G. Luo, J. Zhang, F. Chen, Q. Shen, L. Zhang, and E.J. Lavernia: _Sci. Rep._, 2017, vol. 7(1), p. 9589. [https://doi.org/10.1038/s41598-017-10291-4](https://doi.org/10.1038/s41598-017-10291-4).
+
+[Article](https://doi.org/10.1038%2Fs41598-017-10291-4)[PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=28852113)[PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5575324)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Sci.%20Rep.&doi=10.1038%2Fs41598-017-10291-4&volume=7&issue=1&publication_year=2017&author=Wu%2CC&author=Ma%2CK&author=Zhang%2CD&author=Wu%2CJ&author=Xiong%2CS&author=Luo%2CG&author=Zhang%2CJ&author=Chen%2CF&author=Shen%2CQ&author=Zhang%2CL&author=Lavernia%2CEJ)
+
+47.   C. Orji: _Strengthening during natural ageing of thin-walled structural castings of (Al, Zn, Mg)-Fe dilute eutectic alloy_, M.A.Sc. Thesis, McMaster University, Hamilton, ON Canada, 2023.
+
+48.   X.J. Jiang, B. Holme, G. Waterlooj, B. Noble, and L. Tafto: _Metall. Mater. Trans. A_, 2000, vol. 31, pp. 339–48. [https://doi.org/10.1007/s11661-000-0269-x](https://doi.org/10.1007/s11661-000-0269-x).
+
+[Article](https://link.springer.com/doi/10.1007/s11661-000-0269-x)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Metall.%20Mater.%20Trans.%20A&doi=10.1007%2Fs11661-000-0269-x&volume=31&pages=339-348&publication_year=2000&author=Jiang%2CXJ&author=Holme%2CB&author=Waterlooj%2CG&author=Noble%2CB&author=Tafto%2CL)
+
+49.   Y. Chen, C.Y. Liu, B. Zhang, F.C. Qin, and Y.F. Hou: _J. Alloys Compd._, 2020, vol. 825, 154005. [https://doi.org/10.1016/j.jallcom.2020.154005](https://doi.org/10.1016/j.jallcom.2020.154005).
+
+[Article](https://doi.org/10.1016%2Fj.jallcom.2020.154005)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BB3cXisVWnurY%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Alloys%20Compd.&doi=10.1016%2Fj.jallcom.2020.154005&volume=825&publication_year=2020&author=Chen%2CY&author=Liu%2CCY&author=Zhang%2CB&author=Qin%2CFC&author=Hou%2CYF)
+
+50.   I. Kovåcs, J. Lendvai, T. Ungår, G. Groma, and J. Lakner: _Acta Metall._, 1980, vol. 28, pp. 621–31. [https://doi.org/10.1016/0001-6160(80)90015-2](https://doi.org/10.1016/0001-6160(80)90015-2).
+
+[Article](https://doi.org/10.1016%2F0001-6160%2880%2990015-2)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.&doi=10.1016%2F0001-6160%2880%2990015-2&volume=28&pages=621-631&publication_year=1980&author=Kov%C3%A5cs%2CI&author=Lendvai%2CJ&author=Ung%C3%A5r%2CT&author=Groma%2CG&author=Lakner%2CJ)
+
+51.   E. Hornbogen: _J. Light. Met._, 2001, vol. 1, pp. 127–32. [https://doi.org/10.1016/S1471-5317(01)00006-2](https://doi.org/10.1016/S1471-5317(01)00006-2).
+
+[Article](https://doi.org/10.1016%2FS1471-5317%2801%2900006-2)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Light.%20Met.&doi=10.1016%2FS1471-5317%2801%2900006-2&volume=1&pages=127-132&publication_year=2001&author=Hornbogen%2CE)
+
+52.   A. Juhász, I. Kovacs, J. Lendvai, and P. Tasnadi: _J. Mater. Sci._, 1985, vol. 20, pp. 624–29.
+
+[Article](https://link.springer.com/doi/10.1007/BF01026534)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=J.%20Mater.%20Sci.&doi=10.1007%2FBF01026534&volume=20&pages=624-629&publication_year=1985&author=Juh%C3%A1sz%2CA&author=Kovacs%2CI&author=Lendvai%2CJ&author=Tasnadi%2CP)
+
+53.   Z. Guo and W. Sha: _Mater. Trans._, 2002, vol. 43(6), pp. 1273–82. [https://doi.org/10.2320/matertrans.43.1273](https://doi.org/10.2320/matertrans.43.1273).
+
+[Article](https://doi.org/10.2320%2Fmatertrans.43.1273)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BD38Xls1SitLg%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Trans.&doi=10.2320%2Fmatertrans.43.1273&volume=43&issue=6&pages=1273-1282&publication_year=2002&author=Guo%2CZ&author=Sha%2CW)
+
+54.   S. Otarawanna, C.M. Gourlay, H.I. Laukli, and A.K. Dahle: _Mater. Chem. Phys._, 2011, vol. 130, pp. 251–58. [https://doi.org/10.1016/j.matchemphys.2011.06.035](https://doi.org/10.1016/j.matchemphys.2011.06.035).
+
+[Article](https://doi.org/10.1016%2Fj.matchemphys.2011.06.035)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3MXhtFClsrrO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Mater.%20Chem.%20Phys.&doi=10.1016%2Fj.matchemphys.2011.06.035&volume=130&pages=251-258&publication_year=2011&author=Otarawanna%2CS&author=Gourlay%2CCM&author=Laukli%2CHI&author=Dahle%2CAK)
+
+55.   B. Zhao, S. Xing, W. Gao & G. Yan: _J. Mater. Process. Technol._, 2024 vol. 324. [https://doi.org/10.1016/j.jmatprotec.2023.118239](https://doi.org/10.1016/j.jmatprotec.2023.118239)
+
+56.   Gu, G. Chao, Xiang, L. Xin, Li, R. Fen, Zheng, H. Liang, Lu, Y. Peng, and R. Pesci: _J. Mater. Sci. Technol_., 2023, vol. 26, pp. 7803–15. [https://doi.org/10.1016/j.jmrt.2023.09.153](https://doi.org/10.1016/j.jmrt.2023.09.153).
+
+57.   J.W. Cahn: _Acta Metall._, 1957, vol. 5, p. 169. [https://doi.org/10.1016/0001-6160(57)90021-4](https://doi.org/10.1016/0001-6160(57)90021-4).
+
+[Article](https://doi.org/10.1016%2F0001-6160%2857%2990021-4)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaG2sXjslKgsA%3D%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Metall.&doi=10.1016%2F0001-6160%2857%2990021-4&volume=5&publication_year=1957&author=Cahn%2CJW)
+
+58.   A. Deschamps, B. Milkereit, and P.A. Romet: _Scr. Mater._, 1998, vol. 39(11), pp. 1517–22. [https://doi.org/10.1016/S1359-6462(98)00357-1](https://doi.org/10.1016/S1359-6462(98)00357-1).
+
+[Article](https://doi.org/10.1016%2FS1359-6462%2898%2900357-1)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DyaK1cXnsFKltL8%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Scr.%20Mater.&doi=10.1016%2FS1359-6462%2898%2900357-1&volume=39&issue=11&pages=1517-1522&publication_year=1998&author=Deschamps%2CA&author=Milkereit%2CB&author=Romet%2CPA)
+
+59.   T. Hu, K. Ma, T.D. Topping, J.M. Schoenung, and E.J. Lavernia: _Acta Mater._, 2013, vol. 61(6), pp. 2163–78. [https://doi.org/10.1016/j.actamat.2012.12.037](https://doi.org/10.1016/j.actamat.2012.12.037).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2012.12.037)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC3sXhvFWksLw%3D)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2012.12.037&volume=61&issue=6&pages=2163-2178&publication_year=2013&author=Hu%2CT&author=Ma%2CK&author=Topping%2CTD&author=Schoenung%2CJM&author=Lavernia%2CEJ)
+
+60.   K. Ma, T. Hu, H. Yang, T. Topping, A. Yousefiani, E.J. Lavernia, and J.M. Schoenung: _Acta Mater._, 2016, vol. 103, pp. 153–64. [https://doi.org/10.1016/j.actamat.2015.09.017](https://doi.org/10.1016/j.actamat.2015.09.017).
+
+[Article](https://doi.org/10.1016%2Fj.actamat.2015.09.017)[CAS](https://link.springer.com/articles/cas-redirect/1:CAS:528:DC%2BC2MXhs1ykurbO)[Google Scholar](http://scholar.google.com/scholar_lookup?&title=&journal=Acta%20Mater.&doi=10.1016%2Fj.actamat.2015.09.017&volume=103&pages=153-164&publication_year=2016&author=Ma%2CK&author=Hu%2CT&author=Yang%2CH&author=Topping%2CT&author=Yousefiani%2CA&author=Lavernia%2CEJ&author=Schoenung%2CJM)
+
+61.   J. W. Martin: _Micromechanisms in Particle-Hardened Alloys,_ Cambridge University Press, 1980. ISBN: 0521295807
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1007/s11661-026-08180-5?format=refman&flavour=references)

@@ -1,0 +1,150 @@
+Title: Framework to completely bypass expensive DFT calculations via graph neural networks for vacancy formation energy predictions in FCC high entropy alloys
+
+URL Source: https://www.nature.com/articles/s41524-026-02037-6
+
+Markdown Content:
+## References
+
+1.   George, E. P., Raabe, D. & Ritchie, R. O. High-entropy alloys. _Nat. Rev. Mater._**4**, 515–534 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-entropy%20alloys&journal=Nat.%20Rev.%20Mater.&volume=4&pages=515-534&publication_year=2019&author=George%2CEP&author=Raabe%2CD&author=Ritchie%2CRO)
+
+2.   Gali, A. & George, E. P. Tensile properties of high-and medium-entropy alloys. _Intermetallics_**39**, 74–78 (2013).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Tensile%20properties%20of%20high-and%20medium-entropy%20alloys&journal=Intermetallics&volume=39&pages=74-78&publication_year=2013&author=Gali%2CA&author=George%2CEP)
+
+3.   Li, Z., Pradeep, K. G., Deng, Y., Raabe, D. & Tasan, C. C. Metastable high-entropy dual-phase alloys overcome the strength–ductility trade-off. _Nature_**534**, 227–230 (2016).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Metastable%20high-entropy%20dual-phase%20alloys%20overcome%20the%20strength%E2%80%93ductility%20trade-off&journal=Nature&volume=534&pages=227-230&publication_year=2016&author=Li%2CZ&author=Pradeep%2CKG&author=Deng%2CY&author=Raabe%2CD&author=Tasan%2CCC)
+
+4.   Li, Z., Körmann, F., Grabowski, B., Neugebauer, J. & Raabe, D. Ab initio assisted design of quinary dual-phase high-entropy alloys with transformation-induced plasticity. _Acta Mater._**136**, 262–270 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Ab%20initio%20assisted%20design%20of%20quinary%20dual-phase%20high-entropy%20alloys%20with%20transformation-induced%20plasticity&journal=Acta%20Mater.&volume=136&pages=262-270&publication_year=2017&author=Li%2CZ&author=K%C3%B6rmann%2CF&author=Grabowski%2CB&author=Neugebauer%2CJ&author=Raabe%2CD)
+
+5.   Jiang, W., Cao, Y., Yuan, S., Zhang, Y. & Zhao, Y. Creep properties and deformation mechanisms of a ni2co1fe1v0. 5mo0. 2 medium-entropy alloy. _Acta Mater._**245**, 118590 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Creep%20properties%20and%20deformation%20mechanisms%20of%20a%20ni2co1fe1v0.%205mo0.%202%20medium-entropy%20alloy&journal=Acta%20Mater.&volume=245&publication_year=2023&author=Jiang%2CW&author=Cao%2CY&author=Yuan%2CS&author=Zhang%2CY&author=Zhao%2CY)
+
+6.   Laplanche, G., Kostka, A., Horst, O., Eggeler, G. & George, E. Microstructure evolution and critical stress for twinning in the crmnfeconi high-entropy alloy. _Acta Mater._**118**, 152–163 (2016).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Microstructure%20evolution%20and%20critical%20stress%20for%20twinning%20in%20the%20crmnfeconi%20high-entropy%20alloy&journal=Acta%20Mater.&volume=118&pages=152-163&publication_year=2016&author=Laplanche%2CG&author=Kostka%2CA&author=Horst%2CO&author=Eggeler%2CG&author=George%2CE)
+
+7.   Verma, V., Belcher, C. H., Apelian, D. & Lavernia, E. J. Diffusion in high entropy alloy systems–a review. _Prog. Mater. Sci._**142**, 101245 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Diffusion%20in%20high%20entropy%20alloy%20systems%E2%80%93a%20review&journal=Prog.%20Mater.%20Sci.&volume=142&publication_year=2024&author=Verma%2CV&author=Belcher%2CCH&author=Apelian%2CD&author=Lavernia%2CEJ)
+
+8.   Tsai, M.-H. & Yeh, J.-W. High-entropy alloys: a critical review. _Mater. Res. Lett._**2**, 107–123 (2014).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-entropy%20alloys%3A%20a%20critical%20review&journal=Mater.%20Res.%20Lett.&volume=2&pages=107-123&publication_year=2014&author=Tsai%2CM-H&author=Yeh%2CJ-W)
+
+9.   Miracle, D. B. & Senkov, O. N. A critical review of high entropy alloys and related concepts. _Acta Mater._**122**, 448–511 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20critical%20review%20of%20high%20entropy%20alloys%20and%20related%20concepts&journal=Acta%20Mater.&volume=122&pages=448-511&publication_year=2017&author=Miracle%2CDB&author=Senkov%2CON)
+
+10.   Wang, D., Tan, J., Li, C., Qin, X. & Guo, S. Enhanced creep resistance of ti30al25zr25nb20 high-entropy alloy at room temperature. _J. Alloy. Compd._**885**, 161038 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Enhanced%20creep%20resistance%20of%20ti30al25zr25nb20%20high-entropy%20alloy%20at%20room%20temperature&journal=J.%20Alloy.%20Compd.&volume=885&publication_year=2021&author=Wang%2CD&author=Tan%2CJ&author=Li%2CC&author=Qin%2CX&author=Guo%2CS)
+
+11.   Okamoto, N. L., Yuge, K., Tanaka, K., Inui, H. & George, E. P. Atomic displacement in the crmnfeconi high-entropy alloy–a scaling factor to predict solid solution strengthening. _AIP Adv._**6**, 125008 (2016).
+
+12.   Tsai, M. et al. Creep of face-centered-cubic {111} and {100} grains in feconicrmn and feconicrmnal alloys: Orientation and solid solution effects. _Intermetallics_**103**, 88–96 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Creep%20of%20face-centered-cubic%20%7B111%7D%20and%20%7B100%7D%20grains%20in%20feconicrmn%20and%20feconicrmnal%20alloys%3A%20Orientation%20and%20solid%20solution%20effects&journal=Intermetallics&volume=103&pages=88-96&publication_year=2018&author=Tsai%2CM)
+
+13.   Aidhy, D. S. Chemical randomness, lattice distortion and the wide distributions in the atomic level properties in high entropy alloys. _Comput. Mater. Sci._**237**, 112912 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Chemical%20randomness%2C%20lattice%20distortion%20and%20the%20wide%20distributions%20in%20the%20atomic%20level%20properties%20in%20high%20entropy%20alloys&journal=Comput.%20Mater.%20Sci.&volume=237&publication_year=2024&author=Aidhy%2CDS)
+
+14.   Manzoor, A. et al. Machine learning based methodology to predict point defect energies in multi-principal element alloys. _Front. Mater._**8**, 673574 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20based%20methodology%20to%20predict%20point%20defect%20energies%20in%20multi-principal%20element%20alloys&journal=Front.%20Mater.&volume=8&publication_year=2021&author=Manzoor%2CA)
+
+15.   Linton, N. & Aidhy, D. S. A machine learning framework for elastic constants predictions in multi-principal element alloys. _APL Mach. Learn._**1**, 016109 (2023).
+
+16.   Saidi, W. A., Shadid, W. & Castelli, I. E. Machine-learning structural and electronic properties of metal halide perovskites using a hierarchical convolutional neural network. _npj Comput. Mater._**6**, 36 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine-learning%20structural%20and%20electronic%20properties%20of%20metal%20halide%20perovskites%20using%20a%20hierarchical%20convolutional%20neural%20network&journal=npj%20Comput.%20Mater.&volume=6&publication_year=2020&author=Saidi%2CWA&author=Shadid%2CW&author=Castelli%2CIE)
+
+17.   Saidi, W. A., Shadid, W. & Veser, G. Optimization of high-entropy alloy catalyst for ammonia decomposition and ammonia synthesis. _J. Phys. Chem. Lett._**12**, 5185–5192 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Optimization%20of%20high-entropy%20alloy%20catalyst%20for%20ammonia%20decomposition%20and%20ammonia%20synthesis&journal=J.%20Phys.%20Chem.%20Lett.&volume=12&pages=5185-5192&publication_year=2021&author=Saidi%2CWA&author=Shadid%2CW&author=Veser%2CG)
+
+18.   Fey, M. & Lenssen, J. E. Fast graph representation learning with pytorch geometric. Preprint at [https://arxiv.org/abs/1903.02428](https://arxiv.org/abs/1903.02428) (2019).
+
+19.   Xie, T. & Grossman, J. C. Crystal graph convolutional neural networks for an accurate and interpretable prediction of material properties. _Phys. Rev. Lett._**120**, 145301 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Crystal%20graph%20convolutional%20neural%20networks%20for%20an%20accurate%20and%20interpretable%20prediction%20of%20material%20properties&journal=Phys.%20Rev.%20Lett.&volume=120&publication_year=2018&author=Xie%2CT&author=Grossman%2CJC)
+
+20.   Choudhary, K. & Sumpter, B. G. Can a deep-learning model make fast predictions of vacancy formation in diverse materials? _AIP Adv._**13**, 095109 (2023).
+
+21.   Cheng, Y. et al. Vacancy formation energy and its connection with bonding environment in solid: A high-throughput calculation and machine learning study. _Comput. Mater. Sci._**183**, 109803 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Vacancy%20formation%20energy%20and%20its%20connection%20with%20bonding%20environment%20in%20solid%3A%20A%20high-throughput%20calculation%20and%20machine%20learning%20study&journal=Comput.%20Mater.%20Sci.&volume=183&publication_year=2020&author=Cheng%2CY)
+
+22.   Deng, B. et al. Chgnet as a pretrained universal neural network potential for charge-informed atomistic modelling. _Nat. Mach. Intell._**5**, 1031–1041 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Chgnet%20as%20a%20pretrained%20universal%20neural%20network%20potential%20for%20charge-informed%20atomistic%20modelling&journal=Nat.%20Mach.%20Intell.&volume=5&pages=1031-1041&publication_year=2023&author=Deng%2CB)
+
+23.   Choudhary, K. et al. Unified graph neural network force-field for the periodic table: solid state applications. _Digital Discov._**2**, 346–355 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Unified%20graph%20neural%20network%20force-field%20for%20the%20periodic%20table%3A%20solid%20state%20applications&journal=Digital%20Discov.&volume=2&pages=346-355&publication_year=2023&author=Choudhary%2CK)
+
+24.   Chen, C. & Ong, S. P. A universal graph deep learning interatomic potential for the periodic table. _Nat. Comput. Sci._**2**, 718–728 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20universal%20graph%20deep%20learning%20interatomic%20potential%20for%20the%20periodic%20table&journal=Nat.%20Comput.%20Sci.&volume=2&pages=718-728&publication_year=2022&author=Chen%2CC&author=Ong%2CSP)
+
+25.   Jain, A. et al. Commentary: The materials project: A materials genome approach to accelerating materials innovation. _APL Mater._**1** 011002 (2013).
+
+26.   Walsh, F., Asta, M. & Ritchie, R. O. Magnetically driven short-range order can explain anomalous measurements in crconi. _Proc. Natl. Acad. Sci._**118**, e2020540118 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Magnetically%20driven%20short-range%20order%20can%20explain%20anomalous%20measurements%20in%20crconi&journal=Proc.%20Natl.%20Acad.%20Sci.&volume=118&publication_year=2021&author=Walsh%2CF&author=Asta%2CM&author=Ritchie%2CRO)
+
+27.   Linton, N. & Aidhy, D. S. Mechanistic understanding of vacancy formation energies in fcc concentrated alloys from dft calculations. _Acta Mater._**289**, 120874 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Mechanistic%20understanding%20of%20vacancy%20formation%20energies%20in%20fcc%20concentrated%20alloys%20from%20dft%20calculations&journal=Acta%20Mater.&volume=289&publication_year=2025&author=Linton%2CN&author=Aidhy%2CDS)
+
+28.   Zhang, Y., Zhou, Y. J., Lin, J. P., Chen, G. L. & Liaw, P. K. Solid-solution phase formation rules for multi-component alloys. _Adv. Eng. Mater._**10**, 534–538 (2008).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Solid-solution%20phase%20formation%20rules%20for%20multi-component%20alloys&journal=Adv.%20Eng.%20Mater.&volume=10&pages=534-538&publication_year=2008&author=Zhang%2CY&author=Zhou%2CYJ&author=Lin%2CJP&author=Chen%2CGL&author=Liaw%2CPK)
+
+29.   Mirzaee, H. et al. Elastic constants from charge density distribution in FCC high-entropy alloys using CNN and DFT. _APL Mach. Learn._**2**, 046104 (2024).
+
+30.   Witman, M. D., Goyal, A., Ogitsu, T., McDaniel, A. H. & Lany, S. Defect graph neural networks for materials discovery in high-temperature clean-energy applications. _Nat. Comput. Sci._**3**, 675–686 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Defect%20graph%20neural%20networks%20for%20materials%20discovery%20in%20high-temperature%20clean-energy%20applications&journal=Nat.%20Comput.%20Sci.&volume=3&pages=675-686&publication_year=2023&author=Witman%2CMD&author=Goyal%2CA&author=Ogitsu%2CT&author=McDaniel%2CAH&author=Lany%2CS)
+
+31.   Jain, A. Machine learning in materials research: developments over the last decade and challenges for the future. _Curr. Opin. Solid State Mater. Sci._**33**, 101189 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20in%20materials%20research%3A%20developments%20over%20the%20last%20decade%20and%20challenges%20for%20the%20future&journal=Curr.%20Opin.%20Solid%20State%20Mater.%20Sci.&volume=33&publication_year=2024&author=Jain%2CA)
+
+32.   Kresse, G. & Furthmüller, J. Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave basis set. _Comput. Mater. Sci._**6**, 15–50 (1996).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Efficiency%20of%20ab-initio%20total%20energy%20calculations%20for%20metals%20and%20semiconductors%20using%20a%20plane-wave%20basis%20set&journal=Comput.%20Mater.%20Sci.&volume=6&pages=15-50&publication_year=1996&author=Kresse%2CG&author=Furthm%C3%BCller%2CJ)
+
+33.   Kresse, G. & Furthmüller, J. Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set. _Phys. Rev. B_**54**, 11169 (1996).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Efficient%20iterative%20schemes%20for%20ab%20initio%20total-energy%20calculations%20using%20a%20plane-wave%20basis%20set&journal=Phys.%20Rev.%20B&volume=54&publication_year=1996&author=Kresse%2CG&author=Furthm%C3%BCller%2CJ)
+
+34.   Kresse, G. & Hafner, J. Ab initio molecular dynamics for liquid metals. _Phys. Rev. B_**47**, 558 (1993).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Ab%20initio%20molecular%20dynamics%20for%20liquid%20metals&journal=Phys.%20Rev.%20B&volume=47&publication_year=1993&author=Kresse%2CG&author=Hafner%2CJ)
+
+35.   Kresse, G. & Joubert, D. From ultrasoft pseudopotentials to the projector augmented-wave method. _Phys. Rev. b._**59**, 1758 (1999).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=From%20ultrasoft%20pseudopotentials%20to%20the%20projector%20augmented-wave%20method&journal=Phys.%20Rev.%20b.&volume=59&publication_year=1999&author=Kresse%2CG&author=Joubert%2CD)
+
+36.   Sanville, E., Kenny, S. D., Smith, R. & Henkelman, G. Improved grid-based algorithm for bader charge allocation. _J. Comput. Chem._**28**, 899–908 (2007).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Improved%20grid-based%20algorithm%20for%20bader%20charge%20allocation&journal=J.%20Comput.%20Chem.&volume=28&pages=899-908&publication_year=2007&author=Sanville%2CE&author=Kenny%2CSD&author=Smith%2CR&author=Henkelman%2CG)
+
+37.   Tang, W., Sanville, E. & Henkelman, G. A grid-based bader analysis algorithm without lattice bias. _J. Phys. Condens. Matter_**21**, 084204 (2009).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20grid-based%20bader%20analysis%20algorithm%20without%20lattice%20bias&journal=J.%20Phys.%20Condens.%20Matter&volume=21&publication_year=2009&author=Tang%2CW&author=Sanville%2CE&author=Henkelman%2CG)
+
+38.   Zhang, Y., Manzoor, A., Jiang, C., Aidhy, D. & Schwen, D. A statistical approach for atomistic calculations of vacancy formation energy and chemical potentials in concentrated solid-solution alloys. _Comput. Mater. Sci._**190**, 110308 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20statistical%20approach%20for%20atomistic%20calculations%20of%20vacancy%20formation%20energy%20and%20chemical%20potentials%20in%20concentrated%20solid-solution%20alloys&journal=Comput.%20Mater.%20Sci.&volume=190&publication_year=2021&author=Zhang%2CY&author=Manzoor%2CA&author=Jiang%2CC&author=Aidhy%2CD&author=Schwen%2CD)
+
+39.   Kittel, C. _Introduction to Solid State Physics,_ 2613, (Wiley, 1980).
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1038/s41524-026-02037-6?format=refman&flavour=references)
