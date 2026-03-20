@@ -1,0 +1,226 @@
+Title: Atomic-Scale Mechanisms of SiO$_2$ Plasma-Enhanced Chemical Vapor Deposition Revealed by Molecular Dynamics with a Machine-Learning Interatomic Potential
+
+URL Source: https://arxiv.org/abs/2603.11416v1
+
+Published Time: Fri, 13 Mar 2026 00:16:30 GMT
+
+Markdown Content:
+# [2603.11416v1] Atomic-Scale Mechanisms of SiO$_2$ Plasma-Enhanced Chemical Vapor Deposition Revealed by Molecular Dynamics with a Machine-Learning Interatomic Potential
+
+[Skip to main content](https://arxiv.org/abs/2603.11416v1#content)
+
+[![Image 1: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+[Learn about arXiv becoming an independent nonprofit.](https://tech.cornell.edu/arxiv/)
+
+We gratefully acknowledge support from the Simons Foundation, [member institutions](https://info.arxiv.org/about/ourmembers.html), and all contributors.[Donate](https://info.arxiv.org/about/donate.html)
+
+[](https://arxiv.org/IgnoreMe)
+
+[![Image 2: arxiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg)](https://arxiv.org/)>[cond-mat](https://arxiv.org/list/cond-mat/recent)> arXiv:2603.11416v1 
+
+[Help](https://info.arxiv.org/help) | [Advanced Search](https://arxiv.org/search/advanced)
+
+Search
+
+[![Image 3: arXiv logo](https://arxiv.org/static/browse/0.3.4/images/arxiv-logomark-small-white.svg)](https://arxiv.org/)
+
+[![Image 4: Cornell University Logo](https://arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg)](https://www.cornell.edu/)
+
+GO
+
+## quick links
+
+*   [Login](https://arxiv.org/login)
+*   [Help Pages](https://info.arxiv.org/help)
+*   [About](https://info.arxiv.org/about)
+
+# Condensed Matter > Materials Science
+
+**arXiv:2603.11416v1** (cond-mat) 
+
+ [Submitted on 12 Mar 2026]
+
+# Title:Atomic-Scale Mechanisms of SiO _2 Plasma-Enhanced Chemical Vapor Deposition Revealed by Molecular Dynamics with a Machine-Learning Interatomic Potential
+
+Authors:[Jaehoon Kim](https://arxiv.org/search/cond-mat?searchtype=author&query=Kim,+J), [Minseok Moon](https://arxiv.org/search/cond-mat?searchtype=author&query=Moon,+M), [Hyunsung Cho](https://arxiv.org/search/cond-mat?searchtype=author&query=Cho,+H), [Hyeon-Deuk Kim](https://arxiv.org/search/cond-mat?searchtype=author&query=Kim,+H), [Rokyeon Kim](https://arxiv.org/search/cond-mat?searchtype=author&query=Kim,+R), [Gyehyun Park](https://arxiv.org/search/cond-mat?searchtype=author&query=Park,+G), [Seungwu Han](https://arxiv.org/search/cond-mat?searchtype=author&query=Han,+S), [Youngho Kang](https://arxiv.org/search/cond-mat?searchtype=author&query=Kang,+Y)
+
+View a PDF of the paper titled Atomic-Scale Mechanisms of SiO$_2$ Plasma-Enhanced Chemical Vapor Deposition Revealed by Molecular Dynamics with a Machine-Learning Interatomic Potential, by Jaehoon Kim and 7 other authors
+
+[View PDF](https://arxiv.org/pdf/2603.11416v1)[HTML (experimental)](https://arxiv.org/html/2603.11416v1)
+> Abstract:Plasma-enhanced chemical vapor deposition (PECVD) of silicon dioxide (SiO_2) is widely used for low-temperature fabrication of dielectric thin films, yet its atomic-scale growth mechanisms remain incompletely understood. In this work, we investigate SiO_2PECVD using silane and N_2O as source gases via molecular dynamics simulations driven by a machine-learning interatomic potential. By systematically varying the oxidant-to-silane-derived species ratio r, we elucidate the evolution of film stoichiometry, density, and hydrogen content. Formation of the Si-O-Si network primarily proceeds via oxidation of surface Si-H groups to form Si-OH species, followed by condensation of neighboring Si-OH groups that produces H_2O as the dominant byproduct. At low r, H_2formation via reactions between Si-H and Si-OH groups also contributes to the network formation. Increasing oxidant supply promotes the network formation through oxidation of residual Si-H species, suppressing hydrogen incorporation and leading to saturation of the Si/O ratio. Rapid chemisorption of silane-derived species, together with steric hindrance from pre-deposited species, results in localized growth and surface roughness. We further show that high-kinetic-energy plasma species can etch SiO_2films, which potentially limits growth rates and enhances surface roughness under high RF-power conditions. These results provide atomic-scale insight into PECVD growth and guidance for optimizing film composition and quality.
+
+Comments:13 pages, 10 figures, Supplementary material included as ancillary file (+10 pages)
+Subjects:Materials Science (cond-mat.mtrl-sci)
+Cite as:[arXiv:2603.11416](https://arxiv.org/abs/2603.11416) [cond-mat.mtrl-sci]
+(or [arXiv:2603.11416v1](https://arxiv.org/abs/2603.11416v1) [cond-mat.mtrl-sci] for this version)
+[https://doi.org/10.48550/arXiv.2603.11416](https://doi.org/10.48550/arXiv.2603.11416)
+
+Focus to learn more
+
+ arXiv-issued DOI via DataCite
+
+## Submission history
+
+ From: Jaehoon Kim [[view email](https://arxiv.org/show-email/834964b5/2603.11416)] 
+
+**[v1]** Thu, 12 Mar 2026 01:17:33 UTC (4,923 KB)
+
+[](https://arxiv.org/abs/2603.11416v1)Full-text links:
+## Access Paper:
+
+ View a PDF of the paper titled Atomic-Scale Mechanisms of SiO$_2$ Plasma-Enhanced Chemical Vapor Deposition Revealed by Molecular Dynamics with a Machine-Learning Interatomic Potential, by Jaehoon Kim and 7 other authors
+
+*   [View PDF](https://arxiv.org/pdf/2603.11416v1)
+*   [HTML (experimental)](https://arxiv.org/html/2603.11416v1)
+*   [TeX Source](https://arxiv.org/src/2603.11416v1)
+
+[view license](http://arxiv.org/licenses/nonexclusive-distrib/1.0/ "Rights to this article")
+
+Ancillary-file links:
+## Ancillary files ([details](https://arxiv.org/src/2603.11416v1/anc)):
+
+*   [Supplementary_material.pdf](https://arxiv.org/src/2603.11416v1/anc/Supplementary_material.pdf)
+
+ Current browse context: 
+
+cond-mat.mtrl-sci
+
+[<prev](https://arxiv.org/prevnext?id=2603.11416&function=prev&context=cond-mat.mtrl-sci "previous in cond-mat.mtrl-sci (accesskey p)") | [next>](https://arxiv.org/prevnext?id=2603.11416&function=next&context=cond-mat.mtrl-sci "next in cond-mat.mtrl-sci (accesskey n)")
+
+[new](https://arxiv.org/list/cond-mat.mtrl-sci/new) | [recent](https://arxiv.org/list/cond-mat.mtrl-sci/recent) | [2026-03](https://arxiv.org/list/cond-mat.mtrl-sci/2026-03)
+
+ Change to browse by: 
+
+[cond-mat](https://arxiv.org/abs/2603.11416?context=cond-mat)
+
+### References & Citations
+
+*   [NASA ADS](https://ui.adsabs.harvard.edu/abs/arXiv:2603.11416)
+*   [Google Scholar](https://scholar.google.com/scholar_lookup?arxiv_id=2603.11416)
+*   [Semantic Scholar](https://api.semanticscholar.org/arXiv:2603.11416)
+
+export BibTeX citation Loading...
+
+## BibTeX formatted citation
+
+×
+
+Data provided by: [](https://arxiv.org/abs/2603.11416v1)
+
+### Bookmark
+
+[![Image 5: BibSonomy logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png)](http://www.bibsonomy.org/BibtexHandler?requTask=upload&url=https://arxiv.org/abs/2603.11416&description=Atomic-Scale%20Mechanisms%20of%20SiO$_2$%20Plasma-Enhanced%20Chemical%20Vapor%20Deposition%20Revealed%20by%20Molecular%20Dynamics%20with%20a%20Machine-Learning%20Interatomic%20Potential "Bookmark on BibSonomy")[![Image 6: Reddit logo](https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png)](https://reddit.com/submit?url=https://arxiv.org/abs/2603.11416&title=Atomic-Scale%20Mechanisms%20of%20SiO$_2$%20Plasma-Enhanced%20Chemical%20Vapor%20Deposition%20Revealed%20by%20Molecular%20Dynamics%20with%20a%20Machine-Learning%20Interatomic%20Potential "Bookmark on Reddit")
+
+Bibliographic Tools 
+
+# Bibliographic and Citation Tools
+
+- [x] Bibliographic Explorer Toggle 
+
+Bibliographic Explorer _([What is the Explorer?](https://info.arxiv.org/labs/showcase.html#arxiv-bibliographic-explorer))_
+
+- [x] Connected Papers Toggle 
+
+Connected Papers _([What is Connected Papers?](https://www.connectedpapers.com/about))_
+
+- [x] Litmaps Toggle 
+
+Litmaps _([What is Litmaps?](https://www.litmaps.co/))_
+
+- [x] scite.ai Toggle 
+
+scite Smart Citations _([What are Smart Citations?](https://www.scite.ai/))_
+
+Code, Data, Media 
+
+# Code, Data and Media Associated with this Article
+
+- [x] alphaXiv Toggle 
+
+alphaXiv _([What is alphaXiv?](https://alphaxiv.org/))_
+
+- [x] Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers _([What is CatalyzeX?](https://www.catalyzex.com/))_
+
+- [x] DagsHub Toggle 
+
+DagsHub _([What is DagsHub?](https://dagshub.com/))_
+
+- [x] GotitPub Toggle 
+
+Gotit.pub _([What is GotitPub?](http://gotit.pub/faq))_
+
+- [x] Huggingface Toggle 
+
+Hugging Face _([What is Huggingface?](https://huggingface.co/huggingface))_
+
+- [x] Links to Code Toggle 
+
+Papers with Code _([What is Papers with Code?](https://paperswithcode.com/))_
+
+- [x] ScienceCast Toggle 
+
+ScienceCast _([What is ScienceCast?](https://sciencecast.org/welcome))_
+
+Demos 
+
+# Demos
+
+- [x] Replicate Toggle 
+
+Replicate _([What is Replicate?](https://replicate.com/docs/arxiv/about))_
+
+- [x] Spaces Toggle 
+
+Hugging Face Spaces _([What is Spaces?](https://huggingface.co/docs/hub/spaces))_
+
+- [x] Spaces Toggle 
+
+TXYZ.AI _([What is TXYZ.AI?](https://txyz.ai/))_
+
+Related Papers 
+
+# Recommenders and Search Tools
+
+- [x] Link to Influence Flower 
+
+Influence Flower _([What are Influence Flowers?](https://influencemap.cmlab.dev/))_
+
+- [x] Core recommender toggle 
+
+CORE Recommender _([What is CORE?](https://core.ac.uk/services/recommender))_
+
+- [x] IArxiv recommender toggle 
+
+IArxiv Recommender _([What is IArxiv?](https://iarxiv.org/about))_
+
+*   [Author](https://arxiv.org/abs/2603.11416v1)
+*   [Venue](https://arxiv.org/abs/2603.11416v1)
+*   [Institution](https://arxiv.org/abs/2603.11416v1)
+*   [Topic](https://arxiv.org/abs/2603.11416v1)
+
+ About arXivLabs  
+
+# arXivLabs: experimental projects with community collaborators
+
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? [**Learn more about arXivLabs**](https://info.arxiv.org/labs/index.html).
+
+[Which authors of this paper are endorsers?](https://arxiv.org/auth/show-endorsers/2603.11416) | [Disable MathJax](javascript:setMathjaxCookie()) ([What is MathJax?](https://info.arxiv.org/help/mathjax.html)) 
+
+*   [About](https://info.arxiv.org/about)
+*   [Help](https://info.arxiv.org/help)
+
+*   [Contact](https://info.arxiv.org/help/contact.html)
+*   [Subscribe](https://info.arxiv.org/help/subscribe)
+
+*   [Copyright](https://info.arxiv.org/help/license/index.html)
+*   [Privacy Policy](https://info.arxiv.org/help/policies/privacy_policy.html)
+
+*   [Web Accessibility Assistance](https://info.arxiv.org/help/web_accessibility.html)
+*   [arXiv Operational Status](https://status.arxiv.org/)
