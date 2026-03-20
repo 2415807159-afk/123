@@ -1,0 +1,119 @@
+name: daily-paper-reader-ultrafast
+
+on:
+  workflow_dispatch:
+    inputs:
+      fetch_days:
+        description: "回溯抓取天数（默认 3 天，极速模式）"
+        required: false
+        default: "3"
+      max_papers_per_day:
+        description: "每日最大论文数（默认 15，避免过多）"
+        required: false
+        default: "15"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Cache Python deps
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            
+      - name: Install fast deps
+        run: |
+          pip install --quiet PyYAML requests supabase rank-bm25
+          
+      - name: Run Ultra-Fast Paper Reader (BM25 Only, Zero LLM)
+        run: |
+          FETCH_DAYS="${{ github.event.inputs.fetch_days }}"
+          MAX_PAPERS="${{ github.event.inputs.max_papers_per_day }}"
+          echo "::group::Configuration"
+          echo "Fetch window: ${FETCH_DAYS} days"
+          echo "Max papers per day: ${MAX_PAPERS}"
+          echo "::endgroup::"
+          python src/main_ultrafast.py --fetch-days "$FETCH_DAYS" --max-papers "$MAX_PAPERS"
+          cp -f config.yaml docs/config.yaml
+          
+      - name: Cleanup intermediate files
+        run: |
+          if [ -d archive ]; then
+            find archive -mindepth 2 -maxdepth 2 -type d \( -name raw -o -name filtered -o -name rank \) -exec rm -rf {} + || true
+          fi
+          
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          branch="${GITHUB_REF_NAME:-main}"
+          
+          shopt -s nullglob
+          changed=0
+          
+          # Check for changes in docs directory
+          if ! git diff --quiet -- docs/; then
+            git add docs/
+            changed=1
+          fi
+          
+          # Archive commit (optional)
+          if [ -d archive ] && [ "$(ls -A archive)" ]; then
+            if ! git diff --cached --quiet -- archive/; then
+              git add archive/
+              changed=1
+            fi
+          fi
+          
+          if [ "$changed" -eq 1 ]; then
+            timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            msg="[auto] ultra-fast update (${timestamp}) - BM25 only, zero LLM calls"
+            git commit -m "$msg"
+            
+            echo "::group::Git Status Before Push"
+            git status
+            git log --oneline -3
+            echo "::endgroup::"
+            
+            echo "::notice::Pushing content to branch: ${branch}"
+            if ! git push origin "${branch}" --no-verify; then
+              echo "::error::Failed to push to ${branch}. Attempting recovery..."
+              git fetch origin "${branch}"
+              if ! git pull --no-edit; then
+                echo "::warning::Pull failed, trying rebase"
+                git rebase --abort || true
+              fi
+              if ! git push origin "${branch}" --no-verify; then
+                echo "::error::Recovery push also failed. Manual intervention may be required."
+                exit 1
+              fi
+            fi
+            
+            echo "::group::Git Status After Push"
+            git status
+            git log --oneline -3
+            echo "::endgroup::"
+          else
+            echo "::notice::No changes detected. Nothing to commit."
+          fi
