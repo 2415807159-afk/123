@@ -1,0 +1,723 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-03-20T20:26:09.643339+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 20,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "10.1016/j.intermet.2026.109149",
+      "title": "Achieving synergistic enhancement of wear resistance and plasticity in (TiB+Ti5Si3)/TC4 composites with dual quasi-continuous network structure via reinforcement content control",
+      "abstract": "",
+      "authors": [
+        "Shiqian Zhao",
+        "Chunyu Yue",
+        "Bowen Zheng",
+        "Feng Gu",
+        "Fuyu Dong",
+        "Xiaojiao Zuo",
+        "Xuejian Lin",
+        "Hongjun Huang",
+        "Wentao Zheng",
+        "Xiaoguang Yuan"
+      ],
+      "primary_category": "Intermetallics",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0966979526000038",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Intermetallics",
+      "doi": "10.1016/j.intermet.2026.109149",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "TC4 titanium alloy composites and mechanical properties",
+      "llm_evidence_cn": "TC4钛合金复合材料及其力学性能",
+      "llm_evidence": "TC4钛合金复合材料及其力学性能",
+      "canonical_evidence": "TC4钛合金复合材料及其力学性能",
+      "llm_tldr_en": "Explores synergistic enhancement of wear resistance and plasticity in Ti-based composites.",
+      "llm_tldr_cn": "探讨了钛基复合材料耐磨性和塑性的协同增强机制。",
+      "llm_tldr": "探讨了钛基复合材料耐磨性和塑性的协同增强机制。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium alloys",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "10.1016/j.jallcom.2026.187389",
+      "title": "Fe Microalloying Synergistic Enhancement of Strength-Toughness Balance in AM Ti-6Al-4V: Microstructural Mechanisms and Fracture Behavior",
+      "abstract": "",
+      "authors": [
+        "Nan Wang",
+        "Jie Yao",
+        "Guoqing Dai",
+        "Jingzhe Niu",
+        "Liang Feng",
+        "Jian Wang",
+        "Lian Zhou",
+        "Hui Chang"
+      ],
+      "primary_category": "Journal of Alloys and Compounds",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S092583882601457X",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Journal of Alloys and Compounds",
+      "doi": "10.1016/j.jallcom.2026.187389",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "microstructural mechanisms of Ti-6Al-4V alloys",
+      "llm_evidence_cn": "Ti-6Al-4V合金的微观结构机制",
+      "llm_evidence": "Ti-6Al-4V合金的微观结构机制",
+      "canonical_evidence": "Ti-6Al-4V合金的微观结构机制",
+      "llm_tldr_en": "Analyzes the strength-toughness balance and fracture behavior of microalloyed titanium alloys.",
+      "llm_tldr_cn": "分析了微合金化钛合金的强韧性平衡和断裂行为。",
+      "llm_tldr": "分析了微合金化钛合金的强韧性平衡和断裂行为。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium alloys",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "10.1016/j.jallcom.2026.187264",
+      "title": "Surface gradient nanostructure and rolling contact fatigue behavior of additive-manufactured pure titanium processed by ultrasonic surface rolling with mechanical pre-treatments",
+      "abstract": "",
+      "authors": [
+        "Xingyi Li",
+        "Yitong Liu",
+        "Jiantao Zhang",
+        "Yanyi Wu",
+        "Xiao Liu",
+        "Zhiyu Xiao"
+      ],
+      "primary_category": "Journal of Alloys and Compounds",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0925838826013320",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Journal of Alloys and Compounds",
+      "doi": "10.1016/j.jallcom.2026.187264",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Fatigue behavior of additive-manufactured pure titanium",
+      "llm_evidence_cn": "增材制造纯钛的疲劳行为",
+      "llm_evidence": "增材制造纯钛的疲劳行为",
+      "canonical_evidence": "增材制造纯钛的疲劳行为",
+      "llm_tldr_en": "Studies surface nanostructures and fatigue in additive-manufactured titanium after mechanical treatment.",
+      "llm_tldr_cn": "研究了机械预处理后增材制造钛的表面纳米结构和疲劳行为。",
+      "llm_tldr": "研究了机械预处理后增材制造钛的表面纳米结构和疲劳行为。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium alloys",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "10.1016/j.commatsci.2026.114606",
+      "title": "Revisiting phonon thermal transport in penta-graphene via a machine-learning potential-driven large-scale molecular dynamics simulation",
+      "abstract": "",
+      "authors": [
+        "Junwei Che",
+        "Xuezhi Wang"
+      ],
+      "primary_category": "Computational Materials Science",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0927025626001254",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Computational Materials Science",
+      "doi": "10.1016/j.commatsci.2026.114606",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "machine-learning potential-driven molecular dynamics of graphene",
+      "llm_evidence_cn": "机器学习势驱动的石墨烯分子动力学",
+      "llm_evidence": "机器学习势驱动的石墨烯分子动力学",
+      "canonical_evidence": "机器学习势驱动的石墨烯分子动力学",
+      "llm_tldr_en": "Uses ML-driven molecular dynamics to study thermal transport in graphene structures.",
+      "llm_tldr_cn": "利用机器学习驱动的分子动力学研究石墨烯结构中的热传输。",
+      "llm_tldr": "利用机器学习驱动的分子动力学研究石墨烯结构中的热传输。",
+      "llm_tags": [
+        "query:timd-ml:composite"
+      ],
+      "matched_query_tag": "query:timd-ml:composite",
+      "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
+      "matched_requirement_id": "req-composite-timd-ml",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.18876v1",
+      "title": "Bridging Crystal Structure and Material Properties via Bond-Centric Descriptors",
+      "abstract": "Although chemical bonding is the fundamental mechanistic bridge connecting atomic structure to macroscopic material properties, current data-driven materials science largely treats it as an implicit \"black box\". Existing machine learning (ML) models rely predominantly on geometric coordinates, forcing them to implicitly relearn complex quantum mechanics from scratch. This lack of intermediate physical features limits model interpretability and generalizability, particularly when training data is scarce. To solve this problem, we introduce MattKeyBond, a bond-centric materials database that explicitly maps the local electronic landscape and bonding interactions of materials. Building on this, we propose Bonding Attractivity (BA), a novel element-specific descriptor that quantifies the intrinsic capability of atoms to form covalent networks. By providing pre-calculated, energy-dimensional bonding descriptors, MattKeyBond transforms the implicit \"black box\" into physically interpretable features. This strategy relieves ML models from the burden of deducing physical laws from pure geometry, enabling accurate predictions even with limited data and seamlessly integrating electronic structure theory into modern AI workflows.",
+      "authors": [
+        "Jian-Feng Zhang",
+        "Ze-Feng Gao",
+        "Xiao-Qi Han",
+        "Bo Zhan",
+        "Dingshun Lv",
+        "Miao Gao",
+        "Kai Liu",
+        "Xinguo Ren",
+        "Zhong-Yi Lu",
+        "Tao Xiang"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-03-19T13:21:25+00:00",
+      "link": "https://arxiv.org/pdf/2603.18876v1",
+      "pdf_url": null,
+      "source": "arxiv",
+      "journal": null,
+      "doi": null,
+      "publisher": null,
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "bridging crystal structure and material properties via descriptors",
+      "llm_evidence_cn": "通过描述符连接晶体结构与材料性质",
+      "llm_evidence": "通过描述符连接晶体结构与材料性质",
+      "canonical_evidence": "通过描述符连接晶体结构与材料性质",
+      "llm_tldr_en": "Introduces bond-centric descriptors to improve ML interpretability for structure-property relationships.",
+      "llm_tldr_cn": "引入以键为中心的描述符，提高机器学习在结构-性质关系中的可解释性。",
+      "llm_tldr": "引入以键为中心的描述符，提高机器学习在结构-性质关系中的可解释性。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "structure property relationship",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "10.1016/j.intermet.2025.109143",
+      "title": "Composition-dependent design rules for BCC phase stability in AlCoCrFeNi high-entropy Alloys: Insights from an integrated DFT–MD–ML framework",
+      "abstract": "",
+      "authors": [
+        "Dong-Yeh Wu",
+        "Shin-Pon Ju",
+        "Che-Hsin Lin",
+        "Bo-Shiuan Li",
+        "Pin-Xiang Huang"
+      ],
+      "primary_category": "Intermetallics",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0966979525005084",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Intermetallics",
+      "doi": "10.1016/j.intermet.2025.109143",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Integrated DFT-MD-ML framework for alloy phase stability",
+      "llm_evidence_cn": "DFT-MD-ML集成框架用于合金相稳定性",
+      "llm_evidence": "DFT-MD-ML集成框架用于合金相稳定性",
+      "canonical_evidence": "DFT-MD-ML集成框架用于合金相稳定性",
+      "llm_tldr_en": "Combines DFT, MD, and ML to design rules for phase stability in complex high-entropy alloys.",
+      "llm_tldr_cn": "结合DFT、分子动力学和机器学习，研究复杂高熵合金的相稳定性设计规则。",
+      "llm_tldr": "结合DFT、分子动力学和机器学习，研究复杂高熵合金的相稳定性设计规则。",
+      "llm_tags": [
+        "query:timd-ml:composite"
+      ],
+      "matched_query_tag": "query:timd-ml:composite",
+      "matched_query_text": "Papers central to 钛合金、钛-石墨烯体系分子动力学模拟与机器学习性质分析, especially work that connects or combines: structure property relationship; property prediction; titanium graphene interface; titanium alloys; molecular dynamics; machine learning for prediction of mechanical thermal and diffusion properties of Ti based materials; molecular dynamics studies of titanium graphene composites and interfaces; molecular dynamics simulation of titanium alloys and Ti based materials.",
+      "matched_requirement_id": "req-composite-timd-ml",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "10.1016/j.commatsci.2026.114593",
+      "title": "Unravelling the interplay between hydrogen and grain boundary of α-Fe under different concentration and strain rate via neural network interatomic potential",
+      "abstract": "",
+      "authors": [
+        "Xiongwei He",
+        "Fan-Shun Meng",
+        "Yanjing Su",
+        "Lijie Qiao",
+        "Shigenobu Ogata",
+        "Lei Gao"
+      ],
+      "primary_category": "Computational Materials Science",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0927025626001126",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Computational Materials Science",
+      "doi": "10.1016/j.commatsci.2026.114593",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Neural network interatomic potential for molecular dynamics",
+      "llm_evidence_cn": "用于分子动力学的神经网络原子间势",
+      "llm_evidence": "用于分子动力学的神经网络原子间势",
+      "canonical_evidence": "用于分子动力学的神经网络原子间势",
+      "llm_tldr_en": "Uses neural network potentials to study hydrogen-grain boundary interactions via molecular dynamics.",
+      "llm_tldr_cn": "利用神经网络势函数通过分子动力学研究氢与晶界的相互作用。",
+      "llm_tldr": "利用神经网络势函数通过分子动力学研究氢与晶界的相互作用。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "molecular dynamics",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "10.1016/j.actamat.2025.121882",
+      "title": "Inverse design of high-performance glasses through an encoder-decoder machine learning approach toward materials discovery: Application to oxynitride glasses",
+      "abstract": "",
+      "authors": [
+        "Alexis Duval",
+        "Eric Robin",
+        "Patrick Houizot",
+        "Tanguy Rouxel"
+      ],
+      "primary_category": "Acta Materialia",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S1359645425011693",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Acta Materialia",
+      "doi": "10.1016/j.actamat.2025.121882",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "machine learning for materials property discovery",
+      "llm_evidence_cn": "用于材料性质发现的机器学习",
+      "llm_evidence": "用于材料性质发现的机器学习",
+      "canonical_evidence": "用于材料性质发现的机器学习",
+      "llm_tldr_en": "Applies encoder-decoder ML for inverse design and property discovery in glasses.",
+      "llm_tldr_cn": "应用编码器-解码器机器学习进行玻璃的逆向设计和性质发现。",
+      "llm_tldr": "应用编码器-解码器机器学习进行玻璃的逆向设计和性质发现。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "property prediction",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "10.1016/j.commatsci.2026.114609",
+      "title": "Beyond prediction: Assessing stability in feature selection methods for materials science applications",
+      "abstract": "",
+      "authors": [
+        "Yoshiyasu Takefuji"
+      ],
+      "primary_category": "Computational Materials Science",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S092702562600128X",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Computational Materials Science",
+      "doi": "10.1016/j.commatsci.2026.114609",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "feature selection for materials science property prediction",
+      "llm_evidence_cn": "材料科学性质预测的特征选择",
+      "llm_evidence": "材料科学性质预测的特征选择",
+      "canonical_evidence": "材料科学性质预测的特征选择",
+      "llm_tldr_en": "Assesses stability of feature selection methods for robust materials property prediction.",
+      "llm_tldr_cn": "评估材料性质预测中特征选择方法的稳定性。",
+      "llm_tldr": "评估材料性质预测中特征选择方法的稳定性。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "property prediction",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "10.1016/j.actamat.2026.122124",
+      "title": "Denoising diffusion probabilistic model-based tabular data augmentation for improved phase classification of high-entropy alloys",
+      "abstract": "",
+      "authors": [
+        "Libin Zhang",
+        "Yoon Suk Choi"
+      ],
+      "primary_category": "Acta Materialia",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S1359645426002302",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Acta Materialia",
+      "doi": "10.1016/j.actamat.2026.122124",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "machine learning for phase classification of alloys",
+      "llm_evidence_cn": "机器学习用于合金相分类",
+      "llm_evidence": "机器学习用于合金相分类",
+      "canonical_evidence": "机器学习用于合金相分类",
+      "llm_tldr_en": "Uses diffusion models for data augmentation to improve phase classification in high-entropy alloys.",
+      "llm_tldr_cn": "利用扩散模型进行数据增强，以提高高熵合金的相分类准确率。",
+      "llm_tldr": "利用扩散模型进行数据增强，以提高高熵合金的相分类准确率。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "property prediction",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "10.1016/j.intermet.2026.109168",
+      "title": "Influence of Al and Ti on precipitation behavior and corrosion resistance in CoCrNi alloys",
+      "abstract": "",
+      "authors": [
+        "M.K. Xu",
+        "A.X. Li",
+        "K.W. Kang",
+        "S.B. Yu",
+        "S.K. Liu",
+        "Y.T. Jiang",
+        "B.R. Zhang",
+        "Y.Q. Li",
+        "G. Li"
+      ],
+      "primary_category": "Intermetallics",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0966979526000221",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Intermetallics",
+      "doi": "10.1016/j.intermet.2026.109168",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "influence of Ti on alloy precipitation and corrosion",
+      "llm_evidence_cn": "钛对合金沉淀和腐蚀的影响",
+      "llm_evidence": "钛对合金沉淀和腐蚀的影响",
+      "canonical_evidence": "钛对合金沉淀和腐蚀的影响",
+      "llm_tldr_en": "Investigates how Ti affects precipitation and corrosion resistance in CoCrNi alloys.",
+      "llm_tldr_cn": "研究了钛对CoCrNi合金沉淀行为和耐腐蚀性的影响。",
+      "llm_tldr": "研究了钛对CoCrNi合金沉淀行为和耐腐蚀性的影响。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium alloys",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "10.1016/j.commatsci.2026.114597",
+      "title": "First-principles study of the polar MgO(111)/Al(111) Interface: Adhesion, stability, and electronic structure",
+      "abstract": "",
+      "authors": [
+        "Jiachen Xie",
+        "Jianteng Wang",
+        "Xudong Rong",
+        "Dongdong Zhao",
+        "Enzuo Liu",
+        "Chunnian He",
+        "Chunshen Shi",
+        "Naiqin Zhao"
+      ],
+      "primary_category": "Computational Materials Science",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0927025626001163",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Computational Materials Science",
+      "doi": "10.1016/j.commatsci.2026.114597",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Interface adhesion and electronic structure study",
+      "llm_evidence_cn": "界面粘附与电子结构研究",
+      "llm_evidence": "界面粘附与电子结构研究",
+      "canonical_evidence": "界面粘附与电子结构研究",
+      "llm_tldr_en": "First-principles study of MgO/Al interface stability, providing a methodological bridge for Ti/Graphene interfaces.",
+      "llm_tldr_cn": "对MgO/Al界面稳定性进行第一性原理研究，为钛/石墨烯界面研究提供方法参考。",
+      "llm_tldr": "对MgO/Al界面稳定性进行第一性原理研究，为钛/石墨烯界面研究提供方法参考。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium graphene interface",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "10.1016/j.jallcom.2026.186662",
+      "title": "Revealing relationships between composition, microstructure, and mechanical property of molybdenum alloys via high-throughput experiments",
+      "abstract": "",
+      "authors": [
+        "Pengfei Xu",
+        "Liqin Qin",
+        "Lelin Qiao",
+        "Xuewen Li",
+        "Pengsheng Wang",
+        "Xinyu Ni",
+        "Yanjie Liu",
+        "Yi Liu"
+      ],
+      "primary_category": "Journal of Alloys and Compounds",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0925838826007309",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Journal of Alloys and Compounds",
+      "doi": "10.1016/j.jallcom.2026.186662",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Composition-microstructure-property relationships in alloys",
+      "llm_evidence_cn": "合金成分-微观结构-性质关系",
+      "llm_evidence": "合金成分-微观结构-性质关系",
+      "canonical_evidence": "合金成分-微观结构-性质关系",
+      "llm_tldr_en": "Uses high-throughput experiments to reveal structure-property relationships in molybdenum alloys.",
+      "llm_tldr_cn": "通过高通量实验揭示了钼合金的成分、微观结构与机械性能之间的关系。",
+      "llm_tldr": "通过高通量实验揭示了钼合金的成分、微观结构与机械性能之间的关系。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "structure property relationship",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "10.1016/j.commatsci.2026.114612",
+      "title": "Machine-learned accelerated discovery of oxidation-resistant NiCoCrAl high-entropy alloys",
+      "abstract": "",
+      "authors": [
+        "Dennis Boakye",
+        "Chuang Deng"
+      ],
+      "primary_category": "Computational Materials Science",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S092702562600131X",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Computational Materials Science",
+      "doi": "10.1016/j.commatsci.2026.114612",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "machine-learned accelerated discovery and property prediction",
+      "llm_evidence_cn": "机器学习加速发现与性质预测",
+      "llm_evidence": "机器学习加速发现与性质预测",
+      "canonical_evidence": "机器学习加速发现与性质预测",
+      "llm_tldr_en": "Uses machine learning to accelerate the discovery and property prediction of high-entropy alloys.",
+      "llm_tldr_cn": "利用机器学习加速高熵合金的发现和性质预测。",
+      "llm_tldr": "利用机器学习加速高熵合金的发现和性质预测。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "property prediction",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "10.1016/j.jallcom.2026.186724",
+      "title": "MXene-driven interfacial orbital engineering in TiO2: Elastic confinement, defect self-compensation, and tunable excitonic luminescence in ultralow (TiO2)1-y(Ti3C2Tx)y nanocomposites",
+      "abstract": "",
+      "authors": [
+        "Nandharkumar Eswaramoorthy",
+        "Mani jayavelu",
+        "B. Anandan",
+        "P. Elaiyaraja",
+        "Raguram Thangavel",
+        "Francisco Herrera Diaz"
+      ],
+      "primary_category": "Journal of Alloys and Compounds",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0925838826007929",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Journal of Alloys and Compounds",
+      "doi": "10.1016/j.jallcom.2026.186724",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "interfacial engineering in TiO2 and Ti3C2Tx nanocomposites",
+      "llm_evidence_cn": "TiO2与Ti3C2Tx纳米复合材料的界面工程",
+      "llm_evidence": "TiO2与Ti3C2Tx纳米复合材料的界面工程",
+      "canonical_evidence": "TiO2与Ti3C2Tx纳米复合材料的界面工程",
+      "llm_tldr_en": "Investigates interfacial orbital engineering and luminescence in Ti-based MXene nanocomposites.",
+      "llm_tldr_cn": "研究钛基MXene纳米复合材料中的界面轨道工程和发光特性。",
+      "llm_tldr": "研究钛基MXene纳米复合材料中的界面轨道工程和发光特性。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium graphene interface",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "10.1016/j.scriptamat.2025.117082",
+      "title": "Plasticity encoding and mapping during elementary loading for accelerated mechanical properties prediction",
+      "abstract": "",
+      "authors": [
+        "Mathieu Calvat",
+        "Chris Bean",
+        "Dhruv Anjaria",
+        "Haoren Wang",
+        "Kenneth Vecchio",
+        "J.C. Stinville"
+      ],
+      "primary_category": "Scripta Materialia",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S1359646225005433",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Scripta Materialia",
+      "doi": "10.1016/j.scriptamat.2025.117082",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "accelerated mechanical properties prediction",
+      "llm_evidence_cn": "加速力学性能预测",
+      "llm_evidence": "加速力学性能预测",
+      "canonical_evidence": "加速力学性能预测",
+      "llm_tldr_en": "Proposes a plasticity encoding method for rapid prediction of material mechanical properties.",
+      "llm_tldr_cn": "提出一种塑性编码方法，用于快速预测材料的力学性能。",
+      "llm_tldr": "提出一种塑性编码方法，用于快速预测材料的力学性能。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "property prediction",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "10.1016/j.jallcom.2026.186869",
+      "title": "Ti-modulated (Ni, Ti) phases enhance the strength and ductility of Ni2FeCoCr high-entropy alloys through strain concentration and dislocations",
+      "abstract": "",
+      "authors": [
+        "Lianning Li",
+        "Junhong Zhang",
+        "Chunyu Zhao",
+        "Lei Zhang"
+      ],
+      "primary_category": "Journal of Alloys and Compounds",
+      "categories": [],
+      "published": "2026-03-01",
+      "link": "https://linkinghub.elsevier.com/retrieve/pii/S0925838826009370",
+      "pdf_url": null,
+      "source": "journal-crossref",
+      "journal": "Journal of Alloys and Compounds",
+      "doi": "10.1016/j.jallcom.2026.186869",
+      "publisher": "Elsevier BV",
+      "tags": [
+        "keyword:TiMD-ML",
+        "query:TiMD-ML"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Ti-modulated phases in alloys",
+      "llm_evidence_cn": "合金中的钛调制相",
+      "llm_evidence": "合金中的钛调制相",
+      "canonical_evidence": "合金中的钛调制相",
+      "llm_tldr_en": "Studies how Ti-modulated phases enhance strength and ductility in high-entropy alloys.",
+      "llm_tldr_cn": "研究了钛调制相对高熵合金强度和延展性的增强作用。",
+      "llm_tldr": "研究了钛调制相对高熵合金强度和延展性的增强作用。",
+      "llm_tags": [
+        "query:timd-ml"
+      ],
+      "matched_query_tag": "query:timd-ml",
+      "matched_query_text": "titanium alloys",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
