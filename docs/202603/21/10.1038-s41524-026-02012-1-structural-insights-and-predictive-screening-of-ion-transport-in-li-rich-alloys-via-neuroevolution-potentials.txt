@@ -1,0 +1,304 @@
+Title: Structural insights and predictive screening of ion transport in Li-rich alloys via neuroevolution potentials
+
+URL Source: https://www.nature.com/articles/s41524-026-02012-1
+
+Markdown Content:
+## References
+
+1.   Tarascon, J. M. Material science as a cornerstone driving battery research. _Nat. Mater._**21**, 979–982 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Material%20science%20as%20a%20cornerstone%20driving%20battery%20research&journal=Nat.%20Mater.&volume=21&pages=979-982&publication_year=2022&author=Tarascon%2CJM)
+
+2.   Manthiram, A. A reflection on lithium-ion battery cathode chemistry. _Nat. Commun._**11**, 1550 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20reflection%20on%20lithium-ion%20battery%20cathode%20chemistry&journal=Nat.%20Commun.&volume=11&publication_year=2020&author=Manthiram%2CA)
+
+3.   Rehnlund, D., Wang, Z. & Nyholm, L. Lithium-diffusion induced capacity losses in lithium-based batteries. _Adv. Mater._**34**, e2108827 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Lithium-diffusion%20induced%20capacity%20losses%20in%20lithium-based%20batteries&journal=Adv.%20Mater.&volume=34&publication_year=2022&author=Rehnlund%2CD&author=Wang%2CZ&author=Nyholm%2CL)
+
+4.   Choi, Y. S., Scanlon, D. O. & Lee, J. C. Extending the performance limit of anodes: insights from diffusion kinetics of alloying anodes. _Adv. Energy Mater._**11**, 2003078 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Extending%20the%20performance%20limit%20of%20anodes%3A%20insights%20from%20diffusion%20kinetics%20of%20alloying%20anodes&journal=Adv.%20Energy%20Mater.&volume=11&publication_year=2020&author=Choi%2CYS&author=Scanlon%2CDO&author=Lee%2CJC)
+
+5.   Wang, R. et al. Fast-Charging” anode materials for lithium-ion batteries from perspective of ion diffusion in crystal structure. _ACS Nano_**18**, 2611–2648 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Fast-Charging%E2%80%9D%20anode%20materials%20for%20lithium-ion%20batteries%20from%20perspective%20of%20ion%20diffusion%20in%20crystal%20structure&journal=ACS%20Nano&volume=18&pages=2611-2648&publication_year=2024&author=Wang%2CR)
+
+6.   Urban, A., Seo, D.-H. & Ceder, G. Computational understanding of Li-ion batteries. _npj Comput. Mater._**2**, 16002 (2016).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Computational%20understanding%20of%20Li-ion%20batteries&journal=npj%20Comput.%20Mater.&volume=2&publication_year=2016&author=Urban%2CA&author=Seo%2CD-H&author=Ceder%2CG)
+
+7.   Van der Ven, A., Bhattacharya, J. & Belak, A. A. Understanding Li diffusion in Li-intercalation compounds. _Acc. Chem. Res._**46**, 1216–1225 (2013).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Understanding%20Li%20diffusion%20in%20Li-intercalation%20compounds&journal=Acc.%20Chem.%20Res.&volume=46&pages=1216-1225&publication_year=2013&author=Ven%2CA&author=Bhattacharya%2CJ&author=Belak%2CAA)
+
+8.   Liang, Q., Wang, S., Yao, Y., Dong, P. & Song, H. Transition metal compounds family for Li–s batteries: the DFT-guide for suppressing polysulfides shuttle. _Adv. Funct. Mater._**33**, 2300825 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Transition%20metal%20compounds%20family%20for%20Li%E2%80%93s%20batteries%3A%20the%20DFT-guide%20for%20suppressing%20polysulfides%20shuttle&journal=Adv.%20Funct.%20Mater.&volume=33&publication_year=2023&author=Liang%2CQ&author=Wang%2CS&author=Yao%2CY&author=Dong%2CP&author=Song%2CH)
+
+9.   Behara, S. S. & Van der Ven, A. Role of short-range order on diffusion coefficients in the Li-mg alloy. _Chem. Mater._**36**, 11236–11245 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Role%20of%20short-range%20order%20on%20diffusion%20coefficients%20in%20the%20Li-mg%20alloy&journal=Chem.%20Mater.&volume=36&pages=11236-11245&publication_year=2024&author=Behara%2CSS&author=Ven%2CA)
+
+10.   Sergeev, A. V., Rulev, A. A., Kondratyeva, Y. O. & Yashina, L. V. Computational insight into the grain boundary structure and atomic mobility in metallic lithium. _Acta Mater_**233**, 117988 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Computational%20insight%20into%20the%20grain%20boundary%20structure%20and%20atomic%20mobility%20in%20metallic%20lithium&journal=Acta%20Mater&volume=233&publication_year=2022&author=Sergeev%2CAV&author=Rulev%2CAA&author=Kondratyeva%2CYO&author=Yashina%2CLV)
+
+11.   Hänsel, C., Singh, B., Kiwic, D., Canepa, P. & Kundu, D. Favorable Interfacial chemomechanics enables stable cycling of high-Li-content Li–In/Sn anodes in sulfide electrolyte-based solid-state batteries. _Chem. Mater._**33**, 6029–6040 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Favorable%20Interfacial%20chemomechanics%20enables%20stable%20cycling%20of%20high-Li-content%20Li%E2%80%93In%2FSn%20anodes%20in%20sulfide%20electrolyte-based%20solid-state%20batteries&journal=Chem.%20Mater.&volume=33&pages=6029-6040&publication_year=2021&author=H%C3%A4nsel%2CC&author=Singh%2CB&author=Kiwic%2CD&author=Canepa%2CP&author=Kundu%2CD)
+
+12.   Ye, Y. et al. Solid-solution or intermetallic compounds: phase dependence of the Li-alloying reactions for Li-metal batteries. _J. Am. Chem. Soc._**145**, 24775–24784 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Solid-solution%20or%20intermetallic%20compounds%3A%20phase%20dependence%20of%20the%20Li-alloying%20reactions%20for%20Li-metal%20batteries&journal=J.%20Am.%20Chem.%20Soc.&volume=145&pages=24775-24784&publication_year=2023&author=Ye%2CY)
+
+13.   Wang, Z. et al. Tailoring lithium concentration in alloy anodes for long cycling and high areal capacity in sulfide-based all solid-state batteries. _eScience_**3**, 100087 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Tailoring%20lithium%20concentration%20in%20alloy%20anodes%20for%20long%20cycling%20and%20high%20areal%20capacity%20in%20sulfide-based%20all%20solid-state%20batteries&journal=eScience&volume=3&publication_year=2023&author=Wang%2CZ)
+
+14.   Kang, K., Meng, Y. S., Bréger, J., Grey, C. P. & Ceder, G. Electrodes with high power and high capacity for rechargeable lithium batteries. _Science_**311**, 977–980 (2006).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Electrodes%20with%20high%20power%20and%20high%20capacity%20for%20rechargeable%20lithium%20batteries&journal=Science&volume=311&pages=977-980&publication_year=2006&author=Kang%2CK&author=Meng%2CYS&author=Br%C3%A9ger%2CJ&author=Grey%2CCP&author=Ceder%2CG)
+
+15.   He, X. et al. Crystal structural framework of lithium super-ionic conductors. _Adv. Energy Mater._**9**, 1902078 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Crystal%20structural%20framework%20of%20lithium%20super-ionic%20conductors&journal=Adv.%20Energy%20Mater.&volume=9&publication_year=2019&author=He%2CX)
+
+16.   Jun, K. et al. Lithium superionic conductors with corner-sharing frameworks. _Nat. Mater._**21**, 924–931 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Lithium%20superionic%20conductors%20with%20corner-sharing%20frameworks&journal=Nat.%20Mater.&volume=21&pages=924-931&publication_year=2022&author=Jun%2CK)
+
+17.   Jun, K., Chen, Y., Wei, G., Yang, X. & Ceder, G. Diffusion mechanisms of fast lithium-ion conductors. _Nat. Rev. Mater._**9**, 887–905 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Diffusion%20mechanisms%20of%20fast%20lithium-ion%20conductors&journal=Nat.%20Rev.%20Mater.&volume=9&pages=887-905&publication_year=2024&author=Jun%2CK&author=Chen%2CY&author=Wei%2CG&author=Yang%2CX&author=Ceder%2CG)
+
+18.   Sun, Y. et al. Boosting the optimization of lithium metal batteries by molecular dynamics simulations: a perspective. _Adv. Energy Mater._**10**, 2002373 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Boosting%20the%20optimization%20of%20lithium%20metal%20batteries%20by%20molecular%20dynamics%20simulations%3A%20a%20perspective&journal=Adv.%20Energy%20Mater.&volume=10&publication_year=2020&author=Sun%2CY)
+
+19.   Henkelman, G., Uberuaga, B. P. & Jónsson, H. A climbing image nudged elastic band method for finding saddle points and minimum energy paths. _J. Chem. Phys._**113**, 9901–9904 (2000).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20climbing%20image%20nudged%20elastic%20band%20method%20for%20finding%20saddle%20points%20and%20minimum%20energy%20paths&journal=J.%20Chem.%20Phys.&volume=113&pages=9901-9904&publication_year=2000&author=Henkelman%2CG&author=Uberuaga%2CBP&author=J%C3%B3nsson%2CH)
+
+20.   Brown, I. D. Recent developments in the methods and applications of the bond valence model. _Chem. Rev._**109**, 6858–6929 (2009).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Recent%20developments%20in%20the%20methods%20and%20applications%20of%20the%20bond%20valence%20model&journal=Chem.%20Rev.&volume=109&pages=6858-6929&publication_year=2009&author=Brown%2CID)
+
+21.   Behler, J. Perspective: Machine learning potentials for atomistic simulations. _J. Chem. Phys._**145**, 170901 (2016).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Perspective%3A%20Machine%20learning%20potentials%20for%20atomistic%20simulations&journal=J.%20Chem.%20Phys.&volume=145&publication_year=2016&author=Behler%2CJ)
+
+22.   Zhang, L., Han, J., Wang, H., Car, R. & E, W. Deep potential molecular dynamics: a scalable model with the accuracy of quantum mechanics. _Phys. Rev. Lett._**120**, 143001 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Deep%20potential%20molecular%20dynamics%3A%20a%20scalable%20model%20with%20the%20accuracy%20of%20quantum%20mechanics&journal=Phys.%20Rev.%20Lett.&volume=120&publication_year=2018&author=Zhang%2CL&author=Han%2CJ&author=Wang%2CH&author=Car%2CR&author=E%2CW)
+
+23.   Fan, Z. et al. Neuroevolution machine learning potentials: combining high accuracy and low cost in atomistic simulations and application to heat transport. _Phys. Rev. B_**104**, 104309 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Neuroevolution%20machine%20learning%20potentials%3A%20combining%20high%20accuracy%20and%20low%20cost%20in%20atomistic%20simulations%20and%20application%20to%20heat%20transport&journal=Phys.%20Rev.%20B&volume=104&publication_year=2021&author=Fan%2CZ)
+
+24.   Chen, J. et al. Insights into the atomic mechanism of lithium-ion diffusion in Li6PS5Cl via a machine learning potential. _Chem. Mater._**37**, 591–599 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Insights%20into%20the%20atomic%20mechanism%20of%20lithium-ion%20diffusion%20in%20Li6PS5Cl%20via%20a%20machine%20learning%20potential&journal=Chem.%20Mater.&volume=37&pages=591-599&publication_year=2025&author=Chen%2CJ)
+
+25.   Yan, Z. & Zhu, Y. Impact of lithium nonstoichiometry on ionic diffusion in tetragonal garnet-type Li7La3Zr2O12. _Chem. Mater._**36**, 11551–11557 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Impact%20of%20lithium%20nonstoichiometry%20on%20ionic%20diffusion%20in%20tetragonal%20garnet-type%20Li7La3Zr2O12&journal=Chem.%20Mater.&volume=36&pages=11551-11557&publication_year=2024&author=Yan%2CZ&author=Zhu%2CY)
+
+26.   Iosimovska, A. V., Maltsev, A. P., Chepkasov, I. V. & Oganov, A. R. Thermodynamic stability and ionic conductivity in lithium–germanium binary system. _Appl. Phys. Lett._**124**, 163904 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Thermodynamic%20stability%20and%20ionic%20conductivity%20in%20lithium%E2%80%93germanium%20binary%20system&journal=Appl.%20Phys.%20Lett.&volume=124&publication_year=2024&author=Iosimovska%2CAV&author=Maltsev%2CAP&author=Chepkasov%2CIV&author=Oganov%2CAR)
+
+27.   Yu, Y., Fan, J., Lei, Y. & Niu, H. Structure exploration of gallium based on machine-learning potential. _J. Mater. Sci. Technol._**232**, 239–245 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Structure%20exploration%20of%20gallium%20based%20on%20machine-learning%20potential&journal=J.%20Mater.%20Sci.%20Technol.&volume=232&pages=239-245&publication_year=2025&author=Yu%2CY&author=Fan%2CJ&author=Lei%2CY&author=Niu%2CH)
+
+28.   Wang, Z. et al. Concurrent learning scheme for crystal structure prediction. _Phys. Rev. B_**109**, 094117 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Concurrent%20learning%20scheme%20for%20crystal%20structure%20prediction&journal=Phys.%20Rev.%20B&volume=109&publication_year=2024&author=Wang%2CZ)
+
+29.   Liu, S. et al. A comparative study of predicting high entropy alloy phase fractions with traditional machine learning and deep neural networks. _npj Comput. Mater._**10**, 172 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20comparative%20study%20of%20predicting%20high%20entropy%20alloy%20phase%20fractions%20with%20traditional%20machine%20learning%20and%20deep%20neural%20networks&journal=npj%20Comput.%20Mater.&volume=10&publication_year=2024&author=Liu%2CS)
+
+30.   Hu, T. et al. Observation of dendrite formation at Li metal-electrolyte interface by a machine-learning enhanced constant potential framework. _Nat. Commun._**16**, 7379 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Observation%20of%20dendrite%20formation%20at%20Li%20metal-electrolyte%20interface%20by%20a%20machine-learning%20enhanced%20constant%20potential%20framework&journal=Nat.%20Commun.&volume=16&publication_year=2025&author=Hu%2CT)
+
+31.   Zhang, B. et al. Machine learning driven insights into lithiation mechanisms at the silicon-graphite interface within composite electrode. _Acta Mater_**292**, 121072 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20driven%20insights%20into%20lithiation%20mechanisms%20at%20the%20silicon-graphite%20interface%20within%20composite%20electrode&journal=Acta%20Mater&volume=292&publication_year=2025&author=Zhang%2CB)
+
+32.   Pan, L.-Y. & Kuo, C.-L. Atomistic study on the origins of the anisotropic lithiation behaviors of the silicon anode using the reactive force field based molecular dynamics simulations. _Acta Mater_**265**, 119610 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Atomistic%20study%20on%20the%20origins%20of%20the%20anisotropic%20lithiation%20behaviors%20of%20the%20silicon%20anode%20using%20the%20reactive%20force%20field%20based%20molecular%20dynamics%20simulations&journal=Acta%20Mater&volume=265&publication_year=2024&author=Pan%2CL-Y&author=Kuo%2CC-L)
+
+33.   Fu, F. et al. Unraveling the atomic-scale mechanism of phase transformations and structural evolutions during (de)lithiation in Si anodes. _Adv. Funct. Mater._**33**, 2303936 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Unraveling%20the%20atomic-scale%20mechanism%20of%20phase%20transformations%20and%20structural%20evolutions%20during%20%28de%29lithiation%20in%20Si%20anodes&journal=Adv.%20Funct.%20Mater.&volume=33&publication_year=2023&author=Fu%2CF)
+
+34.   Horton, M. K. et al. Accelerated data-driven materials science with the materials project. _Nat. Mater._**24**, 1522–1532 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Accelerated%20data-driven%20materials%20science%20with%20the%20materials%20project&journal=Nat.%20Mater.&volume=24&pages=1522-1532&publication_year=2025&author=Horton%2CMK)
+
+35.   Hart, G. L. W., Mueller, T., Toher, C. & Curtarolo, S. Machine learning for alloys. _Nat. Rev. Mater._**6**, 730–755 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20for%20alloys&journal=Nat.%20Rev.%20Mater.&volume=6&pages=730-755&publication_year=2021&author=Hart%2CGLW&author=Mueller%2CT&author=Toher%2CC&author=Curtarolo%2CS)
+
+36.   Roy, A., Singh, P., Balasubramanian, G. & Johnson, D. D. Vacancy formation energies and migration barriers in multi-principal element alloys. _Acta Mater_**226**, 117611 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Vacancy%20formation%20energies%20and%20migration%20barriers%20in%20multi-principal%20element%20alloys&journal=Acta%20Mater&volume=226&publication_year=2022&author=Roy%2CA&author=Singh%2CP&author=Balasubramanian%2CG&author=Johnson%2CDD)
+
+37.   Fu, F. et al. What drives the heterogeneous interdiffusion in the Li-Si interfacial region of Si anodes: the Li flux or the Si flux? _npj Comput. Mater_**10**, 131 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=What%20drives%20the%20heterogeneous%20interdiffusion%20in%20the%20Li-Si%20interfacial%20region%20of%20Si%20anodes%3A%20the%20Li%20flux%20or%20the%20Si%20flux%3F&journal=npj%20Comput.%20Mater&volume=10&publication_year=2024&author=Fu%2CF)
+
+38.   Peng, M. et al. Alloy-type anodes for high-performance rechargeable batteries. _Angew. Chem. Int. Ed._**61**, e202206770 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Alloy-type%20anodes%20for%20high-performance%20rechargeable%20batteries&journal=Angew.%20Chem.%20Int.%20Ed.&volume=61&publication_year=2022&author=Peng%2CM)
+
+39.   Santhosha, A. L., Medenbach, L., Buchheim, J. R. & Adelhelm, P. The indium−lithium electrode in solid-state lithium-ion batteries: phase formation, redox potentials, and interface stability. _Batteries Supercaps_**2**, 524–529 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20indium%E2%88%92lithium%20electrode%20in%20solid-state%20lithium-ion%20batteries%3A%20phase%20formation%2C%20redox%20potentials%2C%20and%20interface%20stability&journal=Batteries%20Supercaps&volume=2&pages=524-529&publication_year=2019&author=Santhosha%2CAL&author=Medenbach%2CL&author=Buchheim%2CJR&author=Adelhelm%2CP)
+
+40.   Zhang, F., Wang, J., Liu, S. & Du, Y. Effects of the volume changes and elastic-strain energies on the phase transition in the Li-Sn battery. _J. Power Sources_**330**, 111–119 (2016).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Effects%20of%20the%20volume%20changes%20and%20elastic-strain%20energies%20on%20the%20phase%20transition%20in%20the%20Li-Sn%20battery&journal=J.%20Power%20Sources&volume=330&pages=111-119&publication_year=2016&author=Zhang%2CF&author=Wang%2CJ&author=Liu%2CS&author=Du%2CY)
+
+41.   Xu, K. et al. GPUMD 4.0: a high-performance molecular dynamics package for versatile materials simulations with machine-learned potentials. _Mater. Genome Eng. Adv._**3**, e70028 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=GPUMD%204.0%3A%20a%20high-performance%20molecular%20dynamics%20package%20for%20versatile%20materials%20simulations%20with%20machine-learned%20potentials&journal=Mater.%20Genome%20Eng.%20Adv.&volume=3&publication_year=2025&author=Xu%2CK)
+
+42.   Fan, Z. et al. GPUMD: a package for constructing accurate machine-learned potentials and performing highly efficient atomistic simulations. _J. Chem. Phys._**157**, 114801 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=GPUMD%3A%20a%20package%20for%20constructing%20accurate%20machine-learned%20potentials%20and%20performing%20highly%20efficient%20atomistic%20simulations&journal=J.%20Chem.%20Phys.&volume=157&publication_year=2022&author=Fan%2CZ)
+
+43.   Kirklin, S. et al. The open quantum materials database (OQMD): assessing the accuracy of DFT formation energies. _npj Comput. Mater._**1**, 15010 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20open%20quantum%20materials%20database%20%28OQMD%29%3A%20assessing%20the%20accuracy%20of%20DFT%20formation%20energies&journal=npj%20Comput.%20Mater.&volume=1&publication_year=2015&author=Kirklin%2CS)
+
+44.   Jain, A. et al. Commentary: the materials project: a materials genome approach to accelerating materials innovation. _APL Mater_**1**, 011002 (2013).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Commentary%3A%20the%20materials%20project%3A%20a%20materials%20genome%20approach%20to%20accelerating%20materials%20innovation&journal=APL%20Mater&volume=1&publication_year=2013&author=Jain%2CA)
+
+45.   Abdi, H. & Williams, L. J. Principal component analysis. _WIREs Comput. Stat._**2**, 433–459 (2010).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Principal%20component%20analysis&journal=WIREs%20Comput.%20Stat.&volume=2&pages=433-459&publication_year=2010&author=Abdi%2CH&author=Williams%2CLJ)
+
+46.   Wang, Y., Lv, J., Zhu, L. & Ma, Y. Crystal structure prediction via particle-swarm optimization. _Phys. Rev. B_**82**, 094116 (2010).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Crystal%20structure%20prediction%20via%20particle-swarm%20optimization&journal=Phys.%20Rev.%20B&volume=82&publication_year=2010&author=Wang%2CY&author=Lv%2CJ&author=Zhu%2CL&author=Ma%2CY)
+
+47.   Ying, P. et al. Advances in modeling complex materials: the rise of neuroevolution potentials. _Chem. Phys. Rev._**6**, 011310 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Advances%20in%20modeling%20complex%20materials%3A%20the%20rise%20of%20neuroevolution%20potentials&journal=Chem.%20Phys.%20Rev.&volume=6&publication_year=2025&author=Ying%2CP)
+
+48.   Song, K. et al. General-purpose machine-learned potential for 16 elemental metals and their alloys. _Nat. Commun._**15**, 10208 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=General-purpose%20machine-learned%20potential%20for%2016%20elemental%20metals%20and%20their%20alloys&journal=Nat.%20Commun.&volume=15&publication_year=2024&author=Song%2CK)
+
+49.   Wang, X. et al. Data-driven prediction of complex crystal structures of dense lithium. _Nat. Commun._**14**, 2924 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Data-driven%20prediction%20of%20complex%20crystal%20structures%20of%20dense%20lithium&journal=Nat.%20Commun.&volume=14&publication_year=2023&author=Wang%2CX)
+
+50.   Glass, C. W., Oganov, A. R. & Hansen, N. USPEX—Evolutionary crystal structure prediction. _Comput. Phys. Commun._**175**, 713–720 (2006).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=USPEX%E2%80%94Evolutionary%20crystal%20structure%20prediction&journal=Comput.%20Phys.%20Commun.&volume=175&pages=713-720&publication_year=2006&author=Glass%2CCW&author=Oganov%2CAR&author=Hansen%2CN)
+
+51.   Xia, W. et al. Accelerating materials discovery using integrated deep machine learning approaches. _J. Mater. Chem. A_**11**, 25973–25982 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Accelerating%20materials%20discovery%20using%20integrated%20deep%20machine%20learning%20approaches&journal=J.%20Mater.%20Chem.%20A&volume=11&pages=25973-25982&publication_year=2023&author=Xia%2CW)
+
+52.   Zhou, X., Zhang, F., Liu, S., Du, Y. & Jin, B. Phase equilibria and thermodynamic investigation of the In–Li system. _Calphad_**70**, 101779 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Phase%20equilibria%20and%20thermodynamic%20investigation%20of%20the%20In%E2%80%93Li%20system&journal=Calphad&volume=70&publication_year=2020&author=Zhou%2CX&author=Zhang%2CF&author=Liu%2CS&author=Du%2CY&author=Jin%2CB)
+
+53.   Li, D., Fürtauer, S., Flandorfer, H. & Cupid, D. M. Thermodynamic assessment and experimental investigation of the Li–Sn system. _Calphad_**47**, 181–195 (2014).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Thermodynamic%20assessment%20and%20experimental%20investigation%20of%20the%20Li%E2%80%93Sn%20system&journal=Calphad&volume=47&pages=181-195&publication_year=2014&author=Li%2CD&author=F%C3%BCrtauer%2CS&author=Flandorfer%2CH&author=Cupid%2CDM)
+
+54.   Fang, Z. et al. Lithium storage mechanism and application of micron-sized lattice-reversible binary intermetallic compounds as high-performance flexible lithium-ion battery anodes. _Small_**18**, 2105172 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Lithium%20storage%20mechanism%20and%20application%20of%20micron-sized%20lattice-reversible%20binary%20intermetallic%20compounds%20as%20high-performance%20flexible%20lithium-ion%20battery%20anodes&journal=Small&volume=18&publication_year=2022&author=Fang%2CZ)
+
+55.   Li, Q. et al. In Situ TEM on the reversibility of nanosized SN anodes during the electrochemical reaction. _Chem. Mater._**26**, 4102–4108 (2014).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=In%20Situ%20TEM%20on%20the%20reversibility%20of%20nanosized%20SN%20anodes%20during%20the%20electrochemical%20reaction&journal=Chem.%20Mater.&volume=26&pages=4102-4108&publication_year=2014&author=Li%2CQ)
+
+56.   Webb, S. A., Baggetto, L., Bridges, C. A. & Veith, G. M. The electrochemical reactions of pure indium with Li and Na: Anomalous electrolyte decomposition, benefits of FEC additive, phase transitions and electrode performance. _J. Power Sources_**248**, 1105–1117 (2014).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20electrochemical%20reactions%20of%20pure%20indium%20with%20Li%20and%20Na%3A%20Anomalous%20electrolyte%20decomposition%2C%20benefits%20of%20FEC%20additive%2C%20phase%20transitions%20and%20electrode%20performance&journal=J.%20Power%20Sources&volume=248&pages=1105-1117&publication_year=2014&author=Webb%2CSA&author=Baggetto%2CL&author=Bridges%2CCA&author=Veith%2CGM)
+
+57.   Aspinall, J. et al. Effect of microstructure on the cycling behavior of Li–in alloy anodes for solid-state batteries. _ACS Energy Lett._**9**, 578–585 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Effect%20of%20microstructure%20on%20the%20cycling%20behavior%20of%20Li%E2%80%93in%20alloy%20anodes%20for%20solid-state%20batteries&journal=ACS%20Energy%20Lett.&volume=9&pages=578-585&publication_year=2024&author=Aspinall%2CJ)
+
+58.   Mo, Y., Ong, S. P. & Ceder, G. First principles study of the Li 10 GeP 2 S 12 lithium super ionic conductor material. _Chem. Mater._**24**, 15–17 (2012).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=First%20principles%20study%20of%20the%20Li10GeP2S12%20lithium%20super%20ionic%20conductor%20material&journal=Chem.%20Mater.&volume=24&pages=15-17&publication_year=2012&author=Mo%2CY&author=Ong%2CSP&author=Ceder%2CG)
+
+59.   Lu, Y. et al. The carrier transition from Li atoms to Li vacancies in solid-state lithium alloy anodes. _Sci. Adv._**7**, eabi5520 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20carrier%20transition%20from%20Li%20atoms%20to%20Li%20vacancies%20in%20solid-state%20lithium%20alloy%20anodes&journal=Sci.%20Adv.&volume=7&publication_year=2021&author=Lu%2CY)
+
+60.   Qu, J., Xiao, J., Wang, T., Legut, D. & Zhang, Q. High rate transfer mechanism of lithium ions in lithium–tin and lithium–indium alloys for lithium batteries. _J. Phys. Chem. C_**124**, 24644–24652 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=High%20rate%20transfer%20mechanism%20of%20lithium%20ions%20in%20lithium%E2%80%93tin%20and%20lithium%E2%80%93indium%20alloys%20for%20lithium%20batteries&journal=J.%20Phys.%20Chem.%20C&volume=124&pages=24644-24652&publication_year=2020&author=Qu%2CJ&author=Xiao%2CJ&author=Wang%2CT&author=Legut%2CD&author=Zhang%2CQ)
+
+61.   Dronskowski, R. & Bloechl, P. E. Crystal orbital Hamilton populations (COHP): energy-resolved visualization of chemical bonding in solids based on density-functional calculations. _J. Phys. Chem._**97**, 8617–8624 (1993).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Crystal%20orbital%20Hamilton%20populations%20%28COHP%29%3A%20energy-resolved%20visualization%20of%20chemical%20bonding%20in%20solids%20based%20on%20density-functional%20calculations&journal=J.%20Phys.%20Chem.&volume=97&pages=8617-8624&publication_year=1993&author=Dronskowski%2CR&author=Bloechl%2CPE)
+
+62.   Breiman, L. Random forests. _Mach. Learn._**45**, 5–32 (2001).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Random%20forests&journal=Mach.%20Learn.&volume=45&pages=5-32&publication_year=2001&author=Breiman%2CL)
+
+63.   Kresse, G. & Furthmüller, J. Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave basis set. _Comput. Mater. Sci._**6**, 15–50 (1996).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Efficiency%20of%20ab-initio%20total%20energy%20calculations%20for%20metals%20and%20semiconductors%20using%20a%20plane-wave%20basis%20set&journal=Comput.%20Mater.%20Sci.&volume=6&pages=15-50&publication_year=1996&author=Kresse%2CG&author=Furthm%C3%BCller%2CJ)
+
+64.   Kresse, G. & Joubert, D. From ultrasoft pseudopotentials to the projector augmented-wave method. _Phys. Rev. B_**59**, 1758–1775 (1999).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=From%20ultrasoft%20pseudopotentials%20to%20the%20projector%20augmented-wave%20method&journal=Phys.%20Rev.%20B&volume=59&pages=1758-1775&publication_year=1999&author=Kresse%2CG&author=Joubert%2CD)
+
+65.   Parlinski, K., Li, Z. Q. & Kawazoe, Y. First-principles determination of the soft mode in cubic ZrO 2. _Phys. Rev. Lett._**78**, 4063–4066 (1997).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=First-principles%20determination%20of%20the%20soft%20mode%20in%20cubic%20ZrO2&journal=Phys.%20Rev.%20Lett.&volume=78&pages=4063-4066&publication_year=1997&author=Parlinski%2CK&author=Li%2CZQ&author=Kawazoe%2CY)
+
+66.   Togo, A. & Tanaka, I. First principles phonon calculations in materials science. _Scr. Mater._**108**, 1–5 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=First%20principles%20phonon%20calculations%20in%20materials%20science&journal=Scr.%20Mater.&volume=108&pages=1-5&publication_year=2015&author=Togo%2CA&author=Tanaka%2CI)
+
+67.   Lyakhov, A. O., Oganov, A. R., Stokes, H. T. & Zhu, Q. New developments in evolutionary structure prediction algorithm USPEX. _Comput. Phys. Commun._**184**, 1172–1182 (2013).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=New%20developments%20in%20evolutionary%20structure%20prediction%20algorithm%20USPEX&journal=Comput.%20Phys.%20Commun.&volume=184&pages=1172-1182&publication_year=2013&author=Lyakhov%2CAO&author=Oganov%2CAR&author=Stokes%2CHT&author=Zhu%2CQ)
+
+68.   Thompson, A. P. et al. LAMMPS-a flexible simulation tool for particle-based materials modeling at the atomic, meso, and continuum scales. _Comput. Phys. Commun._**271**, 108171 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=LAMMPS-a%20flexible%20simulation%20tool%20for%20particle-based%20materials%20modeling%20at%20the%20atomic%2C%20meso%2C%20and%20continuum%20scales&journal=Comput.%20Phys.%20Commun.&volume=271&publication_year=2022&author=Thompson%2CAP)
+
+69.   Hirel, P. J. C. P. C. Atomsk: a tool for manipulating and converting atomic data files. _Comput. Phys. Commun._**197**, 212–219 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Atomsk%3A%20a%20tool%20for%20manipulating%20and%20converting%20atomic%20data%20files&journal=Comput.%20Phys.%20Commun.&volume=197&pages=212-219&publication_year=2015&author=Hirel%2CPJCPC)
+
+70.   Stukowski, A. Visualization and analysis of atomistic simulation data with OVITO–the open visualization tool. _Modell. Simul. Mater. Sci_**18**, 015012 (2010).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Visualization%20and%20analysis%20of%20atomistic%20simulation%20data%20with%20OVITO%E2%80%93the%20open%20visualization%20tool&journal=Modell.%20Simul.%20Mater.%20Sci&volume=18&publication_year=2010&author=Stukowski%2CA)
+
+71.   Humphrey, W., Dalke, A. & Schulten, K. VMD: visual molecular dynamics. _J. Mol. Graph._**14**, 33–38 (1996).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=VMD%3A%20visual%20molecular%20dynamics&journal=J.%20Mol.%20Graph.&volume=14&pages=33-38&publication_year=1996&author=Humphrey%2CW&author=Dalke%2CA&author=Schulten%2CK)
+
+72.   V, G. A., Batra, R. & Nanda, B. R. K. Single transition metal atom catalyst for a high-performance Li-S battery with a graphdiyne–graphene heterostructure host: a DFT investigation+ML predictions. _ACS Catal_**14**, 8874–8888 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Single%20transition%20metal%20atom%20catalyst%20for%20a%20high-performance%20Li-S%20battery%20with%20a%20graphdiyne%E2%80%93graphene%20heterostructure%20host%3A%20a%20DFT%20investigation%2BML%20predictions&journal=ACS%20Catal&volume=14&pages=8874-8888&publication_year=2024&author=V%2CGA&author=Batra%2CR&author=Nanda%2CBRK)
+
+73.   Yu, L. et al. Double-atom catalysts featuring inverse sandwich structure for CO 2 reduction reaction: a synergetic first-principles and machine learning investigation. _ACS Catal_**13**, 9616–9628 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Double-atom%20catalysts%20featuring%20inverse%20sandwich%20structure%20for%20CO2%20reduction%20reaction%3A%20a%20synergetic%20first-principles%20and%20machine%20learning%20investigation&journal=ACS%20Catal&volume=13&pages=9616-9628&publication_year=2023&author=Yu%2CL)
+
+74.   Wang, S., Qian, C. & Zhou, S. Machine learning design of single-atom catalysts for nitrogen fixation. _ACS Appl. Mater. Interfaces_**15**, 40656–40664 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20design%20of%20single-atom%20catalysts%20for%20nitrogen%20fixation&journal=ACS%20Appl.%20Mater.%20Interfaces&volume=15&pages=40656-40664&publication_year=2023&author=Wang%2CS&author=Qian%2CC&author=Zhou%2CS)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1038/s41524-026-02012-1?format=refman&flavour=references)

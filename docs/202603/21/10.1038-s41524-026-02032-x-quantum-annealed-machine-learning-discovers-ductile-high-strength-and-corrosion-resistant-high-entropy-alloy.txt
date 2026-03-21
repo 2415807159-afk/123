@@ -1,0 +1,316 @@
+Title: Quantum-annealed machine learning discovers ductile, high strength and corrosion-resistant high-entropy alloy
+
+URL Source: https://www.nature.com/articles/s41524-026-02032-x
+
+Markdown Content:
+## References
+
+1.   Vladymyrov, M. No Pressure! Addressing the problem of local minima in manifold learning algorithms. In _Proceedings of the 33rd International Conference on Neural Information Processing Systems_ (Curran Associates Inc., 2019). [https://doi.org/10.5555/3454287.3454349](https://doi.org/10.5555/3454287.3454349).
+
+2.   Sun, R., Li, D., Liang, S., Ding, T. & Srikant, R. The global landscape of neural networks: an overview. _IEEE Signal Process. Mag._**37**, 95–108 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20global%20landscape%20of%20neural%20networks%3A%20an%20overview&journal=IEEE%20Signal%20Process.%20Mag.&volume=37&pages=95-108&publication_year=2020&author=Sun%2CR&author=Li%2CD&author=Liang%2CS&author=Ding%2CT&author=Srikant%2CR)
+
+3.   Sun, Y.; Xiong, W.; Liang, F. Sparse deep learning: a new framework immune to local traps and miscalibration. In _Proceedings of the 35th International Conference on Neural Information Processing Systems._ (Curran Associates Inc., 2021). [https://doi.org/10.5555/3540261.3541969](https://doi.org/10.5555/3540261.3541969).
+
+4.   Kadowaki, T. & Nishimori, H. Quantum annealing in the transverse Ising model. _Phys. Rev. E_**58**, 5355–5363 (1998).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Quantum%20annealing%20in%20the%20transverse%20Ising%20model&journal=Phys.%20Rev.%20E&volume=58&pages=5355-5363&publication_year=1998&author=Kadowaki%2CT&author=Nishimori%2CH)
+
+5.   Lucas, A. Ising formulations of many NP problems. _Front. Phys_. 2014, **2**. [https://doi.org/10.3389/fphy.2014.00005](https://doi.org/10.3389/fphy.2014.00005).
+
+6.   Weidenfeller, J. et al. Scaling of the quantum approximate optimization algorithm on superconducting qubit based hardware. _Quantum_**6**, 870 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Scaling%20of%20the%20quantum%20approximate%20optimization%20algorithm%20on%20superconducting%20qubit%20based%20hardware&journal=Quantum&volume=6&publication_year=2022&author=Weidenfeller%2CJ)
+
+7.   Barkoutsos, P. K., Nannicini, G., Robert, A., Tavernelli, I. & Woerner, S. Improving variational quantum optimization using CVaR. _Quantum_**4**, 256 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Improving%20variational%20quantum%20optimization%20using%20CVaR&journal=Quantum&volume=4&publication_year=2020&author=Barkoutsos%2CPK&author=Nannicini%2CG&author=Robert%2CA&author=Tavernelli%2CI&author=Woerner%2CS)
+
+8.   George, E. P., Curtin, W. A. & Tasan, C. C. High entropy alloys: a focused review of mechanical properties and deformation mechanisms. _Acta Mater._**188**, 435–474 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=High%20entropy%20alloys%3A%20a%20focused%20review%20of%20mechanical%20properties%20and%20deformation%20mechanisms&journal=Acta%20Mater.&volume=188&pages=435-474&publication_year=2020&author=George%2CEP&author=Curtin%2CWA&author=Tasan%2CCC)
+
+9.   Wang, X., Guo, W. & Fu, Y. High-entropy alloys: emerging materials for advanced functional applications. _J. Mater. Chem. A Mater._**9**, 663–701 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-entropy%20alloys%3A%20emerging%20materials%20for%20advanced%20functional%20applications&journal=J.%20Mater.%20Chem.%20A%20Mater.&volume=9&pages=663-701&publication_year=2021&author=Wang%2CX&author=Guo%2CW&author=Fu%2CY)
+
+10.   Senkov, O. N., Miracle, D. B., Chaput, K. J. & Couzinie, J.-P. Development and exploration of refractory high entropy alloys—a review. _J. Mater. Res._**33**, 3092–3128 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Development%20and%20exploration%20of%20refractory%20high%20entropy%20alloys%E2%80%94a%20review&journal=J.%20Mater.%20Res.&volume=33&pages=3092-3128&publication_year=2018&author=Senkov%2CON&author=Miracle%2CDB&author=Chaput%2CKJ&author=Couzinie%2CJ-P)
+
+11.   Zhang, Y. et al. Microstructures and properties of high-entropy alloys. _Prog. Mater. Sci._**61**, 1–93 (2014).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Microstructures%20and%20properties%20of%20high-entropy%20alloys&journal=Prog.%20Mater.%20Sci.&volume=61&pages=1-93&publication_year=2014&author=Zhang%2CY)
+
+12.   Ron, T., Shirizly, A. & Aghion, E. Additive manufacturing technologies of high entropy alloys (HEA): review and prospects. _Materials_**16**, 2454 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Additive%20manufacturing%20technologies%20of%20high%20entropy%20alloys%20%28HEA%29%3A%20review%20and%20prospects&journal=Materials&volume=16&publication_year=2023&author=Ron%2CT&author=Shirizly%2CA&author=Aghion%2CE)
+
+13.   Liu, F., Liaw, P. & Zhang, Y. Recent progress with BCC-structured high-entropy alloys. _Metals_**12**, 501 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Recent%20progress%20with%20BCC-structured%20high-entropy%20alloys&journal=Metals&volume=12&publication_year=2022&author=Liu%2CF&author=Liaw%2CP&author=Zhang%2CY)
+
+14.   Cheng, H. et al. Review—corrosion-resistant high-entropy alloy coatings: a review. _J. Electrochem. Soc._**168**, 111502 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Review%E2%80%94corrosion-resistant%20high-entropy%20alloy%20coatings%3A%20a%20review&journal=J.%20Electrochem.%20Soc.&volume=168&publication_year=2021&author=Cheng%2CH)
+
+15.   Mei, Y. et al. MoZn-based high entropy alloy catalysts enabled dual activation and stabilization in alkaline oxygen evolution. _Sci. Adv_. 2024, **10**. [https://doi.org/10.1126/sciadv.adq6758](https://doi.org/10.1126/sciadv.adq6758).
+
+16.   Ma, Y. et al. A one-step fabrication of soft-magnetic high entropy alloy fiber with excellent strength and flexibility. _Nat. Commun._**15**, 10549 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20one-step%20fabrication%20of%20soft-magnetic%20high%20entropy%20alloy%20fiber%20with%20excellent%20strength%20and%20flexibility&journal=Nat.%20Commun.&volume=15&publication_year=2024&author=Ma%2CY)
+
+17.   Qi, J. et al. Integrated design of aluminum-enriched high-entropy refractory B2 alloys with synergy of high strength and ductility. _Sci. Adv_. 2024, **10**. [https://doi.org/10.1126/sciadv.adq0083](https://doi.org/10.1126/sciadv.adq0083).
+
+18.   Chen, Y. et al. Phase transformation-mediated high-temperature oxidation in an AlCrFeCoNi2.1 EHEA alloy at elevated temperature. _Corros. Sci._**245**, 112674 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Phase%20transformation-mediated%20high-temperature%20oxidation%20in%20an%20AlCrFeCoNi2.1%20EHEA%20alloy%20at%20elevated%20temperature&journal=Corros.%20Sci.&volume=245&publication_year=2025&author=Chen%2CY)
+
+19.   Wu, T. T., Wang, H. M., Li, G. R., Chou, S. S. & Zhao, B. W. Study on the microstructure and performance of FeCoNiCrMn high-entropy alloy-based composites reinforced by nano-Al2O3 particles. _J. Mater. Res. Technol._**35**, 3751–3762 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Study%20on%20the%20microstructure%20and%20performance%20of%20FeCoNiCrMn%20high-entropy%20alloy-based%20composites%20reinforced%20by%20nano-Al2O3%20particles&journal=J.%20Mater.%20Res.%20Technol.&volume=35&pages=3751-3762&publication_year=2025&author=Wu%2CTT&author=Wang%2CHM&author=Li%2CGR&author=Chou%2CSS&author=Zhao%2CBW)
+
+20.   Mu, R., Wang, Y., Niu, S., Sun, K. & Yang, Z. Excellent high-temperature strength of (HfZrTiTaNb)C high-entropy carbide diffusion-bonded joint via in-situ alloying of Ni/Nb/Ni composite interlayer. _J. Adv. Ceram._**14**, 9221010 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Excellent%20high-temperature%20strength%20of%20%28HfZrTiTaNb%29C%20high-entropy%20carbide%20diffusion-bonded%20joint%20via%20in-situ%20alloying%20of%20Ni%2FNb%2FNi%20composite%20interlayer&journal=J.%20Adv.%20Ceram.&volume=14&publication_year=2025&author=Mu%2CR&author=Wang%2CY&author=Niu%2CS&author=Sun%2CK&author=Yang%2CZ)
+
+21.   Dora, T. L. et al. Exploring deformation mechanisms in a refractory high entropy Alloy (MoNbTaW). _Int. J. Mech. Sci._**288**, 110000 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Exploring%20deformation%20mechanisms%20in%20a%20refractory%20high%20entropy%20Alloy%20%28MoNbTaW%29&journal=Int.%20J.%20Mech.%20Sci.&volume=288&publication_year=2025&author=Dora%2CTL)
+
+22.   Rickman, J. M.; Balasubramanian, G.; Marvel, C. J.; Chan, H. M.; Burton, M.-T. Machine learning strategies for high-entropy alloys. _J. Appl. Phys_. 2020, **128**. [https://doi.org/10.1063/5.0030367](https://doi.org/10.1063/5.0030367).
+
+23.   Mizutani, U. _Hume-Rothery Rules for Structurally Complex Alloy Phases_. (CRC Press, 2016). [https://doi.org/10.1201/b10324](https://doi.org/10.1201/b10324).
+
+24.   Guo, S.; Ng, C.; Lu, J.; Liu, C. T. Effect of valence electron concentration on stability of FCC or BCC phase in high entropy alloys. _J. Appl. Phys_. 2011, **109**. [https://doi.org/10.1063/1.3587228](https://doi.org/10.1063/1.3587228).
+
+25.   Troparevsky, M. C., Morris, J. R., Kent, P. R. C., Lupini, A. R. & Stocks, G. M. Criteria for predicting the formation of single-phase high-entropy alloys. _Phys. Rev. X_**5**, 011041 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Criteria%20for%20predicting%20the%20formation%20of%20single-phase%20high-entropy%20alloys&journal=Phys.%20Rev.%20X&volume=5&publication_year=2015&author=Troparevsky%2CMC&author=Morris%2CJR&author=Kent%2CPRC&author=Lupini%2CAR&author=Stocks%2CGM)
+
+26.   Liu, G. et al. Machine learning-based phase prediction in high-entropy alloys: further optimization of feature engineering. _J. Mater. Sci._**60**, 3999–4019 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning-based%20phase%20prediction%20in%20high-entropy%20alloys%3A%20further%20optimization%20of%20feature%20engineering&journal=J.%20Mater.%20Sci.&volume=60&pages=3999-4019&publication_year=2025&author=Liu%2CG)
+
+27.   Wu, S., Song, Z., Wang, J., Niu, X. & Chen, H. Enhanced phase prediction of high-entropy alloys through machine learning and data augmentation. _Phys. Chem. Chem. Phys._**27**, 717–729 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Enhanced%20phase%20prediction%20of%20high-entropy%20alloys%20through%20machine%20learning%20and%20data%20augmentation&journal=Phys.%20Chem.%20Chem.%20Phys.&volume=27&pages=717-729&publication_year=2025&author=Wu%2CS&author=Song%2CZ&author=Wang%2CJ&author=Niu%2CX&author=Chen%2CH)
+
+28.   Li, S. et al. Machine learning phase prediction of light-weight high-entropy alloys containing aluminum, magnesium, and lithium. _Metals_**14**, 400 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20phase%20prediction%20of%20light-weight%20high-entropy%20alloys%20containing%20aluminum%2C%20magnesium%2C%20and%20lithium&journal=Metals&volume=14&publication_year=2024&author=Li%2CS)
+
+29.   Zhao, S. et al. Descriptors for phase prediction of high entropy alloys using interpretable machine learning. _J. Mater. Chem. A Mater._**12**, 2807–2819 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Descriptors%20for%20phase%20prediction%20of%20high%20entropy%20alloys%20using%20interpretable%20machine%20learning&journal=J.%20Mater.%20Chem.%20A%20Mater.&volume=12&pages=2807-2819&publication_year=2024&author=Zhao%2CS)
+
+30.   Dey, D. et al. Improved machine learning framework for prediction of phases and crystal structures of high entropy alloys. _J. Alloy. Metall. Syst._**9**, 100144 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Improved%20machine%20learning%20framework%20for%20prediction%20of%20phases%20and%20crystal%20structures%20of%20high%20entropy%20alloys&journal=J.%20Alloy.%20Metall.%20Syst.&volume=9&publication_year=2025&author=Dey%2CD)
+
+31.   Poon, S. J.; Qi, J.; Cheung, A. M. Harnessing the complex compositional space of high-entropy alloys. In _High-Entropy Materials: Theory, Experiments, and Applications_; Springer International Publishing: Cham, 2021; pp 63–113.
+
+32.   Pei, Z., Yin, J., Hawk, J. A., Alman, D. E. & Gao, M. C. Machine-learning informed prediction of high-entropy solid solution formation: beyond the Hume-Rothery rules. _NPJ Comput. Mater._**6**, 50 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine-learning%20informed%20prediction%20of%20high-entropy%20solid%20solution%20formation%3A%20beyond%20the%20Hume-Rothery%20rules&journal=NPJ%20Comput.%20Mater.&volume=6&publication_year=2020&author=Pei%2CZ&author=Yin%2CJ&author=Hawk%2CJA&author=Alman%2CDE&author=Gao%2CMC)
+
+33.   Qi, J., Hoyos, D. I. & Poon, S. J. Machine Learning-based classification, interpretation, and prediction of high-entropy-alloy intermetallic phases. _High. Entropy Alloy. Mater._**1**, 312–326 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20Learning-based%20classification%2C%20interpretation%2C%20and%20prediction%20of%20high-entropy-alloy%20intermetallic%20phases&journal=High.%20Entropy%20Alloy.%20Mater.&volume=1&pages=312-326&publication_year=2023&author=Qi%2CJ&author=Hoyos%2CDI&author=Poon%2CSJ)
+
+34.   Wen, C. et al. Machine-learning-assisted compositional design of refractory high-entropy alloys with optimal strength and ductility. _Engineering_**46**, 214–223 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine-learning-assisted%20compositional%20design%20of%20refractory%20high-entropy%20alloys%20with%20optimal%20strength%20and%20ductility&journal=Engineering&volume=46&pages=214-223&publication_year=2025&author=Wen%2CC)
+
+35.   Ibarra-Hoyos, D., Simmons, Q. & Poon, S. J. Comparing machine learning models for strength and ductility in high-entropy alloys. _High. Entropy Alloy. Mater._**3**, 101–114 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Comparing%20machine%20learning%20models%20for%20strength%20and%20ductility%20in%20high-entropy%20alloys&journal=High.%20Entropy%20Alloy.%20Mater.&volume=3&pages=101-114&publication_year=2025&author=Ibarra-Hoyos%2CD&author=Simmons%2CQ&author=Poon%2CSJ)
+
+36.   Brown, P. & Zhuang, H. Quantum machine-learning phase prediction of high-entropy alloys. _Mater. Today_**63**, 18–31 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Quantum%20machine-learning%20phase%20prediction%20of%20high-entropy%20alloys&journal=Mater.%20Today&volume=63&pages=18-31&publication_year=2023&author=Brown%2CP&author=Zhuang%2CH)
+
+37.   Huang, H.-Y. et al. Quantum advantage in learning from experiments. _Science_**376**, 1182–1186 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Quantum%20advantage%20in%20learning%20from%20experiments&journal=Science&volume=376&pages=1182-1186&publication_year=2022&author=Huang%2CH-Y)
+
+38.   Xu, Z., Shang, W., Kim, S., Lee, E. & Luo, T. Quantum annealing-assisted lattice optimization. _npj Comput. Mater._**11**, 4 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Quantum%20annealing-assisted%20lattice%20optimization&journal=npj%20Comput.%20Mater.&volume=11&publication_year=2025&author=Xu%2CZ&author=Shang%2CW&author=Kim%2CS&author=Lee%2CE&author=Luo%2CT)
+
+39.   Sandt, R. & Spatschek, R. Efficient low temperature Monte Carlo sampling using quantum annealing. _Sci. Rep._**13**, 6754 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Efficient%20low%20temperature%20Monte%20Carlo%20sampling%20using%20quantum%20annealing&journal=Sci.%20Rep.&volume=13&publication_year=2023&author=Sandt%2CR&author=Spatschek%2CR)
+
+40.   Camino, B. Buckeridge, J. Warburton, P. A. Kendon, V. Woodley, S. M. Quantum computing and materials science: a practical guide to applying quantum annealing to the configurational analysis of materials. _J. Appl. Phys._**133**, [https://doi.org/10.1063/5.0151346](https://doi.org/10.1063/5.0151346) (2023).
+
+41.   Guo, Z., Li, R. He, X., Guo, J. & Ju, S. Harnessing quantum power: revolutionizing materials design through advanced quantum computation. _Mater. Genome Eng. Adv._**2**, [https://doi.org/10.1002/mgea.73](https://doi.org/10.1002/mgea.73) (2024).
+
+42.   Graña, I. F.; Varsamopoulos, S.; Ando, T.; Maeshima, H.; Matsuzawa, N. N. Materials Discovery With Quantum-Enhanced Machine Learning Algorithms. 2025. 2503.09517.
+
+43.   Yuan, X.-J. et al. Quantum support vector machines for aerodynamic classification. Intell. Comput. **2**, [https://doi.org/10.34133/icomputing.0057](https://doi.org/10.34133/icomputing.0057) (2023).
+
+44.   Camino, B. et al. Exploring the thermodynamics of disordered materials with quantum computing. _Sci. Adv._**11**, 7156 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Exploring%20the%20thermodynamics%20of%20disordered%20materials%20with%20quantum%20computing&journal=Sci.%20Adv.&volume=11&publication_year=2025&author=Camino%2CB)
+
+45.   Willsch, D., Willsch, M., De Raedt, H. & Michielsen, K. Support vector machines on the D-wave quantum annealer. _Comput. Phys. Commun._**248**, 107006 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Support%20vector%20machines%20on%20the%20D-wave%20quantum%20annealer&journal=Comput.%20Phys.%20Commun.&volume=248&publication_year=2020&author=Willsch%2CD&author=Willsch%2CM&author=Raedt%2CH&author=Michielsen%2CK)
+
+46.   Dalal, A., Bagherimehrab, M. & Sanders, B. C. Quantum-Assisted Support Vector Regression. _Quantum Inf. Process._**24**, 82 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Quantum-Assisted%20Support%20Vector%20Regression&journal=Quantum%20Inf.%20Process.&volume=24&publication_year=2025&author=Dalal%2CA&author=Bagherimehrab%2CM&author=Sanders%2CBC)
+
+47.   Wang, Z. et al. Is quantum optimization ready? An effort towards neural network compression using adiabatic quantum computing. _Future Gener. Computer Syst._**174**, 107908 (2026).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Is%20quantum%20optimization%20ready%3F%20An%20effort%20towards%20neural%20network%20compression%20using%20adiabatic%20quantum%20computing&journal=Future%20Gener.%20Computer%20Syst.&volume=174&publication_year=2026&author=Wang%2CZ)
+
+48.   Sur, D. et al. Investigating the synergistic benefits of Al on Cr(III) in the passive films of FeCoNi-Cr-Al CCAs in sulfuric acid. _Electrochim. Acta_**513**, 145523 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Investigating%20the%20synergistic%20benefits%20of%20Al%20on%20Cr%28III%29%20in%20the%20passive%20films%20of%20FeCoNi-Cr-Al%20CCAs%20in%20sulfuric%20acid&journal=Electrochim.%20Acta&volume=513&publication_year=2025&author=Sur%2CD)
+
+49.   Connors, P. F., Sur, D., Han, J. & Scully, J. R. Delineating stainless behavior of austenitic compositionally complex alloys through CALPHAD-informed alloy design. _Materialia_**43**, 102495 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Delineating%20stainless%20behavior%20of%20austenitic%20compositionally%20complex%20alloys%20through%20CALPHAD-informed%20alloy%20design&journal=Materialia&volume=43&publication_year=2025&author=Connors%2CPF&author=Sur%2CD&author=Han%2CJ&author=Scully%2CJR)
+
+50.   Inman, S. B., Sur, D., Han, J., Ogle, K. & Scully, J. R. Corrosion behavior of a compositionally complex alloy utilizing simultaneous Al, Cr, and Ti passivation. _Corros. Sci._**217**, 111138 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Corrosion%20behavior%20of%20a%20compositionally%20complex%20alloy%20utilizing%20simultaneous%20Al%2C%20Cr%2C%20and%20Ti%20passivation&journal=Corros.%20Sci.&volume=217&publication_year=2023&author=Inman%2CSB&author=Sur%2CD&author=Han%2CJ&author=Ogle%2CK&author=Scully%2CJR)
+
+51.   Inman, S. B. et al. Effect of Ti on the corrosion resistance of Al-Cr-Fe-Mn-Mo-Ni single and multi-phase CCAs. _Corros. Sci._**236**, 112262 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Effect%20of%20Ti%20on%20the%20corrosion%20resistance%20of%20Al-Cr-Fe-Mn-Mo-Ni%20single%20and%20multi-phase%20CCAs&journal=Corros.%20Sci.&volume=236&publication_year=2024&author=Inman%2CSB)
+
+52.   Wang, J. et al. Cooperative of Ti and Cr elements on passivation enhancement of FeCoCrNiTix high-entropy alloys. _Corros. Sci._**252**, 112937 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Cooperative%20of%20Ti%20and%20Cr%20elements%20on%20passivation%20enhancement%20of%20FeCoCrNiTix%20high-entropy%20alloys&journal=Corros.%20Sci.&volume=252&publication_year=2025&author=Wang%2CJ)
+
+53.   Torbati-Sarraf, H., Shabani, M., Jablonski, P. D., Pataky, G. J. & Poursaee, A. The influence of incorporation of Mn on the pitting corrosion performance of crfeconi high entropy alloy at different temperatures. _Mater. Des._**184**, 108170 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20influence%20of%20incorporation%20of%20Mn%20on%20the%20pitting%20corrosion%20performance%20of%20crfeconi%20high%20entropy%20alloy%20at%20different%20temperatures&journal=Mater.%20Des.&volume=184&publication_year=2019&author=Torbati-Sarraf%2CH&author=Shabani%2CM&author=Jablonski%2CPD&author=Pataky%2CGJ&author=Poursaee%2CA)
+
+54.   Yamanaka, K. et al. Corrosion mechanism of an equimolar AlCoCrFeNi high-entropy alloy additively manufactured by electron beam melting. _npj Mater. Degrad._**4**, 24 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Corrosion%20mechanism%20of%20an%20equimolar%20AlCoCrFeNi%20high-entropy%20alloy%20additively%20manufactured%20by%20electron%20beam%20melting&journal=npj%20Mater.%20Degrad.&volume=4&publication_year=2020&author=Yamanaka%2CK)
+
+55.   Godlewska, E. M. et al. Corrosion of Al(Co)CrFeNi High-Entropy Alloys. _Front. Mater_. 2020, **7**. [https://doi.org/10.3389/fmats.2020.566336](https://doi.org/10.3389/fmats.2020.566336).
+
+56.   Neven, H.; Denchev, V. S.; Rose, G.; Macready, W. G. Training a binary classifier with the quantum adiabatic algorithm. 2008.
+
+57.   Salloum, H., Salloum, A., Mazzara, M. & Zykov, S. Quantum annealing in machine learning: QBoost on D-Wave quantum annealer. _Procedia Comput. Sci._**246**, 3285–3293 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Quantum%20annealing%20in%20machine%20learning%3A%20QBoost%20on%20D-Wave%20quantum%20annealer&journal=Procedia%20Comput.%20Sci.&volume=246&pages=3285-3293&publication_year=2024&author=Salloum%2CH&author=Salloum%2CA&author=Mazzara%2CM&author=Zykov%2CS)
+
+58.   Mott, A., Job, J., Vlimant, J.-R., Lidar, D. & Spiropulu, M. Solving a Higgs optimization problem with quantum annealing for machine learning. _Nature_**550**, 375–379 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Solving%20a%20Higgs%20optimization%20problem%20with%20quantum%20annealing%20for%20machine%20learning&journal=Nature&volume=550&pages=375-379&publication_year=2017&author=Mott%2CA&author=Job%2CJ&author=Vlimant%2CJ-R&author=Lidar%2CD&author=Spiropulu%2CM)
+
+59.   Hoyos, D. I., Chern, G.-W., Klich, I., Poon, J. _Quantum-Annealing Enhanced Machine Learning for Interpretable Phase Classification of High-Entropy Alloys_.
+
+60.   Nau, M. A., Nutricati, L. A., Camino, B., Warburton, P. A. & Maier, A. K. Quantum annealing feature selection on light-weight medical image datasets. _Sci. Rep._**15**, 28937 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Quantum%20annealing%20feature%20selection%20on%20light-weight%20medical%20image%20datasets&journal=Sci.%20Rep.&volume=15&publication_year=2025&author=Nau%2CMA&author=Nutricati%2CLA&author=Camino%2CB&author=Warburton%2CPA&author=Maier%2CAK)
+
+61.   Liu, J. et al. Effect of Al addition on microstructures and mechanical properties of AlxCrFeNi2.5Mo high entropy alloys. _MRS Commun._**13**, 425–430 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Effect%20of%20Al%20addition%20on%20microstructures%20and%20mechanical%20properties%20of%20AlxCrFeNi2.5Mo%20high%20entropy%20alloys&journal=MRS%20Commun.&volume=13&pages=425-430&publication_year=2023&author=Liu%2CJ)
+
+62.   Ye, Y. F., Liu, C. T. & Yang, Y. A geometric model for intrinsic residual strain and phase stability in high entropy alloys. _Acta Mater._**94**, 152–161 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20geometric%20model%20for%20intrinsic%20residual%20strain%20and%20phase%20stability%20in%20high%20entropy%20alloys&journal=Acta%20Mater.&volume=94&pages=152-161&publication_year=2015&author=Ye%2CYF&author=Liu%2CCT&author=Yang%2CY)
+
+63.   Toda-Caraballo, I. A general formulation for solid solution hardening effect in multicomponent alloys. _Scr. Mater._**127**, 113–117 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20general%20formulation%20for%20solid%20solution%20hardening%20effect%20in%20multicomponent%20alloys&journal=Scr.%20Mater.&volume=127&pages=113-117&publication_year=2017&author=Toda-Caraballo%2CI)
+
+64.   Reuss, A. Berechnung Der Fließgrenze von Mischkristallen Auf Grund Der Plastizitätsbedingung Für Einkristalle. _ZAMM - J. Appl. Math. Mech. / Z. f.ür. Angew. Mathematik und Mech._**9**, 49–58 (1929).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Berechnung%20Der%20Flie%C3%9Fgrenze%20von%20Mischkristallen%20Auf%20Grund%20Der%20Plastizit%C3%A4tsbedingung%20F%C3%BCr%20Einkristalle&journal=ZAMM%20-%20J.%20Appl.%20Math.%20Mech.%20%2F%20Z.%20f.%C3%BCr.%20Angew.%20Mathematik%20und%20Mech.&volume=9&pages=49-58&publication_year=1929&author=Reuss%2CA)
+
+65.   Hill, R. The Elastic Behaviour of a Crystalline Aggregate. _Proc. Phys. Soc. Sect. A_**65**, 349–354 (1952).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20Elastic%20Behaviour%20of%20a%20Crystalline%20Aggregate&journal=Proc.%20Phys.%20Soc.%20Sect.%20A&volume=65&pages=349-354&publication_year=1952&author=Hill%2CR)
+
+66.   Keskar, N. S.; Mudigere, D.; Nocedal, J.; Smelyanskiy, M.; Tang, P. T. P. On Large-batch Training For Deep Learning: Generalization Gap And Sharp Minima. In (ICLR, 2017).
+
+67.   Arlot, S.; Celisse, A. A survey of cross-validation procedures for model selection. _Stat. Surv_. 2010, **4**. [https://doi.org/10.1214/09-SS054](https://doi.org/10.1214/09-SS054).
+
+68.   Christen, P., Hand, D. J. & Kirielle, N. A review of the F-measure: its history, properties, criticism, and alternatives. _ACM Comput. Surv._**56**, 1–24 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20review%20of%20the%20F-measure%3A%20its%20history%2C%20properties%2C%20criticism%2C%20and%20alternatives&journal=ACM%20Comput.%20Surv.&volume=56&pages=1-24&publication_year=2024&author=Christen%2CP&author=Hand%2CDJ&author=Kirielle%2CN)
+
+69.   Chicco, D., Warrens, M. J. & Jurman, G. The coefficient of determination R-squared is more informative than SMAPE, MAE, MAPE, MSE and RMSE in regression analysis evaluation. _PeerJ Comput. Sci._**7**, e623 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20coefficient%20of%20determination%20R-squared%20is%20more%20informative%20than%20SMAPE%2C%20MAE%2C%20MAPE%2C%20MSE%20and%20RMSE%20in%20regression%20analysis%20evaluation&journal=PeerJ%20Comput.%20Sci.&volume=7&publication_year=2021&author=Chicco%2CD&author=Warrens%2CMJ&author=Jurman%2CG)
+
+70.   Ober, J. A. _Mineral Commodity Summaries 2018_; 2018. [https://doi.org/10.3133/70194932](https://doi.org/10.3133/70194932).
+
+71.   Fu, X., Schuh, C. A. & Olivetti, E. A. Materials selection considerations for high entropy alloys. _Scr. Mater._**138**, 145–150 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Materials%20selection%20considerations%20for%20high%20entropy%20alloys&journal=Scr.%20Mater.&volume=138&pages=145-150&publication_year=2017&author=Fu%2CX&author=Schuh%2CCA&author=Olivetti%2CEA)
+
+72.   Santos, J. C. P. et al. Experimental investigation of phase equilibria at 1200°C in the Al-Nb-V system. _J. Phase Equilibria Diffus._**41**, 172–180 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Experimental%20investigation%20of%20phase%20equilibria%20at%201200%C2%B0C%20in%20the%20Al-Nb-V%20system&journal=J.%20Phase%20Equilibria%20Diffus.&volume=41&pages=172-180&publication_year=2020&author=Santos%2CJCP)
+
+73.   Klimenko, D. N., Stepanov, N. D. & Zherebtsov, S. V. Prediction of the strength of high entropy alloys of the Al-Cr-Nb-Ti-V-Zr system by the solid-solution hardening model. _IOP Conf. Ser. Mater. Sci. Eng._**1014**, 012017 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Prediction%20of%20the%20strength%20of%20high%20entropy%20alloys%20of%20the%20Al-Cr-Nb-Ti-V-Zr%20system%20by%20the%20solid-solution%20hardening%20model&journal=IOP%20Conf.%20Ser.%20Mater.%20Sci.%20Eng.&volume=1014&publication_year=2021&author=Klimenko%2CDN&author=Stepanov%2CND&author=Zherebtsov%2CSV)
+
+74.   Dong, J. & Zhong, J. Recent advances in symbolic regression. _ACM Comput. Surv._**57**, 1–37 (2025).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Recent%20advances%20in%20symbolic%20regression&journal=ACM%20Comput.%20Surv.&volume=57&pages=1-37&publication_year=2025&author=Dong%2CJ&author=Zhong%2CJ)
+
+75.   Chancellor, N. Fluctuation-guided search in quantum annealing. _Phys. Rev. A_**102**, 062606 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Fluctuation-guided%20search%20in%20quantum%20annealing&journal=Phys.%20Rev.%20A&volume=102&publication_year=2020&author=Chancellor%2CN)
+
+76.   Ohzeki, M., Okada, S., Terabe, M. & Taguchi, S. Optimization of neural networks via finite-value quantum fluctuations. _Sci. Rep._**8**, 9950 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Optimization%20of%20neural%20networks%20via%20finite-value%20quantum%20fluctuations&journal=Sci.%20Rep.&volume=8&publication_year=2018&author=Ohzeki%2CM&author=Okada%2CS&author=Terabe%2CM&author=Taguchi%2CS)
+
+77.   Baldassi, C. & Zecchina, R. Efficiency of quantum vs. classical annealing in nonconvex learning problems. _Proc. Natl. Acad. Sci. USA_**115**, 1457–1462 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Efficiency%20of%20quantum%20vs.%20classical%20annealing%20in%20nonconvex%20learning%20problems&journal=Proc.%20Natl.%20Acad.%20Sci.%20USA&volume=115&pages=1457-1462&publication_year=2018&author=Baldassi%2CC&author=Zecchina%2CR)
+
+78.   Li, H.; Xu, Z.; Taylor, G.; Studer, C.; Goldstein, T. Visualizing the loss landscape of neural nets. (NIPS, 2018).
+
+79.   Sankar, A. R.; Khasbage, Y.; Vigneswaran, R.; Balasubramanian, V. N. _A Deeper Look at the Hessian Eigenspectrum of Deep Neural Networks and Its Applications to Regularization_; 2021. [www.aaai.org](http://www.aaai.org/).
+
+80.   Hochreiter, S. & Schmidhuber, J. Flat minima. _Neural Comput_**9**, 1–42 (1997).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Flat%20minima&journal=Neural%20Comput&volume=9&pages=1-42&publication_year=1997&author=Hochreiter%2CS&author=Schmidhuber%2CJ)
+
+81.   Renner, M., Heubner, U., Rockel, M. B. & Wallis, E. Temperature as a pitting and crevice corrosion criterion in the FeCl 3 test. _Mater. Corros._**37**, 183–190 (1986).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Temperature%20as%20a%20pitting%20and%20crevice%20corrosion%20criterion%20in%20the%20FeCl%203%20test&journal=Mater.%20Corros.&volume=37&pages=183-190&publication_year=1986&author=Renner%2CM&author=Heubner%2CU&author=Rockel%2CMB&author=Wallis%2CE)
+
+82.   Hassel, A. W. & Lohrengel, M. M. The scanning droplet cell and its application to structured nanometer oxide films on aluminium. _Electrochim. Acta_**42**, 3327–3333 (1997).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20scanning%20droplet%20cell%20and%20its%20application%20to%20structured%20nanometer%20oxide%20films%20on%20aluminium&journal=Electrochim.%20Acta&volume=42&pages=3327-3333&publication_year=1997&author=Hassel%2CAW&author=Lohrengel%2CMM)
+
+83.   Sur, D. et al. Revisiting the influence of Sn in Cu-Al alloys: a third element effect enabling stainless steel type corrosion behavior. _J. Electrochem. Soc_. 2025. [https://doi.org/10.1149/1945-7111/ae0eb6](https://doi.org/10.1149/1945-7111/ae0eb6).
+
+84.   Sur, D.; Anderson, K. L.; Han, J.; Scully, J. R. Passivity and pitting of single-phase feconi-Cr-Al complex concentrated alloys: An Al-Cr third element effect in sulfuric acid containing chloride. 2025. [https://doi.org/10.2139/ssrn.5375983](https://doi.org/10.2139/ssrn.5375983).
+
+85.   Gorsse, S., Nguyen, M. H., Senkov, O. N. & Miracle, D. B. Database on the mechanical properties of high entropy alloys and complex concentrated alloys. _Data Brief._**21**, 2664–2678 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Database%20on%20the%20mechanical%20properties%20of%20high%20entropy%20alloys%20and%20complex%20concentrated%20alloys&journal=Data%20Brief.&volume=21&pages=2664-2678&publication_year=2018&author=Gorsse%2CS&author=Nguyen%2CMH&author=Senkov%2CON&author=Miracle%2CDB)
+
+86.   Borg, C. K. H. et al. Expanded dataset of mechanical properties and observed phases of multi-principal element alloys. _Sci. Data_**7**, 430 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Expanded%20dataset%20of%20mechanical%20properties%20and%20observed%20phases%20of%20multi-principal%20element%20alloys&journal=Sci.%20Data&volume=7&publication_year=2020&author=Borg%2CCKH)
+
+87.   Couzinié, J.-P., Senkov, O. N., Miracle, D. B. & Dirras, G. Comprehensive data compilation on the mechanical properties of refractory high-entropy alloys. _Data Brief._**21**, 1622–1641 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Comprehensive%20data%20compilation%20on%20the%20mechanical%20properties%20of%20refractory%20high-entropy%20alloys&journal=Data%20Brief.&volume=21&pages=1622-1641&publication_year=2018&author=Couzini%C3%A9%2CJ-P&author=Senkov%2CON&author=Miracle%2CDB&author=Dirras%2CG)
+
+88.   D-Wave Systems Inc. Dwave-Neal: Simulated Annealing Sampler for D-Wave’s Ocean SDK. November 25, 2022. [https://github.com/dwavesystems/dwave-neal](https://github.com/dwavesystems/dwave-neal) (accessed 2025-10-26).
+
+89.   Pedregosa, F. et al. Scikit-learn: machine learning in Python. _J. Mach. Learn. Res._**12**, 2825–2830 (2011).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Scikit-learn%3A%20machine%20learning%20in%20Python&journal=J.%20Mach.%20Learn.%20Res.&volume=12&pages=2825-2830&publication_year=2011&author=Pedregosa%2CF)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1038/s41524-026-02032-x?format=refman&flavour=references)

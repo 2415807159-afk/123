@@ -1,0 +1,342 @@
+Title: Domain features-informed two-step machine learning: accelerating the search for superlubric heterostructures
+
+URL Source: https://www.nature.com/articles/s41524-026-01996-0
+
+Markdown Content:
+## References
+
+1.   Hod, O. et al. Structural superlubricity and ultralow friction across the length scales. _Nature_**563**, 485–492 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Structural%20superlubricity%20and%20ultralow%20friction%20across%20the%20length%20scales&journal=Nature&volume=563&pages=485-492&publication_year=2018&author=Hod%2CO)
+
+2.   Müser, M. H. Structural lubricity: role of dimension and symmetry. _Europhys. Lett._**66**, 97–103 (2004).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Structural%20lubricity%3A%20role%20of%20dimension%20and%20symmetry&journal=Europhys.%20Lett.&volume=66&pages=97-103&publication_year=2004&author=M%C3%BCser%2CMH)
+
+3.   Socoliuc, A. et al. Transition from stick-slip to continuous sliding in atomic friction: entering a new regime of ultralow friction. _Phys. Rev. Lett._**92**, 134301 (2004).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Transition%20from%20stick-slip%20to%20continuous%20sliding%20in%20atomic%20friction%3A%20entering%20a%20new%20regime%20of%20ultralow%20friction&journal=Phys.%20Rev.%20Lett.&volume=92&publication_year=2004&author=Socoliuc%2CA)
+
+4.   Sun, J. et al. Superlubricity enabled by pressure-induced friction collapse. _J. Phys. Chem. Lett._**9**, 2554–2559 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Superlubricity%20enabled%20by%20pressure-induced%20friction%20collapse&journal=J.%20Phys.%20Chem.%20Lett.&volume=9&pages=2554-2559&publication_year=2018&author=Sun%2CJ)
+
+5.   Tang, K. W. & Qi, W. H. Moiré pattern tuned electronic structures of van der Waals heterostructures. _Adv. Funct. Mater._**30**, 2002672 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Moir%C3%A9%20pattern%20tuned%20electronic%20structures%20of%20van%20der%20Waals%20heterostructures&journal=Adv.%20Funct.%20Mater.&volume=30&publication_year=2020&author=Tang%2CKW&author=Qi%2CWH)
+
+6.   Cui, Z. et al. High throughput theoretical prediction of the low friction at the interfaces of homo- and heterojunction composed of C 3 N. _Appl. Surf. Sci._**612**, 155718 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=High%20throughput%20theoretical%20prediction%20of%20the%20low%20friction%20at%20the%20interfaces%20of%20homo-%20and%20heterojunction%20composed%20of%20C3N&journal=Appl.%20Surf.%20Sci.&volume=612&publication_year=2023&author=Cui%2CZ)
+
+7.   Dienwiebel, M. et al. Superlubricity of graphite. _Phys. Rev. Lett._**92**, 126101 (2004).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Superlubricity%20of%20graphite&journal=Phys.%20Rev.%20Lett.&volume=92&publication_year=2004&author=Dienwiebel%2CM)
+
+8.   Filippov, A. E. et al. Torque and twist against superlubricity. _Phys. Rev. Lett._**100**, 046102 (2008).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Torque%20and%20twist%20against%20superlubricity&journal=Phys.%20Rev.%20Lett.&volume=100&publication_year=2008&author=Filippov%2CAE)
+
+9.   Li, H. et al. Structural superlubricity in graphene/GaSe van der Waals heterostructure. _Phys. Lett. A._**452**, 128435 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Structural%20superlubricity%20in%20graphene%2FGaSe%20van%20der%20Waals%20heterostructure&journal=Phys.%20Lett.%20A.&volume=452&publication_year=2022&author=Li%2CH)
+
+10.   Geim, A. K. & Grigorieva, I. V. Van der Waals heterostructures. _Nature_**499**, 419–425 (2013).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Van%20der%20Waals%20heterostructures&journal=Nature&volume=499&pages=419-425&publication_year=2013&author=Geim%2CAK&author=Grigorieva%2CIV)
+
+11.   Yuan, J., Yang, R. & Zhang, G. Structural superlubricity in 2D van der Waals heterojunctions. _Nanotechnology_**33**, 102002 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Structural%20superlubricity%20in%202D%20van%20der%20Waals%20heterojunctions&journal=Nanotechnology&volume=33&publication_year=2021&author=Yuan%2CJ&author=Yang%2CR&author=Zhang%2CG)
+
+12.   Tian, J., Yin, X. & Li, J. Tribo-induced interfacial material transfer of an atomic force microscopy probe assisting superlubricity in a WS2/graphene heterojunction. _ACS Appl. Mater. Interfaces_**12**, 4031–4040 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Tribo-induced%20interfacial%20material%20transfer%20of%20an%20atomic%20force%20microscopy%20probe%20assisting%20superlubricity%20in%20a%20WS2%2Fgraphene%20heterojunction&journal=ACS%20Appl.%20Mater.%20Interfaces&volume=12&pages=4031-4040&publication_year=2019&author=Tian%2CJ&author=Yin%2CX&author=Li%2CJ)
+
+13.   Song, Y. et al. Robust microscale superlubricity in graphite/hexagonal boron nitride layered heterojunctions. _Nat. Mater._**17**, 894–899 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Robust%20microscale%20superlubricity%20in%20graphite%2Fhexagonal%20boron%20nitride%20layered%20heterojunctions&journal=Nat.%20Mater.&volume=17&pages=894-899&publication_year=2018&author=Song%2CY)
+
+14.   Zhao, Y., Yang, L. & Liu, Y. Internal and external MoS2/GO heterostructure enhanced multi-point contact egg-box inspired SiOC for macroscopic ultra-low friction. _Carbon_**221**, 118908 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Internal%20and%20external%20MoS2%2FGO%20heterostructure%20enhanced%20multi-point%20contact%20egg-box%20inspired%20SiOC%20for%20macroscopic%20ultra-low%20friction&journal=Carbon&volume=221&publication_year=2024&author=Zhao%2CY&author=Yang%2CL&author=Liu%2CY)
+
+15.   Long, Y. et al. High-temperature superlubricity in MoS2/graphene van der Waals heterostructures. _Nano. Lett._**24**, 7572–7577 (2024).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-temperature%20superlubricity%20in%20MoS2%2Fgraphene%20van%20der%20Waals%20heterostructures&journal=Nano.%20Lett.&volume=24&pages=7572-7577&publication_year=2024&author=Long%2CY)
+
+16.   Song, Y. et al. Structural superlubricity based on crystalline materials. _Small_**16**, 1903018 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Structural%20superlubricity%20based%20on%20crystalline%20materials&journal=Small&volume=16&publication_year=2020&author=Song%2CY)
+
+17.   Mandelli, D. et al. Sliding friction of graphene/hexagonal–boron nitride heterojunctions: a route to robust superlubricity. _Sci. Rep._**7**, 10851 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Sliding%20friction%20of%20graphene%2Fhexagonal%E2%80%93boron%20nitride%20heterojunctions%3A%20a%20route%20to%20robust%20superlubricity&journal=Sci.%20Rep.&volume=7&publication_year=2017&author=Mandelli%2CD)
+
+18.   Ge, X. Y. et al. Graphene superlubricity: a review. _Friction_**11**, 1953–1973 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Graphene%20superlubricity%3A%20a%20review&journal=Friction&volume=11&pages=1953-1973&publication_year=2023&author=Ge%2CXY)
+
+19.   Leven, I. et al. Robust superlubricity in Graphene/h-BN heterojunctions. _J. Phys. Chem. Lett._**4**, 115–120 (2012).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Robust%20superlubricity%20in%20Graphene%2Fh-BN%20heterojunctions&journal=J.%20Phys.%20Chem.%20Lett.&volume=4&pages=115-120&publication_year=2012&author=Leven%2CI)
+
+20.   Acikgoz, O. & Baykara, M. Z. Speed dependence of friction on single-layer and bulk MoS 2 measured by atomic force microscopy. _Appl. Phys. Lett._**116**, 071603 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Speed%20dependence%20of%20friction%20on%20single-layer%20and%20bulk%20MoS2%20measured%20by%20atomic%20force%20microscopy&journal=Appl.%20Phys.%20Lett.&volume=116&publication_year=2020&author=Acikgoz%2CO&author=Baykara%2CMZ)
+
+21.   Li, P. et al. Lattice distortion optimized hybridization and superlubricity of MoS 2/MoSe 2 heterointerfaces via Moiré patterns. _Appl. Surf. Sci._**613**, 155760 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Lattice%20distortion%20optimized%20hybridization%20and%20superlubricity%20of%20MoS2%2FMoSe2%20heterointerfaces%20via%20Moir%C3%A9%20patterns&journal=Appl.%20Surf.%20Sci.&volume=613&publication_year=2023&author=Li%2CP)
+
+22.   Li, H. et al. Superlubricity between MoS 2 monolayers. _Adv. Mater._**29**, 1701474 (2017).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Superlubricity%20between%20MoS2%20monolayers&journal=Adv.%20Mater.&volume=29&publication_year=2017&author=Li%2CH)
+
+23.   Xu, P. et al. A first-principles study on the superlubricity of two-dimensional graphene/ZrS 2 heterostructure. _Tribol. Int._**174**, 107727 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20first-principles%20study%20on%20the%20superlubricity%20of%20two-dimensional%20graphene%2FZrS2%20heterostructure&journal=Tribol.%20Int.&volume=174&publication_year=2022&author=Xu%2CP)
+
+24.   Büch, H. et al. Superlubricity of epitaxial monolayer WS2 on graphene. _Nano. Res._**11**, 5946–5956 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Superlubricity%20of%20epitaxial%20monolayer%20WS2%20on%20graphene&journal=Nano.%20Res.&volume=11&pages=5946-5956&publication_year=2018&author=B%C3%BCch%2CH)
+
+25.   Wang, L. F. et al. Superlubricity of two-dimensional fluorographene/MoS 2 heterostructure: a first-principles study. _Nanotechnology_**25**, 385701 (2014).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Superlubricity%20of%20two-dimensional%20fluorographene%2FMoS2%20heterostructure%3A%20a%20first-principles%20study&journal=Nanotechnology&volume=25&publication_year=2014&author=Wang%2CLF)
+
+26.   Vazirisereshk, M. R. et al. Friction anisotropy of MoS 2: effect of tip–sample contact quality. _J. Phys. Chem. Lett._**11**, 6900–6906 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Friction%20anisotropy%20of%20MoS2%3A%20effect%20of%20tip%E2%80%93sample%20contact%20quality&journal=J.%20Phys.%20Chem.%20Lett.&volume=11&pages=6900-6906&publication_year=2020&author=Vazirisereshk%2CMR)
+
+27.   Ru, G. L. et al. Interlayer friction and superlubricity in bilayer graphene and MoS 2/MoSe 2 van der Waals heterostructures. _Tribol. Int._**151**, 106483 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Interlayer%20friction%20and%20superlubricity%20in%20bilayer%20graphene%20and%20MoS2%2FMoSe2%20van%20der%20Waals%20heterostructures&journal=Tribol.%20Int.&volume=151&publication_year=2020&author=Ru%2CGL)
+
+28.   Zhang, W. L. et al. Soluble, exfoliated two-dimensional nanosheets as excellent aqueous lubricants. _ACS Appl. Mater. Inter._**8**, 32440–32449 (2016).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Soluble%2C%20exfoliated%20two-dimensional%20nanosheets%20as%20excellent%20aqueous%20lubricants&journal=ACS%20Appl.%20Mater.%20Inter.&volume=8&pages=32440-32449&publication_year=2016&author=Zhang%2CWL)
+
+29.   Zhao, Y. et al. 3D-printed topological MoS 2/MoSe 2 heterostructures for macroscale superlubricity. _ACS Appl. Mater. Inter._**13**, 34984–34995 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=3D-printed%20topological%20MoS2%2FMoSe2%20heterostructures%20for%20macroscale%20superlubricity&journal=ACS%20Appl.%20Mater.%20Inter.&volume=13&pages=34984-34995&publication_year=2021&author=Zhao%2CY)
+
+30.   Gao, X. et al. Constructing WS2/MoS2 nano-scale multilayer film and understanding its positive response to space environment. _Surf. Coat. Tech._**353**, 8–17 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Constructing%20WS2%2FMoS2%20nano-scale%20multilayer%20film%20and%20understanding%20its%20positive%20response%20to%20space%20environment&journal=Surf.%20Coat.%20Tech.&volume=353&pages=8-17&publication_year=2018&author=Gao%2CX)
+
+31.   Vazirisereshk, M. R. et al. Origin of nanoscale friction contrast between supported graphene, MoS 2, and a Graphene/MoS 2 heterostructure. _Nano. Lett._**19**, 5496–5505 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Origin%20of%20nanoscale%20friction%20contrast%20between%20supported%20graphene%2C%20MoS2%2C%20and%20a%20Graphene%2FMoS2%20heterostructure&journal=Nano.%20Lett.&volume=19&pages=5496-5505&publication_year=2019&author=Vazirisereshk%2CMR)
+
+32.   Komanduri, R. & Chandrasekaran, N. Molecular dynamics simulation of atomic-scale friction. _Phys. Rev. B._**61**, 14007 (2000).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Molecular%20dynamics%20simulation%20of%20atomic-scale%20friction&journal=Phys.%20Rev.%20B.&volume=61&publication_year=2000&author=Komanduri%2CR&author=Chandrasekaran%2CN)
+
+33.   Jordan, M. I. & Mitchell, T. M. Machine learning: trends, perspectives, and prospects. _Science_**349**, 255–260 (2015).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%3A%20trends%2C%20perspectives%2C%20and%20prospects&journal=Science&volume=349&pages=255-260&publication_year=2015&author=Jordan%2CMI&author=Mitchell%2CTM)
+
+34.   Zou, C. X., Li, J. S. & Wang, W. Y. Integrating data mining and machine learning to discover high-strength ductile titanium alloys. _Acta Mater._**202**, 211–221 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Integrating%20data%20mining%20and%20machine%20learning%20to%20discover%20high-strength%20ductile%20titanium%20alloys&journal=Acta%20Mater.&volume=202&pages=211-221&publication_year=2021&author=Zou%2CCX&author=Li%2CJS&author=Wang%2CWY)
+
+35.   Liu, Z. G., Zhao, X. P. & Wang, H. Y. A first-principles and machine learning combined method to investigate the interfacial friction between corrugated graphene. _Model. Simul. Mater. Sc._**29**, 035011 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20first-principles%20and%20machine%20learning%20combined%20method%20to%20investigate%20the%20interfacial%20friction%20between%20corrugated%20graphene&journal=Model.%20Simul.%20Mater.%20Sc.&volume=29&publication_year=2021&author=Liu%2CZG&author=Zhao%2CXP&author=Wang%2CHY)
+
+36.   Zhao, X. et al. Machine learning method to predict the interlayer sliding energy barrier of polarized MoS 2 layers. _Comput. Mater. Sci._**220**, 112062 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20method%20to%20predict%20the%20interlayer%20sliding%20energy%20barrier%20of%20polarized%20MoS2%20layers&journal=Comput.%20Mater.%20Sci.&volume=220&publication_year=2023&author=Zhao%2CX)
+
+37.   Niu, Y. et al. Calculation and prediction of sliding energy barriers by first-principles combined with machine learning. _Ceram. Int._**49**, 24752–24761 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Calculation%20and%20prediction%20of%20sliding%20energy%20barriers%20by%20first-principles%20combined%20with%20machine%20learning&journal=Ceram.%20Int.&volume=49&pages=24752-24761&publication_year=2023&author=Niu%2CY)
+
+38.   Jeong, H. et al. First-principles design of an ultralow frictional interface of a black phosphorus and graphene heterostructure with oxide functionalization and high-pressure conditions. _Appl. Surf. Sci._**608**, 155092 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=First-principles%20design%20of%20an%20ultralow%20frictional%20interface%20of%20a%20black%20phosphorus%20and%20graphene%20heterostructure%20with%20oxide%20functionalization%20and%20high-pressure%20conditions&journal=Appl.%20Surf.%20Sci.&volume=608&publication_year=2023&author=Jeong%2CH)
+
+39.   Wang, C. Q. et al. Friction properties of black phosphorus: a first-principles study. _Nanotechnology_**34**, 275703 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Friction%20properties%20of%20black%20phosphorus%3A%20a%20first-principles%20study&journal=Nanotechnology&volume=34&publication_year=2023&author=Wang%2CCQ)
+
+40.   Gao, E. et al. Computational prediction of superlubric layered heterojunctions. _ACS Appl. Mater. Interfaces_**13**, 33600–33608 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Computational%20prediction%20of%20superlubric%20layered%20heterojunctions&journal=ACS%20Appl.%20Mater.%20Interfaces&volume=13&pages=33600-33608&publication_year=2021&author=Gao%2CE)
+
+41.   Jain, A. et al. Commentary: The Materials Project: a materials genome approach to accelerating materials innovation. _APL Mater._**1**, 011002 (2013).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Commentary%3A%20The%20Materials%20Project%3A%20a%20materials%20genome%20approach%20to%20accelerating%20materials%20innovation&journal=APL%20Mater.&volume=1&publication_year=2013&author=Jain%2CA)
+
+42.   Zhou, J. et al. 2DMatPedia, an open computational database of two-dimensional materials from top-down and bottom-up approaches. _Sci. Data._**6**, 86 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=2DMatPedia%2C%20an%20open%20computational%20database%20of%20two-dimensional%20materials%20from%20top-down%20and%20bottom-up%20approaches&journal=Sci.%20Data.&volume=6&publication_year=2019&author=Zhou%2CJ)
+
+43.   Pedregosa, F., Varoquaux, G. & Gramfort, A. Scikit-learn: machine learning in Python. _J. Mach. Learn. Res._**12**, 2825–2830 (2011).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Scikit-learn%3A%20machine%20learning%20in%20Python&journal=J.%20Mach.%20Learn.%20Res.&volume=12&pages=2825-2830&publication_year=2011&author=Pedregosa%2CF&author=Varoquaux%2CG&author=Gramfort%2CA)
+
+44.   Anderson, O. L. A simplified method for calculating the Debye temperature from elastic constants. _J. Phys. Chem. Solids_**24**, 909–917 (1963).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20simplified%20method%20for%20calculating%20the%20Debye%20temperature%20from%20elastic%20constants&journal=J.%20Phys.%20Chem.%20Solids&volume=24&pages=909-917&publication_year=1963&author=Anderson%2COL)
+
+45.   Willhelm, D. et al. Predicting van der Waals heterostructures by a combined machine learning and density functional theory approach. _ACS Appl Mater. Inter._**14**, 25907–25919 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Predicting%20van%20der%20Waals%20heterostructures%20by%20a%20combined%20machine%20learning%20and%20density%20functional%20theory%20approach&journal=ACS%20Appl%20Mater.%20Inter.&volume=14&pages=25907-25919&publication_year=2022&author=Willhelm%2CD)
+
+46.   Shi, W. & Wang, Z. Mechanical and electronic properties of Janus monolayer transition metal dichalcogenides. _J. Phys. Condens. Matter_**30**, 215301 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Mechanical%20and%20electronic%20properties%20of%20Janus%20monolayer%20transition%20metal%20dichalcogenides&journal=J.%20Phys.%20Condens.%20Matter&volume=30&publication_year=2018&author=Shi%2CW&author=Wang%2CZ)
+
+47.   Xu, Y. et al. A novel ultra-low friction heterostructure: aluminum substrate-honeycomb borophene/graphene heterojunction. _Comput. Mater. Sci._**205**, 111236 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20novel%20ultra-low%20friction%20heterostructure%3A%20aluminum%20substrate-honeycomb%20borophene%2Fgraphene%20heterojunction&journal=Comput.%20Mater.%20Sci.&volume=205&publication_year=2022&author=Xu%2CY)
+
+48.   Yuan, R. H. et al. Accelerated discovery of large electrostrains in BaTiO3-based piezoelectrics using active learning. _Adv. Mater._**30**, 1702884 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Accelerated%20discovery%20of%20large%20electrostrains%20in%20BaTiO3-based%20piezoelectrics%20using%20active%20learning&journal=Adv.%20Mater.&volume=30&publication_year=2018&author=Yuan%2CRH)
+
+49.   Yang, C. et al. A machine learning-based alloy design system to facilitate the rational design of high entropy alloys with enhanced hardness. _Acta Mater._**222**, 117431 (2022).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20machine%20learning-based%20alloy%20design%20system%20to%20facilitate%20the%20rational%20design%20of%20high%20entropy%20alloys%20with%20enhanced%20hardness&journal=Acta%20Mater.&volume=222&publication_year=2022&author=Yang%2CC)
+
+50.   Zhang, H. et al. Machine learning assisted composition effective design for precipitation strengthened copper alloys. _Acta Mater._**215**, 117118 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Machine%20learning%20assisted%20composition%20effective%20design%20for%20precipitation%20strengthened%20copper%20alloys&journal=Acta%20Mater.&volume=215&publication_year=2021&author=Zhang%2CH)
+
+51.   Ataca, C., Şahin, H. & Ciraci, S. Stable, single-layer MX2 transition-metal oxides and dichalcogenides in a honeycomb-like structure. _J. Phys. Chem. C._**116**, 8983–8999 (2012).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Stable%2C%20single-layer%20MX2%20transition-metal%20oxides%20and%20dichalcogenides%20in%20a%20honeycomb-like%20structure&journal=J.%20Phys.%20Chem.%20C.&volume=116&pages=8983-8999&publication_year=2012&author=Ataca%2CC&author=%C5%9Eahin%2CH&author=Ciraci%2CS)
+
+52.   Mao, Y. Q. et al. The electronic, mechanical properties and in-plane negative Poisson’s ratio in novel pentagonal NiX 2 (X = S, Se, Te) monolayers with strong anisotropy: a first-principles prediction. _Comput. Mater. Sci._**216**, 111873 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20electronic%2C%20mechanical%20properties%20and%20in-plane%20negative%20Poisson%E2%80%99s%20ratio%20in%20novel%20pentagonal%20NiX2%20%28X%20%3D%20S%2C%20Se%2C%20Te%29%20monolayers%20with%20strong%20anisotropy%3A%20a%20first-principles%20prediction&journal=Comput.%20Mater.%20Sci.&volume=216&publication_year=2023&author=Mao%2CYQ)
+
+53.   Kahraman, Z., Yagmurcukardes, M. & Sahin, H. Functionalization of single-layer TaS2 and formation of ultrathin Janus structures. _J. Mater. Res._**35**, 1397–1406 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Functionalization%20of%20single-layer%20TaS2%20and%20formation%20of%20ultrathin%20Janus%20structures&journal=J.%20Mater.%20Res.&volume=35&pages=1397-1406&publication_year=2020&author=Kahraman%2CZ&author=Yagmurcukardes%2CM&author=Sahin%2CH)
+
+54.   Zhang, Y. et al. Atomic-scale superlubricity in Ti 2 CO 2@MoS 2 layered heterojunctions interface: a first principles calculation study. _ACS Omega_**6**, 9013–9019 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Atomic-scale%20superlubricity%20in%20Ti2CO2%40MoS2%20layered%20heterojunctions%20interface%3A%20a%20first%20principles%20calculation%20study&journal=ACS%20Omega&volume=6&pages=9013-9019&publication_year=2021&author=Zhang%2CY)
+
+55.   Lundberg, S. M. et al. From local explanations to global understanding with explainable AI for trees. _Nat. Mach. Intell._**2**, 56–67 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=From%20local%20explanations%20to%20global%20understanding%20with%20explainable%20AI%20for%20trees&journal=Nat.%20Mach.%20Intell.&volume=2&pages=56-67&publication_year=2020&author=Lundberg%2CSM)
+
+56.   Guo, Y. F., Qiu, J. P. & Guo, W. L. Reduction of interfacial friction in commensurate graphene/h-BN heterostructures by surface functionalization. _Nanoscale_**8**, 575–580 (2016).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Reduction%20of%20interfacial%20friction%20in%20commensurate%20graphene%2Fh-BN%20heterostructures%20by%20surface%20functionalization&journal=Nanoscale&volume=8&pages=575-580&publication_year=2016&author=Guo%2CYF&author=Qiu%2CJP&author=Guo%2CWL)
+
+57.   Wen, M. J. et al. Dihedral-angle-corrected registry-dependent interlayer potential for multilayer graphene structures. _Phys. Rev. B._**98**, 235404 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Dihedral-angle-corrected%20registry-dependent%20interlayer%20potential%20for%20multilayer%20graphene%20structures&journal=Phys.%20Rev.%20B.&volume=98&publication_year=2018&author=Wen%2CMJ)
+
+58.   Reguzzoni, M. et al. Potential energy surface for graphene on graphene: ab initio derivation, analytical description, and microscopic interpretation. _Phys. Rev. B._**86**, 245434 (2012).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Potential%20energy%20surface%20for%20graphene%20on%20graphene%3A%20ab%20initio%20derivation%2C%20analytical%20description%2C%20and%20microscopic%20interpretation&journal=Phys.%20Rev.%20B.&volume=86&publication_year=2012&author=Reguzzoni%2CM)
+
+59.   Berman, A., Drummond, C. & Israelachvili, J. Amontons’ law at the molecular level. _Tribol. Lett._**4**, 95–101 (1998).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Amontons%E2%80%99%20law%20at%20the%20molecular%20level&journal=Tribol.%20Lett.&volume=4&pages=95-101&publication_year=1998&author=Berman%2CA&author=Drummond%2CC&author=Israelachvili%2CJ)
+
+60.   Liu, P. & Zhang, Y. W. A theoretical analysis of frictional and defect characteristics of graphene probed by a capped single-walled carbon nanotube. _Carbon_**49**, 3687–3697 (2011).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20theoretical%20analysis%20of%20frictional%20and%20defect%20characteristics%20of%20graphene%20probed%20by%20a%20capped%20single-walled%20carbon%20nanotube&journal=Carbon&volume=49&pages=3687-3697&publication_year=2011&author=Liu%2CP&author=Zhang%2CYW)
+
+61.   Sun, S. et al. Molecular dynamics study of the robust superlubricity in penta-graphene van der Waals layered structures. _Tribol. Int._**177**, 107988 (2023).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Molecular%20dynamics%20study%20of%20the%20robust%20superlubricity%20in%20penta-graphene%20van%20der%20Waals%20layered%20structures&journal=Tribol.%20Int.&volume=177&publication_year=2023&author=Sun%2CS)
+
+62.   Plenge, P. et al. The antidepressant drug vilazodone is an allosteric inhibitor of the serotonin transporter. _Nat. Commun._**12**, 5063 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20antidepressant%20drug%20vilazodone%20is%20an%20allosteric%20inhibitor%20of%20the%20serotonin%20transporter&journal=Nat.%20Commun.&volume=12&publication_year=2021&author=Plenge%2CP)
+
+63.   Idrissi, H. et al. Atomic-scale viscoplasticity mechanisms revealed in high ductility metallic glass films. _Sci. Rep._**9**, 13426 (2019).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Atomic-scale%20viscoplasticity%20mechanisms%20revealed%20in%20high%20ductility%20metallic%20glass%20films&journal=Sci.%20Rep.&volume=9&publication_year=2019&author=Idrissi%2CH)
+
+64.   Kresse, G. & Furthmuller, J. Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set. _Phys. Rev. B._**54**, 11169 (1996).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Efficient%20iterative%20schemes%20for%20ab%20initio%20total-energy%20calculations%20using%20a%20plane-wave%20basis%20set&journal=Phys.%20Rev.%20B.&volume=54&publication_year=1996&author=Kresse%2CG&author=Furthmuller%2CJ)
+
+65.   Kohn, W. & Sham, L. J. Self-consistent equations including exchange and correlation effects. _Phy. Rev._**140**, A1133–A1138 (1965).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Self-consistent%20equations%20including%20exchange%20and%20correlation%20effects&journal=Phy.%20Rev.&volume=140&pages=A1133-A1138&publication_year=1965&author=Kohn%2CW&author=Sham%2CLJ)
+
+66.   Perdew, J. P., Burke, K. & Wang, Y. Generalized gradient approximation for the exchange-correlation hole of a many-electron system. _Phys. Rev. B._**54**, 16533–16539 (1996).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Generalized%20gradient%20approximation%20for%20the%20exchange-correlation%20hole%20of%20a%20many-electron%20system&journal=Phys.%20Rev.%20B.&volume=54&pages=16533-16539&publication_year=1996&author=Perdew%2CJP&author=Burke%2CK&author=Wang%2CY)
+
+67.   Blochl, P. E. Projector augmented-wave method. _Phys. Rev. B Condens Matter_**50**, 17953–17979 (1994).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Projector%20augmented-wave%20method&journal=Phys.%20Rev.%20B%20Condens%20Matter&volume=50&pages=17953-17979&publication_year=1994&author=Blochl%2CPE)
+
+68.   Monkhorst, H. J. & Pack, J. D. Special points for Brillouin-zone integrations. _Phys. Rev. B._**13**, 5188–5192 (1976).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Special%20points%20for%20Brillouin-zone%20integrations&journal=Phys.%20Rev.%20B.&volume=13&pages=5188-5192&publication_year=1976&author=Monkhorst%2CHJ&author=Pack%2CJD)
+
+69.   Grimme, S. et al. A consistent and accurate ab initio parametrization of density functional dispersion correction (DFT-D) for the 94 elements H-Pu. _J. Chem. Phys._**132**, 154104 (2010).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20consistent%20and%20accurate%20ab%20initio%20parametrization%20of%20density%20functional%20dispersion%20correction%20%28DFT-D%29%20for%20the%2094%20elements%20H-Pu&journal=J.%20Chem.%20Phys.&volume=132&publication_year=2010&author=Grimme%2CS)
+
+70.   Restuccia, P. et al. Ideal adhesive and shear strengths of solid interfaces: a high throughput ab initio approach. _Comput. Mater. Sci._**154**, 517–529 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Ideal%20adhesive%20and%20shear%20strengths%20of%20solid%20interfaces%3A%20a%20high%20throughput%20ab%20initio%20approach&journal=Comput.%20Mater.%20Sci.&volume=154&pages=517-529&publication_year=2018&author=Restuccia%2CP)
+
+71.   Zhong, W. & Tománek, D. First-principles theory of atomic-scale friction. _Phys. Rev. Lett._**64**, 3054–3057 (1990).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=First-principles%20theory%20of%20atomic-scale%20friction&journal=Phys.%20Rev.%20Lett.&volume=64&pages=3054-3057&publication_year=1990&author=Zhong%2CW&author=Tom%C3%A1nek%2CD)
+
+72.   Losi, G., Restuccia, P. & Righi, M. C. Superlubricity in phosphorene identified by means of ab initio calculations. _2D Mater._**7**, 025033 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Superlubricity%20in%20phosphorene%20identified%20by%20means%20of%20ab%20initio%20calculations&journal=2D%20Mater.&volume=7&publication_year=2020&author=Losi%2CG&author=Restuccia%2CP&author=Righi%2CMC)
+
+73.   Jiang, J.-W. & Zhou, Y.-P. Parameterization of Stillinger-Weber Potential for Two- Dimensional Atomic Crystals. in _Handbook of Stillinger-Weber Potential Parameters for Two-Dimensional Atomic Crystals_ (IntechOpen, 2017).
+
+74.   Ruan, X. P. et al. Robust superlubricity and moiré lattice’s size dependence on friction between graphdiyne layers. _ACS Appl. Mater. Inter._**13**, 40901–40908 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Robust%20superlubricity%20and%20moir%C3%A9%20lattice%E2%80%99s%20size%20dependence%20on%20friction%20between%20graphdiyne%20layers&journal=ACS%20Appl.%20Mater.%20Inter.&volume=13&pages=40901-40908&publication_year=2021&author=Ruan%2CXP)
+
+75.   Ru, G. L. et al. Superlubricity in bilayer isomeric tellurene and graphene/tellurene van der Waals heterostructures. _Tribol. Int._**159**, 106974 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Superlubricity%20in%20bilayer%20isomeric%20tellurene%20and%20graphene%2Ftellurene%20van%20der%20Waals%20heterostructures&journal=Tribol.%20Int.&volume=159&publication_year=2021&author=Ru%2CGL)
+
+76.   Guo, W. L. et al. Coupled defect-size effects on interlayer friction in multiwalled carbon nanotubes. _Phys. Rev. B._**72**, 075409 (2005).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Coupled%20defect-size%20effects%20on%20interlayer%20friction%20in%20multiwalled%20carbon%20nanotubes&journal=Phys.%20Rev.%20B.&volume=72&publication_year=2005&author=Guo%2CWL)
+
+77.   Wei, B. Y. et al. A molecular dynamics study on the tribological behavior of molybdenum disulfide with grain boundary defects during scratching processes. _Friction_**9**, 1198–1212 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20molecular%20dynamics%20study%20on%20the%20tribological%20behavior%20of%20molybdenum%20disulfide%20with%20grain%20boundary%20defects%20during%20scratching%20processes&journal=Friction&volume=9&pages=1198-1212&publication_year=2020&author=Wei%2CBY)
+
+78.   He, J. et al. Synergistic lubrication effect of Al2O3 and MoS2 nanoparticles confined between iron surfaces: a molecular dynamics study. _J. Mater. Sci._**56**, 9227–9241 (2021).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Synergistic%20lubrication%20effect%20of%20Al2O3%20and%20MoS2%20nanoparticles%20confined%20between%20iron%20surfaces%3A%20a%20molecular%20dynamics%20study&journal=J.%20Mater.%20Sci.&volume=56&pages=9227-9241&publication_year=2021&author=He%2CJ)
+
+79.   Rappi, A. K., Casewit, C. J. & Colwell, K. S. UFF, a full periodic table force field for molecular mechanics and molecular dynamics simulations. _J. Am. Chem. Soc._**114**, 10024–10039 (1992).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=UFF%2C%20a%20full%20periodic%20table%20force%20field%20for%20molecular%20mechanics%20and%20molecular%20dynamics%20simulations&journal=J.%20Am.%20Chem.%20Soc.&volume=114&pages=10024-10039&publication_year=1992&author=Rappi%2CAK&author=Casewit%2CCJ&author=Colwell%2CKS)
+
+80.   Mardiyah, R. U. et al. Energy cohesive calculation for some pure metals using the Lennard-Jones potential in lammps molecular dynamics. _J. Phys. Conf. Ser._**1491**, 012020 (2020).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Energy%20cohesive%20calculation%20for%20some%20pure%20metals%20using%20the%20Lennard-Jones%20potential%20in%20lammps%20molecular%20dynamics&journal=J.%20Phys.%20Conf.%20Ser.&volume=1491&publication_year=2020&author=Mardiyah%2CRU)
+
+81.   Grimme, S. Semiempirical GGA-type density functional constructed with a long-range dispersion correction. _J. Comput. Chem._**27**, 1787–1799 (2006).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Semiempirical%20GGA-type%20density%20functional%20constructed%20with%20a%20long-range%20dispersion%20correction&journal=J.%20Comput.%20Chem.&volume=27&pages=1787-1799&publication_year=2006&author=Grimme%2CS)
+
+82.   Chen, L. et al. Nanomanufacturing of silicon surface with a single atomic layer precision via mechanochemical reactions. _Nat. Commun._**9**, 1542 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Nanomanufacturing%20of%20silicon%20surface%20with%20a%20single%20atomic%20layer%20precision%20via%20mechanochemical%20reactions&journal=Nat.%20Commun.&volume=9&publication_year=2018&author=Chen%2CL)
+
+83.   Susarla, S. et al. Deformation mechanisms of vertically stacked WS(2) /MoS(2) heterostructures: the role of interfaces. _Acs. Nano._**12**, 4036–4044 (2018).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Deformation%20mechanisms%20of%20vertically%20stacked%20WS%282%29%20%2FMoS%282%29%20heterostructures%3A%20the%20role%20of%20interfaces&journal=Acs.%20Nano.&volume=12&pages=4036-4044&publication_year=2018&author=Susarla%2CS)
+
+84.   Plimpton, S. Fast parallel algorithms for short-range molecular dynamics. _J. Comput. Phys._**117**, 1–19 (1995).
+
+[Google Scholar](http://scholar.google.com/scholar_lookup?&title=Fast%20parallel%20algorithms%20for%20short-range%20molecular%20dynamics&journal=J.%20Comput.%20Phys.&volume=117&pages=1-19&publication_year=1995&author=Plimpton%2CS)
+
+[Download references](https://citation-needed.springer.com/v2/references/10.1038/s41524-026-01996-0?format=refman&flavour=references)
